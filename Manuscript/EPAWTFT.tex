@@ -1,0 +1,205 @@
+\documentclass[aps,prb,reprint,noshowkeys,superscriptaddress]{revtex4-1}
+\usepackage{graphicx,dcolumn,bm,xcolor,microtype,multirow,amscd,amsmath,amssymb,amsfonts,physics,longtable,wrapfig,txfonts}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{txfonts}
+
+\usepackage[normalem]{ulem}
+\definecolor{darkgreen}{RGB}{0, 180, 0}
+\newcommand{\titou}[1]{\textcolor{red}{#1}}
+\newcommand{\hugh}[1]{\textcolor{orange}{#1}}
+\newcommand{\trash}[1]{\textcolor{red}{\sout{#1}}}
+\newcommand{\trashHB}[1]{\textcolor{orange}{\sout{#1}}}
+
+\usepackage[
+	colorlinks=true,
+    citecolor=blue,
+    breaklinks=true
+	]{hyperref}
+\urlstyle{same}
+
+\newcommand{\ctab}{\multicolumn{1}{c}{---}}
+\newcommand{\mc}{\multicolumn}
+\newcommand{\fnm}{\footnotemark}
+\newcommand{\fnt}{\footnotetext}
+\newcommand{\mcc}[1]{\multicolumn{1}{c}{#1}}
+\newcommand{\mr}{\multirow}
+\newcommand{\SI}{\textcolor{blue}{supporting information}}
+
+% operators
+\newcommand{\bH}{\mathbf{H}}
+\newcommand{\bh}{\mathbf{h}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\bSig}{\mathbf{\Sigma}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\PT}{\mathcal{PT}}
+
+\newcommand{\EPT}{E_{\PT}}
+\newcommand{\laPT}{\lambda_{\PT}}
+
+\newcommand{\EEP}{E_\text{EP}}
+\newcommand{\laEP}{\lambda_\text{EP}}
+
+
+\newcommand{\Ne}{N}
+\newcommand{\hH}{\Hat{H}}
+\newcommand{\hT}{\Hat{T}}
+\newcommand{\hW}{\Hat{W}}
+\newcommand{\hV}{\Hat{V}}
+\newcommand{\hc}[2]{\Hat{c}_{#1}^{#2}}
+\newcommand{\hn}[1]{\Hat{n}_{#1}}
+\newcommand{\n}[1]{n_{#1}}
+\newcommand{\Dv}{\Delta v}
+\newcommand{\up}{\uparrow}
+\newcommand{\dw}{\downarrow}
+\newcommand{\updw}{\up\dw}
+
+\newcommand{\ra}{\rightarrow}
+
+\newcommand{\LCPQ}{Laboratoire de Chimie et Physique Quantiques (UMR 5626), Universit\'e de Toulouse, CNRS, UPS, France}
+\newcommand{\UCAM}{Department of Chemistry, University of Cambridge, Lensfield Road, Cambridge, CB2 1EW, U.K.}
+
+\begin{document}	
+
+\title{Exceptional points and where to find them}
+
+\author{Antoine \surname{Marie}}
+\email{antoine.marie@ens-lyon.fr}
+\affiliation{\LCPQ}
+%\author{Hugh G.~A.~\surname{Burton}}
+%\email{hb407@cam.ac.uk}
+%\affiliation{\UCAM}
+\author{Pierre-Fran\c{c}ois \surname{Loos}}
+\thanks{Corresponding author}
+\email{loos@irsamc.ups-tlse.fr}
+\affiliation{\LCPQ}
+
+
+\begin{abstract}
+In this work, we explore the description of quantum chemistry in the complex plane. 
+Using the Hubbard dimer as a simple model system, we investigate how various methods in electronic structure theory (including Hartree--Fock, \titou{density-functional theory}, perturbation theory and full configuration interaction) are formulated in the complex plane, and how this affects their behaviour in the real plane.
+For example, we demonstrate how the position of exceptional points of the real axis controls the convergence of perturbation theory, and explore the inherent dependence on the set of orbital coefficients.
+Moreover, we reveal how the avoided crossing of FCI states correspond to an exceptional point in the complex plane, which in turn demonstrates that multiple FCI solutions form a more general structure across the complex plane. 
+Ultimately, by exposing these more profound topologies of electronic structure methods in the complex plane, we hope to pave the way for novel methodologies.
+\end{abstract}
+
+\maketitle
+
+%============================================================%
+\section{Introduction}
+%============================================================%
+
+The notion of quantised energy levels is a central feature of Hermitian quantum mechanics. 
+In quantum chemistry, the ordering of the energy levels represents the different electronic states of a molecule, the lowest being the ground state while the higher ones are the so-called excited states.
+Within this quantised paradigm, electronic states look completely disconnected from one another.
+However, one can gain a different perspective on quantisation if one extends quantum chemistry into the complex domain.
+In a non-Hermitian complex picture, the energy levels are \textit{sheets} of a more complicated topological manifold called \textit{Riemann surface}, and they are smooth and continuous \textit{analytic continuation} of one another.
+In other words, our view of the quantised nature of conventional Hermitian quantum mechanics arises only from our limited perception of the more complex and profound structure of its non-Hermitian variant.
+
+Therefore, by analytically continuing the energy $E(\lambda)$ in the complex domain (where $\lambda$ is a coupling parameter), one can smoothly connect the ground and excited states of a molecule.
+This connection is possible because, by extending real numbers to the complex domain, one loses the ordering property of real numbers.
+Hence, one can interchange electronic states away from the real axis, as the concept of ground and excited states has been lost.
+Amazingly, this smooth and continuous transition from one state to another has been recently realised experimentally in physical settings such as electronics, microwaves, mechanics, acoustics, atomic systems and optics. \cite{Bittner_2012, Chong_2011, Chtchelkatchev_2012, Doppler_2016, Guo_2009, Hang_2013, Liertzer_2012, Longhi_2010, Peng_2014, Peng_2014a, Regensburger_2012, Ruter_2010, Schindler_2011, Szameit_2011, Zhao_2010, Zheng_2013, Choi_2018, El-Ganainy_2018}
+
+
+Exceptional points (EPs) \cite{Heiss_1990, Heiss_1999, Heiss_2012, Heiss_2016} are non-Hermitian analogs of conical intersections (CIs) \cite{Yarkony_1996} where two states become exactly degenerate.
+CIs are ubiquitous in non-adiabatic processes and play a key role in photochemical mechanisms.
+In the case of auto-ionizing resonances, EPs have a role in deactivation processes similar to CIs in the decay of bound excited states.
+Although Hermitian and non-Hermitian Hamiltonians are closely related, the behaviour of their eigenvalues near degeneracies is starkly different.
+For example, by encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy.
+Additionally, the wave function picks up a geometric phase (also known as Berry phase \cite{Berry_1984}) and four loops are required to recover the starting wave function.
+In contrast, encircling Hermitian degeneracies at CIs introduces only a geometric phase while leaving the states unchanged.
+More dramatically, whilst eigenvectors remain orthogonal at CIs, at non-Hermitian EPs the eigenvectors themselves become equivalent, resulting in a \textit{self-orthogonal} state. \cite{MoiseyevBook}
+More importantly here, although EPs usually lie off the real axis, these singular points are intimately related to the convergence properties of perturbative methods and avoided crossing on the real axis are indicative of singularities in the complex plane. \cite{Olsen_1996, Olsen_2000}
+
+
+%============================================================%
+\section{Perturbation Theory}
+%============================================================%
+
+Within perturbation theory, the Schr\"odinger equation is usually rewritten as 
+\begin{equation}
+	\bH \Psi(\lambda) = (\bH^{(0)} + \lambda \bH^{(1)} ) \Psi(\lambda) = E(\lambda) \Psi(\lambda),
+\end{equation}
+with
+\begin{equation}
+	E(\lambda) = \sum_{k=0}^\infty \lambda^k E^{(k)}.
+\end{equation}
+However, it is not unusual that the series $E(\lambda)$ has a radius of convergence $\abs{\lambda_0} < 1$. 
+This means that the series is divergent in the domain $\abs{\lambda} < \abs{\lambda_0}$, hence for the physical system at $\lambda = 1$.
+As eluded above, $\abs{\lambda_0}$ is determined by the location of the singularity of $E(\lambda)$ closest to the origin.
+These singularities are nothing but EPs at $\lambda_0$ and $\lambda_0^*$.
+Here, we propose to thoroughly investigate the connection between Coulson-Fisher quasi-EPs and the radius of convergence of various flavours of perturbation theory.
+For example, M{\o}ller-Plesset perturbation theory (MPPT) has the particularity of relying on a Hartree-Fock (HF) wave function as a zeroth-order wave function.
+However, the flavour of HF one can select (restricted, unrestricted, generalised, holomorphic, \ldots) is up for grabs, and the convergence properties of the MPPT series will drastically change depending on this choice.
+Indeed, the radius of convergence is intimately connected to the location of singularities in the complex plane; these singularities are, themselves, linked to the choice of $\bH^{(0)}$. 
+Really, it depends on our ability of selecting a zeroth-order Hamiltonian such as $\bH$ does not have any EP inside the unit $\lambda$ circle.
+
+For example, MPPT calculations based on UHF wave functions have shown to be slowly convergent due to spin contamination while RHF-based MPPT calculations can be divergent. \cite{Gill_1986, Gill_1988}
+Although MPPT is widespread in the community, its convergence properties have not, to the very best of our knowledge, attracted much attention. \cite{Olsen_1996, Olsen_2000, Goodson_2012}
+We believe that they deserve greater understanding, particularly in a non-Hermitian setting.
+
+
+%============================================================%
+\section{The asymmetric Hubbard dimer}
+%============================================================%
+
+
+The asymmetric Hubbard dimer is a model two-electron system whose Hamiltonian reads
+\begin{equation}
+	\hH = \hT + \hW + \hV,
+\end{equation}
+with
+\begin{subequations}
+\begin{align}
+	\hT		& = - t \sum_{\sigma=\updw} (\hc{1\sigma}{\dag} \hc{2\sigma}{} + \hc{2\sigma}{\dag} \hc{1\sigma}{}),
+	\\
+	\hW	& =  U (\hn{1\up}\hn{1\dw} + \hn{2\up}\hn{2\dw}),
+	\\
+	\hV	& = \Dv (\hn{2} - \hn{1})/2,
+\end{align}
+\end{subequations}
+where $\hn{i\sigma} = \hc{i\sigma}{\dag} \hc{i\sigma}{}$, $\hn{i} = \sum_{\sigma=\updw} \hn{i\sigma}$,  $U$ is the site energy, $t$ is hopping parameter, and $\Dv$ is the difference of on-site potential which controls the asymmetry of the model.
+Note that $\n{1} + \n{2} = \Ne$, where $\Ne = 2$.
+
+In the basis $\ket{1\up1\dw}$, $\ket{1\up2\dw}$, $\ket{2\up1\dw}$, $\ket{2\up2\dw}$, the Hamiltonian reads
+\begin{equation}
+	\hH = 
+	\begin{pmatrix}
+	- \Dv + U	&	-t	&	t	&	0		\\
+	-t			&	0	&	0	&	-t		\\
+	t			&	0	&	0	&	t		\\
+	0			&	-t	&	t	&	\Dv + U	\\
+	\end{pmatrix},
+\end{equation}
+which are composed by three singlet and one triplet states.
+The ground-state singlet wave function can therefore be written as
+\begin{equation}
+	\ket*{^{1}\Psi} = \alpha \frac{\ket{1\up2\dw} + \ket{2\up1\dw}}{\sqrt{2}} + \beta \ket{1\up1\dw} + \gamma \ket{2\up2\dw}
+\end{equation}
+with $\alpha^2 + \beta^2 + \gamma^2 = 1$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Concluding remarks}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\titou{What we have done is completely amazing.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{acknowledgements}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%H.G.A.B.~thanks the Cambridge and Commonwealth Trust for a studentship. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{acknowledgements}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliography{EPAWTFT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}  
