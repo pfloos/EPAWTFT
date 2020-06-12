@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage[top=3cm,bottom=5cm,left=3cm,right=3cm]{geometry}
 \usepackage{caption}
+\usepackage[version=4]{mhchem}
 
 \title{Internship Summary: Mid-Term Review}
 
@@ -45,61 +46,73 @@ We can categorize what have been done already in 3 groups:
 \section{Results}
 
 \subsection{Spin contamination}
-The UHF description of H\textsubscript{2} and spherium is analog. Gill's UHF description of H\textsubscript{2} in the minimal basis (1988) shows that the spin contamination of the doubly excited state RHF by triplet RHF wavefunctions are link to the poor convergence of the UMP series. 
-For spherium in the minimal basis the RHF reference is bloc diagonal but the UHF reference have non zero matrix elements between triplet states and p\textsubscript{z}\textsuperscript{2} singlet. The matrix elements are
+The UHF description of \ce{H2} and spherium is analog. 
+Gill's UHF description of \ce{H2} in the minimal basis (1988) shows that the spin contamination of the doubly excited state RHF by triplet RHF wavefunctions are link to the poor convergence of the UMP series. 
+For spherium in the minimal basis the RHF reference is bloc diagonal but the UHF reference has non-zero matrix elements between triplet states and $p_z^2$ singlet. 
+The matrix elements are
 
 \begin{equation}
-\lambda\frac{\sqrt[2]{-3+2R}(25+2R)\sqrt[2]{75+62R}}{280 R^{3}}
+	\lambda\frac{\sqrt{-3+2R}(25+2R)\sqrt[2]{75+62R}}{280 R^{3}}
 \end{equation}
+% you should try to simplify this expression 
 
-The matrix elements are real for $R>\frac{3}{2}$ and $R<-\frac{75}{62}$. This is coherent with the Coulson-Fisher points of spherium (Burton 2019).
-
-But Gill doesn't talk about the singularity structure of E(z) !
+The matrix elements are real for $R > 3/2$ and $R < -75/62$. 
+This is coherent with the Coulson-Fisher points of spherium (Burton 2019).
+However, Gill does not talk about the singularity structure of $E(z)$!
 
 \subsection{Two state model}
 
-Olsen et al. developped a two state model which allowed them to rationalize many schemes of convergence. Can we do this with our perturbation series ? 
+Olsen et al.~developped a two-state model which allowed them to rationalize many schemes of convergence. 
+Can we do this with our perturbation series? 
 
-RHF: The schemes of convergence predicted by the two state model fit with our plots of the coefficients for both MP and EN partitioning.
-
-UHF: The schemes predicted by the two state model are not correct. 
-
-In the UHF framework we need to consider more than two states because of the spin contamination -> this is expected that the two state model works for RHF and not for UHF.
+\begin{itemize}
+	\item RHF: The schemes of convergence predicted by the two-state model fit with our plots of the coefficients for both MP and EN partitioning.
+	\item UHF: The schemes predicted by the two-state model are not correct due to its intrinsic limitations. 
+\end{itemize}
+In the UHF framework we must consider more than two states because of the spin contamination $\rightarrow$ this is expected that the two state model works for RHF and not for UHF.
 
 \subsection{Singularity structure}
 
 Sergeev 2005:
-"Class $\alpha$ singularities are isolated complex conjugate pairs of square-root branch points, which correspond to the avoided crossings between the ground state and an excited state on a path along the real axis, while class $\beta$ singularities lie on or near the real axis and correspond to critical points at which one or more electrons dissociate from the nuclei."
+\begin{quote}
+\textit{``Class $\alpha$ singularities are isolated complex conjugate pairs of square-root branch points, which correspond to the avoided crossings between the ground state and an excited state on a path along the real axis, while class $\beta$ singularities lie on or near the real axis and correspond to critical points at which one or more electrons dissociate from the nuclei.''}
+\end{quote}
 
 \subsubsection{Class $\beta$}
 
-According to this classification we could predict that there will be only class $\alpha$ singularities for the spherium because the electrons are restricted to the sphere.
+According to this classification we could predict that there will be only class $\alpha$ singularities for spherium because the electrons are restricted to the surface of the sphere.
+Nonetheless, in the UHF framework we obtain class $\beta$ singularities. 
+How is this possible?
 
-But in the UHF framework we obtain class $\beta$ singularities, how is this possible ?
-
-We can prove that there are a value of z at which the electrons form a cluster and dissociate from the nuclei (Stillinger 2000 and Sergeev 2005). By analogy with thermodynamics (Baker 1971) this value of z will be a critical point for $E(z)$. At this critical point the energy undergoes a phase transition from a discrete spectrum to a continuum of ionization states. So it's possible that class $\beta$ singularities are not just linked to ionization but more generally to phase transitions and symmetry breaking.
-
-In our UHF framework we can see the apparition of those class $\beta$ singularities appear at the Coulson-Fischer points with the Möller-Plesset partitioning.
+We can prove that there are a value of $z$ at which the electrons form a cluster and dissociate from the nuclei (Stillinger 2000 and Sergeev 2005). 
+By analogy with thermodynamics (Baker 1971) this value of $z$ is a critical point for $E(z)$. 
+At this critical point the energy undergoes a phase transition from a discrete spectrum to a continuum of ionization states. 
+So it is possible that class $\beta$ singularities are not just linked to ionization but more generally to phase transitions and symmetry breaking.
+%T2: very true indeed.
+In our UHF framework we can see the apparition of those class $\beta$ singularities appear at the Coulson-Fischer points within the MP partitioning.
 
 \subsubsection{Class $\alpha$}
 
-We obtain as expected the class $\alpha$ singularities characteristic of an avoided crossing between the ground state and a doubly excited state. But they are sometimes in the positive half plane, sometimes in the negative half plane and they can also be on the pure imaginary axis.
-
-Guess: this is due to the value/sign of E\textsubscript{1}. Can we prove this ?
+We obtain as expected the class $\alpha$ singularities characteristic of an avoided crossing between the ground state and a doubly excited state. 
+But they are sometimes in the positive half plane, sometimes in the negative half plane and they can also be on the pure imaginary axis.
+Guess: this is due to the value/sign of $E_1$. 
+How can we prove this ?
 
 \subsection{Strongly correlated}
 
-We can use the "Laguerre" basis to define an adiabatic connection with a "localised" reference. We find that the radius of convergence is >1 for all R in the minimal and the n=3 basis. 
+We can use the ``Laguerre'' basis to define an adiabatic connection with a ``localised'' reference. 
+We find that the radius of convergence is greater than unity for all $R$ in the minimal and the $n = 3$ basis. 
 
 \section{Open questions}
 
 \begin{itemize}
-\item Guess: adding diffuse functions as in the case of ionization $\beta$ singularities is not necessary because the symmetry breaking is already well described in the minimal basis. Can we prove this ?
-\item Effect of an increase of the size of the basis set for the strongly correlated reference ?
-\item Rationalize very precisely the singularity structure of the MP partitioning: avoided crossing (sharp or not) between which states, symmetry breaking, ...
-\item Study the symmetry breaking in the Epstein-Nesbet partitioning
-\item Why the radius of convergence for the strongly correlated partitioning is always greater than 1 ? Is there a feature of the basis functions that can make diverge a series ?
-
+	\item Guess: adding diffuse functions as in the case of ionization $\beta$ singularities is not necessary because the symmetry breaking is already well described in the minimal basis. 
+	Can we prove this?
+	\item Effect of an increase of the size of the basis set for the strongly correlated reference?
+	\item Rationalize very precisely the singularity structure of the MP partitioning: avoided crossing (sharp or not) between which states, symmetry breaking, \ldots
+	\item Study the symmetry breaking in the EN partitioning
+	\item Why the radius of convergence for the strongly correlated partitioning is always greater than 1? 
+	Is there a feature of the basis functions that can make a series divergent?
 \end{itemize}
 
 \end{document}
