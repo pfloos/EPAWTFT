@@ -133,25 +133,24 @@ In physics perturbation theory is often a good way to improve the obtained resul
 \begin{beamerboxesrounded}[scheme=foncé]{\centering The Fock operator}
 
 \begin{equation}
-   F = T + J + K
+   F = \sum\limits_{i=1}^{n} f(i) \hspace{0.3cm} ; \hspace{0.3cm} f(i) = h(i) + \sum\limits_{i=1}^{n/2} \left[2J_j(i) - K_j(i)\right]
 \end{equation}
 
 \end{beamerboxesrounded}
 
 \begin{itemize}
 \centering
-    \item $T$: Kinetic energy operator
-    \item $J$: Coulomb operator
-    \item $K$: Exchange operator
+    \item $f(i)$: Fock operator
+    \item $h(i)$: One electron Hamiltonian
+    \item $J_j(i)$: Coulomb operator
+    \item $K_j(i)$: Exchange operator
 \end{itemize}
 
 \pause[3]
 
 \begin{beamerboxesrounded}[scheme=foncé]{}
 \centering
-
-Full Configuration Interaction gives access to high-order terms of the perturbation series!
-
+Full Configuration Interaction gives access to high-order terms of the perturbation series !
 \end{beamerboxesrounded}
     
 \end{frame}
@@ -160,9 +159,7 @@ Full Configuration Interaction gives access to high-order terms of the perturbat
 
 \begin{figure}
     \centering
-
     \includegraphics[width=0.45\textwidth]{gill1986.png}
-
     \caption{\centering Barriers to homolytic fission of \ce{He2^2+} at MPn/STO-3G level ($n = 1$--$20$).}
     \label{fig:my_label}
 \end{figure}
@@ -186,7 +183,6 @@ Full Configuration Interaction gives access to high-order terms of the perturbat
     \caption{\centering Percentage of electron correlation energy recovered and $\expval{S^2}$ for the \ce{H2} molecule as a function of bond length (r,\si{\angstrom}) in the STO-3G basis set.}
     \label{tab:my_label}
 \end{table}
-
     
 \end{frame}
 
@@ -355,12 +351,28 @@ The \textcolor{red}{radius of convergence} of the Taylor expansion of a function
 
 \end{frame}
 
+\begin{frame}{The Møller-Plesset Hamiltonian}
+
+\begin{equation}
+H(\lambda)=H_0 + \lambda (H_\text{phys} - H_0)    
+\end{equation}
+
+\begin{equation}
+    H_\text{phys}=\sum\limits_{j=1}^{n}\left[ -\frac{1}{2}\grad_j^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_j-\vb{R}_k|}+\sum\limits_{j<l}^{n}\frac{1}{|\vb{r}_j-\vb{r}_l|}\right]
+\end{equation}
+
+\begin{equation}
+    H_0=\sum\limits_{j=1}^{n}\left[ -\frac{1}{2}\grad_j^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_j-\vb{R}_k|}+V_j^{(scf)}\right]
+\end{equation}
+    
+\end{frame}
+
 \begin{frame}{Existence of a critical point\footcite{stillinger_mollerplesset_2000}}
 
 For $\lambda<0$:
 
 \begin{equation*}
-    H(\lambda)=\sum\limits_{j=1}^{2n}\left[ \underbrace{-\frac{1}{2}\grad_j^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_j-\vb{R}_k|}}_{\text{Independant of }\lambda} + \overbrace{(1-\lambda)V_j^{(scf)}}^{\textcolor{red}{Repulsive}}+\underbrace{\lambda\sum\limits_{j<l}^{2n}\frac{1}{|\vb{r}_j-\vb{r}_l|}}_{\textcolor{blue}{Attractive}}  \right]
+    H(\lambda)=\sum\limits_{j=1}^{n}\left[ \underbrace{-\frac{1}{2}\grad_j^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_j-\vb{R}_k|}}_{\text{Independant of }\lambda} + \overbrace{(1-\lambda)V_j^{(scf)}}^{\textcolor{red}{Repulsive}}+\underbrace{\lambda\sum\limits_{j<l}^{n}\frac{1}{|\vb{r}_j-\vb{r}_l|}}_{\textcolor{blue}{Attractive}}  \right]
 \end{equation*}
 
 \end{frame}
@@ -441,71 +453,7 @@ Proof of the existence of this group of sharp avoided crossings for Ne, He and H
     
 \end{frame}
 
-\section{The spherium model}
-
-\begin{frame}{Spherium: a theoretical playground\footcite{loos_ground_2009}}
-
-\begin{beamerboxesrounded}[scheme=foncé]{\centering Two electrons on a sphere Hamiltonian}
-\begin{equation*}
-    H=-\frac{1}{2}(\grad_1^2 + \grad_2^2) + \frac{1}{r_{12}}
-\end{equation*} 
-\end{beamerboxesrounded}
-\vspace{0.5cm}
-
-\begin{columns}
-
-\column{0.48\textwidth}
-
-\centering{Small $R$}
-\vspace{0.5cm}
-
-\begin{itemize}
-    \item $E_\text{kin} \gg E_\text{pot}$
-    \item Uniform density of electrons
-    \item \textcolor{red}{Weak correlation}
-\end{itemize}
-
-\vspace{0.5cm}
-
-\column{0.48\textwidth}
-
-\centering{Large $R$}
-\vspace{0.5cm}
-
-\begin{itemize}
-    \item $E_\text{kin} \ll E_\text{pot}$
-    \item Electrons on the opposite sides of the sphere
-    \item \textcolor{red}{Strong correlation}
-    \end{itemize}
-
-\end{columns}
-
-\end{frame}
-
-\begin{frame}{Apparition of a class $\beta$ singularity}
-
-\pause[1]
-
-\begin{beamerboxesrounded}[scheme=foncé]{\centering Expectation}
-The electrons are restricted to the surface of the sphere so we should not observe singularities characteristic of ionization processes.
-\end{beamerboxesrounded}
-
-\vspace{0.5cm}
-
-\pause[2]
-
-\large But for some values of R... we actually observe some $\beta$ singularities!
-\centering Why?
-
-\vspace{0.5cm}
-
-\pause[3]
-
-\begin{beamerboxesrounded}[scheme=foncé]{\centering Symmetry breaking}
-The $\beta$ singularities observed are connected to the symmetry breaking of the wave function.
-\end{beamerboxesrounded}
-
-\end{frame}
+\section{Conclusion}
 
 \begin{frame}{Conclusion}
 
@@ -515,18 +463,12 @@ The $\beta$ singularities observed are connected to the symmetry breaking of the
 By understanding how the singularities are localized in the complex plane we hope that it will gives us a deep understanding of the strengths and weaknesses of the Møller-Plesset method to get the correlation energy.
 \end{beamerboxesrounded}
 
+\vspace{0.5cm}
+
 \pause[2]
 
-\vspace{0.5cm}
-
-But there is an other secret application of exceptional points...
-
-\pause[3]
-
-\vspace{0.5cm}
-
-\begin{beamerboxesrounded}[scheme=foncé]{\centering A new way to excited states energies}
-The exceptionnal points connect ground and excited states in the complex plane. Using those properties one can smoothly morph a ground state in an excited state. 
+\begin{beamerboxesrounded}[scheme=foncé]{\centering Spherium: a theoretical playground}
+We will use the spherium model (two opposite-spin electrons restricted to remain on a surface of a sphere of radius $R$) to investigate the effects of symmetry breaking on singularities.
 \end{beamerboxesrounded}
     
 \end{frame}
