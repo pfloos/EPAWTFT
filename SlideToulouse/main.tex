@@ -2,8 +2,6 @@
 
 %% General document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{graphicx}
-\usepackage{tikz}
-\usetikzlibrary{decorations.fractals}
 \usepackage{mathpazo}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
@@ -13,11 +11,12 @@
 \usepackage{graphicx}
 \usepackage{physics}
 \usepackage{multimedia}
-\usepackage{subfigure}
 \usepackage[absolute,overlay]{textpos}
 \usepackage{ragged2e}
 \usepackage{amssymb}
 \usepackage[version=4]{mhchem}
+\usepackage[style=verbose,backend=bibtex]{biblatex}
+\bibliography{SlideToulouse}
 
 
 
@@ -150,16 +149,20 @@ In physics perturbation theory is often a good way to improve the obtained resul
 
 \begin{beamerboxesrounded}[scheme=foncé]{}
 \centering
+
 Full Configuration Interaction gives access to high-order terms of the perturbation series!
+
 \end{beamerboxesrounded}
     
 \end{frame}
 
-\begin{frame}{Deceptive or slow convergences}
+\begin{frame}{Deceptive or slow convergences\footcite{gill_deceptive_1986}}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{gill1986.png}
+
+    \includegraphics[width=0.45\textwidth]{gill1986.png}
+
     \caption{\centering Barriers to homolytic fission of \ce{He2^2+} at MPn/STO-3G level ($n = 1$--$20$).}
     \label{fig:my_label}
 \end{figure}
@@ -167,7 +170,7 @@ Full Configuration Interaction gives access to high-order terms of the perturbat
     
 \end{frame}
 
-\begin{frame}{Multi-reference and spin contamination}
+\begin{frame}{Multi-reference and spin contamination\footcite{gill_why_1988}}
 \begin{table}
     \centering
     \begin{tabular}{c c c c c c c}
@@ -184,7 +187,6 @@ Full Configuration Interaction gives access to high-order terms of the perturbat
     \label{tab:my_label}
 \end{table}
 
-\footnotetext{\tiny{Gill et al. Why does unrestricted M{\o}ller-Plesset perturbation theory converge so slowly for spin-contaminated wave functions, \textit{Journal of chemical physics}, 1988}}
     
 \end{frame}
 
@@ -193,11 +195,9 @@ Full Configuration Interaction gives access to high-order terms of the perturbat
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{The-energy-corrections-for-HF-at-stretched-geometry-in-the-cc-pVDZ-basis.png}
-    \caption{The energy corrections for HF at stretched geometry in the cc-pVDZ basis.}
+    \caption{The energy corrections for HF at stretched geometry in the cc-pVDZ basis. \footcite{olsen_divergence_2000}}
     \label{fig:my_label}
 \end{figure}
-    
-\footnotetext{\tiny{Olsen et al. Divergence in Møller–Plesset theory: A simple explanation based on a two-state model, \textit{Journal of chemical physics}, 2000}} 
 
 \end{frame}
 
@@ -316,7 +316,7 @@ The \textcolor{red}{radius of convergence} of the Taylor expansion of a function
     
 \end{frame}
 
-\begin{frame}{A two-state model}
+\begin{frame}{A two-state model\footcite{olsen_divergence_2000}}
 
 \begin{columns}
 
@@ -341,33 +341,27 @@ The \textcolor{red}{radius of convergence} of the Taylor expansion of a function
 \end{beamerboxesrounded}
 \vspace{1cm}
 \end{columns}
-
-\footnotetext{\tiny{Olsen et al. Divergence in Møller–Plesset theory: A simple explanation based on a two-state model, \textit{Journal of chemical physics}, 2000}} 
     
 \end{frame}
 
-\begin{frame}{Two-state model}
+\begin{frame}{Two-state model\footcite{olsen_divergence_2000}}
   
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{figure-fig14.png}
-    \caption{\centering The energy corrections for HF at stretched geometry in the aug'-cc-pVDZ basis with the two-state model.\textsuperscript{a}}
+    \caption{\centering The energy corrections for HF at stretched geometry in the aug'-cc-pVDZ basis with the two-state model.}
     \label{fig:my_label}
 \end{figure}
-    
-\footnotetext{\tiny{Olsen et al. Divergence in Møller–Plesset theory: A simple explanation based on a two-state model, \textit{Journal of chemical physics}, 2000}} 
 
 \end{frame}
 
-\begin{frame}{Existence of a critical point}
+\begin{frame}{Existence of a critical point\footcite{stillinger_mollerplesset_2000}}
 
 For $\lambda<0$:
 
 \begin{equation*}
     H(\lambda)=\sum\limits_{j=1}^{2n}\left[ \underbrace{-\frac{1}{2}\grad_j^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_j-\vb{R}_k|}}_{\text{Independant of }\lambda} + \overbrace{(1-\lambda)V_j^{(scf)}}^{\textcolor{red}{Repulsive}}+\underbrace{\lambda\sum\limits_{j<l}^{2n}\frac{1}{|\vb{r}_j-\vb{r}_l|}}_{\textcolor{blue}{Attractive}}  \right]
 \end{equation*}
-
-\footnote{stillinger, sergeev, baker}
 
 \end{frame}
 
@@ -395,7 +389,7 @@ The singularities occur in complex conjugate pairs with non-zero imaginary parts
     
 \end{frame}
 
-\begin{frame}{Singularities $\alpha$ and $\beta$}
+\begin{frame}{Singularities $\alpha$ and $\beta$ \footcite{sergeev_singularities_2006}}
 
 \pause[1]
 
@@ -423,8 +417,6 @@ We can separate singularities in two parts.
 \end{itemize} 
 \end{beamerboxesrounded} 
 
-\footnote{sergeev}
-
 \end{frame}
 
 
@@ -451,7 +443,7 @@ Proof of the existence of this group of sharp avoided crossings for Ne, He and H
 
 \section{The spherium model}
 
-\begin{frame}{Spherium: a theoretical playground}
+\begin{frame}{Spherium: a theoretical playground\footcite{loos_ground_2009}}
 
 \begin{beamerboxesrounded}[scheme=foncé]{\centering Two electrons on a sphere Hamiltonian}
 \begin{equation*}
