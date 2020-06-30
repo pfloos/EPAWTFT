@@ -285,6 +285,8 @@ The \textcolor{red}{radius of convergence} of the Taylor expansion of a function
     \item Exceptional points interconnecting the sheets
     \vspace{0.3cm}
     \item No ordering property in the complex plane
+    \vspace{0.3cm}
+    \item An avoided crossing on the real axis corresponds to two exceptionnal points in the complex plane.
 \end{itemize}
 
 \column{0.48\textwidth}
@@ -364,6 +366,10 @@ H(\lambda)=H_0 + \lambda (H_\text{phys} - H_0)
 \begin{equation}
     H_0=\sum\limits_{j=1}^{n}\left[ -\frac{1}{2}\grad_j^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_j-\vb{R}_k|}+V_j^{(scf)}\right]
 \end{equation}
+
+\begin{equation*}
+    H(\lambda)=\sum\limits_{j=1}^{n}\left[-\frac{1}{2}\grad_j^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_j-\vb{R}_k|} + (1-\lambda)V_j^{(scf)}+\lambda\sum\limits_{j<l}^{n}\frac{1}{|\vb{r}_j-\vb{r}_l|}} \right]
+\end{equation*}
     
 \end{frame}
 
