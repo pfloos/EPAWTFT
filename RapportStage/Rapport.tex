@@ -1,0 +1,275 @@
+\documentclass[11pt,a4paper]{article}
+
+% définition des marges du document
+\setlength{\topmargin}{0cm}
+\setlength{\headheight}{0.4cm}
+\setlength{\headsep}{0.8cm}
+\setlength{\footskip}{1cm}
+\setlength{\textwidth}{17cm}
+\setlength{\textheight}{25cm}
+\setlength{\voffset}{-1.5cm}
+\setlength{\hoffset}{-0.5cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+
+\usepackage{graphicx} % inclusion des figures
+\usepackage{physics}
+
+\usepackage{amsmath} % collection de symboles mathématiques
+\usepackage{amssymb} % collection de symboles mathématiques
+\usepackage[utf8]{inputenc}       
+\usepackage[T1]{fontenc} % codage moderne des caractères sous Latex
+
+\usepackage[english]{babel}
+\usepackage{tabularx} % gestion avancée des tableaux
+
+\usepackage{siunitx}
+\usepackage[version=4]{mhchem}
+
+
+\usepackage{color} % gestion de différentes couleurs
+
+\definecolor{linkcolor}{rgb}{0,0,0.6} % définition de la couleur des liens pdf
+\usepackage[ pdftex,colorlinks=true,
+pdfstartview=FitV,
+linkcolor= linkcolor,
+citecolor= linkcolor,
+urlcolor= linkcolor,
+hyperindex=true,
+hyperfigures=false]
+{hyperref} % fichiers pdf 'intelligents', avec des liens entre les références, etc.
+\usepackage{fancyhdr} % entêtes et pieds de pages personnalisés
+
+% définition de l'entête et du pied de page
+\pagestyle{fancy}
+\fancyhead[L]{\scriptsize \textsc{Perturbation theory in the complex plane}}
+\fancyhead[R]{\scriptsize \textsc{Antoine \textsc{MARIE}}}
+\fancyfoot[C]{ \thepage}
+
+% commande d'annulation du correcteur typographique du package [francais]{babel} qui force l'espace avant ':' (parfois utile pour la bibliographie)
+\makeatletter
+\@ifpackageloaded{babel}%
+        {\newcommand{\nospace}[1]{{\NoAutoSpaceBeforeFDP{}#1}}}%  % !! double {{}} pour cantonner l'effet à l'argument #1 !!
+        {\newcommand{\nospace}[1]{#1}}
+\makeatother
+
+% commande de déplacement d'un objet
+\newcommand{\drawat}[3]{\makebox[0pt][l]{\raisebox{#2}{\hspace*{#1}#3}}}
+
+\newcommand{\bH}{\mathbf{H}}
+\newcommand{\bV}{\mathbf{V}}
+
+\begin{document}
+
+% Pour faciliter la mise en forme de la page du titre, on supprime l'indentation automatique en début de paragraphe
+\setlength{\parindent}{0pt}
+
+% Pas d'en-tête ni de pied pour la première page
+\thispagestyle{empty}
+
+\includegraphics[height=2cm]{logoens.eps} \hfill \includegraphics[height=2cm]{logoucbl.eps} \hfill \includegraphics[height=2cm]{logounivlyon.eps}
+\vspace{0.5cm}
+
+\begin{tabularx}{\textwidth}{@{} l X l @{} }
+{\sc Licence / Master Science de la matière} & & Stage 2019-2020 \\
+{\it École Normale Supérieure de Lyon} & & Antoine \textsc{MARIE} \\
+{\it Université Claude Bernard Lyon I} & & M1 Chimie
+\end{tabularx}
+
+\begin{center}
+
+\vspace{1.5cm}
+
+\rule[11pt]{5cm}{0.5pt}
+
+\textbf{\huge Pertubation theories in the complex plane}
+
+\rule{5cm}{0.5pt}
+
+\vspace{1.5cm}
+
+\parbox{15cm}{\small
+\textbf{Abstract} : \it Un résumé de 10 lignes environ du contenu du rapport, permettant de situer le sujet et les résultats principaux du stage
+}
+
+\parbox{15cm}{
+\textbf{Keywords} : \it perturbation theory, Hartree-Fock, spherium, exceptional points
+} %fin de la commande \parbox des mots clefs
+
+\vspace{0.5cm}
+
+\parbox{15cm}{
+Internship supervisor:
+
+{\bf Pierre-François \textsc{LOOS}}
+
+\href{mailto:loos@irsamc.ups-tlse.fr}{\tt loos@irsamc.ups-tlse.fr} / tél. (+33) 5 61 55 73 39
+
+Laboratoire de Chimie et Physique Quantiques
+
+{\it 118, route de Narbonne
+
+31062 Toulouse - France}
+
+\url{https://www.irsamc.ups-tlse.fr/}
+} %fin de la commande \parbox encadrant / laboratoire d'accueil
+
+\vspace{0.5cm}
+\includegraphics[height=2cm]{LCPQ_logo.pdf} \hfill \includegraphics[height=2cm]{LogoCNRS.eps} \hfill \includegraphics[height=2cm]{UPS_logo.jpg}
+
+\end{center}
+
+\vfill
+\hfill \today
+
+\newpage
+
+\section*{Acknowledgments}
+
+\tableofcontents
+
+\newpage
+
+%============================================================%
+\section{Introduction}
+%============================================================%
+
+It has always been of great importance for theoretical chemists to better understand excited states and their properties because processes involving excited states are ubiquitous in nature (physics, chemistry and biology). One of the major challenges is to accurately compute excited states energies. Plenty of methods have been developed to this aim and each of them have its own qualities but also its own flaws. The fact that none of all those methods is succesfull for every molecule in every geometry encourage chemists to continue the development of new methodologies to get accurate energies and to try to understand deeply why each methods fails or not with each molecule. All those methods rely on the notion of quantised energy levels of Hermitian quantum mechanics. In quantum chemistry, the ordering of the energy levels represents the different electronic states of a molecule, the lowest being the ground state while the higher ones are the so-called excited states. And we need methods to get accurately how those states are ordered.
+
+Within this quantised paradigm, electronic states look completely disconnected from one another.
+However, one can gain a different perspective on quantisation if one extends quantum chemistry into the complex domain.
+In a non-Hermitian complex picture, the energy levels are \textit{sheets} of a more complicated topological manifold called \textit{Riemann surface}, and they are smooth and continuous \textit{analytic continuation} of one another.
+In other words, our view of the quantised nature of conventional Hermitian quantum mechanics arises only from our limited perception of the more complex and profound structure of its non-Hermitian variant.
+
+Therefore, by analytically continuing the energy $E(\lambda)$ in the complex domain (where $\lambda$ is a coupling parameter), one can smoothly connect the ground and excited states of a molecule.
+This connection is possible because, by extending real numbers to the complex domain, one loses the ordering property of real numbers.
+Hence, one can interchange electronic states away from the real axis, as the concept of ground and excited states has been lost.
+Amazingly, this smooth and continuous transition from one state to another has been recently realized experimentally in physical settings such as electronics, microwaves, mechanics, acoustics, atomic systems and optics. \cite{Bittner_2012, Chong_2011, Chtchelkatchev_2012, Doppler_2016, Guo_2009, Hang_2013, Liertzer_2012, Longhi_2010, Peng_2014, Peng_2014a, Regensburger_2012, Ruter_2010, Schindler_2011, Szameit_2011, Zhao_2010, Zheng_2013, Choi_2018, El-Ganainy_2018}
+
+
+Exceptional points (EPs) \cite{Heiss_1990, Heiss_1999, Heiss_2012, Heiss_2016} are non-Hermitian analogs of conical intersections (CIs) \cite{Yarkony_1996} where two states become exactly degenerate.
+CIs are ubiquitous in non-adiabatic processes and play a key role in photo-chemical mechanisms.
+In the case of auto-ionizing resonances, EPs have a role in deactivation processes similar to CIs in the decay of bound excited states.
+Although Hermitian and non-Hermitian Hamiltonians are closely related, the behavior of their eigenvalues near degeneracies is starkly different.
+For example, by encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy.
+Additionally, the wave function picks up a geometric phase (also known as Berry phase \cite{Berry_1984}) and four loops are required to recover the starting wave function.
+In contrast, encircling Hermitian degeneracies at CIs introduces only a geometric phase while leaving the states unchanged.
+More dramatically, whilst eigenvectors remain orthogonal at CIs, at non-Hermitian EPs the eigenvectors themselves become equivalent, resulting in a \textit{self-orthogonal} state. \cite{MoiseyevBook}
+More importantly here, although EPs usually lie off the real axis, these singular points are intimately related to the convergence properties of perturbative methods and avoided crossing on the real axis are indicative of singularities in the complex plane. \cite{Olsen_1996, Olsen_2000} 
+
+%============================================================%
+\section{Perturbation theory}
+%============================================================%
+
+
+Within perturbation theory, the Schr\"odinger equation is usually rewritten as 
+\begin{equation}
+	\bH(\lambda) \Psi = (\bH^{(0)} + \lambda \bV ) \Psi(\lambda) = E(\lambda) \Psi,
+\end{equation}
+with
+\begin{equation}
+\bV=\bH - \bH^{(0)}
+\end{equation}
+The energy can then be written as a power series of $\lambda$
+\begin{equation}
+	E(\lambda) = \sum_{k=0}^\infty \lambda^k E^{(k)}
+\end{equation}
+where $\lambda$ is a coupling parameter set equal to 1 at the end of the calculation. However it is not guaranteed that the series $E(\lambda)$ has a radius of convergence $\abs{\lambda_0} < 1$. It means that the series is divergent for the physical system at $\lambda=1$. One can prove that $\abs{\lambda_0}$ can be obtained by extending $\lambda$ in the complex plane and looking for the singularities of $E(\lambda)$. The radius of convergence of the expansion of a function is equal to the distance of the closest singularities in the complex plane to the origin. These singularities are nothing but EPs at $\lambda_0$ and $\lambda_0^*$. Indeed, for a Hermitian Hamiltonian the singularities occur in complex conjugate pairs with non-zero imaginary parts.
+
+ The discovery of a partitioning of the Hamiltonian that allowed chemists to get access to a part of the correlation energy using perturbation theory has been a major step in the development of post-Hartree-Fock methods. This case of the Rayleigh-Schrödinger perturbation theory is called the M{\o}ller-Plesset perturbation theory. In the MPPT the unperturbed Hamiltonian is the sum of the $n$ mono-electronic Fock operators which are the sum of the one-electron core Hamiltonian $h(i)$, the Coulomb $J_j(i)$ and Exchange $K_j(i)$ operators.
+ 
+\begin{equation}
+H_0= \sum\limits_{i=1}^{n} f(i)
+\end{equation}
+
+\begin{equation}
+f(i) = h(i) + \sum\limits_{j=1,j \neq i}^{n} \left[J_j(i) - K_j(i)\right]
+\end{equation}
+
+In Hartree-Fock theory you approximate the exact wave function as a Slater-determinant (which is an anti-symmetric combination of mono-electronic orbitals) and those wave functions are eigenvectors of the Fock operators. In the perturbation theory the energy is a power series of $\lambda$ and the physical energy is obtained by taking $\lambda$ equal to 1. We will refer to there energy up to the n-th order as the MPn energy. The MP1 energy is the Hartree-Fock energy and the correlation energy is getting recovered from the MP2 level.
+
+\begin{equation}
+E_{\text{MP\textsubscript{n}}}= \sum_{k=0}^n E^{(k)}
+\end{equation}
+
+But \textit{a priori} there is no reason that this power series is always convergent for $\lambda$=1 when n goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the M{\o}ller-Plesset will give bad results. A smart way to investigate the convergence properties of the MP series is to transform the coupling parameter $\lambda$ into a complex variable. By doing this the Hamiltonian and the energy become functions of this variable. So by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the MPPT. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is relatively easy up to the 4th order and the 5th and 6th order can be obtained at high cost. But to understand deeply the behavior of the MP series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction. If you diagonalize the Hamiltonian $H(\lambda)$ in the FCI basis you get the exact energies (in this finite basis set) and expanding in $\lambda$ allow you to get the M{\o}ller-Plesset perturbation series at every order.
+
+%============================================================%
+\section{Historical overview}
+%============================================================%
+
+\subsection{Behavior of the M{\o}ller-Plesset series}
+
+First the chemists hoped that each time you compute a term of higher order of the perturbation expansion the energy would be more accurate. If this was true it would give a direct method to the exact energy in a finite basis. But rapidly some strange behaviors of the series have been exhibited. In the late 80's Gill et al. have reported deceptive and slow convergences in stretch systems. In the figure below we can see that the restricted M{\o}ller-Plesset series is convergent but oscillating which is not convenient if you are able to compute only few terms (for example here RMP5 is worse than RMP4). 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{gill1986.png}
+    \caption{\centering Barriers to homolytic fission of \ce{He2^2+} at MPn/STO-3G level ($n = 1$--$20$).}
+    \label{fig:my_label}
+\end{figure}
+
+The unrestricted M{\o}ller-Plesset series is monotonically converging (except for the first few orders) but it is very slow so we can't use it for real systems where we can compute only the first terms. When a bond is stretched the exact function undergo a symmetry breaking becoming multi-reference during this process. A restricted HF Slater determinant is a poor approximation of a broken symmetry wave function but even in the unrestricted formalism, where the spatial orbitals of electrons $\alpha$ and $\beta$ are not restricted to be the same, which allow a better description of symmetry broken system the series doesn't give accurate results at low orders. In the unrestricted framework the ground state singlet wave function is allowed to mix with triplet states which lead to spin contamination. Gill et al. highlighted that there is a link between the slow convergence of the unrestricted MP series and the spin contamination of the wave function as it's shown below.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c c c c c c c}
+\hline
+ $r$ & UHF & UMP2 & UMP3 & UMP4 & $\expval{S^2}$ \\
+\hline
+0.75 & 0.0\% & 63.8\% & 87.4\% & 95.9\% & 0.00\\
+1.35 & 0.0\% & 15.2\% & 26.1\% & 34.9\% & 0.49\\
+2.00 & 0.0\% & 01.0\% & 01.8\% & 02.6\% & 0.95\\
+2.50 & 0.0\% & 00.1\% & 00.3\% & 00.4\% & 0.99\\
+\hline
+\end{tabular}
+    \caption{\centering Percentage of electron correlation energy recovered and $\expval{S^2}$ for the \ce{H2} molecule as a function of bond length (r,\si{\angstrom}) in the STO-3G basis set.}
+    \label{tab:my_label}
+\end{table}
+
+This problem was preoccupying in order to develop a method that would allow to compute exact energies for all systems using perturbation theory. But in fact it could be expected as it was known that the perturbation theory was not working well if the wave functions eigenvectors of $H_0$ are bad approximations of the exact wave functions. But Olsen et al. have discovered even more preoccupying behavior of the MP series in the late 90's. They have shown that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and \ce{HF}. 
+
+\begin{figure}[h!]
+    \includegraphics[height=5.5cm]{Nedivergence.png}
+    \hfill
+    \includegraphics[height=5.5cm]{HFdivergence.png}
+    \hfill
+    \caption{\centering Correlation contributions for \ce{Ne} and \ce{HF} in the cc-pVTZ-(f/d) $\circ$ and aug-cc-pVDZ $\bullet$ basis sets.}
+    \label{fig:my_label}
+\end{figure}
+ 
+When the basis sets is augmented with diffuse functions the series are becoming divergent. This is a really worrying observation because chemists want to work in the largest basis set possible to model the complete basis set. They have shown that those divergences were due to a backdoor intruder state i.e. a pair of singularity in the negative half plane. Their method to investigate links between singularities and those behaviors of the series is to scan energies on the real axis to list the avoided crossings. An avoided crossing on the real axis is indicative of a pair of complex conjugate singularities, their real parts are equal to the value of $\lambda$ at the minimum difference of energy of the avoided crossing. Then modeling an avoided crossing with a two level model, they get an approximation of the pair of singularities by finding the EPs of the two-state model. When the basis set is augmented with diffuse functions the ground state undergoes a shark avoided crossing with a diffuse state on the negative real axis. When there are enough diffuse function in the basis set this pair of singularities is in the unit circle causing the divergence of the series. Olsen and his coworkers conclude that the divergence of the series in those case was due to the interaction of the ground state with a highly diffuse state. 
+They also analyzed the convergence of the series for the \ce{CH_2} as an example molecule containing low-lying doubly excited states. In this molecule the doubly excited states are strongly interacting with the ground state because they have the same spatial and spin symmetry. Thus the single reference wave function is a poor approximation. They have shown that there is a singularity close to the unit circle resulting from an interaction with the lowest doubly excited states and that this singularity is causing the slow convergence for the series of \ce{CH_2}.
+
+\subsection{The singularity structure}
+
+In the 2000's Sergeev and Goodson analyzed this problem from a more mathematical point of view by looking at the whole singularity structure where Olsen and his co-workers were trying to find the singularity causing the divergence. They regroup singularities in two classes: the $\alpha$ singularities which have unit order imaginary parts and the $\beta$ singularities which have very small imaginary parts. The singularities $\alpha$ are related to large avoided crossing between the ground state and a low-lying excited states. Whereas the singularities $\beta$ come from a sharp avoided crossing between the ground state and a highly diffuse state. They used the work of Stillinger to explain the physical signification of those $\beta$ singularities. 
+The M{\o}ller-Plesset Hamiltonian is defined as above and by reassembling the term we get the expression (10).
+
+\begin{equation}
+H(\lambda)=H_0 + \lambda (H_\text{phys} - H_0)    
+\end{equation}
+
+\begin{equation}
+    H_\text{phys}=\sum\limits_{j=1}^{n}\left[ -\frac{1}{2}\grad_j^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_j-\vb{R}_k|}+\sum\limits_{j<l}^{n}\frac{1}{|\vb{r}_j-\vb{r}_l|}\right]
+\end{equation}
+
+\begin{equation}
+    H_0=\sum\limits_{j=1}^{n}\left[ -\frac{1}{2}\grad_j^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_j-\vb{R}_k|}+V_j^{(scf)}\right]
+\end{equation}
+
+\begin{equation}
+    H(\lambda)=\sum\limits_{j=1}^{n}\left[-\frac{1}{2}\grad_j^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_j-\vb{R}_k|} + (1-\lambda)V_j^{(scf)}+\lambda\sum\limits_{j<l}^{n}\frac{1}{|\vb{r}_j-\vb{r}_l|} \right]
+\end{equation}
+
+The first two terms, the kinetic energy and the electron-nucleus attraction, form the mono-electronic core Hamiltonian which is independant of $\lambda$. The third term is the mean field repulsion of the Hartree-Fock calculation done to get $H_0$ and the last term is the Coulomb repulsion. If $\lambda$ is negative, the Coulomb interaction becomes attractive but the mean field stay repulsive as it is proportional to $(1-\lambda)$. If $\lambda$ becomes more and more negative the mean field becomes more and more repulsive so the nucleus can't bind anymore the electrons because the electron-nucleus attraction is not scaled with $\lambda$. But the repulsive mean field is localized around nucleus whereas the electrons interactions persist away from nucleus. So there is a real negative value $\lambda_c$ where the electron form a bound cluster and goes to infinity. According to Baker this value is a critical point of the system and by analogy with thermodynamics the energy $E(\lambda)$ exhibits a singularity at $\lambda_c$. Beyond $\lambda_c$ there is a continuum of eigenstates with electrons dissociated from the nucleus.
+
+This reasoning is done on the exact Hamiltonian and energy, this is the exact energy which exhibits this singularity on the negative real axis. But in finite basis set, one can prove that for a Hermitian Hamiltonian the singularities of $E(\lambda)$ occurs in complex conjugate pair with non-zero imaginary parts. Sergeev and Goodson proved that, as predicted by Stillinger, in a finite basis set the critical point on the real axis modeled by a cluster of sharp avoided crossings with diffuse functions, equivalently by a cluster of $\beta$ singularities in the negative half plane.
+
+Finally, it has been shown that $\beta$ singularities are very sensitive to the basis sets but not to stretching of the system. On the contrary $\alpha$ singularities are relatively insensitive to the basis sets but very sensitive to bond stretching. According to Goodson the singularity structure from molecules stretched from the equilibrium geometry is difficult. To our knowledge the effect of bond stretching on singularities, its link with spin contamination and symmetry breaking of the wave function haven't been as well understood as the ionization effect and its link with diffuse function. In this work we try to improve our understanding of the effect of symmetry breaking on the singularities of $E(\lambda)$ and we hope that it will lead to a deeper understanding of perturbation theory.
+
+%============================================================%
+\section{The spherium model}
+%============================================================%
+
+\end{document}

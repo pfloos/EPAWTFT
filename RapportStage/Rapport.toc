@@ -1,0 +1,7 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}% 
+\contentsline {section}{\numberline {2}Perturbation theory}{3}{section.2}% 
+\contentsline {section}{\numberline {3}Historical overview}{5}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Behavior of the M{\o }ller-Plesset series}{5}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}The singularity structure}{6}{subsection.3.2}% 
+\contentsline {section}{\numberline {4}The spherium model}{7}{section.4}% 
