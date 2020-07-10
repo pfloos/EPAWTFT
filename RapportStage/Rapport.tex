@@ -89,7 +89,7 @@ hyperfigures=false]
 \vspace{1.5cm}
 
 \parbox{15cm}{\small
-\textbf{Abstract} : \it Un résumé de 10 lignes environ du contenu du rapport, permettant de situer le sujet et les résultats principaux du stage
+\textbf{Abstract} : \it 
 }
 
 \parbox{15cm}{
@@ -176,7 +176,7 @@ The energy can then be written as a power series of $\lambda$
 \end{equation}
 where $\lambda$ is a coupling parameter set equal to 1 at the end of the calculation. However it is not guaranteed that the series $E(\lambda)$ has a radius of convergence $\abs{\lambda_0} < 1$. It means that the series is divergent for the physical system at $\lambda=1$. One can prove that $\abs{\lambda_0}$ can be obtained by extending $\lambda$ in the complex plane and looking for the singularities of $E(\lambda)$. The radius of convergence of the expansion of a function is equal to the distance of the closest singularities in the complex plane to the origin. These singularities are nothing but EPs at $\lambda_0$ and $\lambda_0^*$. Indeed, for a Hermitian Hamiltonian the singularities occur in complex conjugate pairs with non-zero imaginary parts.
 
- The discovery of a partitioning of the Hamiltonian that allowed chemists to get access to a part of the correlation energy using perturbation theory has been a major step in the development of post-Hartree-Fock methods. This case of the Rayleigh-Schrödinger perturbation theory is called the M{\o}ller-Plesset perturbation theory. In the MPPT the unperturbed Hamiltonian is the sum of the $n$ mono-electronic Fock operators which are the sum of the one-electron core Hamiltonian $h(i)$, the Coulomb $J_j(i)$ and Exchange $K_j(i)$ operators.
+ The discovery of a partitioning of the Hamiltonian that allowed chemists to get access to a part of the correlation energy using perturbation theory has been a major step in the development of post-Hartree-Fock methods. This case of the Rayleigh-Schrödinger perturbation theory is called the M{\o}ller-Plesset perturbation theory \cite{Moller_1934}. In the MPPT the unperturbed Hamiltonian is the sum of the $n$ mono-electronic Fock operators which are the sum of the one-electron core Hamiltonian $h(i)$, the Coulomb $J_j(i)$ and Exchange $K_j(i)$ operators.
  
 \begin{equation}
 H_0= \sum\limits_{i=1}^{n} f(i)
@@ -192,7 +192,7 @@ In Hartree-Fock theory you approximate the exact wave function as a Slater-deter
 E_{\text{MP\textsubscript{n}}}= \sum_{k=0}^n E^{(k)}
 \end{equation}
 
-But \textit{a priori} there is no reason that this power series is always convergent for $\lambda$=1 when n goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the M{\o}ller-Plesset will give bad results. A smart way to investigate the convergence properties of the MP series is to transform the coupling parameter $\lambda$ into a complex variable. By doing this the Hamiltonian and the energy become functions of this variable. So by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the MPPT. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is relatively easy up to the 4th order and the 5th and 6th order can be obtained at high cost. But to understand deeply the behavior of the MP series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction. If you diagonalize the Hamiltonian $H(\lambda)$ in the FCI basis you get the exact energies (in this finite basis set) and expanding in $\lambda$ allow you to get the M{\o}ller-Plesset perturbation series at every order.
+But \textit{a priori} there is no reason that this power series is always convergent for $\lambda$=1 when n goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the M{\o}ller-Plesset will give bad results\cite{Gill_1986, Gill_1998, Handy_1985,Leininger_2000}. A smart way to investigate the convergence properties of the MP series is to transform the coupling parameter $\lambda$ into a complex variable. By doing this the Hamiltonian and the energy become functions of this variable. So by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the MPPT. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is relatively easy up to the 4th order and the 5th and 6th order can be obtained at high cost. But to understand deeply the behavior of the MP series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction. If you diagonalize the Hamiltonian $H(\lambda)$ in the FCI basis you get the exact energies (in this finite basis set) and expanding in $\lambda$ allow you to get the M{\o}ller-Plesset perturbation series at every order.
 
 %============================================================%
 \section{Historical overview}
@@ -200,7 +200,7 @@ But \textit{a priori} there is no reason that this power series is always conver
 
 \subsection{Behavior of the M{\o}ller-Plesset series}
 
-First the chemists hoped that each time you compute a term of higher order of the perturbation expansion the energy would be more accurate. If this was true it would give a direct method to the exact energy in a finite basis. But rapidly some strange behaviors of the series have been exhibited. In the late 80's Gill et al. have reported deceptive and slow convergences in stretch systems. In the figure below we can see that the restricted M{\o}ller-Plesset series is convergent but oscillating which is not convenient if you are able to compute only few terms (for example here RMP5 is worse than RMP4). 
+First the chemists hoped that each time you compute a term of higher order of the perturbation expansion the energy would be more accurate. If this was true it would give a direct method to the exact energy in a finite basis. But rapidly some strange behaviors of the series have been exhibited. In the late 80's Gill et al. have reported deceptive and slow convergences in stretch systems\cite{Gill_1986, Gill_1998, Handy_1985,Leininger_2000}. In the figure below we can see that the restricted M{\o}ller-Plesset series is convergent but oscillating which is not convenient if you are able to compute only few terms (for example here RMP5 is worse than RMP4). 
 
 \begin{figure}[h!]
     \centering
@@ -209,7 +209,7 @@ First the chemists hoped that each time you compute a term of higher order of th
     \label{fig:my_label}
 \end{figure}
 
-The unrestricted M{\o}ller-Plesset series is monotonically converging (except for the first few orders) but it is very slow so we can't use it for real systems where we can compute only the first terms. When a bond is stretched the exact function undergo a symmetry breaking becoming multi-reference during this process. A restricted HF Slater determinant is a poor approximation of a broken symmetry wave function but even in the unrestricted formalism, where the spatial orbitals of electrons $\alpha$ and $\beta$ are not restricted to be the same, which allow a better description of symmetry broken system the series doesn't give accurate results at low orders. In the unrestricted framework the ground state singlet wave function is allowed to mix with triplet states which lead to spin contamination. Gill et al. highlighted that there is a link between the slow convergence of the unrestricted MP series and the spin contamination of the wave function as it's shown below.
+The unrestricted M{\o}ller-Plesset series is monotonically converging (except for the first few orders) but it is very slow so we can't use it for real systems where we can compute only the first terms. When a bond is stretched the exact function can undergo a symmetry breaking becoming multi-reference during this process (see for example the case of \ce{H_2} in \cite{SzaboBook}). A restricted HF Slater determinant is a poor approximation of a broken symmetry wave function but even in the unrestricted formalism, where the spatial orbitals of electrons $\alpha$ and $\beta$ are not restricted to be the same\cite{Fukutome_1981}, which allow a better description of symmetry broken system the series doesn't give accurate results at low orders. In the unrestricted framework the ground state singlet wave function is allowed to mix with triplet states which lead to spin contamination. Gill et al. highlighted that there is a link between the slow convergence of the unrestricted MP series and the spin contamination of the wave function as it's shown below.
 
 \begin{table}[h!]
     \centering
@@ -226,6 +226,8 @@ The unrestricted M{\o}ller-Plesset series is monotonically converging (except fo
     \caption{\centering Percentage of electron correlation energy recovered and $\expval{S^2}$ for the \ce{H2} molecule as a function of bond length (r,\si{\angstrom}) in the STO-3G basis set.}
     \label{tab:my_label}
 \end{table}
+
+Cremer and He performed the same analysis with 29 FCI systems and the regroup all the systems in two classes. The class A systems which have a monotonic convergence to the FCI value and the class B which converge erraticly after initial oscillations.
 
 This problem was preoccupying in order to develop a method that would allow to compute exact energies for all systems using perturbation theory. But in fact it could be expected as it was known that the perturbation theory was not working well if the wave functions eigenvectors of $H_0$ are bad approximations of the exact wave functions. But Olsen et al. have discovered even more preoccupying behavior of the MP series in the late 90's. They have shown that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and \ce{HF}. 
 
@@ -268,8 +270,19 @@ This reasoning is done on the exact Hamiltonian and energy, this is the exact en
 
 Finally, it has been shown that $\beta$ singularities are very sensitive to the basis sets but not to stretching of the system. On the contrary $\alpha$ singularities are relatively insensitive to the basis sets but very sensitive to bond stretching. According to Goodson the singularity structure from molecules stretched from the equilibrium geometry is difficult. To our knowledge the effect of bond stretching on singularities, its link with spin contamination and symmetry breaking of the wave function haven't been as well understood as the ionization effect and its link with diffuse function. In this work we try to improve our understanding of the effect of symmetry breaking on the singularities of $E(\lambda)$ and we hope that it will lead to a deeper understanding of perturbation theory.
 
+\subsection{The physics of quantum phase transition}
+
 %============================================================%
 \section{The spherium model}
 %============================================================%
+
+
+
+\newpage
+
+\bibliographystyle{unsrt}
+\bibliography{Rapport}
+
+
 
 \end{document}

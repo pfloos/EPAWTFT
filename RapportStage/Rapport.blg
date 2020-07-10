@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Arch Linux)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Rapport.aux
+The style file: unsrt.bst
+Database file #1: Rapport.bib
+Warning--I didn't find a database entry for "Gill_1998"
+Warning--empty year in Olsen_1996
+Warning--empty year in Olsen_2000
+Warning--empty year in Moller_1934
+Warning--empty year in Gill_1986
+Warning--empty year in Handy_1985
+Warning--empty year in Leininger_2000
+Warning--empty journal in Fukutome_1981
+Warning--empty year in Fukutome_1981
+You've used 33 entries,
+            1791 wiz_defined-function locations,
+            675 strings with 9180 characters,
+and the built_in function-call counts, 8153 in all, are:
+= -- 654
+> -- 442
+< -- 0
++ -- 161
+- -- 128
+* -- 746
+:= -- 1349
+add.period$ -- 99
+call.type$ -- 33
+change.case$ -- 31
+chr.to.int$ -- 0
+cite$ -- 41
+duplicate$ -- 299
+empty$ -- 761
+format.name$ -- 128
+if$ -- 1723
+int.to.chr$ -- 0
+int.to.str$ -- 33
+missing$ -- 35
+newline$ -- 168
+num.names$ -- 33
+pop$ -- 53
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 100
+stack$ -- 0
+substring$ -- 632
+swap$ -- 32
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 8
+while$ -- 72
+width$ -- 35
+write$ -- 356
+(There were 9 warnings)
