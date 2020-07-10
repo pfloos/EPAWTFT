@@ -13,21 +13,23 @@
 \setlength{\evensidemargin}{0cm}
 
 \usepackage{graphicx} % inclusion des figures
-\usepackage{physics}
+\usepackage{tabularx} % gestion avancée des tableaux
 
+\usepackage{physics}
 \usepackage{amsmath} % collection de symboles mathématiques
 \usepackage{amssymb} % collection de symboles mathématiques
-\usepackage[utf8]{inputenc}       
-\usepackage[T1]{fontenc} % codage moderne des caractères sous Latex
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\DeclareUnicodeCharacter{2212}{-}
 
 \usepackage[english]{babel}
-\usepackage{tabularx} % gestion avancée des tableaux
 
 \usepackage{siunitx}
 \usepackage[version=4]{mhchem}
 
 
-\usepackage{color} % gestion de différentes couleurs
+\usepackage{xcolor} % gestion de différentes couleurs
 
 \definecolor{linkcolor}{rgb}{0,0,0.6} % définition de la couleur des liens pdf
 \usepackage[ pdftex,colorlinks=true,
@@ -89,11 +91,13 @@ hyperfigures=false]
 \vspace{1.5cm}
 
 \parbox{15cm}{\small
-\textbf{Abstract} : \it 
+\textbf{Abstract} : \it In this work, we explore the description of quantum chemistry in the complex plane. We see that the physic of the system can be connected to the position of the singularities of the energy in the complex plane. After briefly present the fundamental notions of quantum chemistry and perturbation theory in the complex plane, we perform an historical review of the researches that have been done on the physic of singularities. Then we make links between all those points of view on this problem using the spherium model (i.e., two opposite-spin electrons restricted to remain on a surface of a sphere of radius $R$) as a theoretical playground. In particular, we explore the effects of symmetry breaking of the wave functions on the singularity structure.
 }
 
+\vspace{0.5cm}
+
 \parbox{15cm}{
-\textbf{Keywords} : \it perturbation theory, Hartree-Fock, spherium, exceptional points
+\textbf{Keywords} : \it Complex chemistry, Perturbation theory,  Spherium, Exceptional points, Symmetry breaking
 } %fin de la commande \parbox des mots clefs
 
 \vspace{0.5cm}
@@ -134,7 +138,7 @@ Laboratoire de Chimie et Physique Quantiques
 \section{Introduction}
 %============================================================%
 
-It has always been of great importance for theoretical chemists to better understand excited states and their properties because processes involving excited states are ubiquitous in nature (physics, chemistry and biology). One of the major challenges is to accurately compute excited states energies. Plenty of methods have been developed to this aim and each of them have its own qualities but also its own flaws. The fact that none of all those methods is succesfull for every molecule in every geometry encourage chemists to continue the development of new methodologies to get accurate energies and to try to understand deeply why each methods fails or not with each molecule. All those methods rely on the notion of quantised energy levels of Hermitian quantum mechanics. In quantum chemistry, the ordering of the energy levels represents the different electronic states of a molecule, the lowest being the ground state while the higher ones are the so-called excited states. And we need methods to get accurately how those states are ordered.
+It has always been of great importance for theoretical chemists to better understand excited states and their properties because processes involving excited states are ubiquitous in nature (physics, chemistry and biology). One of the major challenges is to accurately compute energies of a chemical system (atoms, molecules, ..). Plenty of methods have been developed to this aim and each of them have its own qualities but also its own flaws. The fact that none of all those methods is successful for every molecule in every geometry encourage chemists to continue the development of new methodologies to get accurate energies and to try to understand deeply why each methods fails or not in each situation. All those methods rely on the notion of quantised energy levels of Hermitian quantum mechanics. In quantum chemistry, the ordering of the energy levels represents the different electronic states of a molecule, the lowest being the ground state while the higher ones are the so-called excited states. And we need methods to get accurately how those states are ordered.
 
 Within this quantised paradigm, electronic states look completely disconnected from one another.
 However, one can gain a different perspective on quantisation if one extends quantum chemistry into the complex domain.
@@ -192,7 +196,7 @@ In Hartree-Fock theory you approximate the exact wave function as a Slater-deter
 E_{\text{MP\textsubscript{n}}}= \sum_{k=0}^n E^{(k)}
 \end{equation}
 
-But \textit{a priori} there is no reason that this power series is always convergent for $\lambda$=1 when n goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the M{\o}ller-Plesset will give bad results\cite{Gill_1986, Gill_1998, Handy_1985,Leininger_2000}. A smart way to investigate the convergence properties of the MP series is to transform the coupling parameter $\lambda$ into a complex variable. By doing this the Hamiltonian and the energy become functions of this variable. So by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the MPPT. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is relatively easy up to the 4th order and the 5th and 6th order can be obtained at high cost. But to understand deeply the behavior of the MP series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction. If you diagonalize the Hamiltonian $H(\lambda)$ in the FCI basis you get the exact energies (in this finite basis set) and expanding in $\lambda$ allow you to get the M{\o}ller-Plesset perturbation series at every order.
+But \textit{a priori} there is no reason that this power series is always convergent for $\lambda$=1 when n goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the M{\o}ller-Plesset will give bad results\cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. A smart way to investigate the convergence properties of the MP series is to transform the coupling parameter $\lambda$ into a complex variable. By doing this the Hamiltonian and the energy become functions of this variable. So by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the MPPT. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is relatively easy up to the 4th order and the 5th and 6th order can be obtained at high cost. But to understand deeply the behavior of the MP series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction. If you diagonalize the Hamiltonian $H(\lambda)$ in the FCI basis you get the exact energies (in this finite basis set) and expanding in $\lambda$ allow you to get the M{\o}ller-Plesset perturbation series at every order.
 
 %============================================================%
 \section{Historical overview}
@@ -200,16 +204,19 @@ But \textit{a priori} there is no reason that this power series is always conver
 
 \subsection{Behavior of the M{\o}ller-Plesset series}
 
-First the chemists hoped that each time you compute a term of higher order of the perturbation expansion the energy would be more accurate. If this was true it would give a direct method to the exact energy in a finite basis. But rapidly some strange behaviors of the series have been exhibited. In the late 80's Gill et al. have reported deceptive and slow convergences in stretch systems\cite{Gill_1986, Gill_1998, Handy_1985,Leininger_2000}. In the figure below we can see that the restricted M{\o}ller-Plesset series is convergent but oscillating which is not convenient if you are able to compute only few terms (for example here RMP5 is worse than RMP4). 
+When you use M{\o}ller-Plesset perturbation theory it would be very convenient that each time you compute a term of higher order the result obtained is closer to exact energy. In other words that the M{\o]ller-Plesset series would be monotonically convergent. Assuming this the only limiting process to get the exact correlation energy in a finite basis is our ability to compute the terms of the perturbation series.
+Unfortunately this not true in generic cases and rapidly some strange behaviors of the series have been exhibited. In the late 80's Gill et al. have reported deceptive and slow convergences in stretch systems\cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. In the figure below we can see that the restricted M{\o}ller-Plesset series is convergent but oscillating which is not convenient if you are able to compute only few terms (for example here RMP5 is worse than RMP4). On the other hand, the unrestricted M{\o}ller-Plesset series is monotonically converging (except for the first few orders) but very slowly so we can't use it for systems where we can compute only the first terms.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.45\textwidth]{gill1986.png}
-    \caption{\centering Barriers to homolytic fission of \ce{He2^2+} at MPn/STO-3G level ($n = 1$--$20$).}
+    \caption{\centering Barriers to homolytic fission of \ce{He2^2+} at MPn/STO-3G level ($n = 1$--$20$)\cite{Gill_1986}.}
     \label{fig:my_label}
 \end{figure}
 
-The unrestricted M{\o}ller-Plesset series is monotonically converging (except for the first few orders) but it is very slow so we can't use it for real systems where we can compute only the first terms. When a bond is stretched the exact function can undergo a symmetry breaking becoming multi-reference during this process (see for example the case of \ce{H_2} in \cite{SzaboBook}). A restricted HF Slater determinant is a poor approximation of a broken symmetry wave function but even in the unrestricted formalism, where the spatial orbitals of electrons $\alpha$ and $\beta$ are not restricted to be the same\cite{Fukutome_1981}, which allow a better description of symmetry broken system the series doesn't give accurate results at low orders. In the unrestricted framework the ground state singlet wave function is allowed to mix with triplet states which lead to spin contamination. Gill et al. highlighted that there is a link between the slow convergence of the unrestricted MP series and the spin contamination of the wave function as it's shown below.
+When a bond is stretched the exact function can undergo a symmetry breaking becoming multi-reference during this process (see for example the case of \ce{H_2} in \cite{SzaboBook}). A restricted HF Slater determinant is a poor approximation of a broken symmetry wave function but even in the unrestricted formalism, where the spatial orbitals of electrons $\alpha$ and $\beta$ are not restricted to be the same\cite{Fukutome_1981}, which allow a better description of symmetry broken system the series doesn't give accurate results at low orders. Even with this improvement of the zeroth order wave function the series doesn't have the smooth and rapidly converging behavior wanted. 
+
+In the unrestricted framework the ground state singlet wave function is allowed to mix with triplet states which lead to spin contamination. Gill et al. highlighted that there is a link between the slow convergence of the unrestricted MP series and the spin contamination of the wave function as it's shown in the Table 1 within the example of \ce{H_2} in a minimal basis.
 
 \begin{table}[h!]
     \centering
@@ -223,13 +230,17 @@ The unrestricted M{\o}ller-Plesset series is monotonically converging (except fo
 2.50 & 0.0\% & 00.1\% & 00.3\% & 00.4\% & 0.99\\
 \hline
 \end{tabular}
-    \caption{\centering Percentage of electron correlation energy recovered and $\expval{S^2}$ for the \ce{H2} molecule as a function of bond length (r,\si{\angstrom}) in the STO-3G basis set.}
+    \caption{\centering Percentage of electron correlation energy recovered and $\expval{S^2}$ for the \ce{H2} molecule as a function of bond length (r,\si{\angstrom}) in the STO-3G basis set \cite{Gill_1988}.}
     \label{tab:my_label}
 \end{table}
 
-Cremer and He performed the same analysis with 29 FCI systems and the regroup all the systems in two classes. The class A systems which have a monotonic convergence to the FCI value and the class B which converge erraticly after initial oscillations.
+Handy and co-workers. exhibited the same behaviors of the series (oscillating and monotonically slowly) in stretched \ce{H_2O} and \ce{NH_2} systems \cite{Handy_1985}. Cremer and He performed the same analysis with 29 FCI systems \cite{Cremer_1996} and regrouped all the systems in two classes. The class A systems which have a monotonic convergence to the FCI value and the class B which converge erratically after initial oscillations. The sample of systems contains stretched molecules and also some at equilibrium geometry, there are also some systems in various basis sets. They highlighted that systems with class A convergence have well-separated electrons pairs whereas class B systems present electrons clustering.
 
-This problem was preoccupying in order to develop a method that would allow to compute exact energies for all systems using perturbation theory. But in fact it could be expected as it was known that the perturbation theory was not working well if the wave functions eigenvectors of $H_0$ are bad approximations of the exact wave functions. But Olsen et al. have discovered even more preoccupying behavior of the MP series in the late 90's. They have shown that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and \ce{HF}. 
+This classification was encouraging in order to develop methods based on perturbation theory as it rationalize the two different convergence modes observed. If it is possible to predict if a system is class A or B, then one can use extrapolation method of the first terms adapted to the class of the systems \cite{Cremer_1996}.
+
+\subsection{Cases of divergence}
+
+But Olsen et al. have discovered even more preoccupying behavior of the MP series in the late 90's. They have shown that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and \ce{HF} \cite{Olsen_1996, Christiansen_1996}. Cremer and He had already studied those two systems and classified them as class B systems. But Olsen and his co-workers have done the analysis in larger basis sets containing diffuse functions and in those basis sets the series become divergent at high order.
 
 \begin{figure}[h!]
     \includegraphics[height=5.5cm]{Nedivergence.png}
@@ -239,8 +250,14 @@ This problem was preoccupying in order to develop a method that would allow to c
     \caption{\centering Correlation contributions for \ce{Ne} and \ce{HF} in the cc-pVTZ-(f/d) $\circ$ and aug-cc-pVDZ $\bullet$ basis sets.}
     \label{fig:my_label}
 \end{figure}
+
+The discovery of those divergent behavior was really worrying because to get more and more accurate results theoretical chemists need to work in large basis sets. So they investigated the causes of those divergences and in the same time the reasons of the different types of convergence. In order to do this they analyzed the relation between the dominant singularity (i.e. the closest singularity to the origin) and the convergence behavior of the series \cite{Olsen_2000}. A singularity in the unit circle is designated as an intruder state, more precisely as a front-door (respectively back-door) intruder state if the real part of the singularity is positive (respectively negative). The method used is to do a scan of the real axis to identify the avoided crossing responsible for the pair of dominant singularity. Then by modeling this avoided crossing by a two-state Hamiltonian one can get an approximation of the dominant conjugate pair of singularity by finding the EPs of the 2x2 Hamiltonian. The diagonal matrix is the unperturbed Hamiltonian and the other matrix is the perturbation part of the Hamiltonian.
+
+\begin{equation}
+\mqty(\alpha & \delta \\ \delta & \beta) = \mqty(\alpha + \alpha_s & 0 \\ 0 & \beta + \beta_s ) + \mqty(- \alpha_s & \delta \\ \delta & - \beta_s)
+\end{equation}
  
-When the basis sets is augmented with diffuse functions the series are becoming divergent. This is a really worrying observation because chemists want to work in the largest basis set possible to model the complete basis set. They have shown that those divergences were due to a backdoor intruder state i.e. a pair of singularity in the negative half plane. Their method to investigate links between singularities and those behaviors of the series is to scan energies on the real axis to list the avoided crossings. An avoided crossing on the real axis is indicative of a pair of complex conjugate singularities, their real parts are equal to the value of $\lambda$ at the minimum difference of energy of the avoided crossing. Then modeling an avoided crossing with a two level model, they get an approximation of the pair of singularities by finding the EPs of the two-state model. When the basis set is augmented with diffuse functions the ground state undergoes a shark avoided crossing with a diffuse state on the negative real axis. When there are enough diffuse function in the basis set this pair of singularities is in the unit circle causing the divergence of the series. Olsen and his coworkers conclude that the divergence of the series in those case was due to the interaction of the ground state with a highly diffuse state. 
+They have shown that those divergences were due to a backdoor intruder state i.e. a pair of singularity in the negative half plane. Their method to investigate links between singularities and those behaviors of the series is to scan energies on the real axis to list the avoided crossings. An avoided crossing on the real axis is indicative of a pair of complex conjugate singularities, their real parts are equal to the value of $\lambda$ at the minimum difference of energy of the avoided crossing. Then modeling an avoided crossing with a two level model, they get an approximation of the pair of singularities by finding the EPs of the two-state model. When the basis set is augmented with diffuse functions the ground state undergoes a shark avoided crossing with a diffuse state on the negative real axis. When there are enough diffuse function in the basis set this pair of singularities is in the unit circle causing the divergence of the series. Olsen and his coworkers conclude that the divergence of the series in those case was due to the interaction of the ground state with a highly diffuse state. 
 They also analyzed the convergence of the series for the \ce{CH_2} as an example molecule containing low-lying doubly excited states. In this molecule the doubly excited states are strongly interacting with the ground state because they have the same spatial and spin symmetry. Thus the single reference wave function is a poor approximation. They have shown that there is a singularity close to the unit circle resulting from an interaction with the lowest doubly excited states and that this singularity is causing the slow convergence for the series of \ce{CH_2}.
 
 \subsection{The singularity structure}

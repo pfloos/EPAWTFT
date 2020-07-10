@@ -3,8 +3,8 @@
 \bibitem{Bittner_2012}
 S.~Bittner, B.~Dietz, U.~G\"unther, H.~L. Harney, M.~Miski-Oglu, A.~Richter,
   and F.~Sch\"afer.
-\newblock {{PT Symmetry}} and {{Spontaneous Symmetry Breaking}} in a
-  {{Microwave Billiard}}.
+\newblock Pt symmetry and {{Spontaneous Symmetry Breaking}} in a {{Microwave
+  Billiard}}.
 \newblock {\em Phys. Rev. Lett.}, 108(2):024101, January 2012.
 
 \bibitem{Chong_2011}
@@ -134,7 +134,7 @@ D.~R. Yarkony.
 
 \bibitem{Berry_1984}
 M.~V. Berry.
-\newblock {Quantal Phase Factors Accompanying Adiabatic Changes}.
+\newblock Quantal phase factors accompanying adiabatic changes.
 \newblock {\em Proc. Royal Soc. A}, 392:45, 1984.
 
 \bibitem{MoiseyevBook}
@@ -150,8 +150,8 @@ Jeppe Olsen, Ove Christiansen, Henrik Koch, and Poul Jørgensen.
 
 \bibitem{Olsen_2000}
 Jeppe Olsen, Poul Jørgensen, Trygve Helgaker, and Ove Christiansen.
-\newblock Divergence in møller–plesset theory: A simple explanation based on
-  a two-state model.
+\newblock Divergence in møller-plesset theory: A simple explanation based on a
+  two-state model.
 \newblock {\em J. Chem. Phys.}, 112(22):9736--9748.
 
 \bibitem{Moller_1934}
@@ -164,17 +164,22 @@ Peter M.~W. Gill and Leo Radom.
 \newblock Deceptive convergence in møller-plesset perturbation energies.
 \newblock {\em Chemical Physics Letters}, 132(1):16--22.
 
+\bibitem{Gill_1988}
+Peter M.~W. Gill, John~A. Pople, Leo Radom, and Ross~H. Nobes.
+\newblock Why does unrestricted møller-plesset perturbation theory converge so
+  slowly for spin‐contaminated wave functions?
+\newblock {\em J. Chem. Phys.}, 89(12):7307--7314.
+
 \bibitem{Handy_1985}
 N.~C. Handy, P.~J. Knowles, and K.~Somasundram.
 \newblock On the convergence of the møller-plesset perturbation series.
 \newblock {\em Theoret. Chim. Acta}, 68(1):87--100.
 
-\bibitem{Leininger_2000}
-Matthew~L. Leininger, Wesley~D. Allen, Henry~F. Schaefer, and C.~David
-  Sherrill.
-\newblock Is mo/ller–plesset perturbation theory a convergent ab initio
-  method?
-\newblock {\em J. Chem. Phys.}, 112(21):9213--9222.
+\bibitem{Lepetit_1988}
+M.~B. Lepetit, M.~Pélissier, and J.~P. Malrieu.
+\newblock Origins of the poor convergence of many‐body perturbation theory
+  expansions from unrestricted hartree-fock zeroth‐order descriptions.
+\newblock {\em J. Chem. Phys.}, 89(2):998--1008.
 
 \bibitem{SzaboBook}
 A.~Szabo and N.~S. Ostlund.
@@ -183,8 +188,21 @@ A.~Szabo and N.~S. Ostlund.
 
 \bibitem{Fukutome_1981}
 Hideo Fukutome.
-\newblock Unrestricted hartree–fock theory and its applications to molecules
+\newblock Unrestricted hartree-fock theory and its applications to molecules
   and chemical reactions.
 \newblock 20(5):955--1065.
+
+\bibitem{Cremer_1996}
+Dieter Cremer and Zhi He.
+\newblock Sixth-order møller-plesset perturbation theory on the convergence of
+  the mpn series.
+\newblock 100(15):6173--6188.
+
+\bibitem{Christiansen_1996}
+Ove Christiansen, Jeppe Olsen, Poul Jørgensen, Henrik Koch, and Per-Åke
+  Malmqvist.
+\newblock On the inherent divergence in the møller-plesset series. the neon
+  atom — a test case.
+\newblock {\em Chemical Physics Letters}, 261(3):369--378.
 
 \end{thebibliography}

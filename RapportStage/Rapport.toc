@@ -3,6 +3,7 @@
 \contentsline {section}{\numberline {2}Perturbation theory}{3}{section.2}% 
 \contentsline {section}{\numberline {3}Historical overview}{5}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}Behavior of the M{\o }ller-Plesset series}{5}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}The singularity structure}{6}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}The physics of quantum phase transition}{7}{subsection.3.3}% 
-\contentsline {section}{\numberline {4}The spherium model}{7}{section.4}% 
+\contentsline {subsection}{\numberline {3.2}Cases of divergence}{6}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}The singularity structure}{7}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.4}The physics of quantum phase transition}{8}{subsection.3.4}% 
+\contentsline {section}{\numberline {4}The spherium model}{8}{section.4}% 
