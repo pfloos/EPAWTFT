@@ -154,6 +154,11 @@ Jeppe Olsen, Poul Jørgensen, Trygve Helgaker, and Ove Christiansen.
   two-state model.
 \newblock {\em J. Chem. Phys.}, 112(22):9736--9748.
 
+\bibitem{Goodson_2011}
+David~Z. Goodson.
+\newblock Resummation methods.
+\newblock 2(5):743--761.
+
 \bibitem{Moller_1934}
 Chr. Møller and M.~S. Plesset.
 \newblock Note on an approximation treatment for many-electron systems.
@@ -204,5 +209,27 @@ Ove Christiansen, Jeppe Olsen, Poul Jørgensen, Henrik Koch, and Per-Åke
 \newblock On the inherent divergence in the møller-plesset series. the neon
   atom — a test case.
 \newblock {\em Chemical Physics Letters}, 261(3):369--378.
+
+\bibitem{Sergeev_2005}
+Alexey~V. Sergeev, David~Z. Goodson, Steven~E. Wheeler, and Wesley~D. Allen.
+\newblock On the nature of the møller-plesset critical point.
+\newblock {\em J. Chem. Phys.}, 123(6):064105.
+
+\bibitem{Sergeev_2006}
+Alexey~V. Sergeev and David~Z. Goodson.
+\newblock Singularities of møller-plesset energy functions.
+\newblock {\em J. Chem. Phys.}, 124(9):094111.
+
+\bibitem{Stillinger_2000}
+Frank~H. Stillinger.
+\newblock Mo/ller-plesset convergence issues in computational quantum
+  chemistry.
+\newblock {\em J. Chem. Phys.}, 112(22):9711--9715.
+
+\bibitem{Goodson_2004}
+David~Z. Goodson and Alexey~V. Sergeev.
+\newblock Singularity structure of møller-plesset perturbation theory.
+\newblock In {\em Advances in Quantum Chemistry}, volume~47, pages 193--208.
+  Academic Press.
 
 \end{thebibliography}

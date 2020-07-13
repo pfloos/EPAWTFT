@@ -5,6 +5,8 @@ The style file: unsrt.bst
 Database file #1: Rapport.bib
 Warning--empty year in Olsen_1996
 Warning--empty year in Olsen_2000
+Warning--empty journal in Goodson_2011
+Warning--empty year in Goodson_2011
 Warning--empty year in Moller_1934
 Warning--empty year in Gill_1986
 Warning--empty year in Gill_1988
@@ -15,45 +17,49 @@ Warning--empty year in Fukutome_1981
 Warning--empty journal in Cremer_1996
 Warning--empty year in Cremer_1996
 Warning--empty year in Christiansen_1996
-You've used 36 entries,
+Warning--empty year in Sergeev_2005
+Warning--empty year in Sergeev_2006
+Warning--empty year in Stillinger_2000
+Warning--empty year in Goodson_2004
+You've used 41 entries,
             1791 wiz_defined-function locations,
-            690 strings with 9763 characters,
-and the built_in function-call counts, 8954 in all, are:
-= -- 725
-> -- 478
-< -- 0
-+ -- 174
-- -- 138
-* -- 822
-:= -- 1471
-add.period$ -- 108
-call.type$ -- 36
-change.case$ -- 34
+            720 strings with 10427 characters,
+and the built_in function-call counts, 10266 in all, are:
+= -- 847
+> -- 516
+< -- 2
++ -- 189
+- -- 148
+* -- 928
+:= -- 1659
+add.period$ -- 124
+call.type$ -- 41
+change.case$ -- 39
 chr.to.int$ -- 0
-cite$ -- 48
-duplicate$ -- 326
-empty$ -- 836
-format.name$ -- 138
-if$ -- 1889
+cite$ -- 59
+duplicate$ -- 384
+empty$ -- 970
+format.name$ -- 148
+if$ -- 2180
 int.to.chr$ -- 0
-int.to.str$ -- 36
-missing$ -- 38
-newline$ -- 183
-num.names$ -- 36
-pop$ -- 61
+int.to.str$ -- 41
+missing$ -- 43
+newline$ -- 208
+num.names$ -- 41
+pop$ -- 77
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 110
+skip$ -- 139
 stack$ -- 0
-substring$ -- 716
-swap$ -- 34
-text.length$ -- 0
+substring$ -- 840
+swap$ -- 48
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 12
-while$ -- 81
-width$ -- 38
-write$ -- 385
-(There were 12 warnings)
+warning$ -- 18
+while$ -- 95
+width$ -- 43
+write$ -- 436
+(There were 18 warnings)
