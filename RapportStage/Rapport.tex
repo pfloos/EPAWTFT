@@ -155,11 +155,18 @@ Exceptional points (EPs) \cite{Heiss_1990, Heiss_1999, Heiss_2012, Heiss_2016} a
 CIs are ubiquitous in non-adiabatic processes and play a key role in photo-chemical mechanisms.
 In the case of auto-ionizing resonances, EPs have a role in deactivation processes similar to CIs in the decay of bound excited states.
 Although Hermitian and non-Hermitian Hamiltonians are closely related, the behavior of their eigenvalues near degeneracies is starkly different.
-For example, encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy.
+For example, encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy (see Figure 1 for a graphical example).
 Additionally, the wave function picks up a geometric phase (also known as Berry phase \cite{Berry_1984}) and four loops are required to recover the initial wave function.
 In contrast, encircling Hermitian degeneracies at CIs only introduces a geometric phase while leaving the states unchanged.
 More dramatically, whilst eigenvectors remain orthogonal at CIs, at non-Hermitian EPs the eigenvectors themselves become equivalent, resulting in a \textit{self-orthogonal} state. \cite{MoiseyevBook}
 More importantly here, although EPs usually lie off the real axis, these singular points are intimately related to the convergence properties of perturbative methods and avoided crossing on the real axis are indicative of singularities in the complex plane. \cite{Olsen_1996, Olsen_2000} 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{TopologyEP.pdf}
+    \caption{\centering A generic EP with the square root branch point topology. A loop around the EP interconvert the states.}
+    \label{fig:my_label}
+\end{figure}
 
 %============================================================%
 \section{Perturbation theory}
@@ -293,9 +300,9 @@ Finally, it was shown that $\beta$ singularities are very sensitive to the basis
 
 \subsection{The physics of quantum phase transition}
 
-In the previous section, we saw that a reasoning on the Hamiltonian allows us to predict the existence of a critical point. In a finite basis set this critical point is model by a cluster of singularity $\beta$. It is now well-known that this phenomenon is a specific case of a more general phenomenon. Indeed, theoretical physicists proved that EPs are connected to quantum phase transitions (citation du stransky 2018 sauf lee). In quantum mechanics, the Hamiltonian is almost always dependent of a parameter, in some cases the variation of a parameter can lead to abrupt changes at a critical point. Those quantum phase transitions exist both for ground and excited states (stransky 2017, cejnar 2006 caprio 2008). A ground-state quantum phase transition is characterized by the successive derivative of the ground-state energy with respect to a non-thermal control parameter (cejnar 2009). The transition is called discontinuous and of first order if the first derivative is discontinuous at the critical parameter value. Otherwise, it is called continuous and of n-th order if the n-th derivative is discontinuous. A quantum phase transition can also be identify by the discontinuity of an appropriate order parameter (or one of its derivative). 
+In the previous section, we saw that a reasoning on the Hamiltonian allows us to predict the existence of a critical point. In a finite basis set this critical point is model by a cluster of singularity $\beta$. It is now well-known that this phenomenon is a specific case of a more general phenomenon. Indeed, theoretical physicists proved that EPs are connected to quantum phase transitions \cite{Heiss_1988, Heiss_2002, Cejnar_2005, Cejnar_2007, Cejnar_2009, Borisov_2015, Sindelka_2017}. In quantum mechanics, the Hamiltonian is almost always dependent of a parameter, in some cases the variation of a parameter can lead to abrupt changes at a critical point. Those quantum phase transitions exist both for ground and excited states \cite{Cejnar_2009, Sachdev_2011, Cejnar_2016, Cejnar_2006, Caprio_2008, Macek_2019}. A ground-state quantum phase transition is characterized by the successive derivative of the ground-state energy with respect to a non-thermal control parameter \cite{Cejnar_2009, Sachdev_2011}. The transition is called discontinuous and of first order if the first derivative is discontinuous at the critical parameter value. Otherwise, it is called continuous and of n-th order if the n-th derivative is discontinuous. A quantum phase transition can also be identify by the discontinuity of an appropriate order parameter (or one of its derivative). 
 
-The presence of an EP close to the real axis is characteristic of a sharp avoided crossings. Yet at such an avoided crossings eigenstates change abruptly. Although it is now well understood that EPs are closely related to quantum phase transitions, the link between the type of QPT (ground state or excited state, first or superior order) and EPs still need to be clarify. One of the major challenge in order to do this reside in our ability to compute the distribution of EPs. The numerical assignment of an EP to two energies on the real axis is very difficult in large dimensions. Cejnar et al. developped a method based on a Coulomb analogy giving access to the density of EP close to the real axis (citation cejnar 2005 2007). More recently Stransky and co-workers proved that the distribution of EPs is not the same around a QPT of first or second order (cite stransky 2018). Moreover, that when the dimension of the system increases they tends towards the real axis in a different manner, meaning respectively exponentially and algebraically.
+The presence of an EP close to the real axis is characteristic of a sharp avoided crossings. Yet at such an avoided crossings eigenstates change abruptly. Although it is now well understood that EPs are closely related to quantum phase transitions, the link between the type of QPT (ground state or excited state, first or superior order) and EPs still need to be clarify. One of the major challenge in order to do this reside in our ability to compute the distribution of EPs. The numerical assignment of an EP to two energies on the real axis is very difficult in large dimensions. Cejnar et al. developped a method based on a Coulomb analogy giving access to the density of EP close to the real axis \cite{Cejnar_2005, Cejnar_2007}. More recently Stransky and co-workers proved that the distribution of EPs is not the same around a QPT of first or second order \cite{Stransky_2018}. Moreover, that when the dimension of the system increases they tends towards the real axis in a different manner, meaning respectively exponentially and algebraically.
 
 It seems like our understanding of the physics of spatial and/or spin symmetry breaking in the Hartree-Fock theory can be enlightened by quantum phase transition theory. Indeed, the second derivative of the energy is discontinuous at the Coulson-Fischer point which mean that the system undergo a second order quantum phase transition. The $\beta$ singularities introduced by Sergeev to describe the EPs modeling the formation of a bound cluster of electrons are actually a more general class of singularities.
 
@@ -320,6 +327,14 @@ At a critical value of R, called the Coulson-Fischer point, a second unrestricte
 
 
 Then the mono-electronic wave function are expand in the spatial basis set of the zonal spherical harmonics:
+
+\section{To do list}
+
+\begin{itemize}
+\item Rajouter label pour les figures et équations cités
+\item Corriger les erreurs dans la biblio
+\item Finir le paragraphe QPT (singularité $\alpha$ ?)
+\end{itemize}
 
 \newpage
 

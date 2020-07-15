@@ -23,45 +23,70 @@ Warning--empty year in Stillinger_2000
 Warning--empty journal in Baker_1971
 Warning--empty year in Baker_1971
 Warning--empty year in Goodson_2004
-You've used 42 entries,
+Warning--empty journal in Heiss_1988
+Warning--empty year in Heiss_1988
+Warning--empty journal in Heiss_2002
+Warning--empty year in Heiss_2002
+Warning--empty journal in Cejnar_2005
+Warning--empty year in Cejnar_2005
+Warning--empty journal in Cejnar_2007
+Warning--empty year in Cejnar_2007
+Warning--empty journal in Cejnar_2009
+Warning--empty year in Cejnar_2009
+Warning--empty journal in Borisov_2015
+Warning--empty year in Borisov_2015
+Warning--empty journal in Sindelka_2017
+Warning--empty year in Sindelka_2017
+Warning--empty year in Sachdev_2011
+Warning--empty journal in Cejnar_2016
+Warning--empty year in Cejnar_2016
+Warning--empty journal in Cejnar_2006
+Warning--empty year in Cejnar_2006
+Warning--empty journal in Caprio_2008
+Warning--empty year in Caprio_2008
+Warning--empty journal in Macek_2019
+Warning--empty year in Macek_2019
+Warning--empty journal in Stransky_2018
+Warning--empty year in Stransky_2018
+You've used 55 entries,
             1791 wiz_defined-function locations,
-            726 strings with 10578 characters,
-and the built_in function-call counts, 10488 in all, are:
-= -- 868
-> -- 520
+            802 strings with 12579 characters,
+and the built_in function-call counts, 13548 in all, are:
+= -- 1115
+> -- 649
 < -- 2
-+ -- 191
-- -- 149
-* -- 947
-:= -- 1691
-add.period$ -- 127
-call.type$ -- 42
-change.case$ -- 40
++ -- 239
+- -- 184
+* -- 1226
+:= -- 2156
+add.period$ -- 166
+call.type$ -- 55
+change.case$ -- 53
 chr.to.int$ -- 0
-cite$ -- 62
-duplicate$ -- 393
-empty$ -- 994
-format.name$ -- 149
-if$ -- 2226
+cite$ -- 100
+duplicate$ -- 511
+empty$ -- 1300
+format.name$ -- 184
+if$ -- 2864
 int.to.chr$ -- 0
-int.to.str$ -- 42
-missing$ -- 44
-newline$ -- 213
-num.names$ -- 42
-pop$ -- 81
+int.to.str$ -- 55
+missing$ -- 58
+newline$ -- 278
+num.names$ -- 55
+pop$ -- 136
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 142
+skip$ -- 183
 stack$ -- 0
-substring$ -- 865
-swap$ -- 48
+substring$ -- 1134
+swap$ -- 49
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 20
-while$ -- 98
-width$ -- 44
-write$ -- 445
-(There were 20 warnings)
+warning$ -- 45
+while$ -- 128
+width$ -- 57
+write$ -- 563
+(There were 45 warnings)

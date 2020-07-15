@@ -238,4 +238,78 @@ David~Z. Goodson and Alexey~V. Sergeev.
 \newblock In {\em Advances in Quantum Chemistry}, volume~47, pages 193--208.
   Academic Press.
 
+\bibitem{Heiss_1988}
+W.~D. Heiss.
+\newblock Exceptional points of a hamiltonian and phase transitions in finite
+  systems.
+\newblock 329(2):133--138.
+
+\bibitem{Heiss_2002}
+W.~D. Heiss and M.~Müller.
+\newblock Universal relationship between a quantum phase transition and
+  instability points of classical systems.
+\newblock 66(1):016217.
+
+\bibitem{Cejnar_2005}
+Pavel Cejnar, Stefan Heinze, and Jan Dobeš.
+\newblock Thermodynamic analogy for quantum phase transitions at zero
+  temperature.
+\newblock 71(1):011304.
+
+\bibitem{Cejnar_2007}
+Pavel Cejnar, Stefan Heinze, and Michal Macek.
+\newblock Coulomb analogy for non-hermitian degeneracies near quantum phase
+  transitions.
+\newblock 99(10):100601.
+
+\bibitem{Cejnar_2009}
+Pavel Cejnar and Jan Jolie.
+\newblock Quantum phase transitions in the interacting boson model.
+\newblock 62(1):210--256.
+
+\bibitem{Borisov_2015}
+Denis~I. Borisov, František Ružička, and Miloslav Znojil.
+\newblock Multiply degenerate exceptional points and quantum phase transitions.
+\newblock 54(12):4293--4305.
+
+\bibitem{Sindelka_2017}
+Milan Šindelka, Lea~F. Santos, and Nimrod Moiseyev.
+\newblock Excited-state quantum phase transitions studied from a non-hermitian
+  perspective.
+\newblock 95(1):010103.
+
+\bibitem{Sachdev_2011}
+Subir Sachdev.
+\newblock {\em Quantum Phase Transitions}.
+\newblock Cambridge University Press, 2 edition.
+
+\bibitem{Cejnar_2016}
+Pavel Cejnar and Pavel Stránský.
+\newblock Quantum phase transitions in the collective degrees of freedom:
+  nuclei and other many-body systems.
+\newblock 91(8):083006.
+
+\bibitem{Cejnar_2006}
+Pavel Cejnar, Michal Macek, Stefan Heinze, Jan Jolie, and Jan Dobeš.
+\newblock Monodromy and excited-state quantum phase transitions in integrable
+  systems: collective vibrations of nuclei.
+\newblock 39(31):L515--L521.
+
+\bibitem{Caprio_2008}
+M.~A. Caprio, P.~Cejnar, and F.~Iachello.
+\newblock Excited state quantum phase transitions in many-body systems.
+\newblock 323(5):1106--1135.
+
+\bibitem{Macek_2019}
+Michal Macek, Pavel Stránský, Amiram Leviatan, and Pavel Cejnar.
+\newblock Excited-state quantum phase transitions in systems with two degrees
+  of freedom. {III}. interacting boson systems.
+\newblock 99(6):064323.
+
+\bibitem{Stransky_2018}
+Pavel Stránský, Martin Dvořák, and Pavel Cejnar.
+\newblock Exceptional points near first- and second-order quantum phase
+  transitions.
+\newblock 97(1):012112.
+
 \end{thebibliography}
