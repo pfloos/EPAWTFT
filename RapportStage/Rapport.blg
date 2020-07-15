@@ -38,10 +38,10 @@ Warning--empty year in Borisov_2015
 Warning--empty journal in Sindelka_2017
 Warning--empty year in Sindelka_2017
 Warning--empty year in Sachdev_2011
+Warning--empty journal in Cejnar_2015
+Warning--empty year in Cejnar_2015
 Warning--empty journal in Cejnar_2016
 Warning--empty year in Cejnar_2016
-Warning--empty journal in Cejnar_2006
-Warning--empty year in Cejnar_2006
 Warning--empty journal in Caprio_2008
 Warning--empty year in Caprio_2008
 Warning--empty journal in Macek_2019
@@ -50,24 +50,24 @@ Warning--empty journal in Stransky_2018
 Warning--empty year in Stransky_2018
 You've used 55 entries,
             1791 wiz_defined-function locations,
-            802 strings with 12579 characters,
-and the built_in function-call counts, 13548 in all, are:
-= -- 1115
-> -- 649
+            802 strings with 12505 characters,
+and the built_in function-call counts, 13482 in all, are:
+= -- 1108
+> -- 643
 < -- 2
-+ -- 239
-- -- 184
-* -- 1226
-:= -- 2156
++ -- 237
+- -- 182
+* -- 1218
+:= -- 2146
 add.period$ -- 166
 call.type$ -- 55
 change.case$ -- 53
 chr.to.int$ -- 0
 cite$ -- 100
 duplicate$ -- 511
-empty$ -- 1300
-format.name$ -- 184
-if$ -- 2864
+empty$ -- 1297
+format.name$ -- 182
+if$ -- 2852
 int.to.chr$ -- 0
 int.to.str$ -- 55
 missing$ -- 58
@@ -79,14 +79,14 @@ purify$ -- 0
 quote$ -- 0
 skip$ -- 183
 stack$ -- 0
-substring$ -- 1134
+substring$ -- 1121
 swap$ -- 49
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 45
-while$ -- 128
+while$ -- 127
 width$ -- 57
 write$ -- 563
 (There were 45 warnings)
