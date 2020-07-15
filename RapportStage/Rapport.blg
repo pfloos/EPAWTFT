@@ -48,45 +48,47 @@ Warning--empty journal in Macek_2019
 Warning--empty year in Macek_2019
 Warning--empty journal in Stransky_2018
 Warning--empty year in Stransky_2018
-You've used 55 entries,
+Warning--empty journal in Coulson_1949
+Warning--empty year in Coulson_1949
+You've used 56 entries,
             1791 wiz_defined-function locations,
-            802 strings with 12505 characters,
-and the built_in function-call counts, 13482 in all, are:
-= -- 1108
-> -- 643
+            809 strings with 12646 characters,
+and the built_in function-call counts, 13722 in all, are:
+= -- 1130
+> -- 651
 < -- 2
-+ -- 237
-- -- 182
-* -- 1218
-:= -- 2146
-add.period$ -- 166
-call.type$ -- 55
-change.case$ -- 53
++ -- 240
+- -- 184
+* -- 1239
+:= -- 2181
+add.period$ -- 169
+call.type$ -- 56
+change.case$ -- 54
 chr.to.int$ -- 0
-cite$ -- 100
-duplicate$ -- 511
-empty$ -- 1297
-format.name$ -- 182
-if$ -- 2852
+cite$ -- 103
+duplicate$ -- 520
+empty$ -- 1321
+format.name$ -- 184
+if$ -- 2902
 int.to.chr$ -- 0
-int.to.str$ -- 55
-missing$ -- 58
-newline$ -- 278
-num.names$ -- 55
-pop$ -- 136
+int.to.str$ -- 56
+missing$ -- 59
+newline$ -- 283
+num.names$ -- 56
+pop$ -- 140
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 183
+skip$ -- 187
 stack$ -- 0
-substring$ -- 1121
+substring$ -- 1146
 swap$ -- 49
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 45
-while$ -- 127
-width$ -- 57
-write$ -- 563
-(There were 45 warnings)
+warning$ -- 47
+while$ -- 130
+width$ -- 58
+write$ -- 572
+(There were 47 warnings)

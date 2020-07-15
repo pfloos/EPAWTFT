@@ -48,16 +48,6 @@ hyperfigures=false]
 \fancyhead[R]{\scriptsize \textsc{Antoine \textsc{MARIE}}}
 \fancyfoot[C]{ \thepage}
 
-% commande d'annulation du correcteur typographique du package [francais]{babel} qui force l'espace avant ':' (parfois utile pour la bibliographie)
-\makeatletter
-\@ifpackageloaded{babel}%
-        {\newcommand{\nospace}[1]{{\NoAutoSpaceBeforeFDP{}#1}}}%  % !! double {{}} pour cantonner l'effet à l'argument #1 !!
-        {\newcommand{\nospace}[1]{#1}}
-\makeatother
-
-% commande de déplacement d'un objet
-\newcommand{\drawat}[3]{\makebox[0pt][l]{\raisebox{#2}{\hspace*{#1}#3}}}
-
 \newcommand{\bH}{\mathbf{H}}
 \newcommand{\bV}{\mathbf{V}}
 
@@ -128,6 +118,8 @@ Laboratoire de Chimie et Physique Quantiques
 
 \newpage
 
+\setlength{\parindent}{17pt}
+
 \section*{Acknowledgments}
 
 \tableofcontents
@@ -155,7 +147,7 @@ Exceptional points (EPs) \cite{Heiss_1990, Heiss_1999, Heiss_2012, Heiss_2016} a
 CIs are ubiquitous in non-adiabatic processes and play a key role in photo-chemical mechanisms.
 In the case of auto-ionizing resonances, EPs have a role in deactivation processes similar to CIs in the decay of bound excited states.
 Although Hermitian and non-Hermitian Hamiltonians are closely related, the behavior of their eigenvalues near degeneracies is starkly different.
-For example, encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy (see Figure 1 for a graphical example).
+For example, encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy (see \autoref{fig:TopologyEP} for a graphical example).
 Additionally, the wave function picks up a geometric phase (also known as Berry phase \cite{Berry_1984}) and four loops are required to recover the initial wave function.
 In contrast, encircling Hermitian degeneracies at CIs only introduces a geometric phase while leaving the states unchanged.
 More dramatically, whilst eigenvectors remain orthogonal at CIs, at non-Hermitian EPs the eigenvectors themselves become equivalent, resulting in a \textit{self-orthogonal} state. \cite{MoiseyevBook}
@@ -165,7 +157,7 @@ More importantly here, although EPs usually lie off the real axis, these singula
     \centering
     \includegraphics[width=0.7\textwidth]{TopologyEP.pdf}
     \caption{\centering A generic EP with the square root branch point topology. A loop around the EP interconvert the states.}
-    \label{fig:my_label}
+    \label{fig:TopologyEP}
 \end{figure}
 
 %============================================================%
@@ -212,16 +204,16 @@ But as mentioned before \textit{a priori} there are no reasons that this power s
 \subsection{Behavior of the M{\o}ller-Plesset series}
 
 When we use M{\o}ller-Plesset perturbation theory it would be very convenient that each time a higher order term is computed the result obtained is closer to exact energy. In other words, that the M{\o]ller-Plesset series would be monotonically convergent. Assuming this, the only limiting process to get the exact correlation energy in a finite basis set is our ability to compute the terms of the perturbation series.
-Unfortunately this is not true in generic cases and rapidly some strange behaviors of the series were exhibited. In the late 80's Gill et al. reported deceptive and slow convergences in stretch systems\cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. In the figure below we can see that the restricted M{\o}ller-Plesset series is convergent but oscillating which is not convenient if you are only able to compute few terms (for example here RMP5 is worse than RMP4). On the other hand, the unrestricted M{\o}ller-Plesset series is monotonically converging (except for the first few orders) but very slowly so we can't use it for systems where we can only compute the first terms.
+Unfortunately this is not true in generic cases and rapidly some strange behaviors of the series were exhibited. In the late 80's Gill et al. reported deceptive and slow convergences in stretch systems\cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. In the \autoref{fig:RUMP_Gill} we can see that the restricted M{\o}ller-Plesset series is convergent but oscillating which is not convenient if you are only able to compute few terms (for example here RMP5 is worse than RMP4). On the other hand, the unrestricted M{\o}ller-Plesset series is monotonically converging (except for the first few orders) but very slowly so we can't use it for systems where we can only compute the first terms.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.45\textwidth]{gill1986.png}
     \caption{\centering Barriers to homolytic fission of \ce{He2^2+} at MPn/STO-3G level ($n = 1$--$20$)\cite{Gill_1986}.}
-    \label{fig:my_label}
+    \label{fig:RUMP_Gill}
 \end{figure}
 
-When a bond is stretched the exact function can undergo a symmetry breaking becoming multi-reference during this process (see for example the case of \ce{H_2} in \cite{SzaboBook}). A restricted HF Slater determinant is a poor approximation of a broken symmetry wave function but even in the unrestricted formalism, where the spatial orbitals of electrons $\alpha$ and $\beta$ are not restricted to be the same\cite{Fukutome_1981}, which allows a better description of broken symmetry system, the series doesn't give accurate results at low orders. Even with this improvement of the zeroth order wave function the series doesn't have the smooth and rapidly converging behavior wanted. 
+When a bond is stretched the exact function can undergo a symmetry breaking becoming multi-reference during this process (see for example the case of \ce{H_2} in \cite{SzaboBook}). A restricted HF Slater determinant is a poor approximation of a symmetry-broken wave function but even in the unrestricted formalism, where the spatial orbitals of electrons $\alpha$ and $\beta$ are not restricted to be the same\cite{Fukutome_1981}, which allows a better description of symmetry-broken system, the series doesn't give accurate results at low orders. Even with this improvement of the zeroth order wave function the series doesn't have the smooth and rapidly converging behavior wanted. 
 
 \begin{table}[h!]
     \centering
@@ -236,10 +228,10 @@ When a bond is stretched the exact function can undergo a symmetry breaking beco
 \hline
 \end{tabular}
     \caption{\centering Percentage of electron correlation energy recovered and $\expval{S^2}$ for the \ce{H2} molecule as a function of bond length (r,\si{\angstrom}) in the STO-3G basis set \cite{Gill_1988}.}
-    \label{tab:my_label}
+    \label{tab:SpinContamination}
 \end{table}
 
-In the unrestricted framework the ground state singlet wave function is allowed to mix with triplet states which leads to spin contamination. Gill et al. highlighted the link between the slow convergence of the unrestricted MP series and the spin contamination of the wave function as shown in the Table 1 in the example of \ce{H_2} in a minimal basis. Handy and co-workers exhibited the same behaviors of the series (oscillating and monotonically slowly) in stretched \ce{H_2O} and \ce{NH_2} systems \cite{Handy_1985}. Lepetit et al. analyzed the difference between the M{\o}ller-Plesset and Epstein-Nesbet partitioning for the unrestricted Hartree-Fock reference \cite{Lepetit_1988}. They concluded that the slow convergence is due to the coupling of the single with the double excited configuration. Moreover the MP denominators tends towards a constant so each contribution become very small when the bond is stretched.
+In the unrestricted framework the ground state singlet wave function is allowed to mix with triplet states which leads to spin contamination. Gill et al. highlighted the link between the slow convergence of the unrestricted MP series and the spin contamination of the wave function as shown in the \autoref{tab:SpinContamination} in the example of \ce{H_2} in a minimal basis. Handy and co-workers exhibited the same behaviors of the series (oscillating and monotonically slowly) in stretched \ce{H_2O} and \ce{NH_2} systems \cite{Handy_1985}. Lepetit et al. analyzed the difference between the M{\o}ller-Plesset and Epstein-Nesbet partitioning for the unrestricted Hartree-Fock reference \cite{Lepetit_1988}. They concluded that the slow convergence is due to the coupling of the single with the double excited configuration. Moreover the MP denominators tends towards a constant so each contribution become very small when the bond is stretched.
 
 Cremer and He analyzed 29 FCI systems \cite{Cremer_1996} and regrouped all the systems in two classes. The class A systems which have a monotonic convergence to the FCI value and the class B which converge erratically after initial oscillations. The sample of systems contains stretched molecules and also some at equilibrium geometry, there are also some systems in various basis sets. They highlighted that systems with class A convergence have well-separated electrons pairs whereas class B systems present electrons clustering. This classification was encouraging in order to develop methods based on perturbation theory as it rationalizes the two different observed convergence modes. If it is possible to predict if a system is class A or B, then one can use extrapolation method of the first terms adapted to the class of the systems \cite{Cremer_1996}.
 
@@ -258,7 +250,7 @@ However Olsen et al. have discovered an even more preoccupying behavior of the M
 
 The discovery of this divergent behavior was really worrying because in order to get more and more accurate results theoretical chemists need to work in large basis sets. As a consequence they investigated the causes of those divergences and in the same time the reasons of the different types of convergence. To do this they analyzed the relation between the dominant singularity (i.e. the closest singularity to the origin) and the convergence behavior of the series \cite{Olsen_2000}. Their analysis is based on Darboux's theorem: in the limit of large order, the series coefficients become equivalent to the Taylor series coefficients of the singularity closest to the origin. Following the result of this theorem, the convergence patterns of the MP series can be explained by looking at the dominant singularity.
 
-A singularity in the unit circle is designated as an intruder state, more precisely as a front-door (respectively back-door) intruder state if the real part of the singularity is positive (respectively negative). The method used is to do a scan of the real axis to identify the avoided crossing responsible for the pair of dominant singularity. Then by modeling this avoided crossing by a two-state Hamiltonian one can get an approximation of the dominant conjugate pair of singularity by finding the EPs of the $22\times$ Hamiltonian. The diagonal matrix is the unperturbed Hamiltonian and the other matrix is the perturbative part of the Hamiltonian.
+A singularity in the unit circle is designated as an intruder state, more precisely as a front-door (respectively back-door) intruder state if the real part of the singularity is positive (respectively negative). The method used is to do a scan of the real axis to identify the avoided crossing responsible for the pair of dominant singularity. Then by modeling this avoided crossing by a two-state Hamiltonian one can get an approximation of the dominant conjugate pair of singularity by finding the EPs of the $2\times2$ Hamiltonian. The diagonal matrix is the unperturbed Hamiltonian and the other matrix is the perturbative part of the Hamiltonian.
 
 \begin{equation}
 \mqty(\alpha & \delta \\ \delta & \beta) = \mqty(\alpha + \alpha_s & 0 \\ 0 & \beta + \beta_s ) + \mqty(- \alpha_s & \delta \\ \delta & - \beta_s)
@@ -274,7 +266,7 @@ Moreover they proved that the extrapolation formula of Cremer and He \cite{Creme
 
 In the 2000's Sergeev and Goodson \cite{Sergeev_2005, Sergeev_2006}  analyzed this problem from a more mathematical point of view by looking at the whole singularity structure where Olsen and his co-workers were trying to find the dominant singularity causing the divergence. They regrouped singularities in two classes: the $\alpha$ singularities which have unit order imaginary parts and the $\beta$ singularities which have very small imaginary parts. The singularities $\alpha$ are related to large avoided crossing between the ground state and a low-lying excited states. Whereas the singularities $\beta$ come from a sharp avoided crossing between the ground state and a highly diffuse state. They succeeded to explain the divergence of the series caused by $\beta$ singularities using a previous work of Stillinger \cite{Stillinger_2000}. 
 
-The M{\o}ller-Plesset Hamiltonian is defined as below and by reassembling the term we get the expression (11).
+The M{\o}ller-Plesset Hamiltonian is defined as below and by reassembling the term we get the expression \eqref{eq:HamiltonianStillinger}.
 
 \begin{equation}
 H(\lambda)=H_0 + \lambda (H_\text{phys} - H_0)    
@@ -290,6 +282,7 @@ H(\lambda)=H_0 + \lambda (H_\text{phys} - H_0)
 
 \begin{equation}
     H(\lambda)=\sum\limits_{j=1}^{n}\left[-\frac{1}{2}\grad_j^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_j-\vb{R}_k|} + (1-\lambda)V_j^{(scf)}+\lambda\sum\limits_{j<l}^{n}\frac{1}{|\vb{r}_j-\vb{r}_l|} \right]
+\label{eq:HamiltonianStillinger}
 \end{equation}
 
 The first two terms, the kinetic energy and the electron-nucleus attraction, form the mono-electronic core Hamiltonian which is independant of $\lambda$. The third term is the mean field repulsion of the Hartree-Fock calculation done to get $H_0$ and the last term is the Coulomb repulsion. If $\lambda$ is negative, the Coulomb interaction becomes attractive but the mean field stays repulsive as it is proportional to $(1-\lambda)$. If $\lambda$ becomes more and more negative the mean field becomes more and more repulsive so the nucleus can't bind the electrons anymore because the electron-nucleus attraction is not scaled with $\lambda$. The repulsive mean field is localized around nucleus whereas the electrons interactions persist away from nucleus. There is a real negative value $\lambda_c$ where the electrons form a bound cluster and goes to infinity. According to Baker this value is a critical point of the system and by analogy with thermodynamics the energy $E(\lambda)$ exhibits a singularity at $\lambda_c$ \cite{Baker_1971}. At this point the system undergo a phase transition and a symmetry breaking. Beyond $\lambda_c$ there is a continuum of eigenstates with electrons dissociated from the nucleus.
@@ -312,7 +305,13 @@ Singularity $\alpha$ and quantum phase transition ?
 \section{The spherium model}
 %============================================================%
 
-Simple systems that are analytically solvable (or at least quasi-exactly solvable) are of great importance in theoretical chemistry. Those systems are very useful benchmarks to test new methods as they are mathematically easy but retain much of the key physics. To investigate the physics of EPs we use one such system named spherium model. It consists of two electrons confined to the surface of a sphere interacting through the long-range Coulomb potential. The radius R of the sphere dictates the correlation regime, i.e., weak correlation regime at small $R$ where the kinetic energy dominates, or strong correlation regime where the electron repulsion term drives the physics. We will use this model to try to rationalize the effects of the variables that may influence the physics of EPs:
+Simple systems that are analytically solvable (or at least quasi-exactly solvable) are of great importance in theoretical chemistry. Those systems are very useful benchmarks to test new methods as they are mathematically easy but retain much of the key physics. To investigate the physics of EPs we use one such system named spherium model. It consists of two electrons confined to the surface of a sphere interacting through the long-range Coulomb potential. Thus the Hamiltonian is:
+
+\begin{equation}
+\widehat{H} = \frac{\grad_1^2 + \grad_2^2}{2} + \frac{1}{\vb{r}_{12}}
+\end{equation}
+
+The laplacian operators are the kinetic operators for each electrons and $\vb{r}_{12}^{-1}$ is the Coulomb operator. The radius R of the sphere dictates the correlation regime, i.e., weak correlation regime at small $R$ where the kinetic energy dominates, or strong correlation regime where the electron repulsion term drives the physics. We will use this model to try to rationalize the effects of the variables that may influence the physics of EPs:
 \begin{itemize}
 	\item Partitioning of the Hamiltonian and the actual zeroth-order reference: weak correlation reference [restricted Hartree-Fock (RHF) or unrestricted Hartree-Fock (UHF) references, M{\o}ller-Plesset or Epstein-Nesbet (EN) partitioning], or strongly correlated reference.
 	\item Basis set: minimal basis or infinite (i.e., complete) basis made of localized or delocalized basis functions
@@ -321,27 +320,93 @@ Simple systems that are analytically solvable (or at least quasi-exactly solvabl
 
 \subsection{Weak correlation regime}
 
-In the restricted Hartree-Fock formalism, the wave function can't model properly the physics of the system at large R because the spatial orbitals are restricted to be the same. Then a fortiori it can't represent two electrons on opposite side of the sphere. In the unrestricted formalism
-At a critical value of R, called the Coulson-Fischer point, a second unrestricted Hartree-Fock solution appear. This solution is symmetry-broken as the two electrons tends to localize on opposite side of the sphere. By analogy with the case of \ce{H_2} \cite{SzaboBook}, the unrestricted Hartree-Fock wave function is defined as:
+\subsubsection{Restricted and unrestricted equation for the  spherium model}
 
+In the restricted Hartree-Fock formalism, the wave function can't model properly the physics of the system at large R because the spatial orbitals are restricted to be the same. Then a fortiori it can't represent two electrons on opposite side of the sphere. In the unrestricted formalism there is a critical value of R, called the Coulson-Fischer point \cite{Coulson_1949}, at which a second unrestricted Hartree-Fock solution appear. This solution is symmetry-broken as the two electrons tends to localize on opposite side of the sphere. By analogy with the case of \ce{H_2} \cite{SzaboBook}, the unrestricted Hartree-Fock wave function is defined as:
 
+\begin{equation}
+\Psi_{\text{UHF}}(\theta_1,\theta_2)=\phi(\theta_1)\phi(\pi-\theta_2)
+\end{equation}
 
 Then the mono-electronic wave function are expand in the spatial basis set of the zonal spherical harmonics:
+
+\begin{equation}
+\phi(\theta_1)=\sum\limits_{l=0}^{\infty}C_l\frac{Y_{l0}(\Omega_1)}{R}
+\end{equation}
+
+It is possible to obtain the formula for the ground state unrestricted Hartree-Fock energy in this basis set (see Appendix A for the development):
+
+\begin{equation}
+E_{\text{UHF}} = 2 \sum\limits_{L=0}^{\infty} C_L^2 \frac{L(L+1)}{R^2} + \sum\limits_{i,j,k,l=0}^{\infty}C_iC_jC_kC_l \frac{(-1)^{k+l}S_{i,j,k,l}}{R} \begin{pmatrix}
+ i & j & L \\
+ 0 & 0 & 0
+\end{pmatrix}^2 \begin{pmatrix}
+ k & l & L \\
+ 0 & 0 & 0
+\end{pmatrix}^2
+\label{eq:EUHF}
+\end{equation}
+
+\begin{equation*}
+S_{i,j,k,l}=\sqrt{(2i+1)(2j+1)(2k+1)(2l+1)}
+\end{equation*}
+
+We get an analog result using the same reasoning with the definition of the restricted wave function \eqref{eq: RHFWF}.
+
+\begin{equation}
+\Psi_{\text{RHF}}(\theta_1,\theta_2)=\phi(\theta_1)\phi(\theta_2)
+\label{eq: RHFWF}
+\end{equation}
+
+\begin{equation}
+E_{\text{RHF}} = 2 \sum\limits_{L=0}^{\infty} C_L^2 \frac{L(L+1)}{R^2} + \sum\limits_{i,j,k,l=0}^{\infty}C_iC_jC_kC_l\frac{S_{i,j,k,l}}{R} \begin{pmatrix}
+ i & j & L \\
+ 0 & 0 & 0
+\end{pmatrix}^2 \begin{pmatrix}
+ k & l & L \\
+ 0 & 0 & 0
+\end{pmatrix}^2
+\label{eq:ERHF}
+\end{equation}
+
+\subsubsection{The minimal basis example}
+
+We obtained the equations \eqref{eq:EUHF} and \eqref{eq:ERHF} for general forms of the wave functions, but to be associated with physical wave functions the energy need to be stationary. The general method is to use the Hartree-Fock self-consistent field method to get the coefficients of the wave functions corresponding to physical solutions. We will work in a minimal basis to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions. One can define the mono-electronic wave function $\phi(\theta_i)$ using a mixing angle between the two basis functions. Hence we just need to minimize the energy with respect to $\chi$.
+
+\begin{equation}
+\phi(\theta_1)= \cos(\chi)\frac{Y_{00}(\Omega_1)}{R} + \sin(\chi)\frac{Y_{10}(\Omega_1)}{R}
+\end{equation}
+
+Because the transformation between two basis sets needs to be unitary, we get the other physical solution at the same time:
+
+\begin{equation}
+\phi(\theta_1)= -\sin(\chi)\frac{Y_{00}(\Omega_1)}{R} + \cos(\chi)\frac{Y_{10}(\Omega_1)}{R}
+\end{equation}
+
+\subsubsection{Symmetry-broken solutions}
+
+\subsection{Strongly correlated regime}
+
+\section{Perturbation theory and exceptional points}
 
 \section{To do list}
 
 \begin{itemize}
-\item Rajouter label pour les figures et équations cités
 \item Corriger les erreurs dans la biblio
 \item Changer de bibliographystyle
 \item Finir le paragraphe QPT (singularité $\alpha$ ?)
 \end{itemize}
+
+\section{Conclusion}
 
 \newpage
 
 \bibliographystyle{unsrt}
 \bibliography{Rapport}
 
+\newpage
+\appendix
 
+\section{ERHF and EUHF}
 
 \end{document}
