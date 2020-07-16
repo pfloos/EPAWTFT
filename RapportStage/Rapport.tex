@@ -177,7 +177,7 @@ The energy can then be written as a power series of $\lambda$
 \begin{equation}
 	E(\lambda) = \sum_{k=0}^\infty \lambda^k E^{(k)}
 \end{equation}
-where $\lambda$ is a coupling parameter set equal to 1 at the end of the calculation. However it is not guaranteed that the series $E(\lambda)$ has a radius of convergence $\abs{\lambda_0} < 1$. It means that the series is divergent for the physical system at $\lambda=1$. One can prove that $\abs{\lambda_0}$ can be obtained by extending $\lambda$ in the complex plane and looking for the singularities of $E(\lambda)$. This is due to the following theorem \cite{Goodson_2011}: The Taylor series about a point $z_0$ of a function over the complex $z$ plane will converge at a value $z_1$ if the function is non-singular at all values of $z$ in the circular region centered at $z_0$ with radius $\abs{z_1 − z_0}$. If the function has a singular point $z_s$ such that $\abs{z_s − z_0} < \abs{z_1 − z_0}$, then the series will diverge when evaluated at $z_1$. This theorem means that the radius of convergence of the perturbation series is equal to distance to the origin of the closest singularity of $E(\lambda)$.  
+where $\lambda$ is a coupling parameter set equal to 1 at the end of the calculation. However it is not guaranteed that the series $E(\lambda)$ has a radius of convergence $\abs{\lambda_0} < 1$. It means that the series is divergent for the physical system at $\lambda=1$. One can prove that $\abs{\lambda_0}$ can be obtained by extending $\lambda$ in the complex plane and looking for the singularities of $E(\lambda)$. This is due to the following theorem \cite{Goodson_2012}: The Taylor series about a point $z_0$ of a function over the complex $z$ plane will converge at a value $z_1$ if the function is non-singular at all values of $z$ in the circular region centered at $z_0$ with radius $\abs{z_1 − z_0}$. If the function has a singular point $z_s$ such that $\abs{z_s − z_0} < \abs{z_1 − z_0}$, then the series will diverge when evaluated at $z_1$. This theorem means that the radius of convergence of the perturbation series is equal to distance to the origin of the closest singularity of $E(\lambda)$.  
 
 The discovery of a partitioning of the Hamiltonian that allowed chemists to recover a part of the correlation energy (i.e. the difference between the exact energy and the Hartree-Fock energy) using perturbation theory has been a major step in the development of post-Hartree-Fock methods. This case of the Rayleigh-Schrödinger perturbation theory is called the M{\o}ller-Plesset perturbation theory \cite{Moller_1934}. In the MPPT the unperturbed Hamiltonian is the sum of the $n$ mono-electronic Fock operators which are the sum of the one-electron core Hamiltonian $h(i)$, the Coulomb $J_j(i)$ and Exchange $K_j(i)$ operators.
  
@@ -295,9 +295,9 @@ Finally, it was shown that $\beta$ singularities are very sensitive to the basis
 
 In the previous section, we saw that a reasoning on the Hamiltonian allows us to predict the existence of a critical point. In a finite basis set this critical point is model by a cluster of singularity $\beta$. It is now well-known that this phenomenon is a specific case of a more general phenomenon. Indeed, theoretical physicists proved that EPs are connected to quantum phase transitions \cite{Heiss_1988, Heiss_2002, Cejnar_2005, Cejnar_2007, Cejnar_2009, Borisov_2015, Sindelka_2017}. In quantum mechanics, the Hamiltonian is almost always dependent of a parameter, in some cases the variation of a parameter can lead to abrupt changes at a critical point. Those quantum phase transitions exist both for ground and excited states \cite{Cejnar_2009, Sachdev_2011, Cejnar_2015, Cejnar_2016, Caprio_2008, Macek_2019}. A ground-state quantum phase transition is characterized by the successive derivative of the ground-state energy with respect to a non-thermal control parameter \cite{Cejnar_2009, Sachdev_2011}. The transition is called discontinuous and of first order if the first derivative is discontinuous at the critical parameter value. Otherwise, it is called continuous and of n-th order if the n-th derivative is discontinuous. A quantum phase transition can also be identify by the discontinuity of an appropriate order parameter (or one of its derivative). 
 
-The presence of an EP close to the real axis is characteristic of a sharp avoided crossings. Yet at such an avoided crossings eigenstates change abruptly. Although it is now well understood that EPs are closely related to quantum phase transitions, the link between the type of QPT (ground state or excited state, first or superior order) and EPs still need to be clarify. One of the major challenge in order to do this reside in our ability to compute the distribution of EPs. The numerical assignment of an EP to two energies on the real axis is very difficult in large dimensions. Cejnar et al. developped a method based on a Coulomb analogy giving access to the density of EP close to the real axis \cite{Cejnar_2005, Cejnar_2007}. More recently Stransky and co-workers proved that the distribution of EPs is not the same around a QPT of first or second order \cite{Stransky_2018}. Moreover, that when the dimension of the system increases they tends towards the real axis in a different manner, meaning respectively exponentially and algebraically.
+The presence of an EP close to the real axis is characteristic of a sharp avoided crossing. Yet at such an avoided crossing eigen states change abruptly. Although it is now well understood that EPs are closely related to quantum phase transitions, the link between the type of QPT (ground state or excited state, first or superior order) and EPs still need to be clarify. One of the major challenge in order to do this reside in our ability to compute the distribution of EPs. The numerical assignment of an EP to two energies on the real axis is very difficult in large dimensions. Cejnar et al. developed a method based on a Coulomb analogy giving access to the density of EP close to the real axis \cite{Cejnar_2005, Cejnar_2007}. More recently Stransky and co-workers proved that the distribution of EPs is not the same around a QPT of first or second order \cite{Stransky_2018}. Moreover, that when the dimension of the system increases they tends towards the real axis in a different manner, meaning respectively exponentially and algebraically.
 
-It seems like our understanding of the physics of spatial and/or spin symmetry breaking in the Hartree-Fock theory can be enlightened by quantum phase transition theory. Indeed, the second derivative of the energy is discontinuous at the Coulson-Fischer point which mean that the system undergo a second order quantum phase transition. The $\beta$ singularities introduced by Sergeev to describe the EPs modeling the formation of a bound cluster of electrons are actually a more general class of singularities.
+It seems like our understanding of the physics of spatial and/or spin symmetry breaking in the Hartree-Fock theory can be enlightened by quantum phase transition theory. Indeed, the second derivative of the energy is discontinuous at the Coulson-Fischer point which means that the system undergo a second order quantum phase transition. The $\beta$ singularities introduced by Sergeev to describe the EPs modeling the formation of a bound cluster of electrons are actually a more general class of singularities.
 
 Singularity $\alpha$ and quantum phase transition ?
 
@@ -383,7 +383,28 @@ Because the transformation between two basis sets needs to be unitary, we get th
 \phi(\theta_1)= -\sin(\chi)\frac{Y_{00}(\Omega_1)}{R} + \cos(\chi)\frac{Y_{10}(\Omega_1)}{R}
 \end{equation}
 
+The minimization of the UHF and RHF ground state energies with respect to $\chi$ respectively yiels the following equations:
+
+\begin{equation}
+\frac{2(75+6R-56R\cos(2\chi))\sin(2\chi))}{75R^2}=0
+\label{eq:uhfstatio}
+\end{equation} 
+
+\begin{equation}
+\frac{2(75+6R+44R\cos(2\chi))\sin(2\chi))}{75R^2}=0
+\label{eq:rhfstatio}
+\end{equation}
+
+It is evident that those equations are both verified for $\chi=\frac{n\pi}{2}$ with $n$ an integer. Those value of $\chi$ lead to the 
+
 \subsubsection{Symmetry-broken solutions}
+
+Apparition of the sb-UHF solution
+Negative R possible, sb-UHF now a maximum
+Less know sb-RHF solution, maximum and minimum inversed
+Charge density wave vs Spin density wave
+
+NRJ graphics
 
 \subsection{Strongly correlated regime}
 
@@ -414,7 +435,7 @@ PT broken symmetry sb UHF
 \begin{itemize}
 \item Corriger les erreurs dans la biblio
 \item Changer de bibliographystyle
-\item Finir le paragraphe QPT (singularité $\alpha$ ?)
+\item Finir le paragraphe QPT (singularité $\alpha$ ?) 
 \end{itemize}
 
 \section{Conclusion}
