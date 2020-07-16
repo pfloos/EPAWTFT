@@ -344,19 +344,27 @@ The laplacian operators are the kinetic operators for each electrons and $\vb{r}
 In the restricted Hartree-Fock formalism, the wave function can't model properly the physics of the system at large R because the spatial orbitals are restricted to be the same. Then a fortiori it can't represent two electrons on opposite side of the sphere. In the unrestricted formalism there is a critical value of R, called the Coulson-Fischer point \cite{Coulson_1949}, at which a second unrestricted Hartree-Fock solution appear. This solution is symmetry-broken as the two electrons tends to localize on opposite side of the sphere. By analogy with the case of \ce{H_2} \cite{SzaboBook}, the unrestricted Hartree-Fock wave function is defined as:
 
 \begin{equation}
-\Psi_{\text{UHF}}(\theta_1,\theta_2)=\phi(\theta_1)\phi(\pi-\theta_2)
+\Psi_{\text{UHF}}(\theta_1,\theta_2)=\phi_\alpha(\theta_1)\phi_\beta(\theta_2)
 \end{equation}
 
 Then the mono-electronic wave function are expand in the spatial basis set of the zonal spherical harmonics:
 
 \begin{equation}
-\phi(\theta_1)=\sum\limits_{l=0}^{\infty}C_l\frac{Y_{l0}(\Omega_1)}{R}
+\phi_\alpha(\theta_1)=\sum\limits_{l=0}^{\infty}C_{\alpha,l}\frac{Y_{l0}(\Omega_1)}{R}
 \end{equation}
 
 It is possible to obtain the formula for the ground state unrestricted Hartree-Fock energy in this basis set (see Appendix A for the development):
 
 \begin{equation}
-E_{\text{UHF}} = 2 \sum\limits_{L=0}^{\infty} C_L^2 \frac{L(L+1)}{R^2} + \sum\limits_{i,j,k,l=0}^{\infty}C_iC_jC_kC_l \frac{(-1)^{k+l}S_{i,j,k,l}}{R} \begin{pmatrix}
+E_{\text{UHF}} = E_{\text{c},\alpha} + E_{\text{c},\beta} + E_{\text{p}}
+\end{equation}
+
+\begin{equation}
+E_{\text{c},\alpha} = \sum\limits_{l=0}^{\infty} C_{\alpha,l}^2 \frac{l(l+1)}{R^2}
+\end{equation}
+
+\begin{equation}
+E_{\text{p}} = \sum\limits_{i,j,k,l=0}^{\infty}C_{\alpha,i}C_{\alpha,j}C_{\beta,k}C_{\beta,l} \frac{(-1)^{k+l}S_{i,j,k,l}}{R}\sum\limits_{L=0}^{\infty} \begin{pmatrix}
  i & j & L \\
  0 & 0 & 0
 \end{pmatrix}^2 \begin{pmatrix}
@@ -370,58 +378,39 @@ E_{\text{UHF}} = 2 \sum\limits_{L=0}^{\infty} C_L^2 \frac{L(L+1)}{R^2} + \sum\li
 S_{i,j,k,l}=\sqrt{(2i+1)(2j+1)(2k+1)(2l+1)}
 \end{equation*}
 
-We get an analog result using the same reasoning with the definition of the restricted wave function \eqref{eq: RHFWF}.
-
-\begin{equation}
-\Psi_{\text{RHF}}(\theta_1,\theta_2)=\phi(\theta_1)\phi(\theta_2)
-\label{eq: RHFWF}
-\end{equation}
-
-\begin{equation}
-E_{\text{RHF}} = 2 \sum\limits_{L=0}^{\infty} C_L^2 \frac{L(L+1)}{R^2} + \sum\limits_{i,j,k,l=0}^{\infty}C_iC_jC_kC_l\frac{S_{i,j,k,l}}{R} \begin{pmatrix}
- i & j & L \\
- 0 & 0 & 0
-\end{pmatrix}^2 \begin{pmatrix}
- k & l & L \\
- 0 & 0 & 0
-\end{pmatrix}^2
-\label{eq:ERHF}
-\end{equation}
-
 \subsubsection{The minimal basis example}
 
-We obtained the equations \eqref{eq:EUHF} and \eqref{eq:ERHF} for general forms of the wave functions, but to be associated with physical wave functions the energy need to be stationary. The general method is to use the Hartree-Fock self-consistent field method to get the coefficients of the wave functions corresponding to physical solutions. We will work in a minimal basis to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions. One can define the mono-electronic wave function $\phi(\theta_i)$ using a mixing angle between the two basis functions. Hence we just need to minimize the energy with respect to $\chi$.
+We obtained the equation \eqref{eq:EUHF} for the general form of the wave function, but to be associated with a physical wave function the energy need to be stationary with respect to the coefficient. The general method is to use the Hartree-Fock self-consistent field method to get the coefficients of the wave functions corresponding to physical solutions. We will work in a minimal basis to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions. One can define the mono-electronic wave functions $\phi(\theta)$ using a mixing angle between the two basis functions. Hence we just need to minimize the energy with respect to the two mixing angles $\chi_\alpha$ and $\chi_\beta$.
 
 \begin{equation}
-\phi(\theta_1)= \cos(\chi)\frac{Y_{00}(\Omega_1)}{R} + \sin(\chi)\frac{Y_{10}(\Omega_1)}{R}
+\phi_\alpha(\theta_1)= \cos(\chi_\alpha)\frac{Y_{00}(\Omega_1)}{R} + \sin(\chi_\alpha)\frac{Y_{10}(\Omega_1)}{R}
 \end{equation}
+ 
+The minimization gives the 3 anticipated solutions (valid for all value of R):
+\begin{itemize}
+\item The two electrons are in the $Y_{00}$ orbital which is a RHF solution. This solution is associated with the energy $R^{-2}$.
+\item The two electrons are in the $Y_{10}$ orbital which is a RHF solution. This solution is associated with the energy $R^{-2} + R^{-1}$
+\item One electron is in the $Y_{00}$ orbital and the other is in the $Y_{10}$ orbital which is a UHF solution. This solution is associated with the energy $2R^{-2}+\frac{29}{25}R^{-1}$
+\end{itemize}
 
-Because the transformation between two basis sets needs to be unitary, we get the other physical solution at the same time:
-
-\begin{equation}
-\phi(\theta_1)= -\sin(\chi)\frac{Y_{00}(\Omega_1)}{R} + \cos(\chi)\frac{Y_{10}(\Omega_1)}{R}
-\end{equation}
-
-The minimization of the UHF and RHF ground state energies with respect to $\chi$ respectively yiels the following equations:
-
-\begin{equation}
-\frac{2(75+6R-56R\cos(2\chi))\sin(2\chi))}{75R^2}=0
-\label{eq:uhfstatio}
-\end{equation} 
-
-\begin{equation}
-\frac{2(75+6R+44R\cos(2\chi))\sin(2\chi))}{75R^2}=0
-\label{eq:rhfstatio}
-\end{equation}
-
-It is evident that those equations are both verified for $\chi=\frac{n\pi}{2}$ with $n$ an integer. Those value of $\chi$ lead to the 
+Vérifier minimum, maximum, point selle
 
 \subsubsection{Symmetry-broken solutions}
 
-Apparition of the sb-UHF solution
-Negative R possible, sb-UHF now a maximum
-Less know sb-RHF solution, maximum and minimum inversed
-Charge density wave vs Spin density wave
+In addition, there is also the well-known symmetry-broken UHF solution. For $R>3/2$ an other stationary UHF solution appear, this solution is a minimum. This solution corresponds to the configuration with the electron $\alpha$ on one side of the sphere and the electron $\beta$ on the opposite side and the other way round. The electrons can be on opposite sides of the sphere because the choice of $Y_{10}$ induced a privileged axis on the sphere for the electrons. The exact solution for the ground state is a singlet so this wave function does not have the true symmetry. However this solution gives more accurate results for the energy at large R as shown in Table x. In fact at the Coulson-Fischer point, it becomes more efficient to minimize the Coulomb repulsion than the kinetic energy leading to this symmetry breaking. There is a competition between those two effects: keeping the symmetry of the exact wave function and minimize the energy. This type of symmetry breaking is called a spin density wave because the system oscillate between the two symmetry-broken configurations.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{c}
+a
+\end{tabular}
+    \caption{\centering .}
+\label{tab:ERHFvsEUHF}
+\end{table}
+
+There is also another symmetry-broken solution for $R>75/38$ but this one corresponds to a maximum. This solution is associated with another type of symmetry breaking somewhat well-known. Indeed it corresponds to a configuration where both electrons are on the same side of the sphere, in the same orbital. This solution is called symmetry-broken RHF. At the critical value of R, the repulsion of the two electrons on the same side of the sphere maximizes more the energy than the kinetic energy of the $Y_{10}$ orbitals. This symmetry breaking is associated with a charge density wave: the system oscillate between the situations with the electrons on each side.
+
+We can also consider negative value of R. This corresponds to the situation where one of the electrons is replaced by a positron. There are also a sb-RHF and a sb-UHF solution for some values of R but in this case the sb-RHF solution is a minimum and the sb-UHF is a maximum. Indeed, the sb-RHF state minimize the energy by placing the electron and the positron on the same side of the sphere. And the sb-UHF state maximize the energy because the two particles are on opposite side of the sphere.
 
 NRJ graphics
 
@@ -454,15 +443,14 @@ PT broken symmetry sb UHF
 \begin{itemize}
 \item Corriger les erreurs dans la biblio
 \item Changer de bibliographystyle
-\item Finir le paragraphe QPT (singularité $\alpha$ ?) 
+\item Finir le paragraphe QPT (singularité $\alpha$ ?)
+\item tableau nrj uhf, citation spin density wave et charge density wave
 \end{itemize}
 
 \section{Conclusion}
 
 \newpage
 
-%\bibliographystyle{unsrt}
-%\bibliography{Rapport}
 \printbibliography
 
 \newpage
