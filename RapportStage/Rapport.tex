@@ -12,6 +12,15 @@
 \setlength{\oddsidemargin}{0cm}
 \setlength{\evensidemargin}{0cm}
 
+\usepackage[
+        backend=biber,
+        style=phys,  
+        mcite=true,
+        subentry,
+        hyperref=true,
+        ]{biblatex}
+\addbibresource{Rapport.bib}
+
 \usepackage{graphicx} % inclusion des figures
 \usepackage{tabularx} % gestion avancée des tableaux
 
@@ -442,8 +451,9 @@ PT broken symmetry sb UHF
 
 \newpage
 
-\bibliographystyle{unsrt}
-\bibliography{Rapport}
+%\bibliographystyle{unsrt}
+%\bibliography{Rapport}
+\printbibliography
 
 \newpage
 \appendix
