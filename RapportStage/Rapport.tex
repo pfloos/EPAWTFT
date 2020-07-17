@@ -126,6 +126,7 @@ Laboratoire de Chimie et Physique Quantiques
 \hfill \today
 
 \newpage
+\thispagestyle{empty}
 
 \setlength{\parindent}{17pt}
 
@@ -134,10 +135,13 @@ Laboratoire de Chimie et Physique Quantiques
 \tableofcontents
 
 \newpage
+\setcounter{page}{1}
 
 %============================================================%
 \section{Introduction}
 %============================================================%
+
+\subsection{Background}
 
 Due to the ubiquitous influence of processes involving electronic excited states in physics, chemistry, and biology, their faithful description from first-principles has been one of the grand challenges faced by theoretical chemists since the dawn of computational chemistry. 
 Accurately predicting ground- and excited-state energies (hence excitation energies) is particularly valuable in this context, and it has concentrated most of the efforts within the community.
@@ -176,9 +180,13 @@ More importantly here, although EPs usually lie off the real axis, these singula
     \label{fig:TopologyEP}
 \end{figure}
 
+\subsection{An illustrative example}
+
 %============================================================%
 \section{Perturbation theory}
 %============================================================%
+
+\subsection{Rayleigh-Schr\"odinger perturbation theory}
 
 Within (time-independent) Rayleigh-Schr\"odinger perturbation theory, the Schr\"odinger equation 
 \begin{equation} \label{eq:SchrEq}
@@ -203,25 +211,60 @@ This is due to the following theorem \cite{Goodson_2012}:
 \begin{quote}
 	\textit{``The Taylor series about a point $z_0$ of a function over the complex $z$ plane will converge at a value $z_1$ if the function is non-singular at all values of $z$ in the circular region centered at $z_0$ with radius $\abs{z_1 − z_0}$. If the function has a singular point $z_s$ such that $\abs{z_s − z_0} < \abs{z_1 − z_0}$, then the series will diverge when evaluated at $z_1$.''}
 \end{quote}
-This theorem means that the radius of convergence of the perturbation series is equal to the distance to the origin of the closest singularity of $E(\lambda)$.  
+This theorem means that the radius of convergence of the perturbation series is equal to the distance to the origin of the closest singularity of $E(\lambda)$. To illustrate this result we  consider the simple function \eqref{eq:DivExample}. This function is smooth for $x \in \mathbb{R}$ and infinitely differentiable in $\mathbb{R}$. One would expect that the Taylor series of such a function would be convergent for all $x \in \mathbb{R}$, however this series is divergent for $x\geq1$. This is because the function has four singularities in the complex plane ($x = e^{i\pi/4}, e^{-i\pi/4}, e^{i3\pi/4}, e^{-i3\pi/4}$) with a modulus equal to 1. This simple example shows the importance of the singularities in the complex plane to understand the convergence properties on the real axis.
 
-The discovery of a partitioning of the Hamiltonian that allowed chemists to recover a part of the correlation energy (i.e. the difference between the exact energy and the Hartree-Fock energy) using perturbation theory has been a major step in the development of post-Hartree-Fock methods. This case of the Rayleigh-Schrödinger perturbation theory is called the M{\o}ller-Plesset perturbation theory \cite{Moller_1934}. In the MPPT the unperturbed Hamiltonian is the sum of the $n$ mono-electronic Fock operators which are the sum of the one-electron core Hamiltonian $h(i)$, the Coulomb $J_j(i)$ and Exchange $K_j(i)$ operators.
- 
-\begin{equation}
-H_0= \sum\limits_{i=1}^{n} f(i)
+\begin{equation} \label{eq:DivExample}
+f(x)=\frac{1}{1+x^4}
 \end{equation}
 
-\begin{equation}
-f(i) = h(i) + \sum\limits_{j=1,j \neq i}^{n} \left[J_j(i) - K_j(i)\right]
+\subsection{The Hartree-Fock Hamiltonian}
+
+In the Born-Oppenheimer approximation, the equation \eqref{eq:ExactHamiltonian} gives the exact electronic Hamiltonian for a chemical system with $n$ electrons and $N$ nuclei. The first term is the kinetic energy of the electrons, the two following terms account respectively for the electron-nuclei attraction and the electron-electron repulsion.
+
+\begin{equation}\label{eq:ExactHamiltonian}
+    \bH=\sum\limits_{i=1}^{n}\left[ -\frac{1}{2}\grad_i^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_i-\vb{R}_k|}+\sum\limits_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|}\right]
 \end{equation}
 
-In Hartree-Fock theory the exact wave function is approximated as a Slater-determinant (which is an anti-symmetric combination of mono-electronic orbitals) and those wave functions are eigenvectors of the Fock operators. In the perturbation theory the energy is a power series of $\lambda$ and the physical energy is obtained by taking $\lambda$ equal to 1. We will refer to the energy up to the $n$-th order as the MP$n$ energy. The MP0 energy overestimates the energy by double counting the electron-electron interaction, the MP1 corrects this effect and the MP1 energy is equal to the Hartree-Fock energy. The MP2 energy starts to recover a part of the correlation energy.
+In the Hartree-Fock (HF) approximation the wave function is approximated as a single Slater determinant (which is an anti-symmetric combination of $n$ one electron spin-orbitals). Rather than solving the equation \eqref{eq:SchrEq}, the Hartree-Fock theory use the variational principle to find an approximation to $\Psi$. Hence the Slater determinants are not eigenfuctions of the exact Hamiltonian $\bH$. However they are eigenfunctions of an approximated Hamiltonian $\bH^{(0)}$, called the Hartree-Fock Hamiltonian, which is the sum of the one-electron Fock operators.
 
-\begin{equation}
-E_{\text{MP$_{n}$}}= \sum_{k=0}^n E^{(k)}
+\begin{equation}\label{eq:HFHamiltonian}
+\bH^{(0)}= \sum\limits_{i=1}^{n} f(i)
 \end{equation}
 
-But as mentioned before \textit{a priori} there are no reasons that this power series is always convergent for $\lambda$=1 when $n$ goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the M{\o}ller-Plesset will give bad results \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. A smart way to investigate the convergence properties of the MP series is to transform the coupling parameter $\lambda$ into a complex variable. By doing so the Hamiltonian and the energy become functions of this variable. The energy becomes a multivalued function on $n$ Riemann sheets. As mentioned above by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the MPPT. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is quite easy up to the 4th order and the 5th and 6th order can be obtained at high cost. But to deeply understand the behavior of the MP series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction. If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI basis set we get the exact energies (in this finite basis set) and expanding in $\lambda$ allows to to get the M{\o}ller-Plesset perturbation series at every order.
+The eigenfunctions of $f(i)$ are the one-electron spin-orbitals $\phi_a(i)$ used to create the $n$-electron Slater determinant. The equation \eqref{eq:FockOp} gives the eigenvalue equation for the one-electron Fock operator associated with the electron 1. The one-electron core Hamiltonian $h(i)$ are the sum of the kinetic energy of the electron $i$ and the attraction of the nuclei on this electron. The two other terms are the the Coulomb $J_a(i)$ and Exchange $K_a(i)$ operators. Their action on the spin-orbitals are given by the equation \eqref{eq:CoulOp} and \eqref{eq:ExcOp}. The integration is over the spatial and spin coordinates.
+
+\begin{equation}\label{eq:FockOp}
+f(1)\phi_a(1) = \left[h(1) + \sum\limits_{b=1}^{n} J_b(1) - K_b(1)\right]\phi_a(1)=\epsilon_a\phi_a(1)
+\end{equation}
+
+\begin{equation}\label{eq:CoulOp}
+J_b(1)\phi_a(1)=\left[\int\dd\vb{x}_2\phi_b^*(2)\frac{1}{r_{12}}\phi_b(2) \right]\phi_a(1)
+\end{equation}
+
+\begin{equation}\label{eq:ExcOp}
+K_b(1)\phi_a(1)=\left[\int\dd\vb{x}_2\phi_b^*(2)\frac{1}{r_{12}}\phi_a(2) \right]\phi_b(1)
+\end{equation}
+
+
+\subsection{M{\o}ller-Plesset perturbation theory}
+
+The Hartree-Fock Hamiltonian \eqref{eq:HFHamiltonian} can be used as the zeroth-order Hamiltonian of the equation \eqref{eq:SchrEq-PT}. This partitioning of the Hamiltonian leads to the so-called M{\o}ller-Plesset (MP) perturbation theory \cite{Moller_1934}. The discovery of a partitioning of the Hamiltonian that allowed chemists to recover a part of the correlation energy (i.e. the difference between the exact energy and the Hartree-Fock energy) using perturbation theory has been a major step in the development of post-Hartree-Fock methods. This yields the Hamiltonian $\bH(\lambda)$ of the equation \eqref{eq:MPHamiltonian} where the two-electron part of the Fock operator $f(i)$ has been written $V_i^{(scf)}$ for convenience.
+
+\begin{equation}\label{eq:MPHamiltonian}
+    H(\lambda)=\sum\limits_{i=1}^{n}\left[-\frac{1}{2}\grad_i^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_i-\vb{R}_k|} + (1-\lambda)V_i^{(scf)}+\lambda\sum\limits_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|} \right]
+\end{equation}
+
+In the perturbation theory the energy is a power series of $\lambda$ and the physical energy is obtained by taking $\lambda$ equal to 1. We will refer to the energy up to the $n$-th order as the MP$n$ energy. The MP0 energy overestimates the energy by double counting the electron-electron interaction, the MP1 corrects this effect and the MP1 energy is equal to the Hartree-Fock energy. The MP2 energy starts to recover a part of the correlation energy.
+
+\begin{equation}
+E_{\text{MP}_{n}}= \sum_{k=0}^n E^{(k)}
+\end{equation}
+
+But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP}_{n}}$ is always convergent when $n$ goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the M{\o}ller-Plesset method will give bad results \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. A smart way to investigate the convergence properties of the M{\o}ller-Plesset series is to transform the coupling parameter $\lambda$ into a complex variable. By doing so the Hamiltonian and the energy become functions of this variable. The energy becomes a multivalued function on $n$ Riemann sheets. As mentioned above by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the M{\o}ller-Plesset perturbation theory. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is quite easy up to the 4th order and the 5th and 6th order can be obtained at high cost. But to deeply understand the behavior of the M{\o}ller-Plesset series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction (FCI). If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI basis set we get the exact energies (in this finite basis set) and expanding in $\lambda$ allows to to get the M{\o}ller-Plesset perturbation series at every order.
+
+\subsection{Alternative partitioning}
+
+The M{\o}ller-Plesset partitioning is not the only one possible in electronic structure theory.
 
 %============================================================%
 \section{Historical overview}
@@ -296,23 +339,6 @@ Moreover they proved that the extrapolation formula of Cremer and He \cite{Creme
 In the 2000's Sergeev and Goodson \cite{Sergeev_2005, Sergeev_2006}  analyzed this problem from a more mathematical point of view by looking at the whole singularity structure where Olsen and his co-workers were trying to find the dominant singularity causing the divergence. They regrouped singularities in two classes: the $\alpha$ singularities which have unit order imaginary parts and the $\beta$ singularities which have very small imaginary parts. The singularities $\alpha$ are related to large avoided crossing between the ground state and a low-lying excited states. Whereas the singularities $\beta$ come from a sharp avoided crossing between the ground state and a highly diffuse state. They succeeded to explain the divergence of the series caused by $\beta$ singularities using a previous work of Stillinger \cite{Stillinger_2000}. 
 
 The M{\o}ller-Plesset Hamiltonian is defined as below and by reassembling the term we get the expression \eqref{eq:HamiltonianStillinger}.
-
-\begin{equation}
-H(\lambda)=H_0 + \lambda (H_\text{phys} - H_0)    
-\end{equation}
-
-\begin{equation}
-    H_\text{phys}=\sum\limits_{j=1}^{n}\left[ -\frac{1}{2}\grad_j^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_j-\vb{R}_k|}+\sum\limits_{j<l}^{n}\frac{1}{|\vb{r}_j-\vb{r}_l|}\right]
-\end{equation}
-
-\begin{equation}
-    H_0=\sum\limits_{j=1}^{n}\left[ -\frac{1}{2}\grad_j^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_j-\vb{R}_k|}+V_j^{(scf)}\right]
-\end{equation}
-
-\begin{equation}
-    H(\lambda)=\sum\limits_{j=1}^{n}\left[-\frac{1}{2}\grad_j^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_j-\vb{R}_k|} + (1-\lambda)V_j^{(scf)}+\lambda\sum\limits_{j<l}^{n}\frac{1}{|\vb{r}_j-\vb{r}_l|} \right]
-\label{eq:HamiltonianStillinger}
-\end{equation}
 
 The first two terms, the kinetic energy and the electron-nucleus attraction, form the mono-electronic core Hamiltonian which is independant of $\lambda$. The third term is the mean field repulsion of the Hartree-Fock calculation done to get $H_0$ and the last term is the Coulomb repulsion. If $\lambda$ is negative, the Coulomb interaction becomes attractive but the mean field stays repulsive as it is proportional to $(1-\lambda)$. If $\lambda$ becomes more and more negative the mean field becomes more and more repulsive so the nucleus cannot bind the electrons anymore because the electron-nucleus attraction is not scaled with $\lambda$. The repulsive mean field is localized around nucleus whereas the electrons interactions persist away from nucleus. There is a real negative value $\lambda_c$ where the electrons form a bound cluster and goes to infinity. According to Baker this value is a critical point of the system and by analogy with thermodynamics the energy $E(\lambda)$ exhibits a singularity at $\lambda_c$ \cite{Baker_1971}. At this point the system undergo a phase transition and a symmetry breaking. Beyond $\lambda_c$ there is a continuum of eigenstates with electrons dissociated from the nucleus.
 
