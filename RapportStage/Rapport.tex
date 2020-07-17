@@ -181,6 +181,64 @@ More importantly here, although EPs usually lie off the real axis, these singula
 \end{figure}
 
 \subsection{An illustrative example}
+In order to highlight the general properties of EPs mentioned above, we propose to consider the following $2 \times 2$ Hamiltonian commonly used in quantum chemistry
+
+\begin{equation}
+\label{eq:H_2x2}
+	\bH = 
+	\begin{pmatrix}
+		\epsilon_1	&	\lambda	\\
+		\lambda		&	\epsilon_2
+	\end{pmatrix},
+\end{equation}
+which represents two states of energies $\epsilon_1$ and $\epsilon_2$ coupled with a strength of magnitude $\lambda$.
+This Hamiltonian could represent, for example, a minimal-basis configuration interaction with doubles (CID) for the hydrogen molecule \cite{SzaboBook}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=8cm]{2x2.pdf}
+    \includegraphics[width=8cm]{i2x2.pdf}
+    \caption{\centering Energies, as given by Eq.~\eqref{eq:E_2x2}, of the Hamiltonian \eqref{eq:H_2x2} as a function of $\lambda$ with $\epsilon_1 = -1/2$ and $\epsilon_2 = +1/2$.}
+    \label{fig:2x2}
+\end{figure}
+
+For real $\lambda$, the Hamiltonian \eqref{eq:H_2x2} is clearly Hermitian, and it becomes non-Hermitian for any complex $\lambda$ value.
+Its eigenvalues are
+\begin{equation}
+\label{eq:E_2x2}
+	E_{\pm} = \frac{\epsilon_1 + \epsilon_2}{2} \pm \frac{1}{2} \sqrt{(\epsilon_1 - \epsilon_2)^2 + 4\lambda^2},
+\end{equation}
+and they are represented as a function of $\lambda$ in Fig.~\ref{fig:2x2}.
+One notices that the two states become degenerate only for a pair of complex conjugate values of $\lambda$
+\begin{equation}
+\label{eq:lambda_EP}
+	\lambda_\text{EP} = \pm i\,\frac{\epsilon_1 - \epsilon_2}{2},
+	\quad
+	\text{with energy}	
+	\quad
+	E_\text{EP} = \frac{\epsilon_1 + \epsilon_2}{2},
+\end{equation}
+which correspond to square-root singularities in the complex-$\lambda$ plane (see Fig.~\ref{fig:2x2}).
+These two $\lambda$ values, given by Eq.~\eqref{eq:lambda_EP}, are the so-called EPs and one can clearly see that they connect the ground and excited states.
+Starting from $\lambda_\text{EP}$, two square-root branch cuts run on the imaginary axis towards $\pm i \infty$.
+In the real $\lambda$ axis, the point for which the states are the closest ($\lambda = 0$) is called an avoided crossing and this occurs at $\lambda = \Re(\lambda_\text{EP})$.
+The ``shape'' of the avoided crossing in linked to the magnitude of $\Im(\lambda_\text{EP})$: the smaller $\Im(\lambda_\text{EP})$, the sharper the avoided crossing is.
+
+Around $\lambda = \lambda_\text{EP}$, Eq.~\eqref{eq:E_2x2} behaves as \cite{MoiseyevBook}
+\begin{equation}
+        E_{\pm} = E_\text{EP} \pm \sqrt{2\lambda_\text{EP}} \sqrt{\lambda - \lambda_\text{EP}},
+\end{equation}
+and following a complex contour around the EP, i.e.~$\lambda = \lambda_\text{EP} + R \exp(i\theta)$, yields
+\begin{equation}
+        E_{\pm}(\theta) = E_\text{EP} \pm \sqrt{2\lambda_\text{EP} R}  \exp(i\theta/2),
+\end{equation}
+and we have
+\begin{align}
+	E_{\pm}(2\pi) & = E_{\mp}(0),
+	&
+	E_{\pm}(4\pi) & = E_{\pm}(0).
+\end{align}
+This evidences that encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy.
 
 %============================================================%
 \section{Perturbation theory}
@@ -254,13 +312,13 @@ The Hartree-Fock Hamiltonian \eqref{eq:HFHamiltonian} can be used as the zeroth-
     H(\lambda)=\sum\limits_{i=1}^{n}\left[-\frac{1}{2}\grad_i^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_i-\vb{R}_k|} + (1-\lambda)V_i^{(scf)}+\lambda\sum\limits_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|} \right]
 \end{equation}
 
-In the perturbation theory the energy is a power series of $\lambda$ and the physical energy is obtained by taking $\lambda$ equal to 1. We will refer to the energy up to the $n$-th order as the MP$n$ energy. The MP0 energy overestimates the energy by double counting the electron-electron interaction, the MP1 corrects this effect and the MP1 energy is equal to the Hartree-Fock energy. The MP2 energy starts to recover a part of the correlation energy.
+In the perturbation theory the energy is a power series of $\lambda$ and the physical energy is obtained by taking $\lambda$ equal to 1. We will refer to the energy up to the $n$-th order as the MP$n$ energy. The MP0 energy overestimates the energy by double counting the electron-electron interaction, the MP1 corrects this effect and the MP1 energy is equal to the Hartree-Fock energy. The MP2 energy starts to recover a part of the correlation energy \cite{SzaboBook}.
 
 \begin{equation}
 E_{\text{MP}_{n}}= \sum_{k=0}^n E^{(k)}
 \end{equation}
 
-But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP}_{n}}$ is always convergent when $n$ goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the M{\o}ller-Plesset method will give bad results \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. A smart way to investigate the convergence properties of the M{\o}ller-Plesset series is to transform the coupling parameter $\lambda$ into a complex variable. By doing so the Hamiltonian and the energy become functions of this variable. The energy becomes a multivalued function on $n$ Riemann sheets. As mentioned above by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the M{\o}ller-Plesset perturbation theory. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is quite easy up to the 4th order and the 5th and 6th order can be obtained at high cost. But to deeply understand the behavior of the M{\o}ller-Plesset series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction (FCI). If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI basis set we get the exact energies (in this finite basis set) and expanding in $\lambda$ allows to to get the M{\o}ller-Plesset perturbation series at every order.
+But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP}_{n}}$ is always convergent when $n$ goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the M{\o}ller-Plesset method will give bad results \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. A smart way to investigate the convergence properties of the M{\o}ller-Plesset series is to transform the coupling parameter $\lambda$ into a complex variable. By doing so the Hamiltonian and the energy become functions of this variable. The energy becomes a multivalued function on $n$ Riemann sheets. As mentioned above by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the M{\o}ller-Plesset perturbation theory. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is quite easy up to the 4th order and the 5th and 6th order can be obtained at high cost \cite{JensenBook}. But to deeply understand the behavior of the M{\o}ller-Plesset series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction (FCI). If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI basis set we get the exact energies (in this finite basis set) and expanding in $\lambda$ allows to to get the M{\o}ller-Plesset perturbation series at every order.
 
 \subsection{Alternative partitioning}
 
@@ -280,7 +338,7 @@ On the other hand, the unrestricted M{\o}ller-Plesset series is monotonically co
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.45\textwidth]{gill1986.png}
-    \caption{\centering Barriers to homolytic fission of \ce{He2^2+} at MPn/STO-3G level ($n = 1$--$20$) \cite{Gill_1986}.}
+    \caption{\centering Barriers to homolytic fission of \ce{He2^2+} at MPn/STO-3G level ($n = 1$--$20$) (taken from \cite{Gill_1986}).}
     \label{fig:RUMP_Gill}
 \end{figure}
 
@@ -298,14 +356,14 @@ When a bond is stretched the exact function can undergo a symmetry breaking beco
 2.50 & 0.0\% & 00.1\% & 00.3\% & 00.4\% & 0.99\\
 \hline
 \end{tabular}
-    \caption{\centering Percentage of electron correlation energy recovered and $\expval{S^2}$ for the \ce{H2} molecule as a function of bond length (r,\si{\angstrom}) in the STO-3G basis set \cite{Gill_1988}.}
+    \caption{\centering Percentage of electron correlation energy recovered and $\expval{S^2}$ for the \ce{H2} molecule as a function of bond length (r,\si{\angstrom}) in the STO-3G basis set (taken from \cite{Gill_1988}).}
     \label{tab:SpinContamination}
 \end{table}
 
 In the unrestricted framework the ground state singlet wave function is allowed to mix with triplet states which leads to spin contamination. Gill et al.~highlighted the link between the slow convergence of the unrestricted MP series and the spin contamination of the wave function as shown in the \autoref{tab:SpinContamination} in the example of \ce{H_2} in a minimal basis \cite{Gill_1988}. 
 Handy and co-workers exhibited the same behaviors of the series (oscillating and monotonically slowly) in stretched \ce{H_2O} and \ce{NH_2} systems \cite{Handy_1985}. Lepetit et al.~analyzed the difference between the M{\o}ller-Plesset and Epstein-Nesbet partitioning for the unrestricted Hartree-Fock reference \cite{Lepetit_1988}. They concluded that the slow convergence is due to the coupling of the single with the double excited configuration. Moreover the MP denominators tends towards a constant so each contribution become very small when the bond is stretched.
 
-Cremer and He analyzed 29 FCI systems \cite{Cremer_1996} and regrouped all the systems in two classes. The class A systems which have a monotonic convergence to the FCI value and the class B which converge erratically after initial oscillations. The sample of systems contains stretched molecules and also some at equilibrium geometry, there are also some systems in various basis sets. They highlighted that systems with class A convergence have well-separated electrons pairs whereas class B systems present electrons clustering. This classification was encouraging in order to develop methods based on perturbation theory as it rationalizes the two different observed convergence modes. If it is possible to predict if a system is class A or B, then one can use extrapolation method of the first terms adapted to the class of the systems \cite{Cremer_1996}.
+Cremer and He analyzed 29 atomic and molecular systems at the FCI level \cite{Cremer_1996} and regrouped all the systems in two classes. The class A systems which have a monotonic convergence to the FCI value and the class B which converge erratically after initial oscillations. The sample of systems contains stretched molecules and also some at equilibrium geometry, there are also some systems in various basis sets. They highlighted that systems with class A convergence have well-separated electrons pairs whereas class B systems present electrons clustering. This classification was encouraging in order to develop methods based on perturbation theory as it rationalizes the two different observed convergence modes. If it is possible to predict if a system is class A or B, then one can use extrapolation method of the first terms adapted to the class of the systems \cite{Cremer_1996}.
 
 \subsection{Cases of divergence}
 
@@ -316,7 +374,7 @@ However Olsen et al. have discovered an even more preoccupying behavior of the M
     \hfill
     \includegraphics[height=5.5cm]{HFdivergence.png}
     \hfill
-    \caption{\centering Correlation contributions for \ce{Ne} and \ce{HF} in the cc-pVTZ-(f/d) $\circ$ and aug-cc-pVDZ $\bullet$ basis sets.}
+    \caption{\centering Correlation contributions for \ce{Ne} and \ce{HF} in the cc-pVTZ-(f/d) $\circ$ and aug-cc-pVDZ $\bullet$ basis sets (taken from \cite{Olsen_1996}).}
     \label{fig:my_label}
 \end{figure}
 
@@ -361,7 +419,7 @@ It seems like our understanding of the physics of spatial and/or spin symmetry b
 Simple systems that are analytically solvable (or at least quasi-exactly solvable) are of great importance in theoretical chemistry. Those systems are very useful benchmarks to test new methods as they are mathematically easy but retain much of the key physics. To investigate the physics of EPs we use one such system named spherium model. It consists of two electrons confined to the surface of a sphere interacting through the long-range Coulomb potential. Thus the Hamiltonian is:
 
 \begin{equation}
-\widehat{H} = -\frac{\grad_1^2 + \grad_2^2}{2} + \frac{1}{\vb{r}_{12}}
+\widehat{H} = -\frac{\grad_1^2 + \grad_2^2}{2} + \frac{1}{r_{12}}
 \end{equation}
 
 The laplacian operators are the kinetic operators for each electrons and $\vb{r}_{12}^{-1}$ is the Coulomb operator. The radius R of the sphere dictates the correlation regime, i.e., weak correlation regime at small $R$ where the kinetic energy dominates, or strong correlation regime where the electron repulsion term drives the physics. We will use this model to try to rationalize the effects of the variables that may influence the physics of EPs:
