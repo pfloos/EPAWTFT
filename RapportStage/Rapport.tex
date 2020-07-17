@@ -139,12 +139,19 @@ Laboratoire de Chimie et Physique Quantiques
 \section{Introduction}
 %============================================================%
 
-It has always been of great importance for theoretical chemists to better understand excited states and their properties because processes involving excited states are ubiquitous in nature (physics, chemistry and biology). One of the major challenges is to accurately compute energies of a chemical system (atoms, molecules, ..). Plenty of methods have been developed to this end and each of them have its own advantages but also its own flaws. The fact that none of all those methods is successful for every molecule in every geometry encourages chemists to continue the development of new methodologies to get accurate energies and to try to deeply understand why each method fails or not in each situation. All those methods rely on the notion of quantised energy levels of Hermitian quantum mechanics. In quantum chemistry, the ordering of the energy levels represents the different electronic states of a molecule, the lowest being the ground state while the higher ones are the so-called excited states. We need methods to accurately get how those states are ordered.
+Due to the ubiquitous influence of processes involving electronic excited states in physics, chemistry, and biology, their faithful description from first-principles has been one of the grand challenges faced by theoretical chemists since the dawn of computational chemistry. 
+Accurately predicting ground- and excited-state energies (hence excitation energies) is particularly valuable in this context, and it has concentrated most of the efforts within the community.
+An armada of theoretical and computational methods have been developed to this end, each of them being plagued by its own flaws. 
+The fact that none of these methods is successful in every chemical scenario has encouraged chemists to carry on the development of new excited-state methodologies, their main goal being to get the most accurate excitation energies (and properties) at the lowest computational cost, and in the most general context.
 
+One common feature of all these methods is that they rely on the notion of quantised energy levels of Hermitian quantum mechanics, in which the different electronic states of a molecule or an atom are energetically ordered, the lowest being the ground state while the higher ones are excited states. 
 Within this quantised paradigm, electronic states look completely disconnected from one another.
+Many current methods study excited states using only ground-state information, creating a ground-state bias that leads to incorrect excitation energies.
 However, one can gain a different perspective on quantisation extending quantum chemistry into the complex domain.
 In a non-Hermitian complex picture, the energy levels are \textit{sheets} of a more complicated topological manifold called \textit{Riemann surface}, and they are smooth and continuous \textit{analytic continuation} of one another.
 In other words, our view of the quantised nature of conventional Hermitian quantum mechanics arises only from our limited perception of the more complex and profound structure of its non-Hermitian variant.
+The realisation that ground and excited states both emerge from one single mathematical structure with equal importance suggests that excited-state energies can be computed from first principles in their own right.
+One could then exploit the structure of these Riemann surfaces to develop methods that directly target excited-state energies without needing ground-state information.
 
 Therefore, by analytically continuing the energy $E(\lambda)$ in the complex domain (where $\lambda$ is a coupling parameter), the ground and excited states of a molecule can be smoothly connected.
 This connection is possible because by extending real numbers to the complex domain, the ordering property of real numbers is lost.
