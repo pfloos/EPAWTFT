@@ -41,6 +41,7 @@
 \usepackage{xcolor} % gestion de différentes couleurs
 
 \definecolor{linkcolor}{rgb}{0,0,0.6} % définition de la couleur des liens pdf
+\newcommand{\titou}[1]{\textcolor{red}{#1}}
 \usepackage[ pdftex,colorlinks=true,
 pdfstartview=FitV,
 linkcolor= linkcolor,
@@ -143,10 +144,10 @@ Laboratoire de Chimie et Physique Quantiques
 
 \subsection{Background}
 
-Due to the ubiquitous influence of processes involving electronic excited states in physics, chemistry, and biology, their faithful description from first-principles has been one of the grand challenges faced by theoretical chemists since the dawn of computational chemistry. 
+Due to the ubiquitous influence of processes involving electronic excited states in physics, chemistry, and biology, their faithful description from first principles has been one of the grand challenges faced by theoretical chemists since the dawn of computational chemistry. 
 Accurately predicting ground- and excited-state energies (hence excitation energies) is particularly valuable in this context, and it has concentrated most of the efforts within the community.
 An armada of theoretical and computational methods have been developed to this end, each of them being plagued by its own flaws. 
-The fact that none of these methods is successful in every chemical scenario has encouraged chemists to carry on the development of new excited-state methodologies, their main goal being to get the most accurate excitation energies (and properties) at the lowest computational cost, and in the most general context.
+The fact that none of these methods is successful in every chemical scenario has encouraged chemists to carry on the development of new excited-state methodologies, their main goal being to get the most accurate excitation energies (and properties) at the lowest possible computational cost in the most general context.
 
 One common feature of all these methods is that they rely on the notion of quantised energy levels of Hermitian quantum mechanics, in which the different electronic states of a molecule or an atom are energetically ordered, the lowest being the ground state while the higher ones are excited states. 
 Within this quantised paradigm, electronic states look completely disconnected from one another.
@@ -157,7 +158,7 @@ In other words, our view of the quantised nature of conventional Hermitian quant
 The realisation that ground and excited states both emerge from one single mathematical structure with equal importance suggests that excited-state energies can be computed from first principles in their own right.
 One could then exploit the structure of these Riemann surfaces to develop methods that directly target excited-state energies without needing ground-state information.
 
-Therefore, by analytically continuing the energy $E(\lambda)$ in the complex domain (where $\lambda$ is a coupling parameter), the ground and excited states of a molecule can be smoothly connected.
+By analytically continuing the electronic energy $E(\lambda)$ in the complex domain (where $\lambda$ is a coupling parameter), the ground and excited states of a molecule can be smoothly connected.
 This connection is possible because by extending real numbers to the complex domain, the ordering property of real numbers is lost.
 Hence, electronic states can be interchanged away from the real axis since the concept of ground and excited states has been lost.
 Amazingly, this smooth and continuous transition from one state to another has recently been experimentally realized in physical settings such as electronics, microwaves, mechanics, acoustics, atomic systems and optics \cite{Bittner_2012, Chong_2011, Chtchelkatchev_2012, Doppler_2016, Guo_2009, Hang_2013, Liertzer_2012, Longhi_2010, Peng_2014, Peng_2014a, Regensburger_2012, Ruter_2010, Schindler_2011, Szameit_2011, Zhao_2010, Zheng_2013, Choi_2018, El-Ganainy_2018}.
@@ -196,8 +197,8 @@ This Hamiltonian could represent, for example, a minimal-basis configuration int
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=8cm]{2x2.pdf}
-    \includegraphics[width=8cm]{i2x2.pdf}
+    \includegraphics[width=0.45\textwidth]{2x2.pdf}
+    \includegraphics[width=0.45\textwidth]{i2x2.pdf}
     \caption{\centering Energies, as given by Eq.~\eqref{eq:E_2x2}, of the Hamiltonian \eqref{eq:H_2x2} as a function of $\lambda$ with $\epsilon_1 = -1/2$ and $\epsilon_2 = +1/2$.}
     \label{fig:2x2}
 \end{figure}
@@ -239,6 +240,9 @@ and we have
 	E_{\pm}(4\pi) & = E_{\pm}(0).
 \end{align}
 This evidences that encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy.
+\titou{Maybe you should add a few equations here to highlight the self-orthogonality process. 
+What do you think?
+You could also show that the behaviour of the wave function when one follows the complex contour around the EP.}
 
 %============================================================%
 \section{Perturbation theory}
@@ -375,15 +379,17 @@ They proved that using different extrapolation formulas of the first terms of th
 However Olsen et al. have discovered an even more preoccupying behavior of the MP series in the late 90's. They have shown that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and \ce{HF} \cite{Olsen_1996, Christiansen_1996}. Cremer and He had already studied those two systems and classified them as class B systems. But Olsen and his co-workers have done the analysis in larger basis sets containing diffuse functions and in those basis sets the series become divergent at high order.
 
 \begin{figure}[h!]
-    \includegraphics[height=5.5cm]{Nedivergence.png}
-    \hfill
-    \includegraphics[height=5.5cm]{HFdivergence.png}
-    \hfill
+    \centering
+    \includegraphics[width=0.45\textwidth]{Nedivergence.png}
+    \includegraphics[width=0.45\textwidth]{HFdivergence.png}
     \caption{\centering Correlation contributions for \ce{Ne} and \ce{HF} in the cc-pVTZ-(f/d) $\circ$ and aug-cc-pVDZ $\bullet$ basis sets (taken from \cite{Olsen_1996}).}
     \label{fig:my_label}
 \end{figure}
 
-The discovery of this divergent behavior was really worrying because in order to get more and more accurate results theoretical chemists need to work in large basis sets. As a consequence they investigated the causes of those divergences and in the same time the reasons of the different types of convergence. To do this they analyzed the relation between the dominant singularity (i.e. the closest singularity to the origin) and the convergence behavior of the series \cite{Olsen_2000}. Their analysis is based on Darboux's theorem: in the limit of large order, the series coefficients become equivalent to the Taylor series coefficients of the singularity closest to the origin. Following the result of this theorem, the convergence patterns of the MP series can be explained by looking at the dominant singularity.
+The discovery of this divergent behavior was really worrying because in order to get more and more accurate results theoretical chemists need to work in large basis sets. As a consequence they investigated the causes of those divergences and in the same time the reasons of the different types of convergence. To do this they analyzed the relation between the dominant singularity (i.e. the closest singularity to the origin) and the convergence behavior of the series \cite{Olsen_2000}. Their analysis is based on Darboux's theorem: 
+\begin{quote}
+	\textit{``In the limit of large order, the series coefficients become equivalent to the Taylor series coefficients of the singularity closest to the origin. Following the result of this theorem, the convergence patterns of the MP series can be explained by looking at the dominant singularity.''}
+\end{quote}
 
 A singularity in the unit circle is designated as an intruder state, more precisely as a front-door (respectively back-door) intruder state if the real part of the singularity is positive (respectively negative). The method used is to do a scan of the real axis to identify the avoided crossing responsible for the pair of dominant singularity. Then by modeling this avoided crossing by a two-state Hamiltonian one can get an approximation of the dominant conjugate pair of singularity by finding the EPs of the $2\times2$ Hamiltonian. The diagonal matrix is the unperturbed Hamiltonian and the other matrix is the perturbative part of the Hamiltonian.
 
@@ -427,7 +433,7 @@ Simple systems that are analytically solvable (or at least quasi-exactly solvabl
 \widehat{H} = -\frac{\grad_1^2 + \grad_2^2}{2} + \frac{1}{r_{12}}
 \end{equation}
 
-The laplacian operators are the kinetic operators for each electrons and $\vb{r}_{12}^{-1}$ is the Coulomb operator. The radius R of the sphere dictates the correlation regime, i.e., weak correlation regime at small $R$ where the kinetic energy dominates, or strong correlation regime where the electron repulsion term drives the physics. We will use this model to try to rationalize the effects of the variables that may influence the physics of EPs:
+The laplacian operators are the kinetic operators for each electrons and $r_{12}^{-1} = \abs{\vb{r}_1 - \vb{r}_2}$ is the Coulomb operator. The radius R of the sphere dictates the correlation regime, i.e., weak correlation regime at small $R$ where the kinetic energy dominates, or strong correlation regime where the electron repulsion term drives the physics. We will use this model to try to rationalize the effects of the variables that may influence the physics of EPs:
 \begin{itemize}
 	\item Partitioning of the Hamiltonian and the actual zeroth-order reference: weak correlation reference [restricted Hartree-Fock (RHF) or unrestricted Hartree-Fock (UHF) references, M{\o}ller-Plesset or Epstein-Nesbet (EN) partitioning], or strongly correlated reference.
 	\item Basis set: minimal basis or infinite (i.e., complete) basis made of localized or delocalized basis functions
