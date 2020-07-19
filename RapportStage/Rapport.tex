@@ -306,10 +306,10 @@ K_b(1)\phi_a(1)=\left[\int\dd\vb{x}_2\phi_b^*(2)\frac{1}{r_{12}}\phi_a(2) \right
 
 \subsection{M{\o}ller-Plesset perturbation theory}
 
-The Hartree-Fock Hamiltonian \eqref{eq:HFHamiltonian} can be used as the zeroth-order Hamiltonian of the equation \eqref{eq:SchrEq-PT}. This partitioning of the Hamiltonian leads to the so-called M{\o}ller-Plesset (MP) perturbation theory \cite{Moller_1934}. The discovery of a partitioning of the Hamiltonian that allowed chemists to recover a part of the correlation energy (i.e. the difference between the exact energy and the Hartree-Fock energy) using perturbation theory has been a major step in the development of post-Hartree-Fock methods. This yields the Hamiltonian $\bH(\lambda)$ of the equation \eqref{eq:MPHamiltonian} where the two-electron part of the Fock operator $f(i)$ has been written $V_i^{(scf)}$ for convenience.
+The Hartree-Fock Hamiltonian \eqref{eq:HFHamiltonian} can be used as the zeroth-order Hamiltonian of the equation \eqref{eq:SchrEq-PT}. This partitioning of the Hamiltonian leads to the so-called M{\o}ller-Plesset (MP) perturbation theory \cite{Moller_1934}. The discovery of a partitioning of the Hamiltonian that allowed chemists to recover a part of the correlation energy (i.e. the difference between the exact energy and the Hartree-Fock energy) using perturbation theory has been a major step in the development of post-Hartree-Fock methods. This yields the Hamiltonian $\bH(\lambda)$ of the equation \eqref{eq:MPHamiltonian} where the two-electron part of the Fock operator $f(i)$ has been written $V_i^{HF}$ for convenience.
 
 \begin{equation}\label{eq:MPHamiltonian}
-    H(\lambda)=\sum\limits_{i=1}^{n}\left[-\frac{1}{2}\grad_i^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_i-\vb{R}_k|} + (1-\lambda)V_i^{(scf)}+\lambda\sum\limits_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|} \right]
+    H(\lambda)=\sum\limits_{i=1}^{n}\left[-\frac{1}{2}\grad_i^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_i-\vb{R}_k|} + (1-\lambda)V_i^{HF}+\lambda\sum\limits_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|} \right]
 \end{equation}
 
 In the perturbation theory the energy is a power series of $\lambda$ and the physical energy is obtained by taking $\lambda$ equal to 1. We will refer to the energy up to the $n$-th order as the MP$n$ energy. The MP0 energy overestimates the energy by double counting the electron-electron interaction, the MP1 corrects this effect and the MP1 energy is equal to the Hartree-Fock energy. The MP2 energy starts to recover a part of the correlation energy \cite{SzaboBook}.
@@ -322,7 +322,9 @@ But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP
 
 \subsection{Alternative partitioning}
 
-The M{\o}ller-Plesset partitioning is not the only one possible in electronic structure theory.
+The M{\o}ller-Plesset partitioning is not the only one possible in electronic structure theory. An other possibility, even more natural than the M{\o}ller-Plesset one, is to take the diagonal elements of $\bH$ as the zeroth-order Hamiltonian. Hence, the off-diagonal elements of $\bH(\lambda)$ are the perturbation operator. 
+
+The electronic Hamiltonian can be separated in the kinetic part and the potential part. We can use this to consider to other partitioning
 
 %============================================================%
 \section{Historical overview}
@@ -342,7 +344,7 @@ On the other hand, the unrestricted M{\o}ller-Plesset series is monotonically co
     \label{fig:RUMP_Gill}
 \end{figure}
 
-When a bond is stretched the exact function can undergo a symmetry breaking becoming multi-reference during this process (see for example the case of \ce{H_2} in \cite{SzaboBook}). A restricted HF Slater determinant is a poor approximation of a symmetry-broken wave function but even in the unrestricted formalism, where the spatial orbitals of electrons $\alpha$ and $\beta$ are not restricted to be the same \cite{Fukutome_1981}, which allows a better description of symmetry-broken system, the series does not give accurate results at low orders. Even with this improvement of the zeroth order wave function the series does not have the smooth and rapidly converging behavior wanted. 
+When a bond is stretched the exact wave function becomes more and more multi-reference. Yet the Hartree-Fock wave function is restricted to be single reference so it can not model properly stretched system. Nevertheless the Hartree-Fock wave function can undergo a symmetry breaking to minimize its energy losing one of the symmetry of the exact wave function during the process (see for example the case of \ce{H_2} in \cite{SzaboBook}). A restricted HF Slater determinant is a poor approximation of a symmetry-broken wave function but even in the unrestricted formalism, where the spatial orbitals of electrons $\alpha$ and $\beta$ are not restricted to be the same \cite{Fukutome_1981}, which allows a better description of symmetry-broken system, the series does not give accurate results at low orders. Even with this improvement of the zeroth order wave function the series does not have the smooth and rapidly converging behavior wanted. 
 
 \begin{table}[h!]
     \centering
@@ -360,10 +362,13 @@ When a bond is stretched the exact function can undergo a symmetry breaking beco
     \label{tab:SpinContamination}
 \end{table}
 
-In the unrestricted framework the ground state singlet wave function is allowed to mix with triplet states which leads to spin contamination. Gill et al.~highlighted the link between the slow convergence of the unrestricted MP series and the spin contamination of the wave function as shown in the \autoref{tab:SpinContamination} in the example of \ce{H_2} in a minimal basis \cite{Gill_1988}. 
-Handy and co-workers exhibited the same behaviors of the series (oscillating and monotonically slowly) in stretched \ce{H_2O} and \ce{NH_2} systems \cite{Handy_1985}. Lepetit et al.~analyzed the difference between the M{\o}ller-Plesset and Epstein-Nesbet partitioning for the unrestricted Hartree-Fock reference \cite{Lepetit_1988}. They concluded that the slow convergence is due to the coupling of the single with the double excited configuration. Moreover the MP denominators tends towards a constant so each contribution become very small when the bond is stretched.
+In the unrestricted framework the singlet ground state wave function is allowed to mix with triplet wave function which leads to spin contamination. Gill et al.~highlighted the link between the slow convergence of the unrestricted MP series and the spin contamination of the wave function as shown in the \autoref{tab:SpinContamination} in the example of \ce{H_2} in a minimal basis \cite{Gill_1988}. 
+Handy and co-workers exhibited the same behaviors of the series (oscillating and monotonically slowly) in stretched \ce{H_2O} and \ce{NH_2} systems \cite{Handy_1985}. Lepetit et al.~analyzed the difference between the M{\o}ller-Plesset and Epstein-Nesbet partitioning for the unrestricted Hartree-Fock reference \cite{Lepetit_1988}. They concluded that the slow convergence is due to the coupling of the singly with the doubly excited configuration. Moreover the MP denominators tends towards a constant so each contribution become very small when the bond is stretched.
 
-Cremer and He analyzed 29 atomic and molecular systems at the FCI level \cite{Cremer_1996} and regrouped all the systems in two classes. The class A systems which have a monotonic convergence to the FCI value and the class B which converge erratically after initial oscillations. The sample of systems contains stretched molecules and also some at equilibrium geometry, there are also some systems in various basis sets. They highlighted that systems with class A convergence have well-separated electrons pairs whereas class B systems present electrons clustering. This classification was encouraging in order to develop methods based on perturbation theory as it rationalizes the two different observed convergence modes. If it is possible to predict if a system is class A or B, then one can use extrapolation method of the first terms adapted to the class of the systems \cite{Cremer_1996}.
+Cremer and He analyzed 29 atomic and molecular systems at the FCI level \cite{Cremer_1996} and regrouped all the systems in two classes. The class A systems which have a monotonic convergence to the FCI value and the class B which converge erratically after initial oscillations. The sample of systems contains stretched molecules and also some at equilibrium geometry, there are also some systems in various basis sets. They highlighted that \cite{Cremer_1996}\begin{quote}
+\textit{Class A systems are characterized by electronic structures with well-separated electron pairs while class B systems are characterized by electronic structures with electron clustering in one or more regions.}
+\end{quote}
+They proved that using different extrapolation formulas of the first terms of the M{\o}ller-Plesset of the series for class A and class B systems improve the precision of those formulas. The mean deviation from FCI correlation energies is 0.3 mhartrees whereas with the formula that do not distinguish the system it is 12 mhartrees. Even if there were still shaded areas and that this classification was incomplete, this work showed that understanding the origin of the different modes of convergence would lead to a more rationalized use of the M{\o]ller-Plesset perturbation theory and to more accurate correlation energies.
 
 \subsection{Cases of divergence}
 
@@ -383,14 +388,14 @@ The discovery of this divergent behavior was really worrying because in order to
 A singularity in the unit circle is designated as an intruder state, more precisely as a front-door (respectively back-door) intruder state if the real part of the singularity is positive (respectively negative). The method used is to do a scan of the real axis to identify the avoided crossing responsible for the pair of dominant singularity. Then by modeling this avoided crossing by a two-state Hamiltonian one can get an approximation of the dominant conjugate pair of singularity by finding the EPs of the $2\times2$ Hamiltonian. The diagonal matrix is the unperturbed Hamiltonian and the other matrix is the perturbative part of the Hamiltonian.
 
 \begin{equation}
-\mqty(\alpha & \delta \\ \delta & \beta) = \mqty(\alpha + \alpha_s & 0 \\ 0 & \beta + \beta_s ) + \mqty(- \alpha_s & \delta \\ \delta & - \beta_s)
+\underbrace{\mqty(\alpha & \delta \\ \delta & \beta)}_{\bH} = \underbrace{\mqty(\alpha + \alpha_s & 0 \\ 0 & \beta + \beta_s )}_{\bH^{(0)}} + \underbrace{\mqty(- \alpha_s & \delta \\ \delta & - \beta_s)}_{\bV}
 \end{equation}
  
 They first studied molecules with low-lying doubly excited states of the same spatial and spin symmetry because in those systems the HF wave function is a bad approximation. The exact wave function has a non-negligible contribution from the doubly excited states, so those low-lying excited states were good candidates for being intruder states. For \ce{CH_2} in a large basis set, the series is convergent up to the 50th order. They showed that the dominant singularity lies outside the unit circle but close to it causing the slow convergence.
 
-Then they demonstrated that the divergence for the \ce{Ne} is due to a back-door intruder state. When the basis set is augmented with diffuse functions, the ground state undergo sharp avoided crossings with highly diffuse excited states leading to a back door intruder state. They used their two-state model on this avoided crossings and the model was actually predicting the divergence of the series. They concluded that the divergence of the series was due to the interaction with a highly diffuse excited state. 
+Then they demonstrated that the divergence for the \ce{Ne} is due to a back-door intruder state. When the basis set is augmented with diffuse functions, the ground state undergo sharp avoided crossings with highly diffuse excited states leading to a back-door intruder state. They used their two-state model on this avoided crossings and the model was actually predicting the divergence of the series. They concluded that the divergence of the series was due to the interaction with a highly diffuse excited state. 
 
-Moreover they proved that the extrapolation formula of Cremer and He \cite{Cremer_1996} cannot be used for all systems. Even more, that those formula were not mathematically motivated when looking at the singularity causing the divergence. For example the hydrogen fluoride molecule contains both back-door intruder states and low-lying doubly excited states which results in alternated terms up to order ten and then the series is monotonically convergent. This is due to the fact that two pairs of singularity are approximately at the same distance from the origin.
+Moreover they proved that the extrapolation formulas of Cremer and He \cite{Cremer_1996} cannot be used for all systems. Even more, that those formula were not mathematically motivated when looking at the singularity causing the divergence. For example the hydrogen fluoride molecule contains both back-door intruder states and low-lying doubly excited states which results in alternated terms up to order ten and then the series is monotonically convergent. This is due to the fact that two pairs of singularity are approximately at the same distance from the origin.
 
 \subsection{The singularity structure}
 
