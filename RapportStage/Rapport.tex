@@ -324,7 +324,7 @@ E_{\text{MP}_{n}}= \sum_{k=0}^n E^{(k)}
 
 But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP}_{n}}$ is always convergent when $n$ goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the M{\o}ller-Plesset method will give bad results \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. A smart way to investigate the convergence properties of the M{\o}ller-Plesset series is to transform the coupling parameter $\lambda$ into a complex variable. By doing so the Hamiltonian and the energy become functions of this variable. The energy becomes a multivalued function on $n$ Riemann sheets. As mentioned above by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the M{\o}ller-Plesset perturbation theory. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is quite easy up to the 4th order and the 5th and 6th order can be obtained at high cost \cite{JensenBook}. But to deeply understand the behavior of the M{\o}ller-Plesset series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction (FCI). If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI basis set we get the exact energies (in this finite basis set) and expanding in $\lambda$ allows to to get the M{\o}ller-Plesset perturbation series at every order.
 
-\subsection{Alternative partitioning}
+\subsection{Alternative partitioning}\label{sec:AlterPart}
 
 The M{\o}ller-Plesset partitioning is not the only one possible in electronic structure theory. An other possibility, even more natural than the M{\o}ller-Plesset one, is to take the diagonal elements of $\bH$ as the zeroth-order Hamiltonian. Hence, the off-diagonal elements of $\bH(\lambda)$ are the perturbation operator. 
 
@@ -550,7 +550,9 @@ In this part, we will try to investigate how some parameters of $\bH(\lambda)$ i
 \pdv{E}\text{det}[E-\bH(\lambda)]=0
 \end{equation}
 
-We will take the simple case of the M{\o}ller-Plesset partitioning with a restricted Hartree-Fock minimal basis set as our starting point for this analysis. \\
+We will take the simple case of the M{\o}ller-Plesset partitioning with a restricted Hartree-Fock minimal basis set as our starting point for this analysis. The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we can forget the spin part of the spin-orbitals and from now we will work with spatial orbitals. In the restricted formalism the spatial orbitals are the same so the two-electron basis set is: $\psi_1=Y_0(\theta_1)Y_0(\theta_2)$; $\psi_2=Y_0(\theta_1)Y_1(\theta_2)$; $\psi_3=Y_1(\theta_1)Y_0(\theta_2)$; $\psi_4=Y_1(\theta_1)Y_1(\theta_2)$.
+
+The Hamiltonian $\bH(\lambda)$ is block diagonal because of the symmetry of the basis set. $\psi_1$ have the same symmetry as $\psi_4$ and there is an avoided crossing between these two states as we can see in \autoref{fig:RHFMiniBasRCV}. 
 
 \begin{figure}[h!]
     \centering
@@ -560,7 +562,7 @@ We will take the simple case of the M{\o}ller-Plesset partitioning with a restri
     \label{fig:RHFMiniBasRCV}
 \end{figure}
 
-Then we will compare the different partitioning using the same basis set. The \autoref{fig:RadiusPartitioning} shows the evolution of the radius of convergence in function of $R$ for the M{\o}ller-Plesset, the Epstein-Nesbet, the weak correlation and the strong coupling partitioning. We can see that
+Then we can compare the different partitioning of \autoref{sec:AlterPart} using the same basis set. The \autoref{fig:RadiusPartitioning} shows the evolution of the radius of convergence in function of $R$ for the M{\o}ller-Plesset, the Epstein-Nesbet, the Weak Correlation and the Strong Coupling partitioning. We can see that
 
 \begin{figure}[h!]
     \centering
