@@ -42,6 +42,7 @@
 
 \definecolor{linkcolor}{rgb}{0,0,0.6} % définition de la couleur des liens pdf
 \newcommand{\titou}[1]{\textcolor{red}{#1}}
+\newcommand{\antoine}[1]{\textcolor{orange}{#1}}
 \usepackage[ pdftex,colorlinks=true,
 pdfstartview=FitV,
 linkcolor= linkcolor,
@@ -367,7 +368,7 @@ When a bond is stretched the exact wave function becomes more and more multi-ref
 \end{table}
 
 In the unrestricted framework the singlet ground state wave function is allowed to mix with triplet wave function which leads to spin contamination. Gill et al.~highlighted the link between the slow convergence of the unrestricted MP series and the spin contamination of the wave function as shown in the \autoref{tab:SpinContamination} in the example of \ce{H_2} in a minimal basis \cite{Gill_1988}. 
-Handy and co-workers exhibited the same behaviors of the series (oscillating and monotonically slowly) in stretched \ce{H_2O} and \ce{NH_2} systems \cite{Handy_1985}. Lepetit et al.~analyzed the difference between the M{\o}ller-Plesset and Epstein-Nesbet partitioning for the unrestricted Hartree-Fock reference \cite{Lepetit_1988}. They concluded that the slow convergence is due to the coupling of the singly with the doubly excited configuration. Moreover the MP denominators tends towards a constant so each contribution become very small when the bond is stretched.
+Handy and co-workers exhibited the same behaviors of the series (oscillating and monotonically slowly) in stretched \ce{H_2O} and \ce{NH_2} systems \cite{Handy_1985}. Lepetit et al.~analyzed the difference between the M{\o}ller-Plesset and Epstein-Nesbet partitioning for the unrestricted Hartree-Fock reference \cite{Lepetit_1988}. They concluded that the slow convergence is due to the coupling of the singly with the doubly excited configuration. Moreover the MP denominators tends towards a constant so each contribution become very small when the bond is stretched. \antoine{Rephrase this sentence}
 
 Cremer and He analyzed 29 atomic and molecular systems at the FCI level \cite{Cremer_1996} and regrouped all the systems in two classes. The class A systems which have a monotonic convergence to the FCI value and the class B which converge erratically after initial oscillations. The sample of systems contains stretched molecules and also some at equilibrium geometry, there are also some systems in various basis sets. They highlighted that \cite{Cremer_1996}\begin{quote}
 \textit{Class A systems are characterized by electronic structures with well-separated electron pairs while class B systems are characterized by electronic structures with electron clustering in one or more regions.}
@@ -444,9 +445,9 @@ The laplacian operators are the kinetic operators for each electrons and $r_{12}
 	\item Radius of the spherium that ultimately dictates the correlation regime.
 \end{itemize}
 
-In the restricted Hartree-Fock formalism, the wave function cannot model properly the physics of the system at large R because the spatial orbitals are restricted to be the same. Then a fortiori it cannot represent two electrons on opposite side of the sphere. In the unrestricted formalism there is a critical value of R, called the Coulson-Fischer point \cite{Coulson_1949}, at which a second unrestricted Hartree-Fock solution appear. This solution is symmetry-broken as the two electrons tends to localize on opposite side of the sphere. By analogy with the case of \ce{H_2} \cite{SzaboBook}, the unrestricted Hartree-Fock wave function is defined as:
+In the restricted Hartree-Fock formalism, the wave function cannot model properly the physics of the system at large R because the spatial orbitals are restricted to be the same. Then a fortiori it cannot represent two electrons on opposite side of the sphere. In the unrestricted formalism there is a critical value of R, called the Coulson-Fischer point \cite{Coulson_1949}, at which a second unrestricted Hartree-Fock solution appear. This solution is symmetry-broken as the two electrons tends to localize on opposite side of the sphere. The unrestricted Hartree-Fock wave function is defined as:
 
-\begin{equation}
+\begin{equation}\label{eq:UHF_WF}
 \Psi_{\text{UHF}}(\theta_1,\theta_2)=\phi_\alpha(\theta_1)\phi_\beta(\theta_2)
 \end{equation}
 
@@ -481,28 +482,28 @@ E_{\text{p}} = \sum\limits_{i,j,k,l=0}^{\infty}C_{\alpha,i}C_{\alpha,j}C_{\beta,
 S_{i,j,k,l}=\sqrt{(2i+1)(2j+1)(2k+1)(2l+1)}
 \end{equation*}
 
-We obtained the equation \eqref{eq:EUHF} for the general form of the wave function, but to be associated with a physical wave function the energy need to be stationary with respect to the coefficient. The general method is to use the Hartree-Fock self-consistent field method to get the coefficients of the wave functions corresponding to physical solutions. We will work in a minimal basis to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions. One can define the mono-electronic wave functions $\phi(\theta)$ using a mixing angle between the two basis functions. Hence we just need to minimize the energy with respect to the two mixing angles $\chi_\alpha$ and $\chi_\beta$.
+We obtained the equation \eqref{eq:EUHF} for the general form of the wave function \eqref{eq:UHF_WF}, but to be associated with a physical wave function the energy needs to be stationary with respect to the coefficients. The general method is to use the Hartree-Fock self-consistent field method \cite{SzaboBook} to get the coefficients of the wave functions corresponding to physical solutions. We will work in a minimal basis ($Y_{00}$ and $Y_{10}$) to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions. One can define the one-electron wave functions $\phi(\theta)$ using a mixing angle between the two basis functions. Hence we just need to minimize the energy with respect to the two mixing angles $\chi_\alpha$ and $\chi_\beta$.
 
 \begin{equation}
-\phi_\alpha(\theta_1)= \cos(\chi_\alpha)\frac{Y_{00}(\Omega_1)}{R} + \sin(\chi_\alpha)\frac{Y_{10}(\Omega_1)}{R}
+\phi_\alpha(\theta_1)= \cos(\chi_\alpha)\frac{Y_{00}(\theta_1)}{R} + \sin(\chi_\alpha)\frac{Y_{10}(\theta_1)}{R}
 \end{equation}
  
-The minimization gives the 3 anticipated solutions (valid for all value of R):
+The minimization gives the three following solutions valid for all value of R:
 \begin{itemize}
 \item The two electrons are in the $Y_{00}$ orbital which is a RHF solution. This solution is associated with the energy $R^{-2}$.
 \item The two electrons are in the $Y_{10}$ orbital which is a RHF solution. This solution is associated with the energy $R^{-2} + R^{-1}$
 \item One electron is in the $Y_{00}$ orbital and the other is in the $Y_{10}$ orbital which is a UHF solution. This solution is associated with the energy $2R^{-2}+\frac{29}{25}R^{-1}$
 \end{itemize}
 
-Vérifier minimum, maximum, point selle
+Those solutions are respectively a minimum, a maximum and a saddle point of the HF equations.\\
 
-In addition, there is also the well-known symmetry-broken UHF solution. For $R>3/2$ an other stationary UHF solution appear, this solution is a minimum of the Hartree-Fock equations. This solution corresponds to the configuration with the electron $\alpha$ on one side of the sphere and the electron $\beta$ on the opposite side and the other way round. The electrons can be on opposite sides of the sphere because the choice of $Y_{10}$ as a basis function induced a privileged axis on the sphere for the electrons. This solution have the energy \eqref{eq:EUHF} for $R>3/2$.
+In addition, there is also the well-known symmetry-broken UHF solution. For $R>3/2$ an other stationary UHF solution appear, this solution is a minimum of the Hartree-Fock equations. This solution corresponds to the configuration with the electron $\alpha$ on one side of the sphere and the electron $\beta$ on the opposite side and the configuration the other way round. The electrons can be on opposite sides of the sphere because the choice of $Y_{10}$ as a basis function induced a privileged axis on the sphere for the electrons. This solution have the energy \eqref{eq:EsbUHF} for $R>3/2$.
 
-\begin{equation}
+\begin{equation}\label{eq:EsbUHF}
 E_{\text{sb-UHF}}=-\frac{75}{112R^3}+\frac{25}{28R^2}+\frac{59}{84R}
 \end{equation}
 
-The exact solution for the ground state is a singlet so this wave function does not have the true symmetry. However this solution gives more accurate results for the energy at large R as shown in \autoref{tab:ERHFvsEUHF}. In fact at the Coulson-Fischer point, it becomes more efficient to minimize the Coulomb repulsion than the kinetic energy leading to this symmetry breaking. This type of symmetry breaking is called a spin density wave because the system oscillate between the two symmetry-broken configurations.
+The exact solution for the ground state is a singlet so this wave function does not have the true symmetry\antoine{add an equation that shows this}.  However this solution gives more accurate results for the energy at large R as shown in \autoref{tab:ERHFvsEUHF}. In fact at the Coulson-Fischer point, it becomes more efficient to minimize the Coulomb repulsion than the kinetic energy in order to minimize the total energy. Thus the wave function break the spin symmetry because it allows a more efficient minimization of the Coulomb repulsion. This type of symmetry breaking is called a spin density wave because the system oscillates between the two symmetry-broken configurations \cite{GiulianiBook}.
 
 \begin{table}[h!]
 \centering
@@ -519,20 +520,20 @@ Exact & 9.783874 & 0.852781 & 0.391959 & 0.247898 & 0.139471 & 0.064525 & 0.0054
 \label{tab:ERHFvsEUHF}
 \end{table}
 
-There is also another symmetry-broken solution for $R>75/38$ but this one corresponds to a maximum of the . This solution is associated with another type of symmetry breaking somewhat less known. It corresponds to a configuration where both electrons are on the same side of the sphere, in the same orbital. This solution is called symmetry-broken RHF. At the critical value of R, the repulsion of the two electrons on the same side of the sphere maximizes more the energy than the kinetic energy of the $Y_{10}$ orbitals. This symmetry breaking is associated with a charge density wave: the system oscillate between the situations with the electrons on each side.
+There is also another symmetry-broken solution for $R>75/38$ but this one corresponds to a maximum of the HF equations. This solution is associated with another type of symmetry breaking somewhat less known. It corresponds to a configuration where both electrons are on the same side of the sphere, in the same spatial orbital. This solution is called symmetry-broken RHF. At the critical value of R, the repulsion of the two electrons on the same side of the sphere maximizes more the energy than the kinetic energy of the $Y_{10}$ orbitals. This symmetry breaking is associated with a charge density wave: the system oscillates between the situations with the electrons on each side \cite{GiulianiBook}.
 
 \begin{equation}
 E_{\text{sb-RHF}}=\frac{75}{88R^3}+\frac{25}{22R^2}+\frac{91}{66R}
 \end{equation}
 
-We can also consider negative value of R. This corresponds to the situation where one of the electrons is replaced by a positron. There are also a sb-RHF ($R<-3/2$) and a sb-UHF ($R<-75/38$) solution for negative values of R (see Fig.\ref{fig:SpheriumNrj} but in this case the sb-RHF solution is a minimum and the sb-UHF is a maximum. Indeed, the sb-RHF state minimizes the energy by placing the electron and the positron on the same side of the sphere. And the sb-UHF state maximizes the energy because the two particles are on opposite sides of the sphere.
+We can also consider negative value of R. This corresponds to the situation where one of the electrons is replaced by a positron. There are also a sb-RHF ($R<-3/2$) and a sb-UHF ($R<-75/38$) solution for negative values of R (see Fig.\ref{fig:SpheriumNrj} but in this case the sb-RHF solution is a minimum and the sb-UHF is a maximum. Indeed, the sb-RHF states minimize the energy by placing the electron and the positron on the same side of the sphere. And the sb-UHF states maximize the energy because the two particles are on opposite sides of the sphere.
 
-In addition, we can also consider the symmetry-broken solutions beyond their respective Coulson-Fischer by analytically continuing the respective energies leading to the so-called holomorphic solutions \cite{Hiscock_2014, Burton_2019, Burton_2019a}. All those energies are plot in \autoref{fig:SpheriumNrj}. The dotted curves corresponds to the holomorphic domain of the energies.
+In addition, we can also consider the symmetry-broken solutions beyond their respective Coulson-Fischer points by analytically continuing their respective energies leading to the so-called holomorphic solutions \cite{Hiscock_2014, Burton_2019, Burton_2019a}. All those energies are plotted in \autoref{fig:SpheriumNrj}. The dotted curves corresponds to the holomorphic domain of the energies.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.9\textwidth]{EsbHF.pdf}
-    \caption{\centering Energies of the 5 solutions of the HF equations (multiplied by $R^2$). The dotted curves correspond to the analytic continuation of the symmetry-broken solutions.}
+    \caption{\centering Energies of the 5 solutions of the HF equations (multiplied by $R^2$). The dotted curves correspond to the analytic continuation of the symmetry-broken solutions. \antoine{Change legend}}
     \label{fig:SpheriumNrj}
 \end{figure}
 
@@ -550,7 +551,7 @@ In this part, we will try to investigate how some parameters of $\bH(\lambda)$ i
 \pdv{E}\text{det}[E-\bH(\lambda)]=0
 \end{equation}
 
-We will take the simple case of the M{\o}ller-Plesset partitioning with a restricted Hartree-Fock minimal basis set as our starting point for this analysis. The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we can forget the spin part of the spin-orbitals and from now we will work with spatial orbitals. In the restricted formalism the spatial orbitals are the same so the two-electron basis set is: $\psi_1=Y_0(\theta_1)Y_0(\theta_2)$; $\psi_2=Y_0(\theta_1)Y_1(\theta_2)$; $\psi_3=Y_1(\theta_1)Y_0(\theta_2)$; $\psi_4=Y_1(\theta_1)Y_1(\theta_2)$.
+We will take the simple case of the M{\o}ller-Plesset partitioning with a restricted Hartree-Fock minimal basis set as our starting point for this analysis. The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we can forget the spin part of the spin-orbitals and from now we will work with spatial orbitals. In the restricted formalism the spatial orbitals are the same so the two-electron basis set is: $\psi_1=Y_{00}(\theta_1)Y_{00}(\theta_2)$; $\psi_2=Y_{00}(\theta_1)Y_{10}(\theta_2)$; $\psi_3=Y_{10}(\theta_1)Y_{00}(\theta_2)$; $\psi_4=Y_{10}(\theta_1)Y_{10}(\theta_2)$.
 
 The Hamiltonian $\bH(\lambda)$ is block diagonal because of the symmetry of the basis set. $\psi_1$ have the same symmetry as $\psi_4$ and there is an avoided crossing between these two states as we can see in \autoref{fig:RHFMiniBasRCV}. 
 
@@ -558,7 +559,7 @@ The Hamiltonian $\bH(\lambda)$ is block diagonal because of the symmetry of the 
     \centering
     \includegraphics[width=0.45\textwidth]{EMP_RHF_R10.pdf}
     \includegraphics[width=0.45\textwidth]{RHFMiniBasRCV.pdf}
-    \caption{\centering }
+    \caption{\centering (left): \antoine{Change legend, change colour} (right): }
     \label{fig:RHFMiniBasRCV}
 \end{figure}
 
@@ -567,11 +568,11 @@ Then we can compare the different partitioning of \autoref{sec:AlterPart} using 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{PartitioningRCV.pdf}
-    \caption{\centering }
+    \caption{\centering \antoine{Swap curves to make colors consistent}}
     \label{fig:RadiusPartitioning}
 \end{figure}
 
-Puis différence entre $Y_{l0}$ et $P_l(\cos(\theta))$ (CSF). + petit Parler de la possibilité de la base strong coupling avec la citation paola et les polynomes . \\
+Puis différence entre $Y_{l0}$ et $P_l(\cos(\theta))$ (CSF)+ tableau d'énergie ? + petit paragraphe: parler de la possibilité de la base strong coupling avec la citation paola et les polynomes laguerre. \\
 
 \begin{figure}[h!]
     \centering
