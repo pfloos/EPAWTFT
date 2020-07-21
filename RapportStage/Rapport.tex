@@ -257,7 +257,7 @@ and for $\lambda=\lambda_\text{EP}$ they become
 which are clearly self-orthogonal. The equation (7) can be rewrite as
 \begin{equation}
 \phi_{\pm}=\begin{pmatrix}
-\frac{1}{\lambda}(\frac{\epsilon_1 - \epsilon_2}{2} \pm \sqrt{2\lambda_\text{EP}} \sqrt{\lambda - \lambda_\text{EP}}) \\
+\frac{1}{\lambda}(\frac{\epsilon_1 - \epsilon_2}{2} \pm \sqrt{2\lambda_\text{EP}} \sqrt{\lambda - \lambda_\text{EP}}) \\ 1
 \end{pmatrix},
 \end{equation}
 we can see that if we normalise them they will behave as
@@ -531,7 +531,7 @@ E_{\text{p}} = \sum\limits_{i,j,k,l=0}^{\infty}C_{\alpha,i}C_{\alpha,j}C_{\beta,
 S_{i,j,k,l}=\sqrt{(2i+1)(2j+1)(2k+1)(2l+1)}
 \end{equation*}
 
-We obtained the equation \eqref{eq:EUHF} for the general form of the wave function \eqref{eq:UHF_WF}, but to be associated with a physical wave function the energy needs to be stationary with respect to the coefficients. The general method is to use the Hartree-Fock self-consistent field method \cite{SzaboBook} to get the coefficients of the wave functions corresponding to physical solutions. We will work in a minimal basis ($Y_{00}$ and $Y_{10}$) to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions. One can define the one-electron wave functions $\phi(\theta)$ using a mixing angle between the two basis functions. Hence we just need to minimize the energy with respect to the two mixing angles $\chi_\alpha$ and $\chi_\beta$.
+We obtained the equation \eqref{eq:EUHF} for the general form of the wave function \eqref{eq:UHF_WF}, but to be associated with a physical wave function the energy needs to be stationary with respect to the coefficients. The general method is to use the Hartree-Fock self-consistent field method \cite{SzaboBook} to get the coefficients of the wave functions corresponding to physical solutions. We will work in a minimal basis, composed  of a $Y_{00}$ and a $Y_{10}$ spherical harmonic, or equivalently a s and a p\textsubscript{z} orbital, to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions. One can define the one-electron wave functions $\phi(\theta)$ using a mixing angle between the two basis functions. Hence we just need to minimize the energy with respect to the two mixing angles $\chi_\alpha$ and $\chi_\beta$.
 
 \begin{equation}
 \phi_\alpha(\theta_1)= \cos(\chi_\alpha)\frac{Y_{00}(\theta_1)}{R} + \sin(\chi_\alpha)\frac{Y_{10}(\theta_1)}{R}
