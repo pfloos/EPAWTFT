@@ -539,14 +539,14 @@ We obtained the equation \eqref{eq:EUHF} for the general form of the wave functi
  
 The minimization gives the three following solutions valid for all value of R:
 \begin{itemize}
-\item The two electrons are in the $Y_{00}$ orbital which is a RHF solution. This solution is associated with the energy $R^{-2}$.
-\item The two electrons are in the $Y_{10}$ orbital which is a RHF solution. This solution is associated with the energy $R^{-2} + R^{-1}$
-\item One electron is in the $Y_{00}$ orbital and the other is in the $Y_{10}$ orbital which is a UHF solution. This solution is associated with the energy $2R^{-2}+\frac{29}{25}R^{-1}$
+\item The two electrons are in the s orbital which is a RHF solution. This solution is associated with the energy $R^{-2}$.
+\item The two electrons are in the p\textsubscript{z} orbital which is a RHF solution. This solution is associated with the energy $R^{-2} + R^{-1}$
+\item One electron is in the s orbital and the other is in the p\textsubscript{z} orbital which is a UHF solution. This solution is associated with the energy $2R^{-2}+\frac{29}{25}R^{-1}$
 \end{itemize}
 
 Those solutions are respectively a minimum, a maximum and a saddle point of the HF equations.\\
 
-In addition, there is also the well-known symmetry-broken UHF solution. For $R>3/2$ an other stationary UHF solution appear, this solution is a minimum of the Hartree-Fock equations. This solution corresponds to the configuration with the electron $\alpha$ on one side of the sphere and the electron $\beta$ on the opposite side and the configuration the other way round. The electrons can be on opposite sides of the sphere because the choice of $Y_{10}$ as a basis function induced a privileged axis on the sphere for the electrons. This solution have the energy \eqref{eq:EsbUHF} for $R>3/2$.
+In addition, there is also the well-known symmetry-broken UHF solution. For $R>3/2$ an other stationary UHF solution appear, this solution is a minimum of the Hartree-Fock equations. This solution corresponds to the configuration with the electron $\alpha$ on one side of the sphere and the electron $\beta$ on the opposite side and the configuration the other way round. The electrons can be on opposite sides of the sphere because the choice of p\textsubscript{z} as a basis function induced a privileged axis on the sphere for the electrons. This solution have the energy \eqref{eq:EsbUHF} for $R>3/2$.
 
 \begin{equation}\label{eq:EsbUHF}
 E_{\text{sb-UHF}}=-\frac{75}{112R^3}+\frac{25}{28R^2}+\frac{59}{84R}
@@ -569,7 +569,7 @@ Exact & 9.783874 & 0.852781 & 0.391959 & 0.247898 & 0.139471 & 0.064525 & 0.0054
 \label{tab:ERHFvsEUHF}
 \end{table}
 
-There is also another symmetry-broken solution for $R>75/38$ but this one corresponds to a maximum of the HF equations. This solution is associated with another type of symmetry breaking somewhat less known. It corresponds to a configuration where both electrons are on the same side of the sphere, in the same spatial orbital. This solution is called symmetry-broken RHF. At the critical value of R, the repulsion of the two electrons on the same side of the sphere maximizes more the energy than the kinetic energy of the $Y_{10}$ orbitals. This symmetry breaking is associated with a charge density wave: the system oscillates between the situations with the electrons on each side \cite{GiulianiBook}.
+There is also another symmetry-broken solution for $R>75/38$ but this one corresponds to a maximum of the HF equations. This solution is associated with another type of symmetry breaking somewhat less known. It corresponds to a configuration where both electrons are on the same side of the sphere, in the same spatial orbital. This solution is called symmetry-broken RHF. At the critical value of R, the repulsion of the two electrons on the same side of the sphere maximizes more the energy than the kinetic energy of the p\textsubscript{z} orbitals. This symmetry breaking is associated with a charge density wave: the system oscillates between the situations with the electrons on each side \cite{GiulianiBook}.
 
 \begin{equation}
 E_{\text{sb-RHF}}=\frac{75}{88R^3}+\frac{25}{22R^2}+\frac{91}{66R}
@@ -582,7 +582,7 @@ In addition, we can also consider the symmetry-broken solutions beyond their res
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.9\textwidth]{EsbHF.pdf}
-    \caption{\centering Energies of the 5 solutions of the HF equations (multiplied by $R^2$). The dotted curves correspond to the analytic continuation of the symmetry-broken solutions. \antoine{Change legend}}
+    \caption{\centering Energies of the five solutions of the HF equations (multiplied by $R^2$). The dotted curves correspond to the analytic continuation of the symmetry-broken solutions.}
     \label{fig:SpheriumNrj}
 \end{figure}
 
@@ -590,7 +590,8 @@ In addition, we can also consider the symmetry-broken solutions beyond their res
 
 \subsection{Evolution of the radius of convergence}
 
-In this part, we will try to investigate how some parameters of $\bH(\lambda)$ influence the radius of convergence of the perturbation series. The radius of convergence is equal to the closest singularity to the origin of $E(\lambda)$. The exceptional points are simultaneous solution of \eqref{eq:PolChar} and \eqref{eq:DPolChar} so we solve this system to find their position.
+In this part, we will try to investigate how some parameters of $\bH(\lambda)$ influence the radius of convergence of the perturbation series. The radius of convergence is equal to the closest singularity to the origin of $E(\lambda)$ so we need to determine the locations of the exceptional points. To find them we solve simultaneously the equations \eqref{eq:PolChar} and \eqref{eq:DPolChar}. The equation \eqref{eq:PolChar} is the well-known secular equation giving the energies of the system, if an energy is also solution of \eqref{eq:DPolChar} then this energy is degenerate. In this case the energies obtained are dependent of $\lambda$ so solving those equations with respect to $E$ and $\lambda$ gives the value of $\lambda$ where two energies are degenerate i.e. the exceptional points.
+
 
 \begin{equation}\label{eq:PolChar}
 \text{det}[E-\bH(\lambda)]=0
@@ -600,39 +601,54 @@ In this part, we will try to investigate how some parameters of $\bH(\lambda)$ i
 \pdv{E}\text{det}[E-\bH(\lambda)]=0
 \end{equation}
 
-We will take the simple case of the M{\o}ller-Plesset partitioning with a restricted Hartree-Fock minimal basis set as our starting point for this analysis. The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we can forget the spin part of the spin-orbitals and from now we will work with spatial orbitals. In the restricted formalism the spatial orbitals are the same so the two-electron basis set is: $\psi_1=Y_{00}(\theta_1)Y_{00}(\theta_2)$; $\psi_2=Y_{00}(\theta_1)Y_{10}(\theta_2)$; $\psi_3=Y_{10}(\theta_1)Y_{00}(\theta_2)$; $\psi_4=Y_{10}(\theta_1)Y_{10}(\theta_2)$.
+The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we can forget the spin part of the spin-orbitals and from now on we will work with spatial orbitals. In the restricted formalism the spatial orbitals are the same so the two-electron basis set is:
 
-The Hamiltonian $\bH(\lambda)$ is block diagonal because of the symmetry of the basis set. $\psi_1$ have the same symmetry as $\psi_4$ and there is an avoided crossing between these two states as we can see in \autoref{fig:RHFMiniBasRCV}. 
+\begin{align}\label{eq:basis}
+ \psi_1 & =Y_{00}(\theta_1)Y_{00}(\theta_2),
+ & 
+ \psi_2 & =Y_{00}(\theta_1)Y_{10}(\theta_2),\\
+ \psi_3 & =Y_{10}(\theta_1)Y_{00}(\theta_2),
+ & 
+ \psi_4 & =Y_{10}(\theta_1)Y_{10}(\theta_2).
+\end{align}
+
+The Hamiltonian $\bH(\lambda)$ is block diagonal because of the symmetry of the basis set ($\psi_1$ interacts with $\psi_4$ and $\psi_2$ with $\psi_3$). The two singly excited states yields a singlet and a triplet sp\textsubscript{z} but they don't have the same symmetry so these states can't form exceptional points with the ground state. However there is an avoided crossing (see Fig. \ref{fig:RHFMiniBas}) between the s\textsuperscript{2} and the p\textsubscript{z}\textsuperscript{2} which is connected to two exceptional points in the complex plane. 
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.45\textwidth]{EMP_RHF_R10.pdf}
-    \includegraphics[width=0.45\textwidth]{RHFMiniBasRCV.pdf}
-    \caption{\centering (left): \antoine{Change legend, change colour} (right): }
-    \label{fig:RHFMiniBasRCV}
+    \includegraphics[width=0.7\textwidth]{EMP_RHF_R10.pdf}
+    \caption{\centering Energies $E(\lambda)$ in the basis set \eqref{eq:basis} with $R=10$.}
+    \label{fig:RHFMiniBas}
 \end{figure}
 
-Then we can compare the different partitioning of \autoref{sec:AlterPart} using the same basis set. The \autoref{fig:RadiusPartitioning} shows the evolution of the radius of convergence in function of $R$ for the M{\o}ller-Plesset, the Epstein-Nesbet, the Weak Correlation and the Strong Coupling partitioning. We can see that
+To simplify the problem, it is convenient to only consider basis function with the symmetry of the exact wave function, such basis functions are called Configuration State Function (CSF). In this case the ground state is a totally symmetric singlet. According to the angular-momentum theory we expand the exact wave function in the following two-electron basis:
+\begin{equation}
+\Phi_l(\theta)=\frac{\sqrt{2l+1}}{4\pi R^2}P_l(\cos\theta)
+\end{equation}
+where $P_l$ are the Legendre polynomial and $\theta$ is the interelectronic angle.
+
+Then using this basis set we can compare the different partitioning of \autoref{sec:AlterPart}. The \autoref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ in function of $R$ for the M{\o}ller-Plesset, the Epstein-Nesbet, the Weak Correlation and the Strong Coupling partitioning in a minimal basis i.e. $P_0$ and $P_1$. We see that
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{PartitioningRCV.pdf}
-    \caption{\centering \antoine{Swap curves to make colors consistent}}
+    \caption{\centering Radius of convergence in the minimal basis for different partitioning of the Hamiltonian$\bH(\lambda)$.}
     \label{fig:RadiusPartitioning}
 \end{figure}
 
-Puis différence entre $Y_{l0}$ et $P_l(\cos(\theta))$ (CSF)+ tableau d'énergie ? + petit paragraphe: parler de la possibilité de la base strong coupling avec la citation paola et les polynomes laguerre. \\
+Commenter figure 8 (singularité alpha pas très sensible à basis set)
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{CSF_RCV.pdf}
-    \caption{\centering }
-    \label{fig:RadiusCSF}
+    \includegraphics[width=0.45\textwidth]{MPlargebasis.pdf}
+    \includegraphics[width=0.45\textwidth]{WCElargebasis.pdf}
+    \caption{\centering Radius of convergence in the CSF basis with $n$ basis function for the MP partitioning (left) and the WC partitioning (right).}
+    \label{fig:RadiusPartitioning}
 \end{figure}
 
 Différence RHF/UHF, Hamiltonien non-bloc diagonal, coefficients complexe pour R<3/2 \\
 
-Influence de la taille de la base en RHF et UHF \\
+ + petit paragraphe: parler de la possibilité de la base strong coupling avec la citation paola et les polynomes laguerre. \\
 
 \subsection{Exceptional points in the UHF formalism}
 
