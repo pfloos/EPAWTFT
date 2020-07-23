@@ -116,7 +116,7 @@ Laboratoire de Chimie et Physique Quantiques
 
 31062 Toulouse - France}
 
-\url{https://www.irsamc.ups-tlse.fr/}
+\url{https://www.irsamc.ups-tlse.fr/loos}
 } %fin de la commande \parbox encadrant / laboratoire d'accueil
 
 \vspace{0.5cm}
@@ -227,7 +227,7 @@ In the real $\lambda$ axis, the point for which the states are the closest ($\la
 The ``shape'' of the avoided crossing is linked to the magnitude of $\Im(\lambda_\text{EP})$: the smaller $\Im(\lambda_\text{EP})$, the sharper the avoided crossing is.
 
 Around $\lambda = \lambda_\text{EP}$, Eq.~\eqref{eq:E_2x2} behaves as \cite{MoiseyevBook}
-\begin{equation}
+\begin{equation} \label{eq:E_EP}
         E_{\pm} = E_\text{EP} \pm \sqrt{2\lambda_\text{EP}} \sqrt{\lambda - \lambda_\text{EP}},
 \end{equation}
 and following a complex contour around the EP, i.e.~$\lambda = \lambda_\text{EP} + R \exp(i\theta)$, yields
@@ -242,26 +242,33 @@ and we have
 \end{align}
 This evidences that encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy.
 
-The eigenvectors associated to the energies \eqref{eq:E_2x2} are
-\begin{equation}
-\phi_{\pm}=\begin{pmatrix}
-\frac{1}{2\lambda}(\epsilon_1 - \epsilon_2 \pm \sqrt{(\epsilon_1 - \epsilon_2)^2 + 4\lambda^2}) \\ 1
-\end{pmatrix},
+The eigenvectors associated to the eigenenergies \eqref{eq:E_2x2} are
+\begin{equation} \label{eq:phi_2x2}
+\phi_{\pm}=
+	\begin{pmatrix}
+		E_{\pm}/\lambda
+		\\ 
+		1
+	\end{pmatrix},
 \end{equation}
-and for $\lambda=\lambda_\text{EP}$ they become
+and, for $\lambda=\lambda_\text{EP}$, they become
 \begin{equation}
 \phi_{\pm}=\begin{pmatrix}
 \mp i \\ 1
 \end{pmatrix},
 \end{equation}
-which are clearly self-orthogonal. The equation (7) can be rewrite as
+which are clearly self-orthogonal. 
+\titou{what do you mean by self-orthogonal?}
+Using Eq.~\eqref{eq:E_EP}, Eq.~\eqref{eq:phi_2x2} can be recast as
 \begin{equation}
-\phi_{\pm}=\begin{pmatrix}
-\frac{1}{\lambda}(\frac{\epsilon_1 - \epsilon_2}{2} \pm \sqrt{2\lambda_\text{EP}} \sqrt{\lambda - \lambda_\text{EP}}) \\ 1
-\end{pmatrix},
+\phi_{\pm}=
+	\begin{pmatrix}
+		E_\text{EP}/\lambda \pm \sqrt{2\lambda_\text{EP}/\lambda} \sqrt{1 - \lambda_\text{EP}/\lambda} 
+		\\ 
+		1
+	\end{pmatrix},
 \end{equation}
-we can see that if we normalise them they will behave as
-$(\lambda - \lambda_\text{EP})^{-1/4}$ resulting in the following pattern when looping around one EP:
+where one clearly see that, if normalised, they behave as $(\lambda - \lambda_\text{EP})^{-1/4}$ resulting in the following pattern when looping around one EP:
 \begin{align}
 	\phi_{\pm}(2\pi) & = \phi_{\mp}(0),
 	&
@@ -270,10 +277,9 @@ $(\lambda - \lambda_\text{EP})^{-1/4}$ resulting in the following pattern when l
 	&
 	\phi_{\pm}(8\pi) & = \phi_{\pm}(0),
 \end{align}
-showing that 4 loops around the EP are necessary to recover the initial state. We can also that looping around the other way round leads to a different pattern.
-\titou{Maybe you should add a few equations here to highlight the self-orthogonality process. 
-What do you think?
-You could also show that the behaviour of the wave function when one follows the complex contour around the EP.}
+\titou{I don't think it is too obvious that the eigenvectors behave as $(\lambda - \lambda_\text{EP})^{-1/4}$.}
+In plain words, four loops around the EP are necessary to recover the initial state. 
+We can also see that looping the other way around leads to a different pattern.
 
 %============================================================%
 \section{Perturbation theory}
