@@ -368,11 +368,11 @@ In the perturbation theory the energy is a power series of $\lambda$ and the phy
 E_{\text{MP}_{n}}= \sum_{k=0}^n E^{(k)}
 \end{equation}
 
-But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP}_{n}}$ is always convergent when $n$ goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the M{\o}ller-Plesset method will give bad results \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. A smart way to investigate the convergence properties of the M{\o}ller-Plesset series is to transform the coupling parameter $\lambda$ into a complex variable. By doing so the Hamiltonian and the energy become functions of this variable. The energy becomes a multivalued function on $n$ Riemann sheets. As mentioned above by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the M{\o}ller-Plesset perturbation theory. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is quite easy up to the 4th order and the 5th and 6th order can be obtained at high cost \cite{JensenBook}. But to deeply understand the behavior of the M{\o}ller-Plesset series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction (FCI). If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI basis set we get the exact energies (in this finite basis set) and expanding in $\lambda$ allows to to get the M{\o}ller-Plesset perturbation series at every order.
+But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP}_{n}}$ is always convergent when $n$ goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the MP method will give bad results \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. A smart way to investigate the convergence properties of the MP series is to transform the coupling parameter $\lambda$ into a complex variable. By doing so the Hamiltonian and the energy become functions of this variable. The energy becomes a multivalued function on $n$ Riemann sheets. As mentioned above by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the MP perturbation theory. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is quite easy up to the 4th order and the 5th and 6th order can be obtained at high cost \cite{JensenBook}. But to deeply understand the behavior of the MP series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction (FCI). If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI basis set we get the exact energies (in this finite basis set) and expanding in $\lambda$ allows to to get the MP perturbation series at every order.
 
 \subsection{Alternative partitioning}\label{sec:AlterPart}
 
-The M{\o}ller-Plesset partitioning is not the only one possible in electronic structure theory. An other possibility, even more natural than the M{\o}ller-Plesset one, is to take the diagonal elements of $\bH$ as the zeroth-order Hamiltonian. Hence, the off-diagonal elements of $\bH(\lambda)$ are the perturbation operator. This partitioning leads to the Epstein-Nesbet (EN) perturbation theory. The zeroth-order eigenstates for this partitioning are Slater determinants as for the M{\o}ller-Plesset partitioning. The expression of the second order correction to the energy is given for both M{\o}ller-Plesset and Epstein-Nesbet. The energies at the MP denominator are the orbitals energies whereas in the EN case it is the excitation energies. The i,j indices represent the occupied orbitals and r,s the virtual orbitals of the basis sets.
+The MP partitioning is not the only one possible in electronic structure theory. An other possibility, even more natural than the MP one, is to take the diagonal elements of $\bH$ as the zeroth-order Hamiltonian. Hence, the off-diagonal elements of $\bH(\lambda)$ are the perturbation operator. This partitioning leads to the Epstein-Nesbet (EN) perturbation theory. The zeroth-order eigenstates for this partitioning are Slater determinants as for the MP partitioning. The expression of the second order correction to the energy is given for both MP and EN. The energies at the MP denominator are the orbitals energies whereas in the EN case it is the excitation energies. The i,j indices represent the occupied orbitals and r,s the virtual orbitals of the basis sets.
 
 \begin{equation}\label{eq:EMP2}
 E_{\text{MP2}}=\sum\limits_{\substack{i<j \\ r<s}}^{n}\frac{\abs{\bra{ij}\hspace{1pt}\ket{rs}}^2}{\epsilon_i + \epsilon_j - \epsilon_r - \epsilon_s}
@@ -402,10 +402,12 @@ Additionally, we will consider two other partitioning. The electronic Hamiltonia
 
 \subsection{Behavior of the M{\o}ller-Plesset series}
 
-When we use M{\o}ller-Plesset perturbation theory it would be very convenient that each time a higher order term is computed the result obtained is closer to exact energy. In other words, that the M{\o}ller-Plesset series would be monotonically convergent. Assuming this, the only limiting process to get the exact correlation energy in a finite basis set is our ability to compute the terms of the perturbation series.
-Unfortunately this is not true in generic cases and rapidly some strange behaviors of the series were exhibited. In the late 80's Gill and Radom reported deceptive and slow convergences in stretch systems \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. 
-In \autoref{fig:RUMP_Gill} we can see that the restricted M{\o}ller-Plesset series is convergent but oscillating which is not convenient if you are only able to compute few terms (for example here RMP5 is worse than RMP4). 
-On the other hand, the unrestricted M{\o}ller-Plesset series is monotonically converging (except for the first few orders) but very slowly so we cannot use it for systems where we can only compute the first terms.
+When one relies on MP perturbation theory (and more generally on any perturbative partitioning), it would be reasonable to ask for a systematic improvement of the energy with respect to the perturbative order, i.e., one would expect that the more terms of the perturbative series one has, the closer the result from the exact energy.
+%In other words, each time a higher-order term is computed, one would like to obtained an overall result closer to the exact energy. 
+In other words, one would like a monotonic convergence of the MP series. Assuming this, the only limiting process to get the exact correlation energy (in a finite basis set) would be our ability to compute the terms of this perturbation series.
+Unfortunately this is not as easy as one might think because i) the terms of the perturbative series become rapidly computationally cumbersome, and ii) erratic behavior of the perturbative coefficients are not uncommon. For example, in the late 80's, Gill and Radom reported deceptive and slow convergences in stretch systems \cite{Gill_1986, Gill_1988} (see also Refs.~\cite{Handy_1985, Lepetit_1988}). 
+In \autoref{fig:RUMP_Gill}, which has been extracted from Ref.~\cite{Gill_1986}, one can see that the restricted MP series is convergent, yet oscillating which is far from being convenient if one is only able to compute the first few terms of the expansion (for example here RMP5 is worse than RMP4). 
+On the other hand, the unrestricted MP series is monotonically convergent (except for the first few orders) but very slowly so one cannot use it in practice for systems where one can only compute the first terms.
 
 \begin{figure}[h!]
     \centering
@@ -414,12 +416,15 @@ On the other hand, the unrestricted M{\o}ller-Plesset series is monotonically co
     \label{fig:RUMP_Gill}
 \end{figure}
 
-When a bond is stretched the exact wave function becomes more and more multi-reference. Yet the Hartree-Fock wave function is restricted to be single reference so it can not model properly stretched system. Nevertheless the Hartree-Fock wave function can undergo a symmetry breaking to minimize its energy losing one of the symmetry of the exact wave function during the process (see for example the case of \ce{H_2} in \cite{SzaboBook}). A restricted HF Slater determinant is a poor approximation of a symmetry-broken wave function but even in the unrestricted formalism, where the spatial orbitals of electrons $\alpha$ and $\beta$ are not restricted to be the same \cite{Fukutome_1981}, which allows a better description of symmetry-broken system, the series does not give accurate results at low orders. Even with this improvement of the zeroth order wave function the series does not have the smooth and rapidly converging behavior wanted. 
+When a bond is stretched the exact wave function becomes more and more multi-reference. Yet the HF wave function is restricted to be single Slater determinant.
+Thus, it is inappropriate to model (even qualitatively) stretched system. Nevertheless, the HF wave function can undergo a symmetry breaking to lower its energy by sacrificing one of the symmetry of the exact wave function during the process (see for example the case of \ce{H_2} in Ref.~\cite{SzaboBook}). 
+\titou{A restricted HF Slater determinant is a poor approximation of a symmetry-broken wave function but even in the unrestricted formalism, where the spatial orbitals of electrons $\alpha$ and $\beta$ are not restricted to be the same \cite{Fukutome_1981}, which allows a better description of symmetry-broken system, the series does not give accurate results at low orders.} Even with this improvement of the zeroth-order wave function the series does not have the smooth and rapidly converging behavior wanted. 
 
 \begin{table}[h!]
     \centering
     \caption{\centering Percentage of electron correlation energy recovered and $\expval{S^2}$ for the \ce{H2} molecule as a function of bond length (r,\si{\angstrom}) in the STO-3G basis set (taken from \cite{Gill_1988}).}
-    \begin{tabular}{c c c c c c c}
+    \begin{tabular}{ccccccc}
+\hline
 \hline
  $r$ & UHF & UMP2 & UMP3 & UMP4 & $\expval{S^2}$ \\
 \hline
@@ -428,20 +433,22 @@ When a bond is stretched the exact wave function becomes more and more multi-ref
 2.00 & 0.0\% & 01.0\% & 01.8\% & 02.6\% & 0.95\\
 2.50 & 0.0\% & 00.1\% & 00.3\% & 00.4\% & 0.99\\
 \hline
+\hline
 \end{tabular}
     \label{tab:SpinContamination}
 \end{table}
 
-In the unrestricted framework the singlet ground state wave function is allowed to mix with triplet wave function which leads to spin contamination. Gill et al.~highlighted the link between the slow convergence of the unrestricted MP series and the spin contamination of the wave function as shown in the \autoref{tab:SpinContamination} in the example of \ce{H_2} in a minimal basis \cite{Gill_1988}. 
-Handy and co-workers exhibited the same behaviors of the series (oscillating and monotonically slowly) in stretched \ce{H_2O} and \ce{NH_2} systems \cite{Handy_1985}. Lepetit et al.~analyzed the difference between the M{\o}ller-Plesset and Epstein-Nesbet partitioning for the unrestricted Hartree-Fock reference \cite{Lepetit_1988}. They concluded that the slow convergence is due to the coupling of the singly with the doubly excited configuration. Moreover the MP and EN numerators in Eq. \eqref{eq:EMP2} and \eqref{eq:EEN2} are the same and they vanish when the bond length $r$ goes to infinity. Yet the MP denominators tends towards a constant when $r\rightarrow\infty$ so the terms vanish. Where as the EN denominators tends to 0 which improve the convergence but can also make diverge the series.
-Cremer and He analyzed 29 atomic and molecular systems at the FCI level \cite{Cremer_1996} and regrouped all the systems in two classes. The class A systems which have a monotonic convergence to the FCI value and the class B which converge erratically after initial oscillations. The sample of systems contains stretched molecules and also some at equilibrium geometry, there are also some systems in various basis sets. They highlighted that \cite{Cremer_1996}\begin{quote}
-\textit{Class A systems are characterized by electronic structures with well-separated electron pairs while class B systems are characterized by electronic structures with electron clustering in one or more regions.}
+In the unrestricted framework the singlet ground state wave function is allowed to mix with triplet wave function which leads to spin contamination. Gill \textit{et al.}~highlighted the link between slow convergence of the unrestricted MP series and spin contamination of the wave function as shown in the \autoref{tab:SpinContamination} in the example of \ce{H_2} in a minimal basis \cite{Gill_1988}. 
+Handy and coworkers exhibited the same behavior of the series (oscillating and monotonically slowly) in stretched \ce{H_2O} and \ce{NH_2} systems \cite{Handy_1985}. Lepetit et al.~analyzed the difference between the MP and EN partitioning for the unrestricted HF reference \cite{Lepetit_1988}. They concluded that the slow convergence is due to the coupling of the singly and doubly excited configurations. Moreover, the MP and EN numerators in Eqs.~\eqref{eq:EMP2} and \eqref{eq:EEN2} are the same and they vanish when the bond length $r$ goes to infinity. Yet the MP denominators tends towards a constant when $r \to \infty$ so the terms vanish, whereas the EN denominators tends to zero which improves the convergence but can also make the series diverge.
+Cremer and He analyzed 29 atomic and molecular systems at the FCI level \cite{Cremer_1996} and regrouped all of these systems in two classes. The class A systems where one observes a monotonic convergence to the FCI energy and the class B for which convergence is erratic after initial oscillations. The sample of systems contains stretched molecules as well as molecules at their equilibrium geometry for various basis sets. They highlighted that \cite{Cremer_1996}
+\begin{quote}
+	\textit{``Class A systems are characterized by electronic structures with well-separated electron pairs while class B systems are characterized by electronic structures with electron clustering in one or more regions.''}
 \end{quote}
-They proved that using different extrapolation formulas of the first terms of the M{\o}ller-Plesset of the series for class A and class B systems improve the precision of those formulas. The mean deviation from FCI correlation energies is 0.3 mhartrees whereas with the formula that do not distinguish the system it is 12 mhartrees. Even if there were still shaded areas and that this classification was incomplete, this work showed that understanding the origin of the different modes of convergence would lead to a more rationalized use of the M{\o}ller-Plesset perturbation theory and to more accurate correlation energies.
+They proved that using different extrapolation formulas of the first terms of the MP series for class A and class B systems, this improves the precision of those formulas. The mean deviation from FCI correlation energies is $0.3$ millihartree whereas with the formula that do not distinguish the system it is 12 millihartree. Even if there were still shaded areas and that this classification was incomplete, this work showed that understanding the origin of the different modes of convergence would lead to a more rationalized use of the MP perturbation theory and to more accurate correlation energies.
 
 \subsection{Cases of divergence}
 
-However Olsen et al. have discovered an even more preoccupying behavior of the MP series in the late 90's. They have shown that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and \ce{HF} \cite{Olsen_1996, Christiansen_1996}. Cremer and He had already studied those two systems and classified them as class B systems. But Olsen and his co-workers have done the analysis in larger basis sets containing diffuse functions and in those basis sets the series become divergent at high order.
+However Olsen \textit{et al.}~have discovered an even more preoccupying behavior of the MP series in the late 90's. They have shown that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and \ce{HF} \cite{Olsen_1996, Christiansen_1996}. Cremer and He had already studied those two systems and classified them as class B systems. But Olsen and his co-workers have done the analysis in larger basis sets containing diffuse functions and in those basis sets the series become divergent at high order.
 
 \begin{figure}[h!]
     \centering
@@ -507,7 +514,7 @@ Simple systems that are analytically solvable (or at least quasi-exactly solvabl
 
 The laplacian operators are the kinetic operators for each electrons and $r_{12}^{-1} = \abs{\vb{r}_1 - \vb{r}_2}$ is the Coulomb operator. The radius R of the sphere dictates the correlation regime, i.e., weak correlation regime at small $R$ where the kinetic energy dominates, or strong correlation regime where the electron repulsion term drives the physics. We will use this model to try to rationalize the effects of the variables that may influence the physics of EPs:
 \begin{itemize}
-	\item Partitioning of the Hamiltonian and the actual zeroth-order reference: weak correlation reference [restricted Hartree-Fock (RHF) or unrestricted Hartree-Fock (UHF) references, M{\o}ller-Plesset or Epstein-Nesbet (EN) partitioning], or strongly correlated reference.
+	\item Partitioning of the Hamiltonian and the actual zeroth-order reference: weak correlation reference [restricted Hartree-Fock (RHF) or unrestricted Hartree-Fock (UHF) references, MP or EN partitioning], or strongly correlated reference.
 	\item Basis set: minimal basis or infinite (i.e., complete) basis made of localized or delocalized basis functions
 	\item Radius of the spherium that ultimately dictates the correlation regime.
 \end{itemize}
@@ -575,14 +582,16 @@ The exact solution for the ground state is a singlet so this wave function does 
 \begin{table}[h!]
 \centering
 \caption{\centering RHF and UHF energies in the minimal basis and exact energies for various R.}
-\begin{tabular}{c c c c c c c c c}
+\begin{tabular}{ccccccccc}
+\hline
+\hline
 $R$ & 0.1 & 1 & 2 & 3 & 5 & 10 & 100 & 1000 \\
 \hline
-RHF & 10 & 1 & 0.5 & 0.3333 & 0.2 & 0.1 & 0.01 & 0.001 \\
+RHF 	& 10.00000 & 1.000000 & 0.500000 & 0.333333 & 0.200000 & 0.100000 & 0.010000 & 0.001000 \\
+UHF 	& 10.00000 & 1.000000 & 0.490699 & 0.308532 & 0.170833 & 0.078497 & 0.007112 & 0.000703 \\
+Exact 	& 9.783874 & 0.852781 & 0.391959 & 0.247898 & 0.139471 & 0.064525 & 0.005487 & 0.000515 \\
 \hline
-UHF & 10 & 1 & 0.490699 & 0.308532 & 0.170833 & 0.078497 & 0.007112 & 0.000703 \\
 \hline
-Exact & 9.783874 & 0.852781 & 0.391959 & 0.247898 & 0.139471 & 0.064525 & 0.005487 & 0.000515 \\
 \end{tabular}
 \label{tab:ERHFvsEUHF}
 \end{table}
@@ -644,9 +653,9 @@ To simplify the problem, it is convenient to only consider basis functions with 
 \end{equation}
 where $P_l$ are the Legendre polynomial and $\theta$ is the interelectronic angle.
 
-Then using this basis set we can compare the different partitioning of \autoref{sec:AlterPart}. The \autoref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ in function of $R$ for the M{\o}ller-Plesset, the Epstein-Nesbet, the Weak Correlation and the Strong Coupling partitioning in a minimal basis i.e. $P_0$ and $P_1$ and in the same basis augmented with $P_2$. We see that the radius of convergence of the strong coupling partitioning is growing with R whereas it is decreasing for the three others partitioning. This result was expected because the three decreasing partitioning use a weakly correlated reference so $\bH^{(0)}$ is a good approximation for small $R$. On the contrary, the strong coupling one uses a strongly correlated reference so this series converge better when the electron are strongly correlated i.e. when $R$ is large for the spherium model.
-The M{\o}ller-Plesset partitioning is always better than the weak correlation in \autoref{fig:RadiusPartitioning}. In the weak correlation partitioning the powers of $R$ are well-separated so each term of the series is a different power of $R$. Whereas the M{\o}ller-Plesset reference is proportionnal to $R^{-1}$ and $R^{-2}$ so the M{\o}ller-Plesset series is not well-defined in terms of powers of $R$. Moreover it can be proved that the $n$-th order energy of the weak correlation series can be obtained as a  Taylor approximation of MP$n$ respective to $R$. It seems that the Epstein-Nesbet partitioning is better than the M{\o}ller-Plesset one for very small R in the minimal basis. In fact, it is just an artifact of the minimal basis because in the minimal basis augmented with $P_2
-$ (and in larger basis set) the M{\o}ller-Plesset series has a greater radius of convergence for all value of $R$.
+Then using this basis set we can compare the different partitioning of \autoref{sec:AlterPart}. The \autoref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ in function of $R$ for the MP, the EN, the Weak Correlation and the Strong Coupling partitioning in a minimal basis i.e. $P_0$ and $P_1$ and in the same basis augmented with $P_2$. We see that the radius of convergence of the strong coupling partitioning is growing with R whereas it is decreasing for the three others partitioning. This result was expected because the three decreasing partitioning use a weakly correlated reference so $\bH^{(0)}$ is a good approximation for small $R$. On the contrary, the strong coupling one uses a strongly correlated reference so this series converge better when the electron are strongly correlated i.e. when $R$ is large for the spherium model.
+The MP partitioning is always better than the weak correlation in \autoref{fig:RadiusPartitioning}. In the weak correlation partitioning the powers of $R$ are well-separated so each term of the series is a different power of $R$. Whereas the MP reference is proportionnal to $R^{-1}$ and $R^{-2}$ so the MP series is not well-defined in terms of powers of $R$. Moreover it can be proved that the $n$-th order energy of the weak correlation series can be obtained as a  Taylor approximation of MP$n$ respective to $R$. It seems that the EN partitioning is better than the MP one for very small R in the minimal basis. In fact, it is just an artifact of the minimal basis because in the minimal basis augmented with $P_2
+$ (and in larger basis set) the MP series has a greater radius of convergence for all value of $R$.
 
 \begin{figure}[h!]
     \centering
@@ -656,7 +665,7 @@ $ (and in larger basis set) the M{\o}ller-Plesset series has a greater radius of
     \label{fig:RadiusPartitioning}
 \end{figure}
 
-The \autoref{fig:RadiusBasis} shows that the radius of convergence is not very sensitive to the expansion of the basis set. The CSF basis function have all the same spin and spatial symmetry so we expect that the singularities obtained within this basis set will be $\alpha$ singularities. The \autoref{tab:SingAlpha} proves that the singularities considered in this case are $\alpha$ singularities. This is consistent with the observation of Goodson and Sergeev \cite{Goodson_2004} on $\alpha$ singularities. The discontinuities observed in \autoref{fig:RadiusBasis} with the M{\o}ller-Plesset partitioning are due to a change of the dominant singularity. \\
+The \autoref{fig:RadiusBasis} shows that the radius of convergence is not very sensitive to the expansion of the basis set. The CSF basis function have all the same spin and spatial symmetry so we expect that the singularities obtained within this basis set will be $\alpha$ singularities. The \autoref{tab:SingAlpha} proves that the singularities considered in this case are $\alpha$ singularities. This is consistent with the observation of Goodson and Sergeev \cite{Goodson_2004} on $\alpha$ singularities. The discontinuities observed in \autoref{fig:RadiusBasis} with the MP partitioning are due to a change of the dominant singularity. \\
 
 \begin{figure}[h!]
     \centering
