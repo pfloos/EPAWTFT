@@ -243,22 +243,20 @@ and we have
 \end{align}
 This evidences that encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy.
 
-<<<<<<< HEAD
 The eigenvectors associated to the energies \eqref{eq:E_2x2} are
 \begin{equation}\label{ev2x2}
 \phi_{\pm}=\begin{pmatrix}
 \frac{1}{2\lambda}(\epsilon_1 - \epsilon_2 \pm \sqrt{(\epsilon_1 - \epsilon_2)^2 + 4\lambda^2}) \\ 1
 \end{pmatrix},
-=======
+\end{equation}
 The eigenvectors associated to the eigenenergies \eqref{eq:E_2x2} are
 \begin{equation} \label{eq:phi_2x2}
 \phi_{\pm}=
 	\begin{pmatrix}
-		E_{\pm}/\lambda
+		(E_{\pm}-2\epsilon_2)/\lambda
 		\\ 
 		1
 	\end{pmatrix},
->>>>>>> 2a428b01c3f1df1cf04df06fd4d09d2412d98152
 \end{equation}
 and, for $\lambda=\lambda_\text{EP}$, they become
 \begin{equation}
@@ -272,7 +270,7 @@ Using Eq.~\eqref{eq:E_EP}, Eq.~\eqref{eq:phi_2x2} can be recast as
 \begin{equation}
 \phi_{\pm}=
 	\begin{pmatrix}
-		E_\text{EP}/\lambda \pm \sqrt{2\lambda_\text{EP}/\lambda} \sqrt{1 - \lambda_\text{EP}/\lambda} 
+		(\epsilon_1-\epsilon_2)/\lambda \pm \sqrt{2\lambda_\text{EP}/\lambda} \sqrt{1 - \lambda_\text{EP}/\lambda} 
 		\\ 
 		1
 	\end{pmatrix},
@@ -284,15 +282,13 @@ where one clearly see that, if normalised, they behave as $(\lambda - \lambda_\t
 	\phi_{\pm}(4\pi) & = -\phi_{\pm}(0) \\
 	\phi_{\pm}(6\pi) & = -\phi_{\mp}(0),
 	&
-	\phi_{\pm}(8\pi) & = \phi_{\pm}(0),
+	\phi_{\pm}(8\pi) & = \phi_{\pm}(0).
 \end{align}
-<<<<<<< HEAD
-showing that 4 loops around the EP are necessary to recover the initial state. We can also see that looping the other way round leads to a different pattern.
-=======
-\titou{I don't think it is too obvious that the eigenvectors behave as $(\lambda - \lambda_\text{EP})^{-1/4}$.}
 In plain words, four loops around the EP are necessary to recover the initial state. 
 We can also see that looping the other way around leads to a different pattern.
->>>>>>> 2a428b01c3f1df1cf04df06fd4d09d2412d98152
+\titou{I don't think it is too obvious that the eigenvectors behave as $(\lambda - \lambda_\text{EP})^{-1/4}$.}
+
+
 
 %============================================================%
 \section{Perturbation theory}
@@ -486,7 +482,7 @@ The major difference between those two terms is that the repulsive mean field is
 
 This reasoning is done on the exact Hamiltonian and energy, this is the exact energy which exhibits this singularity on the negative real axis. 
 \titou{The Hamiltonian can be exact in a finite basis. I wonder if it would not be more judicious to talk about complete/infinite Hilbert space and finite Hilbert space.}
-However, in a finite basis set, one can prove that, for a Hermitian Hamiltonian, the singularities of $E(\lambda)$ occurs in complex conjugate pairs with non-zero imaginary parts. Sergeev and Goodson proved \cite{Sergeev_2005}, as predicted by Stillinger, \cite{} that in a finite basis set the critical point on the real axis is modeled by a cluster of sharp avoided crossings with diffuse functions, equivalently by a cluster of $\beta$ singularities in the negative half plane. They explain that Olsen et al., \cite{} because they used a $2\times2$ model, only observed the first singularity of this cluster of singularities causing the divergence.
+However, in a finite basis set, one can prove that, for a Hermitian Hamiltonian, the singularities of $E(\lambda)$ occurs in complex conjugate pairs with non-zero imaginary parts. Sergeev and Goodson proved \cite{Sergeev_2005}, as predicted by Stillinger \cite{Stillinger_2000}, that in a finite basis set the critical point on the real axis is modeled by a cluster of sharp avoided crossings with diffuse functions, equivalently by a cluster of $\beta$ singularities in the negative half plane. They explain that Olsen et al., because they used a $2\times2$ model, only observed the first singularity of this cluster of singularities causing the divergence.
 
 Finally, it was shown that $\beta$ singularities are very sensitive to changes of the basis set but not to the stretching of the system. On the contrary $\alpha$ singularities are relatively insensitive to the basis sets but very sensitive to bond stretching. According to Goodson, \cite{Goodson_2004} the singularity structure from molecules stretched from the equilibrium geometry is difficult, this is consistent with the observation of Olsen and co-workers  \cite{Olsen_2000} on the \ce{HF} molecule at equilibrium geometry and stretched geometry. To our knowledge the effect of bond stretching on singularities, its link with spin contamination and symmetry breaking of the wave function has not been as well understood as the ionization effect and its link with diffuse function. In this work we shall try to improve our understanding of the effect of symmetry breaking on the singularities of $E(\lambda)$ and we hope that it will lead to a deeper understanding of perturbation theory.
 
@@ -697,10 +693,10 @@ with the symmetry-broken orbitals
  & 
  \phi_{\beta,2}(\theta) & =\frac{5\sqrt{-3+2R}Y_{00}(\theta)+\sqrt{75+62R}Y_{10}(\theta)}{4\sqrt{7R}}.
 \end{align*}
-In the UHF formalism the Hamiltonian $\bH(\lambda)$ is no more block diagonal, $\psi_4$ can interact with $\psi_2$ and $\psi_3$. The matrix element for this  interaction is given in \eqref{eq:MatrixElem}. For $R=3/2$ the Hamitonian is block diagonal and this is equivalent to the RHF case but for R>3/2 the matrix element becomes real. This interaction corresponds to the spin contamination of the wave function. For $R<3/2$ the matrix element is complex, this corresponds to the holomorphic solution of \autoref{fig:SpheriumNrj}, the singularities in this case will be treated in \autoref{sec:uhfSing}. This matrix element becomes real again for $R<-75/62$, this corresponds to the sb-UHF solution for negative value of $R$ observed in \autoref{sec:spherium}. We will refer to the domain where the matrix element becomes complex as the holomorphic domain.
+In the UHF formalism the Hamiltonian $\bH(\lambda)$ is no more block diagonal, $\psi_4$ can interact with $\psi_2$ and $\psi_3$. The matrix elements $H_{ij}$ for this interaction are given in \eqref{eq:MatrixElem}. For $R=3/2$ the Hamitonian is block diagonal and this is equivalent to the RHF case but for R>3/2 the matrix elements become real. This interaction corresponds to the spin contamination of the wave function. For $R<3/2$ the matrix elements are complex, this corresponds to the holomorphic solution of \autoref{fig:SpheriumNrj}, the singularities in this case will be treated in \autoref{sec:uhfSing}. The matrix elements become real again for $R<-75/62$, this corresponds to the sb-UHF solution for negative value of $R$ observed in \autoref{sec:spherium}. We will refer to the domain where the matrix element are complex as the holomorphic domain.
 
 \begin{equation}\label{eq:MatrixElem}
-\sqrt{-3+2R}\sqrt{75+62R}\frac{25+2R}{280R^3}
+H_{24}=H_{34}=H_{42}=H_{43}=\sqrt{-3+2R}\sqrt{75+62R}\frac{25+2R}{280R^3}
 \end{equation}
 
 The singularity structure in this case is more complex because of the spin contamination of the wave function. We can not use configuration state function in this case. So when we compute all the degeneracies using \eqref{eq:PolChar} and \eqref{eq:DPolChar} some correspond to EPs and some correspond to conical intersections. The numerical distinction of those singularities is very difficult so we will first look at the energies $E(\lambda)$ obtained with this basis set. The \autoref{fig:UHFMiniBas} is the analog of \autoref{fig:RHFMiniBas} in the UHF formalism. We see that in this case the sp\textsubscript{z} triplet interacts with the s\textsuperscript{2} and the p\textsubscript{z}\textsuperscript{2} singlets. Those avoided crossings are due to the spin contamination of the wave function. The exceptional points resulting from those avoided crossings will be discussed in \autoref{sec:uhfSing}. \\
