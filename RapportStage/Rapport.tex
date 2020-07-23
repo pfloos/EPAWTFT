@@ -403,6 +403,7 @@ When a bond is stretched the exact wave function becomes more and more multi-ref
 
 \begin{table}[h!]
     \centering
+    \caption{\centering Percentage of electron correlation energy recovered and $\expval{S^2}$ for the \ce{H2} molecule as a function of bond length (r,\si{\angstrom}) in the STO-3G basis set (taken from \cite{Gill_1988}).}
     \begin{tabular}{c c c c c c c}
 \hline
  $r$ & UHF & UMP2 & UMP3 & UMP4 & $\expval{S^2}$ \\
@@ -413,7 +414,6 @@ When a bond is stretched the exact wave function becomes more and more multi-ref
 2.50 & 0.0\% & 00.1\% & 00.3\% & 00.4\% & 0.99\\
 \hline
 \end{tabular}
-    \caption{\centering Percentage of electron correlation energy recovered and $\expval{S^2}$ for the \ce{H2} molecule as a function of bond length (r,\si{\angstrom}) in the STO-3G basis set (taken from \cite{Gill_1988}).}
     \label{tab:SpinContamination}
 \end{table}
 
@@ -478,7 +478,7 @@ The presence of an EP close to the real axis is characteristic of a sharp avoide
 It seems like our understanding of the physics of spatial and/or spin symmetry breaking in the Hartree-Fock theory can be enlightened by quantum phase transition theory. Indeed, the second derivative of the energy is discontinuous at the Coulson-Fischer point which means that the system undergo a second order quantum phase transition. Moreover, the $\beta$ singularities introduced by Sergeev to describe the EPs modeling the formation of a bound cluster of electrons are actually a more general class of singularities. The EPs close to the real axis (the so-called $\beta$ singularities) are connected to QPT because they result from a sharp avoided crossings at which the eigenstates change quickly. However the $\alpha$ singularities arise from large avoided crossings therefore they can not be connected to QPT. The avoided crossings generating $\alpha$ singularities generally involve the ground state and low-lying doubly-excited states. Those excited states have a non-negligible contribution to the exact FCI solution because they have the same spatial and spin symmetry as the ground state. We think that $\alpha$ singularities are connected to the multi-reference behavior of the wave function in the same way as $\beta$ singularities are linked to symmetry breaking and phase transition of the wave function. 
 
 %============================================================%
-\section{The spherium model}
+\section{The spherium model}\label{sec:spherium}
 %============================================================%
 
 Simple systems that are analytically solvable (or at least quasi-exactly solvable) are of great importance in theoretical chemistry. Those systems are very useful benchmarks to test new methods as they are mathematically easy but retain much of the key physics. To investigate the physics of EPs we use one such system named spherium model. It consists of two electrons confined to the surface of a sphere interacting through the long-range Coulomb potential. Thus the Hamiltonian is:
@@ -556,6 +556,7 @@ The exact solution for the ground state is a singlet so this wave function does 
 
 \begin{table}[h!]
 \centering
+\caption{\centering RHF and UHF energies in the minimal basis and exact energies for various R.}
 \begin{tabular}{c c c c c c c c c}
 $R$ & 0.1 & 1 & 2 & 3 & 5 & 10 & 100 & 1000 \\
 \hline
@@ -565,7 +566,6 @@ UHF & 10 & 1 & 0.490699 & 0.308532 & 0.170833 & 0.078497 & 0.007112 & 0.000703 \
 \hline
 Exact & 9.783874 & 0.852781 & 0.391959 & 0.247898 & 0.139471 & 0.064525 & 0.005487 & 0.000515 \\
 \end{tabular}
-    \caption{\centering RHF and UHF energies in the minimal basis and exact energies for various R.}
 \label{tab:ERHFvsEUHF}
 \end{table}
 
@@ -612,7 +612,7 @@ The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we 
  \psi_4 & =Y_{10}(\theta_1)Y_{10}(\theta_2).
 \end{align}
 
-The Hamiltonian $\bH(\lambda)$ is block diagonal because of the symmetry of the basis set ($\psi_1$ interacts with $\psi_4$ and $\psi_2$ with $\psi_3$). The two singly excited states yields a singlet and a triplet sp\textsubscript{z} but they don't have the same symmetry so these states can't form exceptional points with the ground state. However there is an avoided crossing (see Fig. \ref{fig:RHFMiniBas}) between the s\textsuperscript{2} and the p\textsubscript{z}\textsuperscript{2} which is connected to two exceptional points in the complex plane. 
+The Hamiltonian $\bH(\lambda)$ is block diagonal because of the symmetry of the basis set ($\psi_1$ only interacts with $\psi_4$ and $\psi_2$ with $\psi_3$). The two singly excited states yields a singlet and a triplet sp\textsubscript{z} but they don't have the appropriate symmetry so these states can't form exceptional points with the ground state. However there is an avoided crossing (see Fig. \ref{fig:RHFMiniBas}) between the s\textsuperscript{2} and the p\textsubscript{z}\textsuperscript{2} which is connected to two exceptional points in the complex plane. 
 
 \begin{figure}[h!]
     \centering
@@ -627,26 +627,40 @@ To simplify the problem, it is convenient to only consider basis function with t
 \end{equation}
 where $P_l$ are the Legendre polynomial and $\theta$ is the interelectronic angle.
 
-Then using this basis set we can compare the different partitioning of \autoref{sec:AlterPart}. The \autoref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ in function of $R$ for the M{\o}ller-Plesset, the Epstein-Nesbet, the Weak Correlation and the Strong Coupling partitioning in a minimal basis i.e. $P_0$ and $P_1$. We see that
+Then using this basis set we can compare the different partitioning of \autoref{sec:AlterPart}. The \autoref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ in function of $R$ for the M{\o}ller-Plesset, the Epstein-Nesbet, the Weak Correlation and the Strong Coupling partitioning in a minimal basis i.e. $P_0$ and $P_1$ and in the three function basis. We see that the radius of convergence of the strong coupling partitioning is growing with R whereas it is decreasing for the three other partitioning. This result was expected because the three decreasing partitioning use a weakly correlated reference so $\bH^{(0)}$ is a good approximation for small $R$. On the contrary the strong coupling one uses a strongly correlated reference so this series converge better when the electron are strongly correlated i.e. when $R$ is large for the spherium model.
+The M{\o}ller-Plesset partitioning is always better than the weak correlation in \autoref{fig:RadiusPartitioning}. In the weak correlation partitioning the powers of $R$ are well-separated so each term of the series is a different power of $R$. Whereas the M{\o}ller-Plesset reference is proportionnal to $R^{-1}$ and $R^{-2}$ so the MP series is not well-defined in terms of powers of $R$. Moreover it can be proved that the n-th order energy of the weak correlation series can be obtained as a limited development of MP$n$ respective to $R$. It seems that the Epstein-Nesbet partitioning is better than the M{\o}ller-Plesset one for very small R in the minimal basis. In fact, it is just an artifact of the minimal basis because in the minimal basis augmented with $P_2
+$ (and in larger basis set) the M{\o}ller-Plesset series converge faster for all value of $R$.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{PartitioningRCV.pdf}
-    \caption{\centering Radius of convergence in the minimal basis for different partitioning of the Hamiltonian$\bH(\lambda)$.}
+    \includegraphics[width=0.45\textwidth]{PartitioningRCV2.pdf}
+    \includegraphics[width=0.45\textwidth]{PartitioningRCV3.pdf}
+    \caption{\centering Radius of convergence in the minimal basis (left) and in the minimal basis augmented with $P_2$ (right) for different partitioning of the Hamiltonian$\bH(\lambda)$.}
     \label{fig:RadiusPartitioning}
 \end{figure}
 
-Commenter figure 8 (singularité alpha pas très sensible à basis set)
+The \autoref{fig:RadiusBasis} shows that the radius of convergence is not very sensitive to the expansion of the basis set. The CSF basis function have all the same spin and spatial symmetry so we expect that the singularities obtained within this basis set will be $\alpha$ singularities. The \autoref{tab:SingAlpha} proves that the singularities considered in this case are $\alpha$ singularities. This is consistent with the observation of Goodson and Sergeev \cite{Goodson_2004} on $\alpha$ singularities. The discontinuities observed in \autoref{fig:RadiusBasis} with the M{\o}ller-Plesset partitioning are due to a change of the dominant singularity. \\
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.45\textwidth]{MPlargebasis.pdf}
     \includegraphics[width=0.45\textwidth]{WCElargebasis.pdf}
     \caption{\centering Radius of convergence in the CSF basis with $n$ basis function for the MP partitioning (left) and the WC partitioning (right).}
-    \label{fig:RadiusPartitioning}
+    \label{fig:RadiusBasis}
 \end{figure}
 
-Différence RHF/UHF, Hamiltonien non-bloc diagonal, coefficients complexe pour R<3/2 \\
+\begin{table}[h!]
+\centering
+\caption{\centering }
+\begin{tabular}{c}
+a
+\end{tabular}
+\label{tab:SingAlpha}
+\end{table}
+
+Now we will investigate the differences in the singularity structure between the RHF and UHF formalism. To do this we use the symmetry-broken orbitals obtained in \autoref{sec:spherium}. Thus the UHF two-electron basis is:
+
+
 
  + petit paragraphe: parler de la possibilité de la base strong coupling avec la citation paola et les polynomes laguerre. \\
 
