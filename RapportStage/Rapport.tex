@@ -603,7 +603,7 @@ In this part, we will try to investigate how some parameters of $\bH(\lambda)$ i
 
 The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we can forget the spin part of the spin-orbitals and from now on we will work with spatial orbitals. In the restricted formalism the spatial orbitals are the same so the two-electron basis set is:
 
-\begin{align}\label{eq:basis}
+\begin{align}\label{eq:rhfbasis}
  \psi_1 & =Y_{00}(\theta_1)Y_{00}(\theta_2),
  & 
  \psi_2 & =Y_{00}(\theta_1)Y_{10}(\theta_2),\\
@@ -617,7 +617,7 @@ The Hamiltonian $\bH(\lambda)$ is block diagonal because of the symmetry of the 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{EMP_RHF_R10.pdf}
-    \caption{\centering Energies $E(\lambda)$ in the basis set \eqref{eq:basis} with $R=10$.}
+    \caption{\centering Energies $E(\lambda)$ in the basis set \eqref{eq:rhfbasis} with $R=10$.}
     \label{fig:RHFMiniBas}
 \end{figure}
 
@@ -659,12 +659,37 @@ a
 \end{table}
 
 Now we will investigate the differences in the singularity structure between the RHF and UHF formalism. To do this we use the symmetry-broken orbitals obtained in \autoref{sec:spherium}. Thus the UHF two-electron basis is:
+\begin{align}\label{eq:uhfbasis}
+ \psi_1 & =\phi_{\alpha,1}(\theta_1)\phi_{\beta,1}(\theta_2),
+ & 
+ \psi_2 & =\phi_{\alpha,1}(\theta_1)\phi_{\beta,2}(\theta_2),\\
+ \psi_3 & =\phi_{\alpha,2}(\theta_1)\phi_{\beta,1}(\theta_2),
+ & 
+ \psi_4 & =\phi_{\alpha,2}(\theta_1)\phi_{\beta,2}(\theta_2).
+\end{align}
+with the symmetry-broken orbitals
+\begin{align*}\label{eq:uhforbitals}
+ \phi_{\alpha,1}(\theta) & =\frac{\sqrt{75+62R}Y_{00}(\theta)+5\sqrt{-3+2R}Y_{10}(\theta)}{4\sqrt{7R}},
+ & 
+ \phi_{\beta,1}(\theta) & =\frac{\sqrt{75+62R}Y_{00}(\theta)-5\sqrt{-3+2R}Y_{10}(\theta)}{4\sqrt{7R}},\\
+ \phi_{\alpha,2}(\theta) & =\frac{-5\sqrt{-3+2R}Y_{00}(\theta)+\sqrt{75+62R}Y_{10}(\theta)}{4\sqrt{7R}},
+ & 
+ \phi_{\beta,2}(\theta) & =\frac{5\sqrt{-3+2R}Y_{00}(\theta)+\sqrt{75+62R}Y_{10}(\theta)}{4\sqrt{7R}}.
+\end{align*}
+In the UHF formalism the Hamiltonian $\bH(\lambda)$ is no more block diagonal, $\psi_4$ can interact with $\psi_2$ and $\psi_3$. The matrix element for this  interaction is proportional to $\sqrt{-3+2R}$. For $R=3/2$ the Hamitonian is block diagonal and this is equivalent to the RHF case but for R>3/2 the matrix element become real. This interaction corresponds to the spin contamination of the wave function. For $R<3/2$ the matrix element is complex, this corresponds to the holomorphic solution of \autoref{fig:SpheriumNrj}, the singularities in this case will be treated in \autoref{sec:uhfSing}.
 
+The singularity structure in this case is more complex because of this spin contamination because we can't use configuration state function. So when we compute all the degeneracies using \eqref{eq:PolChar} and \eqref{eq:DPolChar} some corresponds to EPs and some to conical intersections. The numerical distinction of those singularities is very difficult so we will first look at the energies $E(\lambda)$ obtained with this basis set. The \autoref{fig:UHFMiniBas} is the analog of \autoref{fig:RHFMiniBas} in the UHF formalism. We see that in this case the sp\textsubscript{z} triplet interacts with the s\textsuperscript{2} and the p\textsubscript{z}\textsuperscript{2} singlets. Those avoided crossings are due to the spin contamination of the wave function. The exceptional points resulting from those avoided crossings will be discussed in \autoref{sec:uhfSing}. \\
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{EMP_UHF_R10.pdf}
+    \caption{\centering Energies $E(\lambda)$ in the basis set \eqref{eq:rhfbasis} with $R=10$.}
+    \label{fig:UHFMiniBas}
+\end{figure}
 
- + petit paragraphe: parler de la possibilité de la base strong coupling avec la citation paola et les polynomes laguerre. \\
+In this study we have used spherical harmonics (or combination of spherical harmonics) as basis function which are diffuse wave functions. It would also be interesting to investigate the use of localized basis function \cite{Seidl_2018} (for example gaussians) because those functions would be more adapted to describe the correlated regime. \\
 
-\subsection{Exceptional points in the UHF formalism}
+\subsection{Exceptional points in the UHF formalism}\label{sec:uhfSing}
 
 RHF vs UHF
 
