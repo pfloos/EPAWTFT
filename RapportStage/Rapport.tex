@@ -243,39 +243,29 @@ and we have
 \end{align}
 This evidences that encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy.
 
-The eigenvectors associated to the energies \eqref{eq:E_2x2} are
-\begin{equation}\label{ev2x2}
-\phi_{\pm}=\begin{pmatrix}
-\frac{1}{2\lambda}(\epsilon_1 - \epsilon_2 \pm \sqrt{(\epsilon_1 - \epsilon_2)^2 + 4\lambda^2}) \\ 1
-\end{pmatrix},
-\end{equation}
 The eigenvectors associated to the eigenenergies \eqref{eq:E_2x2} are
-\begin{equation} \label{eq:phi_2x2}
-\phi_{\pm}=
-	\begin{pmatrix}
-		(E_{\pm}-2\epsilon_2)/\lambda
-		\\ 
-		1
-	\end{pmatrix},
+\begin{equation}\label{eq:phi_2x2}
+\phi_{\pm}=\begin{pmatrix}
+(\epsilon_1 - \epsilon_2 \pm \sqrt{(\epsilon_1 - \epsilon_2)^2 + 4\lambda^2})/2\lambda \\ 1
+\end{pmatrix},
 \end{equation}
 and, for $\lambda=\lambda_\text{EP}$, they become
-\begin{equation}
-\phi_{\pm}=\begin{pmatrix}
-\mp i \\ 1
-\end{pmatrix},
-\end{equation}
-which are clearly self-orthogonal. 
-\titou{what do you mean by self-orthogonal?}
+\begin{align}
+	\phi_{\pm}(i\,\frac{\epsilon_1 - \epsilon_2}{2}) & = \begin{pmatrix} -i \\ 1\end{pmatrix},
+	&
+	\phi_{\pm}(-i\,\frac{\epsilon_1 - \epsilon_2}{2}) & = \begin{pmatrix} i \\ 1\end{pmatrix}.
+\end{align}
+which are self-orthogonal i.e. their norm is equal to zero. 
 Using Eq.~\eqref{eq:E_EP}, Eq.~\eqref{eq:phi_2x2} can be recast as
-\begin{equation}
+\begin{equation}\label{eq:phi_EP}
 \phi_{\pm}=
 	\begin{pmatrix}
-		(\epsilon_1-\epsilon_2)/\lambda \pm \sqrt{2\lambda_\text{EP}/\lambda} \sqrt{1 - \lambda_\text{EP}/\lambda} 
+		(\epsilon_1-\epsilon_2)/2\lambda \pm \sqrt{2\lambda_\text{EP}} \sqrt{\lambda - \lambda_\text{EP}}/\lambda 
 		\\ 
 		1
-	\end{pmatrix},
+	\end{pmatrix}.
 \end{equation}
-where one clearly see that, if normalised, they behave as $(\lambda - \lambda_\text{EP})^{-1/4}$ resulting in the following pattern when looping around one EP:
+We have seen that the EP inherits its topology from the double valued function $\sqrt{\lambda - \lambda_\text{EP}}$. Then if the eigenvectors are normalised they behave as $(\lambda - \lambda_\text{EP})^{-1/4}$ which gives the following pattern when looping around one EP:
 \begin{align}
 	\phi_{\pm}(2\pi) & = \phi_{\mp}(0),
 	&
@@ -286,9 +276,7 @@ where one clearly see that, if normalised, they behave as $(\lambda - \lambda_\t
 \end{align}
 In plain words, four loops around the EP are necessary to recover the initial state. 
 We can also see that looping the other way around leads to a different pattern.
-\titou{I don't think it is too obvious that the eigenvectors behave as $(\lambda - \lambda_\text{EP})^{-1/4}$.}
-
-
+\antoine{Is this a bit better like this ?}
 
 %============================================================%
 \section{Perturbation theory}
@@ -375,18 +363,18 @@ But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP
 The MP partitioning is not the only one possible in electronic structure theory. An other possibility, even more natural than the MP one, is to take the diagonal elements of $\bH$ as the zeroth-order Hamiltonian. Hence, the off-diagonal elements of $\bH(\lambda)$ are the perturbation operator. This partitioning leads to the Epstein-Nesbet (EN) perturbation theory. The zeroth-order eigenstates for this partitioning are Slater determinants as for the MP partitioning. The expression of the second order correction to the energy is given for both MP and EN. The energies at the MP denominator are the orbitals energies whereas in the EN case it is the excitation energies. The i,j indices represent the occupied orbitals and r,s the virtual orbitals of the basis sets.
 
 \begin{equation}\label{eq:EMP2}
-E_{\text{MP2}}=\sum\limits_{\substack{i<j \\ r<s}}^{n}\frac{\abs{\mel{ij}{}{rs}}^2}{\epsilon_i + \epsilon_j - \epsilon_r - \epsilon_s}
+E_{\text{MP2}}=\sum\limits_{\substack{i<j \\ a<b}}^{n}\frac{\abs{\mel{ij}{}{ab}}^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}
 \end{equation}
 \begin{equation}\label{eq:EEN2}
 E_{\text{EN2}}=\sum\limits_{\substack{i<j \\ r<s}}^{n}\frac{\abs{\mel{ij}{}{rs}}^2}{\epsilon_i + \epsilon_j - \epsilon_r - \epsilon_s - (J_{ij} + J_{rs} - J_{ir} - J_{is} - J_{jr} + J_{js})}
 \end{equation}
 where $J_{ij}$ is the matrix element of the Coulomb operator \eqref{eq:CoulOp} and with
 \begin{equation}
-	\mel{ij}{}{rs}=\braket{ij}{rs} - \braket{ij}{sr}
+	\mel{ij}{}{ab}=\braket{ij}{ab} - \braket{ij}{ba}
 \end{equation}
-where $\braket{ij}{rs}$ is the two-electron integral
+where $\braket{ij}{ab}$ is the two-electron integral
 \begin{equation}
-\braket{ij}{rs}=\int \dd\vb{x}_1\dd\vb{x}_2\chi_i^*(\vb{x}_1)\chi_j^*(\vb{x}_2)r_{12}^{-1}\chi_r(\vb{x}_1)\chi_s(\vb{x}_2)
+\braket{ij}{ab}=\int \dd\vb{x}_1\dd\vb{x}_2\phi_i^*(\vb{x}_1)\phi_j^*(\vb{x}_2)r_{12}^{-1}\phi_a(\vb{x}_1)\phi_b(\vb{x}_2)
 \end{equation}
 
 Additionally, we will consider two other partitioning. The electronic Hamiltonian can be separated in a one-electron part and in a two-electron part as seen previously. We can use this separation to create two other partitioning:
@@ -417,8 +405,7 @@ On the other hand, the unrestricted MP series is monotonically convergent (excep
 \end{figure}
 
 When a bond is stretched the exact wave function becomes more and more multi-reference. Yet the HF wave function is restricted to be single Slater determinant.
-Thus, it is inappropriate to model (even qualitatively) stretched system. Nevertheless, the HF wave function can undergo a symmetry breaking to lower its energy by sacrificing one of the symmetry of the exact wave function during the process (see for example the case of \ce{H_2} in Ref.~\cite{SzaboBook}). 
-\titou{A restricted HF Slater determinant is a poor approximation of a symmetry-broken wave function but even in the unrestricted formalism, where the spatial orbitals of electrons $\alpha$ and $\beta$ are not restricted to be the same \cite{Fukutome_1981}, which allows a better description of symmetry-broken system, the series does not give accurate results at low orders.} Even with this improvement of the zeroth-order wave function the series does not have the smooth and rapidly converging behavior wanted. 
+Thus, it is inappropriate to model (even qualitatively) stretched system. Nevertheless, the HF wave function can undergo a symmetry breaking to lower its energy by sacrificing one of the symmetry of the exact wave function during the process (see for example the case of \ce{H_2} in Ref.~\cite{SzaboBook}). \antoine{It could be expected that  the restricted MP series has inappropriate convergence properties as a restricted HF Slater determinant is a poor approximation of the exact wave function for stretched system. However even in the unrestricted formalism the series does not give accurate results at low orders. Whereas the unrestricted formalism allows a better description of a stretched system because the spatial orbitals of electrons $\alpha$ and $\beta$ are not restricted to be the same \cite{Fukutome_1981}.} Even with this improvement of the zeroth-order wave function the series does not have the smooth and rapidly converging behavior wanted. 
 
 \begin{table}[h!]
     \centering
@@ -482,25 +469,23 @@ In the 2000's, Sergeev and Goodson \cite{Sergeev_2005, Sergeev_2006} analyzed th
 To understand the convergence properties of the perturbation series at $\lambda=1$, one must look at the whole complex plane, in particular, for negative (i.e., real) values of $\lambda$. If $\lambda$ is negative, the Coulomb interaction becomes attractive but the mean field (which has been computed at $\lambda = 1$) remains repulsive as it is proportional to $(1-\lambda)$:
 
 \begin{equation}\label{eq:HamiltonianStillinger}
-    \bH(\lambda)=\sum\limits_{i=1}^{n}\left[ \underbrace{-\frac{1}{2}\grad_i^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_i-\vb{R}_k|}}_{\text{Independent of $\lambda$}} + \overbrace{(1-\lambda)V_i^{\text{HF}}}^{\textcolor{red}{\text{Repulsive}}}+\underbrace{\lambda\sum\limits_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|}}_{\textcolor{blue}{\text{Attractive}}}  \right]
+    \bH(\lambda)=\sum\limits_{i=1}^{n}\left[ \underbrace{-\frac{1}{2}\grad_i^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_i-\vb{R}_k|}}_{\text{Independent of}~\lambda} + \overbrace{(1-\lambda)V_i^{\text{HF}}}^{\textcolor{red}{\text{Repulsive}}}+\underbrace{\lambda\sum\limits_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|}}_{\textcolor{blue}{\text{Attractive}}}  \right]
 \end{equation}
 
-The major difference between those two terms is that the repulsive mean field is localized around the nuclei whereas the interelectronic interaction persist away from the nuclei. If $\lambda$ becomes more and more negative the mean field becomes more and more repulsive so there exists a critical (negative) value of $\lambda$, $\lambda_\text{c}$, for which the Coulombic field created by the nuclei cannot bind the electrons anymore because of the $\lambda$-independent nature of the the electron-nucleus attraction. For $\lambda = \lambda_c$, the electrons form a bound cluster that dissociates from the nuclei \titou{by going towards $\lambda = -\infty$.} According to Baker \cite{Baker_1971}, this value is a critical point of the system and, by analogy with thermodynamics, the energy $E(\lambda)$ exhibits a singularity at $\lambda_c$. At this point the system undergo a phase transition \titou{and a symmetry breaking}. \titou{Beyond $\lambda_c$ there is a continuum of eigenstates with electrons dissociated from the nucleus.}
+The major difference between those two terms is that the repulsive mean field is localized around the nuclei whereas the interelectronic interaction persist away from the nuclei. If $\lambda$ becomes more and more negative the mean field becomes more and more repulsive so there exists a critical (negative) value of $\lambda$, $\lambda_\text{c}$, for which the Coulombic field created by the nuclei cannot bind the electrons anymore because of the $\lambda$-independent nature of the the electron-nucleus attraction. \antoine{For $\lambda = \lambda_c$, the electrons dissociate from the nuclei and form a bound cluster which is infinitely separated from the nuclei}. According to Baker \cite{Baker_1971}, this value is a critical point of the system and, by analogy with thermodynamics, the energy $E(\lambda)$ exhibits a singularity at $\lambda_c$. At this point the system undergo a phase transition \titou{and a symmetry breaking}. \titou{Beyond $\lambda_c$ there is a continuum of eigenstates with electrons dissociated from the nucleus.}
 
-This reasoning is done on the exact Hamiltonian and energy, this is the exact energy which exhibits this singularity on the negative real axis. 
-\titou{The Hamiltonian can be exact in a finite basis. I wonder if it would not be more judicious to talk about complete/infinite Hilbert space and finite Hilbert space.}
-However, in a finite basis set, one can prove that, for a Hermitian Hamiltonian, the singularities of $E(\lambda)$ occurs in complex conjugate pairs with non-zero imaginary parts. Sergeev and Goodson proved \cite{Sergeev_2005}, as predicted by Stillinger \cite{Stillinger_2000}, that in a finite basis set the critical point on the real axis is modeled by a cluster of sharp avoided crossings with diffuse functions, equivalently by a cluster of $\beta$ singularities in the negative half plane. They explain that Olsen et al., because they used a $2\times2$ model, only observed the first singularity of this cluster of singularities causing the divergence.
+\antoine{This reasoning is done on the exact Hamiltonian and energy i.e. the Hamiltonian in the complete Hilbert space, this is the exact energy which exhibits this singularity on the negative real axis}. \antoine{However, in a finite basis set which does not span the complete Hilbert space}, one can prove that, for a Hermitian Hamiltonian, the singularities of $E(\lambda)$ occurs in complex conjugate pairs with non-zero imaginary parts. Sergeev and Goodson proved \cite{Sergeev_2005}, as predicted by Stillinger \cite{Stillinger_2000}, that in a finite basis set the critical point on the real axis is modeled by a cluster of sharp avoided crossings with diffuse functions, equivalently by a cluster of $\beta$ singularities in the negative half plane. They explain that Olsen et al., because they used a $2\times2$ model, only observed the first singularity of this cluster of singularities causing the divergence.
 
-Finally, it was shown that $\beta$ singularities are very sensitive to changes of the basis set but not to the stretching of the system. On the contrary $\alpha$ singularities are relatively insensitive to the basis sets but very sensitive to bond stretching. According to Goodson, \cite{Goodson_2004} the singularity structure from molecules stretched from the equilibrium geometry is difficult, this is consistent with the observation of Olsen and co-workers  \cite{Olsen_2000} on the \ce{HF} molecule at equilibrium geometry and stretched geometry. To our knowledge the effect of bond stretching on singularities, its link with spin contamination and symmetry breaking of the wave function has not been as well understood as the ionization effect and its link with diffuse function. In this work we shall try to improve our understanding of the effect of symmetry breaking on the singularities of $E(\lambda)$ and we hope that it will lead to a deeper understanding of perturbation theory.
+Finally, it was shown that $\beta$ singularities are very sensitive to changes of the basis set but not to the stretching of the system. On the contrary $\alpha$ singularities are relatively insensitive to the basis sets but very sensitive to bond stretching. According to Goodson, \cite{Goodson_2004} the singularity structure from molecules stretched from the equilibrium geometry is difficult, this is consistent with the observation of Olsen and co-workers  \cite{Olsen_2000} on the \ce{HF} molecule at equilibrium geometry and stretched geometry. To our knowledge the effect of bond stretching on singularities, its link with spin contamination and symmetry breaking of the wave function has not been as well understood as the ionization effect and its link with diffuse function.  In this work we shall try to improve our understanding of the effect of symmetry breaking on the singularities of $E(\lambda)$ and we hope that it will lead to a deeper understanding of perturbation theory.
 
 \subsection{The physics of quantum phase transition}
 
-In the previous section, we saw that a careful analysis of the structure of the Hamiltonian allows us to predict the existence of a critical point. In a finite basis set this critical point is model by a cluster of $\beta$ singularities. It is now well known that this phenomenon is a special case of a more general phenomenon. Indeed, theoretical physicists proved that EPs close to the real axis are connected to \textit{quantum phase transitions} (QPTs) \cite{Heiss_1988, Heiss_2002, Cejnar_2005, Cejnar_2007, Cejnar_2009, Borisov_2015, Sindelka_2017}. In quantum mechanics, the Hamiltonian is almost always dependent of, at least, one parameter. In some cases the variation of a parameter can lead to abrupt changes at a critical point. These QPTs exist both for ground and excited states as shown by Cejnar and coworkers \cite{Cejnar_2009, Sachdev_2011, Cejnar_2015, Cejnar_2016, Caprio_2008, Macek_2019}. A ground-state QPT is characterized by the \titou{successive?} derivative of the ground-state energy with respect to a non-thermal control parameter \cite{Cejnar_2009, Sachdev_2011}. The transition is called discontinuous and of first order if the first derivative is discontinuous at the critical parameter value. Otherwise, it is called continuous and of $n$-th order if the $n$-th derivative is discontinuous. A QPT can also be identify by the discontinuity of an appropriate order parameter (or one of its derivatives). 
+In the previous section, we saw that a careful analysis of the structure of the Hamiltonian allows us to predict the existence of a critical point. In a finite basis set this critical point is model by a cluster of $\beta$ singularities. It is now well known that this phenomenon is a special case of a more general phenomenon. Indeed, theoretical physicists proved that EPs close to the real axis are connected to \textit{quantum phase transitions} (QPTs) \cite{Heiss_1988, Heiss_2002, Cejnar_2005, Cejnar_2007, Cejnar_2009, Borisov_2015, Sindelka_2017}. In quantum mechanics, the Hamiltonian is almost always dependent of, at least, one parameter. In some cases the variation of a parameter can lead to abrupt changes at a critical point. These QPTs exist both for ground and excited states as shown by Cejnar and coworkers \cite{Cejnar_2009, Sachdev_2011, Cejnar_2015, Cejnar_2016, Caprio_2008, Macek_2019}. A ground-state QPT is characterized by the derivatives of the ground-state energy with respect to a non-thermal control parameter \cite{Cejnar_2009, Sachdev_2011}. The transition is called discontinuous and of first order if the first derivative is discontinuous at the critical parameter value. Otherwise, it is called continuous and of $n$-th order if the $n$-th derivative is discontinuous. A QPT can also be identify by the discontinuity of an appropriate order parameter (or one of its derivatives). 
 
 The presence of an EP close to the real axis is characteristic of a sharp avoided crossing. Yet, at such an avoided crossing, eigenstates change abruptly. Although it is now well understood that EPs are closely related to QPTs, the link between the type of QPT (ground state or excited state, first or higher order) and EPs still need to be clarified. One of the major obstacles that one faces in order to achieve this resides in the ability to compute the distribution of EPs. The numerical assignment of an EP to two energies on the real axis is very difficult in large dimensions. Hence, the design of specific methods are required to get information on the location of EPs. Following this idea, Cejnar \textit{et al.}~developed a method based on a Coulomb analogy giving access to the density of EP close to the real axis \cite{Cejnar_2005, Cejnar_2007}. More recently Stransky and coworkers proved that the distribution of EPs is characteristic on the order of the QPT \cite{Stransky_2018}. In particular, they showed that when the dimensionality of the system increases, first- and second-order QTP behave differently, and converge towards the real axis at different rates (exponentially and algebraically for the first and second order, respectively).
 
-It seems like our understanding of the physics of spatial and/or spin symmetry breaking in the Hartree-Fock theory can be enlightened by QPT theory. Indeed, the second derivative of the energy is discontinuous at the Coulson-Fischer point which means that the system undergo a second-order QPT. Moreover, the $\beta$ singularities introduced by Sergeev and coworkers to describe the EPs modeling the formation of a bound cluster of electrons are actually a more general class of singularities. The EPs close to the real axis (the so-called $\beta$ singularities) are connected to QPT because they result from a sharp avoided crossings at which the eigenstates change quickly. However, the $\alpha$ singularities arise from large avoided crossings. Thus, they can not be connected to QPT. The avoided crossings generating $\alpha$ singularities generally involve the ground state and low-lying doubly-excited states. Those excited states have a non-negligible contribution to the exact FCI solution because they have the same spatial and spin symmetry as the ground state. We think that $\alpha$ singularities are connected to the multi-reference behavior of the wave function in the same way as $\beta$ singularities are linked to symmetry breaking and phase transition of the wave function. 
-\titou{I am not sure I agree with your last comment. Maybe, we can talk about it tomorrow.}
+It seems like our understanding of the physics of spatial and/or spin symmetry breaking in the Hartree-Fock theory can be enlightened by QPT theory. Indeed, the second derivative of the energy is discontinuous at the Coulson-Fischer point which means that the system undergo a second-order QPT. Moreover, the $\beta$ singularities introduced by Sergeev and coworkers to describe the EPs modeling the formation of a bound cluster of electrons are actually a more general class of singularities. The EPs close to the real axis (the so-called $\beta$ singularities) are connected to QPT because they result from a sharp avoided crossings at which the eigenstates change quickly. However, the $\alpha$ singularities arise from large avoided crossings. Thus, they can not be connected to QPT. The avoided crossings generating $\alpha$ singularities generally involve the ground state and low-lying doubly-excited states. Those excited states have a non-negligible contribution to the exact FCI solution because they have the same spatial and spin symmetry as the ground state. \antoine{We think that $\alpha$ singularities are connected the states with non-negligible contribution in the configuration interaction expansion thus to the dynamical part of the correlation energy. Whereas the $\beta$ singularities are linked to symmetry breaking and phase transition of the wave function i.e. the multi-reference aspect of the wave function thus to the static part of the correlation energy.}
+
 
 %============================================================%
 \section{The spherium model}\label{sec:spherium}
@@ -740,11 +725,20 @@ In the RHF case there are only $\alpha$ singularities and large avoided crossing
 
 As shown before, some matrix elements of the Hamiltonian become complex in the holomorphic domain. Therefore the Hamiltonian becomes non-Hermitian for those value of $R$. In \cite{Burton_2019a} Burton et al. proved that for the \ce{H_2} molecule the unrestricted Hamiltonian is not \pt -symmetric in the holomorphic domain. An analog reasoning can be done with the spherium model to prove the same result. The \pt -symmetry (invariance with respect to combined space reflection $\mathcal{P}$ and time reversal $\mathcal{T}$) is a property which ensures that a non-Hermitian Hamiltonian has a real energy spectrum. Thus \pt -symmetric Hamiltonian can be seen as an intermediate between Hermitian and non-Hermitian.
 
- In our case we can see in Figure x that a part of the energy spectrum becomes complex when R is in the holomorphic domain. This part of the spectrum where the energy becomes complex is called the broken \pt symmetry  region. This is consistent with the fact that in the holomorphic domain the Hamiltonian break the \pt -symmetry. 
+ In our case we can see in \autoref{fig:UHFPT} that a part of the energy spectrum becomes complex when R is in the holomorphic domain. This part of the spectrum where the energy becomes complex is called the broken \pt symmetry  region. This is consistent with the fact that in the holomorphic domain the Hamiltonian break the \pt -symmetry. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{ReNRJPT.pdf}
+    \includegraphics[width=0.45\textwidth]{ImNRJPT.pdf}
+    \caption{\centering Real part (left) and imaginary part (right) of $E(\lambda)$ in the unrestricted basis set \eqref{eq:uhfbasis} for $R=1$.}
+    \label{fig:UHFPT}
+\end{figure}
 
 For a non-Hermitian Hamiltonian the exceptional points can lie on the real axis. In particular, at the point of PT transition (the point where the energies become complex) the two energies are degenerate so it is an exceptional. We can see this phenomenon on Figure x, the points of PT transition are indicate by .
 
 \section{Conclusion}
+
 
 \newpage
 
