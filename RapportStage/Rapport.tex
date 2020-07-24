@@ -448,7 +448,7 @@ They proved that using different extrapolation formulas of the first terms of th
 
 \subsection{Cases of divergence}
 
-However Olsen \textit{et al.}~have discovered an even more preoccupying behavior of the MP series in the late 90's. They have shown that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and \ce{HF} \cite{Olsen_1996, Christiansen_1996}. Cremer and He had already studied those two systems and classified them as class B systems. But Olsen and his co-workers have done the analysis in larger basis sets containing diffuse functions and in those basis sets the series become divergent at high order.
+In the late 90's, Olsen \textit{et al.}~have discovered an even more preoccupying behavior of the MP series \cite{}. They showed that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and \ce{HF} \cite{Olsen_1996, Christiansen_1996}. Cremer and He had already studied these two systems and classified them as ``class B'' systems. However, the analysis of Olsen and coworkers was performed in larger basis sets containing diffuse functions. In these basis sets, they found that the series become divergent at (very) high order.
 
 \begin{figure}[h!]
     \centering
@@ -458,12 +458,12 @@ However Olsen \textit{et al.}~have discovered an even more preoccupying behavior
     \label{fig:my_label}
 \end{figure}
 
-The discovery of this divergent behavior was really worrying because in order to get more and more accurate results theoretical chemists need to work in large basis sets. As a consequence they investigated the causes of those divergences and in the same time the reasons of the different types of convergence. To do this they analyzed the relation between the dominant singularity (i.e. the closest singularity to the origin) and the convergence behavior of the series \cite{Olsen_2000}. Their analysis is based on Darboux's theorem: 
+The discovery of this divergent behavior is worrying as in order to get meaningful and accurate energies, calculations must be performed in large basis sets (as close as possible from the complete basis set limit). Including diffuse functions is particularly important for the case of anions and/or Rydberg excited states where the wave function is much more diffuse than the ground-state one. As a consequence, they investigated further the causes of these divergences as well as the reasons of the different types of convergence. To do so, they analyzed the relation between the dominant singularity (i.e., the closest singularity to the origin) and the convergence behavior of the series \cite{Olsen_2000}. Their analysis is based on Darboux's theorem: 
 \begin{quote}
 	\textit{``In the limit of large order, the series coefficients become equivalent to the Taylor series coefficients of the singularity closest to the origin. Following the result of this theorem, the convergence patterns of the MP series can be explained by looking at the dominant singularity.''}
 \end{quote}
 
-A singularity in the unit circle is designated as an intruder state, more precisely as a front-door (respectively back-door) intruder state if the real part of the singularity is positive (respectively negative). The method used is to do a scan of the real axis to identify the avoided crossing responsible for the pair of dominant singularity. Then by modeling this avoided crossing by a two-state Hamiltonian one can get an approximation of the dominant conjugate pair of singularity by finding the EPs of the $2\times2$ Hamiltonian. The diagonal matrix is the unperturbed Hamiltonian and the other matrix is the perturbative part of the Hamiltonian.
+A singularity in the unit circle is designated as an intruder state, more precisely as a front-door (respectively back-door) intruder state if the real part of the singularity is positive (respectively negative). Theie method consists in performing a scan of the real axis to detect the avoided crossing responsible for the pair of dominant singularity. Then by modeling this avoided crossing via a two-state Hamiltonian one can get an approximation of the dominant conjugate pair of singularity by finding the EPs of the $2\times2$ Hamiltonian. The diagonal matrix is the unperturbed Hamiltonian and the other matrix is the perturbative part of the Hamiltonian.
 
 \begin{equation}
 \underbrace{\mqty(\alpha & \delta \\ \delta & \beta)}_{\bH} = \underbrace{\mqty(\alpha + \alpha_s & 0 \\ 0 & \beta + \beta_s )}_{\bH^{(0)}} + \underbrace{\mqty(- \alpha_s & \delta \\ \delta & - \beta_s)}_{\bV}
