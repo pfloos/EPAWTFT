@@ -643,7 +643,7 @@ The Hamiltonian $\bH(\lambda)$ is block diagonal because of the symmetry of the 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{EMP_RHF_R10.pdf}
-    \caption{\centering Energies $E(\lambda)$ in the basis set \eqref{eq:rhfbasis} with $R=10$.}
+    \caption{\centering Energies $E(\lambda)$ in the restricted basis set \eqref{eq:rhfbasis} with $R=10$.}
     \label{fig:RHFMiniBas}
 \end{figure}
 
@@ -661,11 +661,11 @@ $ (and in larger basis set) the MP series has a greater radius of convergence fo
     \centering
     \includegraphics[width=0.45\textwidth]{PartitioningRCV2.pdf}
     \includegraphics[width=0.45\textwidth]{PartitioningRCV3.pdf}
-    \caption{\centering Radius of convergence in the minimal basis (left) and in the minimal basis augmented with $P_2$ (right) for different partitioning of the Hamiltonian$\bH(\lambda)$.}
+    \caption{\centering Radius of convergence in the minimal basis (left) and in the minimal basis augmented with $P_2$ (right) for different partitioning of the Hamiltonian $\bH(\lambda)$.}
     \label{fig:RadiusPartitioning}
 \end{figure}
 
-The \autoref{fig:RadiusBasis} shows that the radius of convergence is not very sensitive to the expansion of the basis set. The CSF basis function have all the same spin and spatial symmetry so we expect that the singularities obtained within this basis set will be $\alpha$ singularities. The \autoref{tab:SingAlpha} proves that the singularities considered in this case are $\alpha$ singularities. This is consistent with the observation of Goodson and Sergeev \cite{Goodson_2004} on $\alpha$ singularities. The discontinuities observed in \autoref{fig:RadiusBasis} with the MP partitioning are due to a change of the dominant singularity. \\
+The \autoref{fig:RadiusBasis} shows that the radius of convergence is not very sensitive to the expansion of the basis set. The CSF basis function have all the same spin and spatial symmetry so we expect that the singularities obtained within this basis set will be $\alpha$ singularities. The \autoref{tab:SingAlpha} proves that the singularities considered in this case are $\alpha$ singularities. This is consistent with the observation of Goodson and Sergeev \cite{Goodson_2004} on $\alpha$ singularities. The discontinuities observed in \autoref{fig:RadiusBasis} with the MP partitioning are due to a change of the dominant singularity. We can observe this change in \autoref{tab:SingAlpha}, the value for $R=1$ and $R=2$ are respectively in the positive and negative plane.
 
 \begin{figure}[h!]
     \centering
@@ -677,9 +677,16 @@ The \autoref{fig:RadiusBasis} shows that the radius of convergence is not very s
 
 \begin{table}[h!]
 \centering
-\caption{\centering }
-\begin{tabular}{c}
-a
+\caption{\centering Dominant singularity in the CSF basis set ($n=8$) for various value of R. The first line is the value for the MP partitioning and the second for the WC one.}
+\begin{tabular}{cccccccc}
+\hline
+\hline
+$R$ & 0.1 & 1 & 2 & 3 & 5 & 10 & 100 \\
+\hline
+MP & 14.1-10.9i & 2.38-1.47i & -0.67-1.30i & -0.49-0.89i & -0.33-0.55i & -0.22-0.31i & 0.03-0.05i \\
+WC & -9.6-10.7i & -0.96-1.07i & -0.48-0.53i & -0.32-0.36 & -0.19-0.21i & -0.10-0.11i & -0.01-0.01i \\
+\hline
+\hline
 \end{tabular}
 \label{tab:SingAlpha}
 \end{table}
@@ -713,7 +720,7 @@ The singularity structure in this case is more complex because of the spin conta
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{EMP_UHF_R10.pdf}
-    \caption{\centering Energies $E(\lambda)$ in the basis set \eqref{eq:uhfbasis} with $R=10$.}
+    \caption{\centering Energies $E(\lambda)$ in the unrestricted basis set \eqref{eq:uhfbasis} with $R=10$.}
     \label{fig:UHFMiniBas}
 \end{figure}
 
@@ -721,17 +728,19 @@ In this study we have used spherical harmonics (or combination of spherical harm
 
 \subsection{Exceptional points in the UHF formalism}\label{sec:uhfSing}
 
-In the RHF case there are only $\alpha$ singularities and large avoided crossings but we can see in \autoref{fig:UHFMiniBas} that in the UHF case there are sharp avoided crossings which are connected to $\beta$ singularities. For example. However in the spherium the electrons can't be ionized so those singularities are not the $\beta$ singularities highlighted by Sergeev and Goodson \cite{Sergeev_2005}. \antoine{Changer ce passage} We can see in \autoref{fig:UHFEP} that the sharp avoided crossing between the s\textsuperscript{2} singlet and the sp\textsubscript{z} triplet appears for $R>3/2$. As presented before $\beta$ singularities are linked to quantum phase transition so it seems that this singularity is linked to the spin symmetry breaking of the UHF wave function. The fact that a similar pair of $\beta$ singularities appear for $R<-75/62$ confirms this assumption. A second pair of $\beta$ singularities appear for $R\gtrsim 2.5$, this is probably due to an excited-state quantum phase transition but this still need to be investigated. 
+In the RHF case there are only $\alpha$ singularities and large avoided crossings but we can see in \autoref{fig:UHFMiniBas} that in the UHF case there are sharp avoided crossings which are connected to $\beta$ singularities. For example at $R=10$ the pair of singularities connected to the avoided crossing between s\textsuperscript{2} and sp\textsubscript{z} $^{3}P$ is $0.999\pm0.014i$. And the one between sp\textsubscript{z} $^{3}P$ and p\textsubscript{z}\textsuperscript{2} is connected with the singularities $2.207\pm0.023i$. However in the spherium the electrons can't be ionized so those singularities are not the $\beta$ singularities highlighted by Sergeev and Goodson \cite{Sergeev_2005}. We can see in \autoref{fig:UHFEP} that the degeneracy between the s\textsuperscript{2} singlet and the sp\textsubscript{z} triplet at $R=3/2$. For $R>3/2$, it becomes an avoided crossing on the real axis and the degeneracies are moved in the complex plane. The wave function is spin contaminated for $R>3/2$ this why the s\textsuperscript{2} singlet energy can not cross the sp\textsubscript{z} triplet curves anymore. When $R$ increases this avoided crossing becomes sharper. As presented before $\beta$ singularities are linked to quantum phase transition so it seems that this singularity is linked to the spin symmetry breaking of the UHF wave function. The fact that a similar pair of $\beta$ singularities appears for $R<-75/62$ confirms this assumption. A second pair of $\beta$ singularities appear for $R\gtrsim 2.5$, this is probably due to an excited-state quantum phase transition but this still need to be investigated. 
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.45\textwidth]{UHFCI.pdf}
     \includegraphics[width=0.45\textwidth]{UHFEP.pdf}
-    \caption{\centering .}
+    \caption{\centering Energies $E(\lambda)$ in the unrestricted basis set \eqref{eq:uhfbasis} for $R=1.5$ (left) and $R=1.51$ (right).}
     \label{fig:UHFEP}
 \end{figure}
 
-As shown before, some matrix elements of the Hamiltonian become complex for $R<3/2$ so this Hamiltonian becomes non-Hermitian for those value of $R$. In \cite{Burton_2019a} Burton et al. proved that for the \ce{H_2} molecule the unrestricted Hamiltonian is not \pt -symmetric in the holomorphic domain. An analog reasoning can be done with the spherium model to prove the same result. The \pt -symmetry (invariance with respect to combined space reflection $\mathcal{P}$ and time reversal $\mathcal{T}$) is a property which ensures that a non-Hermitian Hamiltonian has a real energy spectrum. Thus \pt -symmetric Hamiltonian can be seen as an intermediate between Hermitian and non-Hermitian. In our case we can see in Figure x that a part of the energy spectrum becomes complex when R is in the holomorphic domain. This part of the spectrum where the energy becomes complex is called the broken \pt symmetry  region. This is consistent with the fact that in the holomorphic domain the Hamiltonian break the \pt -symmetry. 
+As shown before, some matrix elements of the Hamiltonian become complex in the holomorphic domain. Therefore the Hamiltonian becomes non-Hermitian for those value of $R$. In \cite{Burton_2019a} Burton et al. proved that for the \ce{H_2} molecule the unrestricted Hamiltonian is not \pt -symmetric in the holomorphic domain. An analog reasoning can be done with the spherium model to prove the same result. The \pt -symmetry (invariance with respect to combined space reflection $\mathcal{P}$ and time reversal $\mathcal{T}$) is a property which ensures that a non-Hermitian Hamiltonian has a real energy spectrum. Thus \pt -symmetric Hamiltonian can be seen as an intermediate between Hermitian and non-Hermitian.
+
+ In our case we can see in Figure x that a part of the energy spectrum becomes complex when R is in the holomorphic domain. This part of the spectrum where the energy becomes complex is called the broken \pt symmetry  region. This is consistent with the fact that in the holomorphic domain the Hamiltonian break the \pt -symmetry. 
 
 For a non-Hermitian Hamiltonian the exceptional points can lie on the real axis. In particular, at the point of PT transition (the point where the energies become complex) the two energies are degenerate so it is an exceptional. We can see this phenomenon on Figure x, the points of PT transition are indicate by .
 
