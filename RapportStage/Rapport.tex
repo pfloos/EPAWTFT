@@ -221,7 +221,7 @@ One notices that the two states become degenerate only for a pair of complex con
 	\quad
 	E_\text{EP} = \frac{\epsilon_1 + \epsilon_2}{2},
 \end{equation}
-which correspond to square-root singularities in the complex-$\lambda$ plane (see Fig.~\ref{fig:2x2}).
+which correspond to square-root singularities in the complex-$\lambda$ plane (see \autoref{fig:2x2}).
 These two $\lambda$ values, given by Eq.~\eqref{eq:lambda_EP}, are the so-called EPs and one can clearly see that they connect the ground and excited states.
 Starting from $\lambda_\text{EP}$, two square-root branch cuts run on the imaginary axis towards $\pm i \infty$.
 In the real $\lambda$ axis, the point for which the states are the closest ($\lambda = 0$) is called an avoided crossing and this occurs at $\lambda = \Re(\lambda_\text{EP})$.
@@ -375,18 +375,18 @@ But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP
 The MP partitioning is not the only one possible in electronic structure theory. An other possibility, even more natural than the MP one, is to take the diagonal elements of $\bH$ as the zeroth-order Hamiltonian. Hence, the off-diagonal elements of $\bH(\lambda)$ are the perturbation operator. This partitioning leads to the Epstein-Nesbet (EN) perturbation theory. The zeroth-order eigenstates for this partitioning are Slater determinants as for the MP partitioning. The expression of the second order correction to the energy is given for both MP and EN. The energies at the MP denominator are the orbitals energies whereas in the EN case it is the excitation energies. The i,j indices represent the occupied orbitals and r,s the virtual orbitals of the basis sets.
 
 \begin{equation}\label{eq:EMP2}
-E_{\text{MP2}}=\sum\limits_{\substack{i<j \\ r<s}}^{n}\frac{\abs{\bra{ij}\hspace{1pt}\ket{rs}}^2}{\epsilon_i + \epsilon_j - \epsilon_r - \epsilon_s}
+E_{\text{MP2}}=\sum\limits_{\substack{i<j \\ r<s}}^{n}\frac{\abs{\mel{ij}{}{rs}}^2}{\epsilon_i + \epsilon_j - \epsilon_r - \epsilon_s}
 \end{equation}
 \begin{equation}\label{eq:EEN2}
-E_{\text{EN2}}=\sum\limits_{\substack{i<j \\ r<s}}^{n}\frac{\abs{\bra{ij}\hspace{1pt}\ket{rs}}^2}{\epsilon_i + \epsilon_j - \epsilon_r - \epsilon_s - (J_{ij} + J_{rs} - J_{ir} - J_{is} - J_{jr} + J_{js})}
+E_{\text{EN2}}=\sum\limits_{\substack{i<j \\ r<s}}^{n}\frac{\abs{\mel{ij}{}{rs}}^2}{\epsilon_i + \epsilon_j - \epsilon_r - \epsilon_s - (J_{ij} + J_{rs} - J_{ir} - J_{is} - J_{jr} + J_{js})}
 \end{equation}
 where $J_{ij}$ is the matrix element of the Coulomb operator \eqref{eq:CoulOp} and with
 \begin{equation}
-\bra{ij}\hspace{1pt}\ket{rs}=\bra{ij}\ket{rs} - \bra{ij}\ket{sr}
+	\mel{ij}{}{rs}=\braket{ij}{rs} - \braket{ij}{sr}
 \end{equation}
-where $\bra{ij}\ket{rs}$ is the two-electron integral
+where $\braket{ij}{rs}$ is the two-electron integral
 \begin{equation}
-\bra{ij}\ket{rs}=\int \dd\vb{x}_1\dd\vb{x}_2\chi_i^*(\vb{x}_1)\chi_j^*(\vb{x}_2)r_{12}^{-1}\chi_r(\vb{x}_1)\chi_s(\vb{x}_2)
+\braket{ij}{rs}=\int \dd\vb{x}_1\dd\vb{x}_2\chi_i^*(\vb{x}_1)\chi_j^*(\vb{x}_2)r_{12}^{-1}\chi_r(\vb{x}_1)\chi_s(\vb{x}_2)
 \end{equation}
 
 Additionally, we will consider two other partitioning. The electronic Hamiltonian can be separated in a one-electron part and in a two-electron part as seen previously. We can use this separation to create two other partitioning:
