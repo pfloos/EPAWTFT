@@ -360,13 +360,13 @@ But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP
 
 \subsection{Alternative partitioning}\label{sec:AlterPart}
 
-The MP partitioning is not the only one possible in electronic structure theory. An other possibility, even more natural than the MP one, is to take the diagonal elements of $\bH$ as the zeroth-order Hamiltonian. Hence, the off-diagonal elements of $\bH(\lambda)$ are the perturbation operator. This partitioning leads to the Epstein-Nesbet (EN) perturbation theory. The zeroth-order eigenstates for this partitioning are Slater determinants as for the MP partitioning. The expression of the second order correction to the energy is given for both MP and EN. The energies at the MP denominator are the orbitals energies whereas in the EN case it is the excitation energies. The i,j indices represent the occupied orbitals and r,s the virtual orbitals of the basis sets.
+The MP partitioning is not the only one possible in electronic structure theory. An other possibility, even more natural than the MP one, is to take the diagonal elements of $\bH$ as the zeroth-order Hamiltonian. Hence, the off-diagonal elements of $\bH(\lambda)$ are the perturbation operator. This partitioning leads to the Epstein-Nesbet (EN) perturbation theory. The zeroth-order eigenstates for this partitioning are Slater determinants as for the MP partitioning. The expression of the second order correction to the energy is given for both MP and EN. The energies at the MP denominator are the orbitals energies whereas in the EN case it is the excitation energies. The i,j indices represent the occupied orbitals and a,b the virtual orbitals of the basis sets.
 
 \begin{equation}\label{eq:EMP2}
 E_{\text{MP2}}=\sum\limits_{\substack{i<j \\ a<b}}^{n}\frac{\abs{\mel{ij}{}{ab}}^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}
 \end{equation}
 \begin{equation}\label{eq:EEN2}
-E_{\text{EN2}}=\sum\limits_{\substack{i<j \\ r<s}}^{n}\frac{\abs{\mel{ij}{}{rs}}^2}{\epsilon_i + \epsilon_j - \epsilon_r - \epsilon_s - (J_{ij} + J_{rs} - J_{ir} - J_{is} - J_{jr} + J_{js})}
+E_{\text{EN2}}=\sum\limits_{\substack{i<j \\ a<b}}^{n}\frac{\abs{\mel{ij}{}{ab}}^2}{}
 \end{equation}
 where $J_{ij}$ is the matrix element of the Coulomb operator \eqref{eq:CoulOp} and with
 \begin{equation}
@@ -435,14 +435,14 @@ They proved that using different extrapolation formulas of the first terms of th
 
 \subsection{Cases of divergence}
 
-In the late 90's, Olsen \textit{et al.}~have discovered an even more preoccupying behavior of the MP series \cite{}. They showed that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and \ce{HF} \cite{Olsen_1996, Christiansen_1996}. Cremer and He had already studied these two systems and classified them as ``class B'' systems. However, the analysis of Olsen and coworkers was performed in larger basis sets containing diffuse functions. In these basis sets, they found that the series become divergent at (very) high order.
+In the late 90's, Olsen \textit{et al.}~have discovered an even more preoccupying behavior of the MP series \cite{}. They showed that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and \ce{HF} (see \autoref{fig:NeHFDiv}) \cite{Olsen_1996, Christiansen_1996}. Cremer and He had already studied these two systems and classified them as ``class B'' systems. However, the analysis of Olsen and coworkers was performed in larger basis sets containing diffuse functions. In these basis sets, they found that the series become divergent at (very) high order.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.45\textwidth]{Nedivergence.png}
     \includegraphics[width=0.45\textwidth]{HFdivergence.png}
     \caption{\centering Correlation contributions for \ce{Ne} and \ce{HF} in the cc-pVTZ-(f/d) $\circ$ and aug-cc-pVDZ $\bullet$ basis sets (taken from \cite{Olsen_1996}).}
-    \label{fig:my_label}
+    \label{fig:NeHFDiv}
 \end{figure}
 
 The discovery of this divergent behavior is worrying as in order to get meaningful and accurate energies, calculations must be performed in large basis sets (as close as possible from the complete basis set limit). Including diffuse functions is particularly important for the case of anions and/or Rydberg excited states where the wave function is much more diffuse than the ground-state one. As a consequence, they investigated further the causes of these divergences as well as the reasons of the different types of convergence. To do so, they analyzed the relation between the dominant singularity (i.e., the closest singularity to the origin) and the convergence behavior of the series \cite{Olsen_2000}. Their analysis is based on Darboux's theorem: 
@@ -638,7 +638,7 @@ To simplify the problem, it is convenient to only consider basis functions with 
 \end{equation}
 where $P_l$ are the Legendre polynomial and $\theta$ is the interelectronic angle.
 
-Then using this basis set we can compare the different partitioning of \autoref{sec:AlterPart}. The \autoref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ in function of $R$ for the MP, the EN, the Weak Correlation and the Strong Coupling partitioning in a minimal basis i.e. $P_0$ and $P_1$ and in the same basis augmented with $P_2$. We see that the radius of convergence of the strong coupling partitioning is growing with R whereas it is decreasing for the three others partitioning. This result was expected because the three decreasing partitioning use a weakly correlated reference so $\bH^{(0)}$ is a good approximation for small $R$. On the contrary, the strong coupling one uses a strongly correlated reference so this series converge better when the electron are strongly correlated i.e. when $R$ is large for the spherium model.
+Then using this basis set we can compare the different partitioning of \autoref{sec:AlterPart}. \autoref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ in function of $R$ for the MP, the EN, the Weak Correlation and the Strong Coupling partitioning in a minimal basis i.e. $P_0$ and $P_1$ and in the same basis augmented with $P_2$. We see that the radius of convergence of the strong coupling partitioning is growing with R whereas it is decreasing for the three others partitioning. This result was expected because the three decreasing partitioning use a weakly correlated reference so $\bH^{(0)}$ is a good approximation for small $R$. On the contrary, the strong coupling one uses a strongly correlated reference so this series converge better when the electron are strongly correlated i.e. when $R$ is large for the spherium model.
 The MP partitioning is always better than the weak correlation in \autoref{fig:RadiusPartitioning}. In the weak correlation partitioning the powers of $R$ are well-separated so each term of the series is a different power of $R$. Whereas the MP reference is proportionnal to $R^{-1}$ and $R^{-2}$ so the MP series is not well-defined in terms of powers of $R$. Moreover it can be proved that the $n$-th order energy of the weak correlation series can be obtained as a  Taylor approximation of MP$n$ respective to $R$. It seems that the EN partitioning is better than the MP one for very small R in the minimal basis. In fact, it is just an artifact of the minimal basis because in the minimal basis augmented with $P_2
 $ (and in larger basis set) the MP series has a greater radius of convergence for all value of $R$.
 
@@ -650,13 +650,13 @@ $ (and in larger basis set) the MP series has a greater radius of convergence fo
     \label{fig:RadiusPartitioning}
 \end{figure}
 
-The \autoref{fig:RadiusBasis} shows that the radius of convergence is not very sensitive to the expansion of the basis set. The CSF basis function have all the same spin and spatial symmetry so we expect that the singularities obtained within this basis set will be $\alpha$ singularities. The \autoref{tab:SingAlpha} proves that the singularities considered in this case are $\alpha$ singularities. This is consistent with the observation of Goodson and Sergeev \cite{Goodson_2004} on $\alpha$ singularities. The discontinuities observed in \autoref{fig:RadiusBasis} with the MP partitioning are due to a change of the dominant singularity. We can observe this change in \autoref{tab:SingAlpha}, the value for $R=1$ and $R=2$ are respectively in the positive and negative plane.
+\autoref{fig:RadiusBasis} shows that the radius of convergence is not very sensitive to the expansion of the basis set. The CSF basis function have all the same spin and spatial symmetry so we expect that the singularities obtained within this basis set will be $\alpha$ singularities. The \autoref{tab:SingAlpha} proves that the singularities considered in this case are $\alpha$ singularities. This is consistent with the observation of Goodson and Sergeev \cite{Goodson_2004} on $\alpha$ singularities. The discontinuities observed in \autoref{fig:RadiusBasis} with the MP partitioning are due to a change of the dominant singularity. We can observe this change in \autoref{tab:SingAlpha}, the value for $R=1$ and $R=2$ are respectively in the positive and negative plane.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.45\textwidth]{MPlargebasis.pdf}
     \includegraphics[width=0.45\textwidth]{WCElargebasis.pdf}
-    \caption{\centering Radius of convergence in the CSF basis with $n$ basis function for the MP partitioning (left) and the WC partitioning (right).}
+    \caption{\centering Radius of convergence in the CSF basis with $K$ basis function for the MP partitioning (left) and the WC partitioning (right).}
     \label{fig:RadiusBasis}
 \end{figure}
 
@@ -694,13 +694,15 @@ with the symmetry-broken orbitals
  & 
  \phi_{\beta,2}(\theta) & =\frac{5\sqrt{-3+2R}Y_{00}(\theta)+\sqrt{75+62R}Y_{10}(\theta)}{4\sqrt{7R}}.
 \end{align*}
+
 In the UHF formalism the Hamiltonian $\bH(\lambda)$ is no more block diagonal, $\psi_4$ can interact with $\psi_2$ and $\psi_3$. The matrix elements $H_{ij}$ for this interaction are given in \eqref{eq:MatrixElem}. For $R=3/2$ the Hamitonian is block diagonal and this is equivalent to the RHF case but for R>3/2 the matrix elements become real. This interaction corresponds to the spin contamination of the wave function. For $R<3/2$ the matrix elements are complex, this corresponds to the holomorphic solution of \autoref{fig:SpheriumNrj}, the singularities in this case will be treated in \autoref{sec:uhfSing}. The matrix elements become real again for $R<-75/62$, this corresponds to the sb-UHF solution for negative value of $R$ observed in \autoref{sec:spherium}. We will refer to the domain where the matrix element are complex as the holomorphic domain.
 
 \begin{equation}\label{eq:MatrixElem}
 H_{24}=H_{34}=H_{42}=H_{43}=\sqrt{-3+2R}\sqrt{75+62R}\frac{25+2R}{280R^3}
 \end{equation}
 
-The singularity structure in this case is more complex because of the spin contamination of the wave function. We can not use configuration state function in this case. So when we compute all the degeneracies using \eqref{eq:PolChar} and \eqref{eq:DPolChar} some correspond to EPs and some correspond to conical intersections. The numerical distinction of those singularities is very difficult so we will first look at the energies $E(\lambda)$ obtained with this basis set. The \autoref{fig:UHFMiniBas} is the analog of \autoref{fig:RHFMiniBas} in the UHF formalism. We see that in this case the sp\textsubscript{z} triplet interacts with the s\textsuperscript{2} and the p\textsubscript{z}\textsuperscript{2} singlets. Those avoided crossings are due to the spin contamination of the wave function. The exceptional points resulting from those avoided crossings will be discussed in \autoref{sec:uhfSing}. \\
+The singularity structure in this case is more complex because of the spin contamination of the wave function. We can not use configuration state function in this case. So when we compute all the degeneracies using \eqref{eq:PolChar} and \eqref{eq:DPolChar} some correspond to EPs and some correspond to conical intersections. The numerical distinction of those singularities is very difficult so we will first look at the energies $E(\lambda)$ obtained with this basis set.
+\autoref{fig:UHFMiniBas} is the analog of \autoref{fig:RHFMiniBas} in the UHF formalism. We see that in this case the sp\textsubscript{z} triplet interacts with the s\textsuperscript{2} and the p\textsubscript{z}\textsuperscript{2} singlets. Those avoided crossings are due to the spin contamination of the wave function. The exceptional points resulting from those avoided crossings will be discussed in \autoref{sec:uhfSing}. \\
 
 \begin{figure}[h!]
     \centering
@@ -725,7 +727,7 @@ In the RHF case there are only $\alpha$ singularities and large avoided crossing
 
 As shown before, some matrix elements of the Hamiltonian become complex in the holomorphic domain. Therefore the Hamiltonian becomes non-Hermitian for those value of $R$. In \cite{Burton_2019a} Burton et al. proved that for the \ce{H_2} molecule the unrestricted Hamiltonian is not \pt -symmetric in the holomorphic domain. An analog reasoning can be done with the spherium model to prove the same result. The \pt -symmetry (invariance with respect to combined space reflection $\mathcal{P}$ and time reversal $\mathcal{T}$) is a property which ensures that a non-Hermitian Hamiltonian has a real energy spectrum. Thus \pt -symmetric Hamiltonian can be seen as an intermediate between Hermitian and non-Hermitian.
 
- In our case we can see in \autoref{fig:UHFPT} that a part of the energy spectrum becomes complex when R is in the holomorphic domain. This part of the spectrum where the energy becomes complex is called the broken \pt symmetry  region. This is consistent with the fact that in the holomorphic domain the Hamiltonian break the \pt -symmetry. 
+\autoref{fig:UHFPT} shows that for the spherium model a part of the energy spectrum becomes complex when R is in the holomorphic domain. The parameter domain of value where the energy becomes complex is called the broken \pt symmetry  region. This is consistent with the fact that in the holomorphic domain the Hamiltonian break the \pt -symmetry. 
 
 \begin{figure}[h!]
     \centering
@@ -735,13 +737,12 @@ As shown before, some matrix elements of the Hamiltonian become complex in the h
     \label{fig:UHFPT}
 \end{figure}
 
-For a non-Hermitian Hamiltonian the exceptional points can lie on the real axis. In particular, at the point of PT transition (the point where the energies become complex) the two energies are degenerate so it is an exceptional. We can see this phenomenon on Figure x, the points of PT transition are indicate by .
+For a non-Hermitian Hamiltonian the exceptional points can lie on the real axis. In particular, at the point of PT transition (the point where the energies become complex) the two energies are degenerate resulting in such an exceptional point on the real axis. This degeneracy can be seen in \autoref{fig:UHFPT}.
 
 \section{Conclusion}
 
 
 \newpage
-
 \printbibliography
 
 \newpage
