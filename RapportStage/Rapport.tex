@@ -307,7 +307,7 @@ This is due to the following theorem \cite{Goodson_2012}:
 \begin{quote}
 	\textit{``The Taylor series about a point $z_0$ of a function over the complex $z$ plane will converge at a value $z_1$ if the function is non-singular at all values of $z$ in the circular region centered at $z_0$ with radius $\abs{z_1 − z_0}$. If the function has a singular point $z_s$ such that $\abs{z_s − z_0} < \abs{z_1 − z_0}$, then the series will diverge when evaluated at $z_1$.''}
 \end{quote}
-This theorem means that the radius of convergence of the perturbation series is equal to the distance to the origin of the closest singularity of $E(\lambda)$. To illustrate this result we  consider the simple function \eqref{eq:DivExample}. This function is smooth for $x \in \mathbb{R}$ and infinitely differentiable in $\mathbb{R}$. One would expect that the Taylor series of such a function would be convergent for all $x \in \mathbb{R}$, however this series is divergent for $x\geq1$. This is because the function has four singularities in the complex plane ($x = e^{i\pi/4}, e^{-i\pi/4}, e^{i3\pi/4}, e^{-i3\pi/4}$) with a modulus equal to 1. This simple example shows the importance of the singularities in the complex plane to understand the convergence properties on the real axis.
+This theorem means that the radius of convergence of the perturbation series is equal to the distance to the origin of the closest singularity of $E(\lambda)$. To illustrate this result we  consider the simple function \eqref{eq:DivExample}. This function is smooth for $x \in \mathbb{R}$ and infinitely differentiable in $\mathbb{R}$. One would expect that the Taylor series of such a function would be convergent for all $x \in \mathbb{R}$, however this series is divergent for $x\geq1$. This is because the function has four singularities in the complex plane ($x = e^{i\pi/4}, e^{-i\pi/4}, e^{i3\pi/4}, e^{-i3\pi/4}$) with a modulus equal to 1. This simple example emphasizes the importance of the singularities in the complex plane to understand the convergence properties on the real axis.
 
 \begin{equation} \label{eq:DivExample}
 f(x)=\frac{1}{1+x^4}
@@ -315,30 +315,30 @@ f(x)=\frac{1}{1+x^4}
 
 \subsection{The Hartree-Fock Hamiltonian}
 
-In the Born-Oppenheimer approximation, the equation \eqref{eq:ExactHamiltonian} gives the exact electronic Hamiltonian for a chemical system with $n$ electrons and $N$ nuclei. The first term is the kinetic energy of the electrons, the two following terms account respectively for the electron-nuclei attraction and the electron-electron repulsion.
+In the Born-Oppenheimer approximation, the equation \eqref{eq:ExactHamiltonian} gives the exact electronic Hamiltonian for a chemical system with $n$ electrons and $N$ nuclei with respective charge $Z_k$. The first term is the kinetic energy of the electrons, the two following terms account respectively for the electron-nuclei attraction and the electron-electron repulsion.
 
 \begin{equation}\label{eq:ExactHamiltonian}
     \bH=\sum\limits_{i=1}^{n}\left[ -\frac{1}{2}\grad_i^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_i-\vb{R}_k|}+\sum\limits_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|}\right]
 \end{equation}
 
-In the Hartree-Fock (HF) approximation the wave function is approximated as a single Slater determinant (which is an anti-symmetric combination of $n$ one electron spin-orbitals). Rather than solving the equation \eqref{eq:SchrEq}, the Hartree-Fock theory uses the variational principle to find an approximation to $\Psi$. Hence the Slater determinants are not eigenfuctions of the exact Hamiltonian $\bH$. However, they are eigenfunctions of an approximated Hamiltonian $\bH^{(0)}$, called the Hartree-Fock Hamiltonian, which is the sum of the one-electron Fock operators.
+In the Hartree-Fock (HF) approximation the wave function is approximated as a single Slater determinant (which is an anti-symmetric combination of $n$ one electron spin-orbitals). Rather than solving the equation \eqref{eq:SchrEq}, the Hartree-Fock theory uses the variational principle to find an approximation to $\Psi$. Hence the Slater determinants are not eigenfuctions of the exact Hamiltonian $\bH$. However, they are eigenfunctions of an approximated Hamiltonian $\bH^{\text{HF}}$, called the Hartree-Fock Hamiltonian, which is the sum of the one-electron Fock operators.
 
 \begin{equation}\label{eq:HFHamiltonian}
-\bH^{(0)}= \sum\limits_{i=1}^{n} f(i)
+\bH^{\text{HF}}= \sum\limits_{i=1}^{n} f(i)
 \end{equation}
 
-The eigenfunctions of $f(i)$ are the one-electron spin-orbitals $\phi_a(i)$ used to create the $n$-electron Slater determinant. The equation \eqref{eq:FockOp} gives the eigenvalue equation for the one-electron Fock operator associated with the electron 1. The one-electron core Hamiltonian $h(i)$ are the sum of the kinetic energy of the electron $i$ and the attraction of the nuclei on this electron. The two other terms are the the Coulomb $J_a(i)$ and Exchange $K_a(i)$ operators. Their action on the spin-orbitals are given by the equation \eqref{eq:CoulOp} and \eqref{eq:ExcOp}. The integration is over the spatial and spin coordinates.
+The eigenfunctions of $f(i)$ are the one-electron spin-orbitals $\phi_a(i)$ used to create the $n$-electron Slater determinant. The equation \eqref{eq:FockOp} gives the eigenvalue equation for the one-electron Fock operator associated with the electron 1. The one-electron core Hamiltonian $h(i)$ are the sum of the kinetic energy of the electron $i$ and the attraction of the nuclei on this electron. The two other terms are the the Coulomb $J_a(i)$ and Exchange $K_a(i)$ operators. Their action on spin-orbital (occupied or virtual) are given by the equation \eqref{eq:CoulOp} and \eqref{eq:ExcOp}. The integration is over the spatial and spin coordinates.
 
 \begin{equation}\label{eq:FockOp}
-f(1)\phi_a(1) = \left[h(1) + \sum\limits_{b=1}^{n} J_b(1) - K_b(1)\right]\phi_a(1)=\epsilon_a\phi_a(1)
+f(1)\phi_i(1) = \left[h(1) + \sum\limits_{j=1}^{n} J_j(1) - K_j(1)\right]\phi_i(1)=\epsilon_i\phi_i(1)
 \end{equation}
 
 \begin{equation}\label{eq:CoulOp}
-J_b(1)\phi_a(1)=\left[\int\dd\vb{x}_2\phi_b^*(2)\frac{1}{r_{12}}\phi_b(2) \right]\phi_a(1)
+J_j(1)\phi_i(1)=\left[\int\dd\vb{x}_2\phi_j^*(2)\frac{1}{r_{12}}\phi_j(2) \right]\phi_i(1)
 \end{equation}
 
 \begin{equation}\label{eq:ExcOp}
-K_b(1)\phi_a(1)=\left[\int\dd\vb{x}_2\phi_b^*(2)\frac{1}{r_{12}}\phi_a(2) \right]\phi_b(1)
+K_j(1)\phi_i(1)=\left[\int\dd\vb{x}_2\phi_j^*(2)\frac{1}{r_{12}}\phi_j(2) \right]\phi_i(1)
 \end{equation}
 
 
@@ -356,11 +356,11 @@ In the perturbation theory the energy is a power series of $\lambda$ and the phy
 E_{\text{MP}_{n}}= \sum_{k=0}^n E^{(k)}
 \end{equation}
 
-But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP}_{n}}$ is always convergent when $n$ goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the MP method will give bad results \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. A smart way to investigate the convergence properties of the MP series is to transform the coupling parameter $\lambda$ into a complex variable. By doing so the Hamiltonian and the energy become functions of this variable. The energy becomes a multivalued function on $n$ Riemann sheets. As mentioned above by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the MP perturbation theory. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is quite easy up to the 4th order and the 5th and 6th order can be obtained at high cost \cite{JensenBook}. But to deeply understand the behavior of the MP series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction (FCI). If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI basis set we get the exact energies (in this finite basis set) and expanding in $\lambda$ allows to to get the MP perturbation series at every order.
+But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP}_{n}}$ is always convergent when $n$ goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the MP method will give bad results \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. A smart way to investigate the convergence properties of the MP series is to transform the coupling parameter $\lambda$ into a complex variable. By doing so the Hamiltonian and the energy become functions of this variable. The energy becomes a multivalued function on $n$ Riemann sheets. As mentioned above by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the MP perturbation theory. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is quite easy up to the 4th order and the 5th and 6th order can be obtained at high cost \cite{JensenBook}. In order to deeply understand the behavior of the MP series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction (FCI). If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI basis set we get the exact energies (in this finite basis set) and the Taylor expansion respective to $\lambda$ allows to get the MP perturbation series at every order.
 
 \subsection{Alternative partitioning}\label{sec:AlterPart}
 
-The MP partitioning is not the only one possible in electronic structure theory. An other possibility, even more natural than the MP one, is to take the diagonal elements of $\bH$ as the zeroth-order Hamiltonian. Hence, the off-diagonal elements of $\bH(\lambda)$ are the perturbation operator. This partitioning leads to the Epstein-Nesbet (EN) perturbation theory. The zeroth-order eigenstates for this partitioning are Slater determinants as for the MP partitioning. The expression of the second order correction to the energy is given for both MP and EN. The energies at the MP denominator are the orbitals energies whereas in the EN case it is the excitation energies. The i,j indices represent the occupied orbitals and a,b the virtual orbitals of the basis sets.
+The MP partitioning is not the only one possible in electronic structure theory. An other possibility, even more natural than the MP one, is to take the diagonal elements of $\bH$ as the zeroth-order Hamiltonian. Hence, the off-diagonal elements of $\bH$ are the perturbation operator. This partitioning leads to the Epstein-Nesbet (EN) perturbation theory. The zeroth-order eigenstates for this partitioning are Slater determinants as for the MP partitioning. The expression of the second order correction to the energy is given for both MP and EN. The energies at the MP denominator are the orbitals energies whereas in the EN case it is the excitation energies. The i,j indices represent the occupied orbitals and a,b the virtual orbitals of the basis sets.
 
 \begin{equation}\label{eq:EMP2}
 E_{\text{MP2}}=\sum\limits_{\substack{i<j \\ a<b}}^{n}\frac{\abs{\mel{ij}{}{ab}}^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}
@@ -497,14 +497,14 @@ Simple systems that are analytically solvable (or at least quasi-exactly solvabl
 \widehat{H} = -\frac{\grad_1^2 + \grad_2^2}{2} + \frac{1}{r_{12}}
 \end{equation}
 
-The laplacian operators are the kinetic operators for each electrons and $r_{12}^{-1} = \abs{\vb{r}_1 - \vb{r}_2}$ is the Coulomb operator. The radius R of the sphere dictates the correlation regime, i.e., weak correlation regime at small $R$ where the kinetic energy dominates, or strong correlation regime where the electron repulsion term drives the physics. We will use this model to try to rationalize the effects of the variables that may influence the physics of EPs:
+The laplacian operators are the kinetic operators for each electrons and $r_{12}^{-1} = \abs{\vb{r}_1 - \vb{r}_2}$ is the Coulomb operator. The radius R of the sphere dictates the correlation regime, i.e., weak correlation regime at small $R$ where the kinetic energy dominates, or strong correlation regime where the electron repulsion term drives the physics. We will use this model to try to rationalize the effects of the parameters that may influence the physics of EPs:
 \begin{itemize}
 	\item Partitioning of the Hamiltonian and the actual zeroth-order reference: weak correlation reference [restricted Hartree-Fock (RHF) or unrestricted Hartree-Fock (UHF) references, MP or EN partitioning], or strongly correlated reference.
 	\item Basis set: minimal basis or infinite (i.e., complete) basis made of localized or delocalized basis functions
 	\item Radius of the spherium that ultimately dictates the correlation regime.
 \end{itemize}
 
-In the restricted Hartree-Fock formalism, the wave function cannot model properly the physics of the system at large R because the spatial orbitals are restricted to be the same. Then a fortiori it cannot represent two electrons on opposite side of the sphere. In the unrestricted formalism there is a critical value of R, called the Coulson-Fischer point \cite{Coulson_1949}, at which a second unrestricted Hartree-Fock solution appear. This solution is symmetry-broken as the two electrons tends to localize on opposite side of the sphere. The unrestricted Hartree-Fock wave function is defined as:
+In the restricted Hartree-Fock formalism (RHF), the wave function cannot model properly the physics of the system at large R because the spatial orbitals are restricted to be the same. If the spatial orbitals are the  same a fortiori it cannot represent two electrons on opposite side of the sphere. In the unrestricted Hartree-Fock (UHF) formalism there is a critical value of R, called the Coulson-Fischer point \cite{Coulson_1949}, at which a second UHF solution appears. This solution is symmetry-broken as the two electrons tends to localize on opposite side of the sphere. The UHF wave function is defined as:
 
 \begin{equation}\label{eq:UHF_WF}
 \Psi_{\text{UHF}}(\theta_1,\theta_2)=\phi_\alpha(\theta_1)\phi_\beta(\theta_2)
@@ -516,7 +516,7 @@ Then the mono-electronic wave function are expand in the spatial basis set of th
 \phi_\alpha(\theta_1)=\sum\limits_{l=0}^{\infty}C_{\alpha,l}\frac{Y_{l0}(\Omega_1)}{R}
 \end{equation}
 
-It is possible to obtain the formula for the ground state unrestricted Hartree-Fock energy in this basis set (see Appendix A for the development):
+It is possible to obtain the formula for the ground state UHF energy in this basis set (see \autoref{sec:UHF_NRJ} for the development):
 
 \begin{equation}
 E_{\text{UHF}} = E_{\text{c},\alpha} + E_{\text{c},\beta} + E_{\text{p}}
@@ -556,7 +556,7 @@ The minimization gives the three following solutions valid for all value of R:
 
 Those solutions are respectively a minimum, a maximum and a saddle point of the HF equations.\\
 
-In addition, there is also the well-known symmetry-broken UHF solution. For $R>3/2$ an other stationary UHF solution appear, this solution is a minimum of the Hartree-Fock equations. This solution corresponds to the configuration with the electron $\alpha$ on one side of the sphere and the electron $\beta$ on the opposite side and the configuration the other way round. The electrons can be on opposite sides of the sphere because the choice of p\textsubscript{z} as a basis function induced a privileged axis on the sphere for the electrons. This solution have the energy \eqref{eq:EsbUHF} for $R>3/2$.
+In addition, there is also the well-known symmetry-broken UHF (sb-UHF) solution. For $R>3/2$ an other stationary UHF solution appears, this solution is a minimum of the HF equations. This solution corresponds to the configuration with the electron $\alpha$ on one side of the sphere and the electron $\beta$ on the opposite side and the configuration the other way round. The electrons can be on opposite sides of the sphere because the choice of p\textsubscript{z} as a basis function induced a privileged axis on the sphere for the electrons. This solution have the energy \eqref{eq:EsbUHF} for $R>3/2$.
 
 \begin{equation}\label{eq:EsbUHF}
 E_{\text{sb-UHF}}=-\frac{75}{112R^3}+\frac{25}{28R^2}+\frac{59}{84R}
@@ -581,13 +581,13 @@ Exact 	& 9.783874 & 0.852781 & 0.391959 & 0.247898 & 0.139471 & 0.064525 & 0.005
 \label{tab:ERHFvsEUHF}
 \end{table}
 
-There is also another symmetry-broken solution for $R>75/38$ but this one corresponds to a maximum of the HF equations. This solution is associated with another type of symmetry breaking somewhat less known. It corresponds to a configuration where both electrons are on the same side of the sphere, in the same spatial orbital. This solution is called symmetry-broken RHF. At the critical value of R, the repulsion of the two electrons on the same side of the sphere maximizes more the energy than the kinetic energy of the p\textsubscript{z} orbitals. This symmetry breaking is associated with a charge density wave: the system oscillates between the situations with the electrons on each side \cite{GiulianiBook}.
+There is also another symmetry-broken solution for $R>75/38$ but this one corresponds to a maximum of the HF equations. This solution is associated with another type of symmetry breaking somewhat less known. It corresponds to a configuration where both electrons are on the same side of the sphere, in the same spatial orbital. This solution is called symmetry-broken RHF (sb-RHF). At the critical value of R, the repulsion of the two electrons on the same side of the sphere maximizes more the energy than the kinetic energy of the p\textsubscript{z} orbitals. This symmetry breaking is associated with a charge density wave, the system oscillates between the situations with the electrons on each side \cite{GiulianiBook}.
 
 \begin{equation}
 E_{\text{sb-RHF}}=\frac{75}{88R^3}+\frac{25}{22R^2}+\frac{91}{66R}
 \end{equation}
 
-We can also consider negative value of R. This corresponds to the situation where one of the electrons is replaced by a positron. There are also a sb-RHF ($R<-3/2$) and a sb-UHF ($R<-75/38$) solution for negative values of R (see Fig.\ref{fig:SpheriumNrj} but in this case the sb-RHF solution is a minimum and the sb-UHF is a maximum. Indeed, the sb-RHF states minimize the energy by placing the electron and the positron on the same side of the sphere. And the sb-UHF states maximize the energy because the two particles are on opposite sides of the sphere.
+We can also consider negative values of R. This corresponds to the situation where one of the electrons is replaced by a positron. There are also a sb-RHF ($R<-3/2$) and a sb-UHF ($R<-75/38$) solution for negative values of R (see Fig.\ref{fig:SpheriumNrj} but in this case the sb-RHF solution is a minimum and the sb-UHF is a maximum. Indeed, the sb-RHF states minimize the energy by placing the electron and the positron on the same side of the sphere. And the sb-UHF states maximize the energy because the two attracting particles are on opposite sides of the sphere.
 
 In addition, we can also consider the symmetry-broken solutions beyond their respective Coulson-Fischer points by analytically continuing their respective energies leading to the so-called holomorphic solutions \cite{Hiscock_2014, Burton_2019, Burton_2019a}. All those energies are plotted in \autoref{fig:SpheriumNrj}. The dotted curves corresponds to the holomorphic domain of the energies.
 
@@ -748,6 +748,6 @@ For a non-Hermitian Hamiltonian the exceptional points can lie on the real axis.
 \newpage
 \appendix
 
-\section{ERHF and EUHF}
+\section{The unrestricted energy}\label{sec:UHF_NRJ}
 
 \end{document}
