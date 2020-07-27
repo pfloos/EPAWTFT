@@ -380,8 +380,8 @@ where $\braket{ij}{ab}$ is the two-electron integral
 Additionally, we will consider two other partitioning. The electronic Hamiltonian can be separated in a one-electron part and in a two-electron part as seen previously. We can use this separation to create two other partitioning:
 
 \begin{itemize}
-\item The Weak Correlation partitioning in which the one-electron part is consider as the unperturbed Hamiltonian $\bH^{(0)}$ and the two-electron part is the perturbation operator $\bV$.
-\item The Strong Coupling partitioning where the two operators are inverted compared to the weak correlation partitioning.
+\item The Weak Correlation (WC) partitioning in which the one-electron part is consider as the unperturbed Hamiltonian $\bH^{(0)}$ and the two-electron part is the perturbation operator $\bV$.
+\item The Strong Coupling (SC) partitioning where the two operators are inverted compared to the weak correlation partitioning.
 \end{itemize}
 
 %============================================================%
@@ -504,7 +504,7 @@ The laplacian operators are the kinetic operators for each electrons and $r_{12}
 	\item Radius of the spherium that ultimately dictates the correlation regime.
 \end{itemize}
 
-In the restricted Hartree-Fock formalism (RHF), the wave function cannot model properly the physics of the system at large R because the spatial orbitals are restricted to be the same. If the spatial orbitals are the  same a fortiori it cannot represent two electrons on opposite side of the sphere. In the unrestricted Hartree-Fock (UHF) formalism there is a critical value of R, called the Coulson-Fischer point \cite{Coulson_1949}, at which a second UHF solution appears. This solution is symmetry-broken as the two electrons tends to localize on opposite side of the sphere. The UHF wave function is defined as:
+In the RHF formalism, the wave function cannot model properly the physics of the system at large R because the spatial orbitals are restricted to be the same. If the spatial orbitals are the  same a fortiori it cannot represent two electrons on opposite side of the sphere. In the UHF formalism there is a critical value of R, called the Coulson-Fischer point \cite{Coulson_1949}, at which a second UHF solution appears. This solution is symmetry-broken as the two electrons tends to localize on opposite side of the sphere. The UHF wave function is defined as:
 
 \begin{equation}\label{eq:UHF_WF}
 \Psi_{\text{UHF}}(\theta_1,\theta_2)=\phi_\alpha(\theta_1)\phi_\beta(\theta_2)
@@ -602,7 +602,7 @@ In addition, we can also consider the symmetry-broken solutions beyond their res
 
 \subsection{Evolution of the radius of convergence}
 
-In this part, we will try to investigate how some parameters of $\bH(\lambda)$ influence the radius of convergence of the perturbation series. The radius of convergence is equal to the distance of the closest singularity to the origin of $E(\lambda)$. Hence we need to determine the locations of the exceptional points to obtain information on the convergence properties. To find them we solve simultaneously the equations \eqref{eq:PolChar} and \eqref{eq:DPolChar}. The equation \eqref{eq:PolChar} is the well-known secular equation giving the energies of the system, if an energy is also solution of \eqref{eq:DPolChar} then this energy is degenerate. In this case the energies obtained are dependent of $\lambda$ so solving those equations with respect to $E$ and $\lambda$ gives the value of $\lambda$ where two energies are degenerate i.e. the exceptional points.
+In this part, we will try to investigate how some parameters of $\bH(\lambda)$ influence the radius of convergence of the perturbation series. The radius of convergence is equal to the distance of the closest singularity to the origin of $E(\lambda)$. Hence we need to determine the locations of the exceptional points to obtain information on the convergence properties. To find them we solve simultaneously the equations \eqref{eq:PolChar} and \eqref{eq:DPolChar}. The equation \eqref{eq:PolChar} is the well-known secular equation giving the energies of the system, if an energy is also solution of \eqref{eq:DPolChar} then this energy is degenerate. In this case the energies obtained are dependent of $\lambda$ so solving those equations with respect to $E$ and $\lambda$ gives the value of $\lambda$ where two energies are degenerate. These degeneracies can be conical intersections between two states with different symmetry for real value of $\lambda$ or exceptional points between two states with the same symmetry for complex value of $\lambda$.
 
 \begin{equation}\label{eq:PolChar}
 \text{det}[E-\bH(\lambda)]=0
@@ -638,8 +638,8 @@ To simplify the problem, it is convenient to only consider basis functions with 
 \end{equation}
 where $P_l$ are the Legendre polynomial and $\theta$ is the interelectronic angle.
 
-Then using this basis set we can compare the different partitioning of \autoref{sec:AlterPart}. \autoref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ in function of $R$ for the MP, the EN, the Weak Correlation and the Strong Coupling partitioning in a minimal basis i.e. $P_0$ and $P_1$ and in the same basis augmented with $P_2$. We see that the radius of convergence of the strong coupling partitioning is growing with R whereas it is decreasing for the three others partitioning. This result was expected because the three decreasing partitioning use a weakly correlated reference so $\bH^{(0)}$ is a good approximation for small $R$. On the contrary, the strong coupling one uses a strongly correlated reference so this series converge better when the electron are strongly correlated i.e. when $R$ is large for the spherium model.
-The MP partitioning is always better than the weak correlation in \autoref{fig:RadiusPartitioning}. In the weak correlation partitioning the powers of $R$ are well-separated so each term of the series is a different power of $R$. Whereas the MP reference is proportionnal to $R^{-1}$ and $R^{-2}$ so the MP series is not well-defined in terms of powers of $R$. Moreover it can be proved that the $n$-th order energy of the weak correlation series can be obtained as a  Taylor approximation of MP$n$ respective to $R$. It seems that the EN partitioning is better than the MP one for very small R in the minimal basis. In fact, it is just an artifact of the minimal basis because in the minimal basis augmented with $P_2
+Then using this basis set we can compare the different partitioning of \autoref{sec:AlterPart}. \autoref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ in function of $R$ for the MP, the EN, the WC and the SC partitioning in a minimal basis i.e. $P_0$ and $P_1$ and in the same basis augmented with $P_2$. We see that the radius of convergence of the SC partitioning is growing with R whereas it is decreasing for the three others partitioning. This result was expected because the three decreasing partitioning use a weakly correlated reference so $\bH^{(0)}$ is a good approximation for small $R$. On the contrary, the strong coupling one uses a strongly correlated reference so this series converge better when the electron are strongly correlated i.e. when $R$ is large for the spherium model.
+The MP partitioning is always better than the weak correlation in \autoref{fig:RadiusPartitioning}. In the weak correlation partitioning the powers of $R$ are well-separated so each term of the series is a different power of $R$. Whereas the MP reference is proportionnal to $R^{-1}$ and $R^{-2}$ so the MP series is not well-defined in terms of powers of $R$. Moreover it can be proved that the $n$-th order energy of the weak correlation series can be obtained as a Taylor approximation of MP$n$ respective to $R$. It seems that the EN partitioning is better than the MP one for very small R in the minimal basis. In fact, it is just an artifact of the minimal basis because in the minimal basis augmented with $P_2
 $ (and in larger basis set) the MP series has a greater radius of convergence for all value of $R$.
 
 \begin{figure}[h!]
@@ -662,7 +662,7 @@ $ (and in larger basis set) the MP series has a greater radius of convergence fo
 
 \begin{table}[h!]
 \centering
-\caption{\centering Dominant singularity in the CSF basis set ($n=8$) for various value of R. The first line is the value for the MP partitioning and the second for the WC one.}
+\caption{\centering Dominant singularity in the CSF basis set ($K=8$) for various value of R. The first line is the value for the MP partitioning and the second for the WC one.}
 \begin{tabular}{cccccccc}
 \hline
 \hline
@@ -715,7 +715,7 @@ In this study we have used spherical harmonics (or combination of spherical harm
 
 \subsection{Exceptional points in the UHF formalism}\label{sec:uhfSing}
 
-In the RHF case there are only $\alpha$ singularities and large avoided crossings but we can see in \autoref{fig:UHFMiniBas} that in the UHF case there are sharp avoided crossings which are connected to $\beta$ singularities. For example at $R=10$ the pair of singularities connected to the avoided crossing between s\textsuperscript{2} and sp\textsubscript{z} $^{3}P$ is $0.999\pm0.014i$. And the one between sp\textsubscript{z} $^{3}P$ and p\textsubscript{z}\textsuperscript{2} is connected with the singularities $2.207\pm0.023i$. However in the spherium the electrons can't be ionized so those singularities are not the $\beta$ singularities highlighted by Sergeev and Goodson \cite{Sergeev_2005}. We can see in \autoref{fig:UHFEP} that the degeneracy between the s\textsuperscript{2} singlet and the sp\textsubscript{z} triplet at $R=3/2$. For $R>3/2$, it becomes an avoided crossing on the real axis and the degeneracies are moved in the complex plane. The wave function is spin contaminated for $R>3/2$ this why the s\textsuperscript{2} singlet energy can not cross the sp\textsubscript{z} triplet curves anymore. When $R$ increases this avoided crossing becomes sharper. As presented before $\beta$ singularities are linked to quantum phase transition so it seems that this singularity is linked to the spin symmetry breaking of the UHF wave function. The fact that a similar pair of $\beta$ singularities appears for $R<-75/62$ confirms this assumption. A second pair of $\beta$ singularities appear for $R\gtrsim 2.5$, this is probably due to an excited-state quantum phase transition but this still need to be investigated. 
+In the RHF case there are only $\alpha$ singularities and large avoided crossings but we can see in \autoref{fig:UHFMiniBas} that in the UHF case there are sharp avoided crossings which are known to be connected to $\beta$ singularities. For example at $R=10$ the pair of singularities connected to the avoided crossing between s\textsuperscript{2} and sp\textsubscript{z} $^{3}P$ is $0.999\pm0.014i$. And the one between sp\textsubscript{z} $^{3}P$ and p\textsubscript{z}\textsuperscript{2} is connected with the singularities $2.207\pm0.023i$. However in the spherium the electrons can't be ionized so those singularities are not the $\beta$ singularities highlighted by Sergeev and Goodson \cite{Sergeev_2005}. We can see in \autoref{fig:UHFEP} that the degeneracy between the s\textsuperscript{2} singlet and the sp\textsubscript{z} triplet at $R=3/2$. For $R>3/2$, it becomes an avoided crossing on the real axis and the degeneracies are moved in the complex plane. The wave function is spin contaminated for $R>3/2$ this why the s\textsuperscript{2} singlet energy can not cross the sp\textsubscript{z} triplet curves anymore. When $R$ increases this avoided crossing becomes sharper. As presented before $\beta$ singularities are linked to quantum phase transition so it seems that this singularity is linked to the spin symmetry breaking of the UHF wave function. The fact that a similar pair of $\beta$ singularities appears for $R<-75/62$ confirms this assumption. A second pair of $\beta$ singularities appear for $R\gtrsim 2.5$, this is probably due to an excited-state quantum phase transition but this still need to be investigated. 
 
 \begin{figure}[h!]
     \centering
@@ -740,6 +740,8 @@ As shown before, some matrix elements of the Hamiltonian become complex in the h
 For a non-Hermitian Hamiltonian the exceptional points can lie on the real axis. In particular, at the point of PT transition (the point where the energies become complex) the two energies are degenerate resulting in such an exceptional point on the real axis. This degeneracy can be seen in \autoref{fig:UHFPT}.
 
 \section{Conclusion}
+
+
 
 
 \newpage
