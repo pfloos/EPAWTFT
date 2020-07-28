@@ -308,36 +308,40 @@ This decomposition is obviously non-unique and motivated by several factors as d
 
 Accordingly to Eq.~\eqref{eq:SchrEq-PT}, the energy can then be written as a power series of $\lambda$
 \begin{equation} \label{eq:Elambda}
-	E(\lambda) = \sum_{k=0}^\infty \lambda^k E^{(k)}
+	E(\lambda) = \sum_{k=0}^\infty \lambda^k E^{(k)}.
 \end{equation}
-However it is not guaranteed that the series \eqref{eq:Elambda} has a radius of convergence $\abs{\lambda_0} < 1$. 
+However, it is not guaranteed that the series \eqref{eq:Elambda} has a radius of convergence $\abs{\lambda_0} < 1$. 
 In other words, the series might well be divergent for the physical system at $\lambda = 1$. 
 One can prove that the actual value of the radius of convergence $\abs{\lambda_0}$ can be obtained by looking for the singularities of $E(\lambda)$ in the complex $\lambda$ plane.
 This is due to the following theorem \cite{Goodson_2012}: 
 \begin{quote}
-	\textit{``The Taylor series about a point $z_0$ of a function over the complex $z$ plane will converge at a value $z_1$ if the function is non-singular at all values of $z$ in the circular region centered at $z_0$ with radius $\abs{z_1 − z_0}$. If the function has a singular point $z_s$ such that $\abs{z_s − z_0} < \abs{z_1 − z_0}$, then the series will diverge when evaluated at $z_1$.''}
+	\textit{``The Taylor series about a point $z_0$ of a function over the complex $z$ plane will converge at a value $z_1$ if the function is non-singular at all values of $z$ in the circular region centered at $z_0$ with radius $\abs{z_1-z_0}$. If the function has a singular point $z_s$ such that $\abs{z_s-z_0} < \abs{z_1-z_0}$, then the series will diverge when evaluated at $z_1$.''}
 \end{quote}
-This theorem means that the radius of convergence of the perturbation series is equal to the distance to the origin of the closest singularity of $E(\lambda)$. To illustrate this result we  consider the simple function \eqref{eq:DivExample}. This function is smooth for $x \in \mathbb{R}$ and infinitely differentiable in $\mathbb{R}$. One would expect that the Taylor series of such a function would be convergent for all $x \in \mathbb{R}$, however this series is divergent for $x\geq1$. This is because the function has four singularities in the complex plane ($x = e^{i\pi/4}, e^{-i\pi/4}, e^{i3\pi/4}, e^{-i3\pi/4}$) with a modulus equal to 1. This simple example emphasizes the importance of the singularities in the complex plane to understand the convergence properties on the real axis.
-
+This theorem means that the radius of convergence of the perturbation series is equal to the distance to the origin of the closest singularity of $E(\lambda)$. To illustrate this result we  consider the simple function \cite{BenderBook}
 \begin{equation} \label{eq:DivExample}
-f(x)=\frac{1}{1+x^4}
+	f(x)=\frac{1}{1+x^4}
 \end{equation}
+This function is smooth for $x \in \mathbb{R}$ and infinitely differentiable in $\mathbb{R}$. One would expect that the Taylor series of such a function would be convergent $\forall x \in \mathbb{R}$. However this series is divergent for $x \ge 1$. This is because the function has four singularities in the complex plane ($x = e^{i\pi/4}$, $e^{-i\pi/4}$, $e^{i3\pi/4}$, and $e^{-i3\pi/4}$) with a modulus equal to $1$. This simple example emphasizes the importance of the singularities in the complex plane to understand the convergence properties on the real axis.
+
 
 \subsection{The Hartree-Fock Hamiltonian}
 
-In the Born-Oppenheimer approximation, the equation \eqref{eq:ExactHamiltonian} gives the exact electronic Hamiltonian for a chemical system with $n$ electrons and $N$ nuclei with respective charge $Z_k$. The first term is the kinetic energy of the electrons, the two following terms account respectively for the electron-nuclei attraction and the electron-electron repulsion.
-
+Within the Born-Oppenheimer approximation, 
 \begin{equation}\label{eq:ExactHamiltonian}
-    \bH=\sum\limits_{i=1}^{n}\left[ -\frac{1}{2}\grad_i^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_i-\vb{R}_k|}+\sum\limits_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|}\right]
+    \bH = - \sum_{i}^{n} \frac{1}{2}\grad_i^2 - \sum_{i}^{n} \sum_{A}^{N} \frac{Z_A}{|\vb{r}_i-\vb{R}_A|} + \sum_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|}
 \end{equation}
+is the exact electronic Hamiltonian for a chemical system with $n$ electrons (where $\vb{r}_i$ is the position of the $i$th electron) and $N$ nuclei (where $\vb{R}_A$ is the position of the $A$th nucleus and $Z_A$ its charge). The first term is the kinetic energy of the electrons, the two following terms account respectively for the electron-nucleus attraction and the electron-electron repulsion.
+Note that we use atomic units throughout unless otherwise stated.
 
-In the Hartree-Fock (HF) approximation the wave function is approximated as a single Slater determinant (which is an anti-symmetric combination of $n$ one electron spin-orbitals). Rather than solving the equation \eqref{eq:SchrEq}, the Hartree-Fock theory uses the variational principle to find an approximation to $\Psi$. Hence the Slater determinants are not eigenfuctions of the exact Hamiltonian $\bH$. However, they are eigenfunctions of an approximated Hamiltonian $\bH^{\text{HF}}$, called the Hartree-Fock Hamiltonian, which is the sum of the one-electron Fock operators.
-
+In the Hartree-Fock (HF) approximation the wave function is approximated as a single Slater determinant (which is an anti-symmetric combination of $n$ one-electron spin-orbitals). Rather than solving Eq.~\eqref{eq:SchrEq}, HF theory uses the variational principle to find an approximation of $\Psi$ as a single Slater determinant. Hence a Slater determinant is not an eigenfunction of the exact Hamiltonian $\bH$. However, it is, by definition, an eigenfunction of the so-called (approximated) HF many-electron Hamiltonian, which is the sum of the one-electron Fock operators:
 \begin{equation}\label{eq:HFHamiltonian}
-\bH^{\text{HF}}= \sum\limits_{i=1}^{n} f(i)
+	\bH^{\text{HF}}= \sum\limits_{i=1}^{n} f(\vb{r}_i)
 \end{equation}
+% Note that the eigenvalue of this Hamiltonian is not the HF energy but the sum of the eigenvalues
 
-The eigenfunctions of $f(i)$ are the one-electron spin-orbitals $\phi_a(i)$ used to create the $n$-electron Slater determinant. The equation \eqref{eq:FockOp} gives the eigenvalue equation for the one-electron Fock operator associated with the electron 1. The one-electron core Hamiltonian $h(i)$ are the sum of the kinetic energy of the electron $i$ and the attraction of the nuclei on this electron. The two other terms are the the Coulomb $J_a(i)$ and Exchange $K_a(i)$ operators. Their action on spin-orbital (occupied or virtual) are given by the equation \eqref{eq:CoulOp} and \eqref{eq:ExcOp}. The integration is over the spatial and spin coordinates.
+\titou{I STOPPED HERE.}
+
+The eigenfunctions of $f(\vb{r}_i)$ are the one-electron spin-orbitals $\phi_p(i)$ used to create the $n$-electron Slater determinant. Equation \eqref{eq:FockOp} gives the eigenvalue equation for the one-electron Fock operator associated with the electron $i$. The one-electron core Hamiltonian $h(\vb{r}_i)$ are the sum of the kinetic energy of the electron $i$ and the attraction of the nuclei on this electron. The two other terms are the the Coulomb $J_a(\vb{r}_i)$ and Exchange $K_a(\vb{r}_i)$ operators. Their action on spin-orbital (occupied or virtual) are given by Eqs.~\eqref{eq:CoulOp} and \eqref{eq:ExcOp}. The integration is over the spatial and spin coordinates.
 
 \begin{equation}\label{eq:FockOp}
 f(1)\phi_i(1) = \left[h(1) + \sum\limits_{j=1}^{n} J_j(1) - K_j(1)\right]\phi_i(1)=\epsilon_i\phi_i(1)
