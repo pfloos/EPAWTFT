@@ -383,13 +383,14 @@ The HF Hamiltonian \eqref{eq:HFHamiltonian} can be used as the zeroth-order Hami
 \end{equation}
 As mentioned earlier, in perturbation theory, the energy is a power series of $\lambda$ and the physical energy is obtained at $\lambda = 1$. 
 \titou{STOPPED HERE.}
-We will refer to the energy up to the $n$-th order as the MP$n$ energy. 
-The MP0 energy overestimates the energy by double counting the electron-electron interaction, the MP1 corrects this effect and the MP1 energy is equal to the HF energy. 
-The MP2 energy starts to recover a part of the correlation energy \cite{SzaboBook}.
-
+The MP$n$ energy is defined as 
 \begin{equation}
-E_{\text{MP}{n}}= \sum_{k=0}^n E^{(k)}
+	E_{\text{MP}{n}}= \sum_{k=0}^n E^{(k)},
 \end{equation}
+where $E^{(k)}$ is the $k$th-order correction.
+The MP0 energy overestimates the energy by double counting the electron-electron interaction and is equal to the sum of the occupied orbital energies. 
+The MP1 corrects this and is then equal to the HF energy. 
+MP2 starts recovering correlation energy and the MP2 energy is then lower than the HF energy \cite{SzaboBook}.
 
 But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP}_{n}}$ is always convergent when $n$ goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the MP method will give bad results \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. A smart way to investigate the convergence properties of the MP series is to transform the coupling parameter $\lambda$ into a complex variable. By doing so the Hamiltonian and the energy become functions of this variable. The energy becomes a multivalued function on $n$ Riemann sheets. As mentioned above by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the MP perturbation theory. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is quite easy up to the 4th order and the 5th and 6th order can be obtained at high cost \cite{JensenBook}. In order to deeply understand the behavior of the MP series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction (FCI). If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI basis set we get the exact energies (in this finite basis set) and the Taylor expansion respective to $\lambda$ allows to get the MP perturbation series at every order.
 
@@ -398,10 +399,10 @@ But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP
 The MP partitioning is not the only one possible in electronic structure theory. An other possibility, even more natural than the MP one, is to take the diagonal elements of $\bH$ as the zeroth-order Hamiltonian. Hence, the off-diagonal elements of $\bH$ are the perturbation operator. This partitioning leads to the Epstein-Nesbet (EN) perturbation theory. The zeroth-order eigenstates for this partitioning are Slater determinants as for the MP partitioning. The expression of the second order correction to the energy is given for both MP and EN. The energies at the MP denominator are the orbitals energies whereas in the EN case it is the excitation energies. The i,j indices represent the occupied orbitals and a,b the virtual orbitals of the basis sets.
 
 \begin{equation}\label{eq:EMP2}
-E_{\text{MP2}}=\sum_{\substack{i<j \\ a<b}}^{n}\frac{\abs{\mel{ij}{}{ab}}^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}
+	E_{\text{MP2}}=\sum_{\substack{i<j \\ a<b}}^{n}\frac{\abs{\mel{ij}{}{ab}}^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}
 \end{equation}
 \begin{equation}\label{eq:EEN2}
-E_{\text{EN2}}=\sum_{\substack{i<j \\ a<b}}^{n}\frac{\abs{\mel{ij}{}{ab}}^2}{}
+	E_{\text{EN2}}=\sum_{\substack{i<j \\ a<b}}^{n}\frac{\abs{\mel{ij}{}{ab}}^2}{}
 \end{equation}
 where $J_{ij}$ is the matrix element of the Coulomb operator \eqref{eq:CoulOp} and with
 \begin{equation}
@@ -425,6 +426,13 @@ Additionally, we will consider two other partitioning. The electronic Hamiltonia
 
 \subsection{Behavior of the M{\o}ller-Plesset series}
 
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{gill1986.png}
+    \caption{Barriers to homolytic fission of \ce{He2^2+} at MPn/STO-3G level ($n = 1$--$20$) (taken from \cite{Gill_1986}).}
+    \label{fig:RUMP_Gill}
+\end{wrapfigure}
 When one relies on MP perturbation theory (and more generally on any perturbative partitioning), it would be reasonable to ask for a systematic improvement of the energy with respect to the perturbative order, i.e., one would expect that the more terms of the perturbative series one has, the closer the result from the exact energy.
 %In other words, each time a higher-order term is computed, one would like to obtained an overall result closer to the exact energy. 
 In other words, one would like a monotonic convergence of the MP series. Assuming this, the only limiting process to get the exact correlation energy (in a finite basis set) would be our ability to compute the terms of this perturbation series.
@@ -432,12 +440,6 @@ Unfortunately this is not as easy as one might think because i) the terms of the
 In Fig.~\ref{fig:RUMP_Gill}, which has been extracted from Ref.~\cite{Gill_1986}, one can see that the restricted MP series is convergent, yet oscillating which is far from being convenient if one is only able to compute the first few terms of the expansion (for example here RMP5 is worse than RMP4). 
 On the other hand, the unrestricted MP series is monotonically convergent (except for the first few orders) but very slowly so one cannot use it in practice for systems where one can only compute the first terms.
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.45\textwidth]{gill1986.png}
-    \caption{\centering Barriers to homolytic fission of \ce{He2^2+} at MPn/STO-3G level ($n = 1$--$20$) (taken from \cite{Gill_1986}).}
-    \label{fig:RUMP_Gill}
-\end{figure}
 
 When a bond is stretched the exact wave function becomes more and more multi-reference. Yet the HF wave function is restricted to be single Slater determinant.
 Thus, it is inappropriate to model (even qualitatively) stretched system. Nevertheless, the HF wave function can undergo a symmetry breaking to lower its energy by sacrificing one of the symmetry of the exact wave function during the process (see for example the case of \ce{H_2} in Ref.~\cite{SzaboBook}). \antoine{It could be expected that  the restricted MP series has inappropriate convergence properties as a restricted HF Slater determinant is a poor approximation of the exact wave function for stretched system. However even in the unrestricted formalism the series does not give accurate results at low orders. Whereas the unrestricted formalism allows a better description of a stretched system because the spatial orbitals of electrons $\alpha$ and $\beta$ are not restricted to be the same \cite{Fukutome_1981}.} Even with this improvement of the zeroth-order wave function the series does not have the smooth and rapidly converging behavior wanted. 
@@ -515,7 +517,7 @@ Finally, it was shown that $\beta$ singularities are very sensitive to changes o
 
 \subsection{The physics of quantum phase transition}
 
-In the previous section, we saw that a careful analysis of the structure of the Hamiltonian allows us to predict the existence of a critical point. In a finite basis set this critical point is model by a cluster of $\beta$ singularities. It is now well known that this phenomenon is a special case of a more general phenomenon. Indeed, theoretical physicists proved that EPs close to the real axis are connected to \textit{quantum phase transitions} (QPTs) \cite{Heiss_1988, Heiss_2002, Cejnar_2005, Cejnar_2007, Cejnar_2009, Borisov_2015, Sindelka_2017}. In quantum mechanics, the Hamiltonian is almost always dependent of, at least, one parameter. In some cases the variation of a parameter can lead to abrupt changes at a critical point. These QPTs exist both for ground and excited states as shown by Cejnar and coworkers \cite{Cejnar_2009, Sachdev_2011, Cejnar_2015, Cejnar_2016, Caprio_2008, Macek_2019}. A ground-state QPT is characterized by the derivatives of the ground-state energy with respect to a non-thermal control parameter \cite{Cejnar_2009, Sachdev_2011}. The transition is called discontinuous and of first order if the first derivative is discontinuous at the critical parameter value. Otherwise, it is called continuous and of $n$-th order if the $n$-th derivative is discontinuous. A QPT can also be identify by the discontinuity of an appropriate order parameter (or one of its derivatives). 
+In the previous section, we saw that a careful analysis of the structure of the Hamiltonian allows us to predict the existence of a critical point. In a finite basis set this critical point is model by a cluster of $\beta$ singularities. It is now well known that this phenomenon is a special case of a more general phenomenon. Indeed, theoretical physicists proved that EPs close to the real axis are connected to \textit{quantum phase transitions} (QPTs) \cite{Heiss_1988, Heiss_2002, Cejnar_2005, Cejnar_2007, Cejnar_2009, Borisov_2015, Sindelka_2017}. In quantum mechanics, the Hamiltonian is almost always dependent of, at least, one parameter. In some cases the variation of a parameter can lead to abrupt changes at a critical point. These QPTs exist both for ground and excited states as shown by Cejnar and coworkers \cite{Cejnar_2009, Sachdev_2011, Cejnar_2015, Cejnar_2016, Caprio_2008, Macek_2019}. A ground-state QPT is characterized by the derivatives of the ground-state energy with respect to a non-thermal control parameter \cite{Cejnar_2009, Sachdev_2011}. The transition is called discontinuous and of first order if the first derivative is discontinuous at the critical parameter value. Otherwise, it is called continuous and of $n$th order if the $n$th derivative is discontinuous. A QPT can also be identify by the discontinuity of an appropriate order parameter (or one of its derivatives). 
 
 The presence of an EP close to the real axis is characteristic of a sharp avoided crossing. Yet, at such an avoided crossing, eigenstates change abruptly. Although it is now well understood that EPs are closely related to QPTs, the link between the type of QPT (ground state or excited state, first or higher order) and EPs still need to be clarified. One of the major obstacles that one faces in order to achieve this resides in the ability to compute the distribution of EPs. The numerical assignment of an EP to two energies on the real axis is very difficult in large dimensions. Hence, the design of specific methods are required to get information on the location of EPs. Following this idea, Cejnar \textit{et al.}~developed a method based on a Coulomb analogy giving access to the density of EP close to the real axis \cite{Cejnar_2005, Cejnar_2007}. More recently Stransky and coworkers proved that the distribution of EPs is characteristic on the order of the QPT \cite{Stransky_2018}. In particular, they showed that when the dimensionality of the system increases, first- and second-order QTP behave differently, and converge towards the real axis at different rates (exponentially and algebraically for the first and second order, respectively).
 
@@ -674,7 +676,7 @@ To simplify the problem, it is convenient to only consider basis functions with 
 where $P_l$ are the Legendre polynomial and $\theta$ is the interelectronic angle.
 
 Then using this basis set we can compare the different partitioning of Sec.~\ref{sec:AlterPart}. Figure \ref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ in function of $R$ for the MP, the EN, the WC and the SC partitioning in a minimal basis, i.e., $P_0$ and $P_1$ and in the same basis augmented with $P_2$. We see that the radius of convergence of the SC partitioning is growing with R whereas it is decreasing for the three others partitioning. This result was expected because the three decreasing partitioning use a weakly correlated reference so $\bH^{(0)}$ is a good approximation for small $R$. On the contrary, the strong coupling one uses a strongly correlated reference so this series converge better when the electron are strongly correlated, i.e., when $R$ is large for the spherium model.
-The MP partitioning is always better than the weak correlation in Fig.~\ref{fig:RadiusPartitioning}. In the weak correlation partitioning the powers of $R$ are well-separated so each term of the series is a different power of $R$. Whereas the MP reference is proportionnal to $R^{-1}$ and $R^{-2}$ so the MP series is not well-defined in terms of powers of $R$. Moreover it can be proved that the $n$-th order energy of the weak correlation series can be obtained as a Taylor approximation of MP$n$ respective to $R$. It seems that the EN partitioning is better than the MP one for very small R in the minimal basis. In fact, it is just an artifact of the minimal basis because in the minimal basis augmented with $P_2
+The MP partitioning is always better than the weak correlation in Fig.~\ref{fig:RadiusPartitioning}. In the weak correlation partitioning the powers of $R$ are well-separated so each term of the series is a different power of $R$. Whereas the MP reference is proportionnal to $R^{-1}$ and $R^{-2}$ so the MP series is not well-defined in terms of powers of $R$. Moreover it can be proved that the $n$th order energy of the weak correlation series can be obtained as a Taylor approximation of MP$n$ respective to $R$. It seems that the EN partitioning is better than the MP one for very small R in the minimal basis. In fact, it is just an artifact of the minimal basis because in the minimal basis augmented with $P_2
 $ (and in larger basis set) the MP series has a greater radius of convergence for all value of $R$.
 
 \begin{figure}[h!]
