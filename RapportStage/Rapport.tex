@@ -334,7 +334,7 @@ This function is smooth for $x \in \mathbb{R}$ and infinitely differentiable in 
 
 \subsection{The Hartree-Fock Hamiltonian}
 
-In the Hartree-Fock (HF) approximation, the many-electron wave function is approximated as a single Slater determinant $\Psi^{\text{HF}}(\vb{x}_1,\ldots,\vb{x}_n)$ [where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates] defined as an antisymmetric combination of $n$ one-electron spin-orbitals $\phi_p(\vb{x})$, which are, by definition, eigenfunctions of the one-electron Fock operator 
+In the Hartree-Fock (HF) approximation, the many-electron wave function is approximated as a single Slater determinant $\Psi^{\text{HF}}(\vb{x}_1,\ldots,\vb{x}_n)$ [where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates] defined as an antisymmetric combination of $n$ (real-valued) one-electron spin-orbitals $\phi_p(\vb{x})$, which are, by definition, eigenfunctions of the one-electron Fock operator 
 \begin{equation}\label{eq:FockOp}
 	f(\vb{x}) \phi_p(\vb{x}) = [ h(\vb{x}) + v^\text{HF}(\vb{x}) ] \phi_p(\vb{x}) = \epsilon_p \phi_p(\vb{x}),
 \end{equation}
@@ -355,12 +355,12 @@ is the HF mean-field potential with
 	K_i(\vb{x})\phi_p(\vb{x})=\qty[\int\dd\vb{x}'\phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_p(\vb{x}') ] \phi_i(\vb{x})
 \end{gather}
 being the Coulomb and exchange operators (respectively) in the spin-orbital basis.
-
+From hereon, $i$ and $j$ are occupied orbitals, $a$ and $b$ are unoccupied (or virtual) orbitals, while $p$, $q$, $r$, and $s$ indicate arbitrary orbitals.
 Rather than solving Eq.~\eqref{eq:SchrEq}, HF theory uses the variational principle to find an approximation of $\Psi$ as a single Slater determinant. Hence a Slater determinant is not an eigenfunction of the exact Hamiltonian $\bH$. However, it is, by definition, an eigenfunction of the so-called (approximated) HF many-electron Hamiltonian defined as the sum of the one-electron Fock operators
 \begin{equation}\label{eq:HFHamiltonian}
 	\bH^{\text{HF}} = \sum_{i}^{n} f(\vb{x}_i).
 \end{equation}
-Note that the lowest eigenvalue of the Hamiltonian \eqref{eq:HFHamiltonian} is not the HF energy but the sum of the eigenvalues associated with the occupied eigenvalues.
+Note that the lowest eigenvalue of the Hamiltonian \eqref{eq:HFHamiltonian} is not the HF energy but the sum of the eigenvalues associated with the occupied eigenvalues (see below).
 
 %The eigenfunctions of $f(\vb{r}_i)$ are the one-electron spin-orbitals $\phi_p(i)$ used to create the $n$-electron Slater determinant. Equation \eqref{eq:FockOp} gives the eigenvalue equation for the one-electron Fock operator associated with the electron $i$. The one-electron core Hamiltonian $h(\vb{r}_i)$ are  The two other terms are the the Coulomb $J_a(\vb{r}_i)$ and Exchange $K_a(\vb{r}_i)$ operators. Their action on spin-orbital (occupied or virtual) are given by Eqs.~\eqref{eq:CoulOp} and \eqref{eq:ExcOp}. The integration is over the spatial and spin coordinates.
 
@@ -382,43 +382,62 @@ The HF Hamiltonian \eqref{eq:HFHamiltonian} can be used as the zeroth-order Hami
     ].
 \end{equation}
 As mentioned earlier, in perturbation theory, the energy is a power series of $\lambda$ and the physical energy is obtained at $\lambda = 1$. 
-\titou{STOPPED HERE.}
 The MP$n$ energy is defined as 
 \begin{equation}
-	E_{\text{MP}{n}}= \sum_{k=0}^n E^{(k)},
+	E_{\text{MP}n}= \sum_{k=0}^n E^{(k)},
 \end{equation}
 where $E^{(k)}$ is the $k$th-order correction.
-The MP0 energy overestimates the energy by double counting the electron-electron interaction and is equal to the sum of the occupied orbital energies. 
-The MP1 corrects this and is then equal to the HF energy. 
-MP2 starts recovering correlation energy and the MP2 energy is then lower than the HF energy \cite{SzaboBook}.
+The MP0 energy overestimates the energy by double counting the electron-electron interaction and is equal to the sum of the occupied orbital energies, i.e.,
+\begin{equation}
+	E_{\text{MP0}} = \sum_i^n \epsilon_i.
+\end{equation}
+The MP1 corrects this and is then equal to the HF energy, i.e.,
+\begin{equation}
+	E_{\text{MP1}} = E_\text{HF} = \sum_i^n \epsilon_i - \frac{1}{2} \sum_{ij}^n \mel{ij}{}{ij},
+\end{equation}
+with $\mel{pq}{}{rs} = \braket{pq}{rs} - \braket{pq}{sr}$, and where  
+\begin{equation}
+	\braket{pq}{rs} = \iint \dd\vb{x}_1\dd\vb{x}_2\phi_p(\vb{x}_1)\phi_q(\vb{x}_2)\frac{1}{\abs{\vb{r}_1 - \vb{r}_2}}\phi_r(\vb{x}_1)\phi_s(\vb{x}_2)
+\end{equation}
+is a two-electron integral in the spin-orbital basis.
+MP2 starts recovering correlation energy and the MP2 energy, which reads
+\begin{equation}\label{eq:EMP2}
+	E_{\text{MP2}} = \frac{1}{4} \sum_{ij} \sum_{ab} \frac{\abs{\mel{ij}{}{ab}}^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b},
+\end{equation}
+is then lower than the HF energy \cite{SzaboBook}.
 
-But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP}_{n}}$ is always convergent when $n$ goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the MP method will give bad results \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. A smart way to investigate the convergence properties of the MP series is to transform the coupling parameter $\lambda$ into a complex variable. By doing so the Hamiltonian and the energy become functions of this variable. The energy becomes a multivalued function on $n$ Riemann sheets. As mentioned above by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the MP perturbation theory. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is quite easy up to the 4th order and the 5th and 6th order can be obtained at high cost \cite{JensenBook}. In order to deeply understand the behavior of the MP series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction (FCI). If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI basis set we get the exact energies (in this finite basis set) and the Taylor expansion respective to $\lambda$ allows to get the MP perturbation series at every order.
+As mentioned earlier, there is, \textit{a priori}, no guarantee that the MP$n$ series converges to the exact energy when $n$ goes to infinity. 
+In fact, it is known that when the HF wave function is a bad approximation to the exact wave function, for example in multi-reference systems, the MP method yields bad results \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. 
+A convenient way to investigate the convergence properties of the MP series is to analytically continue the coupling parameter $\lambda$ into the complex variable. 
+By doing so, the Hamiltonian and the energy become complex-valued functions of $\lambda$, and the energy becomes a multivalued function \titou{on $n$ Riemann sheets}. 
+As mentioned above, by searching the singularities of the function $E(\lambda)$, one can get information on the convergence properties of the MP series. 
+These singularities of the energy function are exactly the exceptional points connecting the electronic states as mentioned in the introduction. 
+The direct computation of the terms of the series is quite manageable up to 4th order in perturbation, while the 5th and 6th order in perturbation can still be obtained but at a rather high cost \cite{JensenBook}. 
+In order to better understand the behavior of the MP series and how it is connected to the singularity structure, we have to access high-order terms. 
+For small systems, one can access the whole terms of the series using full configuration interaction (FCI). 
+\titou{If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI space, one gets the exact energies (in this finite Hilbert space) and the Taylor expansion with respect to $\lambda$ allows to access the MP perturbation series at any order.}
 
 \subsection{Alternative partitioning}\label{sec:AlterPart}
 
-The MP partitioning is not the only one possible in electronic structure theory. An other possibility, even more natural than the MP one, is to take the diagonal elements of $\bH$ as the zeroth-order Hamiltonian. Hence, the off-diagonal elements of $\bH$ are the perturbation operator. This partitioning leads to the Epstein-Nesbet (EN) perturbation theory. The zeroth-order eigenstates for this partitioning are Slater determinants as for the MP partitioning. The expression of the second order correction to the energy is given for both MP and EN. The energies at the MP denominator are the orbitals energies whereas in the EN case it is the excitation energies. The i,j indices represent the occupied orbitals and a,b the virtual orbitals of the basis sets.
-
-\begin{equation}\label{eq:EMP2}
-	E_{\text{MP2}}=\sum_{\substack{i<j \\ a<b}}^{n}\frac{\abs{\mel{ij}{}{ab}}^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}
-\end{equation}
-\begin{equation}\label{eq:EEN2}
-	E_{\text{EN2}}=\sum_{\substack{i<j \\ a<b}}^{n}\frac{\abs{\mel{ij}{}{ab}}^2}{}
-\end{equation}
-where $J_{ij}$ is the matrix element of the Coulomb operator \eqref{eq:CoulOp} and with
-\begin{equation}
-	\mel{ij}{}{ab}=\braket{ij}{ab} - \braket{ij}{ba}
-\end{equation}
-where $\braket{ij}{ab}$ is the two-electron integral
-\begin{equation}
-\braket{ij}{ab}=\int \dd\vb{x}_1\dd\vb{x}_2\phi_i^*(\vb{x}_1)\phi_j^*(\vb{x}_2)r_{12}^{-1}\phi_a(\vb{x}_1)\phi_b(\vb{x}_2)
-\end{equation}
-
-Additionally, we will consider two other partitioning. The electronic Hamiltonian can be separated in a one-electron part and in a two-electron part as seen previously. We can use this separation to create two other partitioning:
-
+Obviously, although practically convenient for electronic structure calculations, the MP partitioning is not the only possibility. 
+Here, we will consider three alternative partitioning schemes
 \begin{itemize}
-\item The Weak Correlation (WC) partitioning in which the one-electron part is consider as the unperturbed Hamiltonian $\bH^{(0)}$ and the two-electron part is the perturbation operator $\bV$.
-\item The Strong Coupling (SC) partitioning where the two operators are inverted compared to the weak correlation partitioning.
+	\item The Epstein-Nesbet (EN) partitioning which consists in taking the diagonal elements of $\bH$ as the zeroth-order Hamiltonian. 
+	Hence, the off-diagonal elements of $\bH$ are the perturbation operator. .
+	\item The weak correlation (WC) partitioning in which the one-electron part is consider as the unperturbed Hamiltonian $\bH^{(0)}$ and the two-electron part is the perturbation operator $\bV$.
+	\item The strong coupling (SC) partitioning where the two operators are inverted as compared to the WC partitioning.
 \end{itemize}
+%An alternative partitioning scheme, maybe even more natural than the MP one, 
+%This partitioning leads to Epstein-Nesbet (EN) perturbation theory. 
+%The zeroth-order eigenstates for this partitioning are Slater determinants as for the MP partitioning. 
+%The expression of the second-order EN correction to the energy is 
+%\begin{equation}\label{eq:EEN2}
+%	E_{\text{EN2}} = \frac{1}{4} \sum_{ij}  \sum_{ab} ??
+%\end{equation}
+%The energies at the MP denominator are the orbitals energies whereas in the EN case it is the excitation energies. 
+%Additionally, we will consider two other partitioning. 
+%The electronic Hamiltonian can be separated in a one-electron part and in a two-electron part as seen previously. 
+%We can use this separation to create two other partitioning:
 
 %============================================================%
 \section{Historical overview}
