@@ -60,6 +60,8 @@ hyperfigures=false]
 \fancyhead[R]{\scriptsize \textsc{Antoine \textsc{MARIE}}}
 \fancyfoot[C]{ \thepage}
 
+\newcommand{\hH}{\Hat{H}}
+\newcommand{\hV}{\Hat{V}}
 \newcommand{\bH}{\mathbf{H}}
 \newcommand{\bV}{\mathbf{V}}
 \newcommand{\pt}{$\mathcal{PT}$}
@@ -296,7 +298,7 @@ We can also see that looping the other way around leads to a different pattern.
 
 Within the Born-Oppenheimer approximation, 
 \begin{equation}\label{eq:ExactHamiltonian}
-    \bH = - \frac{1}{2} \sum_{i}^{n} \grad_i^2 - \sum_{i}^{n} \sum_{A}^{N} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}} + \sum_{i<j}^{n}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}}
+    \hH = - \frac{1}{2} \sum_{i}^{n} \grad_i^2 - \sum_{i}^{n} \sum_{A}^{N} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}} + \sum_{i<j}^{n}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}}
 \end{equation}
 is the exact electronic Hamiltonian for a chemical system with $n$ electrons (where $\vb{r}_i$ is the position of the $i$th electron) and $N$ (fixed) nuclei (where $\vb{R}_A$ and $Z_A$ are the position and the charge of the $A$th nucleus respectively). 
 The first term is the kinetic energy of the electrons, the two following terms account respectively for the electron-nucleus attraction and the electron-electron repulsion.
@@ -304,13 +306,13 @@ Note that we use atomic units throughout unless otherwise stated.
 
 Within (time-independent) Rayleigh-Schr\"odinger perturbation theory, the Schr\"odinger equation 
 \begin{equation} \label{eq:SchrEq}
-	\bH \Psi = E \Psi
+	\hH \Psi = E \Psi
 \end{equation} 
 is recast as 
 \begin{equation} \label{eq:SchrEq-PT}
-	\bH(\lambda) \Psi(\lambda) = (\bH^{(0)} + \lambda \bV ) \Psi(\lambda) = E(\lambda) \Psi(\lambda),
+	\hH(\lambda) \Psi(\lambda) = (\hH^{(0)} + \lambda \hV ) \Psi(\lambda) = E(\lambda) \Psi(\lambda),
 \end{equation}
-where $\bH^{(0)}$ is the zeroth-order Hamiltonian and $\bV = \bH - \bH^{(0)}$ is the so-called perturbation.
+where $\hH^{(0)}$ is the zeroth-order Hamiltonian and $\hV = \hH - \hH^{(0)}$ is the so-called perturbation.
 The ``physical'' system of interest is recovered by setting the coupling parameter $\lambda$ to unity.
 This decomposition is obviously non-unique and motivated by several factors as discussed below.
 
@@ -356,9 +358,9 @@ is the HF mean-field potential with
 \end{gather}
 being the Coulomb and exchange operators (respectively) in the spin-orbital basis.
 From hereon, $i$ and $j$ are occupied orbitals, $a$ and $b$ are unoccupied (or virtual) orbitals, while $p$, $q$, $r$, and $s$ indicate arbitrary orbitals.
-Rather than solving Eq.~\eqref{eq:SchrEq}, HF theory uses the variational principle to find an approximation of $\Psi$ as a single Slater determinant. Hence a Slater determinant is not an eigenfunction of the exact Hamiltonian $\bH$. However, it is, by definition, an eigenfunction of the so-called (approximated) HF many-electron Hamiltonian defined as the sum of the one-electron Fock operators
+Rather than solving Eq.~\eqref{eq:SchrEq}, HF theory uses the variational principle to find an approximation of $\Psi$ as a single Slater determinant. Hence a Slater determinant is not an eigenfunction of the exact Hamiltonian $\hH$. However, it is, by definition, an eigenfunction of the so-called (approximated) HF many-electron Hamiltonian defined as the sum of the one-electron Fock operators
 \begin{equation}\label{eq:HFHamiltonian}
-	\bH^{\text{HF}} = \sum_{i}^{n} f(\vb{x}_i).
+	\hH^{\text{HF}} = \sum_{i}^{n} f(\vb{x}_i).
 \end{equation}
 Note that the lowest eigenvalue of the Hamiltonian \eqref{eq:HFHamiltonian} is not the HF energy but the sum of the eigenvalues associated with the occupied eigenvalues (see below).
 
@@ -373,7 +375,7 @@ The HF Hamiltonian \eqref{eq:HFHamiltonian} can be used as the zeroth-order Hami
 % where the two-electron part of the Fock operator $f(i)$ has been written $V_i^{HF}$ for convenience.
 
 \begin{equation}\label{eq:MPHamiltonian}
-    \bH(\lambda) = 
+    \hH(\lambda) = 
     \sum_{i}^{n} \qty[ 
     -\frac{\grad_i^2}{2} 
     - \sum_{A}^{N} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}} 
@@ -422,9 +424,9 @@ For small systems, one can access the whole terms of the series using full confi
 Obviously, although practically convenient for electronic structure calculations, the MP partitioning is not the only possibility. 
 Here, we will consider three alternative partitioning schemes
 \begin{itemize}
-	\item The Epstein-Nesbet (EN) partitioning which consists in taking the diagonal elements of $\bH$ as the zeroth-order Hamiltonian. 
-	Hence, the off-diagonal elements of $\bH$ are the perturbation operator. .
-	\item The weak correlation (WC) partitioning in which the one-electron part is consider as the unperturbed Hamiltonian $\bH^{(0)}$ and the two-electron part is the perturbation operator $\bV$.
+	\item The Epstein-Nesbet (EN) partitioning which consists in taking the diagonal elements of $\hH$ as the zeroth-order Hamiltonian. 
+	Hence, the off-diagonal elements of $\hH$ are the perturbation operator. .
+	\item The weak correlation (WC) partitioning in which the one-electron part is consider as the unperturbed Hamiltonian $\hH^{(0)}$ and the two-electron part is the perturbation operator $\hV$.
 	\item The strong coupling (SC) partitioning where the two operators are inverted as compared to the WC partitioning.
 \end{itemize}
 %An alternative partitioning scheme, maybe even more natural than the MP one, 
@@ -449,18 +451,18 @@ Here, we will consider three alternative partitioning schemes
 \begin{wrapfigure}{r}{0.4\textwidth}
     \centering
     \includegraphics[width=\linewidth]{gill1986.png}
-    \caption{Barriers to homolytic fission of \ce{He2^2+} at MPn/STO-3G level ($n = 1$--$20$) (taken from \cite{Gill_1986}).}
+    \caption{Barriers to homolytic fission of \ce{He2^2+} at MPn/STO-3G level ($n = 1$--$20$) (taken from Ref.~\cite{Gill_1986}).}
     \label{fig:RUMP_Gill}
 \end{wrapfigure}
-When one relies on MP perturbation theory (and more generally on any perturbative partitioning), it would be reasonable to ask for a systematic improvement of the energy with respect to the perturbative order, i.e., one would expect that the more terms of the perturbative series one has, the closer the result from the exact energy.
+When one relies on MP perturbation theory (and more generally on any perturbative partitioning), it would be reasonable to ask for a systematic improvement of the energy with respect to the perturbative order, i.e., one would expect that the more terms of the perturbative series one can compute, the closer the result from the exact energy.
 %In other words, each time a higher-order term is computed, one would like to obtained an overall result closer to the exact energy. 
 In other words, one would like a monotonic convergence of the MP series. Assuming this, the only limiting process to get the exact correlation energy (in a finite basis set) would be our ability to compute the terms of this perturbation series.
 Unfortunately this is not as easy as one might think because i) the terms of the perturbative series become rapidly computationally cumbersome, and ii) erratic behavior of the perturbative coefficients are not uncommon. For example, in the late 80's, Gill and Radom reported deceptive and slow convergences in stretch systems \cite{Gill_1986, Gill_1988} (see also Refs.~\cite{Handy_1985, Lepetit_1988}). 
 In Fig.~\ref{fig:RUMP_Gill}, which has been extracted from Ref.~\cite{Gill_1986}, one can see that the restricted MP series is convergent, yet oscillating which is far from being convenient if one is only able to compute the first few terms of the expansion (for example here RMP5 is worse than RMP4). 
 On the other hand, the unrestricted MP series is monotonically convergent (except for the first few orders) but very slowly so one cannot use it in practice for systems where one can only compute the first terms.
+\titou{There is a problem here as one has not introduce restricted and unrestricted formalisms.}
 
-
-When a bond is stretched the exact wave function becomes more and more multi-reference. Yet the HF wave function is restricted to be single Slater determinant.
+When a bond is stretched, in most cases the exact wave function becomes more and more multi-reference. Yet the HF wave function is restricted to be single Slater determinant.
 Thus, it is inappropriate to model (even qualitatively) stretched system. Nevertheless, the HF wave function can undergo a symmetry breaking to lower its energy by sacrificing one of the symmetry of the exact wave function during the process (see for example the case of \ce{H_2} in Ref.~\cite{SzaboBook}). \antoine{It could be expected that  the restricted MP series has inappropriate convergence properties as a restricted HF Slater determinant is a poor approximation of the exact wave function for stretched system. However even in the unrestricted formalism the series does not give accurate results at low orders. Whereas the unrestricted formalism allows a better description of a stretched system because the spatial orbitals of electrons $\alpha$ and $\beta$ are not restricted to be the same \cite{Fukutome_1981}.} Even with this improvement of the zeroth-order wave function the series does not have the smooth and rapidly converging behavior wanted. 
 
 \begin{table}[h!]
