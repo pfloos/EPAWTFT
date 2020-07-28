@@ -294,6 +294,14 @@ We can also see that looping the other way around leads to a different pattern.
 
 \subsection{Rayleigh-Schr\"odinger perturbation theory}
 
+Within the Born-Oppenheimer approximation, 
+\begin{equation}\label{eq:ExactHamiltonian}
+    \bH = - \frac{1}{2} \sum_{i}^{n} \grad_i^2 - \sum_{i}^{n} \sum_{A}^{N} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}} + \sum_{i<j}^{n}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}}
+\end{equation}
+is the exact electronic Hamiltonian for a chemical system with $n$ electrons (where $\vb{r}_i$ is the position of the $i$th electron) and $N$ (fixed) nuclei (where $\vb{R}_A$ and $Z_A$ are the position and the charge of the $A$th nucleus respectively). 
+The first term is the kinetic energy of the electrons, the two following terms account respectively for the electron-nucleus attraction and the electron-electron repulsion.
+Note that we use atomic units throughout unless otherwise stated.
+
 Within (time-independent) Rayleigh-Schr\"odinger perturbation theory, the Schr\"odinger equation 
 \begin{equation} \label{eq:SchrEq}
 	\bH \Psi = E \Psi
@@ -326,48 +334,61 @@ This function is smooth for $x \in \mathbb{R}$ and infinitely differentiable in 
 
 \subsection{The Hartree-Fock Hamiltonian}
 
-Within the Born-Oppenheimer approximation, 
-\begin{equation}\label{eq:ExactHamiltonian}
-    \bH = - \sum_{i}^{n} \frac{1}{2}\grad_i^2 - \sum_{i}^{n} \sum_{A}^{N} \frac{Z_A}{|\vb{r}_i-\vb{R}_A|} + \sum_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|}
-\end{equation}
-is the exact electronic Hamiltonian for a chemical system with $n$ electrons (where $\vb{r}_i$ is the position of the $i$th electron) and $N$ nuclei (where $\vb{R}_A$ is the position of the $A$th nucleus and $Z_A$ its charge). The first term is the kinetic energy of the electrons, the two following terms account respectively for the electron-nucleus attraction and the electron-electron repulsion.
-Note that we use atomic units throughout unless otherwise stated.
-
-In the Hartree-Fock (HF) approximation the wave function is approximated as a single Slater determinant (which is an anti-symmetric combination of $n$ one-electron spin-orbitals). Rather than solving Eq.~\eqref{eq:SchrEq}, HF theory uses the variational principle to find an approximation of $\Psi$ as a single Slater determinant. Hence a Slater determinant is not an eigenfunction of the exact Hamiltonian $\bH$. However, it is, by definition, an eigenfunction of the so-called (approximated) HF many-electron Hamiltonian, which is the sum of the one-electron Fock operators:
-\begin{equation}\label{eq:HFHamiltonian}
-	\bH^{\text{HF}}= \sum\limits_{i=1}^{n} f(\vb{r}_i)
-\end{equation}
-% Note that the eigenvalue of this Hamiltonian is not the HF energy but the sum of the eigenvalues
-
-\titou{I STOPPED HERE.}
-
-The eigenfunctions of $f(\vb{r}_i)$ are the one-electron spin-orbitals $\phi_p(i)$ used to create the $n$-electron Slater determinant. Equation \eqref{eq:FockOp} gives the eigenvalue equation for the one-electron Fock operator associated with the electron $i$. The one-electron core Hamiltonian $h(\vb{r}_i)$ are the sum of the kinetic energy of the electron $i$ and the attraction of the nuclei on this electron. The two other terms are the the Coulomb $J_a(\vb{r}_i)$ and Exchange $K_a(\vb{r}_i)$ operators. Their action on spin-orbital (occupied or virtual) are given by Eqs.~\eqref{eq:CoulOp} and \eqref{eq:ExcOp}. The integration is over the spatial and spin coordinates.
-
+In the Hartree-Fock (HF) approximation, the many-electron wave function is approximated as a single Slater determinant $\Psi^{\text{HF}}(\vb{x}_1,\ldots,\vb{x}_n)$ [where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates] defined as an antisymmetric combination of $n$ one-electron spin-orbitals $\phi_p(\vb{x})$, which are, by definition, eigenfunctions of the one-electron Fock operator 
 \begin{equation}\label{eq:FockOp}
-f(1)\phi_i(1) = \left[h(1) + \sum\limits_{j=1}^{n} J_j(1) - K_j(1)\right]\phi_i(1)=\epsilon_i\phi_i(1)
+	f(\vb{x}) \phi_p(\vb{x}) = [ h(\vb{x}) + v^\text{HF}(\vb{x}) ] \phi_p(\vb{x}) = \epsilon_p \phi_p(\vb{x}),
 \end{equation}
+where 
+\begin{equation}
+	h(\vb{x}) = -\frac{\grad^2}{2} + \sum_{A}^{N} \frac{Z_A}{\abs{\vb{r}-\vb{R}_A}}
+\end{equation}
+is the core Hamiltonian and 
+\begin{equation}
+	v^\text{HF}(\vb{x}) = \sum_i \qty[ J_i(\vb{x}) - K_i(\vb{x}) ]
+\end{equation}
+is the HF mean-field potential with 
+\begin{gather}
+	\label{eq:CoulOp}
+	J_i(\vb{x})\phi_p(\vb{x})=\qty[\int\dd\vb{x}'\phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_i(\vb{x}') ] \phi_p(\vb{x})
+	\\
+	\label{eq:ExcOp}
+	K_i(\vb{x})\phi_p(\vb{x})=\qty[\int\dd\vb{x}'\phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_p(\vb{x}') ] \phi_i(\vb{x})
+\end{gather}
+being the Coulomb and exchange operators (respectively) in the spin-orbital basis.
 
-\begin{equation}\label{eq:CoulOp}
-J_j(1)\phi_i(1)=\left[\int\dd\vb{x}_2\phi_j^*(2)\frac{1}{r_{12}}\phi_j(2) \right]\phi_i(1)
+Rather than solving Eq.~\eqref{eq:SchrEq}, HF theory uses the variational principle to find an approximation of $\Psi$ as a single Slater determinant. Hence a Slater determinant is not an eigenfunction of the exact Hamiltonian $\bH$. However, it is, by definition, an eigenfunction of the so-called (approximated) HF many-electron Hamiltonian defined as the sum of the one-electron Fock operators
+\begin{equation}\label{eq:HFHamiltonian}
+	\bH^{\text{HF}} = \sum_{i}^{n} f(\vb{x}_i).
 \end{equation}
+Note that the lowest eigenvalue of the Hamiltonian \eqref{eq:HFHamiltonian} is not the HF energy but the sum of the eigenvalues associated with the occupied eigenvalues.
 
-\begin{equation}\label{eq:ExcOp}
-K_j(1)\phi_i(1)=\left[\int\dd\vb{x}_2\phi_j^*(2)\frac{1}{r_{12}}\phi_j(2) \right]\phi_i(1)
-\end{equation}
+%The eigenfunctions of $f(\vb{r}_i)$ are the one-electron spin-orbitals $\phi_p(i)$ used to create the $n$-electron Slater determinant. Equation \eqref{eq:FockOp} gives the eigenvalue equation for the one-electron Fock operator associated with the electron $i$. The one-electron core Hamiltonian $h(\vb{r}_i)$ are  The two other terms are the the Coulomb $J_a(\vb{r}_i)$ and Exchange $K_a(\vb{r}_i)$ operators. Their action on spin-orbital (occupied or virtual) are given by Eqs.~\eqref{eq:CoulOp} and \eqref{eq:ExcOp}. The integration is over the spatial and spin coordinates.
+
 
 
 \subsection{M{\o}ller-Plesset perturbation theory}
 
-The Hartree-Fock Hamiltonian \eqref{eq:HFHamiltonian} can be used as the zeroth-order Hamiltonian of the equation \eqref{eq:SchrEq-PT}. This partitioning of the Hamiltonian leads to the so-called M{\o}ller-Plesset (MP) perturbation theory \cite{Moller_1934}. The discovery of a partitioning of the Hamiltonian that allowed chemists to recover a part of the correlation energy (i.e., the difference between the exact energy and the Hartree-Fock energy) using perturbation theory has been a major step in the development of post-Hartree-Fock methods. This yields the Hamiltonian $\bH(\lambda)$ of the equation \eqref{eq:MPHamiltonian} where the two-electron part of the Fock operator $f(i)$ has been written $V_i^{HF}$ for convenience.
+The HF Hamiltonian \eqref{eq:HFHamiltonian} can be used as the zeroth-order Hamiltonian of Eq.~\eqref{eq:SchrEq-PT}. This partitioning of the Hamiltonian leads to the so-called M{\o}ller-Plesset (MP) perturbation theory \cite{Moller_1934}. The discovery of a partitioning of the Hamiltonian that allowed chemists to recover a large chunck of the correlation energy (i.e., the difference between the exact energy and the Hartree-Fock energy) using perturbation theory has been a major step in the development of post-HF methods. This yields
+% the Hamiltonian $\bH(\lambda)$ of Eq.~\eqref{eq:MPHamiltonian}.
+% where the two-electron part of the Fock operator $f(i)$ has been written $V_i^{HF}$ for convenience.
 
 \begin{equation}\label{eq:MPHamiltonian}
-    \bH(\lambda)=\sum\limits_{i=1}^{n}\left[-\frac{1}{2}\grad_i^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_i-\vb{R}_k|} + (1-\lambda)V_i^{\text{HF}}+\lambda\sum\limits_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|} \right]
+    \bH(\lambda) = 
+    \sum_{i}^{n} \qty[ 
+    -\frac{\grad_i^2}{2} 
+    - \sum_{A}^{N} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}} 
+    + (1-\lambda) v^{\text{HF}}(\vb{x}_i) 
+    + \lambda\sum_{i<j}^{n}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}} 
+    ].
 \end{equation}
-
-In the perturbation theory the energy is a power series of $\lambda$ and the physical energy is obtained by taking $\lambda$ equal to 1. We will refer to the energy up to the $n$-th order as the MP$n$ energy. The MP0 energy overestimates the energy by double counting the electron-electron interaction, the MP1 corrects this effect and the MP1 energy is equal to the Hartree-Fock energy. The MP2 energy starts to recover a part of the correlation energy \cite{SzaboBook}.
+As mentioned earlier, in perturbation theory, the energy is a power series of $\lambda$ and the physical energy is obtained at $\lambda = 1$. 
+\titou{STOPPED HERE.}
+We will refer to the energy up to the $n$-th order as the MP$n$ energy. 
+The MP0 energy overestimates the energy by double counting the electron-electron interaction, the MP1 corrects this effect and the MP1 energy is equal to the HF energy. 
+The MP2 energy starts to recover a part of the correlation energy \cite{SzaboBook}.
 
 \begin{equation}
-E_{\text{MP}_{n}}= \sum_{k=0}^n E^{(k)}
+E_{\text{MP}{n}}= \sum_{k=0}^n E^{(k)}
 \end{equation}
 
 But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP}_{n}}$ is always convergent when $n$ goes to infinity. In fact, it is known that when the Hartree-Fock wave function is a bad approximation of the exact wave function, for example for multi-reference states, the MP method will give bad results \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. A smart way to investigate the convergence properties of the MP series is to transform the coupling parameter $\lambda$ into a complex variable. By doing so the Hamiltonian and the energy become functions of this variable. The energy becomes a multivalued function on $n$ Riemann sheets. As mentioned above by searching the singularities of the function $E(\lambda)$ we can get information on the convergence properties of the MP perturbation theory. Those singularities of the energy are exactly the exceptional points connecting the electronic states mentioned in the introduction. The direct computation of the terms of the series is quite easy up to the 4th order and the 5th and 6th order can be obtained at high cost \cite{JensenBook}. In order to deeply understand the behavior of the MP series and how it is connected to the singularities, we need to have access to high order terms of the series. For small systems we can have access to the whole series using Full Configuration Interaction (FCI). If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI basis set we get the exact energies (in this finite basis set) and the Taylor expansion respective to $\lambda$ allows to get the MP perturbation series at every order.
@@ -377,10 +398,10 @@ But as mentioned before \textit{a priori} there are no reasons that $E_{\text{MP
 The MP partitioning is not the only one possible in electronic structure theory. An other possibility, even more natural than the MP one, is to take the diagonal elements of $\bH$ as the zeroth-order Hamiltonian. Hence, the off-diagonal elements of $\bH$ are the perturbation operator. This partitioning leads to the Epstein-Nesbet (EN) perturbation theory. The zeroth-order eigenstates for this partitioning are Slater determinants as for the MP partitioning. The expression of the second order correction to the energy is given for both MP and EN. The energies at the MP denominator are the orbitals energies whereas in the EN case it is the excitation energies. The i,j indices represent the occupied orbitals and a,b the virtual orbitals of the basis sets.
 
 \begin{equation}\label{eq:EMP2}
-E_{\text{MP2}}=\sum\limits_{\substack{i<j \\ a<b}}^{n}\frac{\abs{\mel{ij}{}{ab}}^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}
+E_{\text{MP2}}=\sum_{\substack{i<j \\ a<b}}^{n}\frac{\abs{\mel{ij}{}{ab}}^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}
 \end{equation}
 \begin{equation}\label{eq:EEN2}
-E_{\text{EN2}}=\sum\limits_{\substack{i<j \\ a<b}}^{n}\frac{\abs{\mel{ij}{}{ab}}^2}{}
+E_{\text{EN2}}=\sum_{\substack{i<j \\ a<b}}^{n}\frac{\abs{\mel{ij}{}{ab}}^2}{}
 \end{equation}
 where $J_{ij}$ is the matrix element of the Coulomb operator \eqref{eq:CoulOp} and with
 \begin{equation}
@@ -483,7 +504,7 @@ In the 2000's, Sergeev and Goodson \cite{Sergeev_2005, Sergeev_2006} analyzed th
 To understand the convergence properties of the perturbation series at $\lambda=1$, one must look at the whole complex plane, in particular, for negative (i.e., real) values of $\lambda$. If $\lambda$ is negative, the Coulomb interaction becomes attractive but the mean field (which has been computed at $\lambda = 1$) remains repulsive as it is proportional to $(1-\lambda)$:
 
 \begin{equation}\label{eq:HamiltonianStillinger}
-    \bH(\lambda)=\sum\limits_{i=1}^{n}\left[ \underbrace{-\frac{1}{2}\grad_i^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_i-\vb{R}_k|}}_{\text{Independent of}~\lambda} + \overbrace{(1-\lambda)V_i^{\text{HF}}}^{\textcolor{red}{\text{Repulsive}}}+\underbrace{\lambda\sum\limits_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|}}_{\textcolor{blue}{\text{Attractive}}}  \right]
+    \bH(\lambda)=\sum_{i=1}^{n}\left[ \underbrace{-\frac{1}{2}\grad_i^2 - \sum_{k=1}^{N} \frac{Z_k}{|\vb{r}_i-\vb{R}_k|}}_{\text{Independent of}~\lambda} + \overbrace{(1-\lambda)V_i^{\text{HF}}}^{\textcolor{red}{\text{Repulsive}}}+\underbrace{\lambda\sum_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|}}_{\textcolor{blue}{\text{Attractive}}}  \right]
 \end{equation}
 
 The major difference between those two terms is that the repulsive mean field is localized around the nuclei whereas the interelectronic interaction persist away from the nuclei. If $\lambda$ becomes more and more negative the mean field becomes more and more repulsive so there exists a critical (negative) value of $\lambda$, $\lambda_\text{c}$, for which the Coulombic field created by the nuclei cannot bind the electrons anymore because of the $\lambda$-independent nature of the the electron-nucleus attraction. \antoine{For $\lambda = \lambda_c$, the electrons dissociate from the nuclei and form a bound cluster which is infinitely separated from the nuclei}. According to Baker \cite{Baker_1971}, this value is a critical point of the system and, by analogy with thermodynamics, the energy $E(\lambda)$ exhibits a singularity at $\lambda_c$. At this point the system undergo a phase transition \titou{and a symmetry breaking}. \titou{Beyond $\lambda_c$ there is a continuum of eigenstates with electrons dissociated from the nucleus.}
@@ -527,7 +548,7 @@ In the RHF formalism, the wave function cannot model properly the physics of the
 Then the mono-electronic wave function are expand in the spatial basis set of the zonal spherical harmonics:
 
 \begin{equation}
-\phi_\alpha(\theta_1)=\sum\limits_{l=0}^{\infty}C_{\alpha,l}\frac{Y_{l0}(\Omega_1)}{R}
+\phi_\alpha(\theta_1)=\sum_{l=0}^{\infty}C_{\alpha,l}\frac{Y_{l0}(\Omega_1)}{R}
 \end{equation}
 
 It is possible to obtain the formula for the ground state UHF energy in this basis set (see Sec.~\ref{sec:UHF_NRJ} for the development):
@@ -537,11 +558,11 @@ E_{\text{UHF}} = E_{\text{c},\alpha} + E_{\text{c},\beta} + E_{\text{p}}
 \end{equation}
 
 \begin{equation}
-E_{\text{c},\alpha} = \sum\limits_{l=0}^{\infty} C_{\alpha,l}^2 \frac{l(l+1)}{R^2}
+E_{\text{c},\alpha} = \sum_{l=0}^{\infty} C_{\alpha,l}^2 \frac{l(l+1)}{R^2}
 \end{equation}
 
 \begin{equation}
-E_{\text{p}} = \sum\limits_{i,j,k,l=0}^{\infty}C_{\alpha,i}C_{\alpha,j}C_{\beta,k}C_{\beta,l} \frac{(-1)^{k+l}S_{i,j,k,l}}{R}\sum\limits_{L=0}^{\infty} \begin{pmatrix}
+E_{\text{p}} = \sum_{i,j,k,l=0}^{\infty}C_{\alpha,i}C_{\alpha,j}C_{\beta,k}C_{\beta,l} \frac{(-1)^{k+l}S_{i,j,k,l}}{R}\sum_{L=0}^{\infty} \begin{pmatrix}
  i & j & L \\
  0 & 0 & 0
 \end{pmatrix}^2 \begin{pmatrix}
