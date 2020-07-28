@@ -249,7 +249,7 @@ This evidences that encircling non-Hermitian degeneracies at EPs leads to an int
 The eigenvectors associated to the eigenenergies \eqref{eq:E_2x2} are
 \begin{equation}\label{eq:phi_2x2}
 \begin{split}
-	\phi_{\pm}(\lambda)
+	\phi_{\pm}
 	& = 
 	\begin{pmatrix}
 		(\epsilon_1 - \epsilon_2 \pm \sqrt{(\epsilon_1 - \epsilon_2)^2 + 4\lambda^2})/2\lambda 
@@ -267,9 +267,9 @@ The eigenvectors associated to the eigenenergies \eqref{eq:E_2x2} are
 \end{equation}
 and, for $\lambda=\lambda_\text{EP}$, they become
 \begin{align}
-	\phi_{\pm}\qty(i\,\frac{\epsilon_1 - \epsilon_2}{2}) & = \begin{pmatrix} -i \\ 1\end{pmatrix},
+	\phi_{\pm} & = \begin{pmatrix} -i \\ 1\end{pmatrix},
 	&
-	\phi_{\pm}\qty(-i\,\frac{\epsilon_1 - \epsilon_2}{2}) & = \begin{pmatrix} i \\ 1\end{pmatrix}.
+	\phi_{\pm} & = \begin{pmatrix} i \\ 1\end{pmatrix},
 \end{align}
 which are clearly self-orthogonal, i.e., their norm is equal to zero. 
 %Using Eq.~\eqref{eq:E_EP}, Eq.~\eqref{eq:phi_2x2} can be recast as
@@ -282,7 +282,7 @@ Then, if the eigenvectors are properly normalized, they behave as $(\lambda - \l
 	\phi_{\pm}(2\pi) & = \phi_{\mp}(0),
 	&
 	\phi_{\pm}(4\pi) & = -\phi_{\pm}(0), 
-	\\
+	&
 	\phi_{\pm}(6\pi) & = -\phi_{\mp}(0),
 	&
 	\phi_{\pm}(8\pi) & = \phi_{\pm}(0).
@@ -349,6 +349,7 @@ is the core Hamiltonian and
 	v^\text{HF}(\vb{x}) = \sum_i \qty[ J_i(\vb{x}) - K_i(\vb{x}) ]
 \end{equation}
 is the HF mean-field potential with 
+\begin{subequations}
 \begin{gather}
 	\label{eq:CoulOp}
 	J_i(\vb{x})\phi_p(\vb{x})=\qty[\int\dd\vb{x}'\phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_i(\vb{x}') ] \phi_p(\vb{x})
@@ -356,6 +357,7 @@ is the HF mean-field potential with
 	\label{eq:ExcOp}
 	K_i(\vb{x})\phi_p(\vb{x})=\qty[\int\dd\vb{x}'\phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_p(\vb{x}') ] \phi_i(\vb{x})
 \end{gather}
+\end{subequations}
 being the Coulomb and exchange operators (respectively) in the spin-orbital basis.
 From hereon, $i$ and $j$ are occupied orbitals, $a$ and $b$ are unoccupied (or virtual) orbitals, while $p$, $q$, $r$, and $s$ indicate arbitrary orbitals.
 Rather than solving Eq.~\eqref{eq:SchrEq}, HF theory uses the variational principle to find an approximation of $\Psi$ as a single Slater determinant. Hence a Slater determinant is not an eigenfunction of the exact Hamiltonian $\hH$. However, it is, by definition, an eigenfunction of the so-called (approximated) HF many-electron Hamiltonian defined as the sum of the one-electron Fock operators
