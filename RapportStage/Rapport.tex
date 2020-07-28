@@ -25,6 +25,7 @@
 \usepackage{tabularx} % gestion avancée des tableaux
 
 \usepackage{physics}
+\usepackage{wrapfig}
 \usepackage{amsmath} % collection de symboles mathématiques
 \usepackage{amssymb} % collection de symboles mathématiques
 
@@ -160,11 +161,16 @@ In other words, our view of the quantized nature of conventional Hermitian quant
 The realization that ground and excited states both emerge from one single mathematical structure with equal importance suggests that excited-state energies can be computed from first principles in their own right.
 One could then exploit the structure of these Riemann surfaces to develop methods that directly target excited-state energies without needing ground-state information.
 
+\begin{wrapfigure}{r}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{TopologyEP.pdf}
+    \caption{A generic EP with the square root branch point topology. A loop around the EP interconvert the states.}
+    \label{fig:TopologyEP}
+\end{wrapfigure}
 By analytically continuing the electronic energy $E(\lambda)$ in the complex domain (where $\lambda$ is a coupling parameter), the ground and excited states of a molecule can be smoothly connected.
 This connection is possible because by extending real numbers to the complex domain, the ordering property of real numbers is lost.
 Hence, electronic states can be interchanged away from the real axis since the concept of ground and excited states has been lost.
 Amazingly, this smooth and continuous transition from one state to another has recently been experimentally realized in physical settings such as electronics, microwaves, mechanics, acoustics, atomic systems and optics \cite{Bittner_2012, Chong_2011, Chtchelkatchev_2012, Doppler_2016, Guo_2009, Hang_2013, Liertzer_2012, Longhi_2010, Peng_2014, Peng_2014a, Regensburger_2012, Ruter_2010, Schindler_2011, Szameit_2011, Zhao_2010, Zheng_2013, Choi_2018, El-Ganainy_2018}.
-
 
 Exceptional points (EPs) are branch point singularities where two (or more) states become exactly degenerate \cite{Heiss_1990, Heiss_1999, Heiss_2012, Heiss_2016}. 
 They are the non-Hermitian analogs of conical intersections (CIs) \cite{Yarkony_1996}.
@@ -176,13 +182,6 @@ Additionally, the wave function picks up a geometric phase (also known as Berry 
 In contrast, encircling Hermitian degeneracies at CIs only introduces a geometric phase while leaving the states unchanged.
 More dramatically, whilst eigenvectors remain orthogonal at CIs, at non-Hermitian EPs the eigenvectors themselves become equivalent, resulting in a \textit{self-orthogonal} state \cite{MoiseyevBook}.
 More importantly here, although EPs usually lie off the real axis, these singular points are intimately related to the convergence properties of perturbative methods and avoided crossing on the real axis are indicative of singularities in the complex plane \cite{Olsen_1996, Olsen_2000}.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.7\textwidth]{TopologyEP.pdf}
-    \caption{\centering A generic EP with the square root branch point topology. A loop around the EP interconvert the states.}
-    \label{fig:TopologyEP}
-\end{figure}
 
 \subsection{An illustrative example}
 In order to highlight the general properties of EPs mentioned above, we propose to consider the following $2 \times 2$ Hamiltonian commonly used in quantum chemistry
@@ -200,9 +199,10 @@ This Hamiltonian could represent, for example, a minimal-basis configuration int
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.45\textwidth]{2x2.pdf}
-    \includegraphics[width=0.45\textwidth]{i2x2.pdf}
-    \caption{\centering Energies, as given by Eq.~\ref{eq:E_2x2}, of the Hamiltonian \eqref{eq:H_2x2} as a function of $\lambda$ with $\epsilon_1 = -1/2$ and $\epsilon_2 = +1/2$.}
+    \includegraphics[width=0.3\textwidth]{2x2.pdf}
+    \hspace{0.2\textwidth}
+    \includegraphics[width=0.3\textwidth]{i2x2.pdf}
+    \caption{Energies, as given by Eq.~\ref{eq:E_2x2}, of the Hamiltonian \eqref{eq:H_2x2} as a function of $\lambda$ with $\epsilon_1 = -1/2$ and $\epsilon_2 = +1/2$.}
     \label{fig:2x2}
 \end{figure}
 
@@ -232,7 +232,7 @@ Around $\lambda = \lambda_\text{EP}$, Eq.~\eqref{eq:E_2x2} behaves as \cite{Mois
 \begin{equation} \label{eq:E_EP}
         E_{\pm} = E_\text{EP} \pm \sqrt{2\lambda_\text{EP}} \sqrt{\lambda - \lambda_\text{EP}},
 \end{equation}
-and following a complex contour around the EP, i.e.~$\lambda = \lambda_\text{EP} + R \exp(i\theta)$, yields
+and following a complex contour around the EP, i.e., $\lambda = \lambda_\text{EP} + R \exp(i\theta)$, yields
 \begin{equation}
         E_{\pm}(\theta) = E_\text{EP} \pm \sqrt{2\lambda_\text{EP} R}  \exp(i\theta/2),
 \end{equation}
@@ -246,38 +246,47 @@ This evidences that encircling non-Hermitian degeneracies at EPs leads to an int
 
 The eigenvectors associated to the eigenenergies \eqref{eq:E_2x2} are
 \begin{equation}\label{eq:phi_2x2}
-\phi_{\pm}=\begin{pmatrix}
-(\epsilon_1 - \epsilon_2 \pm \sqrt{(\epsilon_1 - \epsilon_2)^2 + 4\lambda^2})/2\lambda \\ 1
-\end{pmatrix},
-\end{equation}
-and, for $\lambda=\lambda_\text{EP}$, they become
-\begin{align}
-	\phi_{\pm}(i\,\frac{\epsilon_1 - \epsilon_2}{2}) & = \begin{pmatrix} -i \\ 1\end{pmatrix},
-	&
-	\phi_{\pm}(-i\,\frac{\epsilon_1 - \epsilon_2}{2}) & = \begin{pmatrix} i \\ 1\end{pmatrix}.
-\end{align}
-which are self-orthogonal i.e. their norm is equal to zero. 
-Using Eq.~\eqref{eq:E_EP}, Eq.~\eqref{eq:phi_2x2} can be recast as
-\begin{equation}\label{eq:phi_EP}
-\phi_{\pm}=
+\begin{split}
+	\phi_{\pm}(\lambda)
+	& = 
+	\begin{pmatrix}
+		(\epsilon_1 - \epsilon_2 \pm \sqrt{(\epsilon_1 - \epsilon_2)^2 + 4\lambda^2})/2\lambda 
+		\\ 
+		1
+	\end{pmatrix}
+	\\
+	& =
 	\begin{pmatrix}
 		(\epsilon_1-\epsilon_2)/2\lambda \pm \sqrt{2\lambda_\text{EP}} \sqrt{\lambda - \lambda_\text{EP}}/\lambda 
 		\\ 
 		1
-	\end{pmatrix}.
+	\end{pmatrix},
+\end{split}
 \end{equation}
-We have seen that the EP inherits its topology from the double valued function $\sqrt{\lambda - \lambda_\text{EP}}$. Then if the eigenvectors are normalised they behave as $(\lambda - \lambda_\text{EP})^{-1/4}$ which gives the following pattern when looping around one EP:
+and, for $\lambda=\lambda_\text{EP}$, they become
+\begin{align}
+	\phi_{\pm}\qty(i\,\frac{\epsilon_1 - \epsilon_2}{2}) & = \begin{pmatrix} -i \\ 1\end{pmatrix},
+	&
+	\phi_{\pm}\qty(-i\,\frac{\epsilon_1 - \epsilon_2}{2}) & = \begin{pmatrix} i \\ 1\end{pmatrix}.
+\end{align}
+which are clearly self-orthogonal, i.e., their norm is equal to zero. 
+%Using Eq.~\eqref{eq:E_EP}, Eq.~\eqref{eq:phi_2x2} can be recast as
+%\begin{equation}\label{eq:phi_EP}
+%\phi_{\pm}=
+%\end{equation}
+As branch point (square-root) singularities, EPs inherit their topology from the multi-valued function $\sqrt{\lambda - \lambda_\text{EP}}$. 
+Then, if the eigenvectors are properly normalized, they behave as $(\lambda - \lambda_\text{EP})^{-1/4}$, which gives the following pattern when looping around one EP:
 \begin{align}
 	\phi_{\pm}(2\pi) & = \phi_{\mp}(0),
 	&
-	\phi_{\pm}(4\pi) & = -\phi_{\pm}(0) \\
+	\phi_{\pm}(4\pi) & = -\phi_{\pm}(0), 
+	\\
 	\phi_{\pm}(6\pi) & = -\phi_{\mp}(0),
 	&
 	\phi_{\pm}(8\pi) & = \phi_{\pm}(0).
 \end{align}
 In plain words, four loops around the EP are necessary to recover the initial state. 
 We can also see that looping the other way around leads to a different pattern.
-\antoine{Is this a bit better like this ?}
 
 %============================================================%
 \section{Perturbation theory}
@@ -345,7 +354,7 @@ K_j(1)\phi_i(1)=\left[\int\dd\vb{x}_2\phi_j^*(2)\frac{1}{r_{12}}\phi_j(2) \right
 
 \subsection{M{\o}ller-Plesset perturbation theory}
 
-The Hartree-Fock Hamiltonian \eqref{eq:HFHamiltonian} can be used as the zeroth-order Hamiltonian of the equation \eqref{eq:SchrEq-PT}. This partitioning of the Hamiltonian leads to the so-called M{\o}ller-Plesset (MP) perturbation theory \cite{Moller_1934}. The discovery of a partitioning of the Hamiltonian that allowed chemists to recover a part of the correlation energy (i.e. the difference between the exact energy and the Hartree-Fock energy) using perturbation theory has been a major step in the development of post-Hartree-Fock methods. This yields the Hamiltonian $\bH(\lambda)$ of the equation \eqref{eq:MPHamiltonian} where the two-electron part of the Fock operator $f(i)$ has been written $V_i^{HF}$ for convenience.
+The Hartree-Fock Hamiltonian \eqref{eq:HFHamiltonian} can be used as the zeroth-order Hamiltonian of the equation \eqref{eq:SchrEq-PT}. This partitioning of the Hamiltonian leads to the so-called M{\o}ller-Plesset (MP) perturbation theory \cite{Moller_1934}. The discovery of a partitioning of the Hamiltonian that allowed chemists to recover a part of the correlation energy (i.e., the difference between the exact energy and the Hartree-Fock energy) using perturbation theory has been a major step in the development of post-Hartree-Fock methods. This yields the Hamiltonian $\bH(\lambda)$ of the equation \eqref{eq:MPHamiltonian} where the two-electron part of the Fock operator $f(i)$ has been written $V_i^{HF}$ for convenience.
 
 \begin{equation}\label{eq:MPHamiltonian}
     \bH(\lambda)=\sum\limits_{i=1}^{n}\left[-\frac{1}{2}\grad_i^2 - \sum\limits_{k=1}^{N} \frac{Z_k}{|\vb{r}_i-\vb{R}_k|} + (1-\lambda)V_i^{\text{HF}}+\lambda\sum\limits_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|} \right]
@@ -475,7 +484,7 @@ To understand the convergence properties of the perturbation series at $\lambda=
 
 The major difference between those two terms is that the repulsive mean field is localized around the nuclei whereas the interelectronic interaction persist away from the nuclei. If $\lambda$ becomes more and more negative the mean field becomes more and more repulsive so there exists a critical (negative) value of $\lambda$, $\lambda_\text{c}$, for which the Coulombic field created by the nuclei cannot bind the electrons anymore because of the $\lambda$-independent nature of the the electron-nucleus attraction. \antoine{For $\lambda = \lambda_c$, the electrons dissociate from the nuclei and form a bound cluster which is infinitely separated from the nuclei}. According to Baker \cite{Baker_1971}, this value is a critical point of the system and, by analogy with thermodynamics, the energy $E(\lambda)$ exhibits a singularity at $\lambda_c$. At this point the system undergo a phase transition \titou{and a symmetry breaking}. \titou{Beyond $\lambda_c$ there is a continuum of eigenstates with electrons dissociated from the nucleus.}
 
-\antoine{This reasoning is done on the exact Hamiltonian and energy i.e. the Hamiltonian in the complete Hilbert space, this is the exact energy which exhibits this singularity on the negative real axis}. \antoine{However, in a finite basis set which does not span the complete Hilbert space}, one can prove that, for a Hermitian Hamiltonian, the singularities of $E(\lambda)$ occurs in complex conjugate pairs with non-zero imaginary parts. Sergeev and Goodson proved \cite{Sergeev_2005}, as predicted by Stillinger \cite{Stillinger_2000}, that in a finite basis set the critical point on the real axis is modeled by a cluster of sharp avoided crossings with diffuse functions, equivalently by a cluster of $\beta$ singularities in the negative half plane. They explain that Olsen et al., because they used a $2\times2$ model, only observed the first singularity of this cluster of singularities causing the divergence.
+\antoine{This reasoning is done on the exact Hamiltonian and energy, i.e., the Hamiltonian in the complete Hilbert space, this is the exact energy which exhibits this singularity on the negative real axis}. \antoine{However, in a finite basis set which does not span the complete Hilbert space}, one can prove that, for a Hermitian Hamiltonian, the singularities of $E(\lambda)$ occurs in complex conjugate pairs with non-zero imaginary parts. Sergeev and Goodson proved \cite{Sergeev_2005}, as predicted by Stillinger \cite{Stillinger_2000}, that in a finite basis set the critical point on the real axis is modeled by a cluster of sharp avoided crossings with diffuse functions, equivalently by a cluster of $\beta$ singularities in the negative half plane. They explain that Olsen et al., because they used a $2\times2$ model, only observed the first singularity of this cluster of singularities causing the divergence.
 
 Finally, it was shown that $\beta$ singularities are very sensitive to changes of the basis set but not to the stretching of the system. On the contrary $\alpha$ singularities are relatively insensitive to the basis sets but very sensitive to bond stretching. According to Goodson, \cite{Goodson_2004} the singularity structure from molecules stretched from the equilibrium geometry is difficult, this is consistent with the observation of Olsen and co-workers  \cite{Olsen_2000} on the \ce{HF} molecule at equilibrium geometry and stretched geometry. To our knowledge the effect of bond stretching on singularities, its link with spin contamination and symmetry breaking of the wave function has not been as well understood as the ionization effect and its link with diffuse function.  In this work we shall try to improve our understanding of the effect of symmetry breaking on the singularities of $E(\lambda)$ and we hope that it will lead to a deeper understanding of perturbation theory.
 
@@ -485,7 +494,7 @@ In the previous section, we saw that a careful analysis of the structure of the 
 
 The presence of an EP close to the real axis is characteristic of a sharp avoided crossing. Yet, at such an avoided crossing, eigenstates change abruptly. Although it is now well understood that EPs are closely related to QPTs, the link between the type of QPT (ground state or excited state, first or higher order) and EPs still need to be clarified. One of the major obstacles that one faces in order to achieve this resides in the ability to compute the distribution of EPs. The numerical assignment of an EP to two energies on the real axis is very difficult in large dimensions. Hence, the design of specific methods are required to get information on the location of EPs. Following this idea, Cejnar \textit{et al.}~developed a method based on a Coulomb analogy giving access to the density of EP close to the real axis \cite{Cejnar_2005, Cejnar_2007}. More recently Stransky and coworkers proved that the distribution of EPs is characteristic on the order of the QPT \cite{Stransky_2018}. In particular, they showed that when the dimensionality of the system increases, first- and second-order QTP behave differently, and converge towards the real axis at different rates (exponentially and algebraically for the first and second order, respectively).
 
-It seems like our understanding of the physics of spatial and/or spin symmetry breaking in the Hartree-Fock theory can be enlightened by QPT theory. Indeed, the second derivative of the energy is discontinuous at the Coulson-Fischer point which means that the system undergo a second-order QPT. Moreover, the $\beta$ singularities introduced by Sergeev and coworkers to describe the EPs modeling the formation of a bound cluster of electrons are actually a more general class of singularities. The EPs close to the real axis (the so-called $\beta$ singularities) are connected to QPT because they result from a sharp avoided crossings at which the eigenstates change quickly. However, the $\alpha$ singularities arise from large avoided crossings. Thus, they can not be connected to QPT. The avoided crossings generating $\alpha$ singularities generally involve the ground state and low-lying doubly-excited states. Those excited states have a non-negligible contribution to the exact FCI solution because they have the same spatial and spin symmetry as the ground state. \antoine{We think that $\alpha$ singularities are connected the states with non-negligible contribution in the configuration interaction expansion thus to the dynamical part of the correlation energy. Whereas the $\beta$ singularities are linked to symmetry breaking and phase transition of the wave function i.e. the multi-reference aspect of the wave function thus to the static part of the correlation energy.}
+It seems like our understanding of the physics of spatial and/or spin symmetry breaking in the Hartree-Fock theory can be enlightened by QPT theory. Indeed, the second derivative of the energy is discontinuous at the Coulson-Fischer point which means that the system undergo a second-order QPT. Moreover, the $\beta$ singularities introduced by Sergeev and coworkers to describe the EPs modeling the formation of a bound cluster of electrons are actually a more general class of singularities. The EPs close to the real axis (the so-called $\beta$ singularities) are connected to QPT because they result from a sharp avoided crossings at which the eigenstates change quickly. However, the $\alpha$ singularities arise from large avoided crossings. Thus, they can not be connected to QPT. The avoided crossings generating $\alpha$ singularities generally involve the ground state and low-lying doubly-excited states. Those excited states have a non-negligible contribution to the exact FCI solution because they have the same spatial and spin symmetry as the ground state. \antoine{We think that $\alpha$ singularities are connected the states with non-negligible contribution in the configuration interaction expansion thus to the dynamical part of the correlation energy. Whereas the $\beta$ singularities are linked to symmetry breaking and phase transition of the wave function, i.e., the multi-reference aspect of the wave function thus to the static part of the correlation energy.}
 
 
 %============================================================%
@@ -624,7 +633,7 @@ The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we 
  \psi_4 & =Y_{10}(\theta_1)Y_{10}(\theta_2).
 \end{align}
 
-The Hamiltonian $\bH(\lambda)$ is block diagonal because of the symmetry of the basis set i.e. $\psi_1$ only interacts with $\psi_4$ and $\psi_2$ with $\psi_3$. The two singly excited states give a singlet sp\textsubscript{z} and a triplet sp\textsubscript{z} state but their symmetry is not the same as the ground state. Thus these states can not be involved in an avoided crossing with the ground state as it can be seen in Fig.~\ref{fig:RHFMiniBas} and a fortiori can not be involved in an exceptional point with the ground state. However there is an avoided crossing between the s\textsuperscript{2} state and the p\textsubscript{z}\textsuperscript{2} one which gives two exceptional points in the complex plane. 
+The Hamiltonian $\bH(\lambda)$ is block diagonal because of the symmetry of the basis set, i.e., $\psi_1$ only interacts with $\psi_4$ and $\psi_2$ with $\psi_3$. The two singly excited states give a singlet sp\textsubscript{z} and a triplet sp\textsubscript{z} state but their symmetry is not the same as the ground state. Thus these states can not be involved in an avoided crossing with the ground state as it can be seen in Fig.~\ref{fig:RHFMiniBas} and a fortiori can not be involved in an exceptional point with the ground state. However there is an avoided crossing between the s\textsuperscript{2} state and the p\textsubscript{z}\textsuperscript{2} one which gives two exceptional points in the complex plane. 
 
 \begin{figure}[h!]
     \centering
@@ -633,13 +642,13 @@ The Hamiltonian $\bH(\lambda)$ is block diagonal because of the symmetry of the 
     \label{fig:RHFMiniBas}
 \end{figure}
 
-To simplify the problem, it is convenient to only consider basis functions with the symmetry of the exact wave function, such basis functions are called Configuration State Function (CSF). It simplifies the problem because with such a basis set we only get the degeneracies of interest for the convergence properties i.e. the exceptional points between states with the same symmetry. In this case the ground state is a totally symmetric singlet. According to the angular-momentum theory \cite{AngularBook, SlaterBook, Loos_2009} we expand the exact wave function in the following two-electron basis:
+To simplify the problem, it is convenient to only consider basis functions with the symmetry of the exact wave function, such basis functions are called Configuration State Function (CSF). It simplifies the problem because with such a basis set we only get the degeneracies of interest for the convergence properties, i.e., the exceptional points between states with the same symmetry. In this case the ground state is a totally symmetric singlet. According to the angular-momentum theory \cite{AngularBook, SlaterBook, Loos_2009} we expand the exact wave function in the following two-electron basis:
 \begin{equation}
 \Phi_l(\theta)=\frac{\sqrt{2l+1}}{4\pi R^2}P_l(\cos\theta)
 \end{equation}
 where $P_l$ are the Legendre polynomial and $\theta$ is the interelectronic angle.
 
-Then using this basis set we can compare the different partitioning of Sec.~\ref{sec:AlterPart}. Figure \ref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ in function of $R$ for the MP, the EN, the WC and the SC partitioning in a minimal basis i.e. $P_0$ and $P_1$ and in the same basis augmented with $P_2$. We see that the radius of convergence of the SC partitioning is growing with R whereas it is decreasing for the three others partitioning. This result was expected because the three decreasing partitioning use a weakly correlated reference so $\bH^{(0)}$ is a good approximation for small $R$. On the contrary, the strong coupling one uses a strongly correlated reference so this series converge better when the electron are strongly correlated i.e. when $R$ is large for the spherium model.
+Then using this basis set we can compare the different partitioning of Sec.~\ref{sec:AlterPart}. Figure \ref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ in function of $R$ for the MP, the EN, the WC and the SC partitioning in a minimal basis, i.e., $P_0$ and $P_1$ and in the same basis augmented with $P_2$. We see that the radius of convergence of the SC partitioning is growing with R whereas it is decreasing for the three others partitioning. This result was expected because the three decreasing partitioning use a weakly correlated reference so $\bH^{(0)}$ is a good approximation for small $R$. On the contrary, the strong coupling one uses a strongly correlated reference so this series converge better when the electron are strongly correlated, i.e., when $R$ is large for the spherium model.
 The MP partitioning is always better than the weak correlation in Fig.~\ref{fig:RadiusPartitioning}. In the weak correlation partitioning the powers of $R$ are well-separated so each term of the series is a different power of $R$. Whereas the MP reference is proportionnal to $R^{-1}$ and $R^{-2}$ so the MP series is not well-defined in terms of powers of $R$. Moreover it can be proved that the $n$-th order energy of the weak correlation series can be obtained as a Taylor approximation of MP$n$ respective to $R$. It seems that the EN partitioning is better than the MP one for very small R in the minimal basis. In fact, it is just an artifact of the minimal basis because in the minimal basis augmented with $P_2
 $ (and in larger basis set) the MP series has a greater radius of convergence for all value of $R$.
 
