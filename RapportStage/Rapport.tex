@@ -359,11 +359,13 @@ is the HF mean-field potential with
 	K_i(\vb{x})\phi_p(\vb{x})=\qty[\int\dd\vb{x}'\phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_p(\vb{x}') ] \phi_i(\vb{x})
 \end{gather}
 \end{subequations}
-being the Coulomb and exchange operators (respectively) in the spin-orbital basis. \antoine{If the spatial parts of the spin-orbital basis are restricted to be the same for electrons $\alpha$ and $\beta$, we will talk about restricted HF (RHF) theory leading to the restricted MP (RMP) series. Whereas if the spatial part can be different it leads to the so-called unrestricted HF (UHF) theory and to the unrestricted MP (UMP) series.}
+being the Coulomb and exchange operators (respectively) in the spin-orbital basis. 
+If the spatial part of the spin-orbitals are restricted to be the same for spin-up and spin-down electrons, one talks about restricted HF (RHF) theory, whereas if one does not enforce this constrain it leads to the so-called unrestricted HF (UHF) theory.
 From hereon, $i$ and $j$ are occupied orbitals, $a$ and $b$ are unoccupied (or virtual) orbitals, while $p$, $q$, $r$, and $s$ indicate arbitrary orbitals.
+
 Rather than solving Eq.~\eqref{eq:SchrEq}, HF theory uses the variational principle to find an approximation of $\Psi$ as a single Slater determinant. Hence a Slater determinant is not an eigenfunction of the exact Hamiltonian $\hH$. However, it is, by definition, an eigenfunction of the so-called (approximated) HF many-electron Hamiltonian defined as the sum of the one-electron Fock operators
 \begin{equation}\label{eq:HFHamiltonian}
-	\hH^{\text{HF}} = \sum_{i}^{n} f(\vb{x}_i).
+	\hH^{\text{HF}} = \sum_{i} f(\vb{x}_i).
 \end{equation}
 Note that the lowest eigenvalue of the Hamiltonian \eqref{eq:HFHamiltonian} is not the HF energy but the sum of the eigenvalues associated with the occupied eigenvalues (see below).
 
@@ -376,7 +378,6 @@ Note that the lowest eigenvalue of the Hamiltonian \eqref{eq:HFHamiltonian} is n
 The HF Hamiltonian \eqref{eq:HFHamiltonian} can be used as the zeroth-order Hamiltonian of Eq.~\eqref{eq:SchrEq-PT}. This partitioning of the Hamiltonian leads to the so-called M{\o}ller-Plesset (MP) perturbation theory \cite{Moller_1934}. The discovery of a partitioning of the Hamiltonian that allowed chemists to recover a large chunck of the correlation energy (i.e., the difference between the exact energy and the Hartree-Fock energy) using perturbation theory has been a major step in the development of post-HF methods. This yields
 % the Hamiltonian $\bH(\lambda)$ of Eq.~\eqref{eq:MPHamiltonian}.
 % where the two-electron part of the Fock operator $f(i)$ has been written $V_i^{HF}$ for convenience.
-
 \begin{equation}\label{eq:MPHamiltonian}
     \hH(\lambda) = 
     \sum_{i}^{n} \qty[ 
@@ -386,19 +387,21 @@ The HF Hamiltonian \eqref{eq:HFHamiltonian} can be used as the zeroth-order Hami
     + \lambda\sum_{i<j}^{n}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}} 
     ].
 \end{equation}
+If one considers a RHF or UHF reference wave functions, it leads to the RMP or UMP series, respectively.
+
 As mentioned earlier, in perturbation theory, the energy is a power series of $\lambda$ and the physical energy is obtained at $\lambda = 1$. 
-The MP$l$ energy is defined as 
+The MP$m$ energy is defined as 
 \begin{equation}
-	E_{\text{MP}l}= \sum_{k=0}^l E^{(k)},
+	E_{\text{MP}m}= \sum_{k=0}^m E^{(k)},
 \end{equation}
 where $E^{(k)}$ is the $k$th-order correction.
 The MP0 energy overestimates the energy by double counting the electron-electron interaction and is equal to the sum of the occupied orbital energies, i.e.,
 \begin{equation}
-	E_{\text{MP0}} = \sum_i^n \epsilon_i.
+	E_{\text{MP0}} = \sum_i \epsilon_i.
 \end{equation}
 The MP1 corrects this and is then equal to the HF energy, i.e.,
 \begin{equation}
-	E_{\text{MP1}} = E_\text{HF} = \sum_i^n \epsilon_i - \frac{1}{2} \sum_{ij}^n \mel{ij}{}{ij},
+	E_{\text{MP1}} = E_\text{HF} = \sum_i \epsilon_i - \frac{1}{2} \sum_{ij} \mel{ij}{}{ij},
 \end{equation}
 with $\mel{pq}{}{rs} = \braket{pq}{rs} - \braket{pq}{sr}$, and where  
 \begin{equation}
@@ -411,16 +414,16 @@ MP2 starts recovering correlation energy and the MP2 energy, which reads
 \end{equation}
 is then lower than the HF energy \cite{SzaboBook}.
 
-As mentioned earlier, there is, \textit{a priori}, no guarantee that the MP$l$ series converges to the exact energy when $l$ goes to infinity. 
+As mentioned earlier, there is, \textit{a priori}, no guarantee that the MP$m$ series converges to the exact energy when $m$ goes to infinity. 
 In fact, it is known that when the HF wave function is a bad approximation to the exact wave function, for example in multi-reference systems, the MP method yields bad results \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. 
 A convenient way to investigate the convergence properties of the MP series is to analytically continue the coupling parameter $\lambda$ into the complex variable. 
-By doing so, the Hamiltonian and the energy become complex-valued functions of $\lambda$, and the energy becomes a multivalued function on \antoine{$K$ Riemann sheets where $K$ is the number of function in the basis set}. 
+By doing so, the Hamiltonian and the energy become complex-valued functions of $\lambda$, and the energy becomes a multivalued function on $K$ Riemann sheets (where $K$ is the number of basis functions).
 As mentioned above, by searching the singularities of the function $E(\lambda)$, one can get information on the convergence properties of the MP series. 
 These singularities of the energy function are exactly the exceptional points connecting the electronic states as mentioned in the introduction. 
 The direct computation of the terms of the series is quite manageable up to 4th order in perturbation, while the 5th and 6th order in perturbation can still be obtained but at a rather high cost \cite{JensenBook}. 
 In order to better understand the behavior of the MP series and how it is connected to the singularity structure, we have to access high-order terms. 
 For small systems, one can access the whole terms of the series using full configuration interaction (FCI). 
-\titou{If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI space, one gets the exact energies (in this finite Hilbert space) and the Taylor expansion with respect to $\lambda$ allows to access the MP perturbation series at any order.}
+If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI space, one gets the exact energies (in this finite Hilbert space) and the Taylor expansion with respect to $\lambda$ allows to access the MP perturbation series at any order.
 
 \subsection{Alternative partitioning}\label{sec:AlterPart}
 
@@ -461,10 +464,9 @@ When one relies on MP perturbation theory (and more generally on any perturbativ
 %In other words, each time a higher-order term is computed, one would like to obtained an overall result closer to the exact energy. 
 In other words, one would like a monotonic convergence of the MP series. Assuming this, the only limiting process to get the exact correlation energy (in a finite basis set) would be our ability to compute the terms of this perturbation series.
 Unfortunately this is not as easy as one might think because i) the terms of the perturbative series become rapidly computationally cumbersome, and ii) erratic behavior of the perturbative coefficients are not uncommon. For example, in the late 80's, Gill and Radom reported deceptive and slow convergences in stretch systems \cite{Gill_1986, Gill_1988} (see also Refs.~\cite{Handy_1985, Lepetit_1988}). 
-In Fig.~\ref{fig:RUMP_Gill}, which has been extracted from Ref.~\cite{Gill_1986}, one can see that the restricted MP \titou{(RMP)} series is convergent, yet oscillating which is far from being convenient if one is only able to compute the first few terms of the expansion (for example here RMP5 is worse than RMP4). 
-On the other hand, the unrestricted MP series \titou{(UMP)} is monotonically convergent (except for the first few orders) but very slowly. 
+In Fig.~\ref{fig:RUMP_Gill}, which has been extracted from Ref.~\cite{Gill_1986}, one can see that the RMP series is convergent, yet oscillating which is far from being convenient if one is only able to compute the first few terms of the expansion (for example here RMP5 is worse than RMP4). 
+On the other hand, the UMP series is monotonically convergent (except for the first few orders) but very slowly. 
 Thus, one cannot practically use it for systems where only the first terms can be computed.
-\titou{There is a problem here as one has not introduce restricted and unrestricted formalisms.}
 
 When a bond is stretched, in most cases the exact wave function becomes more and more multi-reference. Yet the HF wave function is restricted to be single Slater determinant.
 Thus, it is inappropriate to model (even qualitatively) stretched system. Nevertheless, the HF wave function can undergo a symmetry breaking to lower its energy by sacrificing one of the symmetry of the exact wave function during the process (see for example the case of \ce{H_2} in Ref.~\cite{SzaboBook}). 
@@ -536,16 +538,16 @@ To understand the convergence properties of the perturbation series at $\lambda=
     \hH(\lambda) = 
     \sum_{i}^{n} \qty[ 
     \underbrace{-\frac{1}{2}\grad_i^2 
-    - \sum_{A}^{N} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}}}_{\text{Independent of}~\lambda}
-    \overbrace{(1-\lambda)v^{\text{HF}}(\vb{x}_i)}^{\textcolor{red}{\text{Repulsive}}}
-    \underbrace{\lambda\sum_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|}}_{\textcolor{blue}{\text{Attractive}}} 
+    - \sum_{A}^{N} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}}}_{\text{Independent of $\lambda$}}
+    + \overbrace{(1-\lambda)v^{\text{HF}}(\vb{x}_i)}^{\textcolor{red}{\text{Repulsive for $\lambda < 1$}}}
+    + \underbrace{\lambda\sum_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|}}_{\textcolor{blue}{\text{Attractive for $\lambda < 0$}}} 
     ].
 \end{equation}
 
 
-The major difference between those two terms is that the repulsive mean field is localized around the nuclei whereas the interelectronic interaction persist away from the nuclei. If $\lambda$ becomes more and more negative the mean field becomes more and more repulsive so there exists a critical (negative) value of $\lambda$, $\lambda_\text{c}$, for which the Coulombic field created by the nuclei cannot bind the electrons anymore because of the $\lambda$-independent nature of the the electron-nucleus attraction. \antoine{For $\lambda = \lambda_c$, the electrons dissociate from the nuclei and form a bound cluster which is infinitely separated from the nuclei}. According to Baker \cite{Baker_1971}, this value is a critical point of the system and, by analogy with thermodynamics, the energy $E(\lambda)$ exhibits a singularity at $\lambda_c$. At this point the system undergo a phase transition \titou{and a symmetry breaking}. \titou{Beyond $\lambda_c$ there is a continuum of eigenstates with electrons dissociated from the nucleus.}
+The major difference between those two terms is that the repulsive mean field is localized around the nuclei whereas the interelectronic interaction persist away from the nuclei. If $\lambda$ becomes more and more negative the mean field becomes more and more repulsive so there exists a critical (negative) value of $\lambda$, $\lambda_\text{c}$, for which the Coulombic field created by the nuclei cannot bind the electrons anymore because of the $\lambda$-independent nature of the the electron-nucleus attraction. For $\lambda = \lambda_c$, the electrons dissociate from the nuclei and form a bound cluster which is infinitely separated from the nuclei. According to Baker \cite{Baker_1971}, this value is a critical point of the system and, by analogy with thermodynamics, the energy $E(\lambda)$ exhibits a singularity at $\lambda_\text{c}$. At this point the system undergo a phase transition \titou{and a symmetry breaking}. \titou{Beyond $\lambda_c$ there is a continuum of eigenstates with electrons dissociated from the nucleus.}
 
-\antoine{This reasoning is done on the exact Hamiltonian and energy, i.e., the Hamiltonian in the complete Hilbert space, this is the exact energy which exhibits this singularity on the negative real axis}. \antoine{However, in a finite basis set which does not span the complete Hilbert space}, one can prove that, for a Hermitian Hamiltonian, the singularities of $E(\lambda)$ occurs in complex conjugate pairs with non-zero imaginary parts. Sergeev and Goodson proved \cite{Sergeev_2005}, as predicted by Stillinger \cite{Stillinger_2000}, that in a finite basis set the critical point on the real axis is modeled by a cluster of sharp avoided crossings with diffuse functions, equivalently by a cluster of $\beta$ singularities in the negative half plane. They explain that Olsen et al., because they used a $2\times2$ model, only observed the first singularity of this cluster of singularities causing the divergence.
+This reasoning is done on the exact Hamiltonian and energy, i.e., the Hamiltonian in the complete Hilbert space, this is the exact energy which exhibits this singularity on the negative real axis. However, in a finite basis set which does not span the complete Hilbert space, one can prove that, for a Hermitian Hamiltonian, the singularities of $E(\lambda)$ occurs in complex conjugate pairs with non-zero imaginary parts. Sergeev and Goodson proved \cite{Sergeev_2005}, as predicted by Stillinger \cite{Stillinger_2000}, that in a finite basis set the critical point on the real axis is modeled by a cluster of sharp avoided crossings with diffuse functions, equivalently by a cluster of $\beta$ singularities in the negative half plane. They explain that Olsen et al., because they used a $2\times2$ model, only observed the first singularity of this cluster of singularities causing the divergence.
 
 Finally, it was shown that $\beta$ singularities are very sensitive to changes of the basis set but not to the stretching of the system. On the contrary $\alpha$ singularities are relatively insensitive to the basis sets but very sensitive to bond stretching. According to Goodson, \cite{Goodson_2004} the singularity structure from molecules stretched from the equilibrium geometry is difficult, this is consistent with the observation of Olsen and co-workers  \cite{Olsen_2000} on the \ce{HF} molecule at equilibrium geometry and stretched geometry. To our knowledge the effect of bond stretching on singularities, its link with spin contamination and symmetry breaking of the wave function has not been as well understood as the ionization effect and its link with diffuse function.  In this work we shall try to improve our understanding of the effect of symmetry breaking on the singularities of $E(\lambda)$ and we hope that it will lead to a deeper understanding of perturbation theory.
 
@@ -555,7 +557,7 @@ In the previous section, we saw that a careful analysis of the structure of the 
 
 The presence of an EP close to the real axis is characteristic of a sharp avoided crossing. Yet, at such an avoided crossing, eigenstates change abruptly. Although it is now well understood that EPs are closely related to QPTs, the link between the type of QPT (ground state or excited state, first or higher order) and EPs still need to be clarified. One of the major obstacles that one faces in order to achieve this resides in the ability to compute the distribution of EPs. The numerical assignment of an EP to two energies on the real axis is very difficult in large dimensions. Hence, the design of specific methods are required to get information on the location of EPs. Following this idea, Cejnar \textit{et al.}~developed a method based on a Coulomb analogy giving access to the density of EP close to the real axis \cite{Cejnar_2005, Cejnar_2007}. More recently Stransky and coworkers proved that the distribution of EPs is characteristic on the order of the QPT \cite{Stransky_2018}. In particular, they showed that when the dimensionality of the system increases, first- and second-order QTP behave differently, and converge towards the real axis at different rates (exponentially and algebraically for the first and second order, respectively).
 
-It seems like our understanding of the physics of spatial and/or spin symmetry breaking in the Hartree-Fock theory can be enlightened by QPT theory. Indeed, the second derivative of the energy is discontinuous at the Coulson-Fischer point which means that the system undergo a second-order QPT. Moreover, the $\beta$ singularities introduced by Sergeev and coworkers to describe the EPs modeling the formation of a bound cluster of electrons are actually a more general class of singularities. The EPs close to the real axis (the so-called $\beta$ singularities) are connected to QPT because they result from a sharp avoided crossings at which the eigenstates change quickly. However, the $\alpha$ singularities arise from large avoided crossings. Thus, they can not be connected to QPT. The avoided crossings generating $\alpha$ singularities generally involve the ground state and low-lying doubly-excited states. Those excited states have a non-negligible contribution to the exact FCI solution because they have the same spatial and spin symmetry as the ground state. \antoine{We think that $\alpha$ singularities are connected the states with non-negligible contribution in the configuration interaction expansion thus to the dynamical part of the correlation energy. Whereas the $\beta$ singularities are linked to symmetry breaking and phase transition of the wave function, i.e., the multi-reference aspect of the wave function thus to the static part of the correlation energy.}
+It seems like our understanding of the physics of spatial and/or spin symmetry breaking in the Hartree-Fock theory can be enlightened by QPT theory. Indeed, the second derivative of the energy is discontinuous at the Coulson-Fischer point which means that the system undergo a second-order QPT. Moreover, the $\beta$ singularities introduced by Sergeev and coworkers to describe the EPs modeling the formation of a bound cluster of electrons are actually a more general class of singularities. The EPs close to the real axis (the so-called $\beta$ singularities) are connected to QPT because they result from a sharp avoided crossings at which the eigenstates change quickly. However, the $\alpha$ singularities arise from large avoided crossings. Thus, they can not be connected to QPT. The avoided crossings generating $\alpha$ singularities generally involve the ground state and low-lying doubly-excited states. Those excited states have a non-negligible contribution to the exact FCI solution because they have the same spatial and spin symmetry as the ground state. We believe that $\alpha$ singularities are connected to states with non-negligible contribution in the configuration interaction expansion thus to the dynamical part of the correlation energy, while $\beta$ singularities are linked to symmetry breaking and phase transitions of the wave function, i.e., to the multi-reference nature of the wave function thus to the static part of the correlation energy.
 
 
 %============================================================%
@@ -812,11 +814,26 @@ For a non-Hermitian Hamiltonian the exceptional points can lie on the real axis.
 
 \section{Conclusion}
 
-In order to model properly chemical systems, one need to know which computational method is adapted to each system. That means that we need to understand why each method fails in some cases but also why they work with other systems. We have seen that for methods relying on perturbation theory the successes and failures of those methods is connected to the position of EPs in the complex plane. Much work have been done on the failures of the MP perturbation theory. First, it has been understood that for chemical systems for which the Hartree-Fock method yields a poor approximation of the exact wave function, the MP perturbation theory will fail too. Such systems can be for example systems where the exact wave function is dominated by more than one configuration i.e. multi-reference systems. More preoccupying cases were reported rapidly during the development of the MP method. It has been proved that systems considered as well-understood, for example \ce{Ne}, can exhibit divergent behavior when the basis set is augmented with diffuse functions. 
+In order to model accurately chemical systems, one must choose, in a ever larger zoo of methods, which computational protocol is adapted to the system of interest.
+This choice can be, moreover, motivated by the type of properties that one is interested in.
+That means that one must understand the strengths and weaknesses of each method, i.e., why one method might fail in some cases and work beautifully in others. 
+We have seen that for methods relying on perturbation theory the successes and failures are directly connected to the position of EPs in the complex plane. 
+Exhaustive studies have been performed on the causes of failure of MP perturbation theory. 
+First, it has been understood that, for chemical systems for which the HF method is a poor approximation to the exact wave function, MP perturbation theory will fail too. Such systems can be, for example, systems where the exact wave function is dominated by more than one configuration, i.e., multi-reference systems. 
+More preoccupying cases were reported. 
+For instance, it has been shown that systems considered as well-understood (e.g., \ce{Ne}) can exhibit divergent behavior when the basis set is augmented with diffuse functions. 
+Later, these behaviors of the perturbation series have been investigated and rationalized in terms of avoided crossings and singularities in the complex plane. It has been shown that the singularities can be classified in two families. 
+The first family includes $\alpha$ singularities resulting from a large avoided crossing between the ground state and a low-lying doubly-excited states. 
+The $\beta$ singularities, which constitutes the second family, are artifacts generated by the incompleteness of the Hilbert space, and they are directly connected to an ionization phenomenon occurring in the complete Hilbert space. 
+These singularities are close to the real axis and connected with sharp avoided crossing between the ground state and a highly diffuse state. 
+We have seen that the $\beta$ singularities modeling the ionization phenomenon described by Sergeev and Goodson are actually part of a more general class of singularities. Indeed, those singularities close to the real axis are connected to quantum phase transition and symmetry breaking, and theoretical physics have demonstrated that the behavior of the EPs depends of the type of transitions from which the EPs result (first or higher orders, ground state or excited state transitions).
 
-Afterwards, those behaviors of the perturbation theory have been investigated in terms of avoided crossings and singularities in the complex plane. It has been shown that the singularities can be sorted in two parts. The first ones are the $\alpha$ singularities resulting from a large avoided crossing between the ground state and a low-lying doubly excited states. The $\beta$ ones are consequences in a finite Hilbert space of a ionization phenomenon occurring in the complete Hilbert space. Those singularities are close to the real axis and connected with sharp avoided crossing between the ground state and a highly diffuse state. We have seen that the $\beta$ singularities modeling the ionization phenomenon described by Sergeev and Goodson are actually part of a more general class of singularities. Indeed, those singularities close to the real axis are connected to quantum phase transition and symmetry breaking. Some work in theoretical physics have shown that the behavior of the EPs depends of the type of transition from which the EPs result (first or superior order, ground state or excited state transition).
-
-In this work we have shown that $\beta$ singularities are involved in the spin symmetry breaking of the unrestricted Hartree-Fock wave function. This confirms that $\beta$ singularities can occur for other type of transition and symmetry breaking than just the formation of the bound cluster of electrons. It would be interesting to investigate the difference between the different type of symmetry breaking and how it affects the singularity structure. Moreover the singularity structure in the non-Hermitian case still need to be investigated. In the holomorphic domain some singularities lie on the real axis and it would also be interesting to look at the differences between the different symmetry breaking and their respective holomorphic domain. To conclude this work shows that our understanding of the singularity structure of the energy is still incomplete but we hope that it opens new perspectives for the understanding of the physics of exceptional points in electronic structure theory.
+In this work, we have shown that $\beta$ singularities are involved in the spin symmetry breaking of the UHF wave function. 
+This confirms that $\beta$ singularities can occur for other types of transition and symmetry breaking than just the formation of a bound cluster of electrons. 
+It would be interesting to investigate the difference between the different type of symmetry breaking and how it affects the singularity structure. 
+Moreover the singularity structure in the non-Hermitian case still need to be investigated. 
+In the holomorphic domain, some singularities lie on the real axis and it would also be interesting to look at the differences between the different symmetry breaking and their respective holomorphic domain. 
+To conclude, this work shows that our understanding of the singularity structure of the energy is still incomplete but we hope that it opens new perspectives for the understanding of the physics of EPs in electronic structure theory.
 
 \newpage
 \printbibliography
