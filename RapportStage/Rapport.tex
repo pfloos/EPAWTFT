@@ -62,6 +62,7 @@ hyperfigures=false]
 
 \newcommand{\hH}{\Hat{H}}
 \newcommand{\hV}{\Hat{V}}
+\newcommand{\hI}{\Hat{I}}
 \newcommand{\bH}{\mathbf{H}}
 \newcommand{\bV}{\mathbf{V}}
 \newcommand{\pt}{$\mathcal{PT}$}
@@ -358,7 +359,7 @@ is the HF mean-field potential with
 	K_i(\vb{x})\phi_p(\vb{x})=\qty[\int\dd\vb{x}'\phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_p(\vb{x}') ] \phi_i(\vb{x})
 \end{gather}
 \end{subequations}
-being the Coulomb and exchange operators (respectively) in the spin-orbital basis.
+being the Coulomb and exchange operators (respectively) in the spin-orbital basis. \antoine{If the spatial parts of the spin-orbital basis are restricted to be the same for electrons $\alpha$ and $\beta$, we will talk about restricted HF (RHF) theory leading to the restricted MP (RMP) series. Whereas if the spatial part can be different it leads to the so-called unrestricted HF (UHF) theory and to the unrestricted MP (UMP) series.}
 From hereon, $i$ and $j$ are occupied orbitals, $a$ and $b$ are unoccupied (or virtual) orbitals, while $p$, $q$, $r$, and $s$ indicate arbitrary orbitals.
 Rather than solving Eq.~\eqref{eq:SchrEq}, HF theory uses the variational principle to find an approximation of $\Psi$ as a single Slater determinant. Hence a Slater determinant is not an eigenfunction of the exact Hamiltonian $\hH$. However, it is, by definition, an eigenfunction of the so-called (approximated) HF many-electron Hamiltonian defined as the sum of the one-electron Fock operators
 \begin{equation}\label{eq:HFHamiltonian}
@@ -386,12 +387,11 @@ The HF Hamiltonian \eqref{eq:HFHamiltonian} can be used as the zeroth-order Hami
     ].
 \end{equation}
 As mentioned earlier, in perturbation theory, the energy is a power series of $\lambda$ and the physical energy is obtained at $\lambda = 1$. 
-The MP$n$ energy is defined as 
+The MP$l$ energy is defined as 
 \begin{equation}
-	E_{\text{MP}n}= \sum_{k=0}^n E^{(k)},
+	E_{\text{MP}l}= \sum_{k=0}^l E^{(k)},
 \end{equation}
 where $E^{(k)}$ is the $k$th-order correction.
-\titou{$n$ is the number of electrons and here you use it as something else...}
 The MP0 energy overestimates the energy by double counting the electron-electron interaction and is equal to the sum of the occupied orbital energies, i.e.,
 \begin{equation}
 	E_{\text{MP0}} = \sum_i^n \epsilon_i.
@@ -411,10 +411,10 @@ MP2 starts recovering correlation energy and the MP2 energy, which reads
 \end{equation}
 is then lower than the HF energy \cite{SzaboBook}.
 
-As mentioned earlier, there is, \textit{a priori}, no guarantee that the MP$n$ series converges to the exact energy when $n$ goes to infinity. 
+As mentioned earlier, there is, \textit{a priori}, no guarantee that the MP$l$ series converges to the exact energy when $l$ goes to infinity. 
 In fact, it is known that when the HF wave function is a bad approximation to the exact wave function, for example in multi-reference systems, the MP method yields bad results \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}. 
 A convenient way to investigate the convergence properties of the MP series is to analytically continue the coupling parameter $\lambda$ into the complex variable. 
-By doing so, the Hamiltonian and the energy become complex-valued functions of $\lambda$, and the energy becomes a multivalued function \titou{on $n$ Riemann sheets}. 
+By doing so, the Hamiltonian and the energy become complex-valued functions of $\lambda$, and the energy becomes a multivalued function on \antoine{$K$ Riemann sheets where $K$ is the number of function in the basis set}. 
 As mentioned above, by searching the singularities of the function $E(\lambda)$, one can get information on the convergence properties of the MP series. 
 These singularities of the energy function are exactly the exceptional points connecting the electronic states as mentioned in the introduction. 
 The direct computation of the terms of the series is quite manageable up to 4th order in perturbation, while the 5th and 6th order in perturbation can still be obtained but at a rather high cost \cite{JensenBook}. 
@@ -517,7 +517,7 @@ The discovery of this divergent behavior is worrying as in order to get meaningf
 A singularity in the unit circle is designated as an intruder state, more precisely as a front-door (respectively back-door) intruder state if the real part of the singularity is positive (respectively negative). Theie method consists in performing a scan of the real axis to detect the avoided crossing responsible for the pair of dominant singularity. Then by modeling this avoided crossing via a two-state Hamiltonian one can get an approximation of the dominant conjugate pair of singularity by finding the EPs of the $2\times2$ Hamiltonian. The diagonal matrix is the unperturbed Hamiltonian and the other matrix is the perturbative part of the Hamiltonian.
 
 \begin{equation}
-\underbrace{\mqty(\alpha & \delta \\ \delta & \beta)}_{\bH} = \underbrace{\mqty(\alpha + \alpha_s & 0 \\ 0 & \beta + \beta_s )}_{\bH^{(0)}} + \underbrace{\mqty(- \alpha_s & \delta \\ \delta & - \beta_s)}_{\bV}
+\underbrace{\mqty(\alpha & \delta \\ \delta & \beta)}_{\hH} = \underbrace{\mqty(\alpha + \alpha_s & 0 \\ 0 & \beta + \beta_s )}_{\hH^{(0)}} + \underbrace{\mqty(- \alpha_s & \delta \\ \delta & - \beta_s)}_{\hV}
 \end{equation}
  
 They first studied molecules with low-lying doubly excited states of the same spatial and spin symmetry because in those systems the HF wave function is a bad approximation. The exact wave function has a non-negligible contribution from the doubly excited states, so those low-lying excited states were good candidates for being intruder states. For \ce{CH_2} in a large basis set, the series is convergent up to the 50th order. They showed that the dominant singularity lies outside the unit circle but close to it causing the slow convergence.
@@ -533,8 +533,15 @@ In the 2000's, Sergeev and Goodson \cite{Sergeev_2005, Sergeev_2006} analyzed th
 To understand the convergence properties of the perturbation series at $\lambda=1$, one must look at the whole complex plane, in particular, for negative (i.e., real) values of $\lambda$. If $\lambda$ is negative, the Coulomb interaction becomes attractive but the mean field (which has been computed at $\lambda = 1$) remains repulsive as it is proportional to $(1-\lambda)$:
 
 \begin{equation}\label{eq:HamiltonianStillinger}
-    \bH(\lambda)=\sum_{i=1}^{n}\left[ \underbrace{-\frac{1}{2}\grad_i^2 - \sum_{k=1}^{N} \frac{Z_k}{|\vb{r}_i-\vb{R}_k|}}_{\text{Independent of}~\lambda} + \overbrace{(1-\lambda)V_i^{\text{HF}}}^{\textcolor{red}{\text{Repulsive}}}+\underbrace{\lambda\sum_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|}}_{\textcolor{blue}{\text{Attractive}}}  \right]
+    \hH(\lambda) = 
+    \sum_{i}^{n} \qty[ 
+    \underbrace{-\frac{1}{2}\grad_i^2 
+    - \sum_{A}^{N} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}}}_{\text{Independent of}~\lambda}
+    \overbrace{(1-\lambda)v^{\text{HF}}(\vb{x}_i)}^{\textcolor{red}{\text{Repulsive}}}
+    \underbrace{\lambda\sum_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|}}_{\textcolor{blue}{\text{Attractive}}} 
+    ].
 \end{equation}
+
 
 The major difference between those two terms is that the repulsive mean field is localized around the nuclei whereas the interelectronic interaction persist away from the nuclei. If $\lambda$ becomes more and more negative the mean field becomes more and more repulsive so there exists a critical (negative) value of $\lambda$, $\lambda_\text{c}$, for which the Coulombic field created by the nuclei cannot bind the electrons anymore because of the $\lambda$-independent nature of the the electron-nucleus attraction. \antoine{For $\lambda = \lambda_c$, the electrons dissociate from the nuclei and form a bound cluster which is infinitely separated from the nuclei}. According to Baker \cite{Baker_1971}, this value is a critical point of the system and, by analogy with thermodynamics, the energy $E(\lambda)$ exhibits a singularity at $\lambda_c$. At this point the system undergo a phase transition \titou{and a symmetry breaking}. \titou{Beyond $\lambda_c$ there is a continuum of eigenstates with electrons dissociated from the nucleus.}
 
@@ -577,7 +584,7 @@ In the RHF formalism, the wave function cannot model properly the physics of the
 Then the mono-electronic wave function are expand in the spatial basis set of the zonal spherical harmonics:
 
 \begin{equation}
-\phi_\alpha(\theta_1)=\sum_{l=0}^{\infty}C_{\alpha,l}\frac{Y_{l0}(\Omega_1)}{R}
+\phi_\alpha(\theta_1)=\sum_{k=0}^{\infty}C_{\alpha,k}\frac{Y_{k0}(\theta_1)}{R}
 \end{equation}
 
 It is possible to obtain the formula for the ground state UHF energy in this basis set \cite{Loos_2009}:
@@ -587,7 +594,7 @@ E_{\text{UHF}} = E_{\text{c},\alpha} + E_{\text{c},\beta} + E_{\text{p}}
 \end{equation}
 
 \begin{equation}
-E_{\text{c},\alpha} = \sum_{l=0}^{\infty} C_{\alpha,l}^2 \frac{l(l+1)}{R^2}
+E_{\text{c},\alpha} = \sum_{k=0}^{\infty} C_{\alpha,k}^2 \frac{k(k+1)}{R^2}
 \end{equation}
 
 \begin{equation}
@@ -666,14 +673,14 @@ In addition, we can also consider the symmetry-broken solutions beyond their res
 
 \subsection{Evolution of the radius of convergence}
 
-In this part, we will try to investigate how some parameters of $\bH(\lambda)$ influence the radius of convergence of the perturbation series. The radius of convergence is equal to the distance of the closest singularity to the origin of $E(\lambda)$. Hence we need to determine the locations of the exceptional points to obtain information on the convergence properties. To find them we solve simultaneously the equations \eqref{eq:PolChar} and \eqref{eq:DPolChar}. The equation \eqref{eq:PolChar} is the well-known secular equation giving the energies of the system, if an energy is also solution of \eqref{eq:DPolChar} then this energy is degenerate. In this case the energies obtained are dependent of $\lambda$ so solving those equations with respect to $E$ and $\lambda$ gives the value of $\lambda$ where two energies are degenerate. These degeneracies can be conical intersections between two states with different symmetry for real value of $\lambda$ or exceptional points between two states with the same symmetry for complex value of $\lambda$.
+In this part, we will try to investigate how some parameters of $\hH(\lambda)$ influence the radius of convergence of the perturbation series. The radius of convergence is equal to the distance of the closest singularity to the origin of $E(\lambda)$. Hence we need to determine the locations of the exceptional points to obtain information on the convergence properties. To find them we solve simultaneously the equations \eqref{eq:PolChar} and \eqref{eq:DPolChar}. The equation \eqref{eq:PolChar} is the well-known secular equation giving the energies of the system where $\hI$ is the identity operator. If an energy is also solution of \eqref{eq:DPolChar} then this energy is degenerate. In this case the energies obtained are dependent of $\lambda$ so solving those equations with respect to $E$ and $\lambda$ gives the value of $\lambda$ where two energies are degenerate. These degeneracies can be conical intersections between two states with different symmetry for real value of $\lambda$ or exceptional points between two states with the same symmetry for complex value of $\lambda$.
 
 \begin{equation}\label{eq:PolChar}
-\text{det}[E-\bH(\lambda)]=0
+\text{det}[E\hI-\hH(\lambda)]=0
 \end{equation}
 
 \begin{equation}\label{eq:DPolChar}
-\pdv{E}\text{det}[E-\bH(\lambda)]=0
+\pdv{E}\text{det}[E\hI-\hH(\lambda)]=0
 \end{equation}
 
 The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we can forget the spin part of the spin-orbitals and from now on we will work with spatial orbitals. In the restricted formalism the spatial orbitals are the same so the two-electron basis set is defined as:
@@ -687,7 +694,7 @@ The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we 
  \psi_4 & =Y_{10}(\theta_1)Y_{10}(\theta_2).
 \end{align}
 
-The Hamiltonian $\bH(\lambda)$ is block diagonal because of the symmetry of the basis set, i.e., $\psi_1$ only interacts with $\psi_4$ and $\psi_2$ with $\psi_3$. The two singly excited states give a singlet sp\textsubscript{z} and a triplet sp\textsubscript{z} state but their symmetry is not the same as the ground state. Thus these states can not be involved in an avoided crossing with the ground state as it can be seen in Fig.~\ref{fig:RHFMiniBas} and a fortiori can not be involved in an exceptional point with the ground state. However there is an avoided crossing between the s\textsuperscript{2} state and the p\textsubscript{z}\textsuperscript{2} one which gives two exceptional points in the complex plane. 
+The Hamiltonian $\hH(\lambda)$ is block diagonal because of the symmetry of the basis set, i.e., $\psi_1$ only interacts with $\psi_4$ and $\psi_2$ with $\psi_3$. The two singly excited states give a singlet sp\textsubscript{z} and a triplet sp\textsubscript{z} state but their symmetry is not the same as the ground state. Thus these states can not be involved in an avoided crossing with the ground state as it can be seen in Fig.~\ref{fig:RHFMiniBas} and a fortiori can not be involved in an exceptional point with the ground state. However there is an avoided crossing between the s\textsuperscript{2} state and the p\textsubscript{z}\textsuperscript{2} one which gives two exceptional points in the complex plane. 
 
 \begin{figure}[h!]
     \centering
@@ -702,7 +709,7 @@ To simplify the problem, it is convenient to only consider basis functions with 
 \end{equation}
 where $P_l$ are the Legendre polynomial and $\theta$ is the interelectronic angle.
 
-Then using this basis set we can compare the different partitioning of Sec.~\ref{sec:AlterPart}. Figure \ref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ in function of $R$ for the MP, the EN, the WC and the SC partitioning in a minimal basis, i.e., $P_0$ and $P_1$ and in the same basis augmented with $P_2$. We see that the radius of convergence of the SC partitioning is growing with R whereas it is decreasing for the three others partitioning. This result was expected because the three decreasing partitioning use a weakly correlated reference so $\bH^{(0)}$ is a good approximation for small $R$. On the contrary, the strong coupling one uses a strongly correlated reference so this series converge better when the electron are strongly correlated, i.e., when $R$ is large for the spherium model.
+Then using this basis set we can compare the different partitioning of Sec.~\ref{sec:AlterPart}. Figure \ref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ in function of $R$ for the MP, the EN, the WC and the SC partitioning in a minimal basis, i.e., $P_0$ and $P_1$ and in the same basis augmented with $P_2$. We see that the radius of convergence of the SC partitioning is growing with R whereas it is decreasing for the three others partitioning. This result was expected because the three decreasing partitioning use a weakly correlated reference so $\hH^{(0)}$ is a good approximation for small $R$. On the contrary, the strong coupling one uses a strongly correlated reference so this series converge better when the electron are strongly correlated, i.e., when $R$ is large for the spherium model.
 The MP partitioning is always better than the weak correlation in Fig.~\ref{fig:RadiusPartitioning}. In the weak correlation partitioning the powers of $R$ are well-separated so each term of the series is a different power of $R$. Whereas the MP reference is proportionnal to $R^{-1}$ and $R^{-2}$ so the MP series is not well-defined in terms of powers of $R$. Moreover it can be proved that the $n$th order energy of the weak correlation series can be obtained as a Taylor approximation of MP$n$ respective to $R$. It seems that the EN partitioning is better than the MP one for very small R in the minimal basis. In fact, it is just an artifact of the minimal basis because in the minimal basis augmented with $P_2
 $ (and in larger basis set) the MP series has a greater radius of convergence for all value of $R$.
 
@@ -759,7 +766,7 @@ with the symmetry-broken orbitals
  \phi_{\beta,2}(\theta) & =\frac{5\sqrt{-3+2R}Y_{00}(\theta)+\sqrt{75+62R}Y_{10}(\theta)}{4\sqrt{7R}}.
 \end{align*}
 
-In the UHF formalism the Hamiltonian $\bH(\lambda)$ is no more block diagonal, $\psi_4$ can interact with $\psi_2$ and $\psi_3$. The matrix elements $H_{ij}$ for this interaction are given in \eqref{eq:MatrixElem}. For $R=3/2$ the Hamitonian is block diagonal and this is equivalent to the RHF case but for R>3/2 the matrix elements become real. This interaction corresponds to the spin contamination of the wave function. For $R<3/2$ the matrix elements are complex, this corresponds to the holomorphic solution of Fig.~\ref{fig:SpheriumNrj}, the singularities in this case will be treated in Sec.~\ref{sec:uhfSing}. The matrix elements become real again for $R<-75/62$, this corresponds to the sb-UHF solution for negative value of $R$ observed in Sec.~\ref{sec:spherium}. We will refer to the domain where the matrix element are complex as the holomorphic domain.
+In the UHF formalism the Hamiltonian $\hH(\lambda)$ is no more block diagonal, $\psi_4$ can interact with $\psi_2$ and $\psi_3$. The matrix elements $H_{ij}$ for this interaction are given in \eqref{eq:MatrixElem}. For $R=3/2$ the Hamitonian is block diagonal and this is equivalent to the RHF case but for R>3/2 the matrix elements become real. This interaction corresponds to the spin contamination of the wave function. For $R<3/2$ the matrix elements are complex, this corresponds to the holomorphic solution of Fig.~\ref{fig:SpheriumNrj}, the singularities in this case will be treated in Sec.~\ref{sec:uhfSing}. The matrix elements become real again for $R<-75/62$, this corresponds to the sb-UHF solution for negative value of $R$ observed in Sec.~\ref{sec:spherium}. We will refer to the domain where the matrix element are complex as the holomorphic domain.
 
 \begin{equation}\label{eq:MatrixElem}
 H_{24}=H_{34}=H_{42}=H_{43}=\sqrt{-3+2R}\sqrt{75+62R}\frac{25+2R}{280R^3}
@@ -805,8 +812,11 @@ For a non-Hermitian Hamiltonian the exceptional points can lie on the real axis.
 
 \section{Conclusion}
 
-We have seen that the $\beta$ singularities modeling the ionization phenomenon described by Sergeev and Goodson are actually part of a more general class of singularities. Indeed, those singularities close to the real axis are connected to quantum phase transition. In this work we have shown that $\beta$ singularities are also involved in the spin symmetry breaking of the unrestricted Hartree-Fock wave function. It would be interesting to investigate the difference between the different type of symmetry breaking and how it affects the singularity structure. Moreover the singularity structure in the non-Hermitian case still need to be investigated. In the holomorphic domain some singularities lie on the real axis and it would also be interesting to look at the differences between the different symmetry breaking and their respective holomorphic domain. To conclude this work shows that our understanding of the singularity structure of the energy is still incomplete but we hope that it opens new perspectives for the understanding of the physics of exceptional points in electronic structure theory.
+In order to model properly chemical systems, one need to know which computational method is adapted to each system. That means that we need to understand why each method fails in some cases but also why they work with other systems. We have seen that for methods relying on perturbation theory the successes and failures of those methods is connected to the position of EPs in the complex plane. Much work have been done on the failures of the MP perturbation theory. First, it has been understood that for chemical systems for which the Hartree-Fock method yields a poor approximation of the exact wave function, the MP perturbation theory will fail too. Such systems can be for example systems where the exact wave function is dominated by more than one configuration i.e. multi-reference systems. More preoccupying cases were reported rapidly during the development of the MP method. It has been proved that systems considered as well-understood, for example \ce{Ne}, can exhibit divergent behavior when the basis set is augmented with diffuse functions. 
 
+Afterwards, those behaviors of the perturbation theory have been investigated in terms of avoided crossings and singularities in the complex plane. It has been shown that the singularities can be sorted in two parts. The first ones are the $\alpha$ singularities resulting from a large avoided crossing between the ground state and a low-lying doubly excited states. The $\beta$ ones are consequences in a finite Hilbert space of a ionization phenomenon occurring in the complete Hilbert space. Those singularities are close to the real axis and connected with sharp avoided crossing between the ground state and a highly diffuse state. We have seen that the $\beta$ singularities modeling the ionization phenomenon described by Sergeev and Goodson are actually part of a more general class of singularities. Indeed, those singularities close to the real axis are connected to quantum phase transition and symmetry breaking. Some work in theoretical physics have shown that the behavior of the EPs depends of the type of transition from which the EPs result (first or superior order, ground state or excited state transition).
+
+In this work we have shown that $\beta$ singularities are involved in the spin symmetry breaking of the unrestricted Hartree-Fock wave function. This confirms that $\beta$ singularities can occur for other type of transition and symmetry breaking than just the formation of the bound cluster of electrons. It would be interesting to investigate the difference between the different type of symmetry breaking and how it affects the singularity structure. Moreover the singularity structure in the non-Hermitian case still need to be investigated. In the holomorphic domain some singularities lie on the real axis and it would also be interesting to look at the differences between the different symmetry breaking and their respective holomorphic domain. To conclude this work shows that our understanding of the singularity structure of the energy is still incomplete but we hope that it opens new perspectives for the understanding of the physics of exceptional points in electronic structure theory.
 
 \newpage
 \printbibliography
