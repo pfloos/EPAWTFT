@@ -498,7 +498,8 @@ Cremer and He analyzed 29 atomic and molecular systems at the FCI level \cite{Cr
 \begin{quote}
 	\textit{``Class A systems are characterized by electronic structures with well-separated electron pairs while class B systems are characterized by electronic structures with electron clustering in one or more regions.''}
 \end{quote}
-\titou{They proved that using specific extrapolation formulas involving the first terms of the MP series for class A and class B systems improves the precision of those formulas.} The mean deviation from FCI correlation energies is $0.3$ millihartree whereas with the formula that do not distinguish the system it is 12 millihartree. Even if there were still shaded areas and that this classification was incomplete, this work showed that understanding the origin of the different convergence modes would lead to a more rationalized use of MP perturbation theory and to more accurate correlation energies.
+\antoine{They proved that using different extrapolation formulas of the first terms of the MP series for class A and class B systems improves the precision of the results compared to the formula used without classes. The mean deviation from FCI correlation energies is $0.3$ millihartree with the adapted formula whereas with the formula that do not distinguish the system it is 12 millihartree.} Even if there were still shaded areas and that this classification was incomplete, this work showed that understanding the origin of the different modes of convergence would lead to a more rationalized use of the MP perturbation theory and to more accurate correlation energies.
+%>>>>>>> 4aba1a6e837a50f3a21d610948564733096cf38e
 
 \subsection{Cases of divergence}
 
@@ -575,7 +576,7 @@ Simple systems that are analytically solvable (or at least quasi-exactly solvabl
 
 The Laplace operators are the kinetic operators for each electrons and $r_{12}^{-1} = \abs{\vb{r}_1 - \vb{r}_2}$ is the Coulomb operator. The radius R of the sphere dictates the correlation regime, i.e., weak correlation regime at small $R$ where the kinetic energy dominates, or strong correlation regime where the electron repulsion term drives the physics. We will use this model to try to rationalize the effects of the parameters that may influence the physics of EPs:
 \begin{itemize}
-	\item Partitioning of the Hamiltonian and the actual zeroth-order reference: weak correlation reference [restricted Hartree-Fock (RHF) or unrestricted Hartree-Fock (UHF) references, MP or EN partitioning], or strongly correlated reference.
+	\item Partitioning of the Hamiltonian and the actual zeroth-order reference: weak correlation reference [RHF or UHF references, MP or EN partitioning], or strongly correlated reference.
 	\item Basis set: minimal basis or infinite (i.e., complete) basis made of localized or delocalized basis functions
 	\item Radius of the spherium that ultimately dictates the correlation regime.
 \end{itemize}
@@ -722,7 +723,7 @@ $ (and in larger basis set) the MP series has a greater radius of convergence fo
     \centering
     \includegraphics[width=0.45\textwidth]{PartitioningRCV2.pdf}
     \includegraphics[width=0.45\textwidth]{PartitioningRCV3.pdf}
-    \caption{\centering Radius of convergence in the minimal basis (left) and in the minimal basis augmented with $P_2$ (right) for different partitioning of the Hamiltonian $\bH(\lambda)$.}
+    \caption{\centering Radius of convergence in the minimal basis (left) and in the minimal basis augmented with $P_2$ (right) for different partitioning of the Hamiltonian $\hH(\lambda)$.}
     \label{fig:RadiusPartitioning}
 \end{figure}
 
