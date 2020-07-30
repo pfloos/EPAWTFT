@@ -63,6 +63,7 @@ hyperfigures=false]
 \newcommand{\hH}{\Hat{H}}
 \newcommand{\hV}{\Hat{V}}
 \newcommand{\hI}{\Hat{I}}
+\newcommand{\hS}{\Hat{S}}
 \newcommand{\bH}{\mathbf{H}}
 \newcommand{\bV}{\mathbf{V}}
 \newcommand{\pt}{$\mathcal{PT}$}
@@ -592,7 +593,7 @@ This phenomenon is sometimes referred to as a Wigner crystallization \cite{Wigne
 We will use this model in order to rationalize the effects of the parameters that may influence the physics of EPs:
 \begin{itemize}
 	\item Partitioning of the Hamiltonian and the actual zeroth-order reference: weak correlation reference (RHF or UHF references, MP or EN partitioning), or strongly correlated reference.
-	\item Basis set: minimal basis or infinite (i.e., complete) basis made of localized or delocalized basis functions.
+	\item Basis set: minimal basis or infinite (i.e., complete) basis.
 	\item Radius of the sphere that ultimately dictates the correlation regime.
 \end{itemize}
 
@@ -661,7 +662,7 @@ In addition, there is also the well-known symmetry-broken UHF (sb-UHF) solution.
 	E_{\text{sb-UHF}}=-\frac{75}{112R^3}+\frac{25}{28R^2}+\frac{59}{84R}
 \end{equation}
 
-The exact solution for the ground state is a singlet so this wave function does not have the true symmetry. Indeed, the spherical harmonics are eigenvectors of $S^2$ but the symmetry-broken solution is a linear combination of the two eigenvectors and is not an eigenvector of $S^2$. However this solution gives more accurate results for the energy at large R as shown in Table \ref{tab:ERHFvsEUHF}. In fact at the Coulson-Fischer point, it becomes more efficient to minimize the Coulomb repulsion than the kinetic energy in order to minimize the total energy. Thus the wave function break the spin symmetry because it allows a more efficient minimization of the Coulomb repulsion. This type of symmetry breaking is called a spin density wave because the system oscillates between the two symmetry-broken configurations \cite{GiulianiBook}.
+The exact solution for the ground state is a singlet so this wave function does not have the true symmetry. Indeed, the spherical harmonics are eigenvectors of $\hS^2$ but the symmetry-broken solution is a linear combination of the two eigenvectors and is not an eigenvector of $\hS^2$. However this solution gives more accurate results for the energy at large R as shown in Table \ref{tab:ERHFvsEUHF}. In fact at the Coulson-Fischer point, it becomes more efficient to minimize the Coulomb repulsion than the kinetic energy in order to minimize the total energy. Thus the wave function break the spin symmetry because it allows a more efficient minimization of the Coulomb repulsion. This type of symmetry breaking is called a spin density wave because the system oscillates between the two symmetry-broken configurations \cite{GiulianiBook}.
 
 \begin{table}[h!]
 \centering
@@ -795,7 +796,7 @@ with the symmetry-broken orbitals
  \phi_{\beta,2}(\theta) & =\frac{5\sqrt{-3+2R}Y_{00}(\theta)+\sqrt{75+62R}Y_{10}(\theta)}{4\sqrt{7R}}.
 \end{align*}
 
-In the UHF formalism the Hamiltonian $\hH(\lambda)$ is no more block diagonal, $\psi_4$ can interact with $\psi_2$ and $\psi_3$. The matrix elements $H_{ij}$ for this interaction are given in \eqref{eq:MatrixElem}. For $R=3/2$ the Hamitonian is block diagonal and this is equivalent to the RHF case but for R>3/2 the matrix elements become real. This interaction corresponds to the spin contamination of the wave function. For $R<3/2$ the matrix elements are complex, this corresponds to the holomorphic solution of Fig.~\ref{fig:SpheriumNrj}, the singularities in this case will be treated in Sec.~\ref{sec:uhfSing}. The matrix elements become real again for $R<-75/62$, this corresponds to the sb-UHF solution for negative value of $R$ observed in Sec.~\ref{sec:spherium}. We will refer to the domain where the matrix element are complex as the holomorphic domain.
+In the UHF formalism the Hamiltonian $\hH(\lambda)$ is no more block diagonal, $\psi_4$ can interact with $\psi_2$ and $\psi_3$. The matrix elements of the Hamiltonian $H_{ij}$ corresponding to this interaction are given in \eqref{eq:MatrixElem}. For $R=3/2$ the Hamitonian is block diagonal and this is equivalent to the RHF case but for R>3/2 the matrix elements become real. This interaction corresponds to the spin contamination of the wave function. For $R<3/2$ the matrix elements are complex, this corresponds to the holomorphic solution of Fig.~\ref{fig:SpheriumNrj}, the singularities in this case will be treated in Sec.~\ref{sec:uhfSing}. The matrix elements become real again for $R<-75/62$, this corresponds to the sb-UHF solution for negative value of $R$ observed in Sec.~\ref{sec:spherium}. We will refer to the domain where the matrix element are complex as the holomorphic domain.
 
 \begin{equation}\label{eq:MatrixElem}
 H_{24}=H_{34}=H_{42}=H_{43}=\sqrt{-3+2R}\sqrt{75+62R}\frac{25+2R}{280R^3}
