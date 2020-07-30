@@ -499,7 +499,9 @@ Cremer and He analyzed 29 atomic and molecular systems at the FCI level \cite{Cr
 \begin{quote}
 	\textit{``Class A systems are characterized by electronic structures with well-separated electron pairs while class B systems are characterized by electronic structures with electron clustering in one or more regions.''}
 \end{quote}
-\antoine{As one can only compute the first terms of the MP$l$ series, a smart way to get more accurate results is to use extrapolation formula of this series. They proved that using specific extrapolation formulas of the MP series for class A and class B systems improves the precision of the results compared to the formula used without classes. The mean deviation from FCI correlation energies is $0.3$ millihartree with the adapted formula whereas with the formula that do not distinguish the systems it is 12 millihartree.} Even if there were still shaded areas and that this classification was incomplete, this work showed that understanding the origin of the different modes of convergence would lead to a more rationalized use of the MP perturbation theory and to more accurate correlation energies.
+As one can only compute the first terms of the MP series, a smart way of getting more accurate results is to use extrapolation formula, i.e., estimating the limit of the series with only few terms. 
+Cremer and He proved that using specific extrapolation formulas of the MP series for class A and class B systems improves the precision of the results compared to the formula used without classes. The mean deviation from FCI correlation energies is $0.3$ millihartree with the adapted formula whereas with the formula that do not distinguish the systems it is 12 millihartree. 
+Even if there were still shaded areas and that this classification was incomplete, this work showed that understanding the origin of the different modes of convergence would lead to a more rationalized use of the MP perturbation theory and to more accurate correlation energies.
 
 
 \subsection{Cases of divergence}
@@ -554,22 +556,22 @@ The major difference between those two terms is that the repulsive mean field is
 
 This reasoning is done on the exact Hamiltonian and energy, i.e., the Hamiltonian in the complete Hilbert space, this is the exact energy which exhibits this singularity on the negative real axis. However, in a finite basis set which does not span the complete Hilbert space, one can prove that, for a Hermitian Hamiltonian, the singularities of $E(\lambda)$ occurs in complex conjugate pairs with non-zero imaginary parts. Sergeev and Goodson proved \cite{Sergeev_2005}, as predicted by Stillinger \cite{Stillinger_2000}, that in a finite basis set the critical point on the real axis is modeled by a cluster of sharp avoided crossings with diffuse functions, equivalently by a cluster of $\beta$ singularities in the negative half plane. This explains that Olsen \textit{et al.}, because they used a simple $2\times2$ model, only observed the first singularity of this cluster of singularities causing the divergence.
 
-Finally, it was shown that $\beta$ singularities are very sensitive to changes in the basis set but not to the stretching of the system. On the contrary $\alpha$ singularities are relatively insensitive to the basis sets but very sensitive to bond stretching. \antoine{According to Goodson \cite{Goodson_2004}, the singularity structure from molecules stretched from the equilibrium geometry is difficult because there is more than one significant singularity. This is consistent with the observation of Olsen and coworkers \cite{Olsen_2000} on the \ce{HF} molecule at equilibrium geometry and stretched geometry.} To the best our knowledge, the effect of bond stretching on singularities, its link with spin contamination and symmetry breaking of the wave function has not been as well understood as the ionization phenomenon and its link with diffuse functions.  In this work, we shall try to improve our understanding of the effect of symmetry breaking on the singularities of $E(\lambda)$ and we hope that it will lead to a deeper understanding of perturbation theory.
+Finally, it was shown that $\beta$ singularities are very sensitive to changes in the basis set but not to the stretching of the system. On the contrary $\alpha$ singularities are relatively insensitive to the basis sets but very sensitive to bond stretching. According to Goodson \cite{Goodson_2004}, the singularity structure of stretched molecules is difficult because there is more than one significant singularity. This is consistent with the observation of Olsen and coworkers \cite{Olsen_2000} on the \ce{HF} molecule at equilibrium geometry and stretched geometry. To the best our knowledge, the effect of bond stretching on singularities, its link with spin contamination and symmetry breaking of the wave function has not been as well understood as the ionization phenomenon and its link with diffuse functions.  In this work, we shall try to improve our understanding of the effect of symmetry breaking on the singularities of $E(\lambda)$ and we hope that it will lead to a deeper understanding of perturbation theory.
 
 \subsection{The physics of quantum phase transition}
 
 In the previous section, we saw that a careful analysis of the structure of the Hamiltonian allows us to predict the existence of a critical point. In a finite basis set this critical point is model by a cluster of $\beta$ singularities. It is now well known that this phenomenon is a special case of a more general phenomenon. Indeed, theoretical physicists proved that EPs close to the real axis are connected to \textit{quantum phase transitions} (QPTs) \cite{Heiss_1988, Heiss_2002, Cejnar_2005, Cejnar_2007, Cejnar_2009, Borisov_2015, Sindelka_2017}. In quantum mechanics, the Hamiltonian is almost always dependent of, at least, one parameter. In some cases the variation of a parameter can lead to abrupt changes at a critical point. These QPTs exist both for ground and excited states as shown by Cejnar and coworkers \cite{Cejnar_2009, Sachdev_2011, Cejnar_2015, Cejnar_2016, Caprio_2008, Macek_2019}. A ground-state QPT is characterized by the derivatives of the ground-state energy with respect to a non-thermal control parameter \cite{Cejnar_2009, Sachdev_2011}. The transition is called discontinuous and of first order if the first derivative is discontinuous at the critical parameter value. Otherwise, it is called continuous and of $m$th order if the $m$th derivative is discontinuous. A QPT can also be identify by the discontinuity of an appropriate order parameter (or one of its derivatives). 
 
-The presence of an EP close to the real axis is characteristic of a sharp avoided crossing. Yet, at such an avoided crossing, eigenstates change abruptly. Although it is now well understood that EPs are closely related to QPTs, the link between the type of QPT (ground state or excited state, first or higher order) and EPs still need to be clarified. One of the major obstacles that one faces in order to achieve this resides in the ability to compute the distribution of EPs. The numerical assignment of an EP to two energies on the real axis is very difficult in large dimensions. Hence, the design of specific methods are required to get information on the location of EPs. Following this idea, Cejnar \textit{et al.}~developed a method based on a Coulomb analogy giving access to the density of EP close to the real axis \cite{Cejnar_2005, Cejnar_2007}. More recently Stransky and coworkers proved that the distribution of EPs is characteristic on the order of the QPT \cite{Stransky_2018}. \antoine{In the thermodynamic limit some of the EPs converge towards a critical point $\lambda$\textsuperscript{c} on the real axis. They showed that within the LMG model \cite{Lipkin_1965} (which can be for example interacting fermions on two-energy levels or two interacting bosonic species) EPs associated to first- and second-order QPT behave differently when the number of particles increases. The position of these singularities converge towards the critical point and the real axis at different rates (exponentially and algebraically for the first and second order, respectively).}
+The presence of an EP close to the real axis is characteristic of a sharp avoided crossing. Yet, at such an avoided crossing, eigenstates change abruptly. Although it is now well understood that EPs are closely related to QPTs, the link between the type of QPT (ground state or excited state, first or higher order) and EPs still need to be clarified. One of the major obstacles that one faces in order to achieve this resides in the ability to compute the distribution of EPs. The numerical assignment of an EP to two energies on the real axis is very difficult in large dimensions. Hence, the design of specific methods are required to get information on the location of EPs. Following this idea, Cejnar \textit{et al.}~developed a method based on a Coulomb analogy giving access to the density of EP close to the real axis \cite{Cejnar_2005, Cejnar_2007}. More recently Stransky and coworkers proved that the distribution of EPs is characteristic on the order of the QPT \cite{Stransky_2018}. In the thermodynamic limit, some of the EPs converge towards a critical point $\lambda^\text{c}$ on the real axis. They showed that, within the interaction boson model \cite{Lipkin_1965}, EPs associated to first- and second-order QPT behave differently when the number of particles increases. The position of these singularities converge towards the critical point on the real axis at different rates (exponentially and algebraically for the first and second order, respectively) with respect to the number of particles.
 
-It seems like our understanding of the physics of spatial and/or spin symmetry breaking in HF theory can be enlightened by QPT theory. \antoine{Indeed, the second derivative of the HF ground-state energy is discontinuous at the point of spin symmetry-breaking which means that the system undergo a second-order QPT.} Moreover, the $\beta$ singularities introduced by Sergeev and coworkers to describe the EPs modeling the formation of a bound cluster of electrons are actually a more general class of singularities. The EPs close to the real axis (the so-called $\beta$ singularities) are connected to QPT because they result from a sharp avoided crossings at which the eigenstates change quickly. However, the $\alpha$ singularities arise from large avoided crossings. Thus, they cannot be connected to QPT. The avoided crossings generating $\alpha$ singularities generally involve the ground state and low-lying doubly-excited states. Those excited states have a non-negligible contribution to the exact FCI solution because they have the same spatial and spin symmetry as the ground state. We believe that $\alpha$ singularities are connected to states with non-negligible contribution in the CI expansion thus to the dynamical part of the correlation energy, while $\beta$ singularities are linked to symmetry breaking and phase transitions of the wave function, i.e., to the multi-reference nature of the wave function thus to the static part of the correlation energy.
+It seems like our understanding of the physics of spatial and/or spin symmetry breaking in HF theory can be enlightened by QPT theory. Indeed, the second derivative of the HF ground-state energy is discontinuous at the point of spin symmetry-breaking which means that the system undergo a second-order QPT. Moreover, the $\beta$ singularities introduced by Sergeev and coworkers to describe the EPs modeling the formation of a bound cluster of electrons are actually a more general class of singularities. The EPs close to the real axis (the so-called $\beta$ singularities) are connected to QPT because they result from a sharp avoided crossings at which the eigenstates change quickly. However, the $\alpha$ singularities arise from large avoided crossings. Thus, they cannot be connected to QPT. The avoided crossings generating $\alpha$ singularities generally involve the ground state and low-lying doubly-excited states. Those excited states have a non-negligible contribution to the exact FCI solution because they have the same spatial and spin symmetry as the ground state. We believe that $\alpha$ singularities are connected to states with non-negligible contribution in the CI expansion thus to the dynamical part of the correlation energy, while $\beta$ singularities are linked to symmetry breaking and phase transitions of the wave function, i.e., to the multi-reference nature of the wave function thus to the static part of the correlation energy.
 
 
 %============================================================%
 \section{The spherium model}\label{sec:spherium}
 %============================================================%
 
-Simple systems that are analytically solvable (or at least quasi-exactly solvable \antoine{i.e. model for which it is possible to obtain a finite portion of the exact solutions of the Schrödinger equation \eqref{eq:SchrEq} \cite{Ushveridze_1994}}) are of great importance in theoretical chemistry. 
+Simple systems that are analytically solvable (or at least quasi-exactly solvable, i.e., models for which it is possible to obtain a finite portion of the exact solutions of the Schr{\"o}dinger equation \cite{Ushveridze_1994}) are of great importance in theoretical chemistry. 
 These systems are very useful to perform benchmark studies in order to test new methods as the mathematics are easier than in realistic systems (such as molecules or solids) but retain much of the key physics. 
 To investigate the physics of EPs we consider one such system named \textit{spherium}. 
 It consists of two electrons confined to the surface of a sphere interacting through the long-range Coulomb potential \cite{Thompson_2005, Seidl_2007, Loos_2009b}. 
@@ -588,7 +590,6 @@ The radius of the sphere $R$ dictates the correlation regime \cite{Loos_2009}.
 In the weak correlation regime (i.e., small $R$), the kinetic energy (which scales as $R^{-2}$) dominates and the electrons are delocalized over the sphere.
 For large $R$ (or strong correlation regime), the electron repulsion term (which scales as $R^{-1}$) drives the physics and the electrons localize on opposite side of the sphere to minimize their Coulomb repulsion. 
 This phenomenon is sometimes referred to as a Wigner crystallization \cite{Wigner_1934}.
-\titou{T2: Missing references in this part.}
 
 We will use this model in order to rationalize the effects of the parameters that may influence the physics of EPs:
 \begin{itemize}
@@ -616,53 +617,56 @@ These one-electron orbitals are expanded in the basis of zonal spherical harmoni
 \begin{equation}
 	\phi_\sigma(\theta)=\sum_{\ell=0}^{\infty}C_{\sigma,\ell}Y_{\ell}(\theta)
 \end{equation}
-It is possible to obtain the formula for the ground state UHF energy in this basis set \cite{Loos_2009}:
-
+It is possible to obtain the formula for the HF energy in this basis set \cite{Loos_2009}:
 \begin{equation}
-E_{\text{UHF}} = T_{\alpha} + T_{\beta} + V
-\label{eq:EUHF}
+	E_{\text{HF}} = T_{\text{HF}} + V_{\text{HF}}
+\label{eq:EHF}
 \end{equation}
-with
-\begin{gather}
-	T_{\sigma} = \frac{1}{R^2} \sum_{\ell=0}^{\infty} C_{\sigma,\ell}^2 \, \ell(\ell+1)
-	\\
-	V = \frac{1}{R} \sum_{\ell_1,\ell_2,\ell_3,\ell_4=0}^{\infty} \sum_{L=0}^{\infty} 
-	(-1)^{\ell_3+\ell_4} v^\alpha_{\ell_1,\ell_2,L} v^\beta_{\ell_3,\ell_4,L} 
-\end{gather}
-\antoine{and $v^\sigma_{\ell_1,\ell_2,L}$ is expressed in terms of the Wigner 3j-symbols \cite{AngularBook}}
+where the kinetic and potential energies are
+\begin{align}
+	T_{\text{HF}} & = \sum_{\sigma=\alpha,\beta} \frac{1}{R^2} \sum_{\ell=0}^{\infty} C_{\sigma,\ell}^2 \, \ell(\ell+1)
+	&
+	V_{\text{HF}} & = \frac{1}{R} \sum_{L=0}^{\infty} 
+	v^\alpha_{L} v^\beta_{L} 
+\end{align}
+and
 \begin{equation}
-	v^\sigma_{\ell_1,\ell_2,L} 
-	= \sqrt{(2\ell_1+1)(2\ell_2+1)} C_{\sigma,\ell_1}C_{\sigma,\ell_2}
+	v^\sigma_{L} 
+	=  \sum_{\ell_1,\ell_2} \sqrt{(2\ell_1+1)(2\ell_2+1)} C_{\sigma,\ell_1}C_{\sigma,\ell_2}
 	\begin{pmatrix}
 		\ell_1 & \ell_2 & L 
 		\\
 		0 & 0 & 0
 	\end{pmatrix}^2 
 \end{equation}
+is expressed in terms of the Wigner 3j-symbols \cite{AngularBook}.
+
+The general method is to use a self-consistent field procedure as described in Ref.~\cite{SzaboBook} to get the coefficients of the wave functions corresponding to stationary solutions with respect to the coefficients $C_{\sigma,\ell}$, i.e.,
+\begin{equation}
+	\pdv{E_{\text{HF}}}{C_{\sigma,\ell}} = 0.
+\end{equation}. 
+Here, we work in a minimal basis, composed of $Y_{0}$ and $Y_{1}$, or equivalently, a s and p\textsubscript{z} orbital, to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions. One can define the one-electron wave functions 
+\begin{equation}
+	\phi_\sigma(\theta)= \cos(\chi_\sigma)Y_{0}(\theta) + \sin(\chi_\sigma)Y_{1}(\theta)
+\end{equation}
+using a mixing angle between the two basis functions for each spin manifold. 
+Hence we just minimize the energy with respect to the two mixing angles $\chi_\alpha$ and $\chi_\beta$.
+ 
+This process provides the three following solutions valid for all value of $R$, which are respectively a minimum, a maximum and a saddle point of the HF equations:
+\begin{itemize}
+\item The two electrons are in the s orbital which is a RHF solution. This solution is associated with the energy $1/R^{2}$.
+\item The two electrons are in the p\textsubscript{z} orbital which is a RHF solution. This solution is associated with the energy $2/R^{2}+ 29/(25R)$.
+\item One electron is in the s orbital and the other is in the p\textsubscript{z} orbital which is a UHF solution. This solution is associated with the energy $1/R^{2} + 1/R$.
+\end{itemize}
 \titou{STOPPED HERE.}
 
-We obtained Eq.~\eqref{eq:EUHF} for the general form of the wave function \eqref{eq:UHF_WF}, but to be associated with a physical wave function the energy needs to be stationary with respect to the coefficients. The general method is to use the Hartree-Fock self-consistent field method \cite{SzaboBook} to get the coefficients of the wave functions corresponding to physical solutions. We will work in a minimal basis, composed  of a $Y_{0}$ and a $Y_{1}$ spherical harmonic, or equivalently a s and a p\textsubscript{z} orbital, to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions. One can define the one-electron wave functions $\phi_\sigma(\theta_i)$ using a mixing angle between the two basis functions. Hence we just need to minimize the energy with respect to the two mixing angles $\chi_\alpha$ and $\chi_\beta$.
-
-\begin{equation}
-\phi_\sigma(\theta_i)= \cos(\chi_\sigma)Y_{0}(\theta_i) + \sin(\chi_\sigma)Y_{1}(\theta_i)
-\end{equation}
- 
-The minimization gives the three following solutions valid for all value of R:
-\begin{itemize}
-\item The two electrons are in the s orbital which is a RHF solution. This solution is associated with the energy $R^{-2}$.
-\item The two electrons are in the p\textsubscript{z} orbital which is a RHF solution. This solution is associated with the energy $2R^{-2}+\frac{29}{25}R^{-1}$.
-\item One electron is in the s orbital and the other is in the p\textsubscript{z} orbital which is a UHF solution. This solution is associated with the energy $R^{-2} + R^{-1}$.
-\end{itemize}
-
-Those solutions are respectively a minimum, a maximum and a saddle point of the HF equations.\\
-
-In addition, there is also the well-known symmetry-broken UHF (sb-UHF) solution. For $R>3/2$ an other stationary UHF solution appears, this solution is a minimum of the HF equations. This solution corresponds to the configuration with the electron $\alpha$ on one side of the sphere and the electron $\beta$ on the opposite side and the configuration the other way round. The electrons can be on opposite sides of the sphere because the choice of p\textsubscript{z} as a basis function induced a privileged axis on the sphere for the electrons. This solution have the energy \eqref{eq:EsbUHF} for $R>3/2$.
+In addition, the minimization process gives also the well-known symmetry-broken UHF (sb-UHF) solution. In this case the Coulson-Fischer point associated to this solution is $R=3/2$. For $R>3/2$ the sb-UHF solution is the global minimum of the HF equations and the RHF solution presented before is a local minimum. This solution corresponds to the configuration with the electron $\alpha$ on one side of the sphere and the electron $\beta$ on the opposite side and the configuration the other way round. The electrons can be on opposite sides of the sphere because the choice of p\textsubscript{z} as a basis function induced a privileged axis on the sphere for the electrons. This solution has the energy \eqref{eq:EsbUHF} for $R>3/2$.
 
 \begin{equation}\label{eq:EsbUHF}
 	E_{\text{sb-UHF}}=-\frac{75}{112R^3}+\frac{25}{28R^2}+\frac{59}{84R}
 \end{equation}
 
-The exact solution for the ground state is a singlet so this wave function does not have the true symmetry. Indeed, the spherical harmonics are eigenvectors of $\hS^2$ but the symmetry-broken solution is a linear combination of the two eigenvectors and is not an eigenvector of $\hS^2$. However this solution gives more accurate results for the energy at large R as shown in Table \ref{tab:ERHFvsEUHF}. In fact at the Coulson-Fischer point, it becomes more efficient to minimize the Coulomb repulsion than the kinetic energy in order to minimize the total energy. Thus the wave function break the spin symmetry because it allows a more efficient minimization of the Coulomb repulsion. This type of symmetry breaking is called a spin density wave because the system oscillates between the two symmetry-broken configurations \cite{GiulianiBook}.
+The exact solution for the ground state is a singlet. The spherical harmonics are eigenvectors of $\hS^2$ and they are associated to differents eigenvalue. Yet, the symmetry-broken orbitals are linear combination of $Y_0$ and $Y_1$. Hence, the symmetry-broken orbitals are not eigenvectors of $\hS^2$. However this solution gives more accurate results for the energy at large R than the RHF one as shown in Table \ref{tab:ERHFvsEUHF} even if it does not have the exact spin symmetry. In fact at the Coulson-Fischer point, it becomes more efficient to minimize the Coulomb repulsion than the kinetic energy in order to minimize the total energy. Thus the wave function break the spin symmetry because it allows a more efficient minimization of the Coulomb repulsion. This type of symmetry breaking is called a spin density wave because the system oscillates between the two symmetry-broken configurations \cite{GiulianiBook}.
 
 \begin{table}[h!]
 \centering
@@ -681,15 +685,6 @@ Exact 	& 9.783874 & 0.852781 & 0.391959 & 0.247898 & 0.139471 & 0.064525 & 0.005
 \label{tab:ERHFvsEUHF}
 \end{table}
 
-There is also another symmetry-broken solution for $R>75/38$ but this one corresponds to a maximum of the HF equations. This solution is associated with another type of symmetry breaking somewhat less known. It corresponds to a configuration where both electrons are on the same side of the sphere, in the same spatial orbital. This solution is called symmetry-broken RHF (sb-RHF). At the critical value of R, the repulsion of the two electrons on the same side of the sphere maximizes more the energy than the kinetic energy of the p\textsubscript{z} orbitals. This symmetry breaking is associated with a charge density wave, the system oscillates between the situations with the electrons on each side \cite{GiulianiBook}.
-
-\begin{equation}
-E_{\text{sb-RHF}}=\frac{75}{88R^3}+\frac{25}{22R^2}+\frac{91}{66R}
-\end{equation}
-
-We can also consider negative values of R. This corresponds to the situation where one of the electrons is replaced by a positron. There are also a sb-RHF ($R<-3/2$) and a sb-UHF ($R<-75/38$) solution for negative values of R (see Fig.\ref{fig:SpheriumNrj} but in this case the sb-RHF solution is a minimum and the sb-UHF is a maximum. Indeed, the sb-RHF states minimize the energy by placing the electron and the positron on the same side of the sphere. And the sb-UHF states maximize the energy because the two attracting particles are on opposite sides of the sphere.
-
-In addition, we can also consider the symmetry-broken solutions beyond their respective Coulson-Fischer points by analytically continuing their respective energies leading to the so-called holomorphic solutions \cite{Hiscock_2014, Burton_2019, Burton_2019a}. All those energies are plotted in Fig.~\ref{fig:SpheriumNrj}. The dotted curves corresponds to the holomorphic domain of the energies.
 
 \begin{wrapfigure}{r}{0.5\textwidth}
     \centering
@@ -698,11 +693,22 @@ In addition, we can also consider the symmetry-broken solutions beyond their res
     \label{fig:SpheriumNrj}
 \end{wrapfigure}
 
+There is also another symmetry-broken solution for $R>75/38$ but this one corresponds to a maximum of the HF equations. This solution is associated with another type of symmetry breaking somewhat less known. It corresponds to a configuration where both electrons are on the same side of the sphere, in the same spatial orbital. This solution is called symmetry-broken RHF (sb-RHF). At the critical value of $R$, the repulsion of the two electrons on the same side of the sphere maximizes more the energy than the kinetic energy of the p\textsubscript{z} orbitals. This symmetry breaking is associated with a charge density wave, the system oscillates between the situations with the two electrons on each side \cite{GiulianiBook}.
+
+\begin{equation}
+E_{\text{sb-RHF}}=\frac{75}{88R^3}+\frac{25}{22R^2}+\frac{91}{66R}
+\end{equation}
+
+We can also consider negative values of $R$. This corresponds to the situation where one of the electrons is replaced by a positron. There are also a sb-RHF ($R<-3/2$) and a sb-UHF ($R<-75/38$) solution for negative values of $R$ (see Fig.~\ref{fig:SpheriumNrj}) but in this case the sb-RHF solution is a minimum and the sb-UHF is a maximum. Indeed, the sb-RHF states minimize the attraction energy by placing the electron and the positron on the same side of the sphere. And the sb-UHF states maximize the energy because the two attracting particles are on opposite sides of the sphere.
+
+In addition, we can also consider the symmetry-broken solutions beyond their respective Coulson-Fischer points by analytically continuing their respective energies leading to the so-called holomorphic solutions \cite{Hiscock_2014, Burton_2019, Burton_2019a}. All those energies are plotted in Fig.~\ref{fig:SpheriumNrj}. The dotted curves corresponds to the holomorphic domain of the energies.
+
+
 \section{Radius of convergence and exceptional points}
 
 \subsection{Evolution of the radius of convergence}
 
-In this part, we will try to investigate how some parameters of $\hH(\lambda)$ influence the radius of convergence of the perturbation series. The radius of convergence is equal to the distance of the closest singularity to the origin of $E(\lambda)$. Hence we need to determine the locations of the exceptional points to obtain information on the convergence properties. To find them we solve simultaneously Eqs.~\eqref{eq:PolChar} and \eqref{eq:DPolChar}. Equation \eqref{eq:PolChar} is the well-known secular equation giving the energies of the system where $\hI$ is the identity operator. If an energy is also solution of Eq.~\eqref{eq:DPolChar} then this energy is degenerate. In this case the energies obtained are dependent of $\lambda$ so solving those equations with respect to $E$ and $\lambda$ gives the value of $\lambda$ where two energies are degenerate. These degeneracies can be conical intersections between two states with different symmetry for real value of $\lambda$ or exceptional points between two states with the same symmetry for complex value of $\lambda$.
+In this part, we will try to investigate how some parameters of $\hH(\lambda)$ influence the radius of convergence of the perturbation series. The radius of convergence is equal to the distance of the closest singularity to the origin of $E(\lambda)$. Hence, we have to determine the locations of the exceptional points to obtain information on the convergence properties. To find them we solve simultaneously Eqs.~\eqref{eq:PolChar} and \eqref{eq:DPolChar}. Equation \eqref{eq:PolChar} is the well-known secular equation giving the energies of the system. If an energy is also solution of Eq.~\eqref{eq:DPolChar} then this energy is degenerate. In this case the energies obtained are dependent of $\lambda$ so solving those equations with respect to $E$ and $\lambda$ gives the value of $\lambda$ where two energies are degenerate. These degeneracies can be conical intersections between two states with different symmetry for real value of $\lambda$ \cite{Yarkony_1996} or exceptional points between two states with the same symmetry for complex value of $\lambda$.
 
 \begin{subequations}
 \begin{align}
@@ -713,6 +719,7 @@ In this part, we will try to investigate how some parameters of $\hH(\lambda)$ i
 	\pdv{E}\text{det}[E\hI-\hH(\lambda)] & = 0.
 \end{align}
 \end{subequations}
+with $\hI$ the identity operator.
 
 The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we can forget the spin part of the spin-orbitals and from now on we will work with spatial orbitals. In the restricted formalism the spatial orbitals are the same so the two-electron basis set is defined as:
 
@@ -725,7 +732,7 @@ The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we 
  \psi_4 & =Y_{1}(\theta_1)Y_{1}(\theta_2).
 \end{align}
 
-The Hamiltonian $\hH(\lambda)$ is block diagonal because of the symmetry of the basis set, i.e., $\psi_1$ only interacts with $\psi_4$ and $\psi_2$ with $\psi_3$. The two singly excited states give a singlet sp\textsubscript{z} and a triplet sp\textsubscript{z} state but their symmetry is not the same as the ground state. Thus these states can not be involved in an avoided crossing with the ground state as it can be seen in Fig.~\ref{fig:RHFMiniBas} and a fortiori can not be involved in an exceptional point with the ground state. However there is an avoided crossing between the s\textsuperscript{2} state and the p\textsubscript{z}\textsuperscript{2} one which gives two exceptional points in the complex plane. 
+The Hamiltonian $\hH(\lambda)$ is block diagonal because of the symmetry of the basis set, i.e., $\psi_1$ only interacts with $\psi_4$ and $\psi_2$ with $\psi_3$. The two singly excited states yields after diagonalization a spatially anti-symmetric singlet sp\textsubscript{z} and a spatially symmetric triplet sp\textsubscript{z} state. Hence those states do not have the same symmetry as the spatially symmetric singlet ground state. Thus these states can not be involved in an avoided crossing with the ground state as it can be seen in Fig.~\ref{fig:RHFMiniBas} and a fortiori can not be involved in an exceptional point with the ground state. However there is an avoided crossing between the s\textsuperscript{2} state and the p\textsubscript{z}\textsuperscript{2} one which gives two exceptional points in the complex plane. 
 
 \begin{wrapfigure}{c}{0.5\textwidth}
     \centering
@@ -734,7 +741,7 @@ The Hamiltonian $\hH(\lambda)$ is block diagonal because of the symmetry of the 
     \label{fig:RHFMiniBas}
 \end{wrapfigure}
 
-To simplify the problem, it is convenient to only consider basis functions with the symmetry of the exact wave function, such basis functions are called Configuration State Function (CSF). It simplifies the problem because with such a basis set we only get the degeneracies of interest for the convergence properties, i.e., the exceptional points between states with the same symmetry. In this case the ground state is a totally symmetric singlet. According to the angular-momentum theory \cite{AngularBook, SlaterBook, Loos_2009} we expand the exact wave function in the following two-electron basis:
+To simplify the problem, it is convenient to only consider basis functions with the symmetry of the exact wave function, such basis functions are called Configuration State Function (CSF). It simplifies the problem because with such a basis set we only get the degeneracies of interest for the convergence properties, i.e., the exceptional points between states with the same symmetry as the ground state. In this case the ground state is a totally symmetric singlet. According to the angular-momentum theory \cite{AngularBook, SlaterBook, Loos_2009} we expand the exact wave function in the following two-electron basis:
 \begin{equation}
 \Phi_l(\omega)=\frac{\sqrt{2l+1}}{4\pi R^2}P_l(\cos\omega)
 \end{equation}
@@ -751,7 +758,7 @@ The MP partitioning is always better than the weak correlation in Fig.~\ref{fig:
     \label{fig:RadiusPartitioning}
 \end{figure}
 
-Figure \ref{fig:RadiusBasis} shows that the radius of convergence is not very sensitive to the expansion of the basis set. The CSF basis function have all the same spin and spatial symmetry so we expect that the singularities obtained within this basis set will be $\alpha$ singularities. Table \ref{tab:SingAlpha} proves that the singularities considered in this case are $\alpha$ singularities. This is consistent with the observation of Goodson and Sergeev \cite{Goodson_2004} on $\alpha$ singularities. The discontinuities observed in Fig.~\ref{fig:RadiusBasis} with the MP partitioning are due to a change of the dominant singularity. We can observe this change in Table \ref{tab:SingAlpha}, the value for $R=1$ and $R=2$ are respectively in the positive and negative plane.
+Figure \ref{fig:RadiusBasis} shows that the radius of convergence is not very sensitive to the expansion of the basis set. The CSF basis function have all the same spin and spatial symmetry so we expect that the singularities obtained within this basis set will be $\alpha$ singularities. Table \ref{tab:SingAlpha} proves that the singularities considered in this case are $\alpha$ singularities. This is consistent with the observation of Goodson and Sergeev \cite{Goodson_2004} on $\alpha$ singularities which said that $\alpha$ singularities are relatively insensitive to change of the basis set. The discontinuities observed in Fig.~\ref{fig:RadiusBasis} with the MP partitioning are due to a change of the dominant singularity. We can observe this change in Table \ref{tab:SingAlpha}, the value for $R=1$ and $R=2$ are respectively in the positive and negative plane.
 
 \begin{figure}[h!]
     \centering
@@ -777,7 +784,7 @@ WC & -9.6-10.7\,i & -0.96-1.07\,i & -0.48-0.53\,i & -0.32-0.36\,i & -0.19-0.21\,
 \label{tab:SingAlpha}
 \end{table}
 
-Now we will investigate the differences in the singularity structure between the RHF and UHF formalism. To do this we use the symmetry-broken orbitals obtained in Sec.~\ref{sec:spherium}. Thus the UHF two-electron basis is:
+Now we will investigate the differences in the singularity structure between the RHF and UHF formalism. To do this we use the symmetry-broken orbitals discussed in Sec.~\ref{sec:spherium}. Thus the UHF two-electron basis is:
 \begin{align}\label{eq:uhfbasis}
  \psi_1 & =\phi_{\alpha,1}(\theta_1)\phi_{\beta,1}(\theta_2),
  & 
@@ -796,13 +803,13 @@ with the symmetry-broken orbitals
  \phi_{\beta,2}(\theta) & =\frac{5\sqrt{-3+2R}Y_{00}(\theta)+\sqrt{75+62R}Y_{10}(\theta)}{4\sqrt{7R}}.
 \end{align*}
 
-In the UHF formalism the Hamiltonian $\hH(\lambda)$ is no more block diagonal, $\psi_4$ can interact with $\psi_2$ and $\psi_3$. The matrix elements of the Hamiltonian $H_{ij}$ corresponding to this interaction are given in \eqref{eq:MatrixElem}. For $R=3/2$ the Hamitonian is block diagonal and this is equivalent to the RHF case but for R>3/2 the matrix elements become real. This interaction corresponds to the spin contamination of the wave function. For $R<3/2$ the matrix elements are complex, this corresponds to the holomorphic solution of Fig.~\ref{fig:SpheriumNrj}, the singularities in this case will be treated in Sec.~\ref{sec:uhfSing}. The matrix elements become real again for $R<-75/62$, this corresponds to the sb-UHF solution for negative value of $R$ observed in Sec.~\ref{sec:spherium}. We will refer to the domain where the matrix element are complex as the holomorphic domain.
+In the UHF formalism the Hamiltonian $\hH(\lambda)$ is no more block diagonal, $\psi_4$ can interact with $\psi_2$ and $\psi_3$. The matrix elements $H_{ij}$ of the Hamiltonian corresponding to this interaction are given in \eqref{eq:MatrixElem}. For $R=3/2$ the Hamitonian is block diagonal and this is equivalent to the RHF case but for $R>3/2$ the matrix elements become real. This interaction corresponds to the spin contamination of the wave function. For $R<3/2$ the matrix elements are complex, this corresponds to the holomorphic solution of Fig.~\ref{fig:SpheriumNrj}, the singularities in this case will be treated in Sec.~\ref{sec:uhfSing}. The matrix elements become real again for $R<-75/62$, this corresponds to the sb-UHF solution for negative value of $R$ observed in Sec.~\ref{sec:spherium}. We will refer to the domain where the matrix element are complex as the holomorphic domain.
 
 \begin{equation}\label{eq:MatrixElem}
 H_{24}=H_{34}=H_{42}=H_{43}=\sqrt{-3+2R}\sqrt{75+62R}\frac{25+2R}{280R^3}
 \end{equation}
 
-The singularity structure in this case is more complex because of the spin contamination of the wave function. We can not use configuration state function in this case. So when we compute all the degeneracies using Eqs.~\eqref{eq:PolChar} and \eqref{eq:DPolChar} some correspond to EPs and some correspond to conical intersections. The numerical distinction of those singularities is very difficult so we will first look at the energies $E(\lambda)$ obtained with this basis set.
+The singularity structure in this case is more complex because of the spin contamination of the wave function. We can not use configuration state functions in this case. So when we compute all the degeneracies using Eqs.~\eqref{eq:PolChar} and \eqref{eq:DPolChar} some correspond to EPs and some correspond to conical intersections. The numerical distinction of those singularities is very difficult so we will first look at the energies $E(\lambda)$ obtained with this basis set.
 Figure \ref{fig:UHFMiniBas} is the analog of Fig.~\ref{fig:RHFMiniBas} in the UHF formalism. We see that in this case the sp\textsubscript{z} triplet interacts with the s\textsuperscript{2} and the p\textsubscript{z}\textsuperscript{2} singlets. Those avoided crossings are due to the spin contamination of the wave function. The exceptional points resulting from those avoided crossings will be discussed in Sec.~\ref{sec:uhfSing}. \\
 
 \begin{wrapfigure}{c}{0.5\textwidth}
@@ -816,7 +823,7 @@ In this study we have used spherical harmonics (or combination of spherical harm
 
 \subsection{Exceptional points in the UHF formalism}\label{sec:uhfSing}
 
-In the RHF case there are only $\alpha$ singularities and large avoided crossings but we can see in Fig.~\ref{fig:UHFMiniBas} that in the UHF case there are sharp avoided crossings which are known to be connected to $\beta$ singularities. For example at $R=10$ the pair of singularities connected to the avoided crossing between s\textsuperscript{2} and sp\textsubscript{z} $^{3}P$ is $0.999\pm0.014\,i$. And the one between sp\textsubscript{z} $^{3}P$ and p\textsubscript{z}\textsuperscript{2} is connected with the singularities $2.207\pm0.023\,i$. However in the spherium the electrons can't be ionized so those singularities are not the $\beta$ singularities highlighted by Sergeev and Goodson \cite{Sergeev_2005}. We can see in Fig.~\ref{fig:UHFEP} that the degeneracy between the s\textsuperscript{2} singlet and the sp\textsubscript{z} triplet at $R=3/2$. For $R>3/2$, it becomes an avoided crossing on the real axis and the degeneracies are moved in the complex plane. The wave function is spin contaminated for $R>3/2$ this why the s\textsuperscript{2} singlet energy can not cross the sp\textsubscript{z} triplet curves anymore. When $R$ increases this avoided crossing becomes sharper. As presented before $\beta$ singularities are linked to quantum phase transition so it seems that this singularity is linked to the spin symmetry breaking of the UHF wave function. The fact that a similar pair of $\beta$ singularities appears for $R<-75/62$ confirms this assumption. A second pair of $\beta$ singularities appear for $R\gtrsim 2.5$, this is probably due to an excited-state quantum phase transition but this still need to be investigated. 
+In the RHF case there are only $\alpha$ singularities and large avoided crossings but we can see in Fig.~\ref{fig:UHFMiniBas} that in the UHF case there are sharp avoided crossings which are known to be connected to $\beta$ singularities. For example at $R=10$ the pair of singularities connected to the avoided crossing between s\textsuperscript{2} and sp\textsubscript{z} $^{3}P$ is $0.999\pm0.014\,i$. And the one between sp\textsubscript{z} $^{3}P$ and p\textsubscript{z}\textsuperscript{2} is connected with the singularities $2.207\pm0.023\,i$. However, in the spherium the electrons can't be ionized so those singularities cannot be the same $\beta$ singularities as the ones highlighted by Sergeev and Goodson \cite{Sergeev_2005}. We can see in Fig.~\ref{fig:UHFEP} that the s\textsuperscript{2} singlet and the sp\textsubscript{z} triplet states are degenerated for $R=3/2$. For $R>3/2$, it becomes an avoided crossing on the real axis and the degeneracies are $moved$ in the complex plane. The wave function is spin contaminated by $Y_1$ for $R>3/2$ this why the s\textsuperscript{2} singlet energy can not cross the sp\textsubscript{z} triplet curves anymore. When $R$ increases this avoided crossing becomes sharper. As presented before $\beta$ singularities are linked to quantum phase transition so it seems that this singularity is linked to the spin symmetry breaking of the UHF wave function. The fact that a similar pair of $\beta$ singularities appears for $R<-75/62$ confirms this assumption. A second pair of $\beta$ singularities appear for $R\gtrsim 2.5$, this is probably due to an excited-state quantum phase transition but this still need to be investigated. 
 
 \begin{figure}[h!]
     \centering
@@ -828,7 +835,7 @@ In the RHF case there are only $\alpha$ singularities and large avoided crossing
 
 As shown before, some matrix elements of the Hamiltonian become complex in the holomorphic domain. Therefore the Hamiltonian becomes non-Hermitian for those value of $R$. In \cite{Burton_2019a} Burton \textit{et al.}~proved that for the \ce{H_2} molecule the unrestricted Hamiltonian is not \pt -symmetric in the holomorphic domain. An analog reasoning can be done with the spherium model to prove the same result. The \pt -symmetry (invariance with respect to combined space reflection $\mathcal{P}$ and time reversal $\mathcal{T}$) is a property which ensures that a non-Hermitian Hamiltonian has a real energy spectrum. Thus \pt -symmetric Hamiltonian can be seen as an intermediate between Hermitian and non-Hermitian.
 
-Figure \ref{fig:UHFPT} shows that for the spherium model a part of the energy spectrum becomes complex when R is in the holomorphic domain. The parameter domain of value where the energy becomes complex is called the broken \pt symmetry  region. This is consistent with the fact that in the holomorphic domain the Hamiltonian break the \pt -symmetry. 
+Figure \ref{fig:UHFPT} shows that for the spherium model a part of the energy spectrum becomes complex when R is in the holomorphic domain. The parameter domain of value where the energy becomes complex is called the broken \pt symmetry  region. This is consistent with the fact that in the holomorphic domain the Hamiltonian is no more \pt -symmetric. 
 
 \begin{figure}[h!]
     \centering
