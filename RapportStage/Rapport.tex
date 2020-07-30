@@ -618,29 +618,29 @@ These one-electron orbitals are expanded in the basis of zonal spherical harmoni
 It is possible to obtain the formula for the ground state UHF energy in this basis set \cite{Loos_2009}:
 
 \begin{equation}
-E_{\text{UHF}} = E_{\text{c},\alpha} + E_{\text{c},\beta} + E_{\text{p}}
-\end{equation}
-
-\begin{equation}
-E_{\text{c},\alpha} = \sum_{k=0}^{\infty} C_{\alpha,k}^2 \frac{k(k+1)}{R^2}
-\end{equation}
-
-\begin{equation}
-E_{\text{p}} = \sum_{i,j,k,l=0}^{\infty}C_{\alpha,i}C_{\alpha,j}C_{\beta,k}C_{\beta,l} \frac{(-1)^{k+l}S_{i,j,k,l}}{R}\sum_{L=0}^{\infty} \begin{pmatrix}
- i & j & L \\
- 0 & 0 & 0
-\end{pmatrix}^2 \begin{pmatrix}
- k & l & L \\
- 0 & 0 & 0
-\end{pmatrix}^2
+E_{\text{UHF}} = T_{\alpha} + T_{\beta} + V
 \label{eq:EUHF}
 \end{equation}
+with
+\begin{gather}
+	T_{\sigma} = \frac{1}{R^2} \sum_{\ell=0}^{\infty} C_{\sigma,\ell}^2 \, \ell(\ell+1)
+	\\
+	V = \frac{1}{R} \sum_{\ell_1,\ell_2,\ell_3,\ell_4=0}^{\infty} \sum_{L=0}^{\infty} 
+	(-1)^{\ell_3+\ell_4} v^\alpha_{\ell_1,\ell_2,L} v^\beta_{\ell_3,\ell_4,L} 
+\end{gather}
+and
+\begin{equation}
+	v^\sigma_{\ell_1,\ell_2,L} 
+	= \sqrt{(2\ell_1+1)(2\ell_2+1)} C_{\sigma,\ell_1}C_{\sigma,\ell_2}
+	\begin{pmatrix}
+		\ell_1 & \ell_2 & L 
+		\\
+		0 & 0 & 0
+	\end{pmatrix}^2 
+\end{equation}
+\titou{T2: please define Wigner 3j symbols.}
 
-\begin{equation*}
-S_{i,j,k,l}=\sqrt{(2i+1)(2j+1)(2k+1)(2l+1)}
-\end{equation*}
-
-We obtained the equation \eqref{eq:EUHF} for the general form of the wave function \eqref{eq:UHF_WF}, but to be associated with a physical wave function the energy needs to be stationary with respect to the coefficients. The general method is to use the Hartree-Fock self-consistent field method \cite{SzaboBook} to get the coefficients of the wave functions corresponding to physical solutions. We will work in a minimal basis, composed  of a $Y_{00}$ and a $Y_{10}$ spherical harmonic, or equivalently a s and a p\textsubscript{z} orbital, to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions. One can define the one-electron wave functions $\phi(\theta)$ using a mixing angle between the two basis functions. Hence we just need to minimize the energy with respect to the two mixing angles $\chi_\alpha$ and $\chi_\beta$.
+We obtained Eq.~\eqref{eq:EUHF} for the general form of the wave function \eqref{eq:UHF_WF}, but to be associated with a physical wave function the energy needs to be stationary with respect to the coefficients. The general method is to use the Hartree-Fock self-consistent field method \cite{SzaboBook} to get the coefficients of the wave functions corresponding to physical solutions. We will work in a minimal basis, composed  of a $Y_{00}$ and a $Y_{10}$ spherical harmonic, or equivalently a s and a p\textsubscript{z} orbital, to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions. One can define the one-electron wave functions $\phi(\theta)$ using a mixing angle between the two basis functions. Hence we just need to minimize the energy with respect to the two mixing angles $\chi_\alpha$ and $\chi_\beta$.
 
 \begin{equation}
 \phi_\alpha(\theta_1)= \cos(\chi_\alpha)\frac{Y_{00}(\theta_1)}{R} + \sin(\chi_\alpha)\frac{Y_{10}(\theta_1)}{R}
