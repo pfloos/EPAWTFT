@@ -574,17 +574,19 @@ To investigate the physics of EPs we consider one such system named \textit{sphe
 It consists of two electrons confined to the surface of a sphere interacting through the long-range Coulomb potential. 
 Thus, the Hamiltonian is
 \begin{equation}
-	\hH = -\frac{\grad_1^2 + \grad_2^2}{2} + \frac{1}{r_{12}}
+	\hH = -\frac{\grad_1^2 + \grad_2^2}{2} + \frac{1}{r_{12}},
 \end{equation}
-\titou{T2: I would write the Hamiltonian as a function of the interelectronic angle $\omega$ to highlight the different scaling of the kinetic and potential terms.
-This would help following the discussion below which I think is a bit too fast.}
-
+or
+\begin{equation}
+	\hH = -\frac{1}{R^2} \qty( \pdv[2]{}{\omega} + \cot \omega \pdv{}{\omega}) + \frac{1}{R \sqrt{2 - 2 \cos \omega}},
+\end{equation}
+where $\omega$ is the interelectronic angle.
 The Laplace operators are the kinetic operators for each electrons and $r_{12}^{-1} = \abs{\vb{r}_1 - \vb{r}_2}^{-1}$ is the Coulomb operator. 
 Note that, as readily seen by the definition of the interelectronic distance $r_{12}$, the electrons interact through the sphere.
 The radius of the sphere $R$ dictates the correlation regime. 
-In the weak correlation regime (i.e., small $R$), the kinetic energy dominates and the electrons are delocalized over the sphere.
-For large $R$ (or strong correlation regime), the electron repulsion term drives the physics and the electrons localize on opposite side of the sphere to minimize their Coulomb repulsion. 
-This phenomenon is sometimes referred as a Wigner crystalization.
+In the weak correlation regime (i.e., small $R$), the kinetic energy (which scales as $R^{-2}$) dominates and the electrons are delocalized over the sphere.
+For large $R$ (or strong correlation regime), the electron repulsion term (which scales as $R^{-1}$) drives the physics and the electrons localize on opposite side of the sphere to minimize their Coulomb repulsion. 
+This phenomenon is sometimes referred to as a Wigner crystallization.
 \titou{T2: Missing references in this part.}
 
 We will use this model in order to rationalize the effects of the parameters that may influence the physics of EPs:
@@ -594,25 +596,25 @@ We will use this model in order to rationalize the effects of the parameters tha
 	\item Radius of the sphere that ultimately dictates the correlation regime.
 \end{itemize}
 
-In the RHF formalism, the wave function cannot model properly the physics of the system at large $R$ because the spatial orbitals are restricted to be the same. 
-If the spatial orbitals are the  same a fortiori it cannot represent two electrons on opposite side of the sphere. 
-In the UHF formalism there is a critical value of $R$, called the Coulson-Fischer point \cite{Coulson_1949}, at which a UHF solution appears. 
-This solution has broken symmetry as the two electrons tends to localize on opposite side of the sphere. 
-\titou{T2: This paragraph could be improved.}
+In the RHF formalism, the two electrons are restricted to ``live'' in the same spatial orbital.
+The spatial part of the RHF wave function is then
+\begin{equation}\label{eq:RHF_WF}
+	\Psi_{\text{RHF}}(\theta_1,\theta_2) = Y_0(\theta_1) Y_0(\theta_2)
+\end{equation}
+where $\theta_i$ is the polar angle of the $i$th electron and $Y_{\ell}(\theta)$ is a zonal spherical harmonic. 
 
-The UHF wave function is defined as
+The RHF wave function cannot model properly the physics of the system at large $R$ because the spatial orbitals are restricted to be the same, and, \textit{a fortiori}, it cannot represent two electrons on opposite side of the sphere. 
+In the UHF formalism there is a critical value of $R$, called Coulson-Fischer point \cite{Coulson_1949}, at which a UHF solution appears and is lower in energy than the RHF one.
+The UHF solution has broken symmetry as the two electrons tends to localize on opposite sides of the sphere. 
+The spatial part of the UHF wave function is defined as
 \begin{equation}\label{eq:UHF_WF}
 	\Psi_{\text{UHF}}(\theta_1,\theta_2)=\phi_\alpha(\theta_1)\phi_\beta(\theta_2)
 \end{equation}
-\titou{T2: Please define the RHF wave function first. The angles are not defined.}
-
-
-Then the one-electron orbitals are expanded in the spatial basis set of the zonal spherical harmonics $Y_{k}(\theta)$:
-
+where $\phi_\sigma(\theta)$ is the spatial orbital associated with the spin-$\sigma$ electrons ($\sigma = \alpha$ for spin-up electrons and $\sigma = \beta$ for spin-down electrons).
+These one-electron orbitals are expanded in the basis of zonal spherical harmonics
 \begin{equation}
-\phi_\alpha(\theta_1)=\sum_{k=0}^{\infty}C_{\alpha,k}\frac{Y_{k0}(\theta_1)}{R}
+	\phi_\sigma(\theta)=\sum_{\ell=0}^{\infty}C_{\sigma,\ell}Y_{\ell}(\theta)
 \end{equation}
-
 It is possible to obtain the formula for the ground state UHF energy in this basis set \cite{Loos_2009}:
 
 \begin{equation}
@@ -656,14 +658,14 @@ Those solutions are respectively a minimum, a maximum and a saddle point of the 
 In addition, there is also the well-known symmetry-broken UHF (sb-UHF) solution. For $R>3/2$ an other stationary UHF solution appears, this solution is a minimum of the HF equations. This solution corresponds to the configuration with the electron $\alpha$ on one side of the sphere and the electron $\beta$ on the opposite side and the configuration the other way round. The electrons can be on opposite sides of the sphere because the choice of p\textsubscript{z} as a basis function induced a privileged axis on the sphere for the electrons. This solution have the energy \eqref{eq:EsbUHF} for $R>3/2$.
 
 \begin{equation}\label{eq:EsbUHF}
-E_{\text{sb-UHF}}=-\frac{75}{112R^3}+\frac{25}{28R^2}+\frac{59}{84R}
+	E_{\text{sb-UHF}}=-\frac{75}{112R^3}+\frac{25}{28R^2}+\frac{59}{84R}
 \end{equation}
 
 The exact solution for the ground state is a singlet so this wave function does not have the true symmetry. Indeed, the spherical harmonics are eigenvectors of $S^2$ but the symmetry-broken solution is a linear combination of the two eigenvectors and is not an eigenvector of $S^2$. However this solution gives more accurate results for the energy at large R as shown in Table \ref{tab:ERHFvsEUHF}. In fact at the Coulson-Fischer point, it becomes more efficient to minimize the Coulomb repulsion than the kinetic energy in order to minimize the total energy. Thus the wave function break the spin symmetry because it allows a more efficient minimization of the Coulomb repulsion. This type of symmetry breaking is called a spin density wave because the system oscillates between the two symmetry-broken configurations \cite{GiulianiBook}.
 
 \begin{table}[h!]
 \centering
-\caption{\centering RHF and UHF energies in the minimal basis and exact energies for various R.}
+\caption{\centering RHF and UHF energies in the minimal basis and exact energies for various $R$.}
 \begin{tabular}{ccccccccc}
 \hline
 \hline
@@ -688,26 +690,28 @@ We can also consider negative values of R. This corresponds to the situation whe
 
 In addition, we can also consider the symmetry-broken solutions beyond their respective Coulson-Fischer points by analytically continuing their respective energies leading to the so-called holomorphic solutions \cite{Hiscock_2014, Burton_2019, Burton_2019a}. All those energies are plotted in Fig.~\ref{fig:SpheriumNrj}. The dotted curves corresponds to the holomorphic domain of the energies.
 
-\begin{figure}[h!]
+\begin{wrapfigure}{r}{0.5\textwidth}
     \centering
-    \includegraphics[width=0.9\textwidth]{EsbHF.pdf}
-    \caption{\centering Energies of the five solutions of the HF equations (multiplied by $R^2$). The dotted curves correspond to the analytic continuation of the symmetry-broken solutions.}
+    \includegraphics[width=\linewidth]{EsbHF.pdf}
+    \caption{Energies of the five solutions of the HF equations (multiplied by $R^2$). The dotted curves correspond to the analytic continuation of the symmetry-broken solutions.}
     \label{fig:SpheriumNrj}
-\end{figure}
+\end{wrapfigure}
 
 \section{Radius of convergence and exceptional points}
 
 \subsection{Evolution of the radius of convergence}
 
-In this part, we will try to investigate how some parameters of $\hH(\lambda)$ influence the radius of convergence of the perturbation series. The radius of convergence is equal to the distance of the closest singularity to the origin of $E(\lambda)$. Hence we need to determine the locations of the exceptional points to obtain information on the convergence properties. To find them we solve simultaneously the equations \eqref{eq:PolChar} and \eqref{eq:DPolChar}. The equation \eqref{eq:PolChar} is the well-known secular equation giving the energies of the system where $\hI$ is the identity operator. If an energy is also solution of \eqref{eq:DPolChar} then this energy is degenerate. In this case the energies obtained are dependent of $\lambda$ so solving those equations with respect to $E$ and $\lambda$ gives the value of $\lambda$ where two energies are degenerate. These degeneracies can be conical intersections between two states with different symmetry for real value of $\lambda$ or exceptional points between two states with the same symmetry for complex value of $\lambda$.
+In this part, we will try to investigate how some parameters of $\hH(\lambda)$ influence the radius of convergence of the perturbation series. The radius of convergence is equal to the distance of the closest singularity to the origin of $E(\lambda)$. Hence we need to determine the locations of the exceptional points to obtain information on the convergence properties. To find them we solve simultaneously Eqs.~\eqref{eq:PolChar} and \eqref{eq:DPolChar}. Equation \eqref{eq:PolChar} is the well-known secular equation giving the energies of the system where $\hI$ is the identity operator. If an energy is also solution of Eq.~\eqref{eq:DPolChar} then this energy is degenerate. In this case the energies obtained are dependent of $\lambda$ so solving those equations with respect to $E$ and $\lambda$ gives the value of $\lambda$ where two energies are degenerate. These degeneracies can be conical intersections between two states with different symmetry for real value of $\lambda$ or exceptional points between two states with the same symmetry for complex value of $\lambda$.
 
-\begin{equation}\label{eq:PolChar}
-\text{det}[E\hI-\hH(\lambda)]=0
-\end{equation}
-
-\begin{equation}\label{eq:DPolChar}
-\pdv{E}\text{det}[E\hI-\hH(\lambda)]=0
-\end{equation}
+\begin{subequations}
+\begin{align}
+	\label{eq:PolChar}
+	\text{det}[E\hI-\hH(\lambda)] & = 0,
+	\\ 
+	\label{eq:DPolChar}
+	\pdv{E}\text{det}[E\hI-\hH(\lambda)] & = 0.
+\end{align}
+\end{subequations}
 
 The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we can forget the spin part of the spin-orbitals and from now on we will work with spatial orbitals. In the restricted formalism the spatial orbitals are the same so the two-electron basis set is defined as:
 
@@ -722,12 +726,12 @@ The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we 
 
 The Hamiltonian $\hH(\lambda)$ is block diagonal because of the symmetry of the basis set, i.e., $\psi_1$ only interacts with $\psi_4$ and $\psi_2$ with $\psi_3$. The two singly excited states give a singlet sp\textsubscript{z} and a triplet sp\textsubscript{z} state but their symmetry is not the same as the ground state. Thus these states can not be involved in an avoided crossing with the ground state as it can be seen in Fig.~\ref{fig:RHFMiniBas} and a fortiori can not be involved in an exceptional point with the ground state. However there is an avoided crossing between the s\textsuperscript{2} state and the p\textsubscript{z}\textsuperscript{2} one which gives two exceptional points in the complex plane. 
 
-\begin{figure}[h!]
+\begin{wrapfigure}{c}{0.5\textwidth}
     \centering
-    \includegraphics[width=0.7\textwidth]{EMP_RHF_R10.pdf}
-    \caption{\centering Energies $E(\lambda)$ in the restricted basis set \eqref{eq:rhfbasis} with $R=10$.}
+    \includegraphics[width=\linewidth]{EMP_RHF_R10.pdf}
+    \caption{Energies $E(\lambda)$ in the restricted basis set \eqref{eq:rhfbasis} with $R=10$.}
     \label{fig:RHFMiniBas}
-\end{figure}
+\end{wrapfigure}
 
 To simplify the problem, it is convenient to only consider basis functions with the symmetry of the exact wave function, such basis functions are called Configuration State Function (CSF). It simplifies the problem because with such a basis set we only get the degeneracies of interest for the convergence properties, i.e., the exceptional points between states with the same symmetry. In this case the ground state is a totally symmetric singlet. According to the angular-momentum theory \cite{AngularBook, SlaterBook, Loos_2009} we expand the exact wave function in the following two-electron basis:
 \begin{equation}
@@ -798,15 +802,15 @@ In the UHF formalism the Hamiltonian $\hH(\lambda)$ is no more block diagonal, $
 H_{24}=H_{34}=H_{42}=H_{43}=\sqrt{-3+2R}\sqrt{75+62R}\frac{25+2R}{280R^3}
 \end{equation}
 
-The singularity structure in this case is more complex because of the spin contamination of the wave function. We can not use configuration state function in this case. So when we compute all the degeneracies using \eqref{eq:PolChar} and \eqref{eq:DPolChar} some correspond to EPs and some correspond to conical intersections. The numerical distinction of those singularities is very difficult so we will first look at the energies $E(\lambda)$ obtained with this basis set.
+The singularity structure in this case is more complex because of the spin contamination of the wave function. We can not use configuration state function in this case. So when we compute all the degeneracies using Eqs.~\eqref{eq:PolChar} and \eqref{eq:DPolChar} some correspond to EPs and some correspond to conical intersections. The numerical distinction of those singularities is very difficult so we will first look at the energies $E(\lambda)$ obtained with this basis set.
 Figure \ref{fig:UHFMiniBas} is the analog of Fig.~\ref{fig:RHFMiniBas} in the UHF formalism. We see that in this case the sp\textsubscript{z} triplet interacts with the s\textsuperscript{2} and the p\textsubscript{z}\textsuperscript{2} singlets. Those avoided crossings are due to the spin contamination of the wave function. The exceptional points resulting from those avoided crossings will be discussed in Sec.~\ref{sec:uhfSing}. \\
 
-\begin{figure}[h!]
+\begin{wrapfigure}{c}{0.5\textwidth}
     \centering
-    \includegraphics[width=0.7\textwidth]{EMP_UHF_R10.pdf}
-    \caption{\centering Energies $E(\lambda)$ in the unrestricted basis set \eqref{eq:uhfbasis} with $R=10$.}
+    \includegraphics[width=\linewidth]{EMP_UHF_R10.pdf}
+    \caption{Energies $E(\lambda)$ in the unrestricted basis set \eqref{eq:uhfbasis} with $R=10$.}
     \label{fig:UHFMiniBas}
-\end{figure}
+\end{wrapfigure}
 
 In this study we have used spherical harmonics (or combination of spherical harmonics) as basis function which are diffuse wave functions. It would also be interesting to investigate the use of localized basis function \cite{Seidl_2018} (for example gaussians) because those functions would be more adapted to describe the correlated regime. \\
 
