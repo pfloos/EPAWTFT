@@ -640,17 +640,17 @@ with
 \end{equation}
 \titou{STOPPED HERE.}
 
-We obtained Eq.~\eqref{eq:EUHF} for the general form of the wave function \eqref{eq:UHF_WF}, but to be associated with a physical wave function the energy needs to be stationary with respect to the coefficients. The general method is to use the Hartree-Fock self-consistent field method \cite{SzaboBook} to get the coefficients of the wave functions corresponding to physical solutions. We will work in a minimal basis, composed  of a $Y_{0}$ and a $Y_{1}$ spherical harmonic, or equivalently a s and a p\textsubscript{z} orbital, to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions. One can define the one-electron wave functions $\phi(\theta)$ using a mixing angle between the two basis functions. Hence we just need to minimize the energy with respect to the two mixing angles $\chi_\alpha$ and $\chi_\beta$.
+We obtained Eq.~\eqref{eq:EUHF} for the general form of the wave function \eqref{eq:UHF_WF}, but to be associated with a physical wave function the energy needs to be stationary with respect to the coefficients. The general method is to use the Hartree-Fock self-consistent field method \cite{SzaboBook} to get the coefficients of the wave functions corresponding to physical solutions. We will work in a minimal basis, composed  of a $Y_{0}$ and a $Y_{1}$ spherical harmonic, or equivalently a s and a p\textsubscript{z} orbital, to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions. One can define the one-electron wave functions $\phi_\sigma(\theta_i)$ using a mixing angle between the two basis functions. Hence we just need to minimize the energy with respect to the two mixing angles $\chi_\alpha$ and $\chi_\beta$.
 
 \begin{equation}
-\phi_\sigma(\theta_i)= \cos(\chi_\sigma)\frac{Y_{0}(\theta_i)}{R} + \sin(\chi_\sigma)\frac{Y_{1}(\theta_i)}{R}
+\phi_\sigma(\theta_i)= \cos(\chi_\sigma)Y_{0}(\theta_i) + \sin(\chi_\sigma)Y_{1}(\theta_i)
 \end{equation}
  
 The minimization gives the three following solutions valid for all value of R:
 \begin{itemize}
 \item The two electrons are in the s orbital which is a RHF solution. This solution is associated with the energy $R^{-2}$.
-\item The two electrons are in the p\textsubscript{z} orbital which is a RHF solution. This solution is associated with the energy $R^{-2} + R^{-1}$
-\item One electron is in the s orbital and the other is in the p\textsubscript{z} orbital which is a UHF solution. This solution is associated with the energy $2R^{-2}+\frac{29}{25}R^{-1}$
+\item The two electrons are in the p\textsubscript{z} orbital which is a RHF solution. This solution is associated with the energy $2R^{-2}+\frac{29}{25}R^{-1}$.
+\item One electron is in the s orbital and the other is in the p\textsubscript{z} orbital which is a UHF solution. This solution is associated with the energy $R^{-2} + R^{-1}$.
 \end{itemize}
 
 Those solutions are respectively a minimum, a maximum and a saddle point of the HF equations.\\
@@ -716,12 +716,12 @@ In this part, we will try to investigate how some parameters of $\hH(\lambda)$ i
 The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we can forget the spin part of the spin-orbitals and from now on we will work with spatial orbitals. In the restricted formalism the spatial orbitals are the same so the two-electron basis set is defined as:
 
 \begin{align}\label{eq:rhfbasis}
- \psi_1 & =Y_{00}(\theta_1)Y_{00}(\theta_2),
+ \psi_1 & =Y_{0}(\theta_1)Y_{0}(\theta_2),
  & 
- \psi_2 & =Y_{00}(\theta_1)Y_{10}(\theta_2),\\
- \psi_3 & =Y_{10}(\theta_1)Y_{00}(\theta_2),
+ \psi_2 & =Y_{0}(\theta_1)Y_{1}(\theta_2),\\
+ \psi_3 & =Y_{1}(\theta_1)Y_{0}(\theta_2),
  & 
- \psi_4 & =Y_{10}(\theta_1)Y_{10}(\theta_2).
+ \psi_4 & =Y_{1}(\theta_1)Y_{1}(\theta_2).
 \end{align}
 
 The Hamiltonian $\hH(\lambda)$ is block diagonal because of the symmetry of the basis set, i.e., $\psi_1$ only interacts with $\psi_4$ and $\psi_2$ with $\psi_3$. The two singly excited states give a singlet sp\textsubscript{z} and a triplet sp\textsubscript{z} state but their symmetry is not the same as the ground state. Thus these states can not be involved in an avoided crossing with the ground state as it can be seen in Fig.~\ref{fig:RHFMiniBas} and a fortiori can not be involved in an exceptional point with the ground state. However there is an avoided crossing between the s\textsuperscript{2} state and the p\textsubscript{z}\textsuperscript{2} one which gives two exceptional points in the complex plane. 
@@ -735,13 +735,12 @@ The Hamiltonian $\hH(\lambda)$ is block diagonal because of the symmetry of the 
 
 To simplify the problem, it is convenient to only consider basis functions with the symmetry of the exact wave function, such basis functions are called Configuration State Function (CSF). It simplifies the problem because with such a basis set we only get the degeneracies of interest for the convergence properties, i.e., the exceptional points between states with the same symmetry. In this case the ground state is a totally symmetric singlet. According to the angular-momentum theory \cite{AngularBook, SlaterBook, Loos_2009} we expand the exact wave function in the following two-electron basis:
 \begin{equation}
-\Phi_l(\theta)=\frac{\sqrt{2l+1}}{4\pi R^2}P_l(\cos\theta)
+\Phi_l(\omega)=\frac{\sqrt{2l+1}}{4\pi R^2}P_l(\cos\omega)
 \end{equation}
-where $P_l$ are the Legendre polynomial and $\theta$ is the interelectronic angle.
+where $P_l$ are the Legendre polynomial and $\omega$ is the interelectronic angle.
 
 Then using this basis set we can compare the different partitioning of Sec.~\ref{sec:AlterPart}. Figure \ref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ in function of $R$ for the MP, the EN, the WC and the SC partitioning in a minimal basis, i.e., $P_0$ and $P_1$ and in the same basis augmented with $P_2$. We see that the radius of convergence of the SC partitioning is growing with R whereas it is decreasing for the three others partitioning. This result was expected because the three decreasing partitioning use a weakly correlated reference so $\hH^{(0)}$ is a good approximation for small $R$. On the contrary, the strong coupling one uses a strongly correlated reference so this series converge better when the electron are strongly correlated, i.e., when $R$ is large for the spherium model.
-The MP partitioning is always better than the weak correlation in Fig.~\ref{fig:RadiusPartitioning}. In the weak correlation partitioning the powers of $R$ are well-separated so each term of the series is a different power of $R$. Whereas the MP reference is proportionnal to $R^{-1}$ and $R^{-2}$ so the MP series is not well-defined in terms of powers of $R$. Moreover it can be proved that the $n$th order energy of the weak correlation series can be obtained as a Taylor approximation of MP$n$ respective to $R$. It seems that the EN partitioning is better than the MP one for very small R in the minimal basis. In fact, it is just an artifact of the minimal basis because in the minimal basis augmented with $P_2
-$ (and in larger basis set) the MP series has a greater radius of convergence for all value of $R$.
+The MP partitioning is always better than the weak correlation in Fig.~\ref{fig:RadiusPartitioning}. In the weak correlation partitioning the powers of $R$ are well-separated so each term of the series is a different power of $R$. Whereas the MP reference is proportionnal to $R^{-1}$ and $R^{-2}$ so the MP series is not well-defined in terms of powers of $R$. Moreover it can be proved that the $l$th order energy of the weak correlation series can be obtained as a Taylor approximation of MP$l$ respective to $R$. It seems that the EN partitioning is better than the MP one for very small R in the minimal basis. In fact, it is just an artifact of the minimal basis because in the minimal basis augmented with $P_2$ (and in larger basis set) the MP series has a greater radius of convergence for all value of $R$.
 
 \begin{figure}[h!]
     \centering
@@ -769,8 +768,8 @@ Figure \ref{fig:RadiusBasis} shows that the radius of convergence is not very se
 \hline
 $R$ & 0.1 & 1 & 2 & 3 & 5 & 10 & 100 \\
 \hline
-MP & 14.1-10.9i & 2.38-1.47i & -0.67-1.30i & -0.49-0.89i & -0.33-0.55i & -0.22-0.31i & 0.03-0.05i \\
-WC & -9.6-10.7i & -0.96-1.07i & -0.48-0.53i & -0.32-0.36 & -0.19-0.21i & -0.10-0.11i & -0.01-0.01i \\
+MP & 14.1-10.9\,i & 2.38-1.47\,i & -0.67-1.30\,i & -0.49-0.89\,i & -0.33-0.55\,i & -0.22-0.31\,i & 0.03-0.05\,i \\
+WC & -9.6-10.7\,i & -0.96-1.07\,i & -0.48-0.53\,i & -0.32-0.36\,i & -0.19-0.21\,i & -0.10-0.11\,i & -0.01-0.01\,i \\
 \hline
 \hline
 \end{tabular}
@@ -816,7 +815,7 @@ In this study we have used spherical harmonics (or combination of spherical harm
 
 \subsection{Exceptional points in the UHF formalism}\label{sec:uhfSing}
 
-In the RHF case there are only $\alpha$ singularities and large avoided crossings but we can see in Fig.~\ref{fig:UHFMiniBas} that in the UHF case there are sharp avoided crossings which are known to be connected to $\beta$ singularities. For example at $R=10$ the pair of singularities connected to the avoided crossing between s\textsuperscript{2} and sp\textsubscript{z} $^{3}P$ is $0.999\pm0.014i$. And the one between sp\textsubscript{z} $^{3}P$ and p\textsubscript{z}\textsuperscript{2} is connected with the singularities $2.207\pm0.023i$. However in the spherium the electrons can't be ionized so those singularities are not the $\beta$ singularities highlighted by Sergeev and Goodson \cite{Sergeev_2005}. We can see in Fig.~\ref{fig:UHFEP} that the degeneracy between the s\textsuperscript{2} singlet and the sp\textsubscript{z} triplet at $R=3/2$. For $R>3/2$, it becomes an avoided crossing on the real axis and the degeneracies are moved in the complex plane. The wave function is spin contaminated for $R>3/2$ this why the s\textsuperscript{2} singlet energy can not cross the sp\textsubscript{z} triplet curves anymore. When $R$ increases this avoided crossing becomes sharper. As presented before $\beta$ singularities are linked to quantum phase transition so it seems that this singularity is linked to the spin symmetry breaking of the UHF wave function. The fact that a similar pair of $\beta$ singularities appears for $R<-75/62$ confirms this assumption. A second pair of $\beta$ singularities appear for $R\gtrsim 2.5$, this is probably due to an excited-state quantum phase transition but this still need to be investigated. 
+In the RHF case there are only $\alpha$ singularities and large avoided crossings but we can see in Fig.~\ref{fig:UHFMiniBas} that in the UHF case there are sharp avoided crossings which are known to be connected to $\beta$ singularities. For example at $R=10$ the pair of singularities connected to the avoided crossing between s\textsuperscript{2} and sp\textsubscript{z} $^{3}P$ is $0.999\pm0.014\,i$. And the one between sp\textsubscript{z} $^{3}P$ and p\textsubscript{z}\textsuperscript{2} is connected with the singularities $2.207\pm0.023\,i$. However in the spherium the electrons can't be ionized so those singularities are not the $\beta$ singularities highlighted by Sergeev and Goodson \cite{Sergeev_2005}. We can see in Fig.~\ref{fig:UHFEP} that the degeneracy between the s\textsuperscript{2} singlet and the sp\textsubscript{z} triplet at $R=3/2$. For $R>3/2$, it becomes an avoided crossing on the real axis and the degeneracies are moved in the complex plane. The wave function is spin contaminated for $R>3/2$ this why the s\textsuperscript{2} singlet energy can not cross the sp\textsubscript{z} triplet curves anymore. When $R$ increases this avoided crossing becomes sharper. As presented before $\beta$ singularities are linked to quantum phase transition so it seems that this singularity is linked to the spin symmetry breaking of the UHF wave function. The fact that a similar pair of $\beta$ singularities appears for $R<-75/62$ confirms this assumption. A second pair of $\beta$ singularities appear for $R\gtrsim 2.5$, this is probably due to an excited-state quantum phase transition but this still need to be investigated. 
 
 \begin{figure}[h!]
     \centering
