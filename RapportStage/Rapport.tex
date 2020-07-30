@@ -641,28 +641,28 @@ and
 \titou{T2: please define Wigner 3j symbols.}
 \titou{STOPPED HERE.}
 
-We obtained Eq.~\eqref{eq:EUHF} for the general form of the wave function \eqref{eq:UHF_WF}, but to be associated with a physical wave function the energy needs to be stationary with respect to the coefficients. The general method is to use the Hartree-Fock self-consistent field method \cite{SzaboBook} to get the coefficients of the wave functions corresponding to physical solutions. We will work in a minimal basis, composed  of a $Y_{00}$ and a $Y_{10}$ spherical harmonic, or equivalently a s and a p\textsubscript{z} orbital, to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions. One can define the one-electron wave functions $\phi(\theta)$ using a mixing angle between the two basis functions. Hence we just need to minimize the energy with respect to the two mixing angles $\chi_\alpha$ and $\chi_\beta$.
+Equation \eqref{eq:EUHF} is obtained from the general form of the wave function \eqref{eq:UHF_WF}, but to be associated with a physical wave function the energy has to be stationary with respect to the coefficients. The general method is to use a self-consistent field procedure \cite{SzaboBook} to get the coefficients of the wave functions corresponding to physical solutions. We will work in a minimal basis, composed of $Y_{0}$ and $Y_{1}$, or equivalently, a s and p\textsubscript{z} orbitals, to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions. One can define the one-electron wave functions $\phi(\theta)$ using a mixing angle between the two basis functions. Hence we just need to minimize the energy with respect to the two mixing angles $\chi_\alpha$ and $\chi_\beta$.
 
 \begin{equation}
-\phi_\alpha(\theta_1)= \cos(\chi_\alpha)\frac{Y_{00}(\theta_1)}{R} + \sin(\chi_\alpha)\frac{Y_{10}(\theta_1)}{R}
+	\phi_\sigma(\theta)= \cos(\chi_\sigma)Y_{0}(\theta) + \sin(\chi_\sigma)Y_{1}(\theta)
 \end{equation}
  
-The minimization gives the three following solutions valid for all value of R:
+The minimization gives the three following solutions valid for all value of $R$:
 \begin{itemize}
-\item The two electrons are in the s orbital which is a RHF solution. This solution is associated with the energy $R^{-2}$.
-\item The two electrons are in the p\textsubscript{z} orbital which is a RHF solution. This solution is associated with the energy $R^{-2} + R^{-1}$
-\item One electron is in the s orbital and the other is in the p\textsubscript{z} orbital which is a UHF solution. This solution is associated with the energy $2R^{-2}+\frac{29}{25}R^{-1}$
+\item The two electrons are in the s orbital which is a RHF solution. This solution is associated with the energy $1/R^{2}$.
+\item The two electrons are in the p\textsubscript{z} orbital which is a RHF solution. This solution is associated with the energy $1/R^{2} + 1/R$
+\item One electron is in the s orbital and the other is in the p\textsubscript{z} orbital which is a UHF solution. This solution is associated with the energy $2/R^{2}+ 29/(25R)$
 \end{itemize}
 
 Those solutions are respectively a minimum, a maximum and a saddle point of the HF equations.\\
 
-In addition, there is also the well-known symmetry-broken UHF (sb-UHF) solution. For $R>3/2$ an other stationary UHF solution appears, this solution is a minimum of the HF equations. This solution corresponds to the configuration with the electron $\alpha$ on one side of the sphere and the electron $\beta$ on the opposite side and the configuration the other way round. The electrons can be on opposite sides of the sphere because the choice of p\textsubscript{z} as a basis function induced a privileged axis on the sphere for the electrons. This solution have the energy \eqref{eq:EsbUHF} for $R>3/2$.
+In addition, there is also the well-known symmetry-broken UHF (sb-UHF) solution. For $R>3/2$ an other stationary UHF solution appears, this solution is a minimum of the HF equations. This solution corresponds to the configuration with the electron $\alpha$ on one side of the sphere and the electron $\beta$ on the opposite side and the configuration the other way round. The electrons can be on opposite sides of the sphere because the choice of p\textsubscript{z} as a basis function induced a privileged axis on the sphere for the electrons. This solution has the energy \eqref{eq:EsbUHF} for $R>3/2$.
 
 \begin{equation}\label{eq:EsbUHF}
 	E_{\text{sb-UHF}}=-\frac{75}{112R^3}+\frac{25}{28R^2}+\frac{59}{84R}
 \end{equation}
 
-The exact solution for the ground state is a singlet so this wave function does not have the true symmetry. Indeed, the spherical harmonics are eigenvectors of $S^2$ but the symmetry-broken solution is a linear combination of the two eigenvectors and is not an eigenvector of $S^2$. However this solution gives more accurate results for the energy at large R as shown in Table \ref{tab:ERHFvsEUHF}. In fact at the Coulson-Fischer point, it becomes more efficient to minimize the Coulomb repulsion than the kinetic energy in order to minimize the total energy. Thus the wave function break the spin symmetry because it allows a more efficient minimization of the Coulomb repulsion. This type of symmetry breaking is called a spin density wave because the system oscillates between the two symmetry-broken configurations \cite{GiulianiBook}.
+The exact solution for the ground state is a singlet so this wave function does not have the true symmetry. Indeed, the spherical harmonics are eigenvectors of $S^2$ but the symmetry-broken solution is a linear combination of the two eigenvectors and is not an eigenvector of $S^2$. However this solution gives more accurate results for the energy at large $R$ as shown in Table \ref{tab:ERHFvsEUHF}. In fact at the Coulson-Fischer point, it becomes more efficient to minimize the Coulomb repulsion than the kinetic energy in order to minimize the total energy. Thus the wave function break the spin symmetry because it allows a more efficient minimization of the Coulomb repulsion. This type of symmetry breaking is called a spin density wave because the system oscillates between the two symmetry-broken configurations \cite{GiulianiBook}.
 
 \begin{table}[h!]
 \centering
@@ -681,15 +681,6 @@ Exact 	& 9.783874 & 0.852781 & 0.391959 & 0.247898 & 0.139471 & 0.064525 & 0.005
 \label{tab:ERHFvsEUHF}
 \end{table}
 
-There is also another symmetry-broken solution for $R>75/38$ but this one corresponds to a maximum of the HF equations. This solution is associated with another type of symmetry breaking somewhat less known. It corresponds to a configuration where both electrons are on the same side of the sphere, in the same spatial orbital. This solution is called symmetry-broken RHF (sb-RHF). At the critical value of R, the repulsion of the two electrons on the same side of the sphere maximizes more the energy than the kinetic energy of the p\textsubscript{z} orbitals. This symmetry breaking is associated with a charge density wave, the system oscillates between the situations with the electrons on each side \cite{GiulianiBook}.
-
-\begin{equation}
-E_{\text{sb-RHF}}=\frac{75}{88R^3}+\frac{25}{22R^2}+\frac{91}{66R}
-\end{equation}
-
-We can also consider negative values of R. This corresponds to the situation where one of the electrons is replaced by a positron. There are also a sb-RHF ($R<-3/2$) and a sb-UHF ($R<-75/38$) solution for negative values of R (see Fig.\ref{fig:SpheriumNrj} but in this case the sb-RHF solution is a minimum and the sb-UHF is a maximum. Indeed, the sb-RHF states minimize the energy by placing the electron and the positron on the same side of the sphere. And the sb-UHF states maximize the energy because the two attracting particles are on opposite sides of the sphere.
-
-In addition, we can also consider the symmetry-broken solutions beyond their respective Coulson-Fischer points by analytically continuing their respective energies leading to the so-called holomorphic solutions \cite{Hiscock_2014, Burton_2019, Burton_2019a}. All those energies are plotted in Fig.~\ref{fig:SpheriumNrj}. The dotted curves corresponds to the holomorphic domain of the energies.
 
 \begin{wrapfigure}{r}{0.5\textwidth}
     \centering
@@ -698,11 +689,22 @@ In addition, we can also consider the symmetry-broken solutions beyond their res
     \label{fig:SpheriumNrj}
 \end{wrapfigure}
 
+There is also another symmetry-broken solution for $R>75/38$ but this one corresponds to a maximum of the HF equations. This solution is associated with another type of symmetry breaking somewhat less known. It corresponds to a configuration where both electrons are on the same side of the sphere, in the same spatial orbital. This solution is called symmetry-broken RHF (sb-RHF). At the critical value of $R$, the repulsion of the two electrons on the same side of the sphere maximizes more the energy than the kinetic energy of the p\textsubscript{z} orbitals. This symmetry breaking is associated with a charge density wave, the system oscillates between the situations with the electrons on each side \cite{GiulianiBook}.
+
+\begin{equation}
+E_{\text{sb-RHF}}=\frac{75}{88R^3}+\frac{25}{22R^2}+\frac{91}{66R}
+\end{equation}
+
+We can also consider negative values of $R$. This corresponds to the situation where one of the electrons is replaced by a positron. There are also a sb-RHF ($R<-3/2$) and a sb-UHF ($R<-75/38$) solution for negative values of $R$ (see Fig.~\ref{fig:SpheriumNrj} but in this case the sb-RHF solution is a minimum and the sb-UHF is a maximum. Indeed, the sb-RHF states minimize the energy by placing the electron and the positron on the same side of the sphere. And the sb-UHF states maximize the energy because the two attracting particles are on opposite sides of the sphere.
+
+In addition, we can also consider the symmetry-broken solutions beyond their respective Coulson-Fischer points by analytically continuing their respective energies leading to the so-called holomorphic solutions \cite{Hiscock_2014, Burton_2019, Burton_2019a}. All those energies are plotted in Fig.~\ref{fig:SpheriumNrj}. The dotted curves corresponds to the holomorphic domain of the energies.
+
+
 \section{Radius of convergence and exceptional points}
 
 \subsection{Evolution of the radius of convergence}
 
-In this part, we will try to investigate how some parameters of $\hH(\lambda)$ influence the radius of convergence of the perturbation series. The radius of convergence is equal to the distance of the closest singularity to the origin of $E(\lambda)$. Hence we need to determine the locations of the exceptional points to obtain information on the convergence properties. To find them we solve simultaneously Eqs.~\eqref{eq:PolChar} and \eqref{eq:DPolChar}. Equation \eqref{eq:PolChar} is the well-known secular equation giving the energies of the system where $\hI$ is the identity operator. If an energy is also solution of Eq.~\eqref{eq:DPolChar} then this energy is degenerate. In this case the energies obtained are dependent of $\lambda$ so solving those equations with respect to $E$ and $\lambda$ gives the value of $\lambda$ where two energies are degenerate. These degeneracies can be conical intersections between two states with different symmetry for real value of $\lambda$ or exceptional points between two states with the same symmetry for complex value of $\lambda$.
+In this part, we will try to investigate how some parameters of $\hH(\lambda)$ influence the radius of convergence of the perturbation series. The radius of convergence is equal to the distance of the closest singularity to the origin of $E(\lambda)$. Hence, we have to determine the locations of the exceptional points to obtain information on the convergence properties. To find them we solve simultaneously Eqs.~\eqref{eq:PolChar} and \eqref{eq:DPolChar}. Equation \eqref{eq:PolChar} is the well-known secular equation giving the energies of the system where $\hI$ is the identity operator. If an energy is also solution of Eq.~\eqref{eq:DPolChar} then this energy is degenerate. In this case the energies obtained are dependent of $\lambda$ so solving those equations with respect to $E$ and $\lambda$ gives the value of $\lambda$ where two energies are degenerate. These degeneracies can be conical intersections between two states with different symmetry for real value of $\lambda$ or exceptional points between two states with the same symmetry for complex value of $\lambda$.
 
 \begin{subequations}
 \begin{align}
