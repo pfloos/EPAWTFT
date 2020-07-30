@@ -568,26 +568,46 @@ It seems like our understanding of the physics of spatial and/or spin symmetry b
 \section{The spherium model}\label{sec:spherium}
 %============================================================%
 
-Simple systems that are analytically solvable (or at least quasi-exactly solvable) are of great importance in theoretical chemistry. Those systems are very useful benchmarks to test new methods as they are mathematically easy but retain much of the key physics. To investigate the physics of EPs we use one such system named spherium model. It consists of two electrons confined to the surface of a sphere interacting through the long-range Coulomb potential. Thus the Hamiltonian is:
-
+Simple systems that are analytically solvable (or at least quasi-exactly solvable \titou{(please define)}) are of great importance in theoretical chemistry. 
+These systems are very useful to perform benchmark studies in order to test new methods as the mathematics are easier than in realistic systems (such as molecules or solids) but retain much of the key physics. 
+To investigate the physics of EPs we consider one such system named \textit{spherium}. 
+It consists of two electrons confined to the surface of a sphere interacting through the long-range Coulomb potential. 
+Thus, the Hamiltonian is
 \begin{equation}
 	\hH = -\frac{\grad_1^2 + \grad_2^2}{2} + \frac{1}{r_{12}}
 \end{equation}
+\titou{T2: I would write the Hamiltonian as a function of the interelectronic angle $\omega$ to highlight the different scaling of the kinetic and potential terms.
+This would help following the discussion below which I think is a bit too fast.}
 
-The Laplace operators are the kinetic operators for each electrons and $r_{12}^{-1} = \abs{\vb{r}_1 - \vb{r}_2}$ is the Coulomb operator. The radius R of the sphere dictates the correlation regime, i.e., weak correlation regime at small $R$ where the kinetic energy dominates, or strong correlation regime where the electron repulsion term drives the physics. We will use this model to try to rationalize the effects of the parameters that may influence the physics of EPs:
+The Laplace operators are the kinetic operators for each electrons and $r_{12}^{-1} = \abs{\vb{r}_1 - \vb{r}_2}^{-1}$ is the Coulomb operator. 
+Note that, as readily seen by the definition of the interelectronic distance $r_{12}$, the electrons interact through the sphere.
+The radius of the sphere $R$ dictates the correlation regime. 
+In the weak correlation regime (i.e., small $R$), the kinetic energy dominates and the electrons are delocalized over the sphere.
+For large $R$ (or strong correlation regime), the electron repulsion term drives the physics and the electrons localize on opposite side of the sphere to minimize their Coulomb repulsion. 
+This phenomenon is sometimes referred as a Wigner crystalization.
+\titou{T2: Missing references in this part.}
+
+We will use this model in order to rationalize the effects of the parameters that may influence the physics of EPs:
 \begin{itemize}
-	\item Partitioning of the Hamiltonian and the actual zeroth-order reference: weak correlation reference [RHF or UHF references, MP or EN partitioning], or strongly correlated reference.
-	\item Basis set: minimal basis or infinite (i.e., complete) basis made of localized or delocalized basis functions
-	\item Radius of the spherium that ultimately dictates the correlation regime.
+	\item Partitioning of the Hamiltonian and the actual zeroth-order reference: weak correlation reference (RHF or UHF references, MP or EN partitioning), or strongly correlated reference.
+	\item Basis set: minimal basis or infinite (i.e., complete) basis made of localized or delocalized basis functions.
+	\item Radius of the sphere that ultimately dictates the correlation regime.
 \end{itemize}
 
-In the RHF formalism, the wave function cannot model properly the physics of the system at large R because the spatial orbitals are restricted to be the same. If the spatial orbitals are the  same a fortiori it cannot represent two electrons on opposite side of the sphere. In the UHF formalism there is a critical value of R, called the Coulson-Fischer point \cite{Coulson_1949}, at which a second UHF solution appears. This solution is symmetry-broken as the two electrons tends to localize on opposite side of the sphere. The UHF wave function is defined as:
+In the RHF formalism, the wave function cannot model properly the physics of the system at large $R$ because the spatial orbitals are restricted to be the same. 
+If the spatial orbitals are the  same a fortiori it cannot represent two electrons on opposite side of the sphere. 
+In the UHF formalism there is a critical value of $R$, called the Coulson-Fischer point \cite{Coulson_1949}, at which a UHF solution appears. 
+This solution has broken symmetry as the two electrons tends to localize on opposite side of the sphere. 
+\titou{T2: This paragraph could be improved.}
 
+The UHF wave function is defined as
 \begin{equation}\label{eq:UHF_WF}
-\Psi_{\text{UHF}}(\theta_1,\theta_2)=\phi_\alpha(\theta_1)\phi_\beta(\theta_2)
+	\Psi_{\text{UHF}}(\theta_1,\theta_2)=\phi_\alpha(\theta_1)\phi_\beta(\theta_2)
 \end{equation}
+\titou{T2: Please define the RHF wave function first. The angles are not defined.}
 
-Then the mono-electronic wave function are expand in the spatial basis set of the zonal spherical harmonics:
+
+Then the one-electron orbitals are expanded in the spatial basis set of the zonal spherical harmonics $Y_{k}(\theta)$:
 
 \begin{equation}
 \phi_\alpha(\theta_1)=\sum_{k=0}^{\infty}C_{\alpha,k}\frac{Y_{k0}(\theta_1)}{R}
