@@ -166,7 +166,7 @@ In other words, our view of the quantized nature of conventional Hermitian quant
 The realization that ground and excited states both emerge from one single mathematical structure with equal importance suggests that excited-state energies can be computed from first principles in their own right.
 One could then exploit the structure of these Riemann surfaces to develop methods that directly target excited-state energies without needing ground-state information.
 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{wrapfigure}{R}{0.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{TopologyEP.pdf}
     \caption{A generic EP with the square-root branch point topology. A loop around the EP interconvert the states.}
@@ -178,14 +178,14 @@ Hence, electronic states can be interchanged away from the real axis since the c
 Amazingly, this smooth and continuous transition from one state to another has recently been experimentally realized in physical settings such as electronics, microwaves, mechanics, acoustics, atomic systems and optics \cite{Bittner_2012, Chong_2011, Chtchelkatchev_2012, Doppler_2016, Guo_2009, Hang_2013, Liertzer_2012, Longhi_2010, Peng_2014, Peng_2014a, Regensburger_2012, Ruter_2010, Schindler_2011, Szameit_2011, Zhao_2010, Zheng_2013, Choi_2018, El-Ganainy_2018}.
 
 Exceptional points (EPs) are branch point singularities where two (or more) states become exactly degenerate \cite{Heiss_1990, Heiss_1999, Heiss_2012, Heiss_2016}. 
-They are the non-Hermitian analogs of conical intersections (CIs) \cite{Yarkony_1996}.
-CIs are ubiquitous in non-adiabatic processes and play a key role in photo-chemical mechanisms.
-In the case of auto-ionizing resonances, EPs have a role in deactivation processes similar to CIs in the decay of bound excited states.
+They are the non-Hermitian analogs of conical intersections \cite{Yarkony_1996}.
+Conical intersections are ubiquitous in non-adiabatic processes and play a key role in photo-chemical mechanisms.
+In the case of auto-ionizing resonances, EPs have a role in deactivation processes similar to conical intersections in the decay of bound excited states.
 Although Hermitian and non-Hermitian Hamiltonians are closely related, the behavior of their eigenvalues near degeneracies is starkly different.
 For example, encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy (see Fig.~\ref{fig:TopologyEP} for a graphical example).
 Additionally, the wave function picks up a geometric phase (also known as Berry phase \cite{Berry_1984}) and four loops are required to recover the initial wave function.
-In contrast, encircling Hermitian degeneracies at CIs only introduces a geometric phase while leaving the states unchanged.
-More dramatically, whilst eigenvectors remain orthogonal at CIs, at non-Hermitian EPs the eigenvectors themselves become equivalent, resulting in a \textit{self-orthogonal} state \cite{MoiseyevBook}.
+In contrast, encircling Hermitian degeneracies at conical intersections only introduces a geometric phase while leaving the states unchanged.
+More dramatically, whilst eigenvectors remain orthogonal at conical intersections, at non-Hermitian EPs the eigenvectors themselves become equivalent, resulting in a \textit{self-orthogonal} state \cite{MoiseyevBook}.
 More importantly here, although EPs usually lie off the real axis, these singular points are intimately related to the convergence properties of perturbative methods and avoided crossing on the real axis are indicative of singularities in the complex plane \cite{Olsen_1996, Olsen_2000}.
 
 \subsection{An illustrative example}
@@ -456,7 +456,7 @@ Here, we will consider three alternative partitioning schemes:
 \subsection{Behavior of the M{\o}ller-Plesset series}
 
 
-\begin{wrapfigure}{r}{0.4\textwidth}
+\begin{wrapfigure}{R}{0.4\textwidth}
     \centering
     \includegraphics[width=\linewidth]{gill1986.png}
     \caption{Barriers to homolytic fission of \ce{He2^2+} at MPn/STO-3G level ($n = 1$--$20$) (taken from Ref.~\cite{Gill_1986}).}
@@ -685,7 +685,7 @@ Exact 	& 9.783874 & 0.852781 & 0.391959 & 0.247898 & 0.139471 & 0.064525 & 0.005
 \end{table}
 
 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{wrapfigure}{R}{0.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{EsbHF.pdf}
     \caption{Energies of the five solutions of the HF equations (multiplied by $R^2$). The dotted curves correspond to the analytic continuation of the symmetry-broken solutions.}
@@ -707,20 +707,21 @@ In addition, we can also consider the symmetry-broken solutions beyond their res
 
 \subsection{Evolution of the radius of convergence}
 
-In this part, we will try to investigate how some parameters of $\hH(\lambda)$ influence the radius of convergence of the perturbation series. The radius of convergence is equal to the distance of the closest singularity to the origin of $E(\lambda)$. Hence, we have to determine the locations of the exceptional points to obtain information on the convergence properties. To find them we solve simultaneously Eqs.~\eqref{eq:PolChar} and \eqref{eq:DPolChar}. Equation \eqref{eq:PolChar} is the well-known secular equation giving the energies of the system. If an energy is also solution of Eq.~\eqref{eq:DPolChar} then this energy is degenerate. In this case the energies obtained are dependent of $\lambda$ so solving those equations with respect to $E$ and $\lambda$ gives the value of $\lambda$ where two energies are degenerate. These degeneracies can be conical intersections between two states with different symmetry for real value of $\lambda$ \cite{Yarkony_1996} or exceptional points between two states with the same symmetry for complex value of $\lambda$.
-
+In this subsection, we investigate how \titou{parameters} of $\hH(\lambda)$ influence the radius of convergence of the perturbation series. Let us remind the reader that the radius of convergence is equal to the distance of the closest singularity to the origin of $E(\lambda)$. Hence, we have to determine the locations of the EPs to obtain information on the convergence properties of the perturbative series. To find them we solve simultaneously the following equations:
 \begin{subequations}
 \begin{align}
 	\label{eq:PolChar}
-	\text{det}[E\hI-\hH(\lambda)] & = 0,
+	\det[E\hI-\hH(\lambda)] & = 0,
 	\\ 
 	\label{eq:DPolChar}
-	\pdv{E}\text{det}[E\hI-\hH(\lambda)] & = 0.
+	\pdv{E}\det[E\hI-\hH(\lambda)] & = 0,
 \end{align}
 \end{subequations}
-with $\hI$ the identity operator.
+where $\hI$ is the identity operator.
+Equation \eqref{eq:PolChar} is the well-known secular equation giving the energies of the system. If an energy is also solution of Eq.~\eqref{eq:DPolChar} then this energy is degenerate. In this case the energies obtained are dependent of $\lambda$ so solving those equations with respect to $E$ and $\lambda$ gives the value of $\lambda$ where two energies are degenerate. These degeneracies can be conical intersections between two states with different symmetry for real value of $\lambda$ \cite{Yarkony_1996} or EPs between two states with the same symmetry for complex values of $\lambda$.
 
-The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we can forget the spin part of the spin-orbitals and from now on we will work with spatial orbitals. In the restricted formalism the spatial orbitals are the same so the two-electron basis set is defined as:
+Let us assume that electron 1 is spin-up and electron 2 is spin-down. 
+Hence, we can forget the spin part of the spin-orbitals and from now on we will work with spatial orbitals. In the restricted formalism the spatial orbitals are the same so the two-electron basis set can be defined as
 
 \begin{align}\label{eq:rhfbasis}
  \psi_1 & =Y_{0}(\theta_1)Y_{0}(\theta_2),
@@ -730,60 +731,60 @@ The electron 1 have a spin $\alpha$ and the electron 2 a spin $\beta$. Hence we 
  & 
  \psi_4 & =Y_{1}(\theta_1)Y_{1}(\theta_2).
 \end{align}
+The Hamiltonian $\hH(\lambda)$ is block diagonal in this basis because of its symmetry, i.e., $\psi_1$ only interacts with $\psi_4$ and $\psi_2$ with $\psi_3$. The two singly-excited states yield after diagonalization a spatially anti-symmetric singlet sp\textsubscript{z} and a spatially symmetric triplet sp\textsubscript{z} state. Hence those states do not have the same symmetry as the spatially symmetric singlet ground state. Thus these states can not be involved in an avoided crossing with the ground state as can be seen in Fig.~\ref{fig:RHFMiniBas} and, \textit{a fortiori} cannot be involved in an EP with the ground state. However there is an avoided crossing between the s\textsuperscript{2} and p\textsubscript{z}\textsuperscript{2} states which gives two EPs in the complex plane. 
 
-The Hamiltonian $\hH(\lambda)$ is block diagonal because of the symmetry of the basis set, i.e., $\psi_1$ only interacts with $\psi_4$ and $\psi_2$ with $\psi_3$. The two singly excited states yields after diagonalization a spatially anti-symmetric singlet sp\textsubscript{z} and a spatially symmetric triplet sp\textsubscript{z} state. Hence those states do not have the same symmetry as the spatially symmetric singlet ground state. Thus these states can not be involved in an avoided crossing with the ground state as it can be seen in Fig.~\ref{fig:RHFMiniBas} and a fortiori can not be involved in an exceptional point with the ground state. However there is an avoided crossing between the s\textsuperscript{2} state and the p\textsubscript{z}\textsuperscript{2} one which gives two exceptional points in the complex plane. 
-
-\begin{wrapfigure}{c}{0.5\textwidth}
+\begin{wrapfigure}{R}{0.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{EMP_RHF_R10.pdf}
     \caption{Energies $E(\lambda)$ in the restricted basis set \eqref{eq:rhfbasis} with $R=10$.}
     \label{fig:RHFMiniBas}
 \end{wrapfigure}
 
-To simplify the problem, it is convenient to only consider basis functions with the symmetry of the exact wave function, such basis functions are called Configuration State Function (CSF). It simplifies the problem because with such a basis set we only get the degeneracies of interest for the convergence properties, i.e., the exceptional points between states with the same symmetry as the ground state. In this case the ground state is a totally symmetric singlet. According to the angular-momentum theory \cite{AngularBook, SlaterBook, Loos_2009} we expand the exact wave function in the following two-electron basis:
+To simplify the problem, it is convenient to only consider basis functions with the symmetry of the exact wave function, such basis functions are called configuration state functions (CSFs). It simplifies the problem because with such a basis set, one only gets the degeneracies of interest for the convergence properties, i.e., the EPs between states with the same symmetry as the ground state. In this case the ground state is a totally symmetric singlet. According to the angular momentum theory \cite{AngularBook, SlaterBook, Loos_2009}, we expand the exact wave function in the following two-electron basis:
 \begin{equation}
-\Phi_l(\omega)=\frac{\sqrt{2l+1}}{4\pi R^2}P_l(\cos\omega)
+\Phi_\ell(\omega)=\frac{\sqrt{2\ell+1}}{4\pi R^2}P_\ell(\cos\omega),
 \end{equation}
-where $P_l$ are the Legendre polynomial and $\omega$ is the interelectronic angle.
+where $P_\ell$ are the Legendre polynomial and $\omega$ is the interelectronic angle.
 
-Then using this basis set we can compare the different partitioning of Sec.~\ref{sec:AlterPart}. Figure \ref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ in function of $R$ for the MP, the EN, the WC and the SC partitioning in a minimal basis, i.e., $P_0$ and $P_1$ and in the same basis augmented with $P_2$. We see that the radius of convergence of the SC partitioning is growing with R whereas it is decreasing for the three others partitioning. This result was expected because the three decreasing partitioning use a weakly correlated reference so $\hH^{(0)}$ is a good approximation for small $R$. On the contrary, the strong coupling one uses a strongly correlated reference so this series converge better when the electron are strongly correlated, i.e., when $R$ is large for the spherium model.
-The MP partitioning is always better than the weak correlation in Fig.~\ref{fig:RadiusPartitioning}. In the weak correlation partitioning the powers of $R$ are well-separated so each term of the series is a different power of $R$. Whereas the MP reference is proportionnal to $R^{-1}$ and $R^{-2}$ so the MP series is not well-defined in terms of powers of $R$. Moreover it can be proved that the $l$th order energy of the weak correlation series can be obtained as a Taylor approximation of MP$l$ respective to $R$. It seems that the EN partitioning is better than the MP one for very small R in the minimal basis. In fact, it is just an artifact of the minimal basis because in the minimal basis augmented with $P_2$ (and in larger basis set) the MP series has a greater radius of convergence for all value of $R$.
+Then, using this basis set we can compare the different partitioning of Sec.~\ref{sec:AlterPart}. Figure \ref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ as a function of $R$ for the MP, the EN, the WC and the SC partitioning in a minimal basis (i.e., $P_0$ and $P_1$) and in the same basis augmented with $P_2$. We see that $R_{\text{CV}}$ for the SC partitioning increases with $R$ whereas it is decreasing for the three others partitioning. This result was expected because the three decreasing partitioning use a weakly correlated reference so $\hH^{(0)}$ is a good approximation for small $R$. On the contrary, the strong coupling one uses a strongly correlated reference so the SC series converges better when the electron are strongly correlated, i.e., when $R$ is large in the spherium model.
+The MP partitioning is always better than WC in Fig.~\ref{fig:RadiusPartitioning}. In the weak correlation partitioning the powers of $R$ are well-separated so each term of the series is a different power of $R$. Whereas the MP reference is proportional to $R^{-1}$ and $R^{-2}$ so the MP series is not well-defined in terms of powers of $R$. Moreover it can be proved that the $m$th order energy of the weak correlation series can be obtained as a Taylor approximation of MP$m$ respective to $R$. It seems that the EN partitioning is better than the MP one for very small $R$ in the minimal basis. In fact, it is just an artefact of the minimal basis because in the minimal basis augmented with $P_2$ (and in larger basis set) the MP series has a greater radius of convergence for all values of $R$.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.45\textwidth]{PartitioningRCV2.pdf}
     \includegraphics[width=0.45\textwidth]{PartitioningRCV3.pdf}
-    \caption{\centering Radius of convergence in the minimal basis (left) and in the minimal basis augmented with $P_2$ (right) for different partitioning of the Hamiltonian $\hH(\lambda)$.}
+    \caption{Radius of convergence $R_{\text{CV}}$ for two (left) and three (right) basis functions for various partitionings.}
     \label{fig:RadiusPartitioning}
 \end{figure}
 
-Figure \ref{fig:RadiusBasis} shows that the radius of convergence is not very sensitive to the expansion of the basis set. The CSF basis function have all the same spin and spatial symmetry so we expect that the singularities obtained within this basis set will be $\alpha$ singularities. Table \ref{tab:SingAlpha} proves that the singularities considered in this case are $\alpha$ singularities. This is consistent with the observation of Goodson and Sergeev \cite{Goodson_2004} on $\alpha$ singularities which said that $\alpha$ singularities are relatively insensitive to change of the basis set. The discontinuities observed in Fig.~\ref{fig:RadiusBasis} with the MP partitioning are due to a change of the dominant singularity. We can observe this change in Table \ref{tab:SingAlpha}, the value for $R=1$ and $R=2$ are respectively in the positive and negative plane.
+Figure \ref{fig:RadiusBasis} shows that the radius of convergence is not very sensitive to the size of the basis set. The CSFs have all the same spin and spatial symmetries so we expect that the singularities obtained within this basis set will be $\alpha$ singularities. Table \ref{tab:SingAlpha} shows that the singularities considered in this case are indeed $\alpha$ singularities. This is consistent with the observation of Goodson and Sergeev \cite{Goodson_2004} who stated that $\alpha$ singularities are relatively insensitive to the basis set size. The discontinuities observed in Fig.~\ref{fig:RadiusBasis} for the MP partitioning are due to changes in dominant singularity. We can observe this change in Table \ref{tab:SingAlpha}, the value for $R=1$ and $R=2$ are respectively in the positive and negative plane.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.45\textwidth]{MPlargebasis.pdf}
     \includegraphics[width=0.45\textwidth]{WCElargebasis.pdf}
-    \caption{\centering Radius of convergence in the CSF basis with $K$ basis function for the MP partitioning (left) and the WC partitioning (right).}
+    \caption{Radius of convergence $R_{\text{CV}}$ in the CSF basis with $K$ basis functions for the MP (left) and WC (right) partitioning.}
     \label{fig:RadiusBasis}
 \end{figure}
 
 \begin{table}[h!]
 \centering
-\caption{\centering Dominant singularity in the CSF basis set ($K=8$) for various value of R. The first line is the value for the MP partitioning and the second for the WC one.}
+\footnotesize
+\caption{Dominant singularity in the CSF basis set ($K=8$) for various value of $R$ in the MP and WC partitioning.}
 \begin{tabular}{cccccccc}
 \hline
 \hline
 $R$ & 0.1 & 1 & 2 & 3 & 5 & 10 & 100 \\
 \hline
-MP & 14.1-10.9\,i & 2.38-1.47\,i & -0.67-1.30\,i & -0.49-0.89\,i & -0.33-0.55\,i & -0.22-0.31\,i & 0.03-0.05\,i \\
-WC & -9.6-10.7\,i & -0.96-1.07\,i & -0.48-0.53\,i & -0.32-0.36\,i & -0.19-0.21\,i & -0.10-0.11\,i & -0.01-0.01\,i \\
+MP & $+14.1-10.9\,i$ & $+2.38-1.47\,i$ & $-0.67-1.30\,i$ & $-0.49-0.89\,i$ & $-0.33-0.55\,i$ & $-0.22-0.31\,i$ & $+0.03-0.05\,i$ \\
+WC & $-9.6-10.7\,i$ & $-0.96-1.07\,i$ & $-0.48-0.53\,i$ & $-0.32-0.36\,i$ & $-0.19-0.21\,i$ & $-0.10-0.11\,i$ & $-0.01-0.01\,i$ \\
 \hline
 \hline
 \end{tabular}
 \label{tab:SingAlpha}
 \end{table}
 
-Now we will investigate the differences in the singularity structure between the RHF and UHF formalism. To do this we use the symmetry-broken orbitals discussed in Sec.~\ref{sec:spherium}. Thus the UHF two-electron basis is:
+Now, we investigate the differences in the singularity structure between the RHF and UHF formalism. To do so, we use the symmetry-broken orbitals discussed in Sec.~\ref{sec:spherium}. Thus, the UHF two-electron basis is
 \begin{align}\label{eq:uhfbasis}
  \psi_1 & =\phi_{\alpha,1}(\theta_1)\phi_{\beta,1}(\theta_2),
  & 
@@ -793,32 +794,37 @@ Now we will investigate the differences in the singularity structure between the
  \psi_4 & =\phi_{\alpha,2}(\theta_1)\phi_{\beta,2}(\theta_2).
 \end{align}
 with the symmetry-broken orbitals
-\begin{align*}\label{eq:uhforbitals}
- \phi_{\alpha,1}(\theta) & =\frac{\sqrt{75+62R}Y_{00}(\theta)+5\sqrt{-3+2R}Y_{10}(\theta)}{4\sqrt{7R}},
- & 
- \phi_{\beta,1}(\theta) & =\frac{\sqrt{75+62R}Y_{00}(\theta)-5\sqrt{-3+2R}Y_{10}(\theta)}{4\sqrt{7R}},\\
- \phi_{\alpha,2}(\theta) & =\frac{-5\sqrt{-3+2R}Y_{00}(\theta)+\sqrt{75+62R}Y_{10}(\theta)}{4\sqrt{7R}},
- & 
- \phi_{\beta,2}(\theta) & =\frac{5\sqrt{-3+2R}Y_{00}(\theta)+\sqrt{75+62R}Y_{10}(\theta)}{4\sqrt{7R}}.
-\end{align*}
+\begin{subequations}
+\begin{align}\label{eq:uhforbitals}
+ \phi_{\alpha,1}(\theta) & =\frac{\sqrt{75+62R}Y_{0}(\theta)+5\sqrt{-3+2R}Y_{1}(\theta)}{4\sqrt{7R}},
+ \\ 
+ \phi_{\beta,1}(\theta) & =\frac{\sqrt{75+62R}Y_{0}(\theta)-5\sqrt{-3+2R}Y_{1}(\theta)}{4\sqrt{7R}},
+ \\
+ \phi_{\alpha,2}(\theta) & =\frac{-5\sqrt{-3+2R}Y_{0}(\theta)+\sqrt{75+62R}Y_{1}(\theta)}{4\sqrt{7R}},
+ \\
+ \phi_{\beta,2}(\theta) & =\frac{5\sqrt{-3+2R}Y_{0}(\theta)+\sqrt{75+62R}Y_{1}(\theta)}{4\sqrt{7R}}.
+\end{align}
+\end{subequations}
 
-In the UHF formalism the Hamiltonian $\hH(\lambda)$ is no more block diagonal, $\psi_4$ can interact with $\psi_2$ and $\psi_3$. The matrix elements $H_{ij}$ of the Hamiltonian corresponding to this interaction are given in \eqref{eq:MatrixElem}. For $R=3/2$ the Hamitonian is block diagonal and this is equivalent to the RHF case but for $R>3/2$ the matrix elements become real. This interaction corresponds to the spin contamination of the wave function. For $R<3/2$ the matrix elements are complex, this corresponds to the holomorphic solution of Fig.~\ref{fig:SpheriumNrj}, the singularities in this case will be treated in Sec.~\ref{sec:uhfSing}. The matrix elements become real again for $R<-75/62$, this corresponds to the sb-UHF solution for negative value of $R$ observed in Sec.~\ref{sec:spherium}. We will refer to the domain where the matrix element are complex as the holomorphic domain.
-
+In the UHF formalism the Hamiltonian $\hH(\lambda)$ is no more block diagonal, $\psi_4$ can interact with $\psi_2$ and $\psi_3$. The matrix elements of the Hamiltonian corresponding to this interaction are
 \begin{equation}\label{eq:MatrixElem}
 H_{24}=H_{34}=H_{42}=H_{43}=\sqrt{-3+2R}\sqrt{75+62R}\frac{25+2R}{280R^3}
 \end{equation}
+For $R=3/2$ the Hamiltonian is block diagonal and this is equivalent to the RHF case but for $R>3/2$ the matrix elements become real. This interaction corresponds to the spin contamination of the wave function. For $R<3/2$ the matrix elements are complex, this corresponds to the holomorphic solution of Fig.~\ref{fig:SpheriumNrj}, the singularities in this case will be treated in Sec.~\ref{sec:uhfSing}. The matrix elements become real again for $R<-75/62$, this corresponds to the sb-UHF solution for negative value of $R$ observed in Sec.~\ref{sec:spherium}. We will refer to the domain where the matrix elements are complex as the holomorphic domain.
 
-The singularity structure in this case is more complex because of the spin contamination of the wave function. We can not use configuration state functions in this case. So when we compute all the degeneracies using Eqs.~\eqref{eq:PolChar} and \eqref{eq:DPolChar} some correspond to EPs and some correspond to conical intersections. The numerical distinction of those singularities is very difficult so we will first look at the energies $E(\lambda)$ obtained with this basis set.
-Figure \ref{fig:UHFMiniBas} is the analog of Fig.~\ref{fig:RHFMiniBas} in the UHF formalism. We see that in this case the sp\textsubscript{z} triplet interacts with the s\textsuperscript{2} and the p\textsubscript{z}\textsuperscript{2} singlets. Those avoided crossings are due to the spin contamination of the wave function. The exceptional points resulting from those avoided crossings will be discussed in Sec.~\ref{sec:uhfSing}. \\
 
-\begin{wrapfigure}{c}{0.5\textwidth}
+
+\begin{wrapfigure}{R}{0.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{EMP_UHF_R10.pdf}
     \caption{Energies $E(\lambda)$ in the unrestricted basis set \eqref{eq:uhfbasis} with $R=10$.}
     \label{fig:UHFMiniBas}
 \end{wrapfigure}
 
-In this study we have used spherical harmonics (or combination of spherical harmonics) as basis function which are diffuse wave functions. It would also be interesting to investigate the use of localized basis function \cite{Seidl_2018} (for example gaussians) because those functions would be more adapted to describe the correlated regime. \\
+The singularity structure in this case is more complex because of the spin contamination of the wave function. We can not use CSFs in this case. So when we compute all the degeneracies using Eqs.~\eqref{eq:PolChar} and \eqref{eq:DPolChar} some correspond to EPs and some correspond to conical intersections. The numerical distinction of those singularities is very difficult so we will first look at the energies $E(\lambda)$ obtained with this basis set.
+Figure \ref{fig:UHFMiniBas} is the analog of Fig.~\ref{fig:RHFMiniBas} in the UHF formalism. We see that in this case the sp\textsubscript{z} triplet interacts with the s\textsuperscript{2} and the p\textsubscript{z}\textsuperscript{2} singlets. Those avoided crossings are due to the spin contamination of the wave function. The EPs resulting from those avoided crossings will be discussed in Sec.~\ref{sec:uhfSing}.
+
+In this study we have used spherical harmonics (or combination of spherical harmonics) as basis functions which have a delocalized nature. It would also be interesting to investigate the use of localized basis functions \cite{Seidl_2018} (for example gaussians) because these functions would be more adapted to describe the strongly correlated regime.
 
 \subsection{Exceptional points in the UHF formalism}\label{sec:uhfSing}
 
@@ -828,7 +834,7 @@ In the RHF case there are only $\alpha$ singularities and large avoided crossing
     \centering
     \includegraphics[width=0.45\textwidth]{UHFCI.pdf}
     \includegraphics[width=0.45\textwidth]{UHFEP.pdf}
-    \caption{\centering Energies $E(\lambda)$ in the unrestricted basis set \eqref{eq:uhfbasis} for $R=1.5$ (left) and $R=1.51$ (right).}
+    \caption{Energies $E(\lambda)$ in the unrestricted basis set \eqref{eq:uhfbasis} for $R=1.5$ (left) and $R=1.51$ (right).}
     \label{fig:UHFEP}
 \end{figure}
 
@@ -844,7 +850,7 @@ Figure \ref{fig:UHFPT} shows that for the spherium model a part of the energy sp
     \label{fig:UHFPT}
 \end{figure}
 
-For a non-Hermitian Hamiltonian the exceptional points can lie on the real axis. In particular, at the point of PT transition (the point where the energies become complex) the two energies are degenerate resulting in such an exceptional point on the real axis. This degeneracy can be seen in Fig.~\ref{fig:UHFPT}.
+For a non-Hermitian Hamiltonian the EPs can lie on the real axis. In particular, at the point of PT transition (the point where the energies become complex) the two energies are degenerate resulting in such an EP on the real axis. This degeneracy can be seen in Fig.~\ref{fig:UHFPT}.
 
 \section{Conclusion}
 
