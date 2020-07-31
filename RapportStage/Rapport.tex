@@ -580,7 +580,7 @@ Thus, the Hamiltonian is
 	\hH = -\frac{\grad_1^2 + \grad_2^2}{2} + \frac{1}{r_{12}},
 \end{equation}
 or
-\begin{equation}
+\begin{equation} \label{eq:H-sph-omega}
 	\hH = -\frac{1}{R^2} \qty( \pdv[2]{}{\omega} + \cot \omega \pdv{}{\omega}) + \frac{1}{R \sqrt{2 - 2 \cos \omega}},
 \end{equation}
 where $\omega$ is the interelectronic angle.
@@ -601,16 +601,17 @@ We will use this model in order to rationalize the effects of the parameters tha
 In the RHF formalism, the two electrons are restricted to ``live'' in the same spatial orbital.
 The spatial part of the RHF wave function is then
 \begin{equation}\label{eq:RHF_WF}
-	\Psi_{\text{RHF}}(\theta_1,\theta_2) = Y_0(\theta_1) Y_0(\theta_2)
+	\Psi_{\text{RHF}}(\theta_1,\theta_2) = Y_0(\theta_1) Y_0(\theta_2),
 \end{equation}
 where $\theta_i$ is the polar angle of the $i$th electron and $Y_{\ell}(\theta)$ is a zonal spherical harmonic. 
+Because $Y_0(\theta) = 1/\sqrt{4\pi}$, it is clear that the RHF wave function yields a uniform one-electron density.
 
 The RHF wave function cannot model properly the physics of the system at large $R$ because the spatial orbitals are restricted to be the same, and, \textit{a fortiori}, it cannot represent two electrons on opposite side of the sphere. 
-In the UHF formalism there is a critical value of $R$, called Coulson-Fischer point \cite{Coulson_1949}, at which a UHF solution appears and is lower in energy than the RHF one.
-The UHF solution has broken symmetry as the two electrons tends to localize on opposite sides of the sphere. 
+Within the UHF formalism, there is a critical value of $R$, called Coulson-Fischer point \cite{Coulson_1949}, at which a UHF solution appears and is lower in energy than the RHF one.
+The UHF solution has broken symmetry because the two electrons tends to localize on opposite sides of the sphere. 
 The spatial part of the UHF wave function is defined as
 \begin{equation}\label{eq:UHF_WF}
-	\Psi_{\text{UHF}}(\theta_1,\theta_2)=\phi_\alpha(\theta_1)\phi_\beta(\theta_2)
+	\Psi_{\text{UHF}}(\theta_1,\theta_2)=\phi_\alpha(\theta_1)\phi_\beta(\theta_2),
 \end{equation}
 where $\phi_\sigma(\theta)$ is the spatial orbital associated with the spin-$\sigma$ electrons ($\sigma = \alpha$ for spin-up electrons and $\sigma = \beta$ for spin-down electrons).
 These one-electron orbitals are expanded in the basis of zonal spherical harmonics
@@ -619,15 +620,15 @@ These one-electron orbitals are expanded in the basis of zonal spherical harmoni
 \end{equation}
 It is possible to obtain the formula for the HF energy in this basis set \cite{Loos_2009}:
 \begin{equation}
-	E_{\text{HF}} = T_{\text{HF}} + V_{\text{HF}}
+	E_{\text{HF}} = T_{\text{HF}} + V_{\text{HF}},
 \label{eq:EHF}
 \end{equation}
-where the kinetic and potential energies are
+where the kinetic and potential energies are, respectively,
 \begin{align}
-	T_{\text{HF}} & = \sum_{\sigma=\alpha,\beta} \frac{1}{R^2} \sum_{\ell=0}^{\infty} C_{\sigma,\ell}^2 \, \ell(\ell+1)
+	T_{\text{HF}} & = \frac{1}{R^2} \sum_{\sigma=\alpha,\beta} \sum_{\ell=0}^{\infty} C_{\sigma,\ell}^2 \, \ell(\ell+1),
 	&
-	V_{\text{HF}} & = \frac{1}{R} \sum_{L=0}^{\infty} 
-	v^\alpha_{L} v^\beta_{L} 
+	V_{\text{HF}} & = \frac{1}{R} \sum_{L=0}^{\infty}
+	v^\alpha_{L} v^\beta_{L},
 \end{align}
 and
 \begin{equation}
@@ -641,36 +642,34 @@ and
 \end{equation}
 is expressed in terms of the Wigner 3j-symbols \cite{AngularBook}.
 
-The general method is to use a self-consistent field procedure as described in Ref.~\cite{SzaboBook} to get the coefficients of the wave functions corresponding to stationary solutions with respect to the coefficients $C_{\sigma,\ell}$, i.e.,
+The general method is to use a self-consistent field procedure as described in Ref.~\cite{SzaboBook} to get the coefficients of the HF wave function corresponding to stationary solutions with respect to the coefficients $C_{\sigma,\ell}$, i.e.,
 \begin{equation}
 	\pdv{E_{\text{HF}}}{C_{\sigma,\ell}} = 0.
-\end{equation}. 
-Here, we work in a minimal basis, composed of $Y_{0}$ and $Y_{1}$, or equivalently, a s and p\textsubscript{z} orbital, to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions. One can define the one-electron wave functions 
+\end{equation}
+Here, we work in a minimal basis, composed of $Y_{0}$ and $Y_{1}$, or equivalently, a s and p\textsubscript{z} orbital, to illustrate the difference between the RHF and UHF solutions. In this basis there is a shortcut to find the stationary solutions and ensure normalization of the orbitals. One can define the one-electron orbitals as
 \begin{equation}
-	\phi_\sigma(\theta)= \cos(\chi_\sigma)Y_{0}(\theta) + \sin(\chi_\sigma)Y_{1}(\theta)
+	\phi_\sigma(\theta)= \cos(\chi_\sigma)Y_{0}(\theta) + \sin(\chi_\sigma)Y_{1}(\theta),
 \end{equation}
 using a mixing angle between the two basis functions for each spin manifold. 
-Hence we just minimize the energy with respect to the two mixing angles $\chi_\alpha$ and $\chi_\beta$.
+Hence, one has just to minimize/maximize the energy with respect to the two mixing angles $\chi_\alpha$ and $\chi_\beta$.
  
 This process provides the three following solutions valid for all value of $R$, which are respectively a minimum, a maximum and a saddle point of the HF equations:
 \begin{itemize}
-\item The two electrons are in the s orbital which is a RHF solution. This solution is associated with the energy $1/R^{2}$.
+\item The two electrons are in the s orbital which is a RHF solution. This solution is associated with the energy $1/R$.
 \item The two electrons are in the p\textsubscript{z} orbital which is a RHF solution. This solution is associated with the energy $2/R^{2}+ 29/(25R)$.
 \item One electron is in the s orbital and the other is in the p\textsubscript{z} orbital which is a UHF solution. This solution is associated with the energy $1/R^{2} + 1/R$.
 \end{itemize}
-\titou{STOPPED HERE.}
 
-In addition, the minimization process gives also the well-known symmetry-broken UHF (sb-UHF) solution. In this case the Coulson-Fischer point associated to this solution is $R=3/2$. For $R>3/2$ the sb-UHF solution is the global minimum of the HF equations and the RHF solution presented before is a local minimum. This solution corresponds to the configuration with the electron $\alpha$ in an orbital on one side of the sphere and the electron $\beta$ in a symmetric orbital on the opposite side and the configuration the other way round. The electrons can be on opposite sides of the sphere because the choice of p\textsubscript{z} as a basis function induced a privileged axis on the sphere for the electrons. This solution has the energy \eqref{eq:EsbUHF} for $R>3/2$.
-
+In addition, the minimization process gives also the well-known symmetry-broken UHF (sb-UHF) solution. In this case the Coulson-Fischer point associated to this solution is $R=3/2$. For $R>3/2$ the sb-UHF solution is the global minimum of the HF equations and the RHF solution presented before is a local minimum. This solution corresponds to the configuration with the spin-up electron in an orbital on one side of the sphere and the spin-down electron in a miror-image orbital on the opposite side and the configuration the other way round. The electrons can be on opposite sides of the sphere because the choice of p\textsubscript{z} as a basis function induced a privileged axis on the sphere for the electrons. For $R>3/2$, this solution has the energy
 \begin{equation}\label{eq:EsbUHF}
-	E_{\text{sb-UHF}}=-\frac{75}{112R^3}+\frac{25}{28R^2}+\frac{59}{84R}
+	E_{\text{sb-UHF}}=-\frac{75}{112R^3}+\frac{25}{28R^2}+\frac{59}{84R}.
 \end{equation}
 
-The exact solution for the ground state is a singlet. The spherical harmonics are eigenvectors of $\hS^2$ and they are associated to differents eigenvalue. Yet, the symmetry-broken orbitals are linear combination of $Y_0$ and $Y_1$. Hence, the symmetry-broken orbitals are not eigenvectors of $\hS^2$. However this solution gives more accurate results for the energy at large R than the RHF one as shown in Table \ref{tab:ERHFvsEUHF} even if it does not have the exact spin symmetry. In fact at the Coulson-Fischer point, it becomes more efficient to minimize the Coulomb repulsion than the kinetic energy in order to minimize the total energy. Thus the wave function break the spin symmetry because it allows a more efficient minimization of the Coulomb repulsion. This type of symmetry breaking is called a spin density wave because the system oscillates between the two symmetry-broken configurations \cite{GiulianiBook}.
+The exact solution for the ground state is a singlet. The spherical harmonics are eigenvectors of $\hS^2$ (the spin operator) and they are associated to different eigenvalues. Yet, the symmetry-broken orbitals are linear combinations of $Y_0$ and $Y_1$. Hence, the symmetry-broken orbitals are not eigenvectors of $\hS^2$. However, this solution gives lower energies than the RHF one at large $R$ as shown in Table \ref{tab:ERHFvsEUHF} even if it does not have the exact spin symmetry. In fact, at the Coulson-Fischer point, it becomes more effective to minimize the Coulomb repulsion than the kinetic energy in order to minimize the total energy. Thus, within the HF approximation, the variational principle is allowed to break the spin symmetry because it yields a more effective minimization of the Coulomb repulsion. This type of symmetry breaking is called a spin density wave because the system oscillates between the two symmetry-broken configurations \cite{GiulianiBook}.
 
 \begin{table}[h!]
 \centering
-\caption{\centering RHF and UHF energies in the minimal basis and exact energies for various $R$.}
+\caption{RHF and sb-UHF energies in the minimal basis and exact energies (in the complete basis) for various $R$.}
 \begin{tabular}{ccccccccc}
 \hline
 \hline
@@ -693,13 +692,13 @@ Exact 	& 9.783874 & 0.852781 & 0.391959 & 0.247898 & 0.139471 & 0.064525 & 0.005
     \label{fig:SpheriumNrj}
 \end{wrapfigure}
 
-There is also another symmetry-broken solution for $R>75/38$ but this one corresponds to a maximum of the HF equations. This solution is associated with another type of symmetry breaking somewhat less known. It corresponds to a configuration where both electrons are on the same side of the sphere, in the same spatial orbital. This solution is called symmetry-broken RHF (sb-RHF). At the critical value of $R$, the repulsion of the two electrons being in the same orbital on the same side of the sphere maximizes more the energy than the kinetic energy of the two electrons in the p\textsubscript{z} orbital. This configuration break the spatial symmetry of charge. Hence this symmetry breaking is associated with a charge density wave, the system oscillates between the situations with the two electrons on each side \cite{GiulianiBook}.
-
+There is also another symmetry-broken solution for $R>75/38$ but this one corresponds to a maximum of the HF equations. This solution is associated with another type of symmetry breaking somewhat less known. It corresponds to a configuration where both electrons are on the same side of the sphere, in the same spatial orbital. This solution is called symmetry-broken RHF (sb-RHF). \titou{At a critical value of $R$, placing two electrons in the same orbital on the same side of the sphere increases the repulsion energy more than the kinetic energy of the two electrons in the p\textsubscript{z} orbital.} This configuration breaks the spatial symmetry of charge. Hence this symmetry breaking is associated with a charge density wave, the system oscillates between the situations with the two electrons on each side \cite{GiulianiBook}.
+The energy associated with this sb-RHF solution reads
 \begin{equation}
-E_{\text{sb-RHF}}=\frac{75}{88R^3}+\frac{25}{22R^2}+\frac{91}{66R}
+E_{\text{sb-RHF}}=\frac{75}{88R^3}+\frac{25}{22R^2}+\frac{91}{66R}.
 \end{equation}
 
-We can also consider negative values of $R$. This corresponds to the situation where one of the electrons is replaced by a positron (the anti-particle of the electron). There are also a sb-RHF ($R<-3/2$) and a sb-UHF ($R<-75/38$) solution for negative values of $R$ (see Fig.~\ref{fig:SpheriumNrj}) but in this case the sb-RHF solution is a minimum and the sb-UHF is a maximum of the HF equations. Indeed, the sb-RHF state minimizes the attraction energy by placing the electron and the positron on the same side of the sphere. And the sb-UHF state maximizes the energy because the two attracting particles are on opposite sides of the sphere.
+We can also consider negative values of $R$, which corresponds to the situation where one of the electrons is replaced by a positron (the anti-particle of the electron) as readily seen in Eq.~\eqref{eq:H-sph-omega}. For negative $R$ values, there are also a sb-RHF ($R<-3/2$) and a sb-UHF ($R<-75/38$) solution for negative values of $R$ (see Fig.~\ref{fig:SpheriumNrj}) but in this case the sb-RHF solution is a minimum and the sb-UHF is a maximum of the HF equations. Indeed, the sb-RHF state minimizes the attraction energy by placing the electron and the positron on the same side of the sphere. And the sb-UHF state maximizes the energy because the two attracting particles are on opposite sides of the sphere.
 
 In addition, we can also consider the symmetry-broken solutions beyond their respective Coulson-Fischer points by analytically continuing their respective energies leading to the so-called holomorphic solutions \cite{Hiscock_2014, Burton_2019, Burton_2019a}. All those energies are plotted in Fig.~\ref{fig:SpheriumNrj}. The dotted curves corresponds to the holomorphic domain of the energies.
 
