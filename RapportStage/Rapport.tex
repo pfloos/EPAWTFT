@@ -166,12 +166,12 @@ In other words, our view of the quantized nature of conventional Hermitian quant
 The realization that ground and excited states both emerge from one single mathematical structure with equal importance suggests that excited-state energies can be computed from first principles in their own right.
 One could then exploit the structure of these Riemann surfaces to develop methods that directly target excited-state energies without needing ground-state information.
 
-\begin{wrapfigure}{R}{0.5\textwidth}
+\begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{TopologyEP.pdf}
+    \includegraphics[width=0.5\linewidth]{TopologyEP.pdf}
     \caption{A generic EP with the square-root branch point topology. A loop around the EP interconvert the states.}
     \label{fig:TopologyEP}
-\end{wrapfigure}
+\end{figure}
 By analytically continuing the electronic energy $E(\lambda)$ in the complex domain (where $\lambda$ is a coupling parameter), the ground and excited states of a molecule can be smoothly connected.
 This connection is possible because by extending real numbers to the complex domain, the ordering property of real numbers is lost.
 Hence, electronic states can be interchanged away from the real axis since the concept of ground and excited states has been lost.
@@ -202,7 +202,7 @@ In order to highlight the general properties of EPs mentioned above, we propose 
 which represents two states of energies $\epsilon_1$ and $\epsilon_2$ coupled with a strength of magnitude $\lambda$.
 This Hamiltonian could represent, for example, a minimal-basis configuration interaction with doubles (CID) for the hydrogen molecule \cite{SzaboBook}.
 
-\begin{figure}[h!]
+\begin{figure}
     \centering
     \includegraphics[width=0.3\textwidth]{2x2.pdf}
     \hspace{0.2\textwidth}
@@ -474,7 +474,7 @@ When a bond is stretched, in most cases the exact wave function becomes more and
 Thus, it is inappropriate to model (even qualitatively) stretched systems. Nevertheless, the HF wave function can undergo a symmetry breaking to lower its energy by sacrificing one of the symmetry of the exact wave function during the process (see for example the case of \ce{H_2} in Ref.~\cite{SzaboBook}). 
 One could then potentially claim that the RMP series exhibits deceptive convergence properties as the RHF Slater determinant is a poor approximation of the exact wave function for stretched system. However, even in the unrestricted formalism which clearly represents a better description of a stretched system, the UMP series does not have the smooth and rapidly converging behavior that one would wish for. 
 
-\begin{table}[h!]
+\begin{table}
     \centering
     \caption{Percentage of electron correlation energy recovered and $\expval*{S^2}$ for the \ce{H2} molecule as a function of bond length (r,\si{\angstrom}) in the STO-3G basis set (taken from Ref.~\cite{Gill_1988}).}
     \begin{tabular}{ccccccc}
@@ -508,7 +508,7 @@ Even if there were still shaded areas and that this classification was incomplet
 
 In the late 90's, Olsen \textit{et al.}~discovered an even more preoccupying behavior of the MP series \cite{Olsen_1996}. They showed that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and \ce{HF} (see Fig.~\ref{fig:NeHFDiv}) \cite{Olsen_1996, Christiansen_1996}. Cremer and He had already studied these two systems and classified them as ``class B'' systems. However, the analysis of Olsen and coworkers was performed in larger basis sets containing diffuse functions. In these basis sets, they found that the series become divergent at (very) high order.
 
-\begin{figure}[h!]
+\begin{figure}
     \centering
     \includegraphics[width=0.45\textwidth]{Nedivergence.png}
     \includegraphics[width=0.45\textwidth]{HFdivergence.png}
@@ -667,7 +667,7 @@ In addition, the minimization process gives also the well-known symmetry-broken 
 
 The exact solution for the ground state is a singlet. The spherical harmonics are eigenvectors of $\hS^2$ (the spin operator) and they are associated to different eigenvalues. Yet, the symmetry-broken orbitals are linear combinations of $Y_0$ and $Y_1$. Hence, the symmetry-broken orbitals are not eigenvectors of $\hS^2$. However, this solution gives lower energies than the RHF one at large $R$ as shown in Table \ref{tab:ERHFvsEUHF} even if it does not have the exact spin symmetry. In fact, at the Coulson-Fischer point, it becomes more effective to minimize the Coulomb repulsion than the kinetic energy in order to minimize the total energy. Thus, within the HF approximation, the variational principle is allowed to break the spin symmetry because it yields a more effective minimization of the Coulomb repulsion. This type of symmetry breaking is called a spin density wave because the system oscillates between the two symmetry-broken configurations \cite{GiulianiBook}.
 
-\begin{table}[h!]
+\begin{table}
 \centering
 \caption{RHF and sb-UHF energies in the minimal basis and exact energies (in the complete basis) for various $R$.}
 \begin{tabular}{ccccccccc}
@@ -685,12 +685,12 @@ Exact 	& 9.783874 & 0.852781 & 0.391959 & 0.247898 & 0.139471 & 0.064525 & 0.005
 \end{table}
 
 
-\begin{wrapfigure}{R}{0.5\textwidth}
+\begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{EsbHF.pdf}
+    \includegraphics[width=0.5\linewidth]{EsbHF.pdf}
     \caption{Energies of the five solutions of the HF equations (multiplied by $R^2$). The dotted curves correspond to the analytic continuation of the symmetry-broken solutions.}
     \label{fig:SpheriumNrj}
-\end{wrapfigure}
+\end{figure}
 
 There is also another symmetry-broken solution for $R>75/38$ but this one corresponds to a maximum of the HF equations. This solution is associated with another type of symmetry breaking somewhat less known. It corresponds to a configuration where both electrons are on the same side of the sphere, in the same spatial orbital. This solution is called symmetry-broken RHF (sb-RHF). \antoine{The reasoning is counter-intuitive because the electrons tends to maximize their energy. If the orbitals are symmetric, the maximum is when the two electrons are in the p\textsubscript{z} orbital because it maximizes the kinetic energy. At the critical value of $R$, placing the two electrons in the same symmetry-broken orbital i.e., on the same side of the sphere gives a superior energy than the p\textsubscript{z}\textsuperscript{2} state. This is because it becomes more efficient to maximize the repulsion energy than the kinetic energy for $R>75/38$.}
 This configuration breaks the spatial symmetry of charge. Hence this symmetry breaking is associated with a charge density wave, the system oscillates between the situations with the two electrons on each side \cite{GiulianiBook}.
@@ -708,7 +708,7 @@ In addition, we can also consider the symmetry-broken solutions beyond their res
 
 \subsection{Evolution of the radius of convergence}
 
-In this subsection, we investigate how \titou{parameters} of $\hH(\lambda)$ influence the radius of convergence of the perturbation series. Let us remind the reader that the radius of convergence is equal to the distance of the closest singularity to the origin of $E(\lambda)$. Hence, we have to determine the locations of the EPs to obtain information on the convergence properties of the perturbative series. To find them we solve simultaneously the following equations:
+In this subsection, we investigate how the partitioning of $\hH(\lambda)$ influence the radius of convergence of the perturbation series. Let us remind the reader that the radius of convergence is equal to the distance of the closest singularity to the origin of $E(\lambda)$. Hence, we have to determine the locations of the EPs to obtain information on the convergence properties of the perturbative series. To find them we solve simultaneously the following equations:
 \begin{subequations}
 \begin{align}
 	\label{eq:PolChar}
@@ -734,12 +734,12 @@ Hence, we can forget the spin part of the spin-orbitals and from now on we will 
 \end{align}
 The Hamiltonian $\hH(\lambda)$ is block diagonal in this basis because of its symmetry, i.e., $\psi_1$ only interacts with $\psi_4$ and $\psi_2$ with $\psi_3$. The two singly-excited states yield after diagonalization a spatially anti-symmetric singlet sp\textsubscript{z} and a spatially symmetric triplet sp\textsubscript{z} state. Hence those states do not have the same symmetry as the spatially symmetric singlet ground state. Thus these states can not be involved in an avoided crossing with the ground state as can be seen in Fig.~\ref{fig:RHFMiniBas} and, \textit{a fortiori} cannot be involved in an EP with the ground state. However there is an avoided crossing between the s\textsuperscript{2} and p\textsubscript{z}\textsuperscript{2} states which gives two EPs in the complex plane. 
 
-\begin{wrapfigure}{R}{0.5\textwidth}
+\begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{EMP_RHF_R10.pdf}
+    \includegraphics[width=0.5\linewidth]{EMP_RHF_R10.pdf}
     \caption{Energies $E(\lambda)$ in the restricted basis set \eqref{eq:rhfbasis} with $R=10$.}
     \label{fig:RHFMiniBas}
-\end{wrapfigure}
+\end{figure}
 
 To simplify the problem, it is convenient to only consider basis functions with the symmetry of the exact wave function, such basis functions are called configuration state functions (CSFs). It simplifies the problem because with such a basis set, one only gets the degeneracies of interest for the convergence properties, i.e., the EPs between states with the same symmetry as the ground state. In this case the ground state is a totally symmetric singlet. According to the angular momentum theory \cite{AngularBook, SlaterBook, Loos_2009}, we expand the exact wave function in the following two-electron basis:
 \begin{equation}
@@ -750,25 +750,25 @@ where $P_\ell$ are the Legendre polynomial and $\omega$ is the interelectronic a
 Then, using this basis set we can compare the different partitioning of Sec.~\ref{sec:AlterPart}. Figure \ref{fig:RadiusPartitioning} shows the evolution of the radius of convergence $R_{\text{CV}}$ as a function of $R$ for the MP, the EN, the WC and the SC partitioning in a minimal basis (i.e., $P_0$ and $P_1$) and in the same basis augmented with $P_2$. We see that $R_{\text{CV}}$ for the SC partitioning increases with $R$ whereas it is decreasing for the three others partitioning. This result was expected because the three decreasing partitioning use a weakly correlated reference so $\hH^{(0)}$ is a good approximation for small $R$. On the contrary, the strong coupling one uses a strongly correlated reference so the SC series converges better when the electron are strongly correlated, i.e., when $R$ is large in the spherium model.
 The MP partitioning is always better than WC in Fig.~\ref{fig:RadiusPartitioning}. In the weak correlation partitioning the powers of $R$ are well-separated so each term of the series is a different power of $R$. Whereas the MP reference is proportional to $R^{-1}$ and $R^{-2}$ so the MP series is not well-defined in terms of powers of $R$. Moreover it can be proved that the $m$th order energy of the weak correlation series can be obtained as a Taylor approximation of MP$m$ respective to $R$. It seems that the EN partitioning is better than the MP one for very small $R$ in the minimal basis. In fact, it is just an artefact of the minimal basis because in the minimal basis augmented with $P_2$ (and in larger basis set) the MP series has a greater radius of convergence for all values of $R$.
 
-\begin{figure}[h!]
+\begin{figure}
     \centering
-    \includegraphics[width=0.45\textwidth]{PartitioningRCV2.pdf}
-    \includegraphics[width=0.45\textwidth]{PartitioningRCV3.pdf}
+    \includegraphics[width=0.49\textwidth]{PartitioningRCV2.pdf}
+    \includegraphics[width=0.49\textwidth]{PartitioningRCV3.pdf}
     \caption{Radius of convergence $R_{\text{CV}}$ for two (left) and three (right) basis functions for various partitionings.}
     \label{fig:RadiusPartitioning}
 \end{figure}
 
 Figure \ref{fig:RadiusBasis} shows that the radius of convergence is not very sensitive to the size of the basis set. The CSFs have all the same spin and spatial symmetries so we expect that the singularities obtained within this basis set will be $\alpha$ singularities. Table \ref{tab:SingAlpha} shows that the singularities considered in this case are indeed $\alpha$ singularities. This is consistent with the observation of Goodson and Sergeev \cite{Goodson_2004} who stated that $\alpha$ singularities are relatively insensitive to the basis set size. The discontinuities observed in Fig.~\ref{fig:RadiusBasis} for the MP partitioning are due to changes in dominant singularity. We can observe this change in Table \ref{tab:SingAlpha}, the value for $R=1$ and $R=2$ are respectively in the positive and negative plane.
 
-\begin{figure}[h!]
+\begin{figure}
     \centering
-    \includegraphics[width=0.45\textwidth]{MPlargebasis.pdf}
-    \includegraphics[width=0.45\textwidth]{WCElargebasis.pdf}
+    \includegraphics[width=0.49\textwidth]{MPlargebasis.pdf}
+    \includegraphics[width=0.49\textwidth]{WCElargebasis.pdf}
     \caption{Radius of convergence $R_{\text{CV}}$ in the CSF basis with $K$ basis functions for the MP (left) and WC (right) partitioning.}
     \label{fig:RadiusBasis}
 \end{figure}
 
-\begin{table}[h!]
+\begin{table}
 \centering
 \footnotesize
 \caption{Dominant singularity in the CSF basis set ($K=8$) for various value of $R$ in the MP and WC partitioning.}
@@ -815,12 +815,12 @@ For $R=3/2$ the Hamiltonian is block diagonal and this is equivalent to the RHF 
 
 
 
-\begin{wrapfigure}{R}{0.5\textwidth}
+\begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{EMP_UHF_R10.pdf}
+    \includegraphics[width=0.5\linewidth]{EMP_UHF_R10.pdf}
     \caption{Energies $E(\lambda)$ in the unrestricted basis set \eqref{eq:uhfbasis} with $R=10$.}
     \label{fig:UHFMiniBas}
-\end{wrapfigure}
+\end{figure}
 
 The singularity structure in this case is more complex because of the spin contamination of the wave function. We can not use CSFs in this case. So when we compute all the degeneracies using Eqs.~\eqref{eq:PolChar} and \eqref{eq:DPolChar} some correspond to EPs and some correspond to conical intersections. The numerical distinction of those singularities is very difficult so we will first look at the energies $E(\lambda)$ obtained with this basis set.
 Figure \ref{fig:UHFMiniBas} is the analog of Fig.~\ref{fig:RHFMiniBas} in the UHF formalism. We see that in this case the sp\textsubscript{z} triplet interacts with the s\textsuperscript{2} and the p\textsubscript{z}\textsuperscript{2} singlets. Those avoided crossings are due to the spin contamination of the wave function. The EPs resulting from those avoided crossings will be discussed in Sec.~\ref{sec:uhfSing}.
@@ -831,7 +831,7 @@ In this study we have used spherical harmonics (or combination of spherical harm
 
 In the RHF case there are only $\alpha$ singularities and large avoided crossings but we can see in Fig.~\ref{fig:UHFMiniBas} that in the UHF case there are sharp avoided crossings which are known to be connected to $\beta$ singularities. For example at $R=10$ the pair of singularities connected to the avoided crossing between s\textsuperscript{2} and sp\textsubscript{z} $^{3}P$ is $0.999\pm0.014\,i$. And the one between sp\textsubscript{z} $^{3}P$ and p\textsubscript{z}\textsuperscript{2} is connected with the singularities $2.207\pm0.023\,i$. However, in the spherium the electrons can't be ionized so those singularities cannot be the same $\beta$ singularities as the ones highlighted by Sergeev and Goodson \cite{Sergeev_2005}. We can see in Fig.~\ref{fig:UHFEP} that the s\textsuperscript{2} singlet and the sp\textsubscript{z} triplet states are degenerated for $R=3/2$. For $R>3/2$, it becomes an avoided crossing on the real axis and the degeneracies are $moved$ in the complex plane. The wave function is spin contaminated by $Y_1$ for $R>3/2$ this why the s\textsuperscript{2} singlet energy can not cross the sp\textsubscript{z} triplet curves anymore. When $R$ increases this avoided crossing becomes sharper. As presented before $\beta$ singularities are linked to quantum phase transition so it seems that this singularity is linked to the spin symmetry breaking of the UHF wave function. The fact that a similar pair of $\beta$ singularities appears for $R<-75/62$ confirms this assumption. A second pair of $\beta$ singularities appear for $R\gtrsim 2.5$, this is probably due to an excited-state quantum phase transition but this still need to be investigated. 
 
-\begin{figure}[h!]
+\begin{figure}
     \centering
     \includegraphics[width=0.45\textwidth]{UHFCI.pdf}
     \includegraphics[width=0.45\textwidth]{UHFEP.pdf}
@@ -843,7 +843,7 @@ As shown before, some matrix elements of the Hamiltonian become complex in the h
 
 Figure \ref{fig:UHFPT} shows that for the spherium model a part of the energy spectrum becomes complex when R is in the holomorphic domain. The parameter domain of value where the energy becomes complex is called the broken \pt symmetry  region. This is consistent with the fact that in the holomorphic domain the Hamiltonian is no more \pt -symmetric. 
 
-\begin{figure}[h!]
+\begin{figure}
     \centering
     \includegraphics[width=0.45\textwidth]{ReNRJPT.pdf}
     \includegraphics[width=0.45\textwidth]{ImNRJPT.pdf}
