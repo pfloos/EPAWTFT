@@ -1,47 +1,68 @@
-This is BibTeX, Version 0.99d (TeX Live 2019/Arch Linux)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: EPAWTFT.aux
-The style file: unsrt.bst
+The style file: apsrev4-1.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: EPAWTFTNotes.bib
 Database file #2: EPAWTFT.bib
-You've used 30 entries,
-            1791 wiz_defined-function locations,
-            659 strings with 8948 characters,
-and the built_in function-call counts, 7386 in all, are:
-= -- 582
-> -- 412
-< -- 0
-+ -- 150
-- -- 120
-* -- 677
-:= -- 1241
-add.period$ -- 90
-call.type$ -- 30
-change.case$ -- 29
-chr.to.int$ -- 0
-cite$ -- 30
-duplicate$ -- 271
-empty$ -- 688
-format.name$ -- 120
-if$ -- 1570
-int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 31
-newline$ -- 153
-num.names$ -- 30
-pop$ -- 36
+control{REVTEX41Control}, control.key{N/A}, control.author{N/A}, control.editor{N/A}, control.title{N/A}, control.pages{N/A}, control.year{N/A}, control.eprint{N/A}, 
+control{apsrev41Control}, control.key{N/A}, control.author{08}, control.editor{1}, control.title{}, control.pages{0}, control.year{1}, control.eprint{N/A}, 
+Warning--jnrlst (dependency: not reversed) set 1
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+Control: key (0) 
+Control: author (8) initials jnrlst
+Control: editor formatted (1) identically to author
+Control: production of article title (-1) disabled
+Control: page (0) single
+Control: year (1) truncated
+Control: production of eprint (0) enabled
+Warning--empty year in Coulson_1949
+You've used 76 entries,
+            5847 wiz_defined-function locations,
+            2147 strings with 28164 characters,
+and the built_in function-call counts, 72588 in all, are:
+= -- 4650
+> -- 1882
+< -- 494
++ -- 601
+- -- 459
+* -- 11148
+:= -- 7202
+add.period$ -- 74
+call.type$ -- 76
+change.case$ -- 298
+chr.to.int$ -- 80
+cite$ -- 77
+duplicate$ -- 6786
+empty$ -- 5460
+format.name$ -- 1102
+if$ -- 14470
+int.to.chr$ -- 5
+int.to.str$ -- 83
+missing$ -- 887
+newline$ -- 274
+num.names$ -- 222
+pop$ -- 2827
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 367
 quote$ -- 0
-skip$ -- 90
+skip$ -- 2666
 stack$ -- 0
-substring$ -- 551
-swap$ -- 30
-text.length$ -- 0
+substring$ -- 1918
+swap$ -- 6353
+text.length$ -- 222
 text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 61
-width$ -- 32
-write$ -- 331
+top$ -- 10
+type$ -- 1036
+warning$ -- 2
+while$ -- 223
+width$ -- 0
+write$ -- 633
+(There were 2 warnings)
