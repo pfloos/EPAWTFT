@@ -349,9 +349,20 @@ As one can only compute the first terms of the MP series, a smart way of getting
 Cremer and He proved that using specific extrapolation formulas of the MP series for class A and class B systems improves the precision of the results compared to the formula used without resorting to classes. The mean absolute deviation taking the FCI correlation energies as reference is $0.3$ millihartree with the class-specific formula whereas the deviation increases to 12 millihartree using the general formula.  
 Even if there were still shaded areas in their analysis and that their classification was incomplete, the work of Cremer and He clearly evidenced that understanding the origin of the different modes of convergence could potentially lead to a more rationalized use of MP perturbation theory and, hence, to more accurate correlation energy estimates.
 
-%===============================%
-\subsection{Cases of divergence}
-%===============================%
+Recently, Mih\'alka \textit{et al.} studied the partitioning effect on the convergence properties of Rayleigh-Schr\"odinger perturbation theory by considering the MP and the EN partitioning as well as an alternative partitioning. \cite{Mihalka_2017a} 
+Taking as an example (in particular) the water molecule at equilibrium and at stretched geometries, they could estimate the radius of the convergence via a quadratic Pad\'e approximant and convert divergent perturbation expansions to convergent ones in some cases thanks to a judicious choice of the level shift parameter.
+In a subsequent study by the same group, \cite{Mihalka_2017b} they use analytic continuation techniques to resum divergent series taking again as an example the water molecule in a stretched geometry.
+In a nutshell, their idea consists in calculating the energy of the system for several values of $\lambda$ for which the MP series is rapidly convergent, and to extrapolate the final energy to the physical system at $\lambda = 1$ via a polynomial- or Pad\'e-based fit. 
+However, the choice of the functional form of the fit remains a subtle task.
+This technique was first generalized by using complex scaling parameters and applying analytic continuation by solving the Laplace equation, \cite{Surjan_2018} and then further improved thanks to Cauchy's integral formula
+\begin{equation}
+	\frac{1}{2\pi i} \oint \frac{E(z)}{z - a} = E(a)
+\end{equation}
+instead of the solution of the Laplace equation. \cite{Mihalka_2019}
+
+%==========================================%
+\subsection{Insights from a two-state model}
+%==========================================%
 
 In the late 90's, Olsen \textit{et al.}~discovered an even more preoccupying behavior of the MP series. \cite{Olsen_1996} They showed that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and \ce{HF}. \cite{Olsen_1996, Christiansen_1996} Cremer and He had already studied these two systems and classified them as \textit{class B} systems. However, the analysis of Olsen and coworkers was performed in larger basis sets containing diffuse functions. In these basis sets, they found that the series become divergent at (very) high order.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  12 NOV 2020 15:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  12 NOV 2020 17:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -853,21 +853,21 @@ Class revtex4-1 Warning: Environment acknowledgements is obsolete;
 Use acknowledgments instead.
 
 [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 759.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 769.
  (./EPAWTFT.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 759.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 759.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 769.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 769.
 Package rerunfilecheck Info: File `EPAWTFT.out' has not changed.
-(rerunfilecheck)             Checksum: 81A90960DB67E307FACD10337C344D5D;1233.
+(rerunfilecheck)             Checksum: 273FFE3F138E11984AEF6D2B2F7F94AD;1245.
  ) 
 Here is how much of TeX's memory you used:
- 16624 strings out of 480478
- 283499 string characters out of 5899595
- 622138 words of memory out of 5000000
- 31784 multiletter control sequences out of 15000+600000
- 619636 words of font info for 469 fonts, out of 8000000 for 9000
+ 16634 strings out of 480478
+ 283622 string characters out of 5899595
+ 646230 words of memory out of 5000000
+ 31788 multiletter control sequences out of 15000+600000
+ 619811 words of font info for 472 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,18n,58p,1757b,980s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,18n,58p,1757b,944s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2020/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/
 2020/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2020/t
@@ -879,10 +879,10 @@ ic/txfonts/txsy.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfo
 nts/txsyb.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.
 pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/
 local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on EPAWTFT.pdf (8 pages, 138049 bytes).
+Output written on EPAWTFT.pdf (8 pages, 140006 bytes).
 PDF statistics:
- 485 PDF objects out of 1000 (max. 8388607)
- 458 compressed objects within 5 object streams
- 127 named destinations out of 1000 (max. 500000)
+ 493 PDF objects out of 1000 (max. 8388607)
+ 466 compressed objects within 5 object streams
+ 129 named destinations out of 1000 (max. 500000)
  52873 words of extra memory for PDF output out of 61914 (max. 10000000)
 
