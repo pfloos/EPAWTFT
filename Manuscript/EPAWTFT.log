@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  12 NOV 2020 12:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  12 NOV 2020 14:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -587,55 +587,55 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip78
 )
 Class revtex4-1 Info: Unrecognized array package. Please update this document c
-lass! (Proceeding with fingers crossed.) on input line 74.
+lass! (Proceeding with fingers crossed.) on input line 75.
 Class revtex4-1 Info: Patching unrecognized longtable package. (Proceeding with
- fingers crossed) on input line 74.
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 74.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 74.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 74.
+ fingers crossed) on input line 75.
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 75.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 75.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 75.
  (./EPAWTFT.aux)
 \openout1 = `EPAWTFT.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 74.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 75.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
-74.
+75.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 75.
 LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 
-74.
+75.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 75.
 LaTeX Font Info:    Trying to load font information for OMX+txex on input line 
-74.
+75.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 75.
 LaTeX Font Info:    Trying to load font information for U+txexa on input line 7
-4.
+5.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
 
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -659,14 +659,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 74.
+LaTeX Info: Redefining \microtypecontext on input line 75.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 74.
+LaTeX Info: Redefining \showhyphens on input line 75.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -675,10 +675,10 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 
-Package chemgreek Info: Activating mapping `default' on line 74.
+Package chemgreek Info: Activating mapping `default' on line 75.
 
 \AtBeginShipoutBox=\box73
-Package hyperref Info: Link coloring ON on input line 74.
+Package hyperref Info: Link coloring ON on input line 75.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -692,20 +692,20 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count298
 )
-LaTeX Info: Redefining \ref on input line 74.
-LaTeX Info: Redefining \pageref on input line 74.
-LaTeX Info: Redefining \nameref on input line 74.
+LaTeX Info: Redefining \ref on input line 75.
+LaTeX Info: Redefining \pageref on input line 75.
+LaTeX Info: Redefining \nameref on input line 75.
  (./EPAWTFT.out) (./EPAWTFT.out)
 \@outlinefile=\write4
 \openout4 = `EPAWTFT.out'.
 
-Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 74.
+Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 75.
 \openout3 = `EPAWTFTNotes.bib'.
 
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <12> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 95.
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 97.
 LaTeX Font Info:    Trying to load font information for OT1+txr on input line 9
-5.
+7.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
@@ -715,31 +715,31 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+txsya on input line 9
-5.
+7.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyb on input line 9
-5.
+7.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txmia on input line 9
-5.
+7.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyc on input line 9
-5.
+7.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <9> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 98.
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 100.
  [1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] 
 [3] [4]
 [5] [6] (./EPAWTFT.bbl [7])
@@ -748,21 +748,21 @@ Class revtex4-1 Warning: Environment acknowledgements is obsolete;
 Use acknowledgments instead.
 
 [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 744.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 751.
  (./EPAWTFT.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 744.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 744.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 751.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 751.
 Package rerunfilecheck Info: File `EPAWTFT.out' has not changed.
 (rerunfilecheck)             Checksum: 81A90960DB67E307FACD10337C344D5D;1233.
  ) 
 Here is how much of TeX's memory you used:
- 14313 strings out of 480478
- 216976 string characters out of 5899595
- 574099 words of memory out of 5000000
- 29499 multiletter control sequences out of 15000+600000
- 618445 words of font info for 469 fonts, out of 8000000 for 9000
+ 14318 strings out of 480478
+ 217004 string characters out of 5899595
+ 571075 words of memory out of 5000000
+ 29500 multiletter control sequences out of 15000+600000
+ 618610 words of font info for 472 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,18n,58p,1757b,626s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,18n,58p,1757b,614s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2020/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/
 2020/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2020/t
@@ -774,7 +774,7 @@ ic/txfonts/txsy.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfo
 nts/txsyb.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.
 pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/
 local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on EPAWTFT.pdf (8 pages, 134017 bytes).
+Output written on EPAWTFT.pdf (8 pages, 134816 bytes).
 PDF statistics:
  457 PDF objects out of 1000 (max. 8388607)
  430 compressed objects within 5 object streams
