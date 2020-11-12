@@ -23,46 +23,45 @@ Control: production of article title (-1) disabled
 Control: page (0) single
 Control: year (1) truncated
 Control: production of eprint (0) enabled
-Warning--empty year in Coulson_1949
-You've used 76 entries,
+You've used 72 entries,
             5847 wiz_defined-function locations,
-            2147 strings with 28164 characters,
-and the built_in function-call counts, 72588 in all, are:
-= -- 4650
-> -- 1882
-< -- 494
-+ -- 601
-- -- 459
-* -- 11148
-:= -- 7202
-add.period$ -- 74
-call.type$ -- 76
-change.case$ -- 298
-chr.to.int$ -- 80
-cite$ -- 77
-duplicate$ -- 6786
-empty$ -- 5460
-format.name$ -- 1102
-if$ -- 14470
-int.to.chr$ -- 5
-int.to.str$ -- 83
-missing$ -- 887
-newline$ -- 274
-num.names$ -- 222
-pop$ -- 2827
+            2133 strings with 28024 characters,
+and the built_in function-call counts, 70033 in all, are:
+= -- 4473
+> -- 1850
+< -- 481
++ -- 585
+- -- 453
+* -- 10828
+:= -- 6899
+add.period$ -- 70
+call.type$ -- 72
+change.case$ -- 282
+chr.to.int$ -- 78
+cite$ -- 72
+duplicate$ -- 6517
+empty$ -- 5216
+format.name$ -- 1078
+if$ -- 13975
+int.to.chr$ -- 3
+int.to.str$ -- 79
+missing$ -- 860
+newline$ -- 262
+num.names$ -- 210
+pop$ -- 2686
 preamble$ -- 1
-purify$ -- 367
+purify$ -- 350
 quote$ -- 0
-skip$ -- 2666
+skip$ -- 2570
 stack$ -- 0
-substring$ -- 1918
-swap$ -- 6353
-text.length$ -- 222
+substring$ -- 1863
+swap$ -- 6176
+text.length$ -- 219
 text.prefix$ -- 0
 top$ -- 10
-type$ -- 1036
-warning$ -- 2
-while$ -- 223
+type$ -- 993
+warning$ -- 1
+while$ -- 215
 width$ -- 0
-write$ -- 633
-(There were 2 warnings)
+write$ -- 606
+(There was 1 warning)

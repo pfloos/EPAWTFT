@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  24 AUG 2020 11:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  12 NOV 2020 12:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -587,55 +587,55 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip78
 )
 Class revtex4-1 Info: Unrecognized array package. Please update this document c
-lass! (Proceeding with fingers crossed.) on input line 73.
+lass! (Proceeding with fingers crossed.) on input line 74.
 Class revtex4-1 Info: Patching unrecognized longtable package. (Proceeding with
- fingers crossed) on input line 73.
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 73.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 73.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 73.
+ fingers crossed) on input line 74.
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 74.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 74.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 74.
  (./EPAWTFT.aux)
 \openout1 = `EPAWTFT.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 73.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 74.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
-73.
+74.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 74.
 LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 
-73.
+74.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 74.
 LaTeX Font Info:    Trying to load font information for OMX+txex on input line 
-73.
+74.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 74.
 LaTeX Font Info:    Trying to load font information for U+txexa on input line 7
-3.
+4.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
 
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -659,14 +659,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 73.
+LaTeX Info: Redefining \microtypecontext on input line 74.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 73.
+LaTeX Info: Redefining \showhyphens on input line 74.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -675,10 +675,10 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 
-Package chemgreek Info: Activating mapping `default' on line 73.
+Package chemgreek Info: Activating mapping `default' on line 74.
 
 \AtBeginShipoutBox=\box73
-Package hyperref Info: Link coloring ON on input line 73.
+Package hyperref Info: Link coloring ON on input line 74.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -692,20 +692,20 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count298
 )
-LaTeX Info: Redefining \ref on input line 73.
-LaTeX Info: Redefining \pageref on input line 73.
-LaTeX Info: Redefining \nameref on input line 73.
+LaTeX Info: Redefining \ref on input line 74.
+LaTeX Info: Redefining \pageref on input line 74.
+LaTeX Info: Redefining \nameref on input line 74.
  (./EPAWTFT.out) (./EPAWTFT.out)
 \@outlinefile=\write4
 \openout4 = `EPAWTFT.out'.
 
-Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 73.
+Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 74.
 \openout3 = `EPAWTFTNotes.bib'.
 
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <12> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 93.
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 95.
 LaTeX Font Info:    Trying to load font information for OT1+txr on input line 9
-3.
+5.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
@@ -715,194 +715,69 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+txsya on input line 9
-3.
+5.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyb on input line 9
-3.
+5.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txmia on input line 9
-3.
+5.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyc on input line 9
-3.
+5.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <9> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 96.
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 98.
  [1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] 
-[3]
-LaTeX Font Info:    Trying to load font information for TS1+txr on input line 3
-52.
-
-(/usr/local/texlive/2020/texmf-dist/tex/latex/txfonts/ts1txr.fd
-File: ts1txr.fd 2000/12/15 v3.1
-) [4] [5]
-[6] [7]
-<EsbHF.pdf, id=300, 578.16pt x 373.395pt>
-File: EsbHF.pdf Graphic file (type pdf)
-<use EsbHF.pdf>
-Package pdftex.def Info: EsbHF.pdf  used on input line 566.
-(pdftex.def)             Requested size: 246.0pt x 158.87024pt.
- [8 <./EsbHF.pdf>]
-<EMP_RHF_R10.pdf, id=341, 520.94624pt x 512.91624pt>
-File: EMP_RHF_R10.pdf Graphic file (type pdf)
-<use EMP_RHF_R10.pdf>
-Package pdftex.def Info: EMP_RHF_R10.pdf  used on input line 607.
-(pdftex.def)             Requested size: 246.0pt x 242.2055pt.
-<PartitioningRCV2.pdf, id=349, 578.16pt x 380.42125pt>
-File: PartitioningRCV2.pdf Graphic file (type pdf)
-<use PartitioningRCV2.pdf>
-Package pdftex.def Info: PartitioningRCV2.pdf  used on input line 624.
-(pdftex.def)             Requested size: 249.9028pt x 164.43123pt.
-<PartitioningRCV3.pdf, id=350, 578.16pt x 380.42125pt>
-File: PartitioningRCV3.pdf Graphic file (type pdf)
-<use PartitioningRCV3.pdf>
-Package pdftex.def Info: PartitioningRCV3.pdf  used on input line 625.
-(pdftex.def)             Requested size: 249.9028pt x 164.43123pt.
-
-Overfull \hbox (3.9028pt too wide) in paragraph at lines 624--626
- [][] 
- []
-
-
-Overfull \hbox (3.9028pt too wide) in paragraph at lines 624--626
- [] 
- []
-
-[9 <./EMP_RHF_R10.pdf>]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 636.
-
-<MPlargebasis.pdf, id=383, 578.16pt x 388.45125pt>
-File: MPlargebasis.pdf Graphic file (type pdf)
-<use MPlargebasis.pdf>
-Package pdftex.def Info: MPlargebasis.pdf  used on input line 638.
-(pdftex.def)             Requested size: 249.9028pt x 167.90208pt.
-<WCElargebasis.pdf, id=384, 578.16pt x 374.39874pt>
-File: WCElargebasis.pdf Graphic file (type pdf)
-<use WCElargebasis.pdf>
-Package pdftex.def Info: WCElargebasis.pdf  used on input line 639.
-(pdftex.def)             Requested size: 249.9028pt x 161.82811pt.
-
-Overfull \hbox (3.9028pt too wide) in paragraph at lines 638--640
- [][] 
- []
-
-
-Overfull \hbox (3.9028pt too wide) in paragraph at lines 638--640
- [] 
- []
-
-
-Overfull \hbox (115.91017pt too wide) in paragraph at lines 647--658
- []$[]$ 
- []
-
-[10 <./PartitioningRCV2.pdf> <./PartitioningRCV3.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./PartitioningRCV3.pdf): PDF
- inclusion: multiple pdfs with page group included in a single page
-> <./MPlargebasis.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./MPlargebasis.pdf): PDF inc
-lusion: multiple pdfs with page group included in a single page
-> <./WCElargebasis.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./WCElargebasis.pdf): PDF in
-clusion: multiple pdfs with page group included in a single page
->]
-<EMP_UHF_R10.pdf, id=435, 520.94624pt x 512.91624pt>
-File: EMP_UHF_R10.pdf Graphic file (type pdf)
-<use EMP_UHF_R10.pdf>
-Package pdftex.def Info: EMP_UHF_R10.pdf  used on input line 703.
-(pdftex.def)             Requested size: 246.0pt x 242.2055pt.
-<UHFCI.pdf, id=441, 520.94624pt x 501.875pt>
-File: UHFCI.pdf Graphic file (type pdf)
-<use UHFCI.pdf>
-Package pdftex.def Info: UHFCI.pdf  used on input line 711.
-(pdftex.def)             Requested size: 229.49844pt x 221.0937pt.
-<UHFEP.pdf, id=442, 520.94624pt x 501.875pt>
-File: UHFEP.pdf Graphic file (type pdf)
-<use UHFEP.pdf>
-Package pdftex.def Info: UHFEP.pdf  used on input line 712.
-(pdftex.def)             Requested size: 229.49844pt x 221.0937pt.
- [11 <./EMP_UHF_R10.pdf> <./UHFCI.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./UHFCI.pdf): PDF inclusion:
- multiple pdfs with page group included in a single page
-> <./UHFEP.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./UHFEP.pdf): PDF inclusion:
- multiple pdfs with page group included in a single page
->]
-<ReNRJPT.pdf, id=496, 520.94624pt x 527.9725pt>
-File: ReNRJPT.pdf Graphic file (type pdf)
-<use ReNRJPT.pdf>
-Package pdftex.def Info: ReNRJPT.pdf  used on input line 724.
-(pdftex.def)             Requested size: 229.49844pt x 232.59058pt.
-<ImNRJPT.pdf, id=497, 520.94624pt x 527.9725pt>
-File: ImNRJPT.pdf Graphic file (type pdf)
-<use ImNRJPT.pdf>
-Package pdftex.def Info: ImNRJPT.pdf  used on input line 725.
-(pdftex.def)             Requested size: 229.49844pt x 232.59058pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[12 <./ReNRJPT.pdf> <./ImNRJPT.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./ImNRJPT.pdf): PDF inclusio
-n: multiple pdfs with page group included in a single page
->] (./EPAWTFT.bbl [13])
+[3] [4]
+[5] [6] (./EPAWTFT.bbl [7])
 
 Class revtex4-1 Warning: Environment acknowledgements is obsolete;
 Use acknowledgments instead.
 
-[14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 768.
+[8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 744.
  (./EPAWTFT.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 768.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 768.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 744.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 744.
 Package rerunfilecheck Info: File `EPAWTFT.out' has not changed.
-(rerunfilecheck)             Checksum: 92DE4D91FCC62EBAF1E5ED2DCAC4EAE9;1594.
+(rerunfilecheck)             Checksum: 81A90960DB67E307FACD10337C344D5D;1233.
  ) 
 Here is how much of TeX's memory you used:
- 14631 strings out of 480478
- 221331 string characters out of 5899595
- 570775 words of memory out of 5000000
- 29659 multiletter control sequences out of 15000+600000
- 631037 words of font info for 549 fonts, out of 8000000 for 9000
+ 14313 strings out of 480478
+ 216976 string characters out of 5899595
+ 574099 words of memory out of 5000000
+ 29499 multiletter control sequences out of 15000+600000
+ 618445 words of font info for 469 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,18n,58p,1927b,602s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,18n,58p,1757b,626s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2020/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2020/t
-exmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2020/texmf-d
-ist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2020/texmf-dist/fon
-ts/type1/public/txfonts/txbsy.pfb></usr/local/texlive/2020/texmf-dist/fonts/typ
-e1/public/txfonts/txex.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
-ic/txfonts/txexa.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txf
-onts/txsy.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/tx
-sya.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsyb.pf
-b></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/lo
-cal/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texliv
-e/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on EPAWTFT.pdf (14 pages, 849408 bytes).
+exlive/2020/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/
+2020/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2020/t
+exmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2020/texmf-di
+st/fonts/type1/public/txfonts/txbsy.pfb></usr/local/texlive/2020/texmf-dist/fon
+ts/type1/public/txfonts/txex.pfb></usr/local/texlive/2020/texmf-dist/fonts/type
+1/public/txfonts/txexa.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
+ic/txfonts/txsy.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfo
+nts/txsyb.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.
+pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/
+local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on EPAWTFT.pdf (8 pages, 134017 bytes).
 PDF statistics:
- 743 PDF objects out of 1000 (max. 8388607)
- 656 compressed objects within 7 object streams
- 170 named destinations out of 1000 (max. 500000)
- 59112 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 457 PDF objects out of 1000 (max. 8388607)
+ 430 compressed objects within 5 object streams
+ 120 named destinations out of 1000 (max. 500000)
+ 47241 words of extra memory for PDF output out of 51595 (max. 10000000)
 

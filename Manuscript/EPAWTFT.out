@@ -1,4 +1,4 @@
-\BOOKMARK [0][-]{section*.2}{Perturbation theory in the complex plane}{}% 2
+\BOOKMARK [0][-]{section*.2}{Perturbation theory in the complex plane: Exceptional points and where to find them}{}% 2
 \BOOKMARK [1][-]{section*.1}{Abstract}{section*.2}% 1
 \BOOKMARK [1][-]{section*.3}{Introduction}{section*.2}% 3
 \BOOKMARK [2][-]{section*.4}{Background}{section*.3}% 4
@@ -7,16 +7,11 @@
 \BOOKMARK [2][-]{section*.7}{Rayleigh-Schr\366dinger perturbation theory}{section*.6}% 7
 \BOOKMARK [2][-]{section*.8}{The Hartree-Fock Hamiltonian}{section*.6}% 8
 \BOOKMARK [2][-]{section*.9}{M\370ller-Plesset perturbation theory}{section*.6}% 9
-\BOOKMARK [2][-]{section*.10}{Alternative partitioning}{section*.6}% 10
-\BOOKMARK [1][-]{section*.11}{Historical overview}{section*.2}% 11
-\BOOKMARK [2][-]{section*.12}{Behavior of the M\370ller-Plesset series}{section*.11}% 12
-\BOOKMARK [2][-]{section*.13}{Cases of divergence}{section*.11}% 13
-\BOOKMARK [2][-]{section*.14}{The singularity structure}{section*.11}% 14
-\BOOKMARK [2][-]{section*.15}{The physics of quantum phase transition}{section*.11}% 15
-\BOOKMARK [1][-]{section*.16}{The spherium model}{section*.2}% 16
-\BOOKMARK [1][-]{section*.17}{Radius of convergence and exceptional points}{section*.2}% 17
-\BOOKMARK [2][-]{section*.18}{Evolution of the radius of convergence}{section*.17}% 18
-\BOOKMARK [2][-]{section*.19}{Exceptional points in the UHF formalism}{section*.17}% 19
-\BOOKMARK [1][-]{section*.20}{Conclusion}{section*.2}% 20
-\BOOKMARK [1][-]{section*.21}{Acknowledgments}{section*.2}% 21
-\BOOKMARK [1][-]{section*.22}{References}{section*.2}% 22
+\BOOKMARK [1][-]{section*.10}{Historical overview}{section*.2}% 10
+\BOOKMARK [2][-]{section*.11}{Behavior of the M\370ller-Plesset series}{section*.10}% 11
+\BOOKMARK [2][-]{section*.12}{Cases of divergence}{section*.10}% 12
+\BOOKMARK [2][-]{section*.13}{The singularity structure}{section*.10}% 13
+\BOOKMARK [2][-]{section*.14}{The physics of quantum phase transitions}{section*.10}% 14
+\BOOKMARK [1][-]{section*.15}{Conclusion}{section*.2}% 15
+\BOOKMARK [1][-]{section*.16}{Acknowledgments}{section*.2}% 16
+\BOOKMARK [1][-]{section*.17}{References}{section*.2}% 17

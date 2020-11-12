@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{74}%
+\begin{thebibliography}{70}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -73,6 +73,17 @@
   {journal} {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume}
   {150}},\ \bibinfo {pages} {041103} (\bibinfo {year}
   {2019}{\natexlab{a}})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Burton}\ \emph
+  {et~al.}(2019{\natexlab{b}})\citenamefont {Burton}, \citenamefont {Thom},\
+  and\ \citenamefont {Loos}}]{Burton_2019a}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.~G.~A.}\
+  \bibnamefont {Burton}}, \bibinfo {author} {\bibfnamefont {A.~J.~W.}\
+  \bibnamefont {Thom}}, \ and\ \bibinfo {author} {\bibfnamefont {P.-F.}\
+  \bibnamefont {Loos}},\ }\href {\doibase 10.1021/acs.jctc.9b00289} {\bibfield
+  {journal} {\bibinfo  {journal} {J. Chem. Theory Comput.}\ }\textbf {\bibinfo
+  {volume} {15}},\ \bibinfo {pages} {4374} (\bibinfo {year}
+  {2019}{\natexlab{b}})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Bittner}\ \emph {et~al.}(2012)\citenamefont
   {Bittner}, \citenamefont {Dietz}, \citenamefont {G\"unther}, \citenamefont
   {Harney}, \citenamefont {Miski-Oglu}, \citenamefont {Richter},\ and\
@@ -305,6 +316,13 @@
   {\doibase 10.1038/nphys4323} {\bibfield  {journal} {\bibinfo  {journal} {Nat.
   Phys.}\ }\textbf {\bibinfo {volume} {14}},\ \bibinfo {pages} {11} (\bibinfo
   {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Heiss}(1988)}]{Heiss_1988}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.~D.}\ \bibnamefont
+  {Heiss}},\ }\href {\doibase 10.1007/BF01283767} {\bibfield  {journal}
+  {\bibinfo  {journal} {Z. Physik A - Atomic Nuclei}\ }\textbf {\bibinfo
+  {volume} {329}},\ \bibinfo {pages} {133} (\bibinfo {year}
+  {1988})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Heiss}\ and\ \citenamefont
   {Sannino}(1990)}]{Heiss_1990}%
   \BibitemOpen
@@ -314,12 +332,21 @@
   {journal} {\bibinfo  {journal} {J. Phys. Math. Gen.}\ }\textbf {\bibinfo
   {volume} {23}},\ \bibinfo {pages} {1167} (\bibinfo {year}
   {1990})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {D.}(1999)}]{Heiss_1999}%
+\bibitem [{\citenamefont {Heiss}(1999)}]{Heiss_1999}%
   \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
-  {D.}},\ }\href {\doibase 10.1007/s100530050339} {\bibfield  {journal}
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.~D.}\ \bibnamefont
+  {Heiss}},\ }\href {\doibase 10.1007/s100530050339} {\bibfield  {journal}
   {\bibinfo  {journal} {Eur. Phys. J. D}\ }\textbf {\bibinfo {volume} {7}},\
   \bibinfo {pages} {1} (\bibinfo {year} {1999})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Berry}\ and\ \citenamefont
+  {Uzdin}(2011)}]{Berry_2011}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~V.}\ \bibnamefont
+  {Berry}}\ and\ \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Uzdin}},\
+  }\href {\doibase 10.1088/1751-8113/44/43/435303} {\bibfield  {journal}
+  {\bibinfo  {journal} {J. Phys. A Math. Theor.}\ }\textbf {\bibinfo {volume}
+  {44}},\ \bibinfo {pages} {435303} (\bibinfo {year} {2011})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Heiss}(2012)}]{Heiss_2012}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.~D.}\ \bibnamefont
@@ -333,13 +360,6 @@
   {Heiss}},\ }\href {\doibase 10.1038/nphys3864} {\bibfield  {journal}
   {\bibinfo  {journal} {Nat. Phys.}\ }\textbf {\bibinfo {volume} {12}},\
   \bibinfo {pages} {823} (\bibinfo {year} {2016})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Yarkony}(1996)}]{Yarkony_1996}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~R.}\ \bibnamefont
-  {Yarkony}},\ }\href {\doibase 10.1103/RevModPhys.68.985} {\bibfield
-  {journal} {\bibinfo  {journal} {Rev. Mod. Phys.}\ }\textbf {\bibinfo {volume}
-  {68}},\ \bibinfo {pages} {985} (\bibinfo {year} {1996})}\BibitemShut
-  {NoStop}%
 \bibitem [{\citenamefont {Benda}\ and\ \citenamefont
   {Jagau}(2018)}]{Benda_2018}%
   \BibitemOpen
@@ -348,6 +368,13 @@
   {Jagau}},\ }\href {\doibase 10.1021/acs.jpclett.8b03228} {\bibfield
   {journal} {\bibinfo  {journal} {J. Phys. Chem. Lett.}\ }\textbf {\bibinfo
   {volume} {9}},\ \bibinfo {pages} {6978} (\bibinfo {year} {2018})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Yarkony}(1996)}]{Yarkony_1996}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~R.}\ \bibnamefont
+  {Yarkony}},\ }\href {\doibase 10.1103/RevModPhys.68.985} {\bibfield
+  {journal} {\bibinfo  {journal} {Rev. Mod. Phys.}\ }\textbf {\bibinfo {volume}
+  {68}},\ \bibinfo {pages} {985} (\bibinfo {year} {1996})}\BibitemShut
   {NoStop}%
 \bibitem [{\citenamefont {Berry}(1984)}]{Berry_1984}%
   \BibitemOpen
@@ -365,9 +392,9 @@
   Methods for Scientists and Engineers: Asymptotics Methods and Perturbation
   Theory}}}\ (\bibinfo  {publisher} {Springer},\ \bibinfo {year}
   {1978})\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Olsen}\ \emph {et~al.}({\natexlab{a}})\citenamefont
-  {Olsen}, \citenamefont {Christiansen}, \citenamefont {Koch},\ and\
-  \citenamefont {J{\o}rgensen}}]{Olsen_1996}%
+\bibitem [{\citenamefont {Olsen}\ \emph {et~al.}(1996)\citenamefont {Olsen},
+  \citenamefont {Christiansen}, \citenamefont {Koch},\ and\ \citenamefont
+  {J{\o}rgensen}}]{Olsen_1996}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
   {Olsen}}, \bibinfo {author} {\bibfnamefont {O.}~\bibnamefont {Christiansen}},
@@ -375,10 +402,10 @@
   {author} {\bibfnamefont {P.}~\bibnamefont {J{\o}rgensen}},\ }\href {\doibase
   10.1063/1.472352} {\bibfield  {journal} {\bibinfo  {journal} {J. Chem.
   Phys.}\ }\textbf {\bibinfo {volume} {105}},\ \bibinfo {pages} {5082}
-  ({\natexlab{a}})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Olsen}\ \emph {et~al.}({\natexlab{b}})\citenamefont
-  {Olsen}, \citenamefont {J{\o}rgensen}, \citenamefont {Helgaker},\ and\
-  \citenamefont {Christiansen}}]{Olsen_2000}%
+  (\bibinfo {year} {1996})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Olsen}\ \emph {et~al.}(2000)\citenamefont {Olsen},
+  \citenamefont {J{\o}rgensen}, \citenamefont {Helgaker},\ and\ \citenamefont
+  {Christiansen}}]{Olsen_2000}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
   {Olsen}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {J{\o}rgensen}},
@@ -386,7 +413,7 @@
   \bibinfo {author} {\bibfnamefont {O.}~\bibnamefont {Christiansen}},\ }\href
   {\doibase 10.1063/1.481611} {\bibfield  {journal} {\bibinfo  {journal} {J.
   Chem. Phys.}\ }\textbf {\bibinfo {volume} {112}},\ \bibinfo {pages} {9736}
-  ({\natexlab{b}})}\BibitemShut {NoStop}%
+  (\bibinfo {year} {2000})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Olsen}\ and\ \citenamefont
   {J{\o}rgensen}(2019)}]{Olsen_2019}%
   \BibitemOpen
@@ -395,6 +422,37 @@
   {J{\o}rgensen}},\ }\href {\doibase 10.1063/1.5110554} {\bibfield  {journal}
   {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {151}},\
   \bibinfo {pages} {084108} (\bibinfo {year} {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Mih\'alka}\ and\ \citenamefont
+  {Surj\'an}(2017)}]{Mihalka_2017a}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Z.~E.}\ \bibnamefont
+  {Mih\'alka}}\ and\ \bibinfo {author} {\bibfnamefont {P.~R.}\ \bibnamefont
+  {Surj\'an}},\ }\href {\doibase 10.1103/PhysRevA.96.062106} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume}
+  {96}},\ \bibinfo {pages} {062106} (\bibinfo {year} {2017})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Mih{\'a}lka}\ \emph {et~al.}(2017)\citenamefont
+  {Mih{\'a}lka}, \citenamefont {Szabados},\ and\ \citenamefont
+  {Surj{\'a}n}}]{Mihalka_2017b}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Z.~{\'E}.}\
+  \bibnamefont {Mih{\'a}lka}}, \bibinfo {author} {\bibfnamefont
+  {{\'A}.}~\bibnamefont {Szabados}}, \ and\ \bibinfo {author} {\bibfnamefont
+  {P.~R.}\ \bibnamefont {Surj{\'a}n}},\ }\href {\doibase 10.1063/1.4978898}
+  {\bibfield  {journal} {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf
+  {\bibinfo {volume} {146}},\ \bibinfo {pages} {124121} (\bibinfo {year}
+  {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Mih{\'a}lka}\ \emph {et~al.}(2019)\citenamefont
+  {Mih{\'a}lka}, \citenamefont {Szabados},\ and\ \citenamefont
+  {Surj{\'a}n}}]{Mihalka_2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Z.~{\'E}.}\
+  \bibnamefont {Mih{\'a}lka}}, \bibinfo {author} {\bibfnamefont
+  {{\'A}.}~\bibnamefont {Szabados}}, \ and\ \bibinfo {author} {\bibfnamefont
+  {P.~R.}\ \bibnamefont {Surj{\'a}n}},\ }\href {\doibase 10.1063/1.5083191}
+  {\bibfield  {journal} {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf
+  {\bibinfo {volume} {150}},\ \bibinfo {pages} {031101} (\bibinfo {year}
+  {2019})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Szabo}\ and\ \citenamefont
   {Ostlund}(1989)}]{SzaboBook}%
   \BibitemOpen
@@ -417,6 +475,13 @@
   {Plesset}},\ }\href {\doibase 10.1103/PhysRev.46.618} {\bibfield  {journal}
   {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {46}},\
   \bibinfo {pages} {618} (\bibinfo {year} {1934})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gill}(1994)}]{Gill_1994}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~M.~W.}\
+  \bibnamefont {Gill}},\ }\href {\doibase 10.1016/S0065-3276(08)60019-2}
+  {\bibfield  {journal} {\bibinfo  {journal} {Adv. Quantum Chem.}\ }\textbf
+  {\bibinfo {volume} {25}},\ \bibinfo {pages} {141} (\bibinfo {year}
+  {1994})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Gill}\ and\ \citenamefont {Radom}(1986)}]{Gill_1986}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~M.~W.}\
@@ -462,6 +527,21 @@
   {Jensen}},\ }\href@noop {} {\emph {\bibinfo {title} {Introduction to
   computational chemistry}}}\ (\bibinfo  {publisher} {Wiley},\ \bibinfo {year}
   {2017})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Nesbet}\ and\ \citenamefont
+  {Hartree}(1955)}]{Nesbet_1955}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.~K.}\ \bibnamefont
+  {Nesbet}}\ and\ \bibinfo {author} {\bibfnamefont {D.~R.}\ \bibnamefont
+  {Hartree}},\ }\href {\doibase 10.1098/rspa.1955.0134} {\bibfield  {journal}
+  {\bibinfo  {journal} {Proc. R. Soc. Lond. A}\ }\textbf {\bibinfo {volume}
+  {230}},\ \bibinfo {pages} {312} (\bibinfo {year} {1955})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Epstein}(1926)}]{Epstein_1926}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~S.}\ \bibnamefont
+  {Epstein}},\ }\href {\doibase 10.1103/PhysRev.28.695} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {28}},\
+  \bibinfo {pages} {695} (\bibinfo {year} {1926})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Seidl}\ \emph {et~al.}(2018)\citenamefont {Seidl},
   \citenamefont {Giarrusso}, \citenamefont {Vuckovic}, \citenamefont
   {Fabiano},\ and\ \citenamefont {Gori-Giorgi}}]{Seidl_2018}%
@@ -535,13 +615,6 @@
   {\bibinfo {booktitle} {Adv. Quantum Chem.}}},\ Vol.~\bibinfo {volume} {47}\
   (\bibinfo  {publisher} {Academic Press},\ \bibinfo {year} {2004})\ pp.\
   \bibinfo {pages} {193--208}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Heiss}(1988)}]{Heiss_1988}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.~D.}\ \bibnamefont
-  {Heiss}},\ }\href {\doibase 10.1007/BF01283767} {\bibfield  {journal}
-  {\bibinfo  {journal} {Z. Physik A - Atomic Nuclei}\ }\textbf {\bibinfo
-  {volume} {329}},\ \bibinfo {pages} {133} (\bibinfo {year}
-  {1988})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Heiss}\ and\ \citenamefont
   {M{\"u}ller}(2002)}]{Heiss_2002}%
   \BibitemOpen
@@ -664,96 +737,4 @@
   {\doibase 10.1016/0029-5582(65)90862-X} {\bibfield  {journal} {\bibinfo
   {journal} {Nucl. Phys.}\ }\textbf {\bibinfo {volume} {62}},\ \bibinfo {pages}
   {188} (\bibinfo {year} {1965})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Ushveridze}(1994)}]{Ushveridze_1994}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~G.}\ \bibnamefont
-  {Ushveridze}},\ }\href@noop {} {\emph {\bibinfo {title} {Quasi-exactly
-  solvable models in quantum mechanics}}}\ (\bibinfo  {publisher} {Institute of
-  Physics Publishing},\ \bibinfo {year} {1994})\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Thompson}\ and\ \citenamefont
-  {Alavi}(2005)}]{Thompson_2005}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~C.}\ \bibnamefont
-  {Thompson}}\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
-  {Alavi}},\ }\href {\doibase 10.1063/1.1869978} {\bibfield  {journal}
-  {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {122}},\
-  \bibinfo {pages} {124107} (\bibinfo {year} {2005})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Seidl}(2007)}]{Seidl_2007}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
-  {Seidl}},\ }\href {\doibase 10.1103/PhysRevA.75.062506} {\bibfield  {journal}
-  {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume} {75}},\
-  \bibinfo {pages} {062506} (\bibinfo {year} {2007})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Loos}\ and\ \citenamefont
-  {Gill}(2009{\natexlab{a}})}]{Loos_2009b}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.-F.}\ \bibnamefont
-  {Loos}}\ and\ \bibinfo {author} {\bibfnamefont {P.~M.~W.}\ \bibnamefont
-  {Gill}},\ }\href {\doibase 10.1103/PhysRevLett.103.123008} {\bibfield
-  {journal} {\bibinfo  {journal} {Phys. Rev. Let.}\ }\textbf {\bibinfo {volume}
-  {103}},\ \bibinfo {pages} {123008} (\bibinfo {year}
-  {2009}{\natexlab{a}})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Loos}\ and\ \citenamefont
-  {Gill}(2009{\natexlab{b}})}]{Loos_2009}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.-F.}\ \bibnamefont
-  {Loos}}\ and\ \bibinfo {author} {\bibfnamefont {P.~M.~W.}\ \bibnamefont
-  {Gill}},\ }\href {\doibase 10.1103/PhysRevA.79.062517} {\bibfield  {journal}
-  {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume} {79}},\
-  \bibinfo {pages} {062517} (\bibinfo {year} {2009}{\natexlab{b}})}\BibitemShut
-  {NoStop}%
-\bibitem [{\citenamefont {Wigner}(1934)}]{Wigner_1934}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
-  {Wigner}},\ }\href {\doibase 10.1103/PhysRev.46.1002} {\bibfield  {journal}
-  {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {46}},\
-  \bibinfo {pages} {1002} (\bibinfo {year} {1934})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Coulson}\ and\ \citenamefont
-  {Fischer}()}]{Coulson_1949}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~A.}\ \bibnamefont
-  {Coulson}}\ and\ \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
-  {Fischer}},\ }\href {\doibase 10.1080/14786444908521726} {\bibfield
-  {journal} {\bibinfo  {journal} {1949}\ }\textbf {\bibinfo {volume} {40}},\
-  \bibinfo {pages} {386}}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Edmonds}(1996)}]{AngularBook}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~R.}\ \bibnamefont
-  {Edmonds}},\ }\href@noop {} {\emph {\bibinfo {title} {Angular {Momentum} in
-  {Quantum} {Mechanics}}}}\ (\bibinfo  {publisher} {Princeton University
-  Press},\ \bibinfo {year} {1996})\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Giuliani}\ and\ \citenamefont
-  {Vignale}(2005)}]{GiulianiBook}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
-  {Giuliani}}\ and\ \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
-  {Vignale}},\ }\href {\doibase 10.1017/CBO9780511619915} {\emph {\bibinfo
-  {title} {Quantum {Theory} of the {Electron} {Liquid}}}}\ (\bibinfo
-  {publisher} {Cambridge University Press},\ \bibinfo {year}
-  {2005})\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Hiscock}\ and\ \citenamefont
-  {Thom}(2014)}]{Hiscock_2014}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.~G.}\ \bibnamefont
-  {Hiscock}}\ and\ \bibinfo {author} {\bibfnamefont {A.~J.~W.}\ \bibnamefont
-  {Thom}},\ }\href {\doibase 10.1021/ct5007696} {\bibfield  {journal} {\bibinfo
-   {journal} {J. Chem. Theory Comput.}\ }\textbf {\bibinfo {volume} {10}},\
-  \bibinfo {pages} {4795} (\bibinfo {year} {2014})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Burton}\ \emph
-  {et~al.}(2019{\natexlab{b}})\citenamefont {Burton}, \citenamefont {Thom},\
-  and\ \citenamefont {Loos}}]{Burton_2019a}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.~G.~A.}\
-  \bibnamefont {Burton}}, \bibinfo {author} {\bibfnamefont {A.~J.~W.}\
-  \bibnamefont {Thom}}, \ and\ \bibinfo {author} {\bibfnamefont {P.-F.}\
-  \bibnamefont {Loos}},\ }\href {\doibase 10.1021/acs.jctc.9b00289} {\bibfield
-  {journal} {\bibinfo  {journal} {J. Chem. Theory Comput.}\ }\textbf {\bibinfo
-  {volume} {15}},\ \bibinfo {pages} {4374} (\bibinfo {year}
-  {2019}{\natexlab{b}})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Slater}(1960)}]{SlaterBook}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~C.}\ \bibnamefont
-  {Slater}},\ }\href@noop {} {\emph {\bibinfo {title} {{Quantum Theory of
-  Atomic Structure}}}}\ (\bibinfo  {publisher} {McGraw-Hill},\ \bibinfo {year}
-  {1960})\BibitemShut {NoStop}%
 \end{thebibliography}%
