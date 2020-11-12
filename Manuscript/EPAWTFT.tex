@@ -366,15 +366,6 @@ A singularity in the unit circle is designated as an intruder state, more precis
 \end{equation}
 where the diagonal matrix is the unperturbed Hamiltonian matrix $\bH^{(0)}$ and the second matrix in the right-hand-side $\bV$ is the perturbation.
 
-In Ref.~\onlinecite{Olsen_2019}, the simple two-state model proposed by Olsen \textit{et al.} is generalized to a non-symmetric Hamiltonian 
-\begin{equation}
-	\underbrace{\mqty(\alpha & \delta_1 \\ \delta_2 & \beta)}_{\bH} = \underbrace{\mqty(\alpha & 0 \\ 0 & \beta + \gamma )}_{\bH^{(0)}} + \underbrace{\mqty( 0 & \delta_2 \\ \delta_1 & - \gamma)}_{\bV}.
-\end{equation}
-allowing an analysis of various choice of perturbation (not only the MP partioning) such as coupled cluster perturbation expansions and other non-Hermitian perturbation methods.
-It is worth noting that only cases where $\text{sgn}(\delta_1) = - \text{sgn}(\delta_2)$ leads to new forms of perturbation expansions.
-Interestingly, they showed that the convergence pattern of a given perturbation method can be characterized by its archetype which defines the overall ``shape'' of the energy convergence and can be subdivided in five classes for Hermitian Hamiltonians (zigzag, interspersed zigzag, triadic, ripples, and geometric), while two additional archetypes (zigzag-geometric and convex-geometric) are observed in non-Hermitian Hamiltonians.
-Other features characterizing the convergence behavior of a perturbation method are its rate of convergence, its length of recurring period, and its sign pattern.
-
 They first studied molecules with low-lying doubly-excited states of the same spatial and spin symmetry.
 The exact wave function has a non-negligible contribution from the doubly-excited states, so these low-lying excited states were good candidates for being intruder states. \titou{For \ce{CH_2} in a large basis set, the series is convergent up to the 50th order. They showed that the dominant singularity lies outside the unit circle but close to it causing the slow convergence.}
 
@@ -384,6 +375,20 @@ Then they demonstrated that the divergence for \ce{Ne} is due to a back-door int
 Moreover they proved that the extrapolation formulas of Cremer and He \cite{Cremer_1996} cannot be used for all systems, and that these formulas were not mathematically motivated when looking at the singularity causing the divergence. 
 For example, the hydrogen fluoride molecule contains both back-door intruder states and low-lying doubly-excited states which results in alternated terms up to 10th order. 
 For higher orders, the series is monotonically convergent. This surprising behavior is due to the fact that two pairs of singularities are approximately at the same distance from the origin.
+
+
+In Ref.~\onlinecite{Olsen_2019}, the simple two-state model proposed by Olsen \textit{et al.} is generalized to a non-symmetric Hamiltonian 
+\begin{equation}
+	\underbrace{\mqty(\alpha & \delta_1 \\ \delta_2 & \beta)}_{\bH} = \underbrace{\mqty(\alpha & 0 \\ 0 & \beta + \gamma )}_{\bH^{(0)}} + \underbrace{\mqty( 0 & \delta_2 \\ \delta_1 & - \gamma)}_{\bV}.
+\end{equation}
+allowing an analysis of various choice of perturbation (not only the MP partioning) such as coupled cluster perturbation expansions \cite{Pawlowski_2019a,Pawlowski_2019b,Pawlowski_2019c,Pawlowski_2019d,Pawlowski_2019e} and other non-Hermitian perturbation methods.
+It is worth noting that only cases where $\text{sgn}(\delta_1) = - \text{sgn}(\delta_2)$ leads to new forms of perturbation expansions.
+Interestingly, they showed that the convergence pattern of a given perturbation method can be characterized by its archetype which defines the overall ``shape'' of the energy convergence. These so-called archetypes can be subdivided in five classes for Hermitian Hamiltonians (zigzag, interspersed zigzag, triadic, ripples, and geometric), while two additional archetypes (zigzag-geometric and convex-geometric) are observed in non-Hermitian Hamiltonians.
+Importantly, they observed that the the geometric archetype is the most common for MP expansions but that the ripples archetype sometimes occurs. \cite{Handy_1985,Lepetit_1988,Leininger_2000}
+Other features characterizing the convergence behavior of a perturbation method are its rate of convergence, its length of recurring period, and its sign pattern;
+the three remaining archetypes seem to be rarely observed in MP perturbation theory.
+However, in the non-Hermitian setting of coupled cluster perturbation theory, \cite{Pawlowski_2019a,Pawlowski_2019b,Pawlowski_2019c,Pawlowski_2019d,Pawlowski_2019e} on can encounter interspersed zigzag, triadic, ripple, geometric, and zigzag-geometric archetypes.
+One of main take-home messages of Olsen's study is that the primary critical point defines the high-order convergence, irrespective of whether this point is inside or outside the complex unit circle. \cite{Handy_1985,Olsen_2000}
 
 %=======================================
 \subsection{The singularity structure}

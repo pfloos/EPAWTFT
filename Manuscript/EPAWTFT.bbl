@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{71}%
+\begin{thebibliography}{76}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -587,6 +587,65 @@
   10.1016/0009-2614(96)00974-8} {\bibfield  {journal} {\bibinfo  {journal}
   {Chem. Phys. Lett.}\ }\textbf {\bibinfo {volume} {261}},\ \bibinfo {pages}
   {369} (\bibinfo {year} {1996})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Paw{\l}owski}\ \emph
+  {et~al.}(2019{\natexlab{a}})\citenamefont {Paw{\l}owski}, \citenamefont
+  {Olsen},\ and\ \citenamefont {J{\o}rgensen}}]{Pawlowski_2019a}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Paw{\l}owski}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Olsen}},
+  \ and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {J{\o}rgensen}},\
+  }\href {\doibase 10.1063/1.5004037} {\bibfield  {journal} {\bibinfo
+  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {150}},\ \bibinfo
+  {pages} {134108} (\bibinfo {year} {2019}{\natexlab{a}})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Paw{\l}owski}\ \emph
+  {et~al.}(2019{\natexlab{b}})\citenamefont {Paw{\l}owski}, \citenamefont
+  {Olsen},\ and\ \citenamefont {J{\o}rgensen}}]{Pawlowski_2019b}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Paw{\l}owski}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Olsen}},
+  \ and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {J{\o}rgensen}},\
+  }\href {\doibase 10.1063/1.5053167} {\bibfield  {journal} {\bibinfo
+  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {150}},\ \bibinfo
+  {pages} {134109} (\bibinfo {year} {2019}{\natexlab{b}})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Baudin}\ \emph {et~al.}(2019)\citenamefont {Baudin},
+  \citenamefont {Paw{\l}owski}, \citenamefont {Bykov}, \citenamefont {Liakh},
+  \citenamefont {Kristensen}, \citenamefont {Olsen},\ and\ \citenamefont
+  {J{\o}rgensen}}]{Pawlowski_2019c}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Baudin}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Paw{\l}owski}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Bykov}},
+  \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Liakh}}, \bibinfo
+  {author} {\bibfnamefont {K.}~\bibnamefont {Kristensen}}, \bibinfo {author}
+  {\bibfnamefont {J.}~\bibnamefont {Olsen}}, \ and\ \bibinfo {author}
+  {\bibfnamefont {P.}~\bibnamefont {J{\o}rgensen}},\ }\href {\doibase
+  10.1063/1.5046935} {\bibfield  {journal} {\bibinfo  {journal} {J. Chem.
+  Phys.}\ }\textbf {\bibinfo {volume} {150}},\ \bibinfo {pages} {134110}
+  (\bibinfo {year} {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Paw{\l}owski}\ \emph
+  {et~al.}(2019{\natexlab{c}})\citenamefont {Paw{\l}owski}, \citenamefont
+  {Olsen},\ and\ \citenamefont {J{\o}rgensen}}]{Pawlowski_2019d}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Paw{\l}owski}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Olsen}},
+  \ and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {J{\o}rgensen}},\
+  }\href {\doibase 10.1063/1.5053622} {\bibfield  {journal} {\bibinfo
+  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {150}},\ \bibinfo
+  {pages} {134111} (\bibinfo {year} {2019}{\natexlab{c}})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Paw{\l}owski}\ \emph
+  {et~al.}(2019{\natexlab{d}})\citenamefont {Paw{\l}owski}, \citenamefont
+  {Olsen},\ and\ \citenamefont {J{\o}rgensen}}]{Pawlowski_2019e}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Paw{\l}owski}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Olsen}},
+  \ and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {J{\o}rgensen}},\
+  }\href {\doibase 10.1063/1.5053627} {\bibfield  {journal} {\bibinfo
+  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {150}},\ \bibinfo
+  {pages} {134112} (\bibinfo {year} {2019}{\natexlab{d}})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Sergeev}\ \emph {et~al.}(2005)\citenamefont
   {Sergeev}, \citenamefont {Goodson}, \citenamefont {Wheeler},\ and\
   \citenamefont {Allen}}]{Sergeev_2005}%
