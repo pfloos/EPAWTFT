@@ -1,6 +1,5 @@
 \documentclass[aps,prb,reprint,noshowkeys,superscriptaddress]{revtex4-1}
-\usepackage{graphicx,dcolumn,bm,xcolor,microtype,multirow,amscd,amsmath,amssymb,amsfonts,physics,longtable,txfonts,mhchem}
-
+\usepackage{graphicx,tabularx,array,booktabs,longtable,dcolumn,xcolor,microtype,multirow,amscd,amsmath,amssymb,amsfonts,physics,siunitx,mhchem}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{txfonts}
@@ -27,7 +26,6 @@
 \newcommand{\fnt}{\footnotetext}
 \newcommand{\mcc}[1]{\multicolumn{1}{c}{#1}}
 \newcommand{\mr}{\multirow}
-\newcommand{\SI}{\textcolor{blue}{supporting information}}
 
 % operators
 \newcommand{\bH}{\mathbf{H}}
@@ -302,10 +300,10 @@ with $\mel{pq}{}{rs} = \braket{pq}{rs} - \braket{pq}{sr}$, and where
 \begin{equation}
 	\braket{pq}{rs} = \iint \dd\vb{x}_1\dd\vb{x}_2\frac{\phi_p(\vb{x}_1)\phi_q(\vb{x}_2)\phi_r(\vb{x}_1)\phi_s(\vb{x}_2)}{\abs{\vb{r}_1 - \vb{r}_2}}
 \end{equation}
-are two-electron integral in the spin-orbital basis. \cite{Gill_1994}
+are two-electron integrals in the spin-orbital basis. \cite{Gill_1994}
 
 As mentioned earlier, there is, \textit{a priori}, no guarantee that the MP$m$ series converges to the exact energy when $m \to \infty$. 
-In fact, it is known that when the HF wave function is a poor approximation to the exact wave function, for example in multi-reference systems, the MP method yields deceptive results. \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}
+In fact, it is known that when the HF wave function is a poor approximation to the exact wave function, for example in multi-reference systems, the MP method yields deceptive results. \cite{Gill_1986,Gill_1988,Handy_1985,Lepetit_1988,Leininger_2000}
 A convenient way to investigate the convergence properties of the MP series is to analytically continue the coupling parameter $\lambda$ into the complex variable. 
 By doing so, the Hamiltonian and the energy become complex-valued functions of $\lambda$, and the energy becomes a multivalued function on $K$ Riemann sheets (where $K$ is the number of basis functions).
 As mentioned above, by searching the singularities of the function $E(\lambda)$, one can get information on the convergence properties of the MP series. 
@@ -364,11 +362,16 @@ The discovery of this divergent behavior is worrying as in order to get meaningf
 
 A singularity in the unit circle is designated as an intruder state, more precisely as a front-door (respectively back-door) intruder state if the real part of the singularity is positive (respectively negative). Their method consists in performing a scan of the real axis to detect the avoided crossing responsible for the pair of dominant singularities. Then, by modeling this avoided crossing via a two-state Hamiltonian one can get an approximation of the dominant conjugate pair of singularities by finding the EPs of the following $2\times2$ matrix
 \begin{equation}
-\underbrace{\mqty(\alpha & \delta \\ \delta & \beta)}_{\bH} = \underbrace{\mqty(\alpha + \alpha_s & 0 \\ 0 & \beta + \beta_s )}_{\bH^{(0)}} + \underbrace{\mqty(- \alpha_s & \delta \\ \delta & - \beta_s)}_{\bV},
+	\underbrace{\mqty(\alpha & \delta \\ \delta & \beta)}_{\bH} = \underbrace{\mqty(\alpha & 0 \\ 0 & \beta + \gamma )}_{\bH^{(0)}} + \underbrace{\mqty( 0 & \delta \\ \delta & - \gamma)}_{\bV},
 \end{equation}
 where the diagonal matrix is the unperturbed Hamiltonian matrix $\bH^{(0)}$ and the second matrix in the right-hand-side $\bV$ is the perturbation.
 
-In Ref.~\onlinecite{Olsen_2019}, the simple $2 \times 2$ model proposed by Olsen \textit{et al.} is generalized to a non-symmetric (i.e, non-Hermitian) Hamiltonian and various choice of perturbation (not only the MP partioning).
+In Ref.~\onlinecite{Olsen_2019}, the simple two-state model proposed by Olsen \textit{et al.} is generalized to a non-symmetric Hamiltonian 
+\begin{equation}
+	\underbrace{\mqty(\alpha & \delta_1 \\ \delta_2 & \beta)}_{\bH} = \underbrace{\mqty(\alpha & 0 \\ 0 & \beta + \gamma )}_{\bH^{(0)}} + \underbrace{\mqty( 0 & \delta_2 \\ \delta_1 & - \gamma)}_{\bV}.
+\end{equation}
+allowing an analysis of various choice of perturbation (not only the MP partioning) such as coupled cluster perturbation expansions and other non-Hermitian perturbation methods.
+It is worth noting that only cases where $\text{sgn}(\delta_1) = - \text{sgn}(\delta_2)$ leads to new forms of perturbation expansions.
 Interestingly, they showed that the convergence pattern of a given perturbation method can be characterized by its archetype which defines the overall ``shape'' of the energy convergence and can be subdivided in five classes for Hermitian Hamiltonians (zigzag, interspersed zigzag, triadic, ripples, and geometric), while two additional archetypes (zigzag-geometric and convex-geometric) are observed in non-Hermitian Hamiltonians.
 Other features characterizing the convergence behavior of a perturbation method are its rate of convergence, its length of recurring period, and its sign pattern.
 
