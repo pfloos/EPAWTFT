@@ -1,6 +1,5 @@
 \documentclass[aps,prb,reprint,noshowkeys,superscriptaddress]{revtex4-1}
-\usepackage{graphicx,dcolumn,bm,xcolor,microtype,multirow,amscd,amsmath,amssymb,amsfonts,physics,longtable,txfonts,mhchem}
-
+\usepackage{graphicx,tabularx,array,booktabs,longtable,dcolumn,xcolor,microtype,multirow,amscd,amsmath,amssymb,amsfonts,physics,siunitx,mhchem}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{txfonts}
@@ -27,7 +26,6 @@
 \newcommand{\fnt}{\footnotetext}
 \newcommand{\mcc}[1]{\multicolumn{1}{c}{#1}}
 \newcommand{\mr}{\multirow}
-\newcommand{\SI}{\textcolor{blue}{supporting information}}
 
 % operators
 \newcommand{\bH}{\mathbf{H}}
@@ -302,10 +300,10 @@ with $\mel{pq}{}{rs} = \braket{pq}{rs} - \braket{pq}{sr}$, and where
 \begin{equation}
 	\braket{pq}{rs} = \iint \dd\vb{x}_1\dd\vb{x}_2\frac{\phi_p(\vb{x}_1)\phi_q(\vb{x}_2)\phi_r(\vb{x}_1)\phi_s(\vb{x}_2)}{\abs{\vb{r}_1 - \vb{r}_2}}
 \end{equation}
-are two-electron integral in the spin-orbital basis. \cite{Gill_1994}
+are two-electron integrals in the spin-orbital basis. \cite{Gill_1994}
 
 As mentioned earlier, there is, \textit{a priori}, no guarantee that the MP$m$ series converges to the exact energy when $m \to \infty$. 
-In fact, it is known that when the HF wave function is a poor approximation to the exact wave function, for example in multi-reference systems, the MP method yields deceptive results. \cite{Gill_1986, Gill_1988, Handy_1985, Lepetit_1988}
+In fact, it is known that when the HF wave function is a poor approximation to the exact wave function, for example in multi-reference systems, the MP method yields deceptive results. \cite{Gill_1986,Gill_1988,Handy_1985,Lepetit_1988,Leininger_2000}
 A convenient way to investigate the convergence properties of the MP series is to analytically continue the coupling parameter $\lambda$ into the complex variable. 
 By doing so, the Hamiltonian and the energy become complex-valued functions of $\lambda$, and the energy becomes a multivalued function on $K$ Riemann sheets (where $K$ is the number of basis functions).
 As mentioned above, by searching the singularities of the function $E(\lambda)$, one can get information on the convergence properties of the MP series. 
@@ -351,9 +349,20 @@ As one can only compute the first terms of the MP series, a smart way of getting
 Cremer and He proved that using specific extrapolation formulas of the MP series for class A and class B systems improves the precision of the results compared to the formula used without resorting to classes. The mean absolute deviation taking the FCI correlation energies as reference is $0.3$ millihartree with the class-specific formula whereas the deviation increases to 12 millihartree using the general formula.  
 Even if there were still shaded areas in their analysis and that their classification was incomplete, the work of Cremer and He clearly evidenced that understanding the origin of the different modes of convergence could potentially lead to a more rationalized use of MP perturbation theory and, hence, to more accurate correlation energy estimates.
 
-%===============================%
-\subsection{Cases of divergence}
-%===============================%
+Recently, Mih\'alka \textit{et al.} studied the partitioning effect on the convergence properties of Rayleigh-Schr\"odinger perturbation theory by considering the MP and the EN partitioning as well as an alternative partitioning. \cite{Mihalka_2017a} 
+Taking as an example (in particular) the water molecule at equilibrium and at stretched geometries, they could estimate the radius of the convergence via a quadratic Pad\'e approximant and convert divergent perturbation expansions to convergent ones in some cases thanks to a judicious choice of the level shift parameter.
+In a subsequent study by the same group, \cite{Mihalka_2017b} they use analytic continuation techniques to resum divergent series taking again as an example the water molecule in a stretched geometry.
+In a nutshell, their idea consists in calculating the energy of the system for several values of $\lambda$ for which the MP series is rapidly convergent, and to extrapolate the final energy to the physical system at $\lambda = 1$ via a polynomial- or Pad\'e-based fit. 
+However, the choice of the functional form of the fit remains a subtle task.
+This technique was first generalized by using complex scaling parameters and applying analytic continuation by solving the Laplace equation, \cite{Surjan_2018} and then further improved thanks to Cauchy's integral formula
+\begin{equation}
+	\frac{1}{2\pi i} \oint \frac{E(z)}{z - a} = E(a)
+\end{equation}
+instead of the solution of the Laplace equation. \cite{Mihalka_2019}
+
+%==========================================%
+\subsection{Insights from a two-state model}
+%==========================================%
 
 In the late 90's, Olsen \textit{et al.}~discovered an even more preoccupying behavior of the MP series. \cite{Olsen_1996} They showed that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and \ce{HF}. \cite{Olsen_1996, Christiansen_1996} Cremer and He had already studied these two systems and classified them as \textit{class B} systems. However, the analysis of Olsen and coworkers was performed in larger basis sets containing diffuse functions. In these basis sets, they found that the series become divergent at (very) high order.
 
@@ -364,10 +373,9 @@ The discovery of this divergent behavior is worrying as in order to get meaningf
 
 A singularity in the unit circle is designated as an intruder state, more precisely as a front-door (respectively back-door) intruder state if the real part of the singularity is positive (respectively negative). Their method consists in performing a scan of the real axis to detect the avoided crossing responsible for the pair of dominant singularities. Then, by modeling this avoided crossing via a two-state Hamiltonian one can get an approximation of the dominant conjugate pair of singularities by finding the EPs of the following $2\times2$ matrix
 \begin{equation}
-\underbrace{\mqty(\alpha & \delta \\ \delta & \beta)}_{\bH} = \underbrace{\mqty(\alpha + \alpha_s & 0 \\ 0 & \beta + \beta_s )}_{\bH^{(0)}} + \underbrace{\mqty(- \alpha_s & \delta \\ \delta & - \beta_s)}_{\bV},
+	\underbrace{\mqty(\alpha & \delta \\ \delta & \beta)}_{\bH} = \underbrace{\mqty(\alpha & 0 \\ 0 & \beta + \gamma )}_{\bH^{(0)}} + \underbrace{\mqty( 0 & \delta \\ \delta & - \gamma)}_{\bV},
 \end{equation}
 where the diagonal matrix is the unperturbed Hamiltonian matrix $\bH^{(0)}$ and the second matrix in the right-hand-side $\bV$ is the perturbation.
-See also Ref.~\onlinecite{Olsen_2019} where the present model is generalized to a non-symmetric (i.e, non-Hermitian) Hamiltonian.
 
 They first studied molecules with low-lying doubly-excited states of the same spatial and spin symmetry.
 The exact wave function has a non-negligible contribution from the doubly-excited states, so these low-lying excited states were good candidates for being intruder states. \titou{For \ce{CH_2} in a large basis set, the series is convergent up to the 50th order. They showed that the dominant singularity lies outside the unit circle but close to it causing the slow convergence.}
@@ -375,7 +383,23 @@ The exact wave function has a non-negligible contribution from the doubly-excite
 Then they demonstrated that the divergence for \ce{Ne} is due to a back-door intruder state. When the basis set is augmented with diffuse functions, the ground state undergo sharp avoided crossings with highly diffuse excited states leading to a back-door intruder state. They used their two-state model on this avoided crossings and the model was actually predicting the divergence of the series. 
 %They concluded that the divergence of the series was due to the interaction with a highly diffuse excited state. 
 
-Moreover they proved that the extrapolation formulas of Cremer and He \cite{Cremer_1996} cannot be used for all systems, and that these formulas were not mathematically motivated when looking at the singularity causing the divergence. For example, the hydrogen fluoride molecule contains both back-door intruder states and low-lying doubly-excited states which results in alternated terms up to 10th order. For higher orders, the series is monotonically convergent. This surprising behavior is due to the fact that two pairs of singularities are approximately at the same distance from the origin.
+Moreover they proved that the extrapolation formulas of Cremer and He \cite{Cremer_1996} cannot be used for all systems, and that these formulas were not mathematically motivated when looking at the singularity causing the divergence. 
+For example, the hydrogen fluoride molecule contains both back-door intruder states and low-lying doubly-excited states which results in alternated terms up to 10th order. 
+For higher orders, the series is monotonically convergent. This surprising behavior is due to the fact that two pairs of singularities are approximately at the same distance from the origin.
+
+
+In Ref.~\onlinecite{Olsen_2019}, the simple two-state model proposed by Olsen \textit{et al.} is generalized to a non-symmetric Hamiltonian 
+\begin{equation}
+	\underbrace{\mqty(\alpha & \delta_1 \\ \delta_2 & \beta)}_{\bH} = \underbrace{\mqty(\alpha & 0 \\ 0 & \beta + \gamma )}_{\bH^{(0)}} + \underbrace{\mqty( 0 & \delta_2 \\ \delta_1 & - \gamma)}_{\bV}.
+\end{equation}
+allowing an analysis of various choice of perturbation (not only the MP partioning) such as coupled cluster perturbation expansions \cite{Pawlowski_2019a,Pawlowski_2019b,Pawlowski_2019c,Pawlowski_2019d,Pawlowski_2019e} and other non-Hermitian perturbation methods.
+It is worth noting that only cases where $\text{sgn}(\delta_1) = - \text{sgn}(\delta_2)$ leads to new forms of perturbation expansions.
+Interestingly, they showed that the convergence pattern of a given perturbation method can be characterized by its archetype which defines the overall ``shape'' of the energy convergence. These so-called archetypes can be subdivided in five classes for Hermitian Hamiltonians (zigzag, interspersed zigzag, triadic, ripples, and geometric), while two additional archetypes (zigzag-geometric and convex-geometric) are observed in non-Hermitian Hamiltonians.
+Importantly, they observed that the the geometric archetype is the most common for MP expansions but that the ripples archetype sometimes occurs. \cite{Handy_1985,Lepetit_1988,Leininger_2000}
+Other features characterizing the convergence behavior of a perturbation method are its rate of convergence, its length of recurring period, and its sign pattern;
+the three remaining archetypes seem to be rarely observed in MP perturbation theory.
+However, in the non-Hermitian setting of coupled cluster perturbation theory, \cite{Pawlowski_2019a,Pawlowski_2019b,Pawlowski_2019c,Pawlowski_2019d,Pawlowski_2019e} on can encounter interspersed zigzag, triadic, ripple, geometric, and zigzag-geometric archetypes.
+One of main take-home messages of Olsen's study is that the primary critical point defines the high-order convergence, irrespective of whether this point is inside or outside the complex unit circle. \cite{Handy_1985,Olsen_2000}
 
 %=======================================
 \subsection{The singularity structure}
