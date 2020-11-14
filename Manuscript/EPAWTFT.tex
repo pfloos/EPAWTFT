@@ -59,12 +59,34 @@
 \newcommand{\hn}[1]{\Hat{n}_{#1}}
 \newcommand{\n}[1]{n_{#1}}
 \newcommand{\Dv}{\Delta v}
-\newcommand{\up}{\uparrow}
-\newcommand{\dw}{\downarrow}
-\newcommand{\updw}{\up\dw}
 
 \newcommand{\ra}{\rightarrow}
-\newcommand{\pt}{$\mathcal{PT}$}
+\newcommand{\up}{\uparrow}
+\newcommand{\dw}{\downarrow}
+
+\newcommand{\updot}{%
+  \mathrel{\ooalign{\hfil$\vcenter{
+    \hbox{$\scriptscriptstyle\bullet$}}$\hfil\cr$\uparrow$\cr}
+  }%
+}
+\newcommand{\dwdot}{%
+  \mathrel{\ooalign{\hfil$\vcenter{
+    \hbox{$\scriptscriptstyle\bullet$}}$\hfil\cr$\downarrow$\cr}
+  }%
+}
+\newcommand{\vac}{%
+  \mathrel{\ooalign{\hfil$\vcenter{
+    \hbox{$\scriptscriptstyle\bullet$}}$\hfil\cr$ $\cr}
+  }%
+}
+
+\newcommand{\uddot}{%
+  \mathrel{\ooalign{\hfil$\vcenter{
+    \hbox{$\scriptscriptstyle\bullet$}}$\hfil\cr$\uparrow\downarrow$\cr}
+  }%
+}
+
+
 
 \newcommand{\LCPQ}{Laboratoire de Chimie et Physique Quantiques (UMR 5626), Universit\'e de Toulouse, CNRS, UPS, France.}
 \newcommand{\UCAM}{Department of Chemistry, University of Cambridge, Lensfield Road, Cambridge, CB2 1EW, U.K.}
@@ -135,49 +157,65 @@ More importantly here, although EPs usually lie off the real axis, these singula
 %===================================%
 \subsection{An illustrative example}
 %===================================%
-In order to highlight the general properties of EPs mentioned above, we propose to consider the following $2 \times 2$ Hamiltonian commonly used in quantum chemistry
-
+In order to highlight the general properties of EPs mentioned above, we propose to consider the ubiquitous symmetric Hubbard dimer at half filling (\ie, with two opposite-spin fermions) whose Hamiltonian reads in the singlet configuration state function basis 
+%\begin{align}
+%		\ket{1\up1\dw}		&	\ket{1\up2\dw}		&	\ket{1\dw2\up}		&	\ket{2\up2\dw}	\\
+%		\uddot \quad \vac	&	\updot \quad \dwdot	&	\dwdot \quad \updot	&	\vac \quad \uddot	 \\
+%\end{align}
 \begin{equation}
-\label{eq:H_2x2}
+\label{eq:H_FCI}
 	\bH = 
 	\begin{pmatrix}
-		\epsilon_1	&	\lambda	\\
-		\lambda		&	\epsilon_2
+		-2t	+ U &	0 & U/2	\\
+		0		&	U 	&	0	\\
+		U/2 &	0 & -2t	+ U	\\
 	\end{pmatrix},
 \end{equation}
-which represents two states of energies $\epsilon_1$ and $\epsilon_2$ coupled with a strength of magnitude $\lambda$.
-This Hamiltonian could represent, for example, a minimal-basis configuration interaction with doubles (CID) for the hydrogen molecule. \cite{SzaboBook}
+where $t$ is the hopping parameter and $U$ is the on-site Coulomb repulsion.
+We refer the interested reader to Refs.~\onlinecite{Carrascal_2015,Carrascal_2018} for more details about this system.
+We will consistently use this system to illustrate the different concepts discussed in the present review article.
 
-For real $\lambda$, the Hamiltonian \eqref{eq:H_2x2} is clearly Hermitian, and it becomes non-Hermitian for any complex $\lambda$ value.
-Its eigenvalues are
+For real $U$, the Hamiltonian \eqref{eq:H_FCI} is clearly Hermitian, and it becomes non-Hermitian for any complex $U$ value.
+The eigenvalues associated with its singlet ground state and singlet doubly-excited state are
 \begin{equation}
-\label{eq:E_2x2}
-	E_{\pm} = \frac{\epsilon_1 + \epsilon_2}{2} \pm \frac{1}{2} \sqrt{(\epsilon_1 - \epsilon_2)^2 + 4\lambda^2}.
+\label{eq:E_FCI}
+	E_{\pm} = \frac{1}{2} \qty( U \pm \sqrt{(4t^2) + U^2} ).
 \end{equation}
-%and they are represented as a function of $\lambda$ in Fig.~\ref{fig:2x2}.
-One notices that the two states become degenerate only for a pair of complex conjugate values of $\lambda$
+and they are represented as a function of $U$ in Fig.~\ref{fig:FCI} together with the energy of the singlet open-shell configuration of energy $U$.
+
+%%% FIG 1 %%%
+\begin{figure*}
+	\includegraphics[height=0.3\textwidth]{fig1a}
+	\hspace{0.1\textwidth}
+	\includegraphics[height=0.3\textwidth]{fig1b}	
+	\caption{
+	Exact energies for the Hubbard dimer as functions of $U/t$.
+	\label{fig:FCI}}
+\end{figure*}
+
+One notices that these two states become degenerate only for a pair of complex conjugate values of $U$
 \begin{equation}
 \label{eq:lambda_EP}
-	\lambda_\text{EP} = \pm i\,\frac{\epsilon_1 - \epsilon_2}{2},
+	U_\text{EP} = \pm 4 i t,
 \end{equation}
 with energy
 \begin{equation}
 \label{eq:E_EP}
-	E_\text{EP} = \frac{\epsilon_1 + \epsilon_2}{2},
+	E_\text{EP} = \pm 2 i t,
 \end{equation}
-which correspond to square-root singularities in the complex-$\lambda$ plane. % (see Fig.~\eqref{fig:2x2}).
-These two $\lambda$ values, given by Eq.~\eqref{eq:lambda_EP}, are the so-called EPs and one can clearly see that they connect the ground and excited states.
-Starting from $\lambda_\text{EP}$, two square-root branch cuts run on the imaginary axis towards $\pm i \infty$.
-In the real $\lambda$ axis, the point for which the states are the closest ($\lambda = 0$) is called an avoided crossing and this occurs at $\lambda = \Re(\lambda_\text{EP})$.
-The ``shape'' of the avoided crossing is linked to the magnitude of $\Im(\lambda_\text{EP})$: the smaller $\Im(\lambda_\text{EP})$, the sharper the avoided crossing is.
+which correspond to square-root singularities in the complex-$U$ plane [see Fig.~\eqref{fig:FCI}].
+These two $U$ values, given by Eq.~\eqref{eq:lambda_EP}, are the so-called EPs and one can clearly see that they connect the ground and excited states.
+Starting from $U_\text{EP}$, two square-root branch cuts run on the imaginary axis towards $\pm i \infty$.
+In the real $U$ axis, the point for which the states are the closest ($U = 0$) is called an avoided crossing and this occurs at $U = \Re(U_\text{EP})$.
+The ``shape'' of the avoided crossing is linked to the magnitude of $\Im(U_\text{EP})$: the smaller $\Im(U_\text{EP})$, the sharper the avoided crossing is.
 
-Around $\lambda = \lambda_\text{EP}$, Eq.~\eqref{eq:E_2x2} behaves as \cite{MoiseyevBook}
+Around $U = U_\text{EP}$, Eq.~\eqref{eq:E_FCI} behaves as \cite{MoiseyevBook}
 \begin{equation} %\label{eq:E_EP}
-        E_{\pm} = E_\text{EP} \pm \sqrt{2\lambda_\text{EP}} \sqrt{\lambda - \lambda_\text{EP}},
+        E_{\pm} = E_\text{EP} \pm \sqrt{2U_\text{EP}} \sqrt{U - U_\text{EP}},
 \end{equation}
-and following a complex contour around the EP, \ie, $\lambda = \lambda_\text{EP} + R \exp(i\theta)$, yields
+and following a complex contour around the EP, \ie, $U = U_\text{EP} + R \exp(i\theta)$, yields
 \begin{equation}
-        E_{\pm}(\theta) = E_\text{EP} \pm \sqrt{2\lambda_\text{EP} R}  \exp(i\theta/2),
+        E_{\pm}(\theta) = E_\text{EP} \pm \sqrt{2U_\text{EP} R}  \exp(i\theta/2),
 \end{equation}
 and we have
 \begin{align}
@@ -269,7 +307,26 @@ Rather than solving Eq.~\eqref{eq:SchrEq}, HF theory uses the variational princi
 	\hH^{\text{HF}} = \sum_{i} f(\vb{x}_i).
 \end{equation}
 
+Coming back to the Hubbard dimer, the HF energy is
+\begin{equation}
+	E_\text{HF} = -t \qty[ \sin \theta_\alpha  + \sin \theta_\beta ] + \frac{U}{2} \qty[ 1 + \cos \theta_\alpha \cos \theta_\beta ]
+\end{equation}
+where 
+\begin{align}
+	\psi_{1\sigma} & = \cos(\frac{\theta_\sigma}{2}) s_1 - \sin(\frac{\theta_\sigma}{2})s_2
+	\\
+	\psi_{2\sigma} & = \sin(\frac{\theta_\sigma}{2}) s_1 + \cos(\frac{\theta_\sigma}{2})s_2 
+\end{align}
+
+\begin{align}
+	\theta_\alpha & = \arctan (-\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U}) 
+	\\
+	\theta_\beta & = \arctan (+\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U}) 
+\end{align}
+
+%=====================================================%
 \subsection{M{\o}ller-Plesset perturbation theory}
+%=====================================================%
 
 The HF Hamiltonian \eqref{eq:HFHamiltonian} can be used as the zeroth-order Hamiltonian of Eq.~\eqref{eq:SchrEq-PT}. This partitioning of the Hamiltonian leads to the so-called M{\o}ller-Plesset (MP) perturbation theory. \cite{Moller_1934} 
 The discovery of a partitioning of the Hamiltonian that allowed chemists to recover a large chunck of the correlation energy (\ie, the difference between the exact energy and the Hartree-Fock energy) using perturbation theory has been a major step in the development of post-HF methods. 

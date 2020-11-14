@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{77}%
+\begin{thebibliography}{79}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -453,6 +453,34 @@
   {\bibfield  {journal} {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf
   {\bibinfo {volume} {150}},\ \bibinfo {pages} {031101} (\bibinfo {year}
   {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Carrascal}\ \emph {et~al.}(2015)\citenamefont
+  {Carrascal}, \citenamefont {Ferrer}, \citenamefont {Smith},\ and\
+  \citenamefont {Burke}}]{Carrascal_2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~J.}\ \bibnamefont
+  {Carrascal}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Ferrer}},
+  \bibinfo {author} {\bibfnamefont {J.~C.}\ \bibnamefont {Smith}}, \ and\
+  \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Burke}},\ }\href
+  {\doibase 10.1088/0953-8984/27/39/393001} {\bibfield  {journal} {\bibinfo
+  {journal} {J. Phys. Condens. Matter}\ }\textbf {\bibinfo {volume} {27}},\
+  \bibinfo {pages} {393001} (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Carrascal}\ \emph {et~al.}(2018)\citenamefont
+  {Carrascal}, \citenamefont {Ferrer}, \citenamefont {Maitra},\ and\
+  \citenamefont {Burke}}]{Carrascal_2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~J.}\ \bibnamefont
+  {Carrascal}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Ferrer}},
+  \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Maitra}}, \ and\ \bibinfo
+  {author} {\bibfnamefont {K.}~\bibnamefont {Burke}},\ }\href {\doibase
+  10.1140/epjb/e2018-90114-9} {\bibfield  {journal} {\bibinfo  {journal} {Eur.
+  Phys. J. B}\ }\textbf {\bibinfo {volume} {91}},\ \bibinfo {pages} {142}
+  (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Goodson}(2012)}]{Goodson_2012}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~Z.}\ \bibnamefont
+  {Goodson}},\ }\href {\doibase 10.1002/wcms.92} {\bibfield  {journal}
+  {\bibinfo  {journal} {{WIREs} Comput. Mol. Sci.}\ }\textbf {\bibinfo {volume}
+  {2}},\ \bibinfo {pages} {743} (\bibinfo {year} {2012})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Szabo}\ and\ \citenamefont
   {Ostlund}(1989)}]{SzaboBook}%
   \BibitemOpen
@@ -461,12 +489,6 @@
   {Ostlund}},\ }\href@noop {} {\emph {\bibinfo {title} {Modern quantum
   chemistry: {Introduction} to advanced electronic structure}}}\ (\bibinfo
   {publisher} {McGraw-Hill},\ \bibinfo {year} {1989})\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Goodson}(2012)}]{Goodson_2012}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~Z.}\ \bibnamefont
-  {Goodson}},\ }\href {\doibase 10.1002/wcms.92} {\bibfield  {journal}
-  {\bibinfo  {journal} {{WIREs} Comput. Mol. Sci.}\ }\textbf {\bibinfo {volume}
-  {2}},\ \bibinfo {pages} {743} (\bibinfo {year} {2012})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {M{\o}ller}\ and\ \citenamefont
   {Plesset}(1934)}]{Moller_1934}%
   \BibitemOpen
