@@ -1,20 +1,20 @@
-This is BibTeX, Version 0.99d (TeX Live 2020)
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+This is BibTeX, Version 0.99d (TeX Live 2020/Arch Linux)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: EPAWTFT.aux
 The style file: apsrev4-1.bst
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated wiz_functions (elt_size=8) to 6000 items from 3000.
 Database file #1: EPAWTFTNotes.bib
 Database file #2: EPAWTFT.bib
 control{REVTEX41Control}, control.key{N/A}, control.author{N/A}, control.editor{N/A}, control.title{N/A}, control.pages{N/A}, control.year{N/A}, control.eprint{N/A}, 
 control{apsrev41Control}, control.key{N/A}, control.author{08}, control.editor{1}, control.title{}, control.pages{0}, control.year{1}, control.eprint{N/A}, 
 Warning--jnrlst (dependency: not reversed) set 1
-Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
 merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
 Control: key (0) 
 Control: author (8) initials jnrlst
@@ -23,45 +23,45 @@ Control: production of article title (-1) disabled
 Control: page (0) single
 Control: year (1) truncated
 Control: production of eprint (0) enabled
-You've used 81 entries,
+You've used 84 entries,
             5847 wiz_defined-function locations,
-            2195 strings with 29993 characters,
-and the built_in function-call counts, 79745 in all, are:
-= -- 5079
-> -- 2133
-< -- 542
-+ -- 678
-- -- 521
-* -- 12401
-:= -- 7825
-add.period$ -- 79
-call.type$ -- 81
-change.case$ -- 318
-chr.to.int$ -- 84
-cite$ -- 81
-duplicate$ -- 7398
-empty$ -- 5929
-format.name$ -- 1241
-if$ -- 15926
+            2218 strings with 30558 characters,
+and the built_in function-call counts, 82528 in all, are:
+= -- 5275
+> -- 2197
+< -- 560
++ -- 698
+- -- 535
+* -- 12816
+:= -- 8105
+add.period$ -- 82
+call.type$ -- 84
+change.case$ -- 330
+chr.to.int$ -- 87
+cite$ -- 84
+duplicate$ -- 7655
+empty$ -- 6137
+format.name$ -- 1282
+if$ -- 16484
 int.to.chr$ -- 6
-int.to.str$ -- 88
-missing$ -- 975
-newline$ -- 289
-num.names$ -- 237
-pop$ -- 3036
+int.to.str$ -- 91
+missing$ -- 1009
+newline$ -- 298
+num.names$ -- 246
+pop$ -- 3145
 preamble$ -- 1
-purify$ -- 395
+purify$ -- 410
 quote$ -- 0
-skip$ -- 2913
+skip$ -- 3020
 stack$ -- 0
-substring$ -- 2131
-swap$ -- 7047
-text.length$ -- 253
+substring$ -- 2212
+swap$ -- 7288
+text.length$ -- 260
 text.prefix$ -- 0
 top$ -- 10
-type$ -- 1126
+type$ -- 1166
 warning$ -- 1
-while$ -- 242
+while$ -- 251
 width$ -- 0
-write$ -- 679
+write$ -- 703
 (There was 1 warning)
