@@ -411,14 +411,88 @@ Even if there were still shaded areas in their analysis and that their classific
 
 Recently, Mih\'alka \textit{et al.} studied the partitioning effect on the convergence properties of Rayleigh-Schr\"odinger perturbation theory by considering the MP and the EN partitioning as well as an alternative partitioning. \cite{Mihalka_2017a} 
 Taking as an example (in particular) the water molecule at equilibrium and at stretched geometries, they could estimate the radius of the convergence via a quadratic Pad\'e approximant and convert divergent perturbation expansions to convergent ones in some cases thanks to a judicious choice of the level shift parameter.
-In a subsequent study by the same group, \cite{Mihalka_2017b} they use analytic continuation techniques to resum divergent series taking again as an example the water molecule in a stretched geometry.
+In a subsequent study by the same group, \cite{Mihalka_2017b} they use analytic continuation techniques to resum divergent MP series taking again as an example the water molecule in a stretched geometry.
 In a nutshell, their idea consists in calculating the energy of the system for several values of $\lambda$ for which the MP series is rapidly convergent, and to extrapolate the final energy to the physical system at $\lambda = 1$ via a polynomial- or Pad\'e-based fit. 
 However, the choice of the functional form of the fit remains a subtle task.
-This technique was first generalized by using complex scaling parameters and applying analytic continuation by solving the Laplace equation, \cite{Surjan_2018} and then further improved thanks to Cauchy's integral formula
+This technique was first generalized by using complex scaling parameters and applying analytic continuation by solving the Laplace equation, \cite{Surjan_2018} and then further improved thanks to Cauchy's integral formula \cite{Mihalka_2019}
 \begin{equation}
-	\frac{1}{2\pi i} \oint \frac{E(z)}{z - a} = E(a)
+	\label{eq:Cauchy}
+	\frac{1}{2\pi i} \oint_{\gamma} \frac{E(z)}{z - a} = E(a).
 \end{equation}
-instead of the solution of the Laplace equation. \cite{Mihalka_2019}
+Their method consists in refining self-consistently the values of $E(z)$ computed on a contour going through the physical point at $z = 1$ and encloses points of the ``trusted'' region (where the MP series is convergent). The shape of this contour is arbitrary but no singularities are allowed inside the contour to ensure $E(z)$ is analytic. 
+When the values of $E(z)$ on the so-called contour are converged, Cauchy's integrals formula \eqref{eq:Cauchy} is invoked to compute the values at $E(z=1)$ which corresponds to the final estimate of the FCI energy.
+The authors illustrate this protocol on the dissociation curve of \ce{LiH} and the stretched water molecule showing encouraging results. \cite{Mihalka_2019} 
+
+%%% FIG 2 %%%
+\begin{figure*}
+	\includegraphics[height=0.25\textwidth]{fig2a}	
+	\hspace{0.05\textwidth}
+	\includegraphics[height=0.25\textwidth]{fig2b}
+	\hspace{0.05\textwidth}
+	\includegraphics[height=0.25\textwidth]{fig2c}	
+	\caption{
+	Convergence of the RMP series as a function of the perturbation order $n$ energies for the Hubbard dimer at $U/t = 3.5$ (before the radius of convergence) and $4.5$ (after the radius of convergence).
+	The Riemann surfaces of the FCI energies are also represented for these two values of $U/t$. 
+	\label{fig:RMP}}
+\end{figure*}
+
+Let us illustrate the behavior of the RMP and UMP series on the Hubbard dimer (see Fig.~\ref{fig:RMP}).
+Within the RMP parition thecnique, we have 
+\begin{equation}
+\label{eq:H_RMP}
+	\bH^\text{RMP} = 
+	\begin{pmatrix}
+		-2t + U - \lambda U/2	&	0					&	0					&	\lambda U/2	\\
+		0						&	U - \lambda U/2 	&	\lambda U/2			&	0	\\
+		0						&	\lambda U/2			&	U - \lambda U/2 	&	0	\\
+		\lambda U/2 			&	0 					&	0					&	2t + U - \lambda U/2	\\
+	\end{pmatrix},
+\end{equation}
+which yields the ground-state energy 
+\begin{equation}
+	\label{eq:E0MP}
+	E_0(\lambda) = U - \frac{\lambda U}{2} - \frac{1}{2} \sqrt{(4t)^2 + \lambda ^2 U^2}
+\end{equation}
+From this expression, it is easy to identify that the radius of convergence is defined by the exceptional points at $\lambda = \pm i 4t / U$ (which is similar to the FCI exceptional point).
+Equation \eqref{eq:E0MP} can be Taylor expanded in terms of $\lambda$ to obtain the $n$th-order MP correction
+\begin{equation}
+	E_0^{(n)} = U \delta_{0,n} - \frac{1}{2} \frac{U^n}{(4t)^{n-1}} \mqty( n/2 \\ 1/2)
+\end{equation}
+with 
+\begin{equation}
+	E_0(\lambda) = \sum_{n=0}^\infty E_0^{(n)} \lambda^n
+\end{equation}
+We illustrate this by plotting the energy expansions at orders of $\lambda$ just below and above the radius of convergence in Fig.~\ref{fig:RMP}.
+\titou{T2 is going to add a discussion about this figure.}
+
+At the UMP level now, we have
+\begin{widetext}
+\begin{equation}
+\label{eq:H_UMP}
+	\bH^\text{UMP} = 
+	\begin{pmatrix}
+		-2t^2 \lambda/U	&	0									&	0									&	+2t^2 \lambda/U		\\
+		0				&	U - 2t^2 \lambda/U 					&	+2t^2\lambda/U						&	+2t \sqrt{U^2 - (2t)^2} \lambda/U	\\
+		0				&	+2t^2\lambda/U						&	U - 2t^2 \lambda/U 					&	-2t \sqrt{U^2 - (2t)^2} \lambda/U	\\
+		+2t^2 \lambda/U	&	+2t \sqrt{U^2 - (2t)^2} \lambda/U 	&	-2t \sqrt{U^2 - (2t)^2} \lambda/U	&	2U(1-\lambda) + 6t^2\lambda/U		\\
+	\end{pmatrix},
+\end{equation}
+\end{widetext}
+A closed-form expression for the ground-state energy can be obtained but it is cumbersome, so we eschew reporting its expression.
+
+
+%%% FIG 3 %%%
+\begin{figure*}
+	\includegraphics[height=0.25\textwidth]{fig3a}	
+	\hspace{0.05\textwidth}
+	\includegraphics[height=0.25\textwidth]{fig3b}
+	\hspace{0.05\textwidth}
+	\includegraphics[height=0.25\textwidth]{fig3c}	
+	\caption{
+	Convergence of the URMP series as a function of the perturbation order $n$ energies for the Hubbard dimer at $U/t = 3$ and $7$.
+	The Riemann surfaces of the FCI energies are also represented for these two values of $U/t$. 
+	\label{fig:UMP}}
+\end{figure*}
 
 %==========================================%
 \subsection{Insights from a two-state model}
