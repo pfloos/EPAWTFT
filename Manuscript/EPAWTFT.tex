@@ -174,6 +174,7 @@ More importantly here, although EPs usually lie off the real axis, these singula
 
 %===================================%
 \subsection{Illustrative Example}
+\label{sec:example}
 %===================================%
 
 %%% FIG 1 %%%
@@ -201,7 +202,7 @@ Using the (localised) site basis, the (singlet) Hilbert space of the Hubbard dim
 & \ket{\Lup \Ldown} &  & \ket{\Lup\Rdown} &  & \ket{\Rup\Ldown} &  & \ket{\Rup\Rdown}
 \end{align}
 where $\Lsi$ ($\Rsi$) denotes an electron with spin $\sigma$ on the left (right) site.
-The exact Hamiltonian is then 
+The exact [or full configuration interaction (FCI)] Hamiltonian is then 
 \begin{equation}
 \label{eq:H_FCI}
 	\bH = 
@@ -315,7 +316,7 @@ This function is smooth for $x \in \mathbb{R}$ and infinitely differentiable in 
 
 In the Hartree-Fock (HF) approximation, the many-electron wave function is approximated as a single Slater determinant $\Psi^{\text{HF}}(\vb{x}_1,\ldots,\vb{x}_N)$ [where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates] defined as an antisymmetric combination of $N$ (real-valued) one-electron spin-orbitals $\phi_p(\vb{x})$, which are, by definition, eigenfunctions of the one-electron Fock operator 
 \begin{equation}\label{eq:FockOp}
-	\Hat{f}(\vb{x}) \phi_p(\vb{x}) = [ \Hat{h}(\vb{x}) + \Hat{v}^\text{HF}(\vb{x}) ] \phi_p(\vb{x}) = \epsilon_p \phi_p(\vb{x}),
+	\Hat{f}(\vb{x}) \phi_p(\vb{x}) = [ \Hat{h}(\vb{x}) + \Hat{v}_\text{HF}(\vb{x}) ] \phi_p(\vb{x}) = \epsilon_p \phi_p(\vb{x}),
 \end{equation}
 where 
 \begin{equation}
@@ -323,7 +324,7 @@ where
 \end{equation}
 is the core Hamiltonian and 
 \begin{equation}
-	\Hat{v}^\text{HF}(\vb{x}) = \sum_i^{N} \qty[ \Hat{J}_i(\vb{x}) - \Hat{K}_i(\vb{x}) ]
+	\Hat{v}_\text{HF}(\vb{x}) = \sum_i^{N} \qty[ \Hat{J}_i(\vb{x}) - \Hat{K}_i(\vb{x}) ]
 \end{equation}
 is the HF mean-field potential with 
 \begin{subequations}
@@ -354,7 +355,7 @@ From hereon, $i$ and $j$ are occupied orbitals, $a$ and $b$ are unoccupied (or v
 
 Rather than solving Eq.~\eqref{eq:SchrEq}, HF theory uses the variational principle to find an approximation of $\Psi$ as a single Slater determinant. Hence a Slater determinant is not an eigenfunction of the exact Hamiltonian $\hH$. However, it is, by definition, an eigenfunction of the so-called (approximated) HF many-electron Hamiltonian defined as the sum of the one-electron Fock operators
 \begin{equation}\label{eq:HFHamiltonian}
-	\hH^{\text{HF}} = \sum_{i} f(\vb{x}_i).
+	\hH_{\text{HF}} = \sum_{i} f(\vb{x}_i).
 \end{equation}
 
 %
@@ -502,8 +503,9 @@ However, the choice of the functional form of the fit remains a subtle task.
 This technique was first generalized by using complex scaling parameters and applying analytic continuation by solving the Laplace equation, \cite{Surjan_2018} and then further improved thanks to Cauchy's integral formula \cite{Mihalka_2019}
 \begin{equation}
 	\label{eq:Cauchy}
-	\frac{1}{2\pi i} \oint_{\gamma} \frac{E(z)}{z - a} = E(a).
+	\frac{1}{2\pi i} \oint_{\gamma} \frac{E(z)}{z - a} = E(a),
 \end{equation}
+which states that the value of the energy can be computed at $z=a$ inside the contour $\gamma$ only by the knowledge of its values on the same contour.
 Their method consists in refining self-consistently the values of $E(z)$ computed on a contour going through the physical point at $z = 1$ and encloses points of the ``trusted'' region (where the MP series is convergent). The shape of this contour is arbitrary but no singularities are allowed inside the contour to ensure $E(z)$ is analytic. 
 When the values of $E(z)$ on the so-called contour are converged, Cauchy's integrals formula \eqref{eq:Cauchy} is invoked to compute the values at $E(z=1)$ which corresponds to the final estimate of the FCI energy.
 The authors illustrate this protocol on the dissociation curve of \ce{LiH} and the stretched water molecule showing encouraging results. \cite{Mihalka_2019} 
@@ -521,11 +523,11 @@ The authors illustrate this protocol on the dissociation curve of \ce{LiH} and t
 	\label{fig:RMP}}
 \end{figure*}
 
-Let us illustrate the behavior of the RMP and UMP series on the Hubbard dimer (see Fig.~\ref{fig:RMP}).
-Within the RMP parition thecnique, we have 
+Let us illustrate the behaviour of the RMP and UMP series on the Hubbard dimer (see Fig.~\ref{fig:RMP}).
+Within the RMP partition technique, we have 
 \begin{equation}
 \label{eq:H_RMP}
-	\bH^\text{RMP} = 
+	\bH_\text{RMP} = 
 	\begin{pmatrix}
 		-2t + U - \lambda U/2	&	0					&	0					&	\lambda U/2	\\
 		0						&	U - \lambda U/2 	&	\lambda U/2			&	0	\\
@@ -536,25 +538,24 @@ Within the RMP parition thecnique, we have
 which yields the ground-state energy 
 \begin{equation}
 	\label{eq:E0MP}
-	E_0(\lambda) = U - \frac{\lambda U}{2} - \frac{1}{2} \sqrt{(4t)^2 + \lambda ^2 U^2}
+	E_{-}(\lambda) = U - \frac{\lambda U}{2} - \frac{1}{2} \sqrt{(4t)^2 + \lambda ^2 U^2}.
 \end{equation}
-From this expression, it is easy to identify that the radius of convergence is defined by the exceptional points at $\lambda = \pm i 4t / U$ (which is similar to the FCI exceptional point).
+From this expression, it is easy to identify that the radius of convergence is defined by the EPs at $\lambda = \pm i 4t / U$ (which are actually located at the same position than the exact EPs discussed in Sec.~\ref{sec:example}).
 Equation \eqref{eq:E0MP} can be Taylor expanded in terms of $\lambda$ to obtain the $n$th-order MP correction
 \begin{equation}
-	E_0^{(n)} = U \delta_{0,n} - \frac{1}{2} \frac{U^n}{(4t)^{n-1}} \mqty( n/2 \\ 1/2)
+	E_\text{MP}^{(k)} = U \delta_{0,k} - \frac{1}{2} \frac{U^k}{(4t)^{k-1}} \mqty( 1/2 \\ k/2),
 \end{equation}
 with 
 \begin{equation}
-	E_0(\lambda) = \sum_{n=0}^\infty E_0^{(n)} \lambda^n
+	E_{-}(\lambda) = \sum_{k=0}^\infty E_\text{MP}^{(k)} \lambda^k.
 \end{equation}
 We illustrate this by plotting the energy expansions at orders of $\lambda$ just below and above the radius of convergence in Fig.~\ref{fig:RMP}.
-\titou{T2 is going to add a discussion about this figure.}
 
 At the UMP level now, we have
 \begin{widetext}
 \begin{equation}
 \label{eq:H_UMP}
-	\bH^\text{UMP} = 
+	\bH_\text{UMP} = 
 	\begin{pmatrix}
 		-2t^2 \lambda/U	&	0									&	0									&	+2t^2 \lambda/U		\\
 		0				&	U - 2t^2 \lambda/U 					&	+2t^2\lambda/U						&	+2t \sqrt{U^2 - (2t)^2} \lambda/U	\\
@@ -564,7 +565,7 @@ At the UMP level now, we have
 \end{equation}
 \end{widetext}
 A closed-form expression for the ground-state energy can be obtained but it is cumbersome, so we eschew reporting its expression.
-
+The convergence of the UMP as a function of the ratio $U/t$ is depicted in Fig.~\ref{fig:UMP}.
 
 %%% FIG 3 %%%
 \begin{figure*}
