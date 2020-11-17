@@ -1,26 +1,32 @@
 \documentclass[aps,prb,reprint,noshowkeys,superscriptaddress]{revtex4-1}
-\usepackage{graphicx,tabularx,array,booktabs,longtable,dcolumn,xcolor,microtype,multirow,amscd,amsmath,amssymb,amsfonts,physics,siunitx,mhchem}
+\usepackage{subcaption}
+\usepackage{graphicx,tabularx,array,booktabs,dcolumn,xcolor,microtype,multirow,amscd,amsmath,amssymb,amsfonts,physics,siunitx,mhchem}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{txfonts}
 
 \usepackage[normalem]{ulem}
-\definecolor{darkgreen}{RGB}{0, 180, 0}
+\definecolor{hughgreen}{RGB}{0, 128, 0}
 \newcommand{\titou}[1]{\textcolor{red}{#1}}
-\newcommand{\hugh}[1]{\textcolor{orange}{#1}}
+\newcommand{\hugh}[1]{\textcolor{hughgreen}{#1}}
 \newcommand{\trash}[1]{\textcolor{red}{\sout{#1}}}
 \newcommand{\trashHB}[1]{\textcolor{orange}{\sout{#1}}}
 
 \usepackage[
 	colorlinks=true,
     citecolor=blue,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,	
     breaklinks=true
 	]{hyperref}
 \urlstyle{same}
 
 \newcommand{\ctab}{\multicolumn{1}{c}{---}}
-\newcommand{\ie}{\textit{i.e.}}
-\newcommand{\eg}{\textit{e.g.}}
+\newcommand{\latin}[1]{#1}
+%\newcommand{\latin}[1]{\textit{#1}}
+\newcommand{\ie}{\latin{i.e.}}
+\newcommand{\eg}{\latin{e.g.}}
 \newcommand{\mc}{\multicolumn}
 \newcommand{\fnm}{\footnotemark}
 \newcommand{\fnt}{\footnotetext}
@@ -86,6 +92,19 @@
   }%
 }
 
+% Center tabularx columns
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+% Imaginary constant
+\renewcommand{\i}{\mathrm{i}}
+% Blackboard bold
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbC}{\mathbb{C}}
+
+\newcommand{\Lup}{\text{L}^{\uparrow}}
+\newcommand{\Ldown}{\text{L}^{\downarrow}}
+\newcommand{\Rup}{\text{R}^{\uparrow}}
+\newcommand{\Rdown}{\text{R}^{\downarrow}}
 
 
 \newcommand{\LCPQ}{Laboratoire de Chimie et Physique Quantiques (UMR 5626), Universit\'e de Toulouse, CNRS, UPS, France.}
@@ -110,7 +129,7 @@
 
 
 \begin{abstract}
-In this review, we explore the extension of quantum chemistry in the complex plane. 
+In this review, we explore the extension of quantum chemistry in the complex plane.
 We observe that the physics of a quantum system is intimately connected to the position of the energy singularities in the complex plane. 
 After a presentation of the fundamental notions of quantum chemistry and perturbation theory in the complex plane, we provide a historical overview of the various research activities that have been performed on the physic of singularities.
 \end{abstract}
@@ -156,77 +175,159 @@ More dramatically, whilst eigenvectors remain orthogonal at conical intersection
 More importantly here, although EPs usually lie off the real axis, these singular points are intimately related to the convergence properties of perturbative methods and avoided crossing on the real axis are indicative of singularities in the complex plane. \cite{BenderBook,Olsen_1996,Olsen_2000,Olsen_2019,Mihalka_2017a,Mihalka_2017b,Mihalka_2019}
 
 %===================================%
-\subsection{An illustrative example}
+\subsection{\hugh{Exact Exceptional Points}}
 %===================================%
-In order to highlight the general properties of EPs mentioned above, we propose to consider the ubiquitous symmetric Hubbard dimer at half filling (\ie, with two opposite-spin fermions) whose Hamiltonian reads in the singlet configuration state function basis 
-%\begin{align}
-%		\ket{1\up1\dw}		&	\ket{1\up2\dw}		&	\ket{1\dw2\up}		&	\ket{2\up2\dw}	\\
-%		\uddot \quad \vac	&	\updot \quad \dwdot	&	\dwdot \quad \updot	&	\vac \quad \uddot	 \\
-%\end{align}
+
+%%% FIG 1 %%%
+\begin{figure*}[t]
+	\begin{subfigure}{0.49\textwidth}
+	\includegraphics[height=0.65\textwidth]{fig1a}
+	\subcaption{\label{subfig:FCI_real}}
+    \end{subfigure}
+	\begin{subfigure}{0.49\textwidth}
+	\includegraphics[height=0.65\textwidth]{fig1b}
+	\subcaption{\label{subfig:FCI_cplx}}
+    \end{subfigure}
+	\caption{%
+	\hugh{Exact energies for the Hubbard dimer ($U=4t$) as functions of $\lambda$ on the real axis (\subref{subfig:FCI_real}) and in the complex plane (\subref{subfig:FCI_cplx}).
+    Only the interacting closed-shell singlets are plotted in the complex plane, becoming degenerate at the EP (black dot).}
+	\label{fig:FCI}}
+\end{figure*}
+
+\hugh{To illustrate the concepts discussed throughout this article, we will consider the symmetric Hubbard dimer at half filling, \ie\ with two opposite-spin fermions.
+Using the localised Wannier basis, the Hilbert space for this system comprises the four configurations
+\begin{equation}
+\ket{\Lup \Ldown} \qquad \ket{\Lup\Rdown} \qquad \ket{\Rup\Ldown} \qquad \ket{\Rup\Rdown}
+\end{equation}
+%\begin{tabularx}{\linewidth}{YYYY}
+%$\ket{\Lup \Ldown}$ & $\ket{\Lup\Rdown}$ & $\ket{\Rup\Ldown}$ &	$\ket{\Rup\Rdown}$
+%\\
+%$\uddot \quad \vac$ & $\updot \quad \dwdot$ & $\dwdot \quad \updot$ & $\vac \quad \uddot$
+%\end{tabularx}
+where $\text{L}^{\sigma}$ ($\text{R}^{\sigma}$) denotes an electron with spin $\sigma$ on the left (right) site.
+The exact Hamiltonian is then 
 \begin{equation}
 \label{eq:H_FCI}
 	\bH = 
 	\begin{pmatrix}
-		-2t	+ U &	0 & U/2	\\
-		0		&	U 	&	0	\\
-		U/2 &	0 & -2t	+ U	\\
+		U &	- t & -  t & 0	\\
+	   -  t &  0 &  0 & -  t \\
+       -  t &  0 &  0 & -  t \\
+        0 & -  t & -  t & U \\
 	\end{pmatrix},
 \end{equation}
-where $t$ is the hopping parameter and $U$ is the on-site Coulomb repulsion.
+where $t$ is the hopping parameter and $U$ is the on-site Coulomb repulsion.}
 We refer the interested reader to Refs.~\onlinecite{Carrascal_2015,Carrascal_2018} for more details about this system.
-We will consistently use this system to illustrate the different concepts discussed in the present review article.
 
-For real $U$, the Hamiltonian \eqref{eq:H_FCI} is clearly Hermitian, and it becomes non-Hermitian for any complex $U$ value.
-The eigenvalues associated with its singlet ground state and singlet doubly-excited state are
+
+\hugh{%
+To illustrate the formation of an exceptional points, we scale the off-diagonal coupling strength by introducing the complex parameter $\lambda$ through the transformation $t\rightarrow \lambda t$.
+When $\lambda$ is real, the Hamiltonian~\eqref{eq:H_FCI} is Hermitian with the distinct (real-valued) eigenvalues
+\begin{subequations}
+\begin{align}
+E_{\mp} &= \frac{1}{2} \qty(U \mp \sqrt{ (4 \lambda t)^2 + U^2 } ),
+\label{eq:singletE}
+\\
+E_{\text{T}} &= 0,
+\\
+E_{\text{S}} &= U.
+\end{align}
+\end{subequations}
+While the open-shell triplet ($E_{\text{T}}$) and singlet ($E_{\text{S}}$) are independent of $\lambda$, the closed-shell singlet ground state ($E_{-}$) and doubly-excited state ($E_{+}$) couple strongly to form an avoided crossing at $\lambda=0$ (see Figure~\ref{subfig:FCI_real}).
+At non-zero values of $U$ and $t$, these closed-shell singlets can only become degenerate at a pair of complex conjugate points in the complex $\lambda$ plane 
 \begin{equation}
-\label{eq:E_FCI}
-	E_{\pm} = \frac{1}{2} \qty( U \pm \sqrt{(4t^2) + U^2} ).
-\end{equation}
-and they are represented as a function of $U$ in Fig.~\ref{fig:FCI} together with the energy of the singlet open-shell configuration of energy $U$.
-
-%%% FIG 1 %%%
-\begin{figure*}
-	\includegraphics[height=0.3\textwidth]{fig1a}
-	\hspace{0.1\textwidth}
-	\includegraphics[height=0.3\textwidth]{fig1b}	
-	\caption{
-	Exact energies for the Hubbard dimer as functions of $U/t$.
-	\label{fig:FCI}}
-\end{figure*}
-
-One notices that these two states become degenerate only for a pair of complex conjugate values of $U$
-\begin{equation}
-\label{eq:lambda_EP}
-	U_\text{EP} = \pm 4 i t,
+\lambda_{\text{EP}} = \pm \frac{U}{4t} \i,
 \end{equation}
 with energy
 \begin{equation}
 \label{eq:E_EP}
-	E_\text{EP} = \pm 2 i t,
+	E_\text{EP} = \frac{U}{2}.
 \end{equation}
-which correspond to square-root singularities in the complex-$U$ plane [see Fig.~\eqref{fig:FCI}].
-These two $U$ values, given by Eq.~\eqref{eq:lambda_EP}, are the so-called EPs and one can clearly see that they connect the ground and excited states.
-Starting from $U_\text{EP}$, two square-root branch cuts run on the imaginary axis towards $\pm i \infty$.
-In the real $U$ axis, the point for which the states are the closest ($U = 0$) is called an avoided crossing and this occurs at $U = \Re(U_\text{EP})$.
-The ``shape'' of the avoided crossing is linked to the magnitude of $\Im(U_\text{EP})$: the smaller $\Im(U_\text{EP})$, the sharper the avoided crossing is.
+These $\lambda$ values correspond to so-called EPs and connect the ground and excited state in the complex plane.
+Crucially, the energy surface becomes non-analytic at $\lambda_{\text{EP}}$ and a square-root singularity forms with two branch cuts running along the imaginary axis from $\lambda_{\text{EP}}$  to $\pm \i \infty$ (see Fig.~\ref{subfig:FCI_cplx}).
+On the real $\lambda$ axis, these EPs lead to the singlet avoided crossing at $\lambda = \Re(\lambda_{\text{EP}})$.
+The ``shape'' of this avoided crossing is related to the magnitude of $\Im(\lambda_{\text{EP}})$, with smaller values giving a ``sharper'' interaction.
+}
 
-Around $U = U_\text{EP}$, Eq.~\eqref{eq:E_FCI} behaves as \cite{MoiseyevBook}
-\begin{equation} %\label{eq:E_EP}
-        E_{\pm} = E_\text{EP} \pm \sqrt{2U_\text{EP}} \sqrt{U - U_\text{EP}},
-\end{equation}
-and following a complex contour around the EP, \ie, $U = U_\text{EP} + R \exp(i\theta)$, yields
+\hugh{
+Remarkably, the existence of these square-root singularities means that following a complex contour around an EP in the complex $\lambda$ plane will interconvert the closed-shell ground and excited states.
+This behaviour can be seen by expanding the radicand in Eq.~\eqref{eq:singletE} as a Taylor series around $\lambda_{\text{EP}}$ to give
 \begin{equation}
-        E_{\pm}(\theta) = E_\text{EP} \pm \sqrt{2U_\text{EP} R}  \exp(i\theta/2),
+E_{\pm} \approx E_{\text{EP}} \pm \sqrt{32t^2 \lambda_{\text{EP}}} \sqrt{\lambda - \lambda_{\text{EP}}}.
 \end{equation}
-and we have
+Parametrising the complex contour as $\lambda(\theta) = \lambda_{\text{EP}} + R \exp(\i \theta)$ gives the continuous energy pathways 
+\begin{equation}
+E_{\pm} \qty(\theta) \approx E_{\text{EP}} \pm \sqrt{32t^2 \lambda_{\text{EP}} R}\, \exp(\i \theta/2)
+\end{equation}
+such that}
 \begin{align}
 	E_{\pm}(2\pi) & = E_{\mp}(0),
 	&
 	E_{\pm}(4\pi) & = E_{\pm}(0). \notag
 \end{align}
-This evidences that encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy.
-Additionally, the wave function picks up a geometric phase and four loops are required to recover the starting wave function.
-\cite{MoiseyevBook}
+As a result, completely encircling an EP leads to the interconversion of the two interacting states, while a second complete rotation returns the two states to their original energies.
+Additionally, the wave functions pick up a geometric phase in the process, and four complete loops are required to recover their starting forms.\cite{MoiseyevBook}
+
+%In order to highlight the general properties of EPs mentioned above, we propose to consider the ubiquitous symmetric Hubbard dimer at half filling (\ie, with two opposite-spin fermions) whose Hamiltonian reads in the singlet configuration state function basis 
+%\begin{align}
+%		\ket{1\up1\dw}		&	\ket{1\up2\dw}		&	\ket{1\dw2\up}		&	\ket{2\up2\dw}	\\
+%		\uddot \quad \vac	&	\updot \quad \dwdot	&	\dwdot \quad \updot	&	\vac \quad \uddot	 \\
+%\end{align}
+%\begin{equation}
+%\label{eq:H_FCI}
+%	\bH = 
+%	\begin{pmatrix}
+%		-2t	+ U &	0 & U/2	\\
+%		0		&	U 	&	0	\\
+%		U/2 &	0 & -2t	+ U	\\
+%	\end{pmatrix},
+%\end{equation}
+%where $t$ is the hopping parameter and $U$ is the on-site Coulomb repulsion.
+%We refer the interested reader to Refs.~\onlinecite{Carrascal_2015,Carrascal_2018} for more details about this system.
+%We will consistently use this system to illustrate the different concepts discussed in the present review article.
+
+%For real $U$, the Hamiltonian \eqref{eq:H_FCI} is clearly Hermitian, and it becomes non-Hermitian %for any complex $U$ value.
+%The eigenvalues associated with its singlet ground state and singlet doubly-excited state are
+%\begin{equation}
+%\label{eq:E_FCI}
+%	E_{\pm} = \frac{1}{2} \qty( U \pm \sqrt{(4t^2) + U^2} ).
+%\end{equation}
+%and they are represented as a function of $U$ in Fig.~\ref{fig:FCI} together with the energy of the %singlet open-shell configuration of energy $U$.
+
+
+%One notices that these two states become degenerate only for a pair of complex conjugate values of $U$
+%\begin{equation}
+%\label{eq:lambda_EP}
+%	U_\text{EP} = \pm 4 i t,
+%\end{equation}
+%with energy
+%\begin{equation}
+%\label{eq:E_EP}
+%	E_\text{EP} = \pm 2 i t,
+%\end{equation}
+%which correspond to square-root singularities in the complex-$U$ plane [see Fig.~\eqref{fig:FCI}].
+%These two $U$ values, given by Eq.~\eqref{eq:lambda_EP}, are the so-called EPs and one can clearly see that they connect the ground and excited states.
+%Starting from $U_\text{EP}$, two square-root branch cuts run on the imaginary axis towards $\pm i \infty$.
+%In the real $U$ axis, the point for which the states are the closest ($U = 0$) is called an avoided crossing and this occurs at $U = \Re(U_\text{EP})$.
+%The ``shape'' of the avoided crossing is linked to the magnitude of $\Im(U_\text{EP})$: the smaller $\Im(U_\text{EP})$, the sharper the avoided crossing is.
+
+%Around $U = U_\text{EP}$, Eq.~\eqref{eq:E_FCI} behaves as \cite{MoiseyevBook}
+%\begin{equation} %\label{eq:E_EP}
+%        E_{\pm} = E_\text{EP} \pm \sqrt{2U_\text{EP}} \sqrt{U - U_\text{EP}},
+%\end{equation}
+%and following a complex contour around the EP, \ie, $U = U_\text{EP} + R \exp(i\theta)$, yields
+%\begin{equation}
+%        E_{\pm}(\theta) = E_\text{EP} \pm \sqrt{2U_\text{EP} R}  \exp(i\theta/2),
+%\end{equation}
+%and we have
+%\begin{align}
+%	E_{\pm}(2\pi) & = E_{\mp}(0),
+%	&
+%	E_{\pm}(4\pi) & = E_{\pm}(0). \notag
+%\end{align}
+%This evidences that encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy.
+%Additionally, the wave function picks up a geometric phase and four loops are required to recover the starting wave function.
+%\cite{MoiseyevBook}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Perturbation theory}
