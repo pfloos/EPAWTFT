@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{82}%
+\begin{thebibliography}{84}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -475,6 +475,12 @@
   10.1140/epjb/e2018-90114-9} {\bibfield  {journal} {\bibinfo  {journal} {Eur.
   Phys. J. B}\ }\textbf {\bibinfo {volume} {91}},\ \bibinfo {pages} {142}
   (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wigner}(1934)}]{Wigner_1934}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Wigner}},\ }\href {\doibase 10.1103/PhysRev.46.1002} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {46}},\
+  \bibinfo {pages} {1002} (\bibinfo {year} {1934})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Goodson}(2012)}]{Goodson_2012}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~Z.}\ \bibnamefont
@@ -489,6 +495,14 @@
   {Ostlund}},\ }\href@noop {} {\emph {\bibinfo {title} {Modern quantum
   chemistry: {Introduction} to advanced electronic structure}}}\ (\bibinfo
   {publisher} {McGraw-Hill},\ \bibinfo {year} {1989})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Coulson}\ and\ \citenamefont
+  {Fischer}()}]{Coulson_1949}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~A.}\ \bibnamefont
+  {Coulson}}\ and\ \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
+  {Fischer}},\ }\href {\doibase 10.1080/14786444908521726} {\bibfield
+  {journal} {\bibinfo  {journal} {1949}\ }\textbf {\bibinfo {volume} {40}},\
+  \bibinfo {pages} {386}}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {M{\o}ller}\ and\ \citenamefont
   {Plesset}(1934)}]{Moller_1934}%
   \BibitemOpen

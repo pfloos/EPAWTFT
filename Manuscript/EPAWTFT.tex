@@ -112,7 +112,6 @@
 \newcommand{\LCPQ}{Laboratoire de Chimie et Physique Quantiques (UMR 5626), Universit\'e de Toulouse, CNRS, UPS, France.}
 \newcommand{\UCAM}{Department of Chemistry, University of Cambridge, Lensfield Road, Cambridge, CB2 1EW, U.K.}
 \newcommand{\UOX}{Physical and Theoretical Chemical Laboratory, Department of Chemistry, University of Oxford, Oxford, OX1 3QZ, U.K.}
-\newcommand{\VU}{Department of Theoretical Chemistry and Amsterdam Center for Multiscale Modeling, FEW, Vrije Universiteit, De Boelelaan 1083, 1081HV Amsterdam, The Netherlands.}
 \begin{document}	
 
 \title{Perturbation theory in the complex plane: Exceptional points and where to find them}
@@ -120,11 +119,8 @@
 \author{Antoine \surname{Marie}}
 \affiliation{\LCPQ}
 \author{Hugh G.~A.~\surname{Burton}}
-%\affiliation{\UCAM}
 \email{hugh.burton@chem.ox.ac.uk}
 \affiliation{\UOX}
-%\author{Paola \surname{Gori-Giorgi}}
-%\affiliation{\VU}
 \author{Pierre-Fran\c{c}ois \surname{Loos}}
 \email{loos@irsamc.ups-tlse.fr}
 \affiliation{\LCPQ}
@@ -152,13 +148,13 @@ Accurately predicting ground- and excited-state energies (hence excitation energ
 An armada of theoretical and computational methods have been developed to this end, each of them being plagued by its own flaws. 
 The fact that none of these methods is successful in every chemical scenario has encouraged chemists to carry on the development of new excited-state methodologies, their main goal being to get the most accurate excitation energies (and properties) at the lowest possible computational cost in the most general context.
 
-One common feature of all these methods is that they rely on the notion of quantized energy levels of Hermitian quantum mechanics, in which the different electronic states of a molecule or an atom are energetically ordered, the lowest being the ground state while the higher ones are excited states. 
-Within this quantized paradigm, electronic states look completely disconnected from one another.
+One common feature of all these methods is that they rely on the notion of quantised energy levels of Hermitian quantum mechanics, in which the different electronic states of a molecule or an atom are energetically ordered, the lowest being the ground state while the higher ones are excited states. 
+Within this quantised paradigm, electronic states look completely disconnected from one another.
 Many current methods study excited states using only ground-state information, creating a ground-state bias that leads to incorrect excitation energies.
-However, one can gain a different perspective on quantization extending quantum chemistry into the complex domain.
+However, one can gain a different perspective on quantisation extending quantum chemistry into the complex domain.
 In a non-Hermitian complex picture, the energy levels are \textit{sheets} of a more complicated topological manifold called \textit{Riemann surface}, and they are smooth and continuous \textit{analytic continuation} of one another. 
-In other words, our view of the quantized nature of conventional Hermitian quantum mechanics arises only from our limited perception of the more complex and profound structure of its non-Hermitian variant. \cite{MoiseyevBook,BenderPTBook}
-The realization that ground and excited states both emerge from one single mathematical structure with equal importance suggests that excited-state energies can be computed from first principles in their own right. 
+In other words, our view of the quantised nature of conventional Hermitian quantum mechanics arises only from our limited perception of the more complex and profound structure of its non-Hermitian variant. \cite{MoiseyevBook,BenderPTBook}
+The realisation that ground and excited states both emerge from one single mathematical structure with equal importance suggests that excited-state energies can be computed from first principles in their own right. 
 One could then exploit the structure of these Riemann surfaces to develop methods that directly target excited-state energies without needing ground-state information. \cite{Burton_2019,Burton_2019a}
 
 By analytically continuing the electronic energy $E(\lambda)$ in the complex domain (where $\lambda$ is a coupling parameter), the ground and excited states of a molecule can be smoothly connected.
@@ -168,8 +164,8 @@ Amazingly, this smooth and continuous transition from one state to another has r
 
 Exceptional points (EPs) are branch point singularities where two (or more) states become exactly degenerate. \cite{MoiseyevBook,Heiss_1988,Heiss_1990,Heiss_1999,Berry_2011,Heiss_2012,Heiss_2016,Benda_2018}
 They are the non-Hermitian analogs of conical intersections, \cite{Yarkony_1996} which are ubiquitous in non-adiabatic processes and play a key role in photo-chemical mechanisms.
-In the case of auto-ionizing resonances, EPs have a role in deactivation processes similar to conical intersections in the decay of bound excited states. \cite{Benda_2018}
-Although Hermitian and non-Hermitian Hamiltonians are closely related, the behavior of their eigenvalues near degeneracies is starkly different.
+In the case of auto-ionising resonances, EPs have a role in deactivation processes similar to conical intersections in the decay of bound excited states. \cite{Benda_2018}
+Although Hermitian and non-Hermitian Hamiltonians are closely related, the behaviour of their eigenvalues near degeneracies is starkly different.
 For example, encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy. \cite{MoiseyevBook,Heiss_2016,Benda_2018}
 Additionally, the wave function picks up a geometric phase (also known as Berry phase \cite{Berry_1984}) and four loops are required to recover the initial wave function.
 In contrast, encircling Hermitian degeneracies at conical intersections only introduces a geometric phase while leaving the states unchanged.
@@ -197,7 +193,9 @@ More importantly here, although EPs usually lie off the real axis, these singula
 \end{figure*}
 
 To illustrate the concepts discussed throughout this article, we will consider the symmetric Hubbard dimer at half filling, \ie\ with two opposite-spin fermions.
-Using the localised site basis, the Hilbert space for this system comprises the four configurations
+Simple systems that are analytically solvable are of great importance in theoretical chemistry and physics as they can be employed to illustrate concepts and test new methods as the mathematics are easier than in realistic systems (such as molecules or solids) but they retain much of the key physics. 
+
+Using the (localised) site basis, the (singlet) Hilbert space of the Hubbard dimer comprises the four configurations
 \begin{align}
 & \ket{\Lup \Ldown} &  & \ket{\Lup\Rdown} &  & \ket{\Rup\Ldown} &  & \ket{\Rup\Rdown}
 \end{align}
@@ -215,7 +213,10 @@ The exact Hamiltonian is then
 \end{equation}
 where $t$ is the hopping parameter and $U$ is the on-site Coulomb repulsion.
 We refer the interested reader to Refs.~\onlinecite{Carrascal_2015,Carrascal_2018} for more details about this system.
-
+The parameter $U$ dictates the correlation regime. 
+In the weak correlation regime (\ie, small $U$), the kinetic energy dominates and the electrons are delocalised over both sites.
+For large $U$ (or strong correlation regime), the electron repulsion term drives the physics and the electrons localise on opposite sites to minimise their Coulomb repulsion. 
+This phenomenon is sometimes referred to as a Wigner crystallisation. \cite{Wigner_1934}
 
 To illustrate the formation of an exceptional points, we scale the off-diagonal coupling strength by introducing the complex parameter $\lambda$ through the transformation $t\rightarrow \lambda t$.
 When $\lambda$ is real, the Hamiltonian~\eqref{eq:H_FCI} is Hermitian with the distinct (real-valued) eigenvalues
@@ -262,67 +263,6 @@ such that
 As a result, completely encircling an EP leads to the interconversion of the two interacting states, while a second complete rotation returns the two states to their original energies.
 Additionally, the wave functions pick up a geometric phase in the process, and four complete loops are required to recover their starting forms.\cite{MoiseyevBook}
 
-%In order to highlight the general properties of EPs mentioned above, we propose to consider the ubiquitous symmetric Hubbard dimer at half filling (\ie, with two opposite-spin fermions) whose Hamiltonian reads in the singlet configuration state function basis 
-%\begin{align}
-%		\ket{1\up1\dw}		&	\ket{1\up2\dw}		&	\ket{1\dw2\up}		&	\ket{2\up2\dw}	\\
-%		\uddot \quad \vac	&	\updot \quad \dwdot	&	\dwdot \quad \updot	&	\vac \quad \uddot	 \\
-%\end{align}
-%\begin{equation}
-%\label{eq:H_FCI}
-%	\bH = 
-%	\begin{pmatrix}
-%		-2t	+ U &	0 & U/2	\\
-%		0		&	U 	&	0	\\
-%		U/2 &	0 & -2t	+ U	\\
-%	\end{pmatrix},
-%\end{equation}
-%where $t$ is the hopping parameter and $U$ is the on-site Coulomb repulsion.
-%We refer the interested reader to Refs.~\onlinecite{Carrascal_2015,Carrascal_2018} for more details about this system.
-%We will consistently use this system to illustrate the different concepts discussed in the present review article.
-
-%For real $U$, the Hamiltonian \eqref{eq:H_FCI} is clearly Hermitian, and it becomes non-Hermitian %for any complex $U$ value.
-%The eigenvalues associated with its singlet ground state and singlet doubly-excited state are
-%\begin{equation}
-%\label{eq:E_FCI}
-%	E_{\pm} = \frac{1}{2} \qty( U \pm \sqrt{(4t^2) + U^2} ).
-%\end{equation}
-%and they are represented as a function of $U$ in Fig.~\ref{fig:FCI} together with the energy of the %singlet open-shell configuration of energy $U$.
-
-
-%One notices that these two states become degenerate only for a pair of complex conjugate values of $U$
-%\begin{equation}
-%\label{eq:lambda_EP}
-%	U_\text{EP} = \pm 4 i t,
-%\end{equation}
-%with energy
-%\begin{equation}
-%\label{eq:E_EP}
-%	E_\text{EP} = \pm 2 i t,
-%\end{equation}
-%which correspond to square-root singularities in the complex-$U$ plane [see Fig.~\eqref{fig:FCI}].
-%These two $U$ values, given by Eq.~\eqref{eq:lambda_EP}, are the so-called EPs and one can clearly see that they connect the ground and excited states.
-%Starting from $U_\text{EP}$, two square-root branch cuts run on the imaginary axis towards $\pm i \infty$.
-%In the real $U$ axis, the point for which the states are the closest ($U = 0$) is called an avoided crossing and this occurs at $U = \Re(U_\text{EP})$.
-%The ``shape'' of the avoided crossing is linked to the magnitude of $\Im(U_\text{EP})$: the smaller $\Im(U_\text{EP})$, the sharper the avoided crossing is.
-
-%Around $U = U_\text{EP}$, Eq.~\eqref{eq:E_FCI} behaves as \cite{MoiseyevBook}
-%\begin{equation} %\label{eq:E_EP}
-%        E_{\pm} = E_\text{EP} \pm \sqrt{2U_\text{EP}} \sqrt{U - U_\text{EP}},
-%\end{equation}
-%and following a complex contour around the EP, \ie, $U = U_\text{EP} + R \exp(i\theta)$, yields
-%\begin{equation}
-%        E_{\pm}(\theta) = E_\text{EP} \pm \sqrt{2U_\text{EP} R}  \exp(i\theta/2),
-%\end{equation}
-%and we have
-%\begin{align}
-%	E_{\pm}(2\pi) & = E_{\mp}(0),
-%	&
-%	E_{\pm}(4\pi) & = E_{\pm}(0). \notag
-%\end{align}
-%This evidences that encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy.
-%Additionally, the wave function picks up a geometric phase and four loops are required to recover the starting wave function.
-%\cite{MoiseyevBook}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Perturbation theory}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -335,7 +275,7 @@ Within the Born-Oppenheimer approximation,
 \begin{equation}\label{eq:ExactHamiltonian}
     \hH = - \frac{1}{2} \sum_{i}^{n} \grad_i^2 - \sum_{i}^{n} \sum_{A}^{N} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}} + \sum_{i<j}^{n}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}}
 \end{equation}
-is the exact electronic Hamiltonian for a chemical system with $n$ electrons (where $\vb{r}_i$ is the position of the $i$th electron) and $N$ (fixed) nuclei (where $\vb{R}_A$ and $Z_A$ are the position and the charge of the $A$th nucleus respectively). 
+is the exact electronic Hamiltonian for a chemical system with $N$ electrons (where $\vb{r}_i$ is the position of the $i$th electron) and $M$ (fixed) nuclei (where $\vb{R}_A$ and $Z_A$ are the position and the charge of the $A$th nucleus respectively). 
 The first term is the kinetic energy of the electrons, the two following terms account respectively for the electron-nucleus attraction and the electron-electron repulsion.
 Note that we use atomic units throughout unless otherwise stated.
 
@@ -360,7 +300,7 @@ In other words, the series might well be divergent for the physical system at $\
 One can prove that the actual value of the radius of convergence $\abs{\lambda_0}$ can be obtained by looking for the singularities of $E(\lambda)$ in the complex $\lambda$ plane.
 This is due to the following theorem: \cite{Goodson_2012}
 \begin{quote}
-	\textit{``The Taylor series about a point $z_0$ of a function over the complex $z$ plane will converge at a value $z_1$ if the function is non-singular at all values of $z$ in the circular region centered at $z_0$ with radius $\abs{z_1-z_0}$. If the function has a singular point $z_s$ such that $\abs{z_s-z_0} < \abs{z_1-z_0}$, then the series will diverge when evaluated at $z_1$.''}
+	\textit{``The Taylor series about a point $z_0$ of a function over the complex $z$ plane will converge at a value $z_1$ if the function is non-singular at all values of $z$ in the circular region centred at $z_0$ with radius $\abs{z_1-z_0}$. If the function has a singular point $z_s$ such that $\abs{z_s-z_0} < \abs{z_1-z_0}$, then the series will diverge when evaluated at $z_1$.''}
 \end{quote}
 This theorem means that the radius of convergence of the perturbation series is equal to the distance to the origin of the closest singularity of $E(\lambda)$. To illustrate this result we consider the simple function \cite{BenderBook}
 \begin{equation} \label{eq:DivExample}
@@ -372,44 +312,42 @@ This function is smooth for $x \in \mathbb{R}$ and infinitely differentiable in 
 \subsection{The Hartree-Fock Hamiltonian}
 %============================================================%
 
-In the Hartree-Fock (HF) approximation, the many-electron wave function is approximated as a single Slater determinant $\Psi^{\text{HF}}(\vb{x}_1,\ldots,\vb{x}_n)$ [where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates] defined as an antisymmetric combination of $n$ (real-valued) one-electron spin-orbitals $\phi_p(\vb{x})$, which are, by definition, eigenfunctions of the one-electron Fock operator 
+In the Hartree-Fock (HF) approximation, the many-electron wave function is approximated as a single Slater determinant $\Psi^{\text{HF}}(\vb{x}_1,\ldots,\vb{x}_N)$ [where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates] defined as an antisymmetric combination of $N$ (real-valued) one-electron spin-orbitals $\phi_p(\vb{x})$, which are, by definition, eigenfunctions of the one-electron Fock operator 
 \begin{equation}\label{eq:FockOp}
-	f(\vb{x}) \phi_p(\vb{x}) = [ h(\vb{x}) + v^\text{HF}(\vb{x}) ] \phi_p(\vb{x}) = \epsilon_p \phi_p(\vb{x}),
+	\Hat{f}(\vb{x}) \phi_p(\vb{x}) = [ \Hat{h}(\vb{x}) + \Hat{v}^\text{HF}(\vb{x}) ] \phi_p(\vb{x}) = \epsilon_p \phi_p(\vb{x}),
 \end{equation}
 where 
 \begin{equation}
-	h(\vb{x}) = -\frac{\grad^2}{2} + \sum_{A}^{N} \frac{Z_A}{\abs{\vb{r}-\vb{R}_A}}
+	\Hat{h}(\vb{x}) = -\frac{\grad^2}{2} + \sum_{A}^{M} \frac{Z_A}{\abs{\vb{r}-\vb{R}_A}}
 \end{equation}
 is the core Hamiltonian and 
 \begin{equation}
-	v^\text{HF}(\vb{x}) = \sum_i \qty[ J_i(\vb{x}) - K_i(\vb{x}) ]
+	\Hat{v}^\text{HF}(\vb{x}) = \sum_i^{N} \qty[ \Hat{J}_i(\vb{x}) - \Hat{K}_i(\vb{x}) ]
 \end{equation}
 is the HF mean-field potential with 
 \begin{subequations}
 \begin{gather}
 	\label{eq:CoulOp}
-	J_i(\vb{x})\phi_p(\vb{x})=\qty[\int \phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_i(\vb{x}') \dd\vb{x}' ] \phi_p(\vb{x})
+	\Hat{J}_i(\vb{x})\phi_j(\vb{x})=\qty[\int \phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_i(\vb{x}') \dd\vb{x}' ] \phi_j(\vb{x})
 	\\
 	\label{eq:ExcOp}
-	K_i(\vb{x})\phi_p(\vb{x})=\qty[\int \phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_p(\vb{x}') \dd\vb{x}'] \phi_i(\vb{x})
+	\Hat{K}_i(\vb{x})\phi_j(\vb{x})=\qty[\int \phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_j(\vb{x}') \dd\vb{x}'] \phi_i(\vb{x})
 \end{gather}
 \end{subequations}
 being the Coulomb and exchange operators (respectively) in the spin-orbital basis. \cite{SzaboBook}
 The HF energy is then defined as 
 \begin{equation}
 \label{eq:E_HF}
-	E_\text{HF} = \sum_i h_i + \frac{1}{2} \sum_{ij} \qty( J_{ij} - K_{ij} )
+	E_\text{HF} = \sum_i^{N} h_i + \frac{1}{2} \sum_{ij}^{N} \qty( J_{ij} - K_{ij} )
 \end{equation}
-with 
-\begin{subequations}
-\begin{gather}
-	h_i = \int \phi_i(\vb{x}) h(\vb{x})  \phi_i(\vb{x}) \dd\vb{x}
-	\\
-	J_{ij} = \int \phi_i(\vb{x})  J_j(\vb{x}) \phi_i(\vb{x}) \dd\vb{x}
-	\\
-	K_{ij} = \int \phi_i(\vb{x})  K_j(\vb{x}) \phi_i(\vb{x}) \dd\vb{x}
-\end{gather}
-\end{subequations}
+with
+\begin{align}
+	h_i & = \mel{\phi_i}{h}{\phi_i}
+	&
+	J_{ij} & = \mel{\phi_i}{\Hat{J}_j}{\phi_i}
+	&
+	K_{ij} & = \mel{\phi_i}{\Hat{K}_j}{\phi_i}
+\end{align}
 If the spatial part of the spin-orbitals are restricted to be the same for spin-up and spin-down electrons, one talks about restricted HF (RHF) theory, whereas if one does not enforce this constrain it leads to the so-called unrestricted HF (UHF) theory. 
 From hereon, $i$ and $j$ are occupied orbitals, $a$ and $b$ are unoccupied (or virtual) orbitals, while $p$, $q$, $r$, and $s$ indicate arbitrary orbitals.
 
@@ -418,22 +356,51 @@ Rather than solving Eq.~\eqref{eq:SchrEq}, HF theory uses the variational princi
 	\hH^{\text{HF}} = \sum_{i} f(\vb{x}_i).
 \end{equation}
 
+%
+%The spatial part of the RHF wave function is then
+%\begin{equation}\label{eq:RHF_WF}
+%	\Psi_{\text{RHF}}(\theta_1,\theta_2) = Y_0(\theta_1) Y_0(\theta_2),
+%\end{equation}
+%where $\theta_i$ is the polar angle of the $i$th electron and $Y_{\ell}(\theta)$ is a zonal spherical harmonic. 
+%Because $Y_0(\theta) = 1/\sqrt{4\pi}$, it is clear that the RHF wave function yields a uniform one-electron density.
+%
+
+
+
 Coming back to the Hubbard dimer, the HF energy is [see Eq.~\eqref{eq:E_HF}]
 \begin{equation}
 	E_\text{HF} = -t \qty[ \sin \theta_\alpha  + \sin \theta_\beta ] + \frac{U}{2} \qty[ 1 + \cos \theta_\alpha \cos \theta_\beta ]
 \end{equation}
 where 
 \begin{align}
-	\psi_{1\sigma} & = \cos(\frac{\theta_\sigma}{2}) \Lsi - \sin(\frac{\theta_\sigma}{2}) \Rsi
+	\mathcal{B}^{\sigma} & = \cos(\frac{\theta_\sigma}{2}) \Lsi - \sin(\frac{\theta_\sigma}{2}) \Rsi
 	\\
-	\psi_{2\sigma} & = \sin(\frac{\theta_\sigma}{2}) \Lsi + \cos(\frac{\theta_\sigma}{2}) \Rsi
+	\mathcal{A}^{\sigma} & = \sin(\frac{\theta_\sigma}{2}) \Lsi + \cos(\frac{\theta_\sigma}{2}) \Rsi
 \end{align}
-are the one-electron molecule orbitals for the spin-$\sigma$ electrons and the angles which makes the energy stationnary, \ie, $\pdv*{E_\text{HF}}{\theta_\sigma} = 0$ are given by
+are the bonding $\mathcal{B}^{\sigma}$ and anti-bonding $\mathcal{A}^{\sigma}$ molecular orbitals for the spin-$\sigma$ electrons and the angles which minimises the HF energy, \ie, $\pdv*{E_\text{HF}}{\theta_\sigma} = 0$, are 
+\begin{equation}
+	\theta_\text{RHF}^\alpha = \theta_\text{RHF}^\beta = \pi/4 
+\end{equation}
+for $0 \le U \le 4t$, and
 \begin{align}
-	\theta_\alpha & = \arctan (-\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U}) 
+	\theta_\text{UHF}^\alpha & = \arctan (-\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U}) 
 	\\
-	\theta_\beta & = \arctan (+\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U}) 
+	\theta_\text{UHF}^\beta & = \arctan (+\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U}) 
 \end{align}
+otherwise.
+In the RHF formalism, the two electrons are restricted to ``live'' in the same spatial orbital.
+The RHF ground-state energy is then
+\begin{equation}
+	E_\text{RHF} =  -2t + \frac{U}{2}
+\end{equation}
+
+The RHF wave function cannot model properly the physics of the system at large $U$ because the spatial orbitals are restricted to be the same, and, \textit{a fortiori}, it cannot represent two electrons on opposite sites. 
+Within the HF approximation, at the critical value of $U = 4t$, famously known as the Coulson-Fischer point, \cite{Coulson_1949} a symmetry-broken UHF solution appears with lower in energy than the RHF one.
+The UHF ground-state energy is
+\begin{equation}
+	E_\text{UHF} = - \frac{2t^2}{U}
+\end{equation}
+for $U \ge 4t$.
 
 %=====================================================%
 \subsection{M{\o}ller-Plesset perturbation theory}
@@ -444,20 +411,20 @@ The discovery of a partitioning of the Hamiltonian that allowed chemists to reco
 This yields
 \begin{multline}\label{eq:MPHamiltonian}
     \hH(\lambda) = 
-    \sum_{i}^{n} \Bigg[ 
+    \sum_{i}^{N} \Bigg[ 
     -\frac{\grad_i^2}{2} 
-    - \sum_{A}^{N} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}} 
+    - \sum_{A}^{M} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}} 
     \\
     + (1-\lambda) v^{\text{HF}}(\vb{x}_i) 
-    + \lambda\sum_{i<j}^{n}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}} 
+    + \lambda\sum_{i<j}^{N}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}} 
     \Bigg].
 \end{multline}
 If one considers a RHF or UHF reference wave functions, it leads to the RMP or UMP series, respectively.
 
 As mentioned earlier, in perturbation theory, the energy is a power series of $\lambda$ and the physical energy is obtained at $\lambda = 1$. 
-The MP$m$ energy is defined as 
+The MP$n$ energy is defined as 
 \begin{equation}
-	E_{\text{MP}m}= \sum_{k=0}^m E^{(k)},
+	E_{\text{MP}n}= \sum_{k=0}^n E^{(k)},
 \end{equation}
 where $E^{(k)}$ is the $k$th-order MP correction, and it is well known that $E_{\text{MP1}} =  E^{(0)} + E^{(1)} = E_\text{HF}$. \cite{SzaboBook}
 The MP2 energy reads

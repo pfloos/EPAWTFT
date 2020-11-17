@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2016)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: EPAWTFT.aux
 The style file: apsrev4-1.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -23,45 +23,46 @@ Control: production of article title (-1) disabled
 Control: page (0) single
 Control: year (1) truncated
 Control: production of eprint (0) enabled
-You've used 84 entries,
+Warning--empty year in Coulson_1949
+You've used 86 entries,
             5847 wiz_defined-function locations,
-            2218 strings with 30556 characters,
-and the built_in function-call counts, 82528 in all, are:
-= -- 5275
-> -- 2197
-< -- 560
-+ -- 698
-- -- 535
-* -- 12816
-:= -- 8105
-add.period$ -- 82
-call.type$ -- 84
-change.case$ -- 330
-chr.to.int$ -- 87
-cite$ -- 84
-duplicate$ -- 7655
-empty$ -- 6137
-format.name$ -- 1282
-if$ -- 16484
+            2232 strings with 30838 characters,
+and the built_in function-call counts, 84131 in all, are:
+= -- 5391
+> -- 2225
+< -- 571
++ -- 708
+- -- 541
+* -- 13040
+:= -- 8275
+add.period$ -- 84
+call.type$ -- 86
+change.case$ -- 338
+chr.to.int$ -- 89
+cite$ -- 87
+duplicate$ -- 7807
+empty$ -- 6261
+format.name$ -- 1300
+if$ -- 16801
 int.to.chr$ -- 6
-int.to.str$ -- 91
-missing$ -- 1009
-newline$ -- 298
-num.names$ -- 246
-pop$ -- 3145
+int.to.str$ -- 93
+missing$ -- 1030
+newline$ -- 304
+num.names$ -- 252
+pop$ -- 3216
 preamble$ -- 1
-purify$ -- 410
+purify$ -- 419
 quote$ -- 0
-skip$ -- 3020
+skip$ -- 3083
 stack$ -- 0
-substring$ -- 2212
-swap$ -- 7288
-text.length$ -- 260
+substring$ -- 2260
+swap$ -- 7422
+text.length$ -- 263
 text.prefix$ -- 0
 top$ -- 10
-type$ -- 1166
-warning$ -- 1
-while$ -- 251
+type$ -- 1191
+warning$ -- 2
+while$ -- 257
 width$ -- 0
-write$ -- 703
-(There was 1 warning)
+write$ -- 718
+(There were 2 warnings)
