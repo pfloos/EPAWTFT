@@ -189,6 +189,7 @@ More importantly here, although EPs usually lie off the real axis, these singula
 	\caption{%
 	Exact energies for the Hubbard dimer ($U=4t$) as functions of $\lambda$ on the real axis (\subref{subfig:FCI_real}) and in the complex plane (\subref{subfig:FCI_cplx}).
     Only the interacting closed-shell singlets are plotted in the complex plane, becoming degenerate at the EP (black dot).
+    The contour followed around the EP in order to interchange states is also represented.
 	\label{fig:FCI}}
 \end{figure*}
 
@@ -205,21 +206,21 @@ The exact Hamiltonian is then
 \label{eq:H_FCI}
 	\bH = 
 	\begin{pmatrix}
-		U &	- t & +  t & 0	\\
+		U &	- t & -  t & 0	\\
 	   -  t &  0 &  0 & -  t \\
-       +  t &  0 &  0 & +  t \\
-        0 & -  t & +  t & U \\
+       -  t &  0 &  0 & -  t \\
+        0 & -  t & -  t & U \\
 	\end{pmatrix},
 \end{equation}
 where $t$ is the hopping parameter and $U$ is the on-site Coulomb repulsion.
 We refer the interested reader to Refs.~\onlinecite{Carrascal_2015,Carrascal_2018} for more details about this system.
 The parameter $U$ dictates the correlation regime. 
 In the weak correlation regime (\ie, small $U$), the kinetic energy dominates and the electrons are delocalised over both sites.
-For large $U$ (or strong correlation regime), the electron repulsion term drives the physics and the electrons localise on opposite sites to minimise their Coulomb repulsion. 
+In the large-$U$ (or strong correlation) regime, the electron repulsion term drives the physics and the electrons localise on opposite sites to minimise their Coulomb repulsion. 
 This phenomenon is sometimes referred to as a Wigner crystallisation. \cite{Wigner_1934}
 
-To illustrate the formation of an exceptional points, we scale the off-diagonal coupling strength by introducing the complex parameter $\lambda$ through the transformation $t\rightarrow \lambda t$.
-When $\lambda$ is real, the Hamiltonian~\eqref{eq:H_FCI} is Hermitian with the distinct (real-valued) eigenvalues
+To illustrate the formation of an EP, we scale the off-diagonal coupling strength by introducing the complex parameter $\lambda$ through the transformation $t\rightarrow \lambda t$.
+When $\lambda$ is real, the Hamiltonian~\eqref{eq:H_FCI} is Hermitian with the distinct (real-valued) (eigen)energies
 \begin{subequations}
 \begin{align}
 E_{\mp} &= \frac{1}{2} \qty(U \mp \sqrt{ (4 \lambda t)^2 + U^2 } ),
@@ -240,12 +241,12 @@ with energy
 \label{eq:E_EP}
 	E_\text{EP} = \frac{U}{2}.
 \end{equation}
-These $\lambda$ values correspond to so-called EPs and connect the ground and excited state in the complex plane.
+These $\lambda$ values correspond to so-called EPs and connect the ground and excited states in the complex plane.
 Crucially, the energy surface becomes non-analytic at $\lambda_{\text{EP}}$ and a square-root singularity forms with two branch cuts running along the imaginary axis from $\lambda_{\text{EP}}$  to $\pm \i \infty$ (see Fig.~\ref{subfig:FCI_cplx}).
 On the real $\lambda$ axis, these EPs lead to the singlet avoided crossing at $\lambda = \Re(\lambda_{\text{EP}})$.
 The ``shape'' of this avoided crossing is related to the magnitude of $\Im(\lambda_{\text{EP}})$, with smaller values giving a ``sharper'' interaction.
 
-Remarkably, the existence of these square-root singularities means that following a complex contour around an EP in the complex $\lambda$ plane will interconvert the closed-shell ground and excited states.
+Remarkably, the existence of these square-root singularities means that following a complex contour around an EP in the complex $\lambda$ plane will interconvert the closed-shell ground and excited states (see Fig.~\ref{subfig:FCI_cplx}).
 This behaviour can be seen by expanding the radicand in Eq.~\eqref{eq:singletE} as a Taylor series around $\lambda_{\text{EP}}$ to give
 \begin{equation}
 E_{\pm} \approx E_{\text{EP}} \pm \sqrt{32t^2 \lambda_{\text{EP}}} \sqrt{\lambda - \lambda_{\text{EP}}}.
@@ -328,25 +329,25 @@ is the HF mean-field potential with
 \begin{subequations}
 \begin{gather}
 	\label{eq:CoulOp}
-	\Hat{J}_i(\vb{x})\phi_j(\vb{x})=\qty[\int \phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_i(\vb{x}') \dd\vb{x}' ] \phi_j(\vb{x})
+	\Hat{J}_i(\vb{x})\phi_j(\vb{x})=\qty[\int \phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_i(\vb{x}') \dd\vb{x}' ] \phi_j(\vb{x}),
 	\\
 	\label{eq:ExcOp}
-	\Hat{K}_i(\vb{x})\phi_j(\vb{x})=\qty[\int \phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_j(\vb{x}') \dd\vb{x}'] \phi_i(\vb{x})
+	\Hat{K}_i(\vb{x})\phi_j(\vb{x})=\qty[\int \phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_j(\vb{x}') \dd\vb{x}'] \phi_i(\vb{x}),
 \end{gather}
 \end{subequations}
 being the Coulomb and exchange operators (respectively) in the spin-orbital basis. \cite{SzaboBook}
 The HF energy is then defined as 
 \begin{equation}
 \label{eq:E_HF}
-	E_\text{HF} = \sum_i^{N} h_i + \frac{1}{2} \sum_{ij}^{N} \qty( J_{ij} - K_{ij} )
+	E_\text{HF} = \sum_i^{N} h_i + \frac{1}{2} \sum_{ij}^{N} \qty( J_{ij} - K_{ij} ),
 \end{equation}
 with
 \begin{align}
-	h_i & = \mel{\phi_i}{h}{\phi_i}
+	h_i & = \mel{\phi_i}{\Hat{h}}{\phi_i},
 	&
-	J_{ij} & = \mel{\phi_i}{\Hat{J}_j}{\phi_i}
+	J_{ij} & = \mel{\phi_i}{\Hat{J}_j}{\phi_i},
 	&
-	K_{ij} & = \mel{\phi_i}{\Hat{K}_j}{\phi_i}
+	K_{ij} & = \mel{\phi_i}{\Hat{K}_j}{\phi_i}.
 \end{align}
 If the spatial part of the spin-orbitals are restricted to be the same for spin-up and spin-down electrons, one talks about restricted HF (RHF) theory, whereas if one does not enforce this constrain it leads to the so-called unrestricted HF (UHF) theory. 
 From hereon, $i$ and $j$ are occupied orbitals, $a$ and $b$ are unoccupied (or virtual) orbitals, while $p$, $q$, $r$, and $s$ indicate arbitrary orbitals.
@@ -369,38 +370,44 @@ Rather than solving Eq.~\eqref{eq:SchrEq}, HF theory uses the variational princi
 
 Coming back to the Hubbard dimer, the HF energy is [see Eq.~\eqref{eq:E_HF}]
 \begin{equation}
-	E_\text{HF} = -t \qty[ \sin \theta_\alpha  + \sin \theta_\beta ] + \frac{U}{2} \qty[ 1 + \cos \theta_\alpha \cos \theta_\beta ]
+	E_\text{HF} = -t \qty[ \sin \theta_\alpha  + \sin \theta_\beta ] + \frac{U}{2} \qty[ 1 + \cos \theta_\alpha \cos \theta_\beta ],
 \end{equation}
 where 
 \begin{align}
-	\mathcal{B}^{\sigma} & = \cos(\frac{\theta_\sigma}{2}) \Lsi - \sin(\frac{\theta_\sigma}{2}) \Rsi
+	\mathcal{B}^{\sigma} & = \cos(\frac{\theta_\sigma}{2}) \Lsi + \sin(\frac{\theta_\sigma}{2}) \Rsi,
 	\\
-	\mathcal{A}^{\sigma} & = \sin(\frac{\theta_\sigma}{2}) \Lsi + \cos(\frac{\theta_\sigma}{2}) \Rsi
+	\mathcal{A}^{\sigma} & = - \sin(\frac{\theta_\sigma}{2}) \Lsi + \cos(\frac{\theta_\sigma}{2}) \Rsi
 \end{align}
-are the bonding $\mathcal{B}^{\sigma}$ and anti-bonding $\mathcal{A}^{\sigma}$ molecular orbitals for the spin-$\sigma$ electrons and the angles which minimises the HF energy, \ie, $\pdv*{E_\text{HF}}{\theta_\sigma} = 0$, are 
+are the bonding $\mathcal{B}^{\sigma}$ and anti-bonding $\mathcal{A}^{\sigma}$ molecular orbitals for the spin-$\sigma$ electrons. 
+The angles which minimises the HF energy, \ie, $\pdv*{E_\text{HF}}{\theta_\sigma} = 0$, are 
 \begin{equation}
-	\theta_\text{RHF}^\alpha = \theta_\text{RHF}^\beta = \pi/4 
+	\theta_\text{RHF}^\alpha = \theta_\text{RHF}^\beta = \pi/4,
 \end{equation}
-for $0 \le U \le 4t$, and
+for $0 \le U \le 4t$, yielding
 \begin{align}
-	\theta_\text{UHF}^\alpha & = \arctan (-\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U}) 
-	\\
-	\theta_\text{UHF}^\beta & = \arctan (+\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U}) 
+	\mathcal{B}_\text{RHF}^{\sigma} & = \frac{\Lsi + \Rsi}{\sqrt{2}},
+	&
+	\mathcal{A}_\text{RHF}^{\sigma} & = \frac{\Lsi - \Rsi}{\sqrt{2}},
 \end{align}
-otherwise.
-In the RHF formalism, the two electrons are restricted to ``live'' in the same spatial orbital.
-The RHF ground-state energy is then
+and the following RHF ground-state energy:
 \begin{equation}
 	E_\text{RHF} =  -2t + \frac{U}{2}
 \end{equation}
-
+In the RHF formalism, the two electrons are restricted to ``live'' in the same spatial orbital.
 The RHF wave function cannot model properly the physics of the system at large $U$ because the spatial orbitals are restricted to be the same, and, \textit{a fortiori}, it cannot represent two electrons on opposite sites. 
-Within the HF approximation, at the critical value of $U = 4t$, famously known as the Coulson-Fischer point, \cite{Coulson_1949} a symmetry-broken UHF solution appears with lower in energy than the RHF one.
-The UHF ground-state energy is
+
+Within the HF approximation, at the critical value of $U = 4t$, famously known as the Coulson-Fischer point, \cite{Coulson_1949} a symmetry-broken UHF solution appears with a lower energy than the RHF one.
+Indeed, for $U \ge 4t$, we have
+\begin{align}
+	\theta_\text{UHF}^\alpha & = \titou{\arctan (-\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U})},
+	\\
+	\theta_\text{UHF}^\beta & = \titou{\arctan (+\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U})},
+\end{align}
+and the corresponding UHF ground-state energy is
 \begin{equation}
-	E_\text{UHF} = - \frac{2t^2}{U}
+	E_\text{UHF} = - \frac{2t^2}{U}.
 \end{equation}
-for $U \ge 4t$.
+Note that, for $U \ge 4t$, the RHF wave function remains a genuine solution of the HF equations but corresponds to a saddle point, not a minimum.
 
 %=====================================================%
 \subsection{M{\o}ller-Plesset perturbation theory}
@@ -419,14 +426,14 @@ This yields
     + \lambda\sum_{i<j}^{N}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}} 
     \Bigg].
 \end{multline}
-If one considers a RHF or UHF reference wave functions, it leads to the RMP or UMP series, respectively.
+The nature of the HF wave function is up for grabs, and if one considers a RHF or UHF reference wave functions, it leads to the RMP or UMP series, respectively.
 
 As mentioned earlier, in perturbation theory, the energy is a power series of $\lambda$ and the physical energy is obtained at $\lambda = 1$. 
 The MP$n$ energy is defined as 
 \begin{equation}
-	E_{\text{MP}n}= \sum_{k=0}^n E^{(k)},
+	E_{\text{MP}n}= \sum_{k=0}^n E_{\text{MP}}^{(k)},
 \end{equation}
-where $E^{(k)}$ is the $k$th-order MP correction, and it is well known that $E_{\text{MP1}} =  E^{(0)} + E^{(1)} = E_\text{HF}$. \cite{SzaboBook}
+where $E_{\text{MP}}^{(k)}$ is the $k$th-order MP correction, and it is well known that $E_{\text{MP1}} =  E_{\text{MP}}^{(0)} + E_{\text{MP}}^{(1)} = E_\text{HF}$. \cite{SzaboBook}
 The MP2 energy reads
 \begin{equation}\label{eq:EMP2}
 	E_{\text{MP2}} = \frac{1}{4} \sum_{ij} \sum_{ab} \frac{\abs{\mel{ij}{}{ab}}^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b},
@@ -437,7 +444,7 @@ with $\mel{pq}{}{rs} = \braket{pq}{rs} - \braket{pq}{sr}$, and where
 \end{equation}
 are two-electron integrals in the spin-orbital basis. \cite{Gill_1994}
 
-As mentioned earlier, there is, \textit{a priori}, no guarantee that the MP$m$ series converges to the exact energy when $m \to \infty$. 
+As mentioned earlier, there is, \textit{a priori}, no guarantee that the MP$n$ series converges to the exact energy as $n \to \infty$. 
 In fact, it is known that when the HF wave function is a poor approximation to the exact wave function, for example in multi-reference systems, the MP method yields deceptive results. \cite{Gill_1986,Gill_1988,Handy_1985,Lepetit_1988,Leininger_2000}
 A convenient way to investigate the convergence properties of the MP series is to analytically continue the coupling parameter $\lambda$ into the complex variable. 
 By doing so, the Hamiltonian and the energy become complex-valued functions of $\lambda$, and the energy becomes a multivalued function on $K$ Riemann sheets (where $K$ is the number of basis functions).
