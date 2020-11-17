@@ -101,10 +101,12 @@
 \newcommand{\bbR}{\mathbb{R}}
 \newcommand{\bbC}{\mathbb{C}}
 
-\newcommand{\Lup}{\text{L}^{\uparrow}}
-\newcommand{\Ldown}{\text{L}^{\downarrow}}
-\newcommand{\Rup}{\text{R}^{\uparrow}}
-\newcommand{\Rdown}{\text{R}^{\downarrow}}
+\newcommand{\Lup}{\mathcal{L}^{\uparrow}}
+\newcommand{\Ldown}{\mathcal{L}^{\downarrow}}
+\newcommand{\Lsi}{\mathcal{L}^{\sigma}}
+\newcommand{\Rup}{\mathcal{R}^{\uparrow}}
+\newcommand{\Rdown}{\mathcal{R}^{\downarrow}}
+\newcommand{\Rsi}{\mathcal{R}^{\sigma}}
 
 
 \newcommand{\LCPQ}{Laboratoire de Chimie et Physique Quantiques (UMR 5626), Universit\'e de Toulouse, CNRS, UPS, France.}
@@ -189,38 +191,32 @@ More importantly here, although EPs usually lie off the real axis, these singula
 	\subcaption{\label{subfig:FCI_cplx}}
     \end{subfigure}
 	\caption{%
-	\hugh{Exact energies for the Hubbard dimer ($U=4t$) as functions of $\lambda$ on the real axis (\subref{subfig:FCI_real}) and in the complex plane (\subref{subfig:FCI_cplx}).
-    Only the interacting closed-shell singlets are plotted in the complex plane, becoming degenerate at the EP (black dot).}
+	Exact energies for the Hubbard dimer ($U=4t$) as functions of $\lambda$ on the real axis (\subref{subfig:FCI_real}) and in the complex plane (\subref{subfig:FCI_cplx}).
+    Only the interacting closed-shell singlets are plotted in the complex plane, becoming degenerate at the EP (black dot).
 	\label{fig:FCI}}
 \end{figure*}
 
-\hugh{To illustrate the concepts discussed throughout this article, we will consider the symmetric Hubbard dimer at half filling, \ie\ with two opposite-spin fermions.
-Using the localised Wannier basis, the Hilbert space for this system comprises the four configurations
-\begin{equation}
-\ket{\Lup \Ldown} \qquad \ket{\Lup\Rdown} \qquad \ket{\Rup\Ldown} \qquad \ket{\Rup\Rdown}
-\end{equation}
-%\begin{tabularx}{\linewidth}{YYYY}
-%$\ket{\Lup \Ldown}$ & $\ket{\Lup\Rdown}$ & $\ket{\Rup\Ldown}$ &	$\ket{\Rup\Rdown}$
-%\\
-%$\uddot \quad \vac$ & $\updot \quad \dwdot$ & $\dwdot \quad \updot$ & $\vac \quad \uddot$
-%\end{tabularx}
-where $\text{L}^{\sigma}$ ($\text{R}^{\sigma}$) denotes an electron with spin $\sigma$ on the left (right) site.
+To illustrate the concepts discussed throughout this article, we will consider the symmetric Hubbard dimer at half filling, \ie\ with two opposite-spin fermions.
+Using the localised site basis, the Hilbert space for this system comprises the four configurations
+\begin{align}
+& \ket{\Lup \Ldown} &  & \ket{\Lup\Rdown} &  & \ket{\Rup\Ldown} &  & \ket{\Rup\Rdown}
+\end{align}
+where $\Lsi$ ($\Rsi$) denotes an electron with spin $\sigma$ on the left (right) site.
 The exact Hamiltonian is then 
 \begin{equation}
 \label{eq:H_FCI}
 	\bH = 
 	\begin{pmatrix}
-		U &	- t & -  t & 0	\\
+		U &	- t & +  t & 0	\\
 	   -  t &  0 &  0 & -  t \\
-       -  t &  0 &  0 & -  t \\
-        0 & -  t & -  t & U \\
+       +  t &  0 &  0 & +  t \\
+        0 & -  t & +  t & U \\
 	\end{pmatrix},
 \end{equation}
-where $t$ is the hopping parameter and $U$ is the on-site Coulomb repulsion.}
+where $t$ is the hopping parameter and $U$ is the on-site Coulomb repulsion.
 We refer the interested reader to Refs.~\onlinecite{Carrascal_2015,Carrascal_2018} for more details about this system.
 
 
-\hugh{%
 To illustrate the formation of an exceptional points, we scale the off-diagonal coupling strength by introducing the complex parameter $\lambda$ through the transformation $t\rightarrow \lambda t$.
 When $\lambda$ is real, the Hamiltonian~\eqref{eq:H_FCI} is Hermitian with the distinct (real-valued) eigenvalues
 \begin{subequations}
@@ -233,10 +229,10 @@ E_{\text{T}} &= 0,
 E_{\text{S}} &= U.
 \end{align}
 \end{subequations}
-While the open-shell triplet ($E_{\text{T}}$) and singlet ($E_{\text{S}}$) are independent of $\lambda$, the closed-shell singlet ground state ($E_{-}$) and doubly-excited state ($E_{+}$) couple strongly to form an avoided crossing at $\lambda=0$ (see Figure~\ref{subfig:FCI_real}).
+While the open-shell triplet ($E_{\text{T}}$) and singlet ($E_{\text{S}}$) are independent of $\lambda$, the closed-shell singlet ground state ($E_{-}$) and doubly-excited state ($E_{+}$) couple strongly to form an avoided crossing at $\lambda=0$ (see Fig.~\ref{subfig:FCI_real}).
 At non-zero values of $U$ and $t$, these closed-shell singlets can only become degenerate at a pair of complex conjugate points in the complex $\lambda$ plane 
 \begin{equation}
-\lambda_{\text{EP}} = \pm \frac{U}{4t} \i,
+\lambda_{\text{EP}} = \pm  \i \frac{U}{4t},
 \end{equation}
 with energy
 \begin{equation}
@@ -247,9 +243,7 @@ These $\lambda$ values correspond to so-called EPs and connect the ground and ex
 Crucially, the energy surface becomes non-analytic at $\lambda_{\text{EP}}$ and a square-root singularity forms with two branch cuts running along the imaginary axis from $\lambda_{\text{EP}}$  to $\pm \i \infty$ (see Fig.~\ref{subfig:FCI_cplx}).
 On the real $\lambda$ axis, these EPs lead to the singlet avoided crossing at $\lambda = \Re(\lambda_{\text{EP}})$.
 The ``shape'' of this avoided crossing is related to the magnitude of $\Im(\lambda_{\text{EP}})$, with smaller values giving a ``sharper'' interaction.
-}
 
-\hugh{
 Remarkably, the existence of these square-root singularities means that following a complex contour around an EP in the complex $\lambda$ plane will interconvert the closed-shell ground and excited states.
 This behaviour can be seen by expanding the radicand in Eq.~\eqref{eq:singletE} as a Taylor series around $\lambda_{\text{EP}}$ to give
 \begin{equation}
@@ -259,7 +253,7 @@ Parametrising the complex contour as $\lambda(\theta) = \lambda_{\text{EP}} + R 
 \begin{equation}
 E_{\pm} \qty(\theta) \approx E_{\text{EP}} \pm \sqrt{32t^2 \lambda_{\text{EP}} R}\, \exp(\i \theta/2)
 \end{equation}
-such that}
+such that
 \begin{align}
 	E_{\pm}(2\pi) & = E_{\mp}(0),
 	&
@@ -394,13 +388,28 @@ is the HF mean-field potential with
 \begin{subequations}
 \begin{gather}
 	\label{eq:CoulOp}
-	J_i(\vb{x})\phi_p(\vb{x})=\qty[\int\dd\vb{x}'\phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_i(\vb{x}') ] \phi_p(\vb{x})
+	J_i(\vb{x})\phi_p(\vb{x})=\qty[\int \phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_i(\vb{x}') \dd\vb{x}' ] \phi_p(\vb{x})
 	\\
 	\label{eq:ExcOp}
-	K_i(\vb{x})\phi_p(\vb{x})=\qty[\int\dd\vb{x}'\phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_p(\vb{x}') ] \phi_i(\vb{x})
+	K_i(\vb{x})\phi_p(\vb{x})=\qty[\int \phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_p(\vb{x}') \dd\vb{x}'] \phi_i(\vb{x})
 \end{gather}
 \end{subequations}
 being the Coulomb and exchange operators (respectively) in the spin-orbital basis. \cite{SzaboBook}
+The HF energy is then defined as 
+\begin{equation}
+\label{eq:E_HF}
+	E_\text{HF} = \sum_i h_i + \frac{1}{2} \sum_{ij} \qty( J_{ij} - K_{ij} )
+\end{equation}
+with 
+\begin{subequations}
+\begin{gather}
+	h_i = \int \phi_i(\vb{x}) h(\vb{x})  \phi_i(\vb{x}) \dd\vb{x}
+	\\
+	J_{ij} = \int \phi_i(\vb{x})  J_j(\vb{x}) \phi_i(\vb{x}) \dd\vb{x}
+	\\
+	K_{ij} = \int \phi_i(\vb{x})  K_j(\vb{x}) \phi_i(\vb{x}) \dd\vb{x}
+\end{gather}
+\end{subequations}
 If the spatial part of the spin-orbitals are restricted to be the same for spin-up and spin-down electrons, one talks about restricted HF (RHF) theory, whereas if one does not enforce this constrain it leads to the so-called unrestricted HF (UHF) theory. 
 From hereon, $i$ and $j$ are occupied orbitals, $a$ and $b$ are unoccupied (or virtual) orbitals, while $p$, $q$, $r$, and $s$ indicate arbitrary orbitals.
 
@@ -409,17 +418,17 @@ Rather than solving Eq.~\eqref{eq:SchrEq}, HF theory uses the variational princi
 	\hH^{\text{HF}} = \sum_{i} f(\vb{x}_i).
 \end{equation}
 
-Coming back to the Hubbard dimer, the HF energy is
+Coming back to the Hubbard dimer, the HF energy is [see Eq.~\eqref{eq:E_HF}]
 \begin{equation}
 	E_\text{HF} = -t \qty[ \sin \theta_\alpha  + \sin \theta_\beta ] + \frac{U}{2} \qty[ 1 + \cos \theta_\alpha \cos \theta_\beta ]
 \end{equation}
 where 
 \begin{align}
-	\psi_{1\sigma} & = \cos(\frac{\theta_\sigma}{2}) s_1 - \sin(\frac{\theta_\sigma}{2})s_2
+	\psi_{1\sigma} & = \cos(\frac{\theta_\sigma}{2}) \Lsi - \sin(\frac{\theta_\sigma}{2}) \Rsi
 	\\
-	\psi_{2\sigma} & = \sin(\frac{\theta_\sigma}{2}) s_1 + \cos(\frac{\theta_\sigma}{2})s_2 
+	\psi_{2\sigma} & = \sin(\frac{\theta_\sigma}{2}) \Lsi + \cos(\frac{\theta_\sigma}{2}) \Rsi
 \end{align}
-
+are the one-electron molecule orbitals for the spin-$\sigma$ electrons and the angles which makes the energy stationnary, \ie, $\pdv*{E_\text{HF}}{\theta_\sigma} = 0$ are given by
 \begin{align}
 	\theta_\alpha & = \arctan (-\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U}) 
 	\\
