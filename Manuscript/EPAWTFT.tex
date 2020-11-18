@@ -577,6 +577,13 @@ In order to better understand the behavior of the MP series and how it is connec
 For small systems, one can access the whole terms of the series using full configuration interaction (FCI). 
 If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI space, one gets the exact energies (in this finite Hilbert space) and the Taylor expansion with respect to $\lambda$ allows to access the MP perturbation series at any order.
 
+Obviously, although practically convenient for electronic structure calculations, the MP partitioning is not the only possibility, and alternative partitioning have been proposed in the literature:
+i) the Epstein-Nesbet (EN) partitioning which consists in taking the diagonal elements of $\hH$ as the zeroth-order Hamiltonian. \cite{Nesbet_1955,Epstein_1926} 
+Hence, the off-diagonal elements of $\hH$ are the perturbation operator,
+ii) the weak correlation partitioning in which the one-electron part is consider as the unperturbed Hamiltonian $\hH^{(0)}$ and the two-electron part is the perturbation operator $\hV$, and 
+iii) the strong coupling partitioning where the two operators are inverted compared to the weak correlation partitioning. \cite{Seidl_2018}
+
+
 Let us illustrate the behaviour of the RMP and UMP series on the Hubbard dimer (see Fig.~\ref{fig:RMP}).
 Within the RMP partition technique, we have 
 \begin{equation}
@@ -601,11 +608,38 @@ Equation \eqref{eq:E0MP} can be Taylor expanded in terms of $\lambda$ to obtain 
 \end{equation}
 with 
 \begin{equation}
-	E_{-}(\lambda) = \sum_{k=0}^\infty E_\text{MP}^{(k)} \lambda^k.
+	E_{\text{MP}n}(\lambda) = \sum_{k=0}^n E_\text{MP}^{(k)} \lambda^k.
 \end{equation}
-We illustrate this by plotting the energy expansions at orders of $\lambda$ just below and above the radius of convergence in Fig.~\ref{fig:RMP}.
+The convergence of the RMP series as a function of the perturbation order $n$ for the Hubbard dimer at $U/t = 3.5$ (where $r_c > 1$) and $4.5$ (where $r_c < 1$) is illustrated in Fig.~\ref{subfig:RMP_cvg}.
+The Riemann surfaces associated with the exact energy of the RMP Hamiltonian \eqref{eq:H_RMP} are also represented for these two values of $U/t$ (see Figs.~\ref{subfig:RMP_3.5} and \ref{subfig:RMP_4.5}).
+From these, one \titou{clearly?} sees that the EP is outside (inside) the (pink) cylinder of unit radius for $U/t = 3.5$ ($4.5$),
+and the centre graph of Fig.~\ref{fig:RMP} evidences the convergent (divergent) nature of the RMP series.
+Interestingly, one can show that the convergent and divergent series start to differ at fourth order.
 
-At the UMP level now, we have
+%%% FIG 2 %%%
+\begin{figure*}
+	\begin{subfigure}{0.32\textwidth}
+	\includegraphics[height=0.75\textwidth]{fig2a}	
+		\subcaption{\label{subfig:RMP_3.5} $U/t = 3.5$}
+    \end{subfigure}
+    %
+    \begin{subfigure}{0.32\textwidth}
+	\includegraphics[height=0.75\textwidth]{fig2b}
+		\subcaption{\label{subfig:RMP_cvg}}
+    \end{subfigure}
+    %
+    \begin{subfigure}{0.32\textwidth}
+	\includegraphics[height=0.75\textwidth]{fig2c}	
+		\subcaption{\label{subfig:RMP_4.5} $U/t = 4.5$}
+    \end{subfigure}
+	\caption{
+	Convergence of the RMP series as a function of the perturbation order $n$ for the Hubbard dimer at $U/t = 3.5$ (where $r_c > 1$) and $4.5$ (where $r_c < 1$).
+	The Riemann surfaces associated with the exact energy of the RMP Hamiltonian \eqref{eq:H_RMP} are also represented for these two values of $U/t$. 
+	\label{fig:RMP}}
+\end{figure*}
+
+The behaviour of the UMP series is more subtle as the spin-contamination comes into play and introduces additional coupling between electronic states.
+The UMP partitioning yield the following $\lambda$-dependent Hamiltonian:
 \begin{widetext}
 \begin{equation}
 \label{eq:H_UMP}
@@ -619,27 +653,45 @@ At the UMP level now, we have
 \end{equation}
 \end{widetext}
 A closed-form expression for the ground-state energy can be obtained but it is cumbersome, so we eschew reporting its expression.
-The convergence of the UMP as a function of the ratio $U/t$ is depicted in Fig.~\ref{fig:UMP}.
+The radius of convergence of the UMP series can obtained numerically as a function of $U/t$ and is depicted in Fig.~\ref{eq:UMP_rc}.
+Note that in the case of UMP, there are now two pairs of EPs as the open-shell singlet now couples strongly with both the ground and doubly-excited states.
+This has the clear tendency to move away from the origin the EP dictating the convergence of the ground-state energy, while deteriorating the convergence properties of the excited-state energy.
+ 
+The convergence of the UMP as a function of the ratio $U/t$ is shown in Fig.~\ref{fig:UMP} for two specific values: the first ($U = 3t$) is well within the RMP convergence region, while the second ($U = 7t$) falls outside.
+
+For $U = 3t$ (see Fig.~\ref{subfig:UMP_3}), the ground-state energy is remarkably flat since the UHF energy is a pretty good estimate. 
+Most of the UMP expansion is actually correcting the spin-contamination in the wave function.
+
+For $U = 7t$ (see Fig.~\ref{subfig:UMP_7}), we are well towards the strong correlation regime, where we see that the UMP series is slowly convergent while RMP diverges.
+We see a single EP on the ground-state surface which falls just outside (maybe on?) the radius of convergence. 
+An EP this close to the radius of convergence gives an increasingly slow convergence of the UMP series, but it will converge eventually!
+
+On the other hand, there is an exceptional point on the excited energy surface that is well within the radius of convergence.
+We can therefore say that the use of a symmetry-broken UHF wave function can retain a convergent ground-state perturbation series
+at the expense of a divergent excited-state perturbation series. (Note: the orbitals are not optimised for excited-state here).
+In contrast, the RMP expansion was always convergent for the open-shell excited state (which was a single CSF) while
+the radius of convergence for the doubly-excited state was identical to the ground-state as this was the only exceptional point.
 
 %%% FIG 3 %%%
 \begin{figure*}
-    \centering
-	\includegraphics[height=0.23\textwidth]{fig3a}	
-	\hspace{0.05\textwidth}
-	\includegraphics[height=0.23\textwidth]{fig3b}
-	\hspace{0.05\textwidth}
-	\includegraphics[height=0.23\textwidth]{fig3c}	
-	\caption{
-	Convergence of the URMP series as a function of the perturbation order $n$ energies for the Hubbard dimer at $U/t = 3$ and $7$.
+	\begin{subfigure}{0.32\textwidth}
+	\includegraphics[height=0.75\textwidth]{fig3c}	
+		\subcaption{\label{subfig:UMP_3} $U/t = 3$}
+    \end{subfigure}
+    %
+    \begin{subfigure}{0.32\textwidth}
+	\includegraphics[height=0.75\textwidth]{fig3b}
+		\subcaption{\label{subfig:UMP_cvg}}
+    \end{subfigure}
+    %
+    \begin{subfigure}{0.32\textwidth}
+	\includegraphics[height=0.75\textwidth]{fig3a}	
+		\subcaption{\label{subfig:UMP_7} $U/t = 7$}
+    \end{subfigure}	\caption{
+	Convergence of the UMP series as a function of the perturbation order $n$ for the Hubbard dimer at $U/t = 3$ and $7$.
 	The Riemann surfaces of the FCI energies are also represented for these two values of $U/t$. 
 	\label{fig:UMP}}
 \end{figure*}
-
-Obviously, although practically convenient for electronic structure calculations, the MP partitioning is not the only possibility, and alternative partitioning have been proposed in the literature:
-i) the Epstein-Nesbet (EN) partitioning which consists in taking the diagonal elements of $\hH$ as the zeroth-order Hamiltonian. \cite{Nesbet_1955,Epstein_1926} 
-Hence, the off-diagonal elements of $\hH$ are the perturbation operator,
-ii) the weak correlation partitioning in which the one-electron part is consider as the unperturbed Hamiltonian $\hH^{(0)}$ and the two-electron part is the perturbation operator $\hV$, and 
-iii) the strong coupling partitioning where the two operators are inverted compared to the weak correlation partitioning. \cite{Seidl_2018}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -689,19 +741,6 @@ which states that the value of the energy can be computed at $z=a$ inside the co
 Their method consists in refining self-consistently the values of $E(z)$ computed on a contour going through the physical point at $z = 1$ and encloses points of the ``trusted'' region (where the MP series is convergent). The shape of this contour is arbitrary but no singularities are allowed inside the contour to ensure $E(z)$ is analytic. 
 When the values of $E(z)$ on the so-called contour are converged, Cauchy's integrals formula \eqref{eq:Cauchy} is invoked to compute the values at $E(z=1)$ which corresponds to the final estimate of the FCI energy.
 The authors illustrate this protocol on the dissociation curve of \ce{LiH} and the stretched water molecule showing encouraging results. \cite{Mihalka_2019} 
-
-%%% FIG 2 %%%
-\begin{figure*}
-	\includegraphics[height=0.25\textwidth]{fig2a}	
-	\hspace{0.05\textwidth}
-	\includegraphics[height=0.25\textwidth]{fig2b}
-	\hspace{0.05\textwidth}
-	\includegraphics[height=0.25\textwidth]{fig2c}	
-	\caption{
-	Convergence of the RMP series as a function of the perturbation order $n$ energies for the Hubbard dimer at $U/t = 3.5$ (before the radius of convergence) and $4.5$ (after the radius of convergence).
-	The Riemann surfaces of the FCI energies are also represented for these two values of $U/t$. 
-	\label{fig:RMP}}
-\end{figure*}
 
 %==========================================%
 \subsection{Insights from a two-state model}
