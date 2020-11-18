@@ -54,7 +54,8 @@
 \newcommand{\laEP}{\lambda_\text{EP}}
 
 
-\newcommand{\Ne}{N}
+\newcommand{\Ne}{N} % Number of electrons
+\newcommand{\Nn}{M} % Number of nuclei
 \newcommand{\hI}{\Hat{I}}
 \newcommand{\hH}{\Hat{H}}
 \newcommand{\hS}{\Hat{S}}
@@ -95,8 +96,15 @@
 % Center tabularx columns
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 
-% Imaginary constant
-\renewcommand{\i}{\mathrm{i}}
+% HF rotation angles
+\newcommand{\ta}{\theta_{\alpha}}
+\newcommand{\tb}{\theta_{\beta}}
+
+% Some constants
+\renewcommand{\i}{\mathrm{i}} % Imaginary unit
+\newcommand{\e}{\mathrm{e}} % Euler number
+\newcommand{\rc}{r_{\text{c}}}
+
 % Blackboard bold
 \newcommand{\bbR}{\mathbb{R}}
 \newcommand{\bbC}{\mathbb{C}}
@@ -195,14 +203,16 @@ More importantly here, although EPs usually lie off the real axis, these singula
 \end{figure*}
 
 To illustrate the concepts discussed throughout this article, we will consider the symmetric Hubbard dimer at half filling, \ie\ with two opposite-spin fermions.
-Simple systems that are analytically solvable are of great importance in theoretical chemistry and physics as they can be employed to illustrate concepts and test new methods as the mathematics are easier than in realistic systems (such as molecules or solids) but they retain much of the key physics. 
+Analytically solvable model systems are essential in theoretical chemistry and physics as the simplicity of the
+mathematics compared to realistic systems (e.g.\ atoms and molecules) readily allows concepts to be illustrated and new methods to be tested wile retaining much 
+of the key physics.
 
-Using the (localised) site basis, the (singlet) Hilbert space of the Hubbard dimer comprises the four configurations
+Using the (localised) site basis, the Hilbert space of the Hubbard dimer comprises the four configurations
 \begin{align}
 & \ket{\Lup \Ldown} &  & \ket{\Lup\Rdown} &  & \ket{\Rup\Ldown} &  & \ket{\Rup\Rdown}
 \end{align}
 where $\Lsi$ ($\Rsi$) denotes an electron with spin $\sigma$ on the left (right) site.
-The exact [or full configuration interaction (FCI)] Hamiltonian is then 
+The exact, or full configuration interaction (FCI), Hamiltonian is then 
 \begin{equation}
 \label{eq:H_FCI}
 	\bH = 
@@ -215,10 +225,10 @@ The exact [or full configuration interaction (FCI)] Hamiltonian is then
 \end{equation}
 where $t$ is the hopping parameter and $U$ is the on-site Coulomb repulsion.
 We refer the interested reader to Refs.~\onlinecite{Carrascal_2015,Carrascal_2018} for more details about this system.
-The parameter $U$ dictates the correlation regime. 
-In the weak correlation regime (\ie, small $U$), the kinetic energy dominates and the electrons are delocalised over both sites.
+The parameter $U$ controls the strength of the electron correlation.
+In the weak correlation regime (small $U$), the kinetic energy dominates and the electrons are delocalised over both sites.
 In the large-$U$ (or strong correlation) regime, the electron repulsion term drives the physics and the electrons localise on opposite sites to minimise their Coulomb repulsion. 
-This phenomenon is sometimes referred to as a Wigner crystallisation. \cite{Wigner_1934}
+This phenomenon is often referred to as a Wigner crystallisation. \cite{Wigner_1934}
 
 To illustrate the formation of an EP, we scale the off-diagonal coupling strength by introducing the complex parameter $\lambda$ through the transformation $t\rightarrow \lambda t$.
 When $\lambda$ is real, the Hamiltonian~\eqref{eq:H_FCI} is Hermitian with the distinct (real-valued) (eigen)energies
@@ -273,76 +283,134 @@ Additionally, the wave functions pick up a geometric phase in the process, and f
 \subsection{Rayleigh-Schr\"odinger perturbation theory}
 %============================================================%
 
-Within the Born-Oppenheimer approximation, 
+Within the Born-Oppenheimer approximation, the exact molecular Hamiltonian with $\Ne$ electrons and 
+$\Nn$ (clamped) nuclei is defined as
 \begin{equation}\label{eq:ExactHamiltonian}
-    \hH = - \frac{1}{2} \sum_{i}^{n} \grad_i^2 - \sum_{i}^{n} \sum_{A}^{N} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}} + \sum_{i<j}^{n}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}}
+    \hH = 
+    - \frac{1}{2} \sum_{i}^{\Ne} \grad_i^2 
+    - \sum_{i}^{\Ne} \sum_{A}^{\Nn} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}} 
+    + \sum_{i<j}^{\Ne}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}},
 \end{equation}
-is the exact electronic Hamiltonian for a chemical system with $N$ electrons (where $\vb{r}_i$ is the position of the $i$th electron) and $M$ (fixed) nuclei (where $\vb{R}_A$ and $Z_A$ are the position and the charge of the $A$th nucleus respectively). 
-The first term is the kinetic energy of the electrons, the two following terms account respectively for the electron-nucleus attraction and the electron-electron repulsion.
-Note that we use atomic units throughout unless otherwise stated.
+where $\vb{r}_i$ defines the position of the $i$-th electron, and $\vb{R}_{A}$ and $Z_{A}$ are the position
+and charge of the $A$-th nucleus respectively.
+The first term represents the kinetic energy of the electrons, while 
+the two following terms account for the electron-nucleus attraction and the electron-electron repulsion.
+Atomic units are used unless otherwise stated.
 
-Within (time-independent) Rayleigh-Schr\"odinger perturbation theory, the Schr\"odinger equation 
-\begin{equation} \label{eq:SchrEq}
-	\hH \Psi = E \Psi
+% EXACT SCHRODINGER EQUATION
+The exact many-electron wave function $\Psi$ corresponds to the solution of the (time-independent)
+Schr\"{o}dinger equation
+\begin{equation} 
+	\hH\Psi = E \Psi,
+    \label{eq:SchrEq}
 \end{equation} 
+with the eigenvalue $E$ providing the exact energy.
+Exact solutions to Eq.~\eqref{eq:SchrEq} are only possible in the simplest of systems, such as 
+the one-electron hydrogen atom. 
+In practice, one of the most common approximations involves
+a perturbative expansion of the energy.
+% SUMMARY OF RS-PT
+Within Rayleigh-Schr\"odinger perturbation theory, the time-independent Schr\"odinger equation 
 is recast as 
-\begin{equation} \label{eq:SchrEq-PT}
-	\hH(\lambda) \Psi(\lambda) = (\hH^{(0)} + \lambda \hV ) \Psi(\lambda) = E(\lambda) \Psi(\lambda),
+\begin{equation} 
+	\hH(\lambda) \Psi(\lambda) 
+    = \qty(\hH^{(0)} + \lambda \hV ) \Psi(\lambda) 
+    = E(\lambda) \Psi(\lambda),
+    \label{eq:SchrEq-PT}
 \end{equation}
-where $\hH^{(0)}$ is the zeroth-order Hamiltonian and $\hV = \hH - \hH^{(0)}$ is the so-called perturbation.
-The ``physical'' system of interest is recovered by setting the coupling parameter $\lambda$ to unity.
-This decomposition is obviously non-unique and motivated by several factors as discussed below. \cite{Mihalka_2017b}
+where $\hH^{(0)}$ is a zeroth-order Hamiltonian and $\hV = \hH - \hH^{(0)}$ represents the perturbation operator.
+Expanding the wave function and energy as power series in $\lambda$ as 
+\begin{subequations}
+\begin{align}
+    \Psi(\lambda) &= \sum_{k=0}^{\infty} \lambda^{k}\,\Psi^{(k)} 
+    \label{eq:psi_expansion}
+    \\
+    E(\lambda) &= \sum_{k=0}^{\infty} \lambda^{k}\,E^{(k)}
+    \label{eq:E_expansion}
+\end{align}
+\end{subequations}
+and solving the corresponding perturbation equations up to a given order $k$ then 
+yields approximate solutions to Eq.~\eqref{eq:SchrEq}.
 
-Accordingly to Eq.~\eqref{eq:SchrEq-PT}, the energy can then be written as a power series of $\lambda$
-\begin{equation} \label{eq:Elambda}
-	E(\lambda) = \sum_{k=0}^\infty \lambda^k E^{(k)}.
-\end{equation}
-However, it is not guaranteed that the series \eqref{eq:Elambda} has a radius of convergence $\abs{\lambda_0} < 1$. 
-In other words, the series might well be divergent for the physical system at $\lambda = 1$. 
-One can prove that the actual value of the radius of convergence $\abs{\lambda_0}$ can be obtained by looking for the singularities of $E(\lambda)$ in the complex $\lambda$ plane.
-This is due to the following theorem: \cite{Goodson_2012}
+% MATHEMATICAL REPRESENTATION
+Mathematically, Eq.~\eqref{eq:E_expansion} corresponds to a Taylor series expansion of the exact energy
+around the reference system $\lambda = 0$.
+The energy of the target ``physical'' system is then recovered at the point $\lambda = 1$.
+However, like all series expansions, the Eq.~\eqref{eq:E_expansion} has a radius of convergence $\rc$. 
+When $\rc < 1$, the Rayleigh--Sch\"{r}odinger expansion will diverge
+for the physical system.
+The value of $\rc$ can vary significantly between different systems and strongly depends on the particular decomposition
+of the reference and perturbation Hamiltonians in Eq.~\eqref{eq:SchrEq-PT}.\cite{Mihalka_2017b}
+
+% LAMBDA IN THE COMPLEX PLANE
+From complex-analysis, the radius of convergence for the energy can be obtained by looking for the 
+singularities of $E(\lambda)$ in the complex $\lambda$ plane.
+This property arises from the following theorem: \cite{Goodson_2012}
 \begin{quote}
-	\textit{``The Taylor series about a point $z_0$ of a function over the complex $z$ plane will converge at a value $z_1$ if the function is non-singular at all values of $z$ in the circular region centred at $z_0$ with radius $\abs{z_1-z_0}$. If the function has a singular point $z_s$ such that $\abs{z_s-z_0} < \abs{z_1-z_0}$, then the series will diverge when evaluated at $z_1$.''}
+\it
+``The Taylor series about a point $z_0$ of a function over the complex $z$ plane will converge at a value $z_1$ 
+if the function is non-singular at all values of $z$ in the circular region centred at $z_0$ with radius $\abs{z_1-z_0}$. 
+If the function has a singular point $z_s$ such that $\abs{z_s-z_0} < \abs{z_1-z_0}$, 
+then the series will diverge when evaluated at $z_1$.''
 \end{quote}
-This theorem means that the radius of convergence of the perturbation series is equal to the distance to the origin of the closest singularity of $E(\lambda)$. To illustrate this result we consider the simple function \cite{BenderBook}
+As a result, the radius of convergence for a function is equal to the distance from the origin of the closest singularity
+in the complex plane.
+For example, the simple function \cite{BenderBook}
 \begin{equation} \label{eq:DivExample}
 	f(x)=\frac{1}{1+x^4}.
 \end{equation}
-This function is smooth for $x \in \mathbb{R}$ and infinitely differentiable in $\mathbb{R}$. One would expect that the Taylor series of such a function would be convergent $\forall x \in \mathbb{R}$. However this series is divergent for $x \ge 1$. This is because the function has four singularities in the complex plane ($x = e^{i\pi/4}$, $e^{-i\pi/4}$, $e^{i3\pi/4}$, and $e^{-i3\pi/4}$) with a modulus equal to $1$. This simple yet powerful example emphasizes the importance of the singularities in the complex plane to understand the convergence properties on the real axis.
+is smooth and infinitely differentiable for $x \in \mathbb{R}$, and one might expect that its Taylor series expansion would 
+converge in this domain.
+However, this series diverges $x \ge 1$.
+This divergence occurs because $f(x)$ has four singularities in the complex 
+($\e^{\i\pi/4}$, $\e^{-\i\pi/4}$, $\e^{\i3\pi/4}$, and $\e^{-\i3\pi/4}$) with a modulus equal to $1$, demonstrating
+that complex singularities are essential to fully understand the series convergence on the real axis.
+
+The radius of convergence of the perturbation series is therefore dictated by the magnitude $|\lambda_0|$ of the
+singularity in $E(\lambda)$ that is closest to the origin.
+\hugh{Like the exact system in Section~\ref{sec:example}, the perturbation energy $E(\lambda)$ represents
+a ``one-to-many'' function with the output elements representing an approximation to both the ground and excited states.
+The most common singularities on $E(\lambda)$ therefore correspond to non-analytic EPs in the complex 
+$\lambda$ plane where two states become degenerate.
+We will demonstrate how the choice of reference Hamiltonian controls the position of these EPs, and 
+ultimately determines the convergence properties of the perturbation series.
+}
 
 %============================================================%
 \subsection{The Hartree-Fock Hamiltonian}
 %============================================================%
 
-In the Hartree-Fock (HF) approximation, the many-electron wave function is approximated as a single Slater determinant $\Psi^{\text{HF}}(\vb{x}_1,\ldots,\vb{x}_N)$ [where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates] defined as an antisymmetric combination of $N$ (real-valued) one-electron spin-orbitals $\phi_p(\vb{x})$, which are, by definition, eigenfunctions of the one-electron Fock operator 
+% SUMMARY OF HF
+In the Hartree-Fock (HF) approximation, the many-electron wave function is approximated as a single Slater determinant $\Psi^{\text{HF}}(\vb{x}_1,\ldots,\vb{x}_N)$, where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates.
+This Slater determinant is defined as an antisymmetric combination of $\Ne$ (real-valued) occupied one-electron spin-orbitals $\phi_p(\vb{x})$, which are, by definition, eigenfunctions of the one-electron Fock operator 
 \begin{equation}\label{eq:FockOp}
-	\Hat{f}(\vb{x}) \phi_p(\vb{x}) = [ \Hat{h}(\vb{x}) + \Hat{v}_\text{HF}(\vb{x}) ] \phi_p(\vb{x}) = \epsilon_p \phi_p(\vb{x}),
+    \Hat{f}(\vb{x}) \phi_p(\vb{x}) = \qty( \Hat{h}(\vb{x}) + \Hat{v}_\text{HF}(\vb{x}) ) \phi_p(\vb{x}) = \epsilon_p \phi_p(\vb{x}).
 \end{equation}
-where 
+Here the core Hamiltonian is
 \begin{equation}
 	\Hat{h}(\vb{x}) = -\frac{\grad^2}{2} + \sum_{A}^{M} \frac{Z_A}{\abs{\vb{r}-\vb{R}_A}}
 \end{equation}
-is the core Hamiltonian and 
+and
 \begin{equation}
-	\Hat{v}_\text{HF}(\vb{x}) = \sum_i^{N} \qty[ \Hat{J}_i(\vb{x}) - \Hat{K}_i(\vb{x}) ]
+    \Hat{v}_\text{HF}(\vb{x}) = \sum_i^{N} \qty( \Hat{J}_i(\vb{x}) - \Hat{K}_i(\vb{x}) )
 \end{equation}
-is the HF mean-field potential with 
+is the HF mean-field electron-electron potential with 
 \begin{subequations}
 \begin{gather}
 	\label{eq:CoulOp}
-	\Hat{J}_i(\vb{x})\phi_j(\vb{x})=\qty[\int \phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_i(\vb{x}') \dd\vb{x}' ] \phi_j(\vb{x}),
+    \Hat{J}_i(\vb{x})\phi_j(\vb{x})=\qty(\int \phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_i(\vb{x}') \dd\vb{x}' ) \phi_j(\vb{x}),
 	\\
 	\label{eq:ExcOp}
-	\Hat{K}_i(\vb{x})\phi_j(\vb{x})=\qty[\int \phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_j(\vb{x}') \dd\vb{x}'] \phi_i(\vb{x}),
+\Hat{K}_i(\vb{x})\phi_j(\vb{x})=\qty(\int \phi_i(\vb{x}')\frac{1}{\abs{\vb{r} - \vb{r}'}}\phi_j(\vb{x}') \dd\vb{x}')\phi_i(\vb{x}),
 \end{gather}
 \end{subequations}
-being the Coulomb and exchange operators (respectively) in the spin-orbital basis. \cite{SzaboBook}
+defining the Coulomb and exchange operators (respectively) in the spin-orbital basis.\cite{SzaboBook}
 The HF energy is then defined as 
 \begin{equation}
 \label{eq:E_HF}
 	E_\text{HF} = \sum_i^{N} h_i + \frac{1}{2} \sum_{ij}^{N} \qty( J_{ij} - K_{ij} ),
 \end{equation}
-with
+with the corresponding matrix elements
 \begin{align}
 	h_i & = \mel{\phi_i}{\Hat{h}}{\phi_i},
 	&
@@ -350,13 +418,24 @@ with
 	&
 	K_{ij} & = \mel{\phi_i}{\Hat{K}_j}{\phi_i}.
 \end{align}
-If the spatial part of the spin-orbitals are restricted to be the same for spin-up and spin-down electrons, one talks about restricted HF (RHF) theory, whereas if one does not enforce this constrain it leads to the so-called unrestricted HF (UHF) theory. 
-From hereon, $i$ and $j$ are occupied orbitals, $a$ and $b$ are unoccupied (or virtual) orbitals, while $p$, $q$, $r$, and $s$ indicate arbitrary orbitals.
-
-Rather than solving Eq.~\eqref{eq:SchrEq}, HF theory uses the variational principle to find an approximation of $\Psi$ as a single Slater determinant. Hence a Slater determinant is not an eigenfunction of the exact Hamiltonian $\hH$. However, it is, by definition, an eigenfunction of the so-called (approximated) HF many-electron Hamiltonian defined as the sum of the one-electron Fock operators
+The optimal HF wave function is identified by using the variational principle to minimise the HF energy.
+For any system with more than one electron, the resulting Slater determinant is not an eigenfunction of the exact Hamiltonian $\hH$. 
+However, it is by definition an eigenfunction of the approximate many-electron HF Hamiltonian constructed 
+from the one-electron Fock operators as
 \begin{equation}\label{eq:HFHamiltonian}
 	\hH_{\text{HF}} = \sum_{i} f(\vb{x}_i).
 \end{equation}
+From hereon, $i$ and $j$ denote occupied orbitals, $a$ and $b$ denote unoccupied (or virtual) orbitals, while $p$, $q$, $r$, and $s$ denote arbitrary orbitals.
+
+% BRIEF FLAVOURS OF HF
+\hugh{In the most flexible variant of real HF theory (generalised HF) the one-electron orbitals can be complex-valued
+and contain a mixture of spin-up and spin-down components.
+However, the application of HF with some level of constraint on the orbital structure is far more common.
+Forcing the spatial part of the orbitals to be the same for spin-up and spin-down electrons leads to restricted HF (RHF) theory, while allowing different for different spins leads to the so-called unrestricted HF (UHF) approach.
+The advantage of the UHF approximation is its ability to correctly describe strongly correlated systems, 
+such as the dissociation of the hydrogen dimer.\cite{Coulson_1949}
+However, by allowing different orbitals for different spins, the UHF is no longer required to be an eigenfunction of 
+the total spin $\hat{\mathcal{S}}^2$ operator, leading to so-called ``spin-contamination'' in the wave function.}
 
 %
 %The spatial part of the RHF wave function is then
@@ -367,48 +446,54 @@ Rather than solving Eq.~\eqref{eq:SchrEq}, HF theory uses the variational princi
 %Because $Y_0(\theta) = 1/\sqrt{4\pi}$, it is clear that the RHF wave function yields a uniform one-electron density.
 %
 
-
-
-Coming back to the Hubbard dimer, the HF energy is [see Eq.~\eqref{eq:E_HF}]
+Returning to the Hubbard dimer, the UHF energy can be parametrised in terms of two rotation angles $\ta$ and $\tb$ as
 \begin{equation}
-	E_\text{HF} = -t \qty[ \sin \theta_\alpha  + \sin \theta_\beta ] + \frac{U}{2} \qty[ 1 + \cos \theta_\alpha \cos \theta_\beta ],
+E_\text{HF}(\ta, \tb) = -t \qty( \sin \ta + \sin \tb ) + \frac{U}{2} \qty( 1 + \cos \ta \cos \tb ),
 \end{equation}
-where 
+where we have introduced bonding $\mathcal{B}^{\sigma}$ and anti-bonding $\mathcal{A}^{\sigma}$ molecular orbitals for 
+the spin-$\sigma$ electrons as
 \begin{align}
-	\mathcal{B}^{\sigma} & = \cos(\frac{\theta_\sigma}{2}) \Lsi + \sin(\frac{\theta_\sigma}{2}) \Rsi,
+    \mathcal{B}^{\sigma} & = \hphantom{-} \cos(\frac{\theta_\sigma}{2}) \Lsi + \sin(\frac{\theta_\sigma}{2}) \Rsi,
 	\\
 	\mathcal{A}^{\sigma} & = - \sin(\frac{\theta_\sigma}{2}) \Lsi + \cos(\frac{\theta_\sigma}{2}) \Rsi
 \end{align}
-are the bonding $\mathcal{B}^{\sigma}$ and anti-bonding $\mathcal{A}^{\sigma}$ molecular orbitals for the spin-$\sigma$ electrons. 
-The angles which minimises the HF energy, \ie, $\pdv*{E_\text{HF}}{\theta_\sigma} = 0$, are 
+In the weak correlation regime $0 \le U \le 2t$, the angles which minimise the HF energy, 
+\ie, $\pdv*{E_\text{HF}}{\theta_\sigma} = 0$, are 
 \begin{equation}
-	\theta_\text{RHF}^\alpha = \theta_\text{RHF}^\beta = \pi/4,
+	\ta^\text{RHF} = \tb^\text{RHF} = \pi/4,
 \end{equation}
-for $0 \le U \le 4t$, yielding
+giving the symmetry-pure molecular orbitals
 \begin{align}
 	\mathcal{B}_\text{RHF}^{\sigma} & = \frac{\Lsi + \Rsi}{\sqrt{2}},
 	&
 	\mathcal{A}_\text{RHF}^{\sigma} & = \frac{\Lsi - \Rsi}{\sqrt{2}},
 \end{align}
-and the following RHF ground-state energy:
+and the ground-state RHF energy
 \begin{equation}
 	E_\text{RHF} =  -2t + \frac{U}{2}
 \end{equation}
-In the RHF formalism, the two electrons are restricted to ``live'' in the same spatial orbital.
-The RHF wave function cannot model properly the physics of the system at large $U$ because the spatial orbitals are restricted to be the same, and, \textit{a fortiori}, it cannot represent two electrons on opposite sites. 
+However, in the strongly correlated regime (large $U$), the closed-shell restriction on the orbitals prevents RHF from 
+correctly modelling the physics of the system with the two electrons on opposing sites.
 
-Within the HF approximation, at the critical value of $U = 4t$, famously known as the Coulson-Fischer point, \cite{Coulson_1949} a symmetry-broken UHF solution appears with a lower energy than the RHF one.
-Indeed, for $U \ge 4t$, we have
+As the on-site repulsion is increased from 0, the HF approximation reaches a critical value at $U=2t$ where a symmetry-broken 
+UHF solution appears with a lower energy than the RHF one.
+This critical point is analogous to the infamous Coulson--Fischer point identified in the hydrogen dimer.\cite{Coulson_1949}
+For $U \ge 2t$, the optimal orbital rotation angles for the UHF orbitals become
 \begin{align}
-	\theta_\text{UHF}^\alpha & = \titou{\arctan (-\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U})},
+	\ta^\text{UHF} & = \arctan (-\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U}),
+    \label{eq:ta_uhf}
 	\\
-	\theta_\text{UHF}^\beta & = \titou{\arctan (+\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U})},
+	\tb^\text{UHF} & = \arctan (+\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U}),
+    \label{eq:tb_uhf}
 \end{align}
-and the corresponding UHF ground-state energy is
+with the corresponding UHF ground-state energy
 \begin{equation}
 	E_\text{UHF} = - \frac{2t^2}{U}.
 \end{equation}
-Note that, for $U \ge 4t$, the RHF wave function remains a genuine solution of the HF equations but corresponds to a saddle point, not a minimum.
+Time-reversal symmetry dictates that this UHF wave function must be degenerate with its spin-flipped pair, obtained 
+by swapping $\ta^{\text{UHF}}$ and $\tb^{\text{UHF}}$ in Eqs.~\eqref{eq:ta_uhf} and \eqref{eq:tb_uhf}.
+Note that the RHF wave function remains a genuine solution of the HF equations for $U \ge 2t$, but corresponds to a saddle point 
+of the HF energy rather than a minimum.
 
 %=====================================================%
 \subsection{M{\o}ller-Plesset perturbation theory}
