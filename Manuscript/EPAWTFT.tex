@@ -243,6 +243,7 @@ E_{\text{S}} &= U.
 \end{align}
 \end{subequations}
 While the open-shell triplet ($E_{\text{T}}$) and singlet ($E_{\text{S}}$) are independent of $\lambda$, the closed-shell singlet ground state ($E_{-}$) and doubly-excited state ($E_{+}$) couple strongly to form an avoided crossing at $\lambda=0$ (see Fig.~\ref{subfig:FCI_real}).
+
 At non-zero values of $U$ and $t$, these closed-shell singlets can only become degenerate at a pair of complex conjugate points in the complex $\lambda$ plane 
 \begin{equation}
 \lambda_{\text{EP}} = \pm  \i \frac{U}{4t},
@@ -329,15 +330,15 @@ Expanding the wave function and energy as power series in $\lambda$ as
     \label{eq:E_expansion}
 \end{align}
 \end{subequations}
-and solving the corresponding perturbation equations up to a given order $k$ then 
-yields approximate solutions to Eq.~\eqref{eq:SchrEq}.
+and solving the corresponding perturbation equations up to a given order $k$, then 
+yields approximate solutions to Eq.~\eqref{eq:SchrEq} \titou{by setting $\lambda = 1$}.
 
 % MATHEMATICAL REPRESENTATION
 Mathematically, Eq.~\eqref{eq:E_expansion} corresponds to a Taylor series expansion of the exact energy
 around the reference system $\lambda = 0$.
 The energy of the target ``physical'' system is then recovered at the point $\lambda = 1$.
 However, like all series expansions, the Eq.~\eqref{eq:E_expansion} has a radius of convergence $\rc$. 
-When $\rc < 1$, the Rayleigh--Sch\"{r}odinger expansion will diverge
+When $\rc \titou{\le} 1$, the Rayleigh--Sch\"{r}odinger expansion will diverge
 for the physical system.
 The value of $\rc$ can vary significantly between different systems and strongly depends on the particular decomposition
 of the reference and perturbation Hamiltonians in Eq.~\eqref{eq:SchrEq-PT}.\cite{Mihalka_2017b}
@@ -366,15 +367,31 @@ This divergence occurs because $f(x)$ has four singularities in the complex
 ($\e^{\i\pi/4}$, $\e^{-\i\pi/4}$, $\e^{\i3\pi/4}$, and $\e^{-\i3\pi/4}$) with a modulus equal to $1$, demonstrating
 that complex singularities are essential to fully understand the series convergence on the real axis.
 
-The radius of convergence of the perturbation series is therefore dictated by the magnitude $|\lambda_0|$ of the
+The radius of convergence of the perturbation series is therefore dictated by the magnitude $\abs{\lambda_0}$ of the
 singularity in $E(\lambda)$ that is closest to the origin.
-\hugh{Like the exact system in Section~\ref{sec:example}, the perturbation energy $E(\lambda)$ represents
+Like the exact system in Section~\ref{sec:example}, the perturbation energy $E(\lambda)$ represents
 a ``one-to-many'' function with the output elements representing an approximation to both the ground and excited states.
 The most common singularities on $E(\lambda)$ therefore correspond to non-analytic EPs in the complex 
 $\lambda$ plane where two states become degenerate.
 We will demonstrate how the choice of reference Hamiltonian controls the position of these EPs, and 
 ultimately determines the convergence properties of the perturbation series.
-}
+
+
+\titou{Practically, to locate EPs in a more complicated systems, one must solve simultaneously the following equations: \cite{Cejnar_2007}
+\begin{subequations}
+\begin{align}
+	\label{eq:PolChar}
+	\det[E\hI-\hH(\lambda)] & = 0,
+	\\ 
+	\label{eq:DPolChar}
+	\pdv{E}\det[E\hI-\hH(\lambda)] & = 0,
+\end{align}
+\end{subequations}
+where $\hI$ is the identity operator.
+Equation \eqref{eq:PolChar} is the well-known secular equation providing us with the (eigen)energies of the system. 
+If an energy is also solution of Eq.~\eqref{eq:DPolChar}, then this energy value is, at least, two-fold degenerate. 
+These degeneracies can be conical intersections between two states with different symmetries for real values of $\lambda$ \cite{Yarkony_1996} or EPs between two states with the same symmetry for complex values of $\lambda$.}
+
 
 %============================================================%
 \subsection{The Hartree-Fock Hamiltonian}
@@ -428,14 +445,14 @@ from the one-electron Fock operators as
 From hereon, $i$ and $j$ denote occupied orbitals, $a$ and $b$ denote unoccupied (or virtual) orbitals, while $p$, $q$, $r$, and $s$ denote arbitrary orbitals.
 
 % BRIEF FLAVOURS OF HF
-\hugh{In the most flexible variant of real HF theory (generalised HF) the one-electron orbitals can be complex-valued
+In the most flexible variant of real HF theory (generalised HF) the one-electron orbitals can be complex-valued
 and contain a mixture of spin-up and spin-down components.
 However, the application of HF with some level of constraint on the orbital structure is far more common.
 Forcing the spatial part of the orbitals to be the same for spin-up and spin-down electrons leads to restricted HF (RHF) theory, while allowing different for different spins leads to the so-called unrestricted HF (UHF) approach.
 The advantage of the UHF approximation is its ability to correctly describe strongly correlated systems, 
 such as the dissociation of the hydrogen dimer.\cite{Coulson_1949}
 However, by allowing different orbitals for different spins, the UHF is no longer required to be an eigenfunction of 
-the total spin $\hat{\mathcal{S}}^2$ operator, leading to so-called ``spin-contamination'' in the wave function.}
+the total spin $\hat{\mathcal{S}}^2$ operator, leading to so-called ``spin-contamination'' in the wave function.
 
 %
 %The spatial part of the RHF wave function is then
@@ -470,7 +487,7 @@ giving the symmetry-pure molecular orbitals
 \end{align}
 and the ground-state RHF energy
 \begin{equation}
-	E_\text{RHF} =  -2t + \frac{U}{2}
+	E_\text{RHF} \equiv E_\text{HF}(\ta^\text{RHF}, \tb^\text{RHF}) = -2t + \frac{U}{2}
 \end{equation}
 However, in the strongly correlated regime (large $U$), the closed-shell restriction on the orbitals prevents RHF from 
 correctly modelling the physics of the system with the two electrons on opposing sites.
@@ -488,12 +505,27 @@ For $U \ge 2t$, the optimal orbital rotation angles for the UHF orbitals become
 \end{align}
 with the corresponding UHF ground-state energy
 \begin{equation}
-	E_\text{UHF} = - \frac{2t^2}{U}.
+	E_\text{UHF} \equiv E_\text{HF}(\ta^\text{UHF}, \tb^\text{UHF}) = - \frac{2t^2}{U}.
 \end{equation}
 Time-reversal symmetry dictates that this UHF wave function must be degenerate with its spin-flipped pair, obtained 
 by swapping $\ta^{\text{UHF}}$ and $\tb^{\text{UHF}}$ in Eqs.~\eqref{eq:ta_uhf} and \eqref{eq:tb_uhf}.
 Note that the RHF wave function remains a genuine solution of the HF equations for $U \ge 2t$, but corresponds to a saddle point 
 of the HF energy rather than a minimum.
+
+\titou{In a recent paper, \cite{Burton_2019} using holomorphic Hartree-Fock (h-HF) \cite{Hiscock_2014,Burton_2018,Burton_2016} as an analytic continuation of conventional HF theory, we have demonstrated, on a simple model, that one can interconvert states of different symmetries and natures by following well-defined contours in the complex $\lambda$-plane, where $\lambda$ is the strength of the electron-electron interaction (see Fig.~\ref{fig:iAC}).
+In particular, by slowly varying $\lambda$ in a similar (yet different) manner to an adiabatic connection in density-functional theory, \cite{Langreth_1975,Gunnarsson_1976,Zhang_2004} one can ``morph'' a ground-state wave function into an excited-state wave function via a stationary path of HF solutions. \cite{Seidl_2018}
+In such a way, we could obtain a doubly-excited state wave function starting from the ground state wave function, a process which is not as easy as one might think. \cite{Gilbert_2008,Thom_2008,Shea_2018}
+One of the fundamental discovery we made was that Coulson-Fisher points (where multiple symmetry-broken solutions coalesce) play a central role and can be classified as \textit{quasi}-exceptional points, as the wave functions do not become self-orthogonal.
+The findings reported in Ref.~\onlinecite{Burton_2019} represent the very first study of non-Hermitian quantum mechanics for the exploration of multiple solutions at the HF level. 
+It perfectly illustrates the deeper topology of electronic states revealed using a complex-scaled electron-electron interaction.
+Through the introduction of non-Hermiticity, we have provided a more general framework in which the complex and diverse characteristics of multiple solutions can be explored and understood.}
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{iAC}
+	\caption{
+	\label{fig:iAC}
+	An example of complex adiabatic connection. \cite{Burton_2019}}
+\end{figure}
 
 %=====================================================%
 \subsection{M{\o}ller-Plesset perturbation theory}
