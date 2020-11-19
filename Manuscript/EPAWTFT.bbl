@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{91}%
+\begin{thebibliography}{94}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -521,6 +521,15 @@
   {Fischer}},\ }\href {\doibase 10.1080/14786444908521726} {\bibfield
   {journal} {\bibinfo  {journal} {1949}\ }\textbf {\bibinfo {volume} {40}},\
   \bibinfo {pages} {386}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Giuliani}\ and\ \citenamefont
+  {Vignale}(2005)}]{GiulianiBook}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Giuliani}}\ and\ \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Vignale}},\ }\href {\doibase 10.1017/CBO9780511619915} {\emph {\bibinfo
+  {title} {Quantum {Theory} of the {Electron} {Liquid}}}}\ (\bibinfo
+  {publisher} {Cambridge University Press},\ \bibinfo {year}
+  {2005})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Hiscock}\ and\ \citenamefont
   {Thom}(2014)}]{Hiscock_2014}%
   \BibitemOpen
@@ -582,6 +591,27 @@
   {Plesset}},\ }\href {\doibase 10.1103/PhysRev.46.618} {\bibfield  {journal}
   {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {46}},\
   \bibinfo {pages} {618} (\bibinfo {year} {1934})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {L\"owdin}(1955{\natexlab{a}})}]{Lowdin_1955a}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.-O.}\ \bibnamefont
+  {L\"owdin}},\ }\href {\doibase 10.1103/PhysRev.97.1474} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {97}},\
+  \bibinfo {pages} {1474} (\bibinfo {year} {1955}{\natexlab{a}})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {L\"owdin}(1955{\natexlab{b}})}]{Lowdin_1955b}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.-O.}\ \bibnamefont
+  {L\"owdin}},\ }\href {\doibase 10.1103/PhysRev.97.1490} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {97}},\
+  \bibinfo {pages} {1490} (\bibinfo {year} {1955}{\natexlab{b}})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {L\"owdin}(1955{\natexlab{c}})}]{Lowdin_1955c}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.-O.}\ \bibnamefont
+  {L\"owdin}},\ }\href {\doibase 10.1103/PhysRev.97.1509} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {97}},\
+  \bibinfo {pages} {1509} (\bibinfo {year} {1955}{\natexlab{c}})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Gill}(1994)}]{Gill_1994}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~M.~W.}\
@@ -589,6 +619,15 @@
   {\bibfield  {journal} {\bibinfo  {journal} {Adv. Quantum Chem.}\ }\textbf
   {\bibinfo {volume} {25}},\ \bibinfo {pages} {141} (\bibinfo {year}
   {1994})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Handy}\ \emph {et~al.}(1985)\citenamefont {Handy},
+  \citenamefont {Knowles},\ and\ \citenamefont {Somasundram}}]{Handy_1985}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.~C.}\ \bibnamefont
+  {Handy}}, \bibinfo {author} {\bibfnamefont {P.~J.}\ \bibnamefont {Knowles}},
+  \ and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Somasundram}},\
+  }\href {\doibase 10.1007/BF00698753} {\bibfield  {journal} {\bibinfo
+  {journal} {Theoret. Chim. Acta}\ }\textbf {\bibinfo {volume} {68}},\ \bibinfo
+  {pages} {87} (\bibinfo {year} {1985})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Gill}\ and\ \citenamefont {Radom}(1986)}]{Gill_1986}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~M.~W.}\
@@ -608,15 +647,6 @@
   {\doibase 10.1063/1.455312} {\bibfield  {journal} {\bibinfo  {journal} {J.
   Chem. Phys.}\ }\textbf {\bibinfo {volume} {89}},\ \bibinfo {pages} {7307}
   (\bibinfo {year} {1988})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Handy}\ \emph {et~al.}(1985)\citenamefont {Handy},
-  \citenamefont {Knowles},\ and\ \citenamefont {Somasundram}}]{Handy_1985}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.~C.}\ \bibnamefont
-  {Handy}}, \bibinfo {author} {\bibfnamefont {P.~J.}\ \bibnamefont {Knowles}},
-  \ and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Somasundram}},\
-  }\href {\doibase 10.1007/BF00698753} {\bibfield  {journal} {\bibinfo
-  {journal} {Theoret. Chim. Acta}\ }\textbf {\bibinfo {volume} {68}},\ \bibinfo
-  {pages} {87} (\bibinfo {year} {1985})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Lepetit}\ \emph {et~al.}(1988)\citenamefont
   {Lepetit}, \citenamefont {P{\'e}lissier},\ and\ \citenamefont
   {Malrieu}}]{Lepetit_1988}%
@@ -641,12 +671,6 @@
   \bibinfo {pages} {9213} (\bibinfo {year} {2000})},\ \Eprint
   {http://arxiv.org/abs/https://doi.org/10.1063/1.481764}
   {https://doi.org/10.1063/1.481764} \BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Jensen}(2017)}]{JensenBook}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
-  {Jensen}},\ }\href@noop {} {\emph {\bibinfo {title} {Introduction to
-  computational chemistry}}}\ (\bibinfo  {publisher} {Wiley},\ \bibinfo {year}
-  {2017})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Nesbet}\ and\ \citenamefont
   {Hartree}(1955)}]{Nesbet_1955}%
   \BibitemOpen
