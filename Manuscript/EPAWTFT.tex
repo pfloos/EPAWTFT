@@ -445,7 +445,7 @@ from the one-electron Fock operators as
 From hereon, $i$ and $j$ denote occupied orbitals, $a$ and $b$ denote unoccupied (or virtual) orbitals, while $p$, $q$, $r$, and $s$ denote arbitrary orbitals.
 
 % BRIEF FLAVOURS OF HF
-In the most flexible variant of real HF theory (generalised HF) the one-electron orbitals can be complex-valued
+In the most flexible variant of real HF theory (generalised HF \cite{Mayer_1993}) the one-electron orbitals can be complex-valued
 and contain a mixture of spin-up and spin-down components.\cite{Mayer_1993}
 However, the application of HF with some level of constraint on the orbital structure is far more common.
 Forcing the spatial part of the orbitals to be the same for spin-up and spin-down electrons leads to restricted HF (RHF) theory, while allowing different for different spins leads to the so-called unrestricted HF (UHF) approach.
@@ -634,7 +634,7 @@ Interestingly, one can show that the convergent and divergent series start to di
     \end{subfigure}
 	\caption{
 	Convergence of the RMP series as a function of the perturbation order $n$ for the Hubbard dimer at $U/t = 3.5$ (where $r_c > 1$) and $4.5$ (where $r_c < 1$).
-	The Riemann surfaces associated with the exact energy of the RMP Hamiltonian \eqref{eq:H_RMP} are also represented for these two values of $U/t$. 
+	The Riemann surfaces associated with the exact energies of the RMP Hamiltonian \eqref{eq:H_RMP} are also represented for these two values of $U/t$ as functions of $\lambda$. 
 	\label{fig:RMP}}
 \end{figure*}
 
@@ -652,30 +652,27 @@ The UMP partitioning yield the following $\lambda$-dependent Hamiltonian:
 	\end{pmatrix},
 \end{equation}
 \end{widetext}
-A closed-form expression for the ground-state energy can be obtained but it is cumbersome, so we eschew reporting its expression.
-The radius of convergence of the UMP series can obtained numerically as a function of $U/t$ and is depicted in Fig.~\ref{eq:UMP_rc}.
+A closed-form expression for the ground-state energy can be obtained but it is cumbersome, so we eschew reporting it.
+The radius of convergence of the UMP series can obtained numerically as a function of $U/t$ and is depicted in \titou{Fig.~\ref{eq:UMP_rc}}.
+ 
+The convergence of the UMP as a function of the ratio $U/t$ is shown in Fig.~\ref{subfig:UMP_cvg} for two specific values: the first ($U = 3t$) is well within the RMP convergence region, while the second ($U = 7t$) falls outside.
 Note that in the case of UMP, there are now two pairs of EPs as the open-shell singlet now couples strongly with both the ground and doubly-excited states.
 This has the clear tendency to move away from the origin the EP dictating the convergence of the ground-state energy, while deteriorating the convergence properties of the excited-state energy.
- 
-The convergence of the UMP as a function of the ratio $U/t$ is shown in Fig.~\ref{fig:UMP} for two specific values: the first ($U = 3t$) is well within the RMP convergence region, while the second ($U = 7t$) falls outside.
-
-For $U = 3t$ (see Fig.~\ref{subfig:UMP_3}), the ground-state energy is remarkably flat since the UHF energy is a pretty good estimate. 
+For $U = 3t$ (see Fig.~\ref{subfig:UMP_3}), the ground-state energy is remarkably flat since the UHF energy is already a pretty good estimate of the exact energy thanks to the symmetry-breaking process.
 Most of the UMP expansion is actually correcting the spin-contamination in the wave function.
-
 For $U = 7t$ (see Fig.~\ref{subfig:UMP_7}), we are well towards the strong correlation regime, where we see that the UMP series is slowly convergent while RMP diverges.
 We see a single EP on the ground-state surface which falls just outside (maybe on?) the radius of convergence. 
-An EP this close to the radius of convergence gives an increasingly slow convergence of the UMP series, but it will converge eventually!
-
-On the other hand, there is an exceptional point on the excited energy surface that is well within the radius of convergence.
-We can therefore say that the use of a symmetry-broken UHF wave function can retain a convergent ground-state perturbation series
-at the expense of a divergent excited-state perturbation series. (Note: the orbitals are not optimised for excited-state here).
-In contrast, the RMP expansion was always convergent for the open-shell excited state (which was a single CSF) while
-the radius of convergence for the doubly-excited state was identical to the ground-state as this was the only exceptional point.
+An EP this close to the radius of convergence gives an increasingly slow convergence of the UMP series, but it will converge eventually as observed in Fig.~\ref{subfig:UMP_cvg}.
+%On the other hand, there is an EP on the excited energy surface that is well within the radius of convergence.
+%We can therefore say that the use of a symmetry-broken UHF wave function can retain a convergent ground-state perturbation series
+%at the expense of a divergent excited-state perturbation series. (Note: the orbitals are not optimised for excited-state here).
+%In contrast, the RMP expansion was always convergent for the open-shell excited state (which was a single CSF) while
+%the radius of convergence for the doubly-excited state was identical to the ground-state as this was the only exceptional point.
 
 %%% FIG 3 %%%
 \begin{figure*}
 	\begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.75\textwidth]{fig3c}	
+	\includegraphics[height=0.75\textwidth]{fig3a}	
 		\subcaption{\label{subfig:UMP_3} $U/t = 3$}
     \end{subfigure}
     %
@@ -685,11 +682,11 @@ the radius of convergence for the doubly-excited state was identical to the grou
     \end{subfigure}
     %
     \begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.75\textwidth]{fig3a}	
+	\includegraphics[height=0.75\textwidth]{fig3c}	
 		\subcaption{\label{subfig:UMP_7} $U/t = 7$}
     \end{subfigure}	\caption{
 	Convergence of the UMP series as a function of the perturbation order $n$ for the Hubbard dimer at $U/t = 3$ and $7$.
-	The Riemann surfaces of the FCI energies are also represented for these two values of $U/t$. 
+	The Riemann surfaces associated with the exact energies of the UMP Hamiltonian \eqref{eq:H_UMP} are also represented for these two values of $U/t$ as functions of $\lambda$.
 	\label{fig:UMP}}
 \end{figure*}
 
