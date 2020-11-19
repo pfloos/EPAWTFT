@@ -104,6 +104,8 @@
 \renewcommand{\i}{\mathrm{i}} % Imaginary unit
 \newcommand{\e}{\mathrm{e}} % Euler number
 \newcommand{\rc}{r_{\text{c}}}
+\newcommand{\lc}{\lambda_{\text{c}}}
+\newcommand{\lep}{\lambda_{\text{EP}}}
 
 % Blackboard bold
 \newcommand{\bbR}{\mathbb{R}}
@@ -607,61 +609,71 @@ role of \textit{quasi}-EPs in determining the behaviour of the HF approximation.
 \subsection{M{\o}ller-Plesset perturbation theory}
 %=====================================================%
 
-The HF Hamiltonian \eqref{eq:HFHamiltonian} can be used as the zeroth-order Hamiltonian of Eq.~\eqref{eq:SchrEq-PT}. This partitioning of the Hamiltonian leads to the so-called M{\o}ller-Plesset (MP) perturbation theory. \cite{Moller_1934} 
-The discovery of a partitioning of the Hamiltonian that allowed chemists to recover a large chunck of the correlation energy (\ie, the difference between the exact energy and the Hartree-Fock energy) using perturbation theory has been a major step in the development of post-HF methods. 
-This yields
+In electronic structure, the HF Hamiltonian \eqref{eq:HFHamiltonian} is often used as the zeroth-order Hamiltonian
+to define M\o{}ller--Plesset (MP) perturbation theory.\cite{Moller_1934}
+This approach can recover a large proportion of the electron correlation energy,\cite{Lowdin_1955} 
+and provides the foundation for numerous post-HF approximations.
+With the MP partitioning, the parametrised perturbation Hamiltonian becomes
 \begin{multline}\label{eq:MPHamiltonian}
     \hH(\lambda) = 
-    \sum_{i}^{N} \Bigg[ 
+    \sum_{i}^{N} \Bigg( 
     -\frac{\grad_i^2}{2} 
     - \sum_{A}^{M} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}} 
     \\
     + (1-\lambda) v^{\text{HF}}(\vb{x}_i) 
     + \lambda\sum_{i<j}^{N}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}} 
-    \Bigg].
+    \Bigg).
 \end{multline}
-The nature of the HF wave function is up for grabs, and if one considers a RHF or UHF reference wave functions, it leads to the RMP or UMP series, respectively.
-
-As mentioned earlier, in perturbation theory, the energy is a power series of $\lambda$ and the physical energy is obtained at $\lambda = 1$. 
-The MP$n$ energy is defined as 
+Any set of orbitals can be used to define the HF Hamiltonian, although usually either the RHF or UHF orbitals are chosen to 
+define the RMP or UMP series respectively.
+The MP energy at a given order $n$ (\ie, MP$n$) is then defined as
 \begin{equation}
 	E_{\text{MP}n}= \sum_{k=0}^n E_{\text{MP}}^{(k)},
 \end{equation}
-where $E_{\text{MP}}^{(k)}$ is the $k$th-order MP correction, and it is well known that $E_{\text{MP1}} =  E_{\text{MP}}^{(0)} + E_{\text{MP}}^{(1)} = E_\text{HF}$. \cite{SzaboBook}
-The MP2 energy reads
+where $E_{\text{MP}}^{(k)}$ is the $k$th-order MP correction and 
+\begin{equation}
+E_{\text{MP1}} =  E_{\text{MP}}^{(0)} + E_{\text{MP}}^{(1)} = E_\text{HF}.
+\end{equation}
+The second-order MP2 energy is given by
 \begin{equation}\label{eq:EMP2}
 	E_{\text{MP2}} = \frac{1}{4} \sum_{ij} \sum_{ab} \frac{\abs{\mel{ij}{}{ab}}^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b},
 \end{equation}
-with $\mel{pq}{}{rs} = \braket{pq}{rs} - \braket{pq}{sr}$, and where  
+where $\mel{pq}{}{rs} = \braket{pq}{rs} - \braket{pq}{sr}$ are the anti-symmetrised two-electron integrals
+in the molecular spin-obital basis\cite{Gill_1994}
 \begin{equation}
-	\braket{pq}{rs} = \iint \dd\vb{x}_1\dd\vb{x}_2\frac{\phi_p(\vb{x}_1)\phi_q(\vb{x}_2)\phi_r(\vb{x}_1)\phi_s(\vb{x}_2)}{\abs{\vb{r}_1 - \vb{r}_2}}
+	\braket{pq}{rs} 
+    = \iint \dd\vb{x}_1\dd\vb{x}_2
+    \frac{\phi^{*}_p(\vb{x}_1)\phi^{*}_q(\vb{x}_2)\phi^{\vphantom{*}}_r(\vb{x}_1)\phi^{\vphantom{*}}_s(\vb{x}_2)}%
+      {\abs{\vb{r}_1 - \vb{r}_2}}.
 \end{equation}
-are two-electron integrals in the spin-orbital basis. \cite{Gill_1994}
 
-As mentioned earlier, there is, \textit{a priori}, no guarantee that the MP$n$ series converges to the exact energy as $n \to \infty$. 
-In fact, it is known that when the HF wave function is a poor approximation to the exact wave function, for example in multi-reference systems, the MP method yields deceptive results. \cite{Gill_1986,Gill_1988,Handy_1985,Lepetit_1988,Leininger_2000}
-A convenient way to investigate the convergence properties of the MP series is to analytically continue the coupling parameter $\lambda$ into the complex variable. 
-By doing so, the Hamiltonian and the energy become complex-valued functions of $\lambda$, and the energy becomes a multivalued function on $K$ Riemann sheets (where $K$ is the number of basis functions).
-As mentioned above, by searching the singularities of the function $E(\lambda)$, one can get information on the convergence properties of the MP series. 
-These singularities of the energy function are exactly the EPs connecting the electronic states as mentioned in Sec.~\ref{sec:intro}. 
-The direct computation of the terms of the series is quite manageable up to fourth order in perturbation, while the fifth and sixth order in perturbation can still be obtained but at a rather high cost. \cite{JensenBook}
-In order to better understand the behavior of the MP series and how it is connected to the singularity structure, we have to access high-order terms. 
-For small systems, one can access the whole terms of the series using full configuration interaction (FCI). 
-If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI space, one gets the exact energies (in this finite Hilbert space) and the Taylor expansion with respect to $\lambda$ allows to access the MP perturbation series at any order.
+\hugh{While most practical calculations usually consider only the MP2 or MP3 approximations, higher order terms can 
+easily be computed to understand the convergence of the MP$n$ series.\cite{Handy_1985}}
+\textit{A priori}, there is no guarantee that this series will provide the smooth convergence that is desirable for a
+systematically improvable theory.
+\hugh{In fact, when the reference HF wave function is a poor approximation to the exact wave function, 
+for example in multi-configurational systems, MP theory can yield highly oscillitory, 
+slowly convergent, or catastrophically divergent results.\cite{Gill_1986,Gill_1988,Handy_1985,Lepetit_1988,Leininger_2000}
+Furthermore, the convergence properties of the MP series can depend strongly on the choice of restricted or
+unrestricted reference orbitals.}
 
-Obviously, although practically convenient for electronic structure calculations, the MP partitioning is not the only possibility, and alternative partitioning have been proposed in the literature:
-i) the Epstein-Nesbet (EN) partitioning which consists in taking the diagonal elements of $\hH$ as the zeroth-order Hamiltonian. \cite{Nesbet_1955,Epstein_1926} 
-Hence, the off-diagonal elements of $\hH$ are the perturbation operator,
-ii) the weak correlation partitioning in which the one-electron part is consider as the unperturbed Hamiltonian $\hH^{(0)}$ and the two-electron part is the perturbation operator $\hV$, and 
-iii) the strong coupling partitioning where the two operators are inverted compared to the weak correlation partitioning. \cite{Seidl_2018}
+% HGAB: I don't think this parapgrah tells us anything we haven't discussed before
+%A convenient way to investigate the convergence properties of the MP series is to analytically continue the coupling parameter $\lambda$ into the complex variable. 
+%By doing so, the Hamiltonian and the energy become complex-valued functions of $\lambda$, 
+%and the energy becomes a multivalued function on $K$ Riemann sheets (where $K$ is the number of basis functions).
+%As mentioned above, by searching the singularities of the function $E(\lambda)$, one can get information on the convergence properties of the MP series. 
+%These singularities of the energy function are exactly the EPs connecting the electronic states as mentioned in Sec.~\ref{sec:intro}. 
+%The direct computation of the terms of the series is quite manageable up to fourth order in perturbation, while the fifth and sixth order in perturbation can still be obtained but at a rather high cost. \cite{JensenBook}
+%In order to better understand the behavior of the MP series and how it is connected to the singularity structure, we have to access high-order terms. 
+%For small systems, one can access the whole terms of the series using full configuration interaction (FCI). 
+%If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI space, one gets the exact energies (in this finite Hilbert space) and the Taylor expansion with respect to $\lambda$ allows to access the MP perturbation series at any order.
 
-
-Let us illustrate the behaviour of the RMP and UMP series on the Hubbard dimer (see Fig.~\ref{fig:RMP}).
-Within the RMP partition technique, we have 
+To illustrate the behaviour of the RMP and UMP series, we can again consider the Hubbard dimer.
+Using the ground-state RHF reference orbitals leads to the RMP Hamiltonian
 \begin{widetext}
 \begin{equation}
 \label{eq:H_RMP}
-	\bH_\text{RMP} = 
+\bH_\text{RMP}\hugh{\qty(\lambda)} = 
 	\begin{pmatrix}
 		-2t + U - \lambda U/2	&	0					&	0					&	\lambda U/2	\\
 		0						&	U - \lambda U/2 	&	\lambda U/2			&	0	\\
@@ -675,20 +687,34 @@ which yields the ground-state energy
 	\label{eq:E0MP}
 	E_{-}(\lambda) = U - \frac{\lambda U}{2} - \frac{1}{2} \sqrt{(4t)^2 + \lambda ^2 U^2}.
 \end{equation}
-From this expression, it is easy to identify that the radius of convergence is defined by the EPs at $\lambda_c = \pm i 4t / U$ (which are actually located at the same position than the exact EPs discussed in Sec.~\ref{sec:example}).
-Equation \eqref{eq:E0MP} can be Taylor expanded in terms of $\lambda$ to obtain the $n$th-order MP correction
+From this expression, the EPs can be identified as $\lep = \pm \i 4t / U$,
+giving the radius of convergence
 \begin{equation}
-	E_\text{MP}^{(k)} = U \delta_{0,k} - \frac{1}{2} \frac{U^k}{(4t)^{k-1}} \mqty( 1/2 \\ k/2),
+    \rc^{\text{RMP}} = \qty|\frac{4t}{U}|.
 \end{equation}
-with 
+These EPs are identical the the exact EPs discussed in Sec.~\ref{sec:example}.
+The Taylor expansion of the RMP energy can then be evaluated to obtain the $n$th order MP correction
 \begin{equation}
-	E_{\text{MP}n}(\lambda) = \sum_{k=0}^n E_\text{MP}^{(k)} \lambda^k.
+	E_\text{RMP}^{(k)} = U \delta_{0,k} - \frac{1}{2} \frac{U^k}{(4t)^{k-1}} \mqty( 1/2 \\ k/2).
 \end{equation}
-The convergence of the RMP series as a function of the perturbation order $n$ for the Hubbard dimer at $U/t = 3.5$ (where $r_c > 1$) and $4.5$ (where $r_c < 1$) is illustrated in Fig.~\ref{subfig:RMP_cvg}.
-The Riemann surfaces associated with the exact energy of the RMP Hamiltonian \eqref{eq:H_RMP} are also represented for these two values of $U/t$ (see Figs.~\ref{subfig:RMP_3.5} and \ref{subfig:RMP_4.5}).
-From these, one \titou{clearly?} sees that the EP is outside (inside) the (pink) cylinder of unit radius for $U/t = 3.5$ ($4.5$),
-and the centre graph of Fig.~\ref{fig:RMP} evidences the convergent (divergent) nature of the RMP series.
-Interestingly, one can show that the convergent and divergent series start to differ at fourth order.
+%with 
+%\begin{equation}
+%	E_{\text{MP}n}(\lambda) = \sum_{k=0}^n E_\text{MP}^{(k)} \lambda^k.
+%\end{equation}
+
+\hugh{The RMP series is convergent for $U = 3.5\,t$ with $\rc > 1$, as illustrated for the individual terms at each order
+of perturbation in Fig.~\ref{subfig:RMP_cvg}.
+In contrast, for $U = 4.5t$ one finds $\rc < 1$, and the RMP series becomes divergent.
+The corresponding Riemann surfaces for $U = 3.5\,t$ and $4.5\,t$ are shown in Figs.~\ref{subfig:RMP_3.5} and 
+\ref{subfig:RMP_4.5} respectively, with the single EP at $\lep$ (black dot) and the radius of convergence indicated
+by the vertical cylinder of unit radius.
+In the divergent case, the $\lep$ lies inside this cylinder of convergence, while in the convergent case $\lep$ can bee
+seen outside this cylinder.
+The convergent and divergent series start to differ at fourth order, corresponding to the lowest-order contribution
+from the single excitations.\cite{Lepetit_1998}
+This divergent behaviour might therefore be attributed to the need for the single excitations to focus on correcting
+the structure of the reference orbitals rather than capturing the correlation energy.
+} 
 
 %%% FIG 2 %%%
 \begin{figure*}
@@ -764,6 +790,12 @@ An EP this close to the radius of convergence gives an increasingly slow converg
 	\label{fig:UMP}}
 \end{figure*}
 
+\hugh{(\textbf{HGAB}: Lets keep all the MP discussion together and add this note here)}
+Obviously, although practically convenient for electronic structure calculations, the MP partitioning is not the only possibility, and alternative partitioning have been proposed in the literature:
+i) the Epstein-Nesbet (EN) partitioning which consists in taking the diagonal elements of $\hH$ as the zeroth-order Hamiltonian. \cite{Nesbet_1955,Epstein_1926} 
+Hence, the off-diagonal elements of $\hH$ are the perturbation operator,
+ii) the weak correlation partitioning in which the one-electron part is consider as the unperturbed Hamiltonian $\hH^{(0)}$ and the two-electron part is the perturbation operator $\hV$, and 
+iii) the strong coupling partitioning where the two operators are inverted compared to the weak correlation partitioning. \cite{Seidl_2018}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Historical overview}
