@@ -497,10 +497,10 @@ UHF solution appears with a lower energy than the RHF one.
 This critical point is analogous to the infamous Coulson--Fischer point identified in the hydrogen dimer.\cite{Coulson_1949}
 For $U \ge 2t$, the optimal orbital rotation angles for the UHF orbitals become
 \begin{align}
-	\ta^\text{UHF} & = \arctan (-\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U}),
+    \ta^\text{UHF} & = \arctan (-\frac{2t}{\sqrt{U^2 - 4t^2}}),
     \label{eq:ta_uhf}
 	\\
-	\tb^\text{UHF} & = \arctan (+\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U}),
+    \tb^\text{UHF} & = \arctan (+\frac{2t}{\sqrt{U^2 - 4t^2}}),
     \label{eq:tb_uhf}
 \end{align}
 with the corresponding UHF ground-state energy
@@ -515,6 +515,18 @@ of the HF energy rather than a minimum.
 %============================================================%
 \subsection{Complex adiabatic connection}
 %============================================================%
+
+Self-consistency in HF approximations leads to the inherently non-linear Fock eigenvalue
+problem that is normally solved using an iterative approach.
+Alternatively, the non-linear terms arising from the Coulomb and exchange can be considered
+as a perturbation from the reference core Hamiltonian problem by introducing the parameterised Fock operator
+\begin{equation}
+    \Hat{f}_{\lambda}(\vb{x}) = \Hat{h}(\vb{x}) + \lambda\, \Hat{v}_\text{HF}(\vb{x}).
+\end{equation}
+The orbitals in the reference problem correspond to the symmetry-pure eigenfunctions of the one-electron core
+Hamiltonian, while self-consistent solutions at $\lambda = 1$ represent the orbitals of the exact HF solution.
+
+
 
 \titou{In a recent paper, \cite{Burton_2019} using holomorphic Hartree-Fock (h-HF) \cite{Hiscock_2014,Burton_2018,Burton_2016} as an analytic continuation of conventional HF theory, we have demonstrated, on a simple model, that one can interconvert states of different symmetries and natures by following well-defined contours in the complex $\lambda$-plane, where $\lambda$ is the strength of the electron-electron interaction (see Fig.~\ref{fig:iAC}).
 In particular, by slowly varying $\lambda$ in a similar (yet different) manner to an adiabatic connection in density-functional theory, \cite{Langreth_1975,Gunnarsson_1976,Zhang_2004} one can ``morph'' a ground-state wave function into an excited-state wave function via a stationary path of HF solutions. \cite{Seidl_2018}
