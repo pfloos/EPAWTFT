@@ -1,4 +1,4 @@
-\documentclass[aps,prb,reprint,noshowkeys,superscriptaddress]{revtex4-1}
+\documentclass[aps,prb,reprint,noshowkeys,linenumbers,superscriptaddress]{revtex4-1}
 \usepackage{subcaption}
 \usepackage{bm,graphicx,tabularx,array,booktabs,dcolumn,xcolor,microtype,multirow,amscd,amsmath,amssymb,amsfonts,physics,siunitx,mhchem}
 \usepackage[utf8]{inputenc}
@@ -228,7 +228,7 @@ We refer the interested reader to Refs.~\onlinecite{Carrascal_2015,Carrascal_201
 The parameter $U$ controls the strength of the electron correlation.
 In the weak correlation regime (small $U$), the kinetic energy dominates and the electrons are delocalised over both sites.
 In the large-$U$ (or strong correlation) regime, the electron repulsion term drives the physics and the electrons localise on opposite sites to minimise their Coulomb repulsion. 
-This phenomenon is often referred to as a Wigner crystallisation. \cite{Wigner_1934}
+This phenomenon is often referred to as Wigner crystallisation. \cite{Wigner_1934}
 
 To illustrate the formation of an EP, we scale the off-diagonal coupling strength by introducing the complex parameter $\lambda$ through the transformation $t\rightarrow \lambda t$.
 When $\lambda$ is real, the Hamiltonian~\eqref{eq:H_FCI} is Hermitian with the distinct (real-valued) (eigen)energies
@@ -267,12 +267,7 @@ Parametrising the complex contour as $\lambda(\theta) = \lambda_{\text{EP}} + R 
 \begin{equation}
 E_{\pm} \qty(\theta) \approx E_{\text{EP}} \pm \sqrt{32t^2 \lambda_{\text{EP}} R}\, \exp(\i \theta/2)
 \end{equation}
-such that
-\begin{align}
-	E_{\pm}(2\pi) & = E_{\mp}(0),
-	&
-	E_{\pm}(4\pi) & = E_{\pm}(0). \notag
-\end{align}
+such that $E_{\pm}(2\pi)  = E_{\mp}(0)$ and $E_{\pm}(4\pi)  = E_{\pm}(0)$.
 As a result, completely encircling an EP leads to the interconversion of the two interacting states, while a second complete rotation returns the two states to their original energies.
 Additionally, the wave functions pick up a geometric phase in the process, and four complete loops are required to recover their starting forms.\cite{MoiseyevBook}
 
@@ -326,17 +321,17 @@ Expanding the wave function and energy as power series in $\lambda$ as
     \Psi(\lambda) &= \sum_{k=0}^{\infty} \lambda^{k}\,\Psi^{(k)} 
     \label{eq:psi_expansion}
     \\
-    E(\lambda) &= \sum_{k=0}^{\infty} \lambda^{k}\,E^{(k)}
+    E(\lambda) &= \sum_{k=0}^{\infty} \lambda^{k}\,E^{(k)},
     \label{eq:E_expansion}
 \end{align}
 \end{subequations}
-and solving the corresponding perturbation equations up to a given order $k$, then 
-yields approximate solutions to Eq.~\eqref{eq:SchrEq} by setting $\lambda = 1$.
+solving the corresponding perturbation equations up to a given order $k$, and
+setting $\lambda = 1$ then yields approximate solutions to Eq.~\eqref{eq:SchrEq}.
 
 % MATHEMATICAL REPRESENTATION
 Mathematically, Eq.~\eqref{eq:E_expansion} corresponds to a Taylor series expansion of the exact energy
 around the reference system $\lambda = 0$.
-The energy of the target ``physical'' system is then recovered at the point $\lambda = 1$.
+The energy of the target ``physical'' system is recovered at the point $\lambda = 1$.
 However, like all series expansions, the Eq.~\eqref{eq:E_expansion} has a radius of convergence $\rc$. 
 When $\rc \le 1$, the Rayleigh--Sch\"{r}odinger expansion will diverge
 for the physical system.
@@ -356,7 +351,7 @@ then the series will diverge when evaluated at $z_1$.''
 \end{quote}
 As a result, the radius of convergence for a function is equal to the distance from the origin of the closest singularity
 in the complex plane.
-For example, the simple function \cite{BenderBook}
+For example, the simple function
 \begin{equation} \label{eq:DivExample}
 	f(x)=\frac{1}{1+x^4}.
 \end{equation}
@@ -365,19 +360,19 @@ converge in this domain.
 However, this series diverges $x \ge 1$.
 This divergence occurs because $f(x)$ has four singularities in the complex 
 ($\e^{\i\pi/4}$, $\e^{-\i\pi/4}$, $\e^{\i3\pi/4}$, and $\e^{-\i3\pi/4}$) with a modulus equal to $1$, demonstrating
-that complex singularities are essential to fully understand the series convergence on the real axis.
+that complex singularities are essential to fully understand the series convergence on the real axis.\cite{BenderBook}
 
-The radius of convergence of the perturbation series is therefore dictated by the magnitude $\abs{\lambda_0}$ of the
+The radius of convergence for the perturbation series is therefore dictated by the magnitude $\abs{\lambda_0}$ of the
 singularity in $E(\lambda)$ that is closest to the origin.
 Like the exact system in Section~\ref{sec:example}, the perturbation energy $E(\lambda)$ represents
 a ``one-to-many'' function with the output elements representing an approximation to both the ground and excited states.
 The most common singularities on $E(\lambda)$ therefore correspond to non-analytic EPs in the complex 
 $\lambda$ plane where two states become degenerate.
-We will demonstrate how the choice of reference Hamiltonian controls the position of these EPs, and 
+Later we will demonstrate how the choice of reference Hamiltonian controls the position of these EPs, and 
 ultimately determines the convergence properties of the perturbation series.
 
 
-Practically, to locate EPs in a more complicated systems, one must simultaneously solve\cite{Cejnar_2007}
+Practically, to locate EPs in a more complicated systems, one must simultaneously solve
 \begin{subequations}
 \begin{align}
 	\label{eq:PolChar}
@@ -387,11 +382,11 @@ Practically, to locate EPs in a more complicated systems, one must simultaneousl
 	\pdv{E}\det[E\hI-\hH(\lambda)] & = 0,
 \end{align}
 \end{subequations}
-where $\hI$ is the identity operator.
+where $\hI$ is the identity operator.\cite{Cejnar_2007}
 Equation \eqref{eq:PolChar} is the well-known secular equation providing the (eigen)energies of the system. 
 If the energy is also solution of Eq.~\eqref{eq:DPolChar}, then this energy value is at least two-fold degenerate. 
 These degeneracies can be conical intersections between two states with different symmetries 
-for real values of $\lambda$\cite{Yarkony_1996} or EPs between two states with the 
+for real values of $\lambda$,\cite{Yarkony_1996} or EPs between two states with the 
 same symmetry for complex values of $\lambda$.
 
 
@@ -426,16 +421,18 @@ is the HF mean-field electron-electron potential with
 defining the Coulomb and exchange operators (respectively) in the spin-orbital basis.\cite{SzaboBook}
 The HF energy is then defined as 
 \begin{equation}
-\label{eq:E_HF}
-	E_\text{HF} = \sum_i^{N} h_i + \frac{1}{2} \sum_{ij}^{N} \qty( J_{ij} - K_{ij} ),
+    \label{eq:E_HF}
+    E_\text{HF} = \hugh{\frac{1}{2} \sum_i^{N} \Big( h_i + f_i \Big)},
+	%E_\text{HF} = \sum_i^{N} h_i + \frac{1}{2} \sum_{ij}^{N} \qty( J_{ij} - K_{ij} ),
 \end{equation}
 with the corresponding matrix elements
 \begin{align}
-	h_i & = \mel{\phi_i}{\Hat{h}}{\phi_i},
-	&
-	J_{ij} & = \mel{\phi_i}{\Hat{J}_j}{\phi_i},
-	&
-	K_{ij} & = \mel{\phi_i}{\Hat{K}_j}{\phi_i}.
+	h_i = \mel{\phi_i}{\Hat{h}}{\phi_i}
+    \quad \text{and} \quad
+    \hugh{f_i = \mel{\phi_i}{\Hat{f}}{\phi_i}.}
+	%J_{ij} & = \mel{\phi_i}{\Hat{J}_j}{\phi_i},
+	%&
+	%K_{ij} & = \mel{\phi_i}{\Hat{K}_j}{\phi_i}.
 \end{align}
 The optimal HF wave function is identified by using the variational principle to minimise the HF energy.
 For any system with more than one electron, the resulting Slater determinant is not an eigenfunction of the exact Hamiltonian $\hH$. 
@@ -447,14 +444,14 @@ from the one-electron Fock operators as
 From hereon, $i$ and $j$ denote occupied orbitals, $a$ and $b$ denote unoccupied (or virtual) orbitals, while $p$, $q$, $r$, and $s$ denote arbitrary orbitals.
 
 % BRIEF FLAVOURS OF HF
-In the most flexible variant of real HF theory (generalised HF \cite{Mayer_1993}) the one-electron orbitals can be complex-valued
+In the most flexible variant of real HF theory (generalised HF) the one-electron orbitals can be complex-valued
 and contain a mixture of spin-up and spin-down components.\cite{Mayer_1993}
 However, the application of HF with some level of constraint on the orbital structure is far more common.
 Forcing the spatial part of the orbitals to be the same for spin-up and spin-down electrons leads to restricted HF (RHF) theory, while allowing different for different spins leads to the so-called unrestricted HF (UHF) approach.
 The advantage of the UHF approximation is its ability to correctly describe strongly correlated systems, 
 such as the dissociation of the hydrogen dimer.\cite{Coulson_1949}
 However, by allowing different orbitals for different spins, the UHF is no longer required to be an eigenfunction of 
-the total spin $\hat{\mathcal{S}}^2$ operator, leading to so-called ``spin-contamination'' in the wave function.
+the total spin $\hat{\mathcal{S}}^2$ operator, leading to ``spin-contamination'' in the wave function.
 
 %
 %The spatial part of the RHF wave function is then
@@ -502,7 +499,7 @@ and the ground-state RHF energy (Fig.~\ref{fig:HF_real})
 \begin{equation}
 	E_\text{RHF} \equiv E_\text{HF}(\ta^\text{RHF}, \tb^\text{RHF}) = -2t + \frac{U}{2}
 \end{equation}
-However, in the strongly correlated regime (large $U$), the closed-shell restriction on the orbitals prevents RHF from 
+However, in the strongly correlated regime $U>2t$, the closed-shell restriction on the orbitals prevents RHF from 
 correctly modelling the physics of the system with the two electrons on opposing sites.
 
 %%% FIG 3 (?) %%%
