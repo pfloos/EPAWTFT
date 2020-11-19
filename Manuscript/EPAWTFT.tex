@@ -777,14 +777,40 @@ of $U/t$, reaching the limit value of $1/2$ for $U/t \rightarrow \infty$, and ex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
 % DISCUSSION OF UMP RIEMANN SURFACES
-The convergence of the UMP as a function of the ratio $U/t$ is shown in Fig.~\ref{subfig:UMP_cvg} for two specific values: the first ($U = 3t$) is well within the RMP convergence region, while the second ($U = 7t$) falls outside.
-Note that in the case of UMP, there are now two pairs of EPs as the open-shell singlet now couples strongly with both the ground and doubly-excited states.
-This has the clear tendency to move away from the origin the EP dictating the convergence of the ground-state energy, while deteriorating the convergence properties of the excited-state energy.
-For $U = 3t$ (see Fig.~\ref{subfig:UMP_3}), the ground-state energy is remarkably flat since the UHF energy is already a pretty good estimate of the exact energy thanks to the symmetry-breaking process.
-Most of the UMP expansion is actually correcting the spin-contamination in the wave function.
-For $U = 7t$ (see Fig.~\ref{subfig:UMP_7}), we are well towards the strong correlation regime, where we see that the UMP series is slowly convergent while RMP diverges.
-We see a single EP on the ground-state surface which falls just outside (maybe on?) the radius of convergence. 
-An EP this close to the radius of convergence gives an increasingly slow convergence of the UMP series, but it will converge eventually as observed in Fig.~\ref{subfig:UMP_cvg}.
+\hugh{%
+The convergence behaviour can be further elucidated by considering the full structure of the UMP energies 
+in the complex $\lambda$-plane.
+These Riemann surfaces are illustrated for $U = 3t$ and $7t$ alongside the perturbation terms at each order
+in Fig.~\ref{subfig:UMP_cvg}.
+At $U = 3t$, the RMP series is convergent, while RMP becomes divergent for $U=7t$.
+The UMP expansion is convergent in both cases, although the rate of convergence is significantly slower 
+for larger $U/t$ as the radius of convergence becomes increasingly close to 1 (Fig.~\ref{fig:RadConv}).
+}
+
+% EFFECT OF SYMMETRY BREAKING
+\hugh{%
+Allowing the UHF orbitals to break the molecular symmetry introduces new couplings between electronic states
+and fundamentally changes the structure of the EPs in the complex $\lambda$-plane.
+For example, while the RMP energy shows only one EP between the ground state and 
+the doubly-excited state (Fig.~\ref{fig:RMP}), the UMP energy has two EPs: one connecting the ground state with the
+and first-excited open-shell singlet, and the other connecting the open-shell singlet state to the 
+doubly-excited second exciation (Fig.~\ref{fig:UMP}).
+While this symmetry-breaking makes the ground-state UMP series convergent by moving the corresponding
+EP outside the radius of convergence, this process also moves the excited-state EP within the radius of convergence
+and thus causes a deterioration in the convergence of the excited-state UMP series.
+Furthermore, since the UHF ground-state energy is already an improved approximation of the exact energy, the ground-state
+UMP energy surface is relatively flat and the majority of the UMP expansion is concerned with removing 
+spin-contamination from the wave function.
+}
+
+%The convergence of the UMP as a function of the ratio $U/t$ is shown in Fig.~\ref{subfig:UMP_cvg} for two specific values: the first ($U = 3t$) is well within the RMP convergence region, while the second ($U = 7t$) falls outside.
+%Note that in the case of UMP, there are now two pairs of EPs as the open-shell singlet now couples strongly with both the ground and doubly-excited states.
+%This has the clear tendency to move away from the origin the EP dictating the convergence of the ground-state energy, while deteriorating the convergence properties of the excited-state energy.
+%For $U = 3t$ (see Fig.~\ref{subfig:UMP_3}), the ground-state energy is remarkably flat since the UHF energy is already a pretty good estimate of the exact energy thanks to the symmetry-breaking process.
+%Most of the UMP expansion is actually correcting the spin-contamination in the wave function.
+%For $U = 7t$ (see Fig.~\ref{subfig:UMP_7}), we are well towards the strong correlation regime, where we see that the UMP series is slowly convergent while RMP diverges.
+%We see a single EP on the ground-state surface which falls just outside (maybe on?) the radius of convergence. 
+%An EP this close to the radius of convergence gives an increasingly slow convergence of the UMP series, but it will converge eventually as observed in Fig.~\ref{subfig:UMP_cvg}.
 %On the other hand, there is an EP on the excited energy surface that is well within the radius of convergence.
 %We can therefore say that the use of a symmetry-broken UHF wave function can retain a convergent ground-state perturbation series
 %at the expense of a divergent excited-state perturbation series. (Note: the orbitals are not optimised for excited-state here).
