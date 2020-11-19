@@ -463,6 +463,13 @@ the total spin $\hat{\mathcal{S}}^2$ operator, leading to so-called ``spin-conta
 %Because $Y_0(\theta) = 1/\sqrt{4\pi}$, it is clear that the RHF wave function yields a uniform one-electron density.
 %
 
+\begin{figure}
+\includegraphics[width=\linewidth]{HF_real.pdf}
+\caption{\label{fig:HF_real}
+\hugh{RHF and UHF energies as a function of the correlation strength $U/t$. 
+The symmetry-broken UHF solution emerges at the coalescence point $U=2t$ (black dot).}}
+\end{figure}
+
 Returning to the Hubbard dimer, the UHF energy can be parametrised in terms of two rotation angles $\ta$ and $\tb$ as
 \begin{equation}
 E_\text{HF}(\ta, \tb) = -t \qty( \sin \ta + \sin \tb ) + \frac{U}{2} \qty( 1 + \cos \ta \cos \tb ),
@@ -485,7 +492,7 @@ giving the symmetry-pure molecular orbitals
 	&
 	\mathcal{A}_\text{RHF}^{\sigma} & = \frac{\Lsi - \Rsi}{\sqrt{2}},
 \end{align}
-and the ground-state RHF energy
+and the ground-state RHF energy (Fig.~\ref{fig:HF_real})
 \begin{equation}
 	E_\text{RHF} \equiv E_\text{HF}(\ta^\text{RHF}, \tb^\text{RHF}) = -2t + \frac{U}{2}
 \end{equation}
@@ -503,7 +510,7 @@ For $U \ge 2t$, the optimal orbital rotation angles for the UHF orbitals become
 	\tb^\text{UHF} & = \arctan (+\frac{\sqrt{U^2 - 4t^2}}{U},\frac{2t}{U}),
     \label{eq:tb_uhf}
 \end{align}
-with the corresponding UHF ground-state energy
+with the corresponding UHF ground-state energy (Fig.~\ref{fig:HF_real})
 \begin{equation}
 	E_\text{UHF} \equiv E_\text{HF}(\ta^\text{UHF}, \tb^\text{UHF}) = - \frac{2t^2}{U}.
 \end{equation}
@@ -516,6 +523,21 @@ of the HF energy rather than a minimum.
 \subsection{Complex adiabatic connection}
 %============================================================%
 
+%%% FIG 1 %%%
+\begin{figure*}[t]
+	\begin{subfigure}{0.49\textwidth}
+    \includegraphics[height=0.65\textwidth,trim={0pt 0pt 0pt -30pt},clip]{HF_cplx_angle}
+	\subcaption{\label{subfig:UHF_cplx_angle}}
+    \end{subfigure}
+	\begin{subfigure}{0.49\textwidth}
+	\includegraphics[height=0.65\textwidth]{HF_cplx_energy}
+	\subcaption{\label{subfig:UHF_cplx_energy}}
+    \end{subfigure}
+	\caption{%
+    Analytic continuation of HF into the complex $\lambda$ plane.
+	\label{fig:HF_cplx}}
+\end{figure*}
+
 \titou{In a recent paper, \cite{Burton_2019} using holomorphic Hartree-Fock (h-HF) \cite{Hiscock_2014,Burton_2018,Burton_2016} as an analytic continuation of conventional HF theory, we have demonstrated, on a simple model, that one can interconvert states of different symmetries and natures by following well-defined contours in the complex $\lambda$-plane, where $\lambda$ is the strength of the electron-electron interaction (see Fig.~\ref{fig:iAC}).
 In particular, by slowly varying $\lambda$ in a similar (yet different) manner to an adiabatic connection in density-functional theory, \cite{Langreth_1975,Gunnarsson_1976,Zhang_2004} one can ``morph'' a ground-state wave function into an excited-state wave function via a stationary path of HF solutions. \cite{Seidl_2018}
 In such a way, we could obtain a doubly-excited state wave function starting from the ground state wave function, a process which is not as easy as one might think. \cite{Gilbert_2008,Thom_2008,Shea_2018}
@@ -523,13 +545,6 @@ One of the fundamental discovery we made was that Coulson-Fisher points (where m
 The findings reported in Ref.~\onlinecite{Burton_2019} represent the very first study of non-Hermitian quantum mechanics for the exploration of multiple solutions at the HF level. 
 It perfectly illustrates the deeper topology of electronic states revealed using a complex-scaled electron-electron interaction.
 Through the introduction of non-Hermiticity, we have provided a more general framework in which the complex and diverse characteristics of multiple solutions can be explored and understood.}
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{iAC}
-	\caption{
-	\label{fig:iAC}
-	An example of complex adiabatic connection. \cite{Burton_2019}}
-\end{figure}
 
 %=====================================================%
 \subsection{M{\o}ller-Plesset perturbation theory}
