@@ -690,7 +690,7 @@ which yields the ground-state energy
 From this expression, the EPs can be identified as $\lep = \pm \i 4t / U$,
 giving the radius of convergence
 \begin{equation}
-    \rc^{\text{RMP}} = \qty|\frac{4t}{U}|.
+    \rc = \qty|\frac{4t}{U}|.
 \end{equation}
 These EPs are identical the the exact EPs discussed in Sec.~\ref{sec:example}.
 The Taylor expansion of the RMP energy can then be evaluated to obtain the $n$th order MP correction
@@ -708,8 +708,10 @@ In contrast, for $U = 4.5t$ one finds $\rc < 1$, and the RMP series becomes dive
 The corresponding Riemann surfaces for $U = 3.5\,t$ and $4.5\,t$ are shown in Figs.~\ref{subfig:RMP_3.5} and 
 \ref{subfig:RMP_4.5} respectively, with the single EP at $\lep$ (black dot) and the radius of convergence indicated
 by the vertical cylinder of unit radius.
-In the divergent case, the $\lep$ lies inside this cylinder of convergence, while in the convergent case $\lep$ can bee
-seen outside this cylinder.
+For the divergent case, the $\lep$ lies inside this cylinder of convergence, while in the convergent case $\lep$ lies
+outside this cylinder.
+In both cases, the EP connects the ground state with the doubly-excited state, and thus the convergence behaviour
+for the two states using the ground state RHF orbitals is identical.
 The convergent and divergent series start to differ at fourth order, corresponding to the lowest-order contribution
 from the single excitations.\cite{Lepetit_1998}
 This divergent behaviour might therefore be attributed to the need for the single excitations to focus on correcting
@@ -738,31 +740,43 @@ the structure of the reference orbitals rather than capturing the correlation en
 	\label{fig:RMP}}
 \end{figure*}
 
-The behaviour of the UMP series is more subtle as the spin-contamination comes into play and introduces additional coupling between electronic states.
-The UMP partitioning yield the following $\lambda$-dependent Hamiltonian:
+The behaviour of the UMP series is more subtle \hugh{than the RMP series as spin-contamination in the wave function
+must be considered, introducing additional coupling between electronic states.
+Using the ground-state UHF reference orbitals in the Hubbard dimer yields the UMP Hamiltonian}
 \begin{widetext}
 \begin{equation}
 \label{eq:H_UMP}
-	\bH_\text{UMP} = 
+\bH_\text{UMP}\hugh{\qty(\lambda)} = 
 	\begin{pmatrix}
-		-2t^2 \lambda/U	&	0									&	0									&	+2t^2 \lambda/U		\\
-		0				&	U - 2t^2 \lambda/U 					&	+2t^2\lambda/U						&	+2t \sqrt{U^2 - (2t)^2} \lambda/U	\\
-		0				&	+2t^2\lambda/U						&	U - 2t^2 \lambda/U 					&	-2t \sqrt{U^2 - (2t)^2} \lambda/U	\\
-		+2t^2 \lambda/U	&	+2t \sqrt{U^2 - (2t)^2} \lambda/U 	&	-2t \sqrt{U^2 - (2t)^2} \lambda/U	&	2U(1-\lambda) + 6t^2\lambda/U		\\
-	\end{pmatrix},
+		-2t^2 \lambda/U	&	0									&	0									&	2t^2 \lambda/U		\\
+		0				&	U - 2t^2 \lambda/U 					&	2t^2\lambda/U						&	2t \sqrt{U^2 - (2t)^2} \lambda/U	\\
+		0				&	2t^2\lambda/U						&	U - 2t^2 \lambda/U 					&	-2t \sqrt{U^2 - (2t)^2} \lambda/U	\\
+		2t^2 \lambda/U	&	2t \sqrt{U^2 - (2t)^2} \lambda/U 	&	-2t \sqrt{U^2 - (2t)^2} \lambda/U	&	2U(1-\lambda) + 6t^2\lambda/U		\\
+	\end{pmatrix}.
 \end{equation}
 \end{widetext}
-A closed-form expression for the ground-state energy can be obtained but it is cumbersome, so we eschew reporting it.
-The radius of convergence of the UMP series can obtained numerically as a function of $U/t$ and is depicted in Fig.~\ref{fig:RadConv}.
-From it, we clearly see that the UMP series has \titou{always?} a larger radius of convergence than the RMP series \titou{(except maybe at $U/t = 2^+$)}, and that the UMP ground-state series is always convergent as $r_c > 1$ for all $U/t$.
+While there is a closed-form expression for the ground-state energy, it is cumbersome and we eschew reporting it.
+Instead, the radius of convergence of the UMP series can obtained numerically as a function of $U/t$, as shown
+in Fig.~\ref{fig:RadConv}.
+\hugh{These numerical values reveal that the UMP ground state series has $\rc > 1$ for all $U/t$ and must always converge.
+However, in the strong correlation limit (large $U$), this radius of convergence tends to unity, indicating that
+the corresponding UMP series will become increasingly slow.
+Furthermore, the doubly-excited state using the ground-state UHF orbitals has $\rc < 1$ for almost any value 
+of $U/t$, reaching the limit value of $1/2$ for $U/t \rightarrow \infty$, and excited-state UMP series will always diverge.}
  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RADIUS OF CONVERGENCE PLOTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 	\includegraphics[width=\linewidth]{RadConv}
 	\caption{
-	Evolution of the radius of convergence $r_c$ associated with the RMP ground state (red), the UMP ground state (blue), and the UMP excited state (orange) as functions of the ratio $U/t$.
+	Radius of convergence $r_c$ for the RMP ground state (red), the UMP ground state (blue), and the UMP excited state (orange) 
+    series as functions of the ratio $U/t$.
 	\label{fig:RadConv}}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
+% DISCUSSION OF UMP RIEMANN SURFACES
 The convergence of the UMP as a function of the ratio $U/t$ is shown in Fig.~\ref{subfig:UMP_cvg} for two specific values: the first ($U = 3t$) is well within the RMP convergence region, while the second ($U = 7t$) falls outside.
 Note that in the case of UMP, there are now two pairs of EPs as the open-shell singlet now couples strongly with both the ground and doubly-excited states.
 This has the clear tendency to move away from the origin the EP dictating the convergence of the ground-state energy, while deteriorating the convergence properties of the excited-state energy.
