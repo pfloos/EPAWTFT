@@ -520,19 +520,12 @@ Note that the RHF wave function remains a genuine solution of the HF equations f
 of the HF energy rather than a minimum.
 
 %============================================================%
-\subsection{Complex adiabatic connection}
+\subsection{Self-consistency as a perturbation} %OR {Complex adiabatic connection}
 %============================================================%
-Self-consistency in HF approximations leads to the inherently non-linear Fock eigenvalue
-problem that is normally solved using an iterative approach.
-Alternatively, the non-linear terms arising from the Coulomb and exchange can be considered
-as a perturbation from the reference core Hamiltonian problem by introducing the parameterised Fock operator
-\begin{equation}
-    \Hat{f}_{\lambda}(\vb{x}) = \Hat{h}(\vb{x}) + \lambda\, \Hat{v}_\text{HF}(\vb{x}).
-\end{equation}
-The orbitals in the reference problem correspond to the symmetry-pure eigenfunctions of the one-electron core
-Hamiltonian, while self-consistent solutions at $\lambda = 1$ represent the orbitals of the exact HF solution.
 
-%%% FIG 1 %%%
+%%% FIG 3 (?) %%%
+% Analytic Continuation of HF
+%%%%%%%%%%%%%%%%%
 \begin{figure*}[t]
 	\begin{subfigure}{0.49\textwidth}
     \includegraphics[height=0.65\textwidth,trim={0pt 0pt 0pt -30pt},clip]{HF_cplx_angle}
@@ -546,7 +539,43 @@ Hamiltonian, while self-consistent solutions at $\lambda = 1$ represent the orbi
     Analytic continuation of HF into the complex $\lambda$ plane.
 	\label{fig:HF_cplx}}
 \end{figure*}
+%%%%%%%%%%%%%%%%%
 
+% INTRODUCE PARAMETRISED FOCK HAMILTONIAN
+\hugh{The inherent non-linearity in the Fock eigenvalue problem arises from self-consistency 
+in the HF approximation, and is usually solved through an iterative approach.\cite{SzaboBook}
+Alternatively, the non-linear terms arising from the Coulomb and exchange operators can 
+be considered as a perturbation from the core Hamiltonian by introducing the
+transformation $U \rightarrow \lambda\, U$, giving the parametrised Fock operator 
+\begin{equation}
+    \Hat{f}_{\lambda}(\vb{x}) = \Hat{h}(\vb{x}) + \lambda\, \Hat{v}_\text{HF}(\vb{x}).
+\end{equation}
+The orbitals in the reference problem $\lambda=0$ correspond to the symmetry-pure eigenfunctions of the one-electron core
+Hamiltonian, while self-consistent solutions at $\lambda = 1$ represent the orbitals of the true HF solution.}
+
+% INTRODUCE COMPLEX ANALYTIC-CONTINUATION
+\hugh{For real $\lambda$, the self-consistent HF energies at give (real) $U$ and $t$ values
+in the Hubbard dimer directly mirror the energies shown in Fig.~\ref{fig:HF_real}, 
+with coalesence points at 
+\begin{equation}
+    \lambda_{\text{c}} = \pm \frac{2t}{U}.
+\end{equation}
+In contrast, when $\lambda$ becomes complex, the HF equations become non-Hermitian and 
+each HF solutions can be analytically continued for all $\lambda$ values using
+the holomorphic HF approach.\cite{Hiscock_2014,Burton_2016,Burton_2018}
+Remarkably, the coalescence point in this analytic continuation emerges as a 
+\textit{quasi}-EP on the real $\lambda$ axis (Fig.~\ref{fig:HF_cplx}), where
+the different HF solutions become equivalent but not self-orthogonal.\cite{Burton_2019}
+By analogy with perturbation theory, the regime where this quasi-EP occurs 
+within $\lambda_{\text{c}} \le 1$ can be interpreted as an indication that 
+the symmetry-pure reference orbitals no longer provide a qualitatively 
+accurate representation for the true HF ground state at $\lambda = 1$.
+For example, in the Hubbard dimer with $U > 2t$, one finds $\lambda_{\text{c}} < 1$ and the symmetry-pure orbitals
+do not provide a good representation of the HF ground state.
+In contrast, $U < 2t$ yields $\lambda_{\text{c}} > 1$ and corresponds to
+the regime where the HF ground state is correctly represented by symmetry-pure orbitals.}
+
+% COMPLEX ADIABATIC CONNECTION
 \titou{In a recent paper, \cite{Burton_2019} using holomorphic Hartree-Fock (h-HF) \cite{Hiscock_2014,Burton_2018,Burton_2016} as an analytic continuation of conventional HF theory, we have demonstrated, on a simple model, that one can interconvert states of different symmetries and natures by following well-defined contours in the complex $\lambda$-plane, where $\lambda$ is the strength of the electron-electron interaction (see Fig.~\ref{fig:iAC}).
 In particular, by slowly varying $\lambda$ in a similar (yet different) manner to an adiabatic connection in density-functional theory, \cite{Langreth_1975,Gunnarsson_1976,Zhang_2004} one can ``morph'' a ground-state wave function into an excited-state wave function via a stationary path of HF solutions. \cite{Seidl_2018}
 In such a way, we could obtain a doubly-excited state wave function starting from the ground state wave function, a process which is not as easy as one might think. \cite{Gilbert_2008,Thom_2008,Shea_2018}
