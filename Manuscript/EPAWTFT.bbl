@@ -453,6 +453,25 @@
   {\bibfield  {journal} {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf
   {\bibinfo {volume} {150}},\ \bibinfo {pages} {031101} (\bibinfo {year}
   {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Moiseyev}(1998)}]{Moiseyev_1998}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Moiseyev}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Phys. Rep.}\ }\textbf {\bibinfo {volume} {302}},\ \bibinfo {pages} {211}
+  (\bibinfo {year} {1998})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Riss}\ and\ \citenamefont {Meyer}(1993)}]{Riss_1993}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {U.~V.}\ \bibnamefont
+  {Riss}}\ and\ \bibinfo {author} {\bibfnamefont {H.-D.}\ \bibnamefont
+  {Meyer}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {J.
+  Phys. B}\ }\textbf {\bibinfo {volume} {26}},\ \bibinfo {pages} {4503}
+  (\bibinfo {year} {1993})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ernzerhof}(2006)}]{Ernzerhof_2006}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Ernzerhof}},\ }\href {\doibase 10.1063/1.2348880} {\bibfield  {journal}
+  {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {125}},\
+  \bibinfo {pages} {124104} (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Carrascal}\ \emph {et~al.}(2015)\citenamefont
   {Carrascal}, \citenamefont {Ferrer}, \citenamefont {Smith},\ and\
   \citenamefont {Burke}}]{Carrascal_2015}%
@@ -481,25 +500,6 @@
   {Wigner}},\ }\href {\doibase 10.1103/PhysRev.46.1002} {\bibfield  {journal}
   {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {46}},\
   \bibinfo {pages} {1002} (\bibinfo {year} {1934})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Moiseyev}(1998)}]{Moiseyev_1998}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
-  {Moiseyev}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
-  {Phys. Rep.}\ }\textbf {\bibinfo {volume} {302}},\ \bibinfo {pages} {211}
-  (\bibinfo {year} {1998})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Riss}\ and\ \citenamefont {Meyer}(1993)}]{Riss_1993}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {U.~V.}\ \bibnamefont
-  {Riss}}\ and\ \bibinfo {author} {\bibfnamefont {H.-D.}\ \bibnamefont
-  {Meyer}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {J.
-  Phys. B}\ }\textbf {\bibinfo {volume} {26}},\ \bibinfo {pages} {4503}
-  (\bibinfo {year} {1993})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Ernzerhof}(2006)}]{Ernzerhof_2006}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
-  {Ernzerhof}},\ }\href {\doibase 10.1063/1.2348880} {\bibfield  {journal}
-  {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {125}},\
-  \bibinfo {pages} {124104} (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Taut}(1993)}]{Taut_1993}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
@@ -754,17 +754,6 @@
   }\href {\doibase 10.1021/jp952815d} {\bibfield  {journal} {\bibinfo
   {journal} {J. Phys. Chem.}\ }\textbf {\bibinfo {volume} {100}},\ \bibinfo
   {pages} {6173} (\bibinfo {year} {1996})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Surj{\'a}n}\ \emph {et~al.}(2018)\citenamefont
-  {Surj{\'a}n}, \citenamefont {Mih{\'a}lka},\ and\ \citenamefont
-  {Szabados}}]{Surjan_2018}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~R.}\ \bibnamefont
-  {Surj{\'a}n}}, \bibinfo {author} {\bibfnamefont {Z.~{\'E}.}\ \bibnamefont
-  {Mih{\'a}lka}}, \ and\ \bibinfo {author} {\bibfnamefont {{\'A}.}~\bibnamefont
-  {Szabados}},\ }\href {\doibase 10.1007/s00214-018-2372-3} {\bibfield
-  {journal} {\bibinfo  {journal} {Theor. Chem. Acc.}\ }\textbf {\bibinfo
-  {volume} {137}},\ \bibinfo {pages} {149} (\bibinfo {year}
-  {2018})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Christiansen}\ \emph {et~al.}(1996)\citenamefont
   {Christiansen}, \citenamefont {Olsen}, \citenamefont {J{\o}rgensen},
   \citenamefont {Koch},\ and\ \citenamefont {Malmqvist}}]{Christiansen_1996}%
@@ -1053,4 +1042,15 @@
   {journal} {\bibinfo  {journal} {J. Phys. A: Math. Theor.}\ }\textbf {\bibinfo
   {volume} {40}},\ \bibinfo {pages} {581} (\bibinfo {year} {2007})}\BibitemShut
   {NoStop}%
+\bibitem [{\citenamefont {Surj{\'a}n}\ \emph {et~al.}(2018)\citenamefont
+  {Surj{\'a}n}, \citenamefont {Mih{\'a}lka},\ and\ \citenamefont
+  {Szabados}}]{Surjan_2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~R.}\ \bibnamefont
+  {Surj{\'a}n}}, \bibinfo {author} {\bibfnamefont {Z.~{\'E}.}\ \bibnamefont
+  {Mih{\'a}lka}}, \ and\ \bibinfo {author} {\bibfnamefont {{\'A}.}~\bibnamefont
+  {Szabados}},\ }\href {\doibase 10.1007/s00214-018-2372-3} {\bibfield
+  {journal} {\bibinfo  {journal} {Theor. Chem. Acc.}\ }\textbf {\bibinfo
+  {volume} {137}},\ \bibinfo {pages} {149} (\bibinfo {year}
+  {2018})}\BibitemShut {NoStop}%
 \end{thebibliography}%
