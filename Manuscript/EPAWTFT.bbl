@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{98}%
+\begin{thebibliography}{106}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -481,6 +481,25 @@
   {Wigner}},\ }\href {\doibase 10.1103/PhysRev.46.1002} {\bibfield  {journal}
   {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {46}},\
   \bibinfo {pages} {1002} (\bibinfo {year} {1934})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Moiseyev}(1998)}]{Moiseyev_1998}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Moiseyev}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Phys. Rep.}\ }\textbf {\bibinfo {volume} {302}},\ \bibinfo {pages} {211}
+  (\bibinfo {year} {1998})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Riss}\ and\ \citenamefont {Meyer}(1993)}]{Riss_1993}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {U.~V.}\ \bibnamefont
+  {Riss}}\ and\ \bibinfo {author} {\bibfnamefont {H.-D.}\ \bibnamefont
+  {Meyer}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {J.
+  Phys. B}\ }\textbf {\bibinfo {volume} {26}},\ \bibinfo {pages} {4503}
+  (\bibinfo {year} {1993})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ernzerhof}(2006)}]{Ernzerhof_2006}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Ernzerhof}},\ }\href {\doibase 10.1063/1.2348880} {\bibfield  {journal}
+  {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {125}},\
+  \bibinfo {pages} {124104} (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Taut}(1993)}]{Taut_1993}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
@@ -544,13 +563,14 @@
    {journal} {Chemical Physics Letters}\ }\textbf {\bibinfo {volume} {202}},\
   \bibinfo {pages} {1 } (\bibinfo {year} {1993})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Coulson}\ and\ \citenamefont
-  {Fischer}()}]{Coulson_1949}%
+  {Fischer}(1949)}]{Coulson_1949}%
   \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~A.}\ \bibnamefont
-  {Coulson}}\ and\ \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~C.}\ \bibnamefont
+  {Coulson}}\ and\ \bibinfo {author} {\bibfnamefont {M.~I.}\ \bibnamefont
   {Fischer}},\ }\href {\doibase 10.1080/14786444908521726} {\bibfield
-  {journal} {\bibinfo  {journal} {1949}\ }\textbf {\bibinfo {volume} {40}},\
-  \bibinfo {pages} {386}}\BibitemShut {NoStop}%
+  {journal} {\bibinfo  {journal} {London, Edinburgh Dublin Philos. Mag. J.
+  Sci.}\ }\textbf {\bibinfo {volume} {40}},\ \bibinfo {pages} {386} (\bibinfo
+  {year} {1949})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Giuliani}\ and\ \citenamefont
   {Vignale}(2005)}]{GiulianiBook}%
   \BibitemOpen
@@ -697,10 +717,8 @@
   {Allen}}, \bibinfo {author} {\bibfnamefont {H.~F.}\ \bibnamefont {Schaefer}},
   \ and\ \bibinfo {author} {\bibfnamefont {C.~D.}\ \bibnamefont {Sherrill}},\
   }\href {\doibase 10.1063/1.481764} {\bibfield  {journal} {\bibinfo  {journal}
-  {The Journal of Chemical Physics}\ }\textbf {\bibinfo {volume} {112}},\
-  \bibinfo {pages} {9213} (\bibinfo {year} {2000})},\ \Eprint
-  {http://arxiv.org/abs/https://doi.org/10.1063/1.481764}
-  {https://doi.org/10.1063/1.481764} \BibitemShut {NoStop}%
+  {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {112}},\ \bibinfo {pages}
+  {9213} (\bibinfo {year} {2000})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Nesbet}\ and\ \citenamefont
   {Hartree}(1955)}]{Nesbet_1955}%
   \BibitemOpen
@@ -868,23 +886,6 @@
   {journal} {\bibinfo  {journal} {Phys. Rev. E}\ }\textbf {\bibinfo {volume}
   {66}},\ \bibinfo {pages} {016217} (\bibinfo {year} {2002})}\BibitemShut
   {NoStop}%
-\bibitem [{\citenamefont {Cejnar}\ \emph {et~al.}(2005)\citenamefont {Cejnar},
-  \citenamefont {Heinze},\ and\ \citenamefont {Dobe{\v s}}}]{Cejnar_2005}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
-  {Cejnar}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Heinze}}, \
-  and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Dobe{\v s}}},\
-  }\href {\doibase 10.1103/PhysRevC.71.011304} {\bibfield  {journal} {\bibinfo
-  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {71}},\ \bibinfo
-  {pages} {011304} (\bibinfo {year} {2005})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Cejnar}\ and\ \citenamefont
-  {Jolie}(2009)}]{Cejnar_2009}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
-  {Cejnar}}\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Jolie}},\
-  }\href {\doibase 10.1016/j.ppnp.2008.08.001} {\bibfield  {journal} {\bibinfo
-  {journal} {Prog. Part. Nucl. Phys.}\ }\textbf {\bibinfo {volume} {62}},\
-  \bibinfo {pages} {210} (\bibinfo {year} {2009})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Borisov}\ \emph {et~al.}(2015)\citenamefont
   {Borisov}, \citenamefont {Ru{\v z}i{\v c}ka},\ and\ \citenamefont
   {Znojil}}]{Borisov_2015}%
@@ -906,6 +907,57 @@
   {journal} {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume}
   {95}},\ \bibinfo {pages} {010103} (\bibinfo {year} {2017})}\BibitemShut
   {NoStop}%
+\bibitem [{\citenamefont {Carr}(2010)}]{CarrBook}%
+  \BibitemOpen
+  \bibinfo {editor} {\bibfnamefont {L.}~\bibnamefont {Carr}},\ ed.,\ \href
+  {\doibase 10.1201/b10273} {\emph {\bibinfo {title} {Understanding Quantum
+  Phase Transitions}}}\ (\bibinfo  {publisher} {Boca Raton: CRC Press},\
+  \bibinfo {year} {2010})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Vojta}(2003)}]{Vojta_2003}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Vojta}},\ }\href {\doibase 10.1088/0034-4885/66/12/r01} {\bibfield
+  {journal} {\bibinfo  {journal} {Rep. Prog. Phys.}\ }\textbf {\bibinfo
+  {volume} {66}},\ \bibinfo {pages} {2069} (\bibinfo {year}
+  {2003})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Sachdev}(1999)}]{SachdevBook}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Sachdev}},\ }\href@noop {} {\emph {\bibinfo {title} {Quantum Phase
+  Transitions}}}\ (\bibinfo  {publisher} {Cambridge University Press},\
+  \bibinfo {year} {1999})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gilmore}(1981)}]{GilmoreBook}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Gilmore}},\ }\href@noop {} {\emph {\bibinfo {title} {Catastrophe Theory for
+  Scientists and Engineers}}}\ (\bibinfo  {publisher} {New York, Wiley},\
+  \bibinfo {year} {1981})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cejnar}\ \emph {et~al.}(2005)\citenamefont {Cejnar},
+  \citenamefont {Heinze},\ and\ \citenamefont {Dobe{\v s}}}]{Cejnar_2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Cejnar}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Heinze}}, \
+  and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Dobe{\v s}}},\
+  }\href {\doibase 10.1103/PhysRevC.71.011304} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {71}},\ \bibinfo
+  {pages} {011304} (\bibinfo {year} {2005})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Caprio}\ \emph {et~al.}(2008)\citenamefont {Caprio},
+  \citenamefont {Cejnar},\ and\ \citenamefont {Iachello}}]{Caprio_2008}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~A.}\ \bibnamefont
+  {Caprio}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Cejnar}}, \
+  and\ \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Iachello}},\ }\href
+  {\doibase 10.1016/j.aop.2007.06.011} {\bibfield  {journal} {\bibinfo
+  {journal} {Ann. Phys. (N. Y.)}\ }\textbf {\bibinfo {volume} {323}},\ \bibinfo
+  {pages} {1106} (\bibinfo {year} {2008})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cejnar}\ and\ \citenamefont
+  {Jolie}(2009)}]{Cejnar_2009}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Cejnar}}\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Jolie}},\
+  }\href {\doibase 10.1016/j.ppnp.2008.08.001} {\bibfield  {journal} {\bibinfo
+  {journal} {Prog. Part. Nucl. Phys.}\ }\textbf {\bibinfo {volume} {62}},\
+  \bibinfo {pages} {210} (\bibinfo {year} {2009})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Sachdev}(2011)}]{Sachdev_2011}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
@@ -931,15 +983,6 @@
   {\bibfield  {journal} {\bibinfo  {journal} {Phys. Scr.}\ }\textbf {\bibinfo
   {volume} {91}},\ \bibinfo {pages} {083006} (\bibinfo {year}
   {2016})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Caprio}\ \emph {et~al.}(2008)\citenamefont {Caprio},
-  \citenamefont {Cejnar},\ and\ \citenamefont {Iachello}}]{Caprio_2008}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~A.}\ \bibnamefont
-  {Caprio}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Cejnar}}, \
-  and\ \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Iachello}},\ }\href
-  {\doibase 10.1016/j.aop.2007.06.011} {\bibfield  {journal} {\bibinfo
-  {journal} {Ann. Phys. (N. Y.)}\ }\textbf {\bibinfo {volume} {323}},\ \bibinfo
-  {pages} {1106} (\bibinfo {year} {2008})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Macek}\ \emph {et~al.}(2019)\citenamefont {Macek},
   \citenamefont {Str{\'a}nsk{\'y}}, \citenamefont {Leviatan},\ and\
   \citenamefont {Cejnar}}]{Macek_2019}%
@@ -951,6 +994,18 @@
   {Cejnar}},\ }\href {\doibase 10.1103/PhysRevC.99.064323} {\bibfield
   {journal} {\bibinfo  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume}
   {99}},\ \bibinfo {pages} {064323} (\bibinfo {year} {2019})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Cejnar}\ \emph {et~al.}(2020)\citenamefont {Cejnar},
+  \citenamefont {Str{\'a}nsk{\'y}}, \citenamefont {Macek},\ and\ \citenamefont
+  {Kloc}}]{Cejnar_2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Cejnar}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Str{\'a}nsk{\'y}}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Macek}}, \ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Kloc}},\
+  }\href@noop {} {\enquote {\bibinfo {title} {Excited-state quantum phase
+  transitions},}\ } (\bibinfo {year} {2020}),\ \Eprint
+  {http://arxiv.org/abs/2011.01662} {arXiv:2011.01662 [quant-ph]} \BibitemShut
   {NoStop}%
 \bibitem [{\citenamefont {Str{\'a}nsk{\'y}}\ \emph {et~al.}(2018)\citenamefont
   {Str{\'a}nsk{\'y}}, \citenamefont {Dvo{\v r}{\'a}k},\ and\ \citenamefont

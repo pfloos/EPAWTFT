@@ -275,6 +275,10 @@ such that $E_{\pm}(2\pi)  = E_{\mp}(0)$ and $E_{\pm}(4\pi)  = E_{\pm}(0)$.
 As a result, completely encircling an EP leads to the interconversion of the two interacting states, while a second complete rotation returns the two states to their original energies.
 Additionally, the wave functions pick up a geometric phase in the process, and four complete loops are required to recover their starting forms.\cite{MoiseyevBook}
 
+\titou{The use of non-Hermitian Hamiltonians in quantum chemistry has a long history; these Hamiltonians have been used extensively as a method for describing metastable resonance phenomena. \cite{MoiseyevBook}
+Through a complex-scaling of the electronic or atomic coordinates,\cite{Moiseyev_1998} or by introducing a complex absorbing potential,\cite{Riss_1993,Ernzerhof_2006,Benda_2018} outgoing resonance states are transformed into square-integrable wave functions that allow the energy and lifetime of the resonance to be computed.
+We refer the interested reader to the excellent book of Moiseyev for a general overview. \cite{MoiseyevBook}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Perturbation theory}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -854,7 +858,7 @@ When one relies on MP perturbation theory (and more generally on any perturbativ
 %In other words, each time a higher-order term is computed, one would like to obtained an overall result closer to the exact energy. 
 In other words, one would like a monotonic convergence of the MP series. Assuming this, the only limiting process to get the exact correlation energy (in a finite basis set) would be our ability to compute the terms of this perturbation series.
 Unfortunately this is not as easy as one might think because i) the terms of the perturbative series become rapidly computationally cumbersome, and ii) erratic behavior of the perturbative coefficients are not uncommon. For example, in the late 80's, Gill and Radom reported deceptive and slow convergences in stretched systems \cite{Gill_1986, Gill_1988} (see also Refs.~\onlinecite{Handy_1985, Lepetit_1988}). 
-In Ref.~\onlinecite{Gill_1986}, the authors showed that the RMP series is convergent, yet oscillatory which is far from being convenient if one is only able to compute the first few terms of the expansion (for example here RMP5 is worse than RMP4). 
+In Ref.~\onlinecite{Gill_1986}, the authors showed that the RMP series is convergent, yet oscillatory which is far from being convenient if one is only able to compute the first few terms of the expansion (for example, in the case of \ce{He2^2+}, RMP5 is worse than RMP4). 
 On the other hand, the UMP series is monotonically convergent (except for the first few orders) but very slowly. 
 Thus, one cannot practically use it for systems where only the first terms can be computed.
 
@@ -876,18 +880,18 @@ Cremer and He proved that using specific extrapolation formulas of the MP series
 Even if there were still shaded areas in their analysis and that their classification was incomplete, the work of Cremer and He clearly evidenced that understanding the origin of the different modes of convergence could potentially lead to a more rationalised use of MP perturbation theory and, hence, to more accurate correlation energy estimates.
 
 Recently, Mih\'alka \textit{et al.} studied the partitioning effect on the convergence properties of Rayleigh-Schr\"odinger perturbation theory by considering the MP and the EN partitioning as well as an alternative partitioning. \cite{Mihalka_2017a} 
-Taking as an example (in particular) the water molecule at equilibrium and at stretched geometries, they could estimate the radius of the convergence via a quadratic Pad\'e approximant and convert divergent perturbation expansions to convergent ones in some cases thanks to a judicious choice of the level shift parameter.
+Taking as an example (in particular) the water molecule at equilibrium and at stretched geometries, they could estimate the radius of convergence via a quadratic Pad\'e approximant and convert divergent perturbation expansions to convergent ones in some cases thanks to a judicious choice of the level shift parameter.
 In a subsequent study by the same group, \cite{Mihalka_2017b} they use analytic continuation techniques to resum divergent MP series taking again as an example the water molecule in a stretched geometry.
-In a nutshell, their idea consists in calculating the energy of the system for several values of $\lambda$ for which the MP series is rapidly convergent, and to extrapolate the final energy to the physical system at $\lambda = 1$ via a polynomial- or Pad\'e-based fit. 
+In a nutshell, their idea consists in calculating the energy of the system for several values of $\lambda$ for which the MP series is rapidly convergent (\ie, for $\lambda < r_c$), and to extrapolate the final energy to the physical system at $\lambda = 1$ via a polynomial- or Pad\'e-based fit. 
 However, the choice of the functional form of the fit remains a subtle task.
 This technique was first generalised by using complex scaling parameters and applying analytic continuation by solving the Laplace equation, \cite{Surjan_2018} and then further improved thanks to Cauchy's integral formula \cite{Mihalka_2019}
 \begin{equation}
 	\label{eq:Cauchy}
-	\frac{1}{2\pi i} \oint_{\gamma} \frac{E(z)}{z - a} = E(a),
+	\frac{1}{2\pi i} \oint_{\gamma} \frac{E(\lambda)}{\lambda - a} = E(a),
 \end{equation}
-which states that the value of the energy can be computed at $z=a$ inside the contour $\gamma$ only by the knowledge of its values on the same contour.
-Their method consists in refining self-consistently the values of $E(z)$ computed on a contour going through the physical point at $z = 1$ and encloses points of the ``trusted'' region (where the MP series is convergent). The shape of this contour is arbitrary but no singularities are allowed inside the contour to ensure $E(z)$ is analytic. 
-When the values of $E(z)$ on the so-called contour are converged, Cauchy's integrals formula \eqref{eq:Cauchy} is invoked to compute the values at $E(z=1)$ which corresponds to the final estimate of the FCI energy.
+which states that the value of the energy can be computed at $\lambda=a$ inside the complex contour $\gamma$ only by the knowledge of its values on the same contour.
+Their method consists in refining self-consistently the values of $E(\lambda)$ computed on a contour going through the physical point at $\lambda = 1$ and encloses points of the ``trusted'' region (where the MP series is convergent). The shape of this contour is arbitrary but no singularities are allowed inside the contour to ensure $E(\lambda)$ is analytic. 
+When the values of $E(\lambda)$ on the so-called contour are converged, Cauchy's integrals formula \eqref{eq:Cauchy} is invoked to compute the values at $E(\lambda=1)$ which corresponds to the final estimate of the FCI energy.
 The authors illustrate this protocol on the dissociation curve of \ce{LiH} and the stretched water molecule showing encouraging results. \cite{Mihalka_2019} 
 
 %==========================================%
@@ -912,8 +916,8 @@ Then, by modelling this avoided crossing via a two-state Hamiltonian one can get
 where the diagonal matrix is the unperturbed Hamiltonian matrix $\bH^{(0)}$ and the second matrix in the right-hand-side $\bV$ is the perturbation.
 
 They first studied molecules with low-lying doubly-excited states of the same spatial and spin symmetry.
-The exact wave function has a non-negligible contribution from the doubly-excited states, so these low-lying excited states were good candidates for being intruder states. \titou{For \ce{CH_2} in a large basis set, the series is convergent up to the 50th order. 
-They showed that the dominant singularity lies outside the unit circle but close to it causing the slow convergence.}
+The exact wave function has a non-negligible contribution from the doubly-excited states, so these low-lying excited states were good candidates for being intruder states. For \ce{CH_2} in a large basis set, the series is convergent up to the 50th order. 
+They showed that the dominant singularity lies outside the unit circle but close to it causing the slow convergence.
 
 Then they demonstrated that the divergence for \ce{Ne} is due to a back-door intruder state. 
 When the basis set is augmented with diffuse functions, the ground state undergo sharp avoided crossings with highly diffuse excited states leading to a back-door intruder state. 
@@ -987,10 +991,11 @@ To the best of our knowledge, the effect of bond stretching on singularities, it
 In the previous section, we saw that a careful analysis of the structure of the Hamiltonian allows us to predict the existence of a critical point. 
 In a finite basis set this critical point is model by a cluster of $\beta$ singularities. 
 It is now well known that this phenomenon is a special case of a more general phenomenon. 
-Indeed, theoretical physicists proved that EPs close to the real axis are connected to \textit{quantum phase transitions} (QPTs). \cite{Heiss_1988,Heiss_2002,Cejnar_2005, Cejnar_2007, Cejnar_2009, Borisov_2015, Sindelka_2017} 
+Indeed, theoretical physicists proved that EPs close to the real axis are connected to \textit{quantum phase transitions} (QPTs). \cite{Heiss_1988,Heiss_2002,Borisov_2015,Sindelka_2017,CarrBook,Vojta_2003,SachdevBook,GilmoreBook} 
 In quantum mechanics, the Hamiltonian is almost always dependent of, at least, one parameter. 
 In some cases the variation of a parameter can lead to abrupt changes at a critical point. 
-These QPTs exist both for ground and excited states as shown by Cejnar and coworkers. \cite{Cejnar_2009, Sachdev_2011, Cejnar_2015, Cejnar_2016, Caprio_2008, Macek_2019} A ground-state QPT is characterised by the derivatives of the ground-state energy with respect to a non-thermal control parameter. \cite{Cejnar_2009, Sachdev_2011} 
+These QPTs exist both for ground and excited states as shown by Cejnar and coworkers. \cite{Cejnar_2005,Cejnar_2007,Caprio_2008,Cejnar_2009,Sachdev_2011,Cejnar_2015,Cejnar_2016, Macek_2019,Cejnar_2020} 
+A ground-state QPT is characterised by the derivatives of the ground-state energy with respect to a non-thermal control parameter. \cite{Cejnar_2009, Sachdev_2011} 
 The transition is called discontinuous and of first order if the first derivative is discontinuous at the critical parameter value. 
 Otherwise, it is called continuous and of $m$th order if the $m$th derivative is discontinuous. 
 A QPT can also be identify by the discontinuity of an appropriate order parameter (or one of its derivatives). 
@@ -1007,12 +1012,12 @@ In the thermodynamic limit, some of the EPs converge towards a critical point $\
 They showed that, within the interacting boson model, \cite{Lipkin_1965} EPs associated to first- and second-order QPT behave differently when the number of particles increases. 
 The position of these singularities converge towards the critical point on the real axis at different rates (exponentially and algebraically for the first and second orders, respectively) with respect to the number of particles.
 
-Moreover, Cejnar \textit{et al.}~studied the so-called shape-phase transitions of the IBM model from the QPT's point of view \cite{Cejnar_2000, Cejnar_2003, Cejnar_2007a, Cejnar_2009}. 
+Moreover, Cejnar \textit{et al.}~studied the so-called shape-phase transitions of the interaction boson model from a QPT point of view. \cite{Cejnar_2000, Cejnar_2003, Cejnar_2007a, Cejnar_2009}
 The phase of the ensemble of $s$ and $d$ bosons is characterised by a dynamical symmetry. 
 When a parameter is continuously modified the dynamical symmetry of the system can change at a critical value of this parameter, leading to a deformed phase. 
 They showed that at this critical value of the parameter, the system undergoes a QPT. 
 For example, without interaction the ground state is the spherical phase (a condensate of $s$ bosons) and when the interaction increases it leads to a deformed phase constituted of a mixture of $s$ and $d$ bosons states. 
-In particular, we see that the transition from the spherical phase to the axially symmetric one is analog to the symmetry breaking of the wave function of the hydrogen molecule when the bond is stretched \cite{SzaboBook}.
+In particular, we see that the transition from the spherical phase to the axially symmetric one is analog to the symmetry breaking of the wave function of the hydrogen molecule when the bond is stretched. \cite{SzaboBook}
 It seems like our understanding of the physics of spatial and/or spin symmetry breaking in HF theory can be enlightened by QPT theory. 
 Indeed, the second derivative of the HF ground-state energy is discontinuous at the point of spin symmetry-breaking which means that the system undergo a second-order QPT. 
 Moreover, the $\beta$ singularities introduced by Sergeev and coworkers to describe the EPs modelling the formation of a bound cluster of electrons are actually a more general class of singularities. 
