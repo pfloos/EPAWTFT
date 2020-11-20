@@ -530,12 +530,12 @@
   {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo
   {volume} {108}},\ \bibinfo {pages} {083002} (\bibinfo {year}
   {2012})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Goodson}(2012)}]{Goodson_2012}%
+\bibitem [{\citenamefont {Goodson}(2011)}]{Goodson_2011}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~Z.}\ \bibnamefont
   {Goodson}},\ }\href {\doibase 10.1002/wcms.92} {\bibfield  {journal}
   {\bibinfo  {journal} {{WIREs} Comput. Mol. Sci.}\ }\textbf {\bibinfo {volume}
-  {2}},\ \bibinfo {pages} {743} (\bibinfo {year} {2012})}\BibitemShut {NoStop}%
+  {2}},\ \bibinfo {pages} {743} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Cejnar}\ \emph {et~al.}(2007)\citenamefont {Cejnar},
   \citenamefont {Heinze},\ and\ \citenamefont {Macek}}]{Cejnar_2007}%
   \BibitemOpen
