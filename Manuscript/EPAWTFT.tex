@@ -140,8 +140,7 @@
 In this review, we explore the extension of quantum chemistry in the complex plane and its link with perturbation theory.
 We observe that the physics of a quantum system is intimately connected to the position of energy singularities in the complex plane, known as exceptionnal points.
 After a presentation of the fundamental notions of quantum chemistry in the complex plane, such as the mean-field Hartree-Fock approximation and Rayleigh-Schr\"odinger perturbation theory, and their illustration with the ubiquitous (symmetric) Hubbard dimer at half filling, we provide a historical overview of the various research activities that have been performed on the physics of singularities.
-In particular, we highlight the seminal work of several research groups on the convergence behaviour of perturbative series obtained within M{\o}ller-Plesset perturbation theory.
-
+In particular, we highlight the seminal work of several research groups on the convergence behaviour of perturbative series obtained within M{\o}ller-Plesset perturbation theory and its apparent link with quantum phase transitions.
 \end{abstract}
 
 \maketitle
@@ -173,7 +172,7 @@ Hence, electronic states can be interchanged away from the real axis since the c
 Amazingly, this smooth and continuous transition from one state to another has recently been experimentally realised in physical settings such as electronics, microwaves, mechanics, acoustics, atomic systems and optics. \cite{Bittner_2012,Chong_2011,Chtchelkatchev_2012,Doppler_2016,Guo_2009,Hang_2013,Liertzer_2012,Longhi_2010,Peng_2014, Peng_2014a,Regensburger_2012,Ruter_2010,Schindler_2011,Szameit_2011,Zhao_2010,Zheng_2013,Choi_2018,El-Ganainy_2018}
 
 Exceptional points (EPs) are branch point singularities where two (or more) states become exactly degenerate. \cite{MoiseyevBook,Heiss_1988,Heiss_1990,Heiss_1999,Berry_2011,Heiss_2012,Heiss_2016,Benda_2018}
-They are the non-Hermitian analogs of conical intersections, \cite{Yarkony_1996} which are ubiquitous in non-adiabatic processes and play a key role in photo-chemical mechanisms.
+They are the non-Hermitian analogs of conical intersections, \cite{Yarkony_1996} which are ubiquitous in non-adiabatic processes and play a key role in photochemical mechanisms.
 In the case of auto-ionising resonances, EPs have a role in deactivation processes similar to conical intersections in the decay of bound excited states. \cite{Benda_2018}
 Although Hermitian and non-Hermitian Hamiltonians are closely related, the behaviour of their eigenvalues near degeneracies is starkly different.
 For example, encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy. \cite{MoiseyevBook,Heiss_2016,Benda_2018}
@@ -213,7 +212,7 @@ We refer the interested reader to the excellent book of Moiseyev for a general o
 	\label{fig:FCI}}
 \end{figure*}
 
-To illustrate the concepts discussed throughout this article, we will consider the symmetric Hubbard dimer at half filling, \ie\ with two opposite-spin fermions.
+To illustrate the concepts discussed throughout this article, we consider the symmetric Hubbard dimer at half filling, \ie\ with two opposite-spin fermions.
 Analytically solvable model systems are essential in theoretical chemistry and physics as the simplicity of the
 mathematics compared to realistic systems (e.g., atoms and molecules) readily allows concepts to be illustrated and new methods to be tested wile retaining much 
 of the key physics.
@@ -368,8 +367,9 @@ However, this series diverges $x \ge 1$.
 This divergence occurs because $f(x)$ has four singularities in the complex 
 ($\e^{\i\pi/4}$, $\e^{-\i\pi/4}$, $\e^{\i3\pi/4}$, and $\e^{-\i3\pi/4}$) with a modulus equal to $1$, demonstrating
 that complex singularities are essential to fully understand the series convergence on the real axis.\cite{BenderBook}
+\titou{Include Antoine's example $\sum_{n=1}^\infty \lambda^n/n$ which is divergent at $\lambda = 1$ but convergent at $\lambda = -1$.}
 
-The radius of convergence for the perturbation series is therefore dictated by the magnitude $\abs{\lambda_0}$ of the
+The radius of convergence for the perturbation series is therefore dictated by the magnitude \titou{$\abs{\lambda_0}$} of the
 singularity in $E(\lambda)$ that is closest to the origin.
 Like the exact system in Sec.~\ref{sec:example}, the perturbation energy $E(\lambda)$ represents
 a ``one-to-many'' function with the output elements representing an approximation to both the ground and excited states.
@@ -408,6 +408,7 @@ This Slater determinant is defined as an antisymmetric combination of $\Ne$ (rea
 \end{equation}
 Here the core Hamiltonian is
 \begin{equation}
+\label{eq:Hcore}
 	\Hat{h}(\vb{x}) = -\frac{\grad^2}{2} + \sum_{A}^{M} \frac{Z_A}{\abs{\vb{r}-\vb{R}_A}}
 \end{equation}
 and
@@ -450,7 +451,7 @@ From hereon, $i$ and $j$ denote occupied orbitals, $a$ and $b$ denote unoccupied
 
 % BRIEF FLAVOURS OF HF
 In the most flexible variant of real HF theory (generalised HF) the one-electron orbitals can be complex-valued
-and contain a mixture of spin-up and spin-down components.\cite{Mayer_1993}
+and contain a mixture of spin-up and spin-down components.\cite{Mayer_1993,Jimenez-Hoyos_2011}
 However, the application of HF with some level of constraint on the orbital structure is far more common.
 Forcing the spatial part of the orbitals to be the same for spin-up and spin-down electrons leads to restricted HF (RHF) theory, while allowing different orbitals for different spins leads to the so-called unrestricted HF (UHF) approach.
 The advantage of the UHF approximation is its ability to correctly describe strongly correlated systems, 
@@ -545,17 +546,17 @@ with the corresponding UHF ground-state energy (Fig.~\ref{fig:HF_real})
 Time-reversal symmetry dictates that this UHF wave function must be degenerate with its spin-flipped pair, obtained 
 by swapping $\ta^{\text{UHF}}$ and $\tb^{\text{UHF}}$ in Eqs.~\eqref{eq:ta_uhf} and \eqref{eq:tb_uhf}.
 This type of symmetry breaking is also called a spin-density wave in the physics community as the system ``oscillates'' between the two symmetry-broken configurations. \cite{GiulianiBook}
-There also exist symmetry-breaking processes at the RHF level where a charge-density wave is created via the oscillation between the situations where the two electrons are one side or the other. \cite{GiulianiBook}
+There also exist symmetry-breaking processes at the RHF level where a charge-density wave is created via the oscillation between the situations where the two electrons are one side or the other. \cite{StuberPaldus,Fukutome_1981}
 
 %============================================================%
 \subsection{Self-consistency as a perturbation} %OR {Complex adiabatic connection}
 %============================================================%
 
 % INTRODUCE PARAMETRISED FOCK HAMILTONIAN
-The inherent non-linearity in the Fock eigenvalue problem arises from self-consistency 
+The inherent non-linearity in the Fock eigenvalue problem \eqref{eq:FockOp} arises from self-consistency 
 in the HF approximation, and is usually solved through an iterative approach.\cite{SzaboBook}
 Alternatively, the non-linear terms arising from the Coulomb and exchange operators can 
-be considered as a perturbation from the core Hamiltonian by introducing the
+be considered as a perturbation from the core Hamiltonian \eqref{eq:Hcore} by introducing the
 transformation $U \rightarrow \lambda\, U$, giving the parametrised Fock operator 
 \begin{equation}
     \Hat{f}_{\lambda}(\vb{x}) = \Hat{h}(\vb{x}) + \lambda\, \Hat{v}_\text{HF}(\vb{x}).
@@ -606,7 +607,7 @@ role of \textit{quasi}-EPs in determining the behaviour of the HF approximation.
 %Through the introduction of non-Hermiticity, we have provided a more general framework in which the complex and diverse characteristics of multiple solutions can be explored and understood.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{M{\o}ller-Plesset perturbation theory}
+\section{M{\o}ller-Plesset perturbation theory in the complex plane}
 \label{sec:MP}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -674,7 +675,7 @@ unrestricted reference orbitals.
 
 Obviously, although practically convenient for electronic structure calculations, the MP partitioning is not the only possibility, and alternative partitioning have been proposed in the literature:
 i) the Epstein-Nesbet (EN) partitioning which consists in taking the diagonal elements of $\hH$ as the zeroth-order Hamiltonian. \cite{Nesbet_1955,Epstein_1926} 
-Hence, the off-diagonal elements of $\hH$ are the perturbation operator,
+%Hence, the off-diagonal elements of $\hH$ are the perturbation operator,
 ii) the weak correlation partitioning in which the one-electron part is consider as the unperturbed Hamiltonian $\hH^{(0)}$ and the two-electron part is the perturbation operator $\hV$, and 
 iii) the strong coupling partitioning where the two operators are inverted compared to the weak correlation partitioning. \cite{Seidl_2018}
 
@@ -688,7 +689,7 @@ In other words, one would like a monotonic convergence of the MP series. Assumin
 Unfortunately this is not as easy as one might think because i) the terms of the perturbative series become rapidly computationally cumbersome, and ii) erratic behavior of the perturbative coefficients are not uncommon. For example, in the late 80's, Gill and Radom reported deceptive and slow convergences in stretched systems \cite{Gill_1986, Gill_1988} (see also Refs.~\onlinecite{Handy_1985, Lepetit_1988}). 
 In Ref.~\onlinecite{Gill_1986}, the authors showed that the RMP series is convergent, yet oscillatory which is far from being convenient if one is only able to compute the first few terms of the expansion (for example, in the case of \ce{He2^2+}, RMP5 is worse than RMP4). 
 On the other hand, the UMP series is monotonically convergent (except for the first few orders) but very slowly. 
-Thus, one cannot practically use it for systems where only the first terms can be computed.
+Thus, one cannot practically use it for systems where only the first terms are computationally accessible.
 
 When a bond is stretched, in most cases the exact wave function becomes more and more of multi-reference nature. 
 Yet the HF wave function is restricted to be a single Slater determinant.
