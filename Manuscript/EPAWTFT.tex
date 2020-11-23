@@ -628,13 +628,13 @@ role of \textit{quasi}-EPs in determining the behaviour of the HF approximation.
 %Through the introduction of non-Hermiticity, we have provided a more general framework in which the complex and diverse characteristics of multiple solutions can be explored and understood.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{M{\o}ller-Plesset perturbation theory in the complex plane}
+\section{M{\o}ller-Plesset Perturbation Theory in the Complex Plane}
 \label{sec:MP}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %=====================================================%
-\subsection{Basics}
+\subsection{Background Theory}
 %=====================================================%
 
 In electronic structure, the HF Hamiltonian \eqref{eq:HFHamiltonian} is often used as the zeroth-order Hamiltonian
@@ -649,7 +649,7 @@ With the MP partitioning, the parametrised perturbation Hamiltonian becomes
     + (1-\lambda) \sum_{i}^{N} v^{\text{HF}}(\vb{x}_i)
     + \lambda\sum_{i<j}^{N}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}}.
 \end{multline}
-Any set of orbitals can be used to define the HF Hamiltonian, although usually either the RHF or UHF orbitals are chosen to 
+Any set of orbitals can be used to define the HF Hamiltonian, although either the RHF or UHF orbitals are usually chosen to 
 define the RMP or UMP series respectively.
 The MP energy at a given order $n$ (\ie, MP$n$) is then defined as
 \begin{equation}
@@ -672,7 +672,7 @@ in the molecular spin-orbital basis\cite{Gill_1994}
       {\abs{\vb{r}_1 - \vb{r}_2}}.
 \end{equation}
 
-While most practical calculations usually consider only the MP2 or MP3 approximations, higher order terms can 
+While most practical calculations generally consider only the MP2 or MP3 approximations, higher order terms can 
 easily be computed to understand the convergence of the MP$n$ series.\cite{Handy_1985}
 \textit{A priori}, there is no guarantee that this series will provide the smooth convergence that is desirable for a
 systematically improvable theory.
@@ -689,19 +689,23 @@ unrestricted reference orbitals.
 %As mentioned above, by searching the singularities of the function $E(\lambda)$, one can get information on the convergence properties of the MP series. 
 %These singularities of the energy function are exactly the EPs connecting the electronic states as mentioned in Sec.~\ref{sec:intro}. 
 %The direct computation of the terms of the series is quite manageable up to fourth order in perturbation, while the fifth and sixth order in perturbation can still be obtained but at a rather high cost. \cite{JensenBook}
-%In order to better understand the behavior of the MP series and how it is connected to the singularity structure, we have to access high-order terms. 
+%In order to better understand the behaviour of the MP series and how it is connected to the singularity structure, we have to access high-order terms. 
 %For small systems, one can access the whole terms of the series using full configuration interaction (FCI). 
 %If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI space, one gets the exact energies (in this finite Hilbert space) and the Taylor expansion with respect to $\lambda$ allows to access the MP perturbation series at any order.
 
 
-Obviously, although practically convenient for electronic structure calculations, the MP partitioning is not the only possibility, and alternative partitioning have been proposed in the literature:
+Although practically convenient for electronic structure calculations, the MP partitioning is not 
+the only possibility and alternative partitionings have been considered including: %proposed in the literature:
 i) the Epstein-Nesbet (EN) partitioning which consists in taking the diagonal elements of $\hH$ as the zeroth-order Hamiltonian. \cite{Nesbet_1955,Epstein_1926} 
 %Hence, the off-diagonal elements of $\hH$ are the perturbation operator,
 ii) the weak correlation partitioning in which the one-electron part is consider as the unperturbed Hamiltonian $\hH^{(0)}$ and the two-electron part is the perturbation operator $\hV$, and 
 iii) the strong coupling partitioning where the two operators are inverted compared to the weak correlation partitioning. \cite{Seidl_2018}
+\hugh{While an in-depth comparison of these different approaches can offer insight into 
+their relative strengths and weaknesses for various situations, we will restrict our current discussion
+to the convergence properties of the MP expansion.}
 
 %=====================================================%
-\subsection{Behavior of the M{\o}ller-Plesset series in molecular systems}
+\subsection{M{\o}ller-Plesset Convergence in Molecular Systems}
 %=====================================================%
 
 When one relies on MP perturbation theory (and more generally on any perturbative partitioning), it would be reasonable to ask for a systematic improvement of the energy with respect to the perturbative order, \ie, one would expect that the more terms of the perturbative series one can compute, the closer the result from the exact energy.
@@ -740,7 +744,7 @@ Even if there were still shaded areas in their analysis and that their classific
 
 
 %==========================================%
-\subsection{Behavior of the M{\o}ller-Plesset series in the Hubbard dimer}
+\subsection{M{\o}ller-Plesset Convergence in the Hubbard Dimer}
 %==========================================%
 
 To illustrate the behaviour of the RMP and UMP series, we can again consider the Hubbard dimer.

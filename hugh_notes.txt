@@ -1,0 +1,115 @@
+Bartlett and Silver, JCP (1975):
+--------------------------------
+[Supposedely the first MBPT?]
+Report moderately large molecular calculations using Slater type orbitals.
+
+Pople, Binkley, and Seeger, IJQCS (1976):
+-----------------------------------------
+This paper introduces MP2 as a possible route to incorporating electron correlation. Largely a 
+pioneering paper that lays out the properties of MP2 etc.
+
+Pople, Krishnan, Schlegel, and Binkley, IJQC (1978):
+----------------------------------------------------
+Discusses different correlation techniques for quantum chemistry. This paper is particularly 
+concerned with comparing the MP2 expression with the CC approach which was emerging at the
+time. They show that CCD is equivalent to MP3 (?). 
+
+Krishnan, Frisch, and Pople, JCP (1980):
+----------------------------------------
+Assessed that triple excitations that appear at 4th order are important
+in the quantitative treatment of chemical binding.
+
+Laidig, Fitzgerald, and Bartett, CPL (1984):
+--------------------------------------------
+Investigate convergence of MBPT. They find BH is slowly convergent. HF is also slowly convergent,
+accidentally so since the MBPT(4) is erroneously slow. New excitations are introduced at each even order.
+Introduce Pade approximant to accelerate convergence, giving better accuracy.
+
+Knowles, Somasundram, Handy, and Hirao, CPL (1985):
+---------------------------------------------------
+Apply their FCI code to look at the convergence of MBPT(n).
+
+Rate of convergence and size of terms is heavily system-dependent. Notice different convergence
+behaviour for odd/even terms (oscillatory?). MP4 appears to capture the majority of the correlation
+energy.
+
+Handy, Knowles, and Somasundram, TCA (1985):
+--------------------------------------------
+Apply the FCI framework again to systematically investigate the convergence of the MP series. 
+Attempt to identify whether the MP series is convergent or not, and compare RHF/UHF.
+
+Observe increasingly slow RMP convergence for stretched water with erratic behaviour. For stretched
+geometry with UMP, convergence appears smooth but is very slow. Suggest that this slow convergence 
+probably emerges from spin contamination in the UHF solution.
+
+[IS THERE MORE MBPT LITERATURE TO CONSIDER?]
+
+Laidig, Saxe, and Bartlett, JCP (1986):
+---------------------------------------
+Investigate binding curves for N2 and F2 using multireference CC and MBPT
+
+Divergence in R-MBPT beyond 4 bohr. 
+All finite-order U-MBPT calculations for F2 give an unphysical barrier around 2.8-2.9 bohr.
+Divergence of R-MBPT observed in N2 beyond 3 bohr. Around minimum, the series is oscillatory and
+very slowly convergent. In contrast, the U-MBPT is convergent and non-oscillatory, although 
+low-order expansions give qualitatively wrong energetics (eg. unphysical barriers or second minima). 
+
+Schlegel, JCP, (1986):
+----------------------
+Apply spin-projection to UHF and UMP to obtain improved potential enerrgy curves. Use a
+post-perturbation projection to avoid mixing in higher energy states.
+
+Perturbation corrections do not significantly reduce spin contamination. PUHF has a gradient
+discontinuity at the CFP (but these are PAV). This kink is reduced by adding the perturbation
+correlation. 
+
+Gill and Radom, CP, (1986):
+---------------------------
+Consider ``bottom-up'' approach, where look at successive contributions from HF, MP1, MP2, ...
+Use a recursive approach to higher-order terms.
+
+In \ce{He^2+}, the UHF becomes progressively more spin contaminated for large bond lengths.
+RMP gives a progressively better estimate of the dissociative barrier height. In contrast, UMP
+starts by increasing the barrier, before decrease after 3rd order. They conclude that poor convergence
+can be attributed directly to a poor reference representation of the exact wave function.
+
+While some properties (eg. bond length) might be well-converged, others can be far from convergence.
+Worst barrier height estimate occurs at UMP4, after which there is very slow convergence.
+
+They suspect that UMP problems can be attributed to spin-contamination. Conclude that incorrect
+"qualitative" nature of RMP is not as bad as spin-contamination in UMP.
+
+Gill, Wong, Nobes, and Radom, CPL (1988):
+-----------------------------------------
+Investigate performance of RMP expansions for homolytic bond breaking.
+
+Discuss the fact that the RMP will ultimately be divergent for homolytic bond breaking at 
+large extension, since the orbital energy based denominators will vanish. Propose a (2x2) matrix 
+problem to estimate whether an RMP series will be convergent. They use this metric to determine if
+an RMP series converges rapidly, slowly, or diverges.
+
+Gill, Pople, Radom, and Nobes (1988):
+-------------------------------------
+Investigate the effect of spin-contamination for slow UMP convergence. Spin-projection is 
+difficult to do exactly, and approximate forms can lead to kinks in the potential energy surface.
+
+Above critical point, UHF singles and doubles both mix with HF to give the exact wave function.
+Contribution of singles decreases for complete dissociation.
+
+Rate of UMP convergence slows down after critical point, with less that 3% of total correlation
+captured at UMP4. Increasingly slow convergence not due to singles as the singles contribution to 
+the UCI falls to zero as the rate of convergence becomes slower. It is therefore double 
+contribution that is poorly captured by low-order UMP terms.
+
+Lepetit, Pelissier, and Malrieu, JCP (1988):
+--------------------------------------------
+Investigate the poor convergence of unrestricted many-body perturbation theory.
+
+UHF reference has large and spurious energy shift that dramatically slows the rate of convergence.
+This comes from the localisation of the MOs in large separation and the doubly excited determinants
+that result from spin exchanges in the sigma bond. This effect is seen in N2, and other systems. 
+The EN partitioning avoids this, but the PT terms then become undetermined (zero on numerator and denominator).
+
+Single excitations can interact with the doubly-excited determinants. This matrix elements goes through
+a maximum at intermediate distances. This contribution enters at fourth-order.
+
