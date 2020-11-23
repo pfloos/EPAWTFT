@@ -687,7 +687,7 @@ iii) the strong coupling partitioning where the two operators are inverted compa
 
 When one relies on MP perturbation theory (and more generally on any perturbative partitioning), it would be reasonable to ask for a systematic improvement of the energy with respect to the perturbative order, \ie, one would expect that the more terms of the perturbative series one can compute, the closer the result from the exact energy.
 In other words, one would like a monotonic convergence of the MP series. Assuming this, the only limiting process to get the exact correlation energy (in a finite basis set) would be our ability to compute the terms of this perturbation series.
-Unfortunately this is not as easy as one might think because i) the terms of the perturbative series become rapidly computationally cumbersome, and ii) erratic behaviour of the perturbative coefficients are not uncommon. For example, in the late 80's, Gill and Radom reported deceptive and slow convergences in stretched systems \cite{Gill_1986,Gill_1988} (see also Refs.~\onlinecite{Handy_1985, Lepetit_1988}). 
+Unfortunately this is not as easy as one might think because i) the terms of the perturbative series become rapidly computationally cumbersome, and ii) erratic behaviour of the perturbative coefficients are not uncommon. For example, in the late 80's, Gill and Radom reported deceptive and slow convergences in stretched systems \cite{Gill_1986,Gill_1988} (see also Refs.~\onlinecite{Handy_1985,Lepetit_1988}). 
 In Ref.~\onlinecite{Gill_1986}, the authors showed that the RMP series is convergent, yet oscillatory which is far from being convenient if one is only able to compute the first few terms of the expansion.
 For example, in the case of the barrier to homolytic fission of \ce{He2^2+} in a minimal basis set, RMP5 is worse than RMP4 (see Fig.~2 in Ref.~\onlinecite{Gill_1986}).
 On the other hand, the UMP series is monotonically convergent after UMP5 but very slowly . 
@@ -704,6 +704,7 @@ The reasons behind this ambiguous behaviour are further explained below.
 In the unrestricted framework the singlet ground state wave function is allowed to mix with triplet wave functions, leading to the so-called spin contamination issue. Gill \textit{et al.}~highlighted the link between slow convergence of the UMP series and spin contamination for \ce{H2} in a minimal basis. \cite{Gill_1988}
 Handy and coworkers reported the same behaviour of the UMP series (oscillatory and slowly monotonically convergent) in stretched \ce{H2O} and \ce{NH2}. \cite{Handy_1985} Lepetit \textit{et al.}~analysed the difference between the MP and EN partitioning for the UHF reference. \cite{Lepetit_1988} 
 They concluded that the slow convergence of the UMP series is due to i) the fact that the MP denominator (see Eq.~\ref{eq:EMP2}) tends to a constant instead of vanishing, and ii) the lack of the singly-excited configurations (which only appears at fourth order) that strongly couple to the doubly-excited configurations.
+We believe that this divergent behaviour might therefore be attributed to the need for the single excitations to focus on correcting the structure of the reference orbitals rather than capturing the correlation energy. 
 
 Cremer and He analysed 29 atomic and molecular systems at the FCI level \cite{Cremer_1996} and grouped them in two classes: i) the \textit{class A} systems where one observes a monotonic convergence \titou{of the RMP series?} to the FCI energy, and ii) the \textit{class B} systems for which convergence is erratic after initial oscillations. 
 Their system set contains stretched molecules as well as molecules at their equilibrium geometry for various basis sets. 
@@ -748,7 +749,7 @@ giving the radius of convergence
     \rc = \abs{\frac{4t}{U}}.
 \end{equation}
 These EPs are identical than the exact EPs discussed in Sec.~\ref{sec:example}.
-The Taylor expansion of the RMP energy can then be evaluated to obtain the $n$th-order MP correction
+The Taylor expansion of the RMP energy can then be evaluated to obtain the $k$th-order MP correction
 \begin{equation}
 	E_\text{RMP}^{(k)} = U \delta_{0,k} - \frac{1}{2} \frac{U^k}{(4t)^{k-1}} \mqty( 1/2 \\ k/2).
 \end{equation}
@@ -761,7 +762,7 @@ The RMP series is convergent for $U = 3.5\,t$ with $\rc > 1$, as illustrated for
 of perturbation in Fig.~\ref{subfig:RMP_cvg}.
 In contrast, for $U = 4.5t$ one finds $\rc < 1$, and the RMP series becomes divergent.
 The corresponding Riemann surfaces for $U = 3.5\,t$ and $4.5\,t$ are shown in Figs.~\ref{subfig:RMP_3.5} and 
-\ref{subfig:RMP_4.5} respectively, with the single EP at $\lep$ (black dot) and the radius of convergence indicated
+\ref{subfig:RMP_4.5}, respectively, with the single EP at $\lep$ (black dot) and the radius of convergence indicated
 by the vertical cylinder of unit radius.
 For the divergent case, the $\lep$ lies inside this cylinder of convergence, while in the convergent case $\lep$ lies
 outside this cylinder.
@@ -769,8 +770,6 @@ In both cases, the EP connects the ground state with the doubly-excited state, a
 for the two states using the ground state RHF orbitals is identical.
 The convergent and divergent series start to differ at fourth order, corresponding to the lowest-order contribution
 from the single excitations.\cite{Lepetit_1988}
-This divergent behaviour might therefore be attributed to the need for the single excitations to focus on correcting
-the structure of the reference orbitals rather than capturing the correlation energy. 
 
 %%% FIG 2 %%%
 \begin{figure*}
@@ -810,7 +809,7 @@ Using the ground-state UHF reference orbitals in the Hubbard dimer yields the UM
 \end{equation}
 \end{widetext}
 While there is a closed-form expression for the ground-state energy, it is cumbersome and we eschew reporting it.
-Instead, the radius of convergence of the UMP series can obtained numerically as a function of $U/t$, as shown
+Instead, the radius of convergence of the UMP series can be obtained numerically as a function of $U/t$, as shown
 in Fig.~\ref{fig:RadConv}.
 These numerical values reveal that the UMP ground state series has $\rc > 1$ for all $U/t$ and must always converge.
 However, in the strong correlation limit (large $U$), this radius of convergence tends to unity, indicating that
@@ -844,7 +843,7 @@ Allowing the UHF orbitals to break the molecular symmetry introduces new couplin
 and fundamentally changes the structure of the EPs in the complex $\lambda$-plane.
 For example, while the RMP energy shows only one EP between the ground state and 
 the doubly-excited state (Fig.~\ref{fig:RMP}), the UMP energy has two EPs: one connecting the ground state with the
-first-excited open-shell singlet, and the other connecting the open-shell singlet state to the 
+first-excited \titou{open-shell singlet?}, and the other connecting the \titou{open-shell singlet?} to the 
 doubly-excited second excitation (Fig.~\ref{fig:UMP}).
 While this symmetry-breaking makes the ground-state UMP series convergent by moving the corresponding
 EP outside the unit cylinder, this process also moves the excited-state EP within the unit cylinder
@@ -884,7 +883,7 @@ spin-contamination from the wave function.
 		\subcaption{\label{subfig:UMP_7} $U/t = 7$}
     \end{subfigure}	\caption{
 	Convergence of the UMP series as a function of the perturbation order $n$ for the Hubbard dimer at $U/t = 3$ and $7$.
-	The Riemann surfaces associated with the exact energies of the UMP Hamiltonian \eqref{eq:H_UMP} are also represented for these two values of $U/t$ as functions of $\lambda$.
+	The Riemann surfaces associated with the exact energies of the UMP Hamiltonian \eqref{eq:H_UMP} are also represented for these two values of $U/t$ as functions of $\lambda$. \titou{Please Hugh, modify central figure.}
 	\label{fig:UMP}}
 \end{figure*}
 
