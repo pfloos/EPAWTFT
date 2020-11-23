@@ -148,7 +148,7 @@ In particular, we highlight the seminal work of several research groups on the c
 \tableofcontents
 
 %%%%%%%%%%%%%%%%%%%%%%%
-\section{Background}
+\section{Introduction}
 \label{sec:intro}
 %%%%%%%%%%%%%%%%%%%%%%%
 
@@ -186,12 +186,48 @@ Through a complex-scaling of the electronic or atomic coordinates,\cite{Moiseyev
 We refer the interested reader to the excellent book of Moiseyev for a general overview. \cite{MoiseyevBook}}
 
 %%%%%%%%%%%%%%%%%%%%%%%
-\section{Exceptional points in electronic structure}
+\section{Exceptional Points in Electronic Structure}
 \label{sec:EPs}
 %%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Time-Independent Schr\"odinger Equation}
+\label{sec:TDSE}
+%%%%%%%%%%%%%%%%%%%%%%%
+Within the Born-Oppenheimer approximation, the exact molecular Hamiltonian with $\Ne$ electrons and 
+$\Nn$ (clamped) nuclei is defined \hugh{for a given nuclear framework} as
+\begin{equation}\label{eq:ExactHamiltonian}
+    \hugh{\hH(\vb{R})} = 
+    - \frac{1}{2} \sum_{i}^{\Ne} \grad_i^2 
+    - \sum_{i}^{\Ne} \sum_{A}^{\Nn} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}} 
+    + \sum_{i<j}^{\Ne}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}},
+\end{equation}
+where $\vb{r}_i$ defines the position of the $i$-th electron, $\vb{R}_{A}$ and $Z_{A}$ are the position
+and charge of the $A$-th nucleus respectively, \hugh{and $\vb{R} = (\vb{R}_{1}, \dots, \vb{R}_{\Nn})$ is a
+collective vector for the nuclear positions.}
+The first term represents the kinetic energy of the electrons, while 
+the two following terms account for the electron-nucleus attraction and the electron-electron repulsion.
+
+% EXACT SCHRODINGER EQUATION
+The exact many-electron wave function \hugh{at a given nuclear geometry} $\Psi(\vb{R})$ corresponds 
+to the solution of the (time-independent) Schr\"{o}dinger equation
+\begin{equation} 
+    \hugh{\hH(\vb{R})\, \Psi(\vb{R}) = E(\vb{R})\, \Psi(\vb{R}),}
+    \label{eq:SchrEq}
+\end{equation} 
+with the eigenvalues $E(\vb{R})$ providing the exact energies.
+\hugh{The energy $E(\vb{R})$ can be considered as a ``one-to-many'' function since each input nuclear geometry
+yields several eigenvalues corresponding to the ground and excited states of the exact spectrum.}
+However, exact solutions to Eq.~\eqref{eq:SchrEq} are only possible in the simplest of systems, such as 
+the one-electron hydrogen atom and some specific two-electron systems with well-defined mathematical 
+properties.\cite{Taut_1993,Loos_2009b,Loos_2010e,Loos_2012}
+\hugh{In practice, approximations to the exact Schr\"{o}dinger equation must be introduced, including
+the perturbation theories and Hartree--Fock approximation considered in this review
+In what follows, we will drop the parametric dependence on the nuclear geometry and, 
+unless otherwise stated, atomic units will be used throughout.}
+
 %===================================%
-\subsection{Exceptional points in the Hubbard dimer}
+\subsection{Exceptional Points in the Hubbard Dimer}
 \label{sec:example}
 %===================================%
 
@@ -213,9 +249,10 @@ We refer the interested reader to the excellent book of Moiseyev for a general o
 \end{figure*}
 
 To illustrate the concepts discussed throughout this article, we consider the symmetric Hubbard dimer at half filling, \ie\ with two opposite-spin fermions.
-Analytically solvable model systems are essential in theoretical chemistry and physics as the simplicity of the
-mathematics compared to realistic systems (e.g., atoms and molecules) readily allows concepts to be illustrated and new methods to be tested wile retaining much 
-of the key physics.
+Analytic\trashHB{ally solvable} model systems are essential in theoretical chemistry and physics as their \hugh{mathematical} simplicity \trashHB{of the
+mathematics} compared to realistic systems (e.g., atoms and molecules) allows new concepts and methods to be 
+easily \trashHB{illustrated and} tested while retaining the key physical phenomena.
+\hugh{(HGAB: This sentence felt too long to me. Feel free to re-instate words if you think they are neccessary)}
 
 Using the (localised) site basis, the Hilbert space of the Hubbard dimer comprises the four configurations
 \begin{align}
@@ -237,10 +274,12 @@ where $t$ is the hopping parameter and $U$ is the on-site Coulomb repulsion.
 We refer the interested reader to Refs.~\onlinecite{Carrascal_2015,Carrascal_2018} for more details about this system.
 The parameter $U$ controls the strength of the electron correlation.
 In the weak correlation regime (small $U$), the kinetic energy dominates and the electrons are delocalised over both sites.
-In the large-$U$ (or strong correlation) regime, the electron repulsion term drives the physics and the electrons localise on opposite sites to minimise their Coulomb repulsion. 
+In the large-$U$ (or strong correlation) regime, the electron repulsion term \hugh{becomes dominant} \trashHB{drives the physics}
+and the electrons localise on opposite sites to minimise their Coulomb repulsion. 
 This phenomenon is often referred to as Wigner crystallisation. \cite{Wigner_1934}
 
-To illustrate the formation of an EP, we scale the off-diagonal coupling strength by introducing the complex parameter $\lambda$ through the transformation $t\rightarrow \lambda t$.
+To illustrate the formation of an EP, we scale the off-diagonal coupling strength by introducing the complex parameter $\lambda$ through the transformation $t\rightarrow \lambda t$
+\hugh{to give the parameterised Hamiltonian $\hH(\lambda)$.}
 When $\lambda$ is real, the Hamiltonian~\eqref{eq:H_FCI} is Hermitian with the distinct (real-valued) (eigen)energies
 \begin{subequations}
 \begin{align}
@@ -281,36 +320,31 @@ such that $E_{\pm}(2\pi)  = E_{\mp}(0)$ and $E_{\pm}(4\pi)  = E_{\pm}(0)$.
 As a result, completely encircling an EP leads to the interconversion of the two interacting states, while a second complete rotation returns the two states to their original energies.
 Additionally, the wave functions pick up a geometric phase in the process, and four complete loops are required to recover their starting forms.\cite{MoiseyevBook}
 
+% LOCATING EPS
+\hugh{To locate EPs in practice, one must simultaneously solve
+\begin{subequations}
+\begin{align}
+	\label{eq:PolChar}
+	\det[E\hI-\hH(\lambda)] & = 0,
+	\\ 
+	\label{eq:DPolChar}
+	\pdv{E}\det[E\hI-\hH(\lambda)] & = 0,
+\end{align}
+\end{subequations}
+where $\hI$ is the identity operator.\cite{Cejnar_2007}
+Equation \eqref{eq:PolChar} is the well-known secular equation providing the (eigen)energies of the system. 
+If the energy is also solution of Eq.~\eqref{eq:DPolChar}, then this energy value is at least two-fold degenerate. 
+These degeneracies can be conical intersections between two states with different symmetries 
+for real values of $\lambda$,\cite{Yarkony_1996} or EPs between two states with the 
+same symmetry for complex values of $\lambda$.}
+
+
 %============================================================%
-\subsection{Rayleigh-Schr\"odinger perturbation theory}
+\subsection{Rayleigh-Schr\"odinger Perturbation Theory}
 %============================================================%
 
-Within the Born-Oppenheimer approximation, the exact molecular Hamiltonian with $\Ne$ electrons and 
-$\Nn$ (clamped) nuclei is defined as
-\begin{equation}\label{eq:ExactHamiltonian}
-    \hH = 
-    - \frac{1}{2} \sum_{i}^{\Ne} \grad_i^2 
-    - \sum_{i}^{\Ne} \sum_{A}^{\Nn} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}} 
-    + \sum_{i<j}^{\Ne}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}},
-\end{equation}
-where $\vb{r}_i$ defines the position of the $i$-th electron, and $\vb{R}_{A}$ and $Z_{A}$ are the position
-and charge of the $A$-th nucleus respectively.
-The first term represents the kinetic energy of the electrons, while 
-the two following terms account for the electron-nucleus attraction and the electron-electron repulsion.
-Atomic units are used unless otherwise stated.
-
-% EXACT SCHRODINGER EQUATION
-The exact many-electron wave function $\Psi$ corresponds to the solution of the (time-independent)
-Schr\"{o}dinger equation
-\begin{equation} 
-	\hH\Psi = E \Psi,
-    \label{eq:SchrEq}
-\end{equation} 
-with the eigenvalue $E$ providing the exact energy.
-Exact solutions to Eq.~\eqref{eq:SchrEq} are only possible in the simplest of systems, such as 
-the one-electron hydrogen atom and some specific two-electron systems with well-defined mathematical properties. \cite{Taut_1993,Loos_2009b,Loos_2010e,Loos_2012}
-In practice, one of the most common approximations involves
-a perturbative expansion of the energy.
+\hugh{One of the most common routes to approximately solving the Schr\"odinger equation
+is to introduce a perturbative expansion of the exact energy.}
 % SUMMARY OF RS-PT
 Within Rayleigh-Schr\"odinger perturbation theory, the time-independent Schr\"odinger equation 
 is recast as 
@@ -363,13 +397,13 @@ For example, the simple function
 \end{equation}
 is smooth and infinitely differentiable for $x \in \mathbb{R}$, and one might expect that its Taylor series expansion would 
 converge in this domain.
-However, this series diverges $x \ge 1$.
+However, this series diverges for $x \ge 1$.
 This divergence occurs because $f(x)$ has four singularities in the complex 
 ($\e^{\i\pi/4}$, $\e^{-\i\pi/4}$, $\e^{\i3\pi/4}$, and $\e^{-\i3\pi/4}$) with a modulus equal to $1$, demonstrating
 that complex singularities are essential to fully understand the series convergence on the real axis.\cite{BenderBook}
 \titou{Include Antoine's example $\sum_{n=1}^\infty \lambda^n/n$ which is divergent at $\lambda = 1$ but convergent at $\lambda = -1$.}
 
-The radius of convergence for the perturbation series is therefore dictated by the magnitude \titou{$\abs{\lambda_0}$} of the
+The radius of convergence for the perturbation series Eq.~\eqref{eq:E_expansion} is therefore dictated by the magnitude \titou{$\abs{\lambda_0}$} of the
 singularity in $E(\lambda)$ that is closest to the origin.
 Like the exact system in Sec.~\ref{sec:example}, the perturbation energy $E(\lambda)$ represents
 a ``one-to-many'' function with the output elements representing an approximation to both the ground and excited states.
@@ -378,26 +412,8 @@ $\lambda$ plane where two states become degenerate.
 Later we will demonstrate how the choice of reference Hamiltonian controls the position of these EPs, and 
 ultimately determines the convergence properties of the perturbation series.
 
-
-Practically, to locate EPs, one must simultaneously solve
-\begin{subequations}
-\begin{align}
-	\label{eq:PolChar}
-	\det[E\hI-\hH(\lambda)] & = 0,
-	\\ 
-	\label{eq:DPolChar}
-	\pdv{E}\det[E\hI-\hH(\lambda)] & = 0,
-\end{align}
-\end{subequations}
-where $\hI$ is the identity operator.\cite{Cejnar_2007}
-Equation \eqref{eq:PolChar} is the well-known secular equation providing the (eigen)energies of the system. 
-If the energy is also solution of Eq.~\eqref{eq:DPolChar}, then this energy value is at least two-fold degenerate. 
-These degeneracies can be conical intersections between two states with different symmetries 
-for real values of $\lambda$,\cite{Yarkony_1996} or EPs between two states with the 
-same symmetry for complex values of $\lambda$.
-
 %===========================================%
-\subsection{Hartree-Fock theory}
+\subsection{Hartree-Fock Theory}
 \label{sec:HF}
 %===========================================%
 
@@ -407,7 +423,7 @@ This Slater determinant is defined as an antisymmetric combination of $\Ne$ (rea
 \begin{equation}\label{eq:FockOp}
     \Hat{f}(\vb{x}) \phi_p(\vb{x}) = \qty[ \Hat{h}(\vb{x}) + \Hat{v}_\text{HF}(\vb{x}) ] \phi_p(\vb{x}) = \epsilon_p \phi_p(\vb{x}).
 \end{equation}
-Here the core Hamiltonian is
+Here the \hugh{(one-electron)} core Hamiltonian is
 \begin{equation}
 \label{eq:Hcore}
 	\Hat{h}(\vb{x}) = -\frac{\grad^2}{2} + \sum_{A}^{M} \frac{Z_A}{\abs{\vb{r}-\vb{R}_A}}
@@ -454,14 +470,15 @@ From hereon, $i$ and $j$ denote occupied orbitals, $a$ and $b$ denote unoccupied
 In the most flexible variant of real HF theory (generalised HF) the one-electron orbitals can be complex-valued
 and contain a mixture of spin-up and spin-down components.\cite{Mayer_1993,Jimenez-Hoyos_2011}
 However, the application of HF with some level of constraint on the orbital structure is far more common.
-Forcing the spatial part of the orbitals to be the same for spin-up and spin-down electrons leads to restricted HF (RHF) theory, while allowing different orbitals for different spins leads to the so-called unrestricted HF (UHF) approach.
+Forcing the spatial part of the orbitals to be the same for spin-up and spin-down electrons leads to restricted HF (RHF) theory, 
+while allowing different orbitals for different spins leads to the so-called unrestricted HF (UHF) approach.\cite{StuberPaldus}
 The advantage of the UHF approximation is its ability to correctly describe strongly correlated systems, 
-such as the dissociation of the hydrogen dimer.\cite{Coulson_1949}
+such as antiferromagnetic phases\cite{Slater_1951} or the dissociation of the hydrogen dimer,\cite{Coulson_1949}
 However, by allowing different orbitals for different spins, the UHF is no longer required to be an eigenfunction of 
 the total spin $\hat{\mathcal{S}}^2$ operator, leading to ``spin-contamination'' in the wave function.
 
 %================================================================%
-\subsection{The Hartree-Fock approximation in the Hubbard dimer}
+\subsection{Hartree-Fock in the Hubbard Dimer}
 \label{sec:HF_hubbard}
 %================================================================%
 
@@ -472,13 +489,13 @@ the total spin $\hat{\mathcal{S}}^2$ operator, leading to ``spin-contamination''
     \includegraphics[width=\linewidth]{HF_real.pdf}
     \caption{\label{fig:HF_real}
     RHF and UHF energies as a function of the correlation strength $U/t$. 
-    The symmetry-broken UHF solution emerges at the coalescence point $U=2t$ (black dot) known as the Coulson-Fischer point.}
+    The symmetry-broken UHF solution emerges at the coalescence point $U=2t$ (black dot), often known as the Coulson-Fischer point.}
 \end{figure}
 %%%%%%%%%%%%%%%%%
 
-Returning to the Hubbard dimer, the UHF energy can be parametrised in terms of two rotation angles $\ta$ and $\tb$ as
+In the Hubbard dimer, the UHF energy can be parametrised using two rotation angles $\ta$ and $\tb$ as
 \begin{equation}
-E_\text{HF}(\ta, \tb) = -t \qty( \sin \ta + \sin \tb ) + \frac{U}{2} \qty( 1 + \cos \ta \cos \tb ),
+E_\text{HF}(\ta, \tb) = -t\, \qty( \sin \ta + \sin \tb ) + \frac{U}{2} \qty( 1 + \cos \ta \cos \tb ),
 \end{equation}
 where we have introduced bonding $\mathcal{B}^{\sigma}$ and anti-bonding $\mathcal{A}^{\sigma}$ molecular orbitals for 
 the spin-$\sigma$ electrons as
@@ -502,8 +519,8 @@ and the ground-state RHF energy (Fig.~\ref{fig:HF_real})
 \begin{equation}
 	E_\text{RHF} \equiv E_\text{HF}(\ta^\text{RHF}, \tb^\text{RHF}) = -2t + \frac{U}{2}
 \end{equation}
-However, in the strongly correlated regime $U>2t$, the closed-shell restriction on the orbitals prevents RHF from 
-correctly modelling the physics of the system with the two electrons on opposing sites.
+However, in the strongly correlated regime $U>2t$, the closed-shell orbital restriction prevents RHF from 
+modelling the correct physics with the two electrons on opposing sites.
 
 %%% FIG 3 (?) %%%
 % Analytic Continuation of HF
@@ -521,7 +538,7 @@ correctly modelling the physics of the system with the two electrons on opposing
     (\subref{subfig:UHF_cplx_angle}) Real component of the UHF angle $\ta^{\text{UHF}}$ for $\lambda \in \bbC$.
     Symmetry-broken solutions correspond to individual sheets and become equivalent at 
     the \textit{quasi}-EP $\lambda_{\text{c}}$ (black dot).
-    The RHF solution is independent of $\lambda$, giving constant plane at $\pi/2$.
+    The RHF solution is independent of $\lambda$, giving the constant plane at $\pi/2$.
     (\subref{subfig:UHF_cplx_energy}) The corresponding HF energy surfaces show a non-analytic 
     point at the \textit{quasi}-EP.
 	\label{fig:HF_cplx}}
@@ -547,21 +564,23 @@ with the corresponding UHF ground-state energy (Fig.~\ref{fig:HF_real})
 \end{equation}
 Time-reversal symmetry dictates that this UHF wave function must be degenerate with its spin-flipped pair, obtained 
 by swapping $\ta^{\text{UHF}}$ and $\tb^{\text{UHF}}$ in Eqs.~\eqref{eq:ta_uhf} and \eqref{eq:tb_uhf}.
-This type of symmetry breaking is also called a spin-density wave in the physics community as the system ``oscillates'' between the two symmetry-broken configurations. \cite{GiulianiBook}
-There also exist symmetry-breaking processes at the RHF level where a charge-density wave is created via the oscillation between the situations where the two electrons are one side or the other. \cite{StuberPaldus,Fukutome_1981}
+This type of symmetry breaking is also called a spin-density wave in the physics community as the system
+``oscillates'' between the two symmetry-broken configurations. \cite{GiulianiBook}
+\hugh{Symmetry breaking can also occur in RHF theory when a charge-density wave is formed from an oscillation 
+between the two closed-shell configurations with both electrons localised on one site or the other.\cite{StuberPaldus,Fukutome_1981}}
 
 %============================================================%
-\subsection{Self-consistency as a perturbation} %OR {Complex adiabatic connection}
+\subsection{Self-Consistency as a Perturbation} %OR {Complex adiabatic connection}
 %============================================================%
 
 % INTRODUCE PARAMETRISED FOCK HAMILTONIAN
-The inherent non-linearity in the Fock eigenvalue problem \eqref{eq:FockOp} arises from self-consistency 
-in the HF approximation, and is usually solved through an iterative approach.\cite{SzaboBook}
+The inherent non-linearity in the Fock eigenvalue problem arises from self-consistency 
+in the HF approximation, and is usually solved through an iterative approach.\cite{Roothaan1951,Hall1951}
 Alternatively, the non-linear terms arising from the Coulomb and exchange operators can 
 be considered as a perturbation from the core Hamiltonian \eqref{eq:Hcore} by introducing the
 transformation $U \rightarrow \lambda\, U$, giving the parametrised Fock operator 
 \begin{equation}
-    \Hat{f}_{\lambda}(\vb{x}) = \Hat{h}(\vb{x}) + \lambda\, \Hat{v}_\text{HF}(\vb{x}).
+    \Hat{f}(\vb{x} \hugh{; \lambda}) = \Hat{h}(\vb{x}) + \lambda\, \Hat{v}_\text{HF}(\vb{x}).
 \end{equation}
 The orbitals in the reference problem $\lambda=0$ correspond to the symmetry-pure eigenfunctions of the one-electron core
 Hamiltonian, while self-consistent solutions at $\lambda = 1$ represent the orbitals of the true HF solution.

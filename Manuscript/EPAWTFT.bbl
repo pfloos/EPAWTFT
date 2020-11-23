@@ -472,34 +472,6 @@
   {Ernzerhof}},\ }\href {\doibase 10.1063/1.2348880} {\bibfield  {journal}
   {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {125}},\
   \bibinfo {pages} {124104} (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Carrascal}\ \emph {et~al.}(2015)\citenamefont
-  {Carrascal}, \citenamefont {Ferrer}, \citenamefont {Smith},\ and\
-  \citenamefont {Burke}}]{Carrascal_2015}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~J.}\ \bibnamefont
-  {Carrascal}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Ferrer}},
-  \bibinfo {author} {\bibfnamefont {J.~C.}\ \bibnamefont {Smith}}, \ and\
-  \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Burke}},\ }\href
-  {\doibase 10.1088/0953-8984/27/39/393001} {\bibfield  {journal} {\bibinfo
-  {journal} {J. Phys. Condens. Matter}\ }\textbf {\bibinfo {volume} {27}},\
-  \bibinfo {pages} {393001} (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Carrascal}\ \emph {et~al.}(2018)\citenamefont
-  {Carrascal}, \citenamefont {Ferrer}, \citenamefont {Maitra},\ and\
-  \citenamefont {Burke}}]{Carrascal_2018}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~J.}\ \bibnamefont
-  {Carrascal}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Ferrer}},
-  \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Maitra}}, \ and\ \bibinfo
-  {author} {\bibfnamefont {K.}~\bibnamefont {Burke}},\ }\href {\doibase
-  10.1140/epjb/e2018-90114-9} {\bibfield  {journal} {\bibinfo  {journal} {Eur.
-  Phys. J. B}\ }\textbf {\bibinfo {volume} {91}},\ \bibinfo {pages} {142}
-  (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Wigner}(1934)}]{Wigner_1934}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
-  {Wigner}},\ }\href {\doibase 10.1103/PhysRev.46.1002} {\bibfield  {journal}
-  {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {46}},\
-  \bibinfo {pages} {1002} (\bibinfo {year} {1934})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Taut}(1993)}]{Taut_1993}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
@@ -530,6 +502,34 @@
   {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo
   {volume} {108}},\ \bibinfo {pages} {083002} (\bibinfo {year}
   {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Carrascal}\ \emph {et~al.}(2015)\citenamefont
+  {Carrascal}, \citenamefont {Ferrer}, \citenamefont {Smith},\ and\
+  \citenamefont {Burke}}]{Carrascal_2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~J.}\ \bibnamefont
+  {Carrascal}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Ferrer}},
+  \bibinfo {author} {\bibfnamefont {J.~C.}\ \bibnamefont {Smith}}, \ and\
+  \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Burke}},\ }\href
+  {\doibase 10.1088/0953-8984/27/39/393001} {\bibfield  {journal} {\bibinfo
+  {journal} {J. Phys. Condens. Matter}\ }\textbf {\bibinfo {volume} {27}},\
+  \bibinfo {pages} {393001} (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Carrascal}\ \emph {et~al.}(2018)\citenamefont
+  {Carrascal}, \citenamefont {Ferrer}, \citenamefont {Maitra},\ and\
+  \citenamefont {Burke}}]{Carrascal_2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~J.}\ \bibnamefont
+  {Carrascal}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Ferrer}},
+  \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Maitra}}, \ and\ \bibinfo
+  {author} {\bibfnamefont {K.}~\bibnamefont {Burke}},\ }\href {\doibase
+  10.1140/epjb/e2018-90114-9} {\bibfield  {journal} {\bibinfo  {journal} {Eur.
+  Phys. J. B}\ }\textbf {\bibinfo {volume} {91}},\ \bibinfo {pages} {142}
+  (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wigner}(1934)}]{Wigner_1934}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Wigner}},\ }\href {\doibase 10.1103/PhysRev.46.1002} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {46}},\
+  \bibinfo {pages} {1002} (\bibinfo {year} {1934})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Goodson}(2011)}]{Goodson_2011}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~Z.}\ \bibnamefont
@@ -573,6 +573,20 @@
   {journal} {\bibinfo  {journal} {J. Chem. Theory Comput.}\ }\textbf {\bibinfo
   {volume} {7}},\ \bibinfo {pages} {2667} (\bibinfo {year} {2011})}\BibitemShut
   {NoStop}%
+\bibitem [{\citenamefont {Stuber}\ and\ \citenamefont
+  {Paldus}(2003)}]{StuberPaldus}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Stuber}}\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Paldus}},\ }\enquote {\bibinfo {title} {{Symmetry Breaking in the
+  Independent Particle Model}},}\ in\ \href@noop {} {\emph {\bibinfo
+  {booktitle} {Fundamental World of Quantum Chemistry: A Tribute to the Memory
+  of Per-Olov L\"{o}wdin}}},\ Vol.~\bibinfo {volume} {1},\ \bibinfo {editor}
+  {edited by\ \bibinfo {editor} {\bibfnamefont {E.~J.}\ \bibnamefont
+  {Br\"{a}ndas}}\ and\ \bibinfo {editor} {\bibfnamefont {E.~S.}\ \bibnamefont
+  {Kryachko}}}\ (\bibinfo  {publisher} {Kluwer Academic},\ \bibinfo {address}
+  {Dordrecht},\ \bibinfo {year} {2003})\ p.~\bibinfo {pages} {67}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Coulson}\ and\ \citenamefont
   {Fischer}(1949)}]{Coulson_1949}%
   \BibitemOpen
@@ -591,20 +605,6 @@
   {title} {Quantum {Theory} of the {Electron} {Liquid}}}}\ (\bibinfo
   {publisher} {Cambridge University Press},\ \bibinfo {year}
   {2005})\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Stuber}\ and\ \citenamefont
-  {Paldus}(2003)}]{StuberPaldus}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
-  {Stuber}}\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
-  {Paldus}},\ }\enquote {\bibinfo {title} {{Symmetry Breaking in the
-  Independent Particle Model}},}\ in\ \href@noop {} {\emph {\bibinfo
-  {booktitle} {Fundamental World of Quantum Chemistry: A Tribute to the Memory
-  of Per-Olov L\"{o}wdin}}},\ Vol.~\bibinfo {volume} {1},\ \bibinfo {editor}
-  {edited by\ \bibinfo {editor} {\bibfnamefont {E.~J.}\ \bibnamefont
-  {Br\"{a}ndas}}\ and\ \bibinfo {editor} {\bibfnamefont {E.~S.}\ \bibnamefont
-  {Kryachko}}}\ (\bibinfo  {publisher} {Kluwer Academic},\ \bibinfo {address}
-  {Dordrecht},\ \bibinfo {year} {2003})\ p.~\bibinfo {pages} {67}\BibitemShut
-  {NoStop}%
 \bibitem [{\citenamefont {Fukutome}()}]{Fukutome_1981}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
