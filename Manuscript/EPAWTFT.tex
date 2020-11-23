@@ -398,6 +398,7 @@ same symmetry for complex values of $\lambda$.
 
 %===========================================%
 \subsection{Hartree-Fock theory}
+\label{sec:HF}
 %===========================================%
 
 % SUMMARY OF HF
@@ -461,6 +462,7 @@ the total spin $\hat{\mathcal{S}}^2$ operator, leading to ``spin-contamination''
 
 %================================================================%
 \subsection{The Hartree-Fock approximation in the Hubbard dimer}
+\label{sec:HF_hubbard}
 %================================================================%
 
 %%% FIG 2 (?) %%%
@@ -684,29 +686,37 @@ iii) the strong coupling partitioning where the two operators are inverted compa
 %=====================================================%
 
 When one relies on MP perturbation theory (and more generally on any perturbative partitioning), it would be reasonable to ask for a systematic improvement of the energy with respect to the perturbative order, \ie, one would expect that the more terms of the perturbative series one can compute, the closer the result from the exact energy.
-%In other words, each time a higher-order term is computed, one would like to obtained an overall result closer to the exact energy. 
 In other words, one would like a monotonic convergence of the MP series. Assuming this, the only limiting process to get the exact correlation energy (in a finite basis set) would be our ability to compute the terms of this perturbation series.
-Unfortunately this is not as easy as one might think because i) the terms of the perturbative series become rapidly computationally cumbersome, and ii) erratic behavior of the perturbative coefficients are not uncommon. For example, in the late 80's, Gill and Radom reported deceptive and slow convergences in stretched systems \cite{Gill_1986, Gill_1988} (see also Refs.~\onlinecite{Handy_1985, Lepetit_1988}). 
-In Ref.~\onlinecite{Gill_1986}, the authors showed that the RMP series is convergent, yet oscillatory which is far from being convenient if one is only able to compute the first few terms of the expansion (for example, in the case of \ce{He2^2+}, RMP5 is worse than RMP4). 
-On the other hand, the UMP series is monotonically convergent (except for the first few orders) but very slowly. 
+Unfortunately this is not as easy as one might think because i) the terms of the perturbative series become rapidly computationally cumbersome, and ii) erratic behaviour of the perturbative coefficients are not uncommon. For example, in the late 80's, Gill and Radom reported deceptive and slow convergences in stretched systems \cite{Gill_1986,Gill_1988} (see also Refs.~\onlinecite{Handy_1985, Lepetit_1988}). 
+In Ref.~\onlinecite{Gill_1986}, the authors showed that the RMP series is convergent, yet oscillatory which is far from being convenient if one is only able to compute the first few terms of the expansion.
+For example, in the case of the barrier to homolytic fission of \ce{He2^2+} in a minimal basis set, RMP5 is worse than RMP4 (see Fig.~2 in Ref.~\onlinecite{Gill_1986}).
+On the other hand, the UMP series is monotonically convergent after UMP5 but very slowly . 
 Thus, one cannot practically use it for systems where only the first terms are computationally accessible.
 
 When a bond is stretched, in most cases the exact wave function becomes more and more of multi-reference nature. 
-Yet the HF wave function is restricted to be a single Slater determinant.
-It is then inappropriate to model (even qualitatively) stretched systems. Nevertheless, the HF wave function can undergo symmetry breaking to lower its energy by sacrificing one of the symmetry of the exact wave function in the process (see for example the case of \ce{H2} in Ref.~\onlinecite{SzaboBook}). 
-One could then potentially claim that the RMP series exhibits deceptive convergence properties as the RHF Slater determinant is a poor approximation of the exact wave function for stretched system. However, even in the unrestricted formalism which clearly represents a better description of a stretched system, the UMP series does not have the smooth and rapidly convergent behaviour that one would wish for. 
+Yet, the HF wave function is restricted to be a single Slater determinant.
+It is then inappropriate to model (even qualitatively) stretched systems. 
+Nevertheless, as explained in Sec.~\ref{sec:HF} and illustrated in Sec.~\ref{sec:HF_hubbard}, the HF wave function can undergo symmetry breaking to lower its energy by sacrificing one of the symmetry of the exact wave function in the process (see also the pedagogical example of \ce{H2} in Ref.~\onlinecite{SzaboBook}). 
+One could then potentially claim that the RMP series exhibits deceptive convergence properties as the RHF Slater determinant is a poor approximation of the exact wave function for stretched system. 
+However, as illustrated above, even in the unrestricted formalism which clearly represents a better description of a stretched system, the UMP series does not have the smooth and rapidly convergent behaviour that one would wish for. 
+The reasons behind this ambiguous behaviour are further explained below.
 
 In the unrestricted framework the singlet ground state wave function is allowed to mix with triplet wave functions, leading to the so-called spin contamination issue. Gill \textit{et al.}~highlighted the link between slow convergence of the UMP series and spin contamination for \ce{H2} in a minimal basis. \cite{Gill_1988}
-Handy and coworkers reported the same behaviour of the series (oscillatory and slowly monotonically convergent) in stretched \ce{H2O} and \ce{NH2}. \cite{Handy_1985} Lepetit \textit{et al.}~analysed the difference between the MP and EN partitioning for the UHF reference. \cite{Lepetit_1988} 
-They concluded that the slow convergence is due to the coupling of the singly- and doubly-excited configurations. 
-Cremer and He analysed 29 atomic and molecular systems at the FCI level \cite{Cremer_1996} and grouped them in two classes: i) the \textit{class A} systems where one observes a monotonic convergence to the FCI energy, and ii) the \textit{class B} systems for which convergence is erratic after initial oscillations. Their system set contains stretched molecules as well as molecules at their equilibrium geometry for various basis sets. They highlighted that \cite{Cremer_1996}
+Handy and coworkers reported the same behaviour of the UMP series (oscillatory and slowly monotonically convergent) in stretched \ce{H2O} and \ce{NH2}. \cite{Handy_1985} Lepetit \textit{et al.}~analysed the difference between the MP and EN partitioning for the UHF reference. \cite{Lepetit_1988} 
+They concluded that the slow convergence of the UMP series is due to i) the fact that the MP denominator (see Eq.~\ref{eq:EMP2}) tends to a constant instead of vanishing, and ii) the lack of the singly-excited configurations (which only appears at fourth order) that strongly couple to the doubly-excited configurations.
+
+Cremer and He analysed 29 atomic and molecular systems at the FCI level \cite{Cremer_1996} and grouped them in two classes: i) the \textit{class A} systems where one observes a monotonic convergence \titou{of the RMP series?} to the FCI energy, and ii) the \textit{class B} systems for which convergence is erratic after initial oscillations. 
+Their system set contains stretched molecules as well as molecules at their equilibrium geometry for various basis sets. 
+They highlighted that \cite{Cremer_1996}
 \textit{``Class A systems are characterised by electronic structures with well-separated electron pairs while class B systems are characterized by electronic structures with electron clustering in one or more regions.''}
-Moreover, they analyzed the contribution of the triple (T) excitations to the MP4, MP5 and MP6 energies next to the single, double and quadruple (SDQ) excitations contribution.
-They showed that class A systems have very little contribution from the triple excitations and that most of the correlation energy is due to pair correlation. On the other hand, class B systems have an important contribution from the triple excitations which alternates in sign resulting in an oscillation of the total correlation energy.
-This observation on the contribution to the MPn energy corroborates the electronic structure discussed above.
+Moreover, they analysed the contribution of the triple (T) excitations to the MP4, MP5 and MP6 energies next to the single, double and quadruple (SDQ) excitations contribution.
+They showed that class A systems have very little contribution from the triple excitations and that most of the correlation energy is due to pair correlation. 
+On the other hand, class B systems have an important contribution from the triple excitations which alternates in sign resulting in an oscillation of the total correlation energy.
+This observation on the contribution to the MP$n$ energy corroborates the electronic structure discussed above.
 As one can only compute the first terms of the MP series, a smart way of getting more accurate results is to use extrapolation formula, \ie, estimating the limit of the series with only few terms. 
-Cremer and He proved that using specific extrapolation formulas of the MP series for class A and class B systems improves the precision of the results compared to the formula used without resorting to classes. The mean absolute deviation taking the FCI correlation energies as reference is $0.3$ millihartree with the class-specific formula whereas the deviation increases to 12 millihartree using the general formula.  
-Even if there were still shaded areas in their analysis and that their classification was incomplete, the work of Cremer and He clearly evidenced that understanding the origin of the different modes of convergence could potentially lead to a more rationalised use of MP perturbation theory and, hence, to more accurate correlation energy estimates.
+Cremer and He proved that using specific extrapolation formulas of the MP series for class A and class B systems improves the precision of the results compared to the formula used without resorting to classes. \cite{Cremer_1996}
+The mean absolute deviation taking the FCI correlation energies as reference is $0.3$ millihartree with the class-specific formula whereas the deviation increases to 12 millihartree using the general formula.  
+Even if there were still shaded areas in their analysis and that their classification was incomplete, the work of Ref.~\onlinecite{Cremer_1996} clearly evidenced that understanding the origin of the different modes of convergence could potentially lead to a more rationalised use of MP perturbation theory and, hence, to more accurate correlation energy estimates.
 
 
 %==========================================%
