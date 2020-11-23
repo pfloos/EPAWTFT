@@ -892,30 +892,37 @@ spin-contamination from the wave function.
 \subsection{Further insights from a two-state model}
 %==========================================%
 
-In the late 90's, Olsen \textit{et al.}~discovered an even more preoccupying behavior of the MP series. \cite{Olsen_1996} 
-They showed that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and the \ce{HF} molecule. \cite{Olsen_1996, Christiansen_1996} Cremer and He had already studied these two systems and classified them as \textit{class B} systems. However, the analysis of Olsen and coworkers was performed in larger basis sets containing diffuse functions. 
+In the late 90's, Olsen \textit{et al.}~discovered an even more preoccupying behaviour of the MP series. \cite{Olsen_1996} 
+They showed that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and the \ce{HF} molecule. \cite{Olsen_1996, Christiansen_1996} 
+Cremer and He had already studied these two systems and classified them as \textit{class B} systems. 
+However, the analysis of Olsen and coworkers was performed in larger basis sets containing diffuse functions. 
 In these basis sets, they found that the series become divergent at (very) high order.
 
-The discovery of this divergent behaviour is worrying as in order to get meaningful and accurate energies, calculations must be performed in large basis sets (as close as possible from the complete basis set limit). 
-Including diffuse functions is particularly important in the case of anions and/or Rydberg excited states where the wave function is much more diffuse than the ground-state one. As a consequence, they investigated further the causes of these divergences as well as the reasons of the different types of convergence. 
+The discovery of this divergent behaviour is worrying as in order to get meaningful and accurate energies, calculations must be performed in large basis sets (as close as possible from the complete basis set limit). \cite{Loos_2019d,Giner_2019}
+Including diffuse functions is particularly important in the case of anions and/or Rydberg excited states where the wave function is much more diffuse than the ground-state one. \cite{Loos_2018a,Loos_2020a}
+As a consequence, they investigated further the causes of these divergences as well as the reasons of the different types of convergence. 
 To do so, they analysed the relation between the dominant singularity (\ie, the closest singularity to the origin) and the convergence behaviour of the series. \cite{Olsen_2000} Their analysis is based on Darboux's theorem: \cite{Goodson_2011}
 \begin{quote}
 	\textit{``In the limit of large order, the series coefficients become equivalent to the Taylor series coefficients of the singularity closest to the origin. ''}
 \end{quote}
+\titou{T2: should we move this theorem earlier?}
 Following the result of this theorem, the convergence patterns of the MP series can be explained by looking at the dominant singularity.
 A singularity in the unit circle is designated as an intruder state, more precisely as a front-door (respectively back-door) intruder state if the real part of the singularity is positive (respectively negative). 
-Their method consists in performing a scan of the real axis to detect the avoided crossing responsible for the pair of dominant singularities. 
+
+Following their observations from Ref.~\onlinecite{Olsen_1996}, Olsen and collaborators later proposed a simple method which consists in performing a scan of the real axis to detect the avoided crossing responsible for the pair of dominant singularities. \cite{Olsen_2000} 
 Then, by modelling this avoided crossing via a two-state Hamiltonian one can get an approximation of the dominant conjugate pair of singularities by finding the EPs of the following $2\times2$ matrix
 \begin{equation}
+	\label{eq:Olsen_2x2}
 	\underbrace{\mqty(\alpha & \delta \\ \delta & \beta)}_{\bH} = \underbrace{\mqty(\alpha & 0 \\ 0 & \beta + \gamma )}_{\bH^{(0)}} + \underbrace{\mqty( 0 & \delta \\ \delta & - \gamma)}_{\bV},
 \end{equation}
 where the diagonal matrix is the unperturbed Hamiltonian matrix $\bH^{(0)}$ and the second matrix in the right-hand-side $\bV$ is the perturbation.
 
-They first studied molecules with low-lying doubly-excited states of the same spatial and spin symmetry.
-The exact wave function has a non-negligible contribution from the doubly-excited states, so these low-lying excited states were good candidates for being intruder states. For \ce{CH_2} in a large basis set, the series is convergent up to the 50th order. 
+They first studied an example of molecules with low-lying doubly-excited states of the same spatial and spin symmetry as the ground state. \cite{Olsen_2000}
+In such a case, the exact wave function has a non-negligible contribution from the doubly-excited states, so these low-lying excited states are good candidates for being intruder states. 
+For \ce{CH_2} in a diffuse yet rather small basis set, the series is convergent at least up to the 50th order. 
 They showed that the dominant singularity lies outside the unit circle but close to it causing the slow convergence.
 
-Then they demonstrated that the divergence for \ce{Ne} is due to a back-door intruder state. 
+Then, they demonstrated that the divergence for \ce{Ne} is due to a back-door intruder state. 
 When the basis set is augmented with diffuse functions, the ground state undergo sharp avoided crossings with highly diffuse excited states leading to a back-door intruder state. 
 They used their two-state model on this avoided crossings and the model was actually predicting the divergence of the series. 
 %They concluded that the divergence of the series was due to the interaction with a highly diffuse excited state. 
@@ -925,17 +932,17 @@ For example, the hydrogen fluoride molecule contains both back-door intruder sta
 For higher orders, the series is monotonically convergent. This surprising behaviour is due to the fact that two pairs of singularities are approximately at the same distance from the origin.
 
 
-In Ref.~\onlinecite{Olsen_2019}, the simple two-state model proposed by Olsen \textit{et al.} is generalised to a non-symmetric Hamiltonian 
+In Ref.~\onlinecite{Olsen_2019}, the simple two-state model proposed by Olsen \textit{et al.} [see Eq.~\eqref{eq:Olsen_2x2}] is generalised to a non-symmetric Hamiltonian 
 \begin{equation}
 	\underbrace{\mqty(\alpha & \delta_1 \\ \delta_2 & \beta)}_{\bH} = \underbrace{\mqty(\alpha & 0 \\ 0 & \beta + \gamma )}_{\bH^{(0)}} + \underbrace{\mqty( 0 & \delta_2 \\ \delta_1 & - \gamma)}_{\bV}.
 \end{equation}
-allowing an analysis of various choice of perturbation (not only the MP partioning) such as coupled cluster perturbation expansions \cite{Pawlowski_2019a,Pawlowski_2019b,Pawlowski_2019c,Pawlowski_2019d,Pawlowski_2019e} and other non-Hermitian perturbation methods.
+allowing an analysis of various choice of perturbation (not only the MP partitioning) such as coupled cluster perturbation expansions \cite{Pawlowski_2019a,Pawlowski_2019b,Pawlowski_2019c,Pawlowski_2019d,Pawlowski_2019e} and other non-Hermitian perturbation methods.
 It is worth noting that only cases where $\text{sgn}(\delta_1) = - \text{sgn}(\delta_2)$ leads to new forms of perturbation expansions.
 Interestingly, they showed that the convergence pattern of a given perturbation method can be characterised by its archetype which defines the overall ``shape'' of the energy convergence. 
 These so-called archetypes can be subdivided in five classes for Hermitian Hamiltonians (zigzag, interspersed zigzag, triadic, ripples, and geometric), while two additional archetypes (zigzag-geometric and convex-geometric) are observed in non-Hermitian Hamiltonians.
+Other features characterising the convergence behaviour of a perturbation method are its rate of convergence, its length of recurring period, and its sign pattern.
 Importantly, they observed that the geometric archetype is the most common for MP expansions but that the ripples archetype sometimes occurs. \cite{Handy_1985,Lepetit_1988,Leininger_2000}
-Other features characterising the convergence behaviour of a perturbation method are its rate of convergence, its length of recurring period, and its sign pattern;
-the three remaining archetypes seem to be rarely observed in MP perturbation theory.
+The three remaining archetypes seem to be rarely observed in MP perturbation theory.
 However, in the non-Hermitian setting of coupled cluster perturbation theory, \cite{Pawlowski_2019a,Pawlowski_2019b,Pawlowski_2019c,Pawlowski_2019d,Pawlowski_2019e} on can encounter interspersed zigzag, triadic, ripple, geometric, and zigzag-geometric archetypes.
 One of main take-home messages of Olsen's study is that the primary critical point defines the high-order convergence, irrespective of whether this point is inside or outside the complex unit circle. \cite{Handy_1985,Olsen_2000}
 
