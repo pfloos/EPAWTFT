@@ -530,12 +530,6 @@
   {Wigner}},\ }\href {\doibase 10.1103/PhysRev.46.1002} {\bibfield  {journal}
   {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume} {46}},\
   \bibinfo {pages} {1002} (\bibinfo {year} {1934})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Goodson}(2011)}]{Goodson_2011}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~Z.}\ \bibnamefont
-  {Goodson}},\ }\href {\doibase 10.1002/wcms.92} {\bibfield  {journal}
-  {\bibinfo  {journal} {{WIREs} Comput. Mol. Sci.}\ }\textbf {\bibinfo {volume}
-  {2}},\ \bibinfo {pages} {743} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Cejnar}\ \emph {et~al.}(2007)\citenamefont {Cejnar},
   \citenamefont {Heinze},\ and\ \citenamefont {Macek}}]{Cejnar_2007}%
   \BibitemOpen
@@ -545,6 +539,12 @@
   {\doibase 10.1103/PhysRevLett.99.100601} {\bibfield  {journal} {\bibinfo
   {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {99}},\ \bibinfo
   {pages} {100601} (\bibinfo {year} {2007})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Goodson}(2011)}]{Goodson_2011}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~Z.}\ \bibnamefont
+  {Goodson}},\ }\href {\doibase 10.1002/wcms.92} {\bibfield  {journal}
+  {\bibinfo  {journal} {{WIREs} Comput. Mol. Sci.}\ }\textbf {\bibinfo {volume}
+  {2}},\ \bibinfo {pages} {743} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Szabo}\ and\ \citenamefont
   {Ostlund}(1989)}]{SzaboBook}%
   \BibitemOpen
