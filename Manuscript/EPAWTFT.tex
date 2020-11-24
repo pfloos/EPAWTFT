@@ -147,6 +147,7 @@ In particular, we highlight the seminal work of several research groups on the c
 
 \maketitle
 
+\raggedbottom
 \tableofcontents
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -774,6 +775,24 @@ spin-contamination from the reference wave function, limiting their ability to f
 excitations that capture the correlation energy.
 }
 
+% SPIN-PROJECTION SCHEMES
+\hugh{%
+A number of spin-projected extensions have been derived to reduce spin-contamination in the wave function
+and overcome the slow UMP convergence.
+Early versions of these theories, introduced by Schlegel\cite{Schlegel_1986, Schlegel_1988} or 
+Knowles and Handy\cite{Knowles_1988a,Knowles_1988b}, exploited the ``projection-after-variation'' philosophy,
+where the spin-projection is applied directly to the UMP expansion.
+These methods succeeded in accelerating the convergence of the projected MP series and were 
+considered as highly effective methods for capturing the electron correlation at low computational cost.\cite{Knowles_1988b}
+However, the use of projection-after-variation leads to gradient discontinuities in the vicinity of the UHF symmetry-breaking point,
+and can result in spurious minima along a molecular binding curve.\cite{Schlegel_1986,Knowles_1988a}
+More recent formulations of spin-projected perturbations theories have considered the  
+``variation-after-projection'' framework using alternative definitions of the reference 
+Hamiltonian.\cite{Tsuchimochi_2014,Tsuchimochi_2019}
+These methods yield more accurate spin-pure energies without 
+gradient discontinuities or spurious minima.
+}
+
 %When one relies on MP perturbation theory (and more generally on any perturbative partitioning), it would be reasonable to ask for a systematic improvement of the energy with respect to the perturbative order, \ie, one would expect that the more terms of the perturbative series one can compute, the closer the result from the exact energy.
 %In other words, one would like a monotonic convergence of the MP series. Assuming this, the only limiting process to get the exact correlation energy (in a finite basis set) would be our ability to compute the terms of this perturbation series.
 %Unfortunately this is not as easy as one might think because i) the terms of the perturbative series become rapidly computationally cumbersome, and ii) erratic behaviour of the perturbative coefficients are not uncommon. 
@@ -899,6 +918,27 @@ for the two states using the ground-state RHF orbitals is identical.
 %The convergent and divergent series start to differ at fourth order, corresponding to the lowest-order contribution
 %%from the single excitations.\cite{Lepetit_1988}
 
+%%% FIG 3 %%%
+\begin{figure*}
+	\begin{subfigure}{0.32\textwidth}
+	\includegraphics[height=0.75\textwidth]{fig3a}	
+		\subcaption{\label{subfig:UMP_3} $U/t = 3$}
+    \end{subfigure}
+    %
+    \begin{subfigure}{0.32\textwidth}
+	\includegraphics[height=0.75\textwidth]{fig3b}
+		\subcaption{\label{subfig:UMP_cvg}}
+    \end{subfigure}
+    %
+    \begin{subfigure}{0.32\textwidth}
+	\includegraphics[height=0.75\textwidth]{fig3c}	
+		\subcaption{\label{subfig:UMP_7} $U/t = 7$}
+    \end{subfigure}	\caption{
+	Convergence of the UMP series as a function of the perturbation order $n$ for the Hubbard dimer at $U/t = 3$ and $7$.
+	The Riemann surfaces associated with the exact energies of the UMP Hamiltonian \eqref{eq:H_UMP} are also represented for these two values of $U/t$ as functions of $\lambda$.
+	\label{fig:UMP}}
+\end{figure*}
+
 The behaviour of the UMP series is more subtle than the RMP series as the spin-contamination in the wave function
 \hugh{introduces additional coupling between the singly- and doubly-excited configurations.}
 Using the ground-state UHF reference orbitals in the Hubbard dimer yields the \hugh{parametrised} UMP Hamiltonian
@@ -946,7 +986,7 @@ However, the excited-state EP is moved within} the unit cylinder and causes the
 convergence of the excited-state UMP series to deteriorate.
 \hugh{Our interpretation of this effect is that the symmetry-broken orbital optimisation has redistributed the strong 
 coupling between the ground- and doubly-excited states into weaker couplings between all states, and has thus
-sacrificed convergence of the excited-state series so that the chance of ground-state convergence can be maximised.}
+sacrificed convergence of the excited-state series so that the ground-state convergence can be maximised.}
 
 Since the UHF ground state already provides a good approximation to the exact energy, the ground-state sheet of
 the UMP energy is relatively flat and the corresponding EP in the Hubbard dimer always lies outside the unit cylinder.
@@ -973,27 +1013,6 @@ very slowly as the perturbation order is increased.
 %at the expense of a divergent excited-state perturbation series. (Note: the orbitals are not optimised for excited-state here).
 %In contrast, the RMP expansion was always convergent for the open-shell excited state (which was a single CSF) while
 %the radius of convergence for the doubly-excited state was identical to the ground-state as this was the only exceptional point.
-
-%%% FIG 3 %%%
-\begin{figure*}
-	\begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.75\textwidth]{fig3a}	
-		\subcaption{\label{subfig:UMP_3} $U/t = 3$}
-    \end{subfigure}
-    %
-    \begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.75\textwidth]{fig3b}
-		\subcaption{\label{subfig:UMP_cvg}}
-    \end{subfigure}
-    %
-    \begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.75\textwidth]{fig3c}	
-		\subcaption{\label{subfig:UMP_7} $U/t = 7$}
-    \end{subfigure}	\caption{
-	Convergence of the UMP series as a function of the perturbation order $n$ for the Hubbard dimer at $U/t = 3$ and $7$.
-	The Riemann surfaces associated with the exact energies of the UMP Hamiltonian \eqref{eq:H_UMP} are also represented for these two values of $U/t$ as functions of $\lambda$. \titou{Please Hugh, modify central figure.}
-	\label{fig:UMP}}
-\end{figure*}
 
 
 %==========================================%

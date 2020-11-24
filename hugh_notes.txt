@@ -1,3 +1,7 @@
++==========================================================+
+| Early MP Convergence Studies (1975-1990)                 |
++==========================================================+
+
 Bartlett and Silver, JCP (1975):
 --------------------------------
 [Supposedely the first MBPT?]
@@ -44,7 +48,7 @@ probably emerges from spin contamination in the UHF solution.
 
 [IS THERE MORE MBPT LITERATURE TO CONSIDER?]
 
-Laidig, Saxe, and Bartlett, JCP (1986):
+Laidig, Saxe, and Bartlett, JCP (1987):
 ---------------------------------------
 Investigate binding curves for N2 and F2 using multireference CC and MBPT
 
@@ -123,4 +127,70 @@ a maximum at intermediate distances. This contribution enters at fourth-order.
 
 Raghavachari, Pople, Replogle, and Head-Gordon, JPC, (1990):
 -----------------------------------------------------------
+
+
++==========================================================+
+| Spin-Projected MP2                                       |
++==========================================================+
+
+Early works on the convergence of UMP identified that spin-contamination was a driving 
+force behind slow convergence. To alleviate this, some authors considered the use of spin-projected MP2 
+approaches, with varying degrees of success.
+
+Schlegel, JCP (1986):
+---------------------
+First consideration of a spin-projected scheme for MP2. Takes an approximate form of the spin-projection
+operator and applies to project out the spin-contamination in the UHF and UMP energy. This amounts to 
+a PAV scheme, which in turn leads to gradient discontinuities in the binding curves and spurious minima
+for eg LiH. 
+
+Schlegel, JPC (1988):
+---------------------
+This second paper from Schlegel considers the rate of convergence of his spin-projected MP series. 
+He shows that the spin-projection significantly improves the rate of convergence, but that a small 
+slowly convergent term can remain.
+
+Knowles and Handy later argue that Schlegel's approaches are not satisfactory as they do not account
+for the fact that the reference Hamiltonian does not commute with the perturbation operator.
+
+Knowles and Handy, JPC (1988):
+------------------------------
+Consider how to formulate a spin-projected UMP series based on the Lowdin spin-projection operator. 
+Schlegel considered this first, but in a limited fashion where only the contamination from the next highest
+spin state was removed.
+
+This paper considers a spin projection on the previously determined UMP wave function series (determined 
+without spin projection). The challenge is how to incorporate the spin-projection operator without 
+destroying the nice properties of the reference Hamiltonian (eg. reference wave function is an eigenfunction).
+Instead, they use MP theory to build perturbation series for the wave functions, and then apply 
+spin-projection to obtain a series for the energy.
+
+The consider H2O, where they see discontinuities in the perturbed energies at the the CFP. Furthermore, 
+one of their spin-projected MP energies gives rise to a spurious minimum. This is in line with the the 
+results from Schlegel's work. Despite these discontinuities, they see that the spin-projection does
+accelerate the rate of convergence.
+
+Knowles and Handy, JCP (1988):
+-----------------------------
+This paper extends Knowles and Handy's previous approach to show that it is tractable for larger molecules.
+By comparing their results with Schlegel, the authors demonstrate the importance of considering the 
+full projection operator. They conclude by highlighting the remarkable accuracy that can be recovered at
+relatively low cost using this projected MP approach.
+
+Tsuchimochi and Van Voorhis, JCP (2014):
+----------------------------------------
+This paper considers a VAP scheme that is considered to be more cost-effective than the early PAV approaches.
+They define new spin-projected scheme EMP2 that are projected at each expansion order. This PAV method removes
+the discontinuities in the binding curves. However, there is some redundancy in the spin-projected wave functions
+at different orders that probably leads to some level of over counting. They also locate excited-state SUHF 
+states in H2 and demonstrate the the corresponding EMP2 energies also perform well. 
+
+Tsuchimochi and Ten-No, JCTC (2019):
+------------------------------------
+
+This paper brings spin-projected perturbation theory in line with modern CASPT2. They consider a generalised
+Fock operator and construct a first-order wave function ansatz from the spin-projected single and double excitations.
+The resulting SUPT2 provided more accurate binding curves than EMP2, which the authors believe is because
+the SUPT2 approach correctly handles the redundancy of internal rotations in the effective active space of the
+reference spin projection.
 
