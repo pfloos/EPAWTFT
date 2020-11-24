@@ -27,6 +27,8 @@
 %\newcommand{\latin}[1]{\textit{#1}}
 \newcommand{\ie}{\latin{i.e.}}
 \newcommand{\eg}{\latin{e.g.}}
+\newcommand{\etal}{\latin{et.\ al}}
+
 \newcommand{\mc}{\multicolumn}
 \newcommand{\fnm}{\footnotemark}
 \newcommand{\fnt}{\footnotetext}
@@ -704,94 +706,111 @@ their relative strengths and weaknesses for various situations, we will restrict
 to the convergence properties of the MP expansion.
 
 %=====================================================%
-\subsection{M{\o}ller-Plesset Convergence in Molecular Systems}
+\subsection{Early Investigations into M{\o}ller-Plesset Convergence} % in Molecular Systems}
 %=====================================================%
 
-When one relies on MP perturbation theory (and more generally on any perturbative partitioning), it would be reasonable to ask for a systematic improvement of the energy with respect to the perturbative order, \ie, one would expect that the more terms of the perturbative series one can compute, the closer the result from the exact energy.
-In other words, one would like a monotonic convergence of the MP series. Assuming this, the only limiting process to get the exact correlation energy (in a finite basis set) would be our ability to compute the terms of this perturbation series.
-Unfortunately this is not as easy as one might think because i) the terms of the perturbative series become rapidly computationally cumbersome, and ii) erratic behaviour of the perturbative coefficients are not uncommon. For example, in the late 80's, Gill and Radom reported deceptive and slow convergences in stretched systems \cite{Gill_1986,Gill_1988} (see also Refs.~\onlinecite{Handy_1985,Lepetit_1988}). 
-In Ref.~\onlinecite{Gill_1986}, the authors showed that the RMP series is convergent, yet oscillatory which is far from being convenient if one is only able to compute the first few terms of the expansion.
-For example, in the case of the barrier to homolytic fission of \ce{He2^2+} in a minimal basis set, RMP5 is worse than RMP4 (see Fig.~2 in Ref.~\onlinecite{Gill_1986}).
-On the other hand, the UMP series is monotonically convergent after UMP5 but very slowly . 
-Thus, one cannot practically use it for systems where only the first terms are computationally accessible.
+% GENERAL DESIRE FOR WELL-BEHAVED CONVERGENCE AND LOW-ORDER TERMS
+\hugh{%
+ Among the most desirable properties of any electronic structure technique is the existence of 
+a systematic route to increasingly accurate energies. 
+In the context of MP theory, one would like a monotonic convergence of the perturbation
+series towards the exact energy such that the accuracy increases as each term in the series is added.
+If such well-behaved convergence can be established, then our ability to compute individual 
+terms in the series becomes the only barrier to computing the exact correlation in a finite basis set.
+Unfortunately, the computational scaling of each term in the MP series increases with the perturbation
+order, and practical calculations must rely on fast convergence
+to obtain high-accuracy results using only the lowest order terms.
+}
 
-When a bond is stretched, in most cases the exact wave function becomes more and more of multi-reference nature. 
-Yet, the HF wave function is restricted to be a single Slater determinant.
-It is then inappropriate to model (even qualitatively) stretched systems. 
-Nevertheless, as explained in Sec.~\ref{sec:HF} and illustrated in Sec.~\ref{sec:HF_hubbard}, the HF wave function can undergo symmetry breaking to lower its energy by sacrificing one of the symmetry of the exact wave function in the process (see also the pedagogical example of \ce{H2} in Ref.~\onlinecite{SzaboBook}). 
-One could then potentially claim that the RMP series exhibits deceptive convergence properties as the RHF Slater determinant is a poor approximation of the exact wave function for stretched system. 
-However, as illustrated above, even in the unrestricted formalism which clearly represents a better description of a stretched system, the UMP series does not have the smooth and rapidly convergent behaviour that one would wish for. 
-The reasons behind this ambiguous behaviour are further explained below.
+% INITIAL POSITIVITY AROUND THE CONVERGENCE PROPERTIES AND EARLY WORK SCOPE
+\hugh{%
+MP theory was first introduced to quantum chemistry through the pioneering
+works of Bartlett \etal\ in the context of many-body perturbation theory,\cite{Bartlett_1975}
+and Pople and co-workers in the context of determinantal expansions.\cite{Pople_1976,Pople_1978}
+Early implementations were restricted to the fourth-order MP4 approach that was considered
+to offer state-of-the-art quantitative accuracy.\cite{Pople_1978,Krishnan_1980}
+However, it was quickly realised that the MP series often demonstrated very slow, oscillatory, 
+or erratic convergence, with the UMP series showing particularly slow convergence.\cite{Laidig_1985,Knowles_1985,Handy_1985}
+For example, RMP5 is worse than RMP4 for predicting the the homolytic barrier fission of \ce{He2^2+} using a minimal basis set, 
+while the UMP series monotonically converges but becomes increasingly slow beyond UMP5.\cite{Gill_1986}
+The first examples of divergent MP series were observed in the heavy-atom \ce{N2} and \ce{F2} 
+diatomics, where low-order RMP and UMP expansions give qualitatively wrong binding curves.\cite{Laidig_1987} 
+}
 
-In the unrestricted framework the singlet ground state wave function is allowed to mix with triplet wave functions, leading to the so-called spin contamination issue. Gill \textit{et al.}~highlighted the link between slow convergence of the UMP series and spin contamination for \ce{H2} in a minimal basis. \cite{Gill_1988}
-Handy and coworkers reported the same behaviour of the UMP series (oscillatory and slowly monotonically convergent) in stretched \ce{H2O} and \ce{NH2}. \cite{Handy_1985} Lepetit \textit{et al.}~analysed the difference between the MP and EN partitioning for the UHF reference. \cite{Lepetit_1988} 
-They concluded that the slow convergence of the UMP series is due to i) the fact that the MP denominator (see Eq.~\ref{eq:EMP2}) tends to a constant instead of vanishing, and ii) the lack of the singly-excited configurations (which only appears at fourth order) that strongly couple to the doubly-excited configurations.
-We believe that this divergent behaviour might therefore be attributed to the need for the single excitations to focus on correcting the structure of the reference orbitals rather than capturing the correlation energy. 
+% SLOW UMP CONVERGENCE AND SPIN CONTAMINATION
+\hugh{%
+The divergence of RMP expansions for stretched bonds can be easily understood from two perspectives.\cite{Gill_1988a}
+Firstly, the exact wave function becomes increasingly multi-configurational as the bond is stretched, and the 
+HF wave function no longer provides a qualitatively correct reference for the perturbation expansion.
+Secondly, the energy gap between the bonding and anitbonding orbitals associated with the stretch becomes
+increasingly small at larger bond lengths, leading to a divergence in the Rayleigh--Schr\"odinger perturbation
+expansion Eq.~\eqref{eq:EMP2}.
+In contrast, the origin of slow UMP convergence is less obvious as the reference UHF energy remains
+qualitatively correct at large bond lengths and the orbital degeneracy is avoided.
+Furthermore, this slow convergence can also be observed in molecules with a UHF ground state at the equilibrium
+geometry (\eg, \ce{CN^{-}}), suggesting a more fundamental link with spin-contamination 
+in the reference wave function.\cite{Nobes_1987}
+}
 
-Cremer and He analysed 29 atomic and molecular systems at the FCI level \cite{Cremer_1996} and grouped them in two classes: i) the \textit{class A} systems where one observes a monotonic convergence \titou{of the RMP series?} to the FCI energy, and ii) the \textit{class B} systems for which convergence is erratic after initial oscillations. 
-Their system set contains stretched molecules as well as molecules at their equilibrium geometry for various basis sets. 
-They highlighted that \cite{Cremer_1996}
-\textit{``Class A systems are characterised by electronic structures with well-separated electron pairs while class B systems are characterized by electronic structures with electron clustering in one or more regions.''}
-Moreover, they analysed the contribution of the triple (T) excitations to the MP4, MP5 and MP6 energies next to the single, double and quadruple (SDQ) excitations contribution.
-They showed that class A systems have very little contribution from the triple excitations and that most of the correlation energy is due to pair correlation. 
-On the other hand, class B systems have an important contribution from the triple excitations which alternates in sign resulting in an oscillation of the total correlation energy.
-This observation on the contribution to the MP$n$ energy corroborates the electronic structure discussed above.
-As one can only compute the first terms of the MP series, a smart way of getting more accurate results is to use extrapolation formula, \ie, estimating the limit of the series with only few terms. 
-Cremer and He proved that using specific extrapolation formulas of the MP series for class A and class B systems improves the precision of the results compared to the formula used without resorting to classes. \cite{Cremer_1996}
-The mean absolute deviation taking the FCI correlation energies as reference is $0.3$ millihartree with the class-specific formula whereas the deviation increases to 12 millihartree using the general formula.  
-Even if there were still shaded areas in their analysis and that their classification was incomplete, the work of Ref.~\onlinecite{Cremer_1996} clearly evidenced that understanding the origin of the different modes of convergence could potentially lead to a more rationalised use of MP perturbation theory and, hence, to more accurate correlation energy estimates.
+\hugh{%
+Using the UHF framework allows} the singlet ground state wave function to mix with triplet wave functions, 
+leading to \hugh{spin contamination where the wave function is no longer an eigenfunction of the $\Hat{\cS}^2$ operator.}
+\hugh{The link between slow UMP convergence and this spin-contamination was first systematically investigated} 
+by Gill and \etal\ using the minimal basis \ce{H2} model.\cite{Gill_1988}
+\hugh{In this work, the authors compared the UMP series with the exact RHF- and UHF-based FCI expansions
+and identified that the slow UMP convergence arises from its failure to correctly predict the amplitude of the
+low-lying double excitation.
+This erroneous description of the double excitation amplitude has the same origin as the spin-contamination in the reference
+UHF wave function, creating the first direct link between spin-contamination and slow UMP convergence.\cite{Gill_1988}
+Lepetit \etal\ later analysed the difference between the unrestricted MP and EN partitionings and argued
+that the slow UMP convergence for stretched molecules arises from (i) the fact that the MP denominator (see Eq.~\ref{eq:EMP2})
+tends to a constant value instead of vanishing, and (ii) the slow convergence of contributions from the 
+singly-excited configurations that strongly couple to the doubly-excited configurations and first
+appear at fourth-order.\cite{Lepetit_1988}
+Drawing these ideas together, we believe that slow UMP convergence occurs because the single excitations must focus on removing
+spin-contamination from the reference wave function rather than fine-tuning the amplitudes of the higher 
+excitations that capture the correlation energy.
+}
+
+%When one relies on MP perturbation theory (and more generally on any perturbative partitioning), it would be reasonable to ask for a systematic improvement of the energy with respect to the perturbative order, \ie, one would expect that the more terms of the perturbative series one can compute, the closer the result from the exact energy.
+%In other words, one would like a monotonic convergence of the MP series. Assuming this, the only limiting process to get the exact correlation energy (in a finite basis set) would be our ability to compute the terms of this perturbation series.
+%Unfortunately this is not as easy as one might think because i) the terms of the perturbative series become rapidly computationally cumbersome, and ii) erratic behaviour of the perturbative coefficients are not uncommon. 
+%For example, in the late 80's, Gill and Radom reported deceptive and slow convergences in stretched systems \cite{Gill_1986,Gill_1988} (see also Refs.~\onlinecite{Handy_1985,Lepetit_1988}). 
+%In Ref.~\onlinecite{Gill_1986}, the authors showed that the RMP series is convergent, yet oscillatory which is far from being convenient if one is only able to compute the first few terms of the expansion.
+%For example, in the case of the barrier to homolytic fission of \ce{He2^2+} in a minimal basis set, RMP5 is worse than RMP4 (see Fig.~2 in Ref.~\onlinecite{Gill_1986}).
+%On the other hand, the UMP series is monotonically convergent after UMP5 but very slowly . 
+%Thus, one cannot practically use it for systems where only the first terms are computationally accessible.
+
+%When a bond is stretched, in most cases the exact wave function becomes more and more of multi-reference nature. 
+%Yet, the HF wave function is restricted to be a single Slater determinant.
+%It is then inappropriate to model (even qualitatively) stretched systems. 
+%Nevertheless, as explained in Sec.~\ref{sec:HF} and illustrated in Sec.~\ref{sec:HF_hubbard}, the HF wave function can undergo symmetry breaking to lower its energy by sacrificing one of the symmetry of the exact wave function in the process (see also the pedagogical example of \ce{H2} in Ref.~\onlinecite{SzaboBook}). 
+%One could then potentially claim that the RMP series exhibits deceptive convergence properties as the RHF Slater determinant is a poor approximation of the exact wave function for stretched system. 
+%However, as illustrated above, even in the unrestricted formalism which clearly represents a better description of a stretched system, the UMP series does not have the smooth and rapidly convergent behaviour that one would wish for. 
+%The reasons behind this ambiguous behaviour are further explained below.
+
+%In the unrestricted framework the singlet ground state wave function is allowed to mix with triplet wave functions, leading to the so-called spin contamination issue. Gill \textit{et al.}~highlighted the link between slow convergence of the UMP series and spin contamination for \ce{H2} in a minimal basis. \cite{Gill_1988}
+%Handy and coworkers reported the same behaviour of the UMP series (oscillatory and slowly monotonically convergent) in stretched \ce{H2O} and \ce{NH2}. \cite{Handy_1985} Lepetit \textit{et al.}~analysed the difference between the MP and EN partitioning for the UHF reference. \cite{Lepetit_1988} 
+%They concluded that the slow convergence of the UMP series is due to i) the fact that the MP denominator (see Eq.~\ref{eq:EMP2}) tends to a constant instead of vanishing, and ii) the lack of the singly-excited configurations (which only appears at fourth order) that strongly couple to the doubly-excited configurations.
+%We believe that this divergent behaviour might therefore be attributed to the need for the single excitations to focus on correcting the structure of the reference orbitals rather than capturing the correlation energy. 
+
+%Cremer and He analysed 29 atomic and molecular systems at the FCI level \cite{Cremer_1996} and grouped them in two classes: i) the \textit{class A} systems where one observes a monotonic convergence \titou{of the RMP series?} to the FCI energy, and ii) the \textit{class B} systems for which convergence is erratic after initial oscillations. 
+%Their system set contains stretched molecules as well as molecules at their equilibrium geometry for various basis sets. 
+%They highlighted that \cite{Cremer_1996}
+%\textit{``Class A systems are characterised by electronic structures with well-separated electron pairs while class B systems are characterized by electronic structures with electron clustering in one or more regions.''}
+%Moreover, they analysed the contribution of the triple (T) excitations to the MP4, MP5 and MP6 energies next to the single, double and quadruple (SDQ) excitations contribution.
+%They showed that class A systems have very little contribution from the triple excitations and that most of the correlation energy is due to pair correlation. 
+%On the other hand, class B systems have an important contribution from the triple excitations which alternates in sign resulting in an oscillation of the total correlation energy.
+%This observation on the contribution to the MP$n$ energy corroborates the electronic structure discussed above.
+%As one can only compute the first terms of the MP series, a smart way of getting more accurate results is to use extrapolation formula, \ie, estimating the limit of the series with only few terms. 
+%Cremer and He proved that using specific extrapolation formulas of the MP series for class A and class B systems improves the precision of the results compared to the formula used without resorting to classes. \cite{Cremer_1996}
+%The mean absolute deviation taking the FCI correlation energies as reference is $0.3$ millihartree with the class-specific formula whereas the deviation increases to 12 millihartree using the general formula.  
+%Even if there were still shaded areas in their analysis and that their classification was incomplete, the work of Ref.~\onlinecite{Cremer_1996} clearly evidenced that understanding the origin of the different modes of convergence could potentially lead to a more rationalised use of MP perturbation theory and, hence, to more accurate correlation energy estimates.
 
 
 %==========================================%
-\subsection{M{\o}ller-Plesset Convergence in the Hubbard Dimer}
+\subsection{Effect of Spin-Contamination in the Hubbard Dimer}
 %==========================================%
-
-To illustrate the behaviour of the RMP and UMP series, we can again consider the Hubbard dimer.
-Using the ground-state RHF reference orbitals leads to the RMP Hamiltonian
-\begin{widetext}
-\begin{equation}
-\label{eq:H_RMP}
-\bH_\text{RMP}\qty(\lambda) = 
-	\begin{pmatrix}
-		-2t + U - \lambda U/2	&	0					&	0					&	\lambda U/2	\\
-		0						&	U - \lambda U/2 	&	\lambda U/2			&	0	\\
-		0						&	\lambda U/2			&	U - \lambda U/2 	&	0	\\
-		\lambda U/2 			&	0 					&	0					&	2t + U - \lambda U/2	\\
-	\end{pmatrix},
-\end{equation}
-\end{widetext}
-which yields the ground-state energy 
-\begin{equation}
-	\label{eq:E0MP}
-	E_{-}(\lambda) = U - \frac{\lambda U}{2} - \frac{1}{2} \sqrt{(4t)^2 + \lambda ^2 U^2}.
-\end{equation}
-From this expression, the EPs can be identified as $\lep = \pm \i 4t / U$,
-giving the radius of convergence
-\begin{equation}
-    \rc = \abs{\frac{4t}{U}}.
-\end{equation}
-These EPs are identical than the exact EPs discussed in Sec.~\ref{sec:example}.
-The Taylor expansion of the RMP energy can then be evaluated to obtain the $k$th-order MP correction
-\begin{equation}
-	E_\text{RMP}^{(k)} = U \delta_{0,k} - \frac{1}{2} \frac{U^k}{(4t)^{k-1}} \mqty( 1/2 \\ k/2).
-\end{equation}
-%with 
-%\begin{equation}
-%	E_{\text{MP}n}(\lambda) = \sum_{k=0}^n E_\text{MP}^{(k)} \lambda^k.
-%\end{equation}
-
-The RMP series is convergent for $U = 3.5\,t$ with $\rc > 1$, as illustrated for the individual terms at each order
-of perturbation in Fig.~\ref{subfig:RMP_cvg}.
-In contrast, for $U = 4.5t$ one finds $\rc < 1$, and the RMP series becomes divergent.
-The corresponding Riemann surfaces for $U = 3.5\,t$ and $4.5\,t$ are shown in Figs.~\ref{subfig:RMP_3.5} and 
-\ref{subfig:RMP_4.5}, respectively, with the single EP at $\lep$ (black dot) and the radius of convergence indicated
-by the vertical cylinder of unit radius.
-For the divergent case, the $\lep$ lies inside this cylinder of convergence, while in the convergent case $\lep$ lies
-outside this cylinder.
-In both cases, the EP connects the ground state with the doubly-excited state, and thus the convergence behaviour
-for the two states using the ground state RHF orbitals is identical.
-The convergent and divergent series start to differ at fourth order, corresponding to the lowest-order contribution
-from the single excitations.\cite{Lepetit_1988}
 
 %%% FIG 2 %%%
 \begin{figure*}
@@ -815,9 +834,72 @@ from the single excitations.\cite{Lepetit_1988}
 	\label{fig:RMP}}
 \end{figure*}
 
-The behaviour of the UMP series is more subtle than the RMP series as spin-contamination in the wave function
-must be considered, introducing additional coupling between electronic states.
-Using the ground-state UHF reference orbitals in the Hubbard dimer yields the UMP Hamiltonian
+\hugh{The behaviour of the RMP and UMP series observed in \ce{H2} can again be analytically illustrated by considering
+the Hubbard dimer with a complex-valued perturbation strength.
+In this system, the stretching of a chemical bond is directly mirrored by an increase in the on-site repulsion $U$.
+}
+Using the ground-state RHF reference orbitals leads to the \hugh{parametrised} RMP Hamiltonian
+\begin{widetext}
+\begin{equation}
+\label{eq:H_RMP}
+\bH_\text{RMP}\qty(\lambda) = 
+	\begin{pmatrix}
+		-2t + U - \lambda U/2	&	0					&	0					&	\lambda U/2	\\
+		0						&	U - \lambda U/2 	&	\lambda U/2			&	0	\\
+		0						&	\lambda U/2			&	U - \lambda U/2 	&	0	\\
+		\lambda U/2 			&	0 					&	0					&	2t + U - \lambda U/2	\\
+	\end{pmatrix},
+\end{equation}
+\end{widetext}
+which yields the ground-state energy 
+\begin{equation}
+	\label{eq:E0MP}
+	E_{-}(\lambda) = U - \frac{\lambda U}{2} - \frac{1}{2} \sqrt{(4t)^2 + \lambda ^2 U^2}.
+\end{equation}
+From this expression, the EPs can be identified as $\lep = \pm \i 4t / U$,
+giving the radius of convergence
+\begin{equation}
+    \rc = \abs{\frac{4t}{U}}.
+\end{equation}
+Remarkably, these EPs are identical to the exact EPs discussed in Sec.~\ref{sec:example}.
+The Taylor expansion of the RMP energy can then be evaluated to obtain the $k$th-order MP correction
+\begin{equation}
+	E_\text{RMP}^{(k)} = U \delta_{0,k} - \frac{1}{2} \frac{U^k}{(4t)^{k-1}} \mqty( 1/2 \\ k/2).
+\end{equation}
+%with 
+%\begin{equation}
+%	E_{\text{MP}n}(\lambda) = \sum_{k=0}^n E_\text{MP}^{(k)} \lambda^k.
+%\end{equation}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RADIUS OF CONVERGENCE PLOTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htb]
+	\includegraphics[width=\linewidth]{RadConv}
+	\caption{
+	Radius of convergence $r_c$ for the RMP ground state (red), the UMP ground state (blue), and the UMP excited state (orange) 
+    series as functions of the ratio $U/t$.
+	\label{fig:RadConv}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The RMP series is convergent for $U = 3.5\,t$ with $\rc > 1$, as illustrated for the individual terms at each order
+of perturbation in Fig.~\ref{subfig:RMP_cvg}.
+In contrast, for $U = 4.5t$ one finds $\rc < 1$, and the RMP series becomes divergent.
+The corresponding Riemann surfaces for $U = 3.5\,t$ and $4.5\,t$ are shown in Figs.~\ref{subfig:RMP_3.5} and 
+\ref{subfig:RMP_4.5}, respectively, with the single EP at $\lep$ (black dot) and the radius of convergence indicated
+by the vertical cylinder of unit radius.
+For the divergent case, the $\lep$ lies inside this cylinder of convergence, while in the convergent case $\lep$ lies
+outside this cylinder.
+In both cases, the EP connects the ground state with the doubly-excited state, and thus the convergence behaviour
+for the two states using the ground-state RHF orbitals is identical.
+% HGAB: This cannot be relevant here as the single-excitations don't couple to either ground or excited state.
+%The convergent and divergent series start to differ at fourth order, corresponding to the lowest-order contribution
+%%from the single excitations.\cite{Lepetit_1988}
+
+The behaviour of the UMP series is more subtle than the RMP series as the spin-contamination in the wave function
+\hugh{introduces additional coupling between the singly- and doubly-excited configurations.}
+Using the ground-state UHF reference orbitals in the Hubbard dimer yields the \hugh{parametrised} UMP Hamiltonian
 \begin{widetext}
 \begin{equation}
 \label{eq:H_UMP}
@@ -835,21 +917,10 @@ Instead, the radius of convergence of the UMP series can be obtained numerically
 in Fig.~\ref{fig:RadConv}.
 These numerical values reveal that the UMP ground state series has $\rc > 1$ for all $U/t$ and must always converge.
 However, in the strong correlation limit (large $U$), this radius of convergence tends to unity, indicating that
-the corresponding UMP series will become increasingly slow.
+the corresponding UMP series becomes increasingly slow.
 Furthermore, the doubly-excited state using the ground-state UHF orbitals has $\rc < 1$ for almost any value 
-of $U/t$, reaching the limit value of $1/2$ for $U/t \rightarrow \infty$, and excited-state UMP series will always diverge.
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% RADIUS OF CONVERGENCE PLOTS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-	\includegraphics[width=\linewidth]{RadConv}
-	\caption{
-	Radius of convergence $r_c$ for the RMP ground state (red), the UMP ground state (blue), and the UMP excited state (orange) 
-    series as functions of the ratio $U/t$.
-	\label{fig:RadConv}}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+of $U/t$, reaching the limiting value of $1/2$ for $U/t \rightarrow \infty$, and thus the 
+excited-state UMP series will always diverge.
  
 % DISCUSSION OF UMP RIEMANN SURFACES
 The convergence behaviour can be further elucidated by considering the full structure of the UMP energies 
@@ -911,8 +982,23 @@ spin-contamination from the wave function.
 
 
 %==========================================%
-\subsection{Further insights from a two-state model}
+\subsection{Classifying Types of Convergence Behaviour} % Further insights from a two-state model}
 %==========================================%
+
+% CREMER AND HE
+\hugh{Cremer and He analysed 29 atomic and molecular systems at the FCI level \cite{Cremer_1996} and grouped them in two classes: i) the \textit{class A} systems where one observes a monotonic convergence \titou{of the RMP series?} to the FCI energy, and ii) the \textit{class B} systems for which convergence is erratic after initial oscillations. 
+Their system set contains stretched molecules as well as molecules at their equilibrium geometry for various basis sets. 
+They highlighted that \cite{Cremer_1996}
+\textit{``Class A systems are characterised by electronic structures with well-separated electron pairs while class B systems are characterized by electronic structures with electron clustering in one or more regions.''}
+Moreover, they analysed the contribution of the triple (T) excitations to the MP4, MP5 and MP6 energies next to the single, double and quadruple (SDQ) excitations contribution.
+They showed that class A systems have very little contribution from the triple excitations and that most of the correlation energy is due to pair correlation. 
+On the other hand, class B systems have an important contribution from the triple excitations which alternates in sign resulting in an oscillation of the total correlation energy.
+This observation on the contribution to the MP$n$ energy corroborates the electronic structure discussed above.
+As one can only compute the first terms of the MP series, a smart way of getting more accurate results is to use extrapolation formula, \ie, estimating the limit of the series with only few terms. 
+Cremer and He proved that using specific extrapolation formulas of the MP series for class A and class B systems improves the precision of the results compared to the formula used without resorting to classes. \cite{Cremer_1996}
+The mean absolute deviation taking the FCI correlation energies as reference is $0.3$ millihartree with the class-specific formula whereas the deviation increases to 12 millihartree using the general formula.  
+Even if there were still shaded areas in their analysis and that their classification was incomplete, the work of Ref.~\onlinecite{Cremer_1996} clearly evidenced that understanding the origin of the different modes of convergence could potentially lead to a more rationalised use of MP perturbation theory and, hence, to more accurate correlation energy estimates.}
+
 
 In the late 90's, Olsen \textit{et al.}~discovered an even more preoccupying behaviour of the MP series. \cite{Olsen_1996} 
 They showed that the series could be divergent even in systems that they considered as well understood like \ce{Ne} and the \ce{HF} molecule. \cite{Olsen_1996, Christiansen_1996} 

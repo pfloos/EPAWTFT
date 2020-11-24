@@ -56,7 +56,7 @@ low-order expansions give qualitatively wrong energetics (eg. unphysical barrier
 
 Schlegel, JCP, (1986):
 ----------------------
-Apply spin-projection to UHF and UMP to obtain improved potential enerrgy curves. Use a
+Apply spin-projection to UHF and UMP to obtain improved potential energy curves. Use a
 post-perturbation projection to avoid mixing in higher energy states.
 
 Perturbation corrections do not significantly reduce spin contamination. PUHF has a gradient
@@ -78,6 +78,14 @@ Worst barrier height estimate occurs at UMP4, after which there is very slow con
 
 They suspect that UMP problems can be attributed to spin-contamination. Conclude that incorrect
 "qualitative" nature of RMP is not as bad as spin-contamination in UMP.
+
+Nobes, Pople, Radom, Handy and Knowles, CPL (1987):
+---------------------------------------------------
+Look at the MP convergence in the cyanide anion (CN-) at this is a molecule with a symmetry-broken
+solution at equilibrium. They observe very slow convergence in these UMP series too, with more than
+MP4 being needed for accurate energies. This confirms that spin-contamination, rather than extended 
+bonds, provides the driving force for slow UMP convergence. 
+
 
 Gill, Wong, Nobes, and Radom, CPL (1988):
 -----------------------------------------
@@ -112,4 +120,7 @@ The EN partitioning avoids this, but the PT terms then become undetermined (zero
 
 Single excitations can interact with the doubly-excited determinants. This matrix elements goes through
 a maximum at intermediate distances. This contribution enters at fourth-order.
+
+Raghavachari, Pople, Replogle, and Head-Gordon, JPC, (1990):
+-----------------------------------------------------------
 
