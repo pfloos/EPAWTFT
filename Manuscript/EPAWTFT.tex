@@ -708,6 +708,33 @@ to the convergence properties of the MP expansion.}
 \subsection{M{\o}ller-Plesset Convergence in Molecular Systems}
 %=====================================================%
 
+% GENERAL DESIRE FOR WELL-BEHAVED CONVERGENCE AND LOW-ORDER TERMS
+\hugh{Among the most desirable properties of any electronic structure technique is the existence of 
+a systematic route to increasingly accurate energies. 
+In the context of MP theory, one would like a monotonic convergence of the perturbation
+series towards the exact energy such that the accuracy increases as each term in the series is added.
+If such well-behaved convergence can be established, then our ability to compute individual 
+terms in the series becomes the only barrier to computing the exact correlation in a finite basis set.
+Unfortunately, the computational scaling of each term in the MP series increases with the perturbation
+order, and practical calculations rely on fast convergence
+to obtain high-accuracy results using only the lowest order terms.
+}
+
+% INITIAL POSITIVITY AROUND THE CONVERGENCE PROPERTIES
+\hugh{MP theory was first introduced to quantum chemistry through the pioneering
+works of Bartlett \etal{},\cite{Bartlett_1975} and Pople \etal{}.\cite{Pople_1976,Pople_1978}
+The first investigations into the convergence of the MP series followed soon after, and 
+it was quickly realised that this convergence was often very slow, or erratic. 
+}
+Given the
+
+
+
+% WORRIES ABOUT ERRATIC OR SLOW CONVERGENCE
+
+
+% CREMER AND HE
+
 When one relies on MP perturbation theory (and more generally on any perturbative partitioning), it would be reasonable to ask for a systematic improvement of the energy with respect to the perturbative order, \ie, one would expect that the more terms of the perturbative series one can compute, the closer the result from the exact energy.
 In other words, one would like a monotonic convergence of the MP series. Assuming this, the only limiting process to get the exact correlation energy (in a finite basis set) would be our ability to compute the terms of this perturbation series.
 Unfortunately this is not as easy as one might think because i) the terms of the perturbative series become rapidly computationally cumbersome, and ii) erratic behaviour of the perturbative coefficients are not uncommon. For example, in the late 80's, Gill and Radom reported deceptive and slow convergences in stretched systems \cite{Gill_1986,Gill_1988} (see also Refs.~\onlinecite{Handy_1985,Lepetit_1988}). 
