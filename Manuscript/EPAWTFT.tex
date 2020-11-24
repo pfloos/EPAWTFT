@@ -1167,7 +1167,46 @@ We believe that $\alpha$ singularities are connected to states with non-negligib
 %==========================================%
 \subsection{Pad\'e approximant}
 %==========================================%
+According to Wikipedia, \textit{``a Pad\'e approximant is the best approximation of a function by a rational function of given order''}.
+A $[d_A/d_B]$ Pad\'e approximant is defined as
+\begin{equation}
+	\label{eq:PadeApp}
+	E(\lambda) = \frac{A(\lambda)}{B(\lambda)} = \frac{\sum_{k=0}^{d_A} a_k \lambda^k}{\sum_{k=0}^{d_B} b_k \lambda^k}
+\end{equation}
+with $b_0 = 1$.
+Pad\'e approximants are nice and they can model poles, but they cannot model functions with square-root branch points, and that sucks.
 
+%==========================================%
+\subsection{Quadratic approximant}
+%==========================================%
+In a nutshell, the idea behind quadratic approximant is to model the singularity structure of the energy function $E(\lambda)$ via a generalized version of the square-root singularity expression
+\begin{equation}
+	\label{eq:QuadApp}
+	E(\lambda) = \frac{1}{2 Q(\lambda)} \qty[ P(\lambda) \pm \sqrt{P^2(\lambda) - 4 Q(\lambda) R(\lambda)} ]
+\end{equation}
+where 
+\begin{align}
+	\label{eq:PQR}
+	P(\lambda) & = \sum_{k=0}^{d_P} p_k \lambda^k,
+	&
+	Q(\lambda) & = \sum_{k=0}^{d_Q} q_k \lambda^k, 
+	&
+	R(\lambda) & = \sum_{k=0}^{d_R} r_k \lambda^k 
+\end{align}
+are polynomials, such that $d_P + d_Q + d_R = n - 1$ where $n$ is the highest-order series coefficient known from the Taylor expansion of $E(\lambda)$.
+Recasting Eq.~\eqref{eq:QuadApp} as a second-order expression in $E(\lambda)$, \ie,
+\begin{equation}
+	Q(\lambda) E^2(\lambda) - P(\lambda) E(\lambda) + R(\lambda) \sim \order*{\lambda^{n+1}}
+\end{equation}
+and substituting $E(\lambda$) by its $n$th-order expansion and the polynomials by their respective expressions \eqref{eq:PQR} yields $n+1$ linear equations for the coefficients $p_k$, $q_k$, and $r_k$ (where we are free to assume that $q_0 = 1$).
+A quadratic approximant, characterised by the label $[d_P/d_Q,d_R]$, generates, by construction, $\max(2d_p,d_q+d_r)$ branch points.
+The diagonal sequence of quadratic approximant, \ie, $[0/0,0]$, $[1/0,0]$, $[1/0,1]$, $[1/1,1]$, $[2/1,1]$, is of particular interest.
+
+For the RMP series of the Hubbard dimer, the $[0/0,0]$ and $[1/0,0]$ quadratic approximant are quite poor approximation, but its $[1/0,1]$ version already model perfectly the RMP energy function by predicting a single pair of EPs at $\lambda_{EP} = \pm i 4t/U$.
+This is expected knowing the form of the RMP energy [see Eq.~\eqref{eq:E0MP}] which perfectly suits the purpose of quadratic approximants.
+
+We can anticipate that the singularity structure of the UMP energy function is going to be much more challenging to model properly, and this is indeed the case.
+However, by ramping up high enough the degree of the polynomials, one is able to get an accurate estimates of the radius of convergence of the UMP series as shown in Fig.~??.
 
 %==========================================%
 \subsection{Analytic continuation}
@@ -1187,7 +1226,6 @@ which states that the value of the energy can be computed at $\lambda=a$ inside 
 Their method consists in refining self-consistently the values of $E(\lambda)$ computed on a contour going through the physical point at $\lambda = 1$ and encloses points of the ``trusted'' region (where the MP series is convergent). The shape of this contour is arbitrary but no singularities are allowed inside the contour to ensure $E(\lambda)$ is analytic. 
 When the values of $E(\lambda)$ on the so-called contour are converged, Cauchy's integrals formula \eqref{eq:Cauchy} is invoked to compute the values at $E(\lambda=1)$ which corresponds to the final estimate of the FCI energy.
 The authors illustrate this protocol on the dissociation curve of \ce{LiH} and the stretched water molecule showing encouraging results. \cite{Mihalka_2019} 
-
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
