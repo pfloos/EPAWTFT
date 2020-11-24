@@ -153,7 +153,7 @@ slowly convergent term can remain.
 Knowles and Handy later argue that Schlegel's approaches are not satisfactory as they do not account
 for the fact that the reference Hamiltonian does not commute with the perturbation operator.
 
-Knowles and Handy, JPC (1988):
+Knowles and Handy, JPC (1988a):
 ------------------------------
 Consider how to formulate a spin-projected UMP series based on the Lowdin spin-projection operator. 
 Schlegel considered this first, but in a limited fashion where only the contamination from the next highest
@@ -170,7 +170,7 @@ one of their spin-projected MP energies gives rise to a spurious minimum. This i
 results from Schlegel's work. Despite these discontinuities, they see that the spin-projection does
 accelerate the rate of convergence.
 
-Knowles and Handy, JCP (1988):
+Knowles and Handy, JCP (1988b):
 -----------------------------
 This paper extends Knowles and Handy's previous approach to show that it is tractable for larger molecules.
 By comparing their results with Schlegel, the authors demonstrate the importance of considering the 
