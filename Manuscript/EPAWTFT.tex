@@ -27,7 +27,7 @@
 %\newcommand{\latin}[1]{\textit{#1}}
 \newcommand{\ie}{\latin{i.e.}}
 \newcommand{\eg}{\latin{e.g.}}
-\newcommand{\etal}{\latin{et.\ al}}
+\newcommand{\etal}{\textit{et.\ al}}
 
 \newcommand{\mc}{\multicolumn}
 \newcommand{\fnm}{\footnotemark}
@@ -731,7 +731,7 @@ Early implementations were restricted to the fourth-order MP4 approach that was 
 to offer state-of-the-art quantitative accuracy.\cite{Pople_1978,Krishnan_1980}
 However, it was quickly realised that the MP series often demonstrated very slow, oscillatory, 
 or erratic convergence, with the UMP series showing particularly slow convergence.\cite{Laidig_1985,Knowles_1985,Handy_1985}
-For example, RMP5 is worse than RMP4 for predicting the the homolytic barrier fission of \ce{He2^2+} using a minimal basis set, 
+For example, RMP5 is worse than RMP4 for predicting the homolytic barrier fission of \ce{He2^2+} using a minimal basis set, 
 while the UMP series monotonically converges but becomes increasingly slow beyond UMP5.\cite{Gill_1986}
 The first examples of divergent MP series were observed in the heavy-atom \ce{N2} and \ce{F2} 
 diatomics, where low-order RMP and UMP expansions give qualitatively wrong binding curves.\cite{Laidig_1987} 
@@ -756,19 +756,21 @@ in the reference wave function.\cite{Nobes_1987}
 Using the UHF framework allows} the singlet ground state wave function to mix with triplet wave functions, 
 leading to \hugh{spin contamination where the wave function is no longer an eigenfunction of the $\Hat{\cS}^2$ operator.}
 \hugh{The link between slow UMP convergence and this spin-contamination was first systematically investigated} 
-by Gill and \etal\ using the minimal basis \ce{H2} model.\cite{Gill_1988}
+by Gill \etal\ using the minimal basis \ce{H2} model.\cite{Gill_1988}
 \hugh{In this work, the authors compared the UMP series with the exact RHF- and UHF-based FCI expansions
 and identified that the slow UMP convergence arises from its failure to correctly predict the amplitude of the
 low-lying double excitation.
 This erroneous description of the double excitation amplitude has the same origin as the spin-contamination in the reference
 UHF wave function, creating the first direct link between spin-contamination and slow UMP convergence.\cite{Gill_1988}
-Lepetit \etal\ later analysed the difference between the unrestricted MP and EN partitionings and argued
-that the slow UMP convergence for stretched molecules arises from (i) the fact that the MP denominator (see Eq.~\ref{eq:EMP2})
+Lepetit \etal\ later analysed the difference between perturbation convergence using the unrestricted MP 
+and EN partitionings.\cite{Lepetit_1988}
+They argued that the slow UMP convergence for stretched molecules arises from 
+(i) the fact that the MP denominator (see Eq.~\ref{eq:EMP2})
 tends to a constant value instead of vanishing, and (ii) the slow convergence of contributions from the 
 singly-excited configurations that strongly couple to the doubly-excited configurations and first
 appear at fourth-order.\cite{Lepetit_1988}
 Drawing these ideas together, we believe that slow UMP convergence occurs because the single excitations must focus on removing
-spin-contamination from the reference wave function rather than fine-tuning the amplitudes of the higher 
+spin-contamination from the reference wave function, limiting their ability to fine-tune the amplitudes of the higher 
 excitations that capture the correlation energy.
 }
 
@@ -834,9 +836,9 @@ excitations that capture the correlation energy.
 	\label{fig:RMP}}
 \end{figure*}
 
-\hugh{The behaviour of the RMP and UMP series observed in \ce{H2} can again be analytically illustrated by considering
-the Hubbard dimer with a complex-valued perturbation strength.
-In this system, the stretching of a chemical bond is directly mirrored by an increase in the on-site repulsion $U$.
+\hugh{The behaviour of the RMP and UMP series observed in \ce{H2} can also be illustrated by considering
+the analytic Hubbard dimer with a complex-valued perturbation strength.
+In this system, the stretching of a chemical bond is directly mirrored by an increase in the electron correlation $U/t$.
 }
 Using the ground-state RHF reference orbitals leads to the \hugh{parametrised} RMP Hamiltonian
 \begin{widetext}
@@ -915,7 +917,7 @@ Using the ground-state UHF reference orbitals in the Hubbard dimer yields the \h
 While there is a closed-form expression for the ground-state energy, it is cumbersome and we eschew reporting it.
 Instead, the radius of convergence of the UMP series can be obtained numerically as a function of $U/t$, as shown
 in Fig.~\ref{fig:RadConv}.
-These numerical values reveal that the UMP ground state series has $\rc > 1$ for all $U/t$ and must always converge.
+These numerical values reveal that the UMP ground-state series has $\rc > 1$ for all $U/t$ and must always converge.
 However, in the strong correlation limit (large $U$), this radius of convergence tends to unity, indicating that
 the corresponding UMP series becomes increasingly slow.
 Furthermore, the doubly-excited state using the ground-state UHF orbitals has $\rc < 1$ for almost any value 
@@ -928,22 +930,34 @@ in the complex $\lambda$-plane.
 These Riemann surfaces are illustrated for $U = 3t$ and $7t$ alongside the perturbation terms at each order
 in Fig.~\ref{subfig:UMP_cvg}.
 At $U = 3t$, the RMP series is convergent, while RMP becomes divergent for $U=7t$.
-The UMP expansion is convergent in both cases, although the rate of convergence is significantly slower 
+The ground-state UMP expansion is convergent in both cases, although the rate of convergence is significantly slower 
 for larger $U/t$ as the radius of convergence becomes increasingly close to 1 (Fig.~\ref{fig:RadConv}).
 
 % EFFECT OF SYMMETRY BREAKING
-Allowing the UHF orbitals to break the molecular symmetry introduces new couplings between electronic states
-and fundamentally changes the structure of the EPs in the complex $\lambda$-plane.
+As the UHF orbitals break the molecular symmetry, new coupling terms emerge between the electronic states that
+cause fundamental changes to the structure of EPs in the complex $\lambda$-plane.
 For example, while the RMP energy shows only one EP between the ground state and 
 the doubly-excited state (Fig.~\ref{fig:RMP}), the UMP energy has two EPs: one connecting the ground state with the
-first-excited \titou{open-shell singlet?}, and the other connecting the \titou{open-shell singlet?} to the 
+singly-excited open-shell singlet, and the other connecting this single excitation to the 
 doubly-excited second excitation (Fig.~\ref{fig:UMP}).
-While this symmetry-breaking makes the ground-state UMP series convergent by moving the corresponding
-EP outside the unit cylinder, this process also moves the excited-state EP within the unit cylinder
-and thus causes a deterioration in the convergence of the excited-state UMP series.
-Furthermore, since the UHF ground-state energy is already an improved approximation of the exact energy, the ground-state
-UMP energy surface is relatively flat and the majority of the UMP expansion is concerned with removing 
-spin-contamination from the wave function.
+\hugh{%
+This new ground-state EP always appears outside the unit cylinder and guarantees convergence of the ground-state energy.
+However, the excited-state EP is moved within} the unit cylinder and causes the 
+convergence of the excited-state UMP series to deteriorate.
+\hugh{Our interpretation of this effect is that the symmetry-broken orbital optimisation has redistributed the strong 
+coupling between the ground- and doubly-excited states into weaker couplings between all states, and has thus
+sacrificed convergence of the excited-state series so that the chance of ground-state convergence can be maximised.}
+
+Since the UHF ground state already provides a good approximation to the exact energy, the ground-state sheet of
+the UMP energy is relatively flat and the corresponding EP in the Hubbard dimer always lies outside the unit cylinder.
+\hugh{The slow convergence observed in \ce{H2} can then be seen as this EP moves ever closer to one at larger $U/t$ values.}
+Furthermore, the majority of the UMP expansion in this regime is concerned with removing spin-contamination from the wave 
+function \hugh{rather than improving the energy.
+It is well-known that the spin-projection needed to remove spin-contamination can require non-linear combinations
+of highly-excited determinants,\cite{Lowdin_1955c} and thus it is not surprising that this process proceeds 
+very slowly as the perturbation order is increased.
+}
+
 
 %The convergence of the UMP as a function of the ratio $U/t$ is shown in Fig.~\ref{subfig:UMP_cvg} for two specific values: the first ($U = 3t$) is well within the RMP convergence region, while the second ($U = 7t$) falls outside.
 %Note that in the case of UMP, there are now two pairs of EPs as the open-shell singlet now couples strongly with both the ground and doubly-excited states.
