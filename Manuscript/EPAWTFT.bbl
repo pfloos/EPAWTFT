@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{131}%
+\begin{thebibliography}{132}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -1277,6 +1277,16 @@
   {journal} {\bibinfo  {journal} {J. Phys. A: Math. Theor.}\ }\textbf {\bibinfo
   {volume} {40}},\ \bibinfo {pages} {581} (\bibinfo {year} {2007})}\BibitemShut
   {NoStop}%
+\bibitem [{\citenamefont {Surj{\'a}n}\ and\ \citenamefont
+  {Szabados}(2000)}]{Surjan_2000}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~R.}\ \bibnamefont
+  {Surj{\'a}n}}\ and\ \bibinfo {author} {\bibfnamefont {{\'A}.}~\bibnamefont
+  {Szabados}},\ }\href {\doibase 10.1063/1.481006} {\bibfield  {journal}
+  {\bibinfo  {journal} {The Journal of Chemical Physics}\ }\textbf {\bibinfo
+  {volume} {112}},\ \bibinfo {pages} {4438} (\bibinfo {year} {2000})},\ \Eprint
+  {http://arxiv.org/abs/https://doi.org/10.1063/1.481006}
+  {https://doi.org/10.1063/1.481006} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Surj{\'a}n}\ \emph {et~al.}(2018)\citenamefont
   {Surj{\'a}n}, \citenamefont {Mih{\'a}lka},\ and\ \citenamefont
   {Szabados}}]{Surjan_2018}%

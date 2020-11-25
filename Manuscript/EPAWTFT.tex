@@ -757,7 +757,7 @@ low-lying double excitation.
 This erroneous description of the double excitation amplitude has the same origin as the spin-contamination in the reference
 UHF wave function, creating the first direct link between spin-contamination and slow UMP convergence.\cite{Gill_1988}
 Lepetit \etal\ later analysed the difference between perturbation convergence using the unrestricted MP 
-and EN partitionings.\cite{Lepetit_1988}
+and EN partitionings. \cite{Lepetit_1988}
 They argued that the slow UMP convergence for stretched molecules arises from 
 (i) the fact that the MP denominator (see Eq.~\ref{eq:EMP2})
 tends to a constant value instead of vanishing, and (ii) the slow convergence of contributions from the 
@@ -1164,17 +1164,19 @@ We believe that $\alpha$ singularities are connected to states with non-negligib
 \section{Exploiting complex analysis}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+The inability of Taylor series to model properly the energy function $E(\lambda$) can be simply understood by the fact that one aims at modelling a complicated function with potentially poles and singularities by a simple polynomial of finite order.
+
 %==========================================%
 \subsection{Pad\'e approximant}
 %==========================================%
 According to Wikipedia, \textit{``a Pad\'e approximant is the best approximation of a function by a rational function of given order''}.
-A $[d_A/d_B]$ Pad\'e approximant is defined as
+A $[d_A/d_B]$ Pad\'e approximant is defined as \cite{Pade}
 \begin{equation}
 	\label{eq:PadeApp}
-	E(\lambda) = \frac{A(\lambda)}{B(\lambda)} = \frac{\sum_{k=0}^{d_A} a_k \lambda^k}{\sum_{k=0}^{d_B} b_k \lambda^k}
+	E_{[d_A/d_B]}(\lambda) = \frac{A(\lambda)}{B(\lambda)} = \frac{\sum_{k=0}^{d_A} a_k \lambda^k}{\sum_{k=0}^{d_B} b_k \lambda^k}
 \end{equation}
-with $b_0 = 1$.
-Pad\'e approximants are nice and they can model poles, but they cannot model functions with square-root branch points, and that sucks.
+(with $b_0 = 1$), where the coefficients of the polynomials are determined by collecting terms according to power of $\lambda$.
+Pad\'e approximants are nice and they can model poles (the poles of a $[d_A/d_B]$ Pad\'e approximant appears at the roots of the polynomial $B(\lambda)$), but they cannot model functions with square-root branch points, and that sucks because it is not consistent with the singularity structure of a typical perturbative treatment.
 
 %==========================================%
 \subsection{Quadratic approximant}
@@ -1212,7 +1214,7 @@ However, by ramping up high enough the degree of the polynomials, one is able to
 \subsection{Analytic continuation}
 %==========================================%
 
-Recently, Mih\'alka \textit{et al.} studied the partitioning effect on the convergence properties of Rayleigh-Schr\"odinger perturbation theory by considering the MP and the EN partitioning as well as an alternative partitioning. \cite{Mihalka_2017a} 
+Recently, Mih\'alka \textit{et al.} studied the partitioning effect on the convergence properties of Rayleigh-Schr\"odinger perturbation theory by considering the MP and the EN partitioning as well as an alternative partitioning \cite{Mihalka_2017a} (see also Ref.~\onlinecite{Surjan_2000}).
 Taking as an example (in particular) the water molecule at equilibrium and at stretched geometries, they could estimate the radius of convergence via a quadratic Pad\'e approximant and convert divergent perturbation expansions to convergent ones in some cases thanks to a judicious choice of the level shift parameter.
 In a subsequent study by the same group, \cite{Mihalka_2017b} they use analytic continuation techniques to resum divergent MP series \cite{Goodson_2011} taking again as an example the water molecule in a stretched geometry.
 In a nutshell, their idea consists in calculating the energy of the system for several values of $\lambda$ for which the MP series is rapidly convergent (\ie, for $\lambda < r_c$), and to extrapolate the final energy to the physical system at $\lambda = 1$ via a polynomial- or Pad\'e-based fit. 
