@@ -1161,25 +1161,29 @@ Those excited states have a non-negligible contribution to the exact FCI solutio
 We believe that $\alpha$ singularities are connected to states with non-negligible contribution in the CI expansion thus to the dynamical part of the correlation energy, while $\beta$ singularities are linked to symmetry breaking and phase transitions of the wave function, \ie, to the multi-reference nature of the wave function thus to the static part of the correlation energy.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Resummation techniques}
+\section{Resummation Methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-As frequently claimed by Carl Bender, the most stupid thing that one can do with a series is to sum it.
+As frequently claimed by Carl Bender, \textit{``the most stupid thing that one can do with a series is to sum it.''}
 Nonetheless, quantum chemists are basically doing exactly this on a daily basis.
-
-The inability of Taylor series to model properly the energy function $E(\lambda$) can be simply understood by the fact that one aims at modelling a complicated function with potentially poles and singularities by a simple polynomial of finite order.
+Here, we discuss tools that can be used to sum divergent series.
+Resummation techniques is a vast field of research and, below, we provide details for a non-exhaustive list of these techniques.
+We refer the interested reader to more specialised reviews for additional information. \cite{Goodson_2011,Goodson_2019}
 
 %==========================================%
 \subsection{Pad\'e approximant}
 %==========================================%
-According to Wikipedia, \textit{``a Pad\'e approximant is the best approximation of a function by a rational function of given order''}. \cite{BakerBook}
-A $[d_A/d_B]$ Pad\'e approximant is defined as \cite{Pade_1892}
+The inability of Taylor series to model properly the energy function $E(\lambda$) can be simply understood by the fact that one aims at modelling a complicated function with potentially poles and singularities by a simple polynomial of finite order.
+This description can be significantly improved thanks to Pad\'e approximant. \cite{Pade_1892,BakerBook}
+
+According to Wikipedia, \textit{``a Pad\'e approximant is the best approximation of a function by a rational function of given order''}. 
+A $[d_A/d_B]$ Pad\'e approximant is defined as 
 \begin{equation}
 	\label{eq:PadeApp}
 	E_{[d_A/d_B]}(\lambda) = \frac{A(\lambda)}{B(\lambda)} = \frac{\sum_{k=0}^{d_A} a_k \lambda^k}{\sum_{k=0}^{d_B} b_k \lambda^k}
 \end{equation}
 (with $b_0 = 1$), where the coefficients of the polynomials $A(\lambda)$ and $B(\lambda)$ are determined by collecting terms according to power of $\lambda$.
-Pad\'e approximants are extremely useful in many areas of physics and chemistry \cite{Loos_2013,Gluzman_2020} as they can model poles [the poles of a Pad\'e approximant appears at the roots of the polynomial $B(\lambda)$]. 
+Pad\'e approximants are extremely useful in many areas of physics and chemistry \cite{Loos_2013,Gluzman_2020} as they can model poles, which appears at the roots of the polynomial $B(\lambda)$. 
 However, they are unable to model functions with square-root branch points, which are ubiquitous in the singularity structure of a typical perturbative treatment.
 
 %==========================================%
@@ -1205,13 +1209,16 @@ Recasting Eq.~\eqref{eq:QuadApp} as a second-order expression in $E(\lambda)$, \
 	Q(\lambda) E^2(\lambda) - P(\lambda) E(\lambda) + R(\lambda) \sim \order*{\lambda^{n+1}}
 \end{equation}
 and substituting $E(\lambda$) by its $n$th-order expansion and the polynomials by their respective expressions \eqref{eq:PQR} yields $n+1$ linear equations for the coefficients $p_k$, $q_k$, and $r_k$ (where we are free to assume that $q_0 = 1$).
-A quadratic approximant, characterised by the label $[d_P/d_Q,d_R]$, generates, by construction, $\max(2d_p,d_q+d_r)$ branch points.
+A quadratic approximant, characterised by the label $[d_P/d_Q,d_R]$, generates, by construction, $\max(2d_p,d_q+d_r)$ branch points at the roots of the polynomial $P^2(\lambda) - 4 Q(\lambda) R(\lambda)$.
 The diagonal sequence of quadratic approximant, \ie, $[0/0,0]$, $[1/0,0]$, $[1/0,1]$, $[1/1,1]$, $[2/1,1]$, is of particular interest.
+Note that, by construction, a quadratic approximant has only two branches which hampers the faithful description of more complicated singularity structures.
 
-For the RMP series of the Hubbard dimer, the $[0/0,0]$ and $[1/0,0]$ quadratic approximant are quite poor approximation, but its $[1/0,1]$ version already model perfectly the RMP energy function by predicting a single pair of EPs at $\lambda_{EP} = \pm i 4t/U$.
+As shown in Ref.~\onlinecite{Goodson_2000}, quadratic approximants provide convergent results in the most divergent cases considered by Olsen and collaborators \cite{Christiansen_1996,Olsen_1996} and Leininger \etal \cite{Leininger_2000}
+
+For the RMP series of the Hubbard dimer, the $[0/0,0]$ and $[1/0,0]$ quadratic approximant are quite poor approximation, but its $[1/0,1]$ version already model perfectly the RMP energy function by predicting a single pair of EPs at $\lambda_\text{EP} = \pm i 4t/U$.
 This is expected knowing the form of the RMP energy [see Eq.~\eqref{eq:E0MP}] which perfectly suits the purpose of quadratic approximants.
 
-We can anticipate that the singularity structure of the UMP energy function is going to be much more challenging to model properly, and this is indeed the case.
+We can anticipate that the singularity structure of the UMP energy function is going to be much more challenging to model properly, and this is indeed the case as the UMP energy function which contains three branches.
 However, by ramping up high enough the degree of the polynomials, one is able to get an accurate estimates of the radius of convergence of the UMP series as shown in Fig.~??.
 
 %==========================================%

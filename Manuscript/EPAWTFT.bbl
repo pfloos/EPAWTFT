@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{138}%
+\begin{thebibliography}{139}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -1277,14 +1277,17 @@
   {journal} {\bibinfo  {journal} {J. Phys. A: Math. Theor.}\ }\textbf {\bibinfo
   {volume} {40}},\ \bibinfo {pages} {581} (\bibinfo {year} {2007})}\BibitemShut
   {NoStop}%
-\bibitem [{\citenamefont {{Baker Jr.}}\ and\ \citenamefont
-  {Graves-Morris}(1996)}]{BakerBook}%
+\bibitem [{\citenamefont {Goodson}(2019)}]{Goodson_2019}%
   \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.~A.}\ \bibnamefont
-  {{Baker Jr.}}}\ and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
-  {Graves-Morris}},\ }\href@noop {} {\emph {\bibinfo {title} {Pad\'e
-  Approximants}}}\ (\bibinfo  {publisher} {Cambridge University Press},\
-  \bibinfo {year} {1996})\BibitemShut {NoStop}%
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~Z.}\ \bibnamefont
+  {Goodson}},\ }in\ \href {\doibase
+  https://doi.org/10.1016/B978-0-12-813651-5.00009-7} {\emph {\bibinfo
+  {booktitle} {Mathematical Physics in Theoretical Chemistry}}},\ \bibinfo
+  {series and number} {Developments in Physical {\&} Theoretical Chemistry},\
+  \bibinfo {editor} {edited by\ \bibinfo {editor} {\bibfnamefont
+  {S.}~\bibnamefont {Blinder}}\ and\ \bibinfo {editor} {\bibfnamefont
+  {J.}~\bibnamefont {House}}}\ (\bibinfo  {publisher} {Elsevier},\ \bibinfo
+  {year} {2019})\ pp.\ \bibinfo {pages} {295 -- 325}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Pad\'e}(1892)}]{Pade_1892}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
@@ -1294,6 +1297,14 @@
   (\bibinfo  {publisher} {{\'E}ditions scientifiques et m{\'e}dicales
   Elsevier},\ \bibinfo {year} {1892})\ pp.\ \bibinfo {pages}
   {3--93}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{Baker Jr.}}\ and\ \citenamefont
+  {Graves-Morris}(1996)}]{BakerBook}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.~A.}\ \bibnamefont
+  {{Baker Jr.}}}\ and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Graves-Morris}},\ }\href@noop {} {\emph {\bibinfo {title} {Pad\'e
+  Approximants}}}\ (\bibinfo  {publisher} {Cambridge University Press},\
+  \bibinfo {year} {1996})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Loos}(2013)}]{Loos_2013}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.-F.}\ \bibnamefont
@@ -1315,17 +1326,12 @@
   {\bibinfo  {journal} {J. Phys. C.: Solid State Phys.}\ }\textbf {\bibinfo
   {volume} {18}},\ \bibinfo {pages} {3297} (\bibinfo {year}
   {1985})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Goodson}(2019)}]{Goodson_2019}%
+\bibitem [{\citenamefont {Goodson}(2000)}]{Goodson_2000}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~Z.}\ \bibnamefont
-  {Goodson}},\ }in\ \href {\doibase
-  https://doi.org/10.1016/B978-0-12-813651-5.00009-7} {\emph {\bibinfo
-  {booktitle} {Mathematical Physics in Theoretical Chemistry}}},\ \bibinfo
-  {series and number} {Developments in Physical {\&} Theoretical Chemistry},\
-  \bibinfo {editor} {edited by\ \bibinfo {editor} {\bibfnamefont
-  {S.}~\bibnamefont {Blinder}}\ and\ \bibinfo {editor} {\bibfnamefont
-  {J.}~\bibnamefont {House}}}\ (\bibinfo  {publisher} {Elsevier},\ \bibinfo
-  {year} {2019})\ pp.\ \bibinfo {pages} {295 -- 325}\BibitemShut {NoStop}%
+  {Goodson}},\ }\href {\doibase 10.1063/1.481044} {\bibfield  {journal}
+  {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {112}},\
+  \bibinfo {pages} {4901} (\bibinfo {year} {2000})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Surj{\'a}n}\ and\ \citenamefont
   {Szabados}(2000)}]{Surjan_2000}%
   \BibitemOpen
