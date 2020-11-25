@@ -194,3 +194,41 @@ The resulting SUPT2 provided more accurate binding curves than EMP2, which the a
 the SUPT2 approach correctly handles the redundancy of internal rotations in the effective active space of the
 reference spin projection.
 
++==========================================================+
+| Classifying Convergence Behaviour                        |
++==========================================================+
+
+Cremer and He, JPC (1996):
+--------------------------
+
+Consider the MP6 energy as this is the next even order after MP2 and MP4 so introduces new excitations 
+(in this case pentuples and hextuples). 
+
+They decompose their MPn correlation into pair-pair, pair pair pair, etc terms to try and understand the 
+convergence behaviour:
+   SDQ = SS + SD + DD + DQ + QQ (singles, doubles, quadruples)
+     T = ST + DT + TT + TQ (terms including triple excitations)
+
+They intend to show: 
+Class A) Monotonic convergence expected for systems in which the electron pairs are well-separated and weakly couple.
+         including eg BH, NH2, CH3, CH2 etc
+         Generally include well-separated electron pairs such that three-electron correlation effects are weak.
+
+Class B) Initial oscillatory convergence with strong pair and three-electron correlation effects.
+         eg. Ne, F, F^-, FH
+         In these systems, there are closely spaced electron pairs that cluster in a small region of space. 
+         One might imagine that this requires greater orbital relaxation, perhaps ``breating'' relaxation, 
+         to allow the electron pairs to become separated? Or maybe that it generally introduces stronger
+         dynamic correlation effects? Orbital relaxation plus pair correlation comes through T1 T2 terms.
+
+They observe both E(SDQ) and E(T) terms negative in Class A systems, but E_MP5(SDTQ) terms generally positive 
+in Class B. Oscillations in the T correlation terms drive the oscillatory convergence behaviour. This behaviour
+does not appear to be caused by multiconfigurational effects, but may be amplified by them.
+
+Class B has more improtant orbital relaxation effects and three-electron correlation than Class A.
+
+
+
+
+
+
