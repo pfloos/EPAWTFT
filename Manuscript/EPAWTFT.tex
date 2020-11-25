@@ -109,6 +109,9 @@
 \newcommand{\lc}{\lambda_{\text{c}}}
 \newcommand{\lep}{\lambda_{\text{EP}}}
 
+% Some energies
+\newcommand{\Emp}{E_{\text{MP}}}
+
 % Blackboard bold
 \newcommand{\bbR}{\mathbb{R}}
 \newcommand{\bbC}{\mathbb{C}}
@@ -820,7 +823,7 @@ gradient discontinuities or spurious minima.
 
 
 %==========================================%
-\subsection{Effect of Spin-Contamination in the Hubbard Dimer}
+\subsection{Spin-Contamination in the Hubbard Dimer}
 %==========================================%
 
 %%% FIG 2 %%%
@@ -847,7 +850,7 @@ gradient discontinuities or spurious minima.
 
 The behaviour of the RMP and UMP series observed in \ce{H2} can also be illustrated by considering
 the analytic Hubbard dimer with a complex-valued perturbation strength.
-In this system, the stretching of a chemical bond is directly mirrored by an increase in the electron correlation $U/t$.
+In this system, the stretching of the \ce{H\bond{-}H} bond is directly mirrored by an increase in the electron correlation $U/t$.
 Using the ground-state RHF reference orbitals leads to the parametrised RMP Hamiltonian
 \begin{widetext}
 \begin{equation}
@@ -943,10 +946,10 @@ Using the ground-state UHF reference orbitals in the Hubbard dimer yields the pa
 	\end{pmatrix}.
 \end{equation}
 \end{widetext}
-While there is a closed-form expression for the ground-state energy, it is cumbersome and we eschew reporting it.
+While a closed-form expression for the ground-state energy exists, it is cumbersome and we eschew reporting it.
 Instead, the radius of convergence of the UMP series can be obtained numerically as a function of $U/t$, as shown
 in Fig.~\ref{fig:RadConv}.
-These numerical values reveal that the UMP ground-state series has $\rc > 1$ for all $U/t$ and must always converge.
+These numerical values reveal that the UMP ground-state series has $\rc > 1$ for all $U/t$ and always converges.
 However, in the strong correlation limit (large $U$), this radius of convergence tends to unity, indicating that
 the corresponding UMP series becomes increasingly slow.
 Furthermore, the doubly-excited state using the ground-state UHF orbitals has $\rc < 1$ for almost any value 
@@ -960,7 +963,7 @@ These Riemann surfaces are illustrated for $U = 3t$ and $7t$ alongside the pertu
 in Fig.~\ref{subfig:UMP_cvg}.
 At $U = 3t$, the RMP series is convergent, while RMP becomes divergent for $U=7t$.
 The ground-state UMP expansion is convergent in both cases, although the rate of convergence is significantly slower 
-for larger $U/t$ as the radius of convergence becomes increasingly close to 1 (Fig.~\ref{fig:RadConv}).
+for larger $U/t$ as the radius of convergence becomes increasingly close to one (Fig.~\ref{fig:RadConv}).
 
 % EFFECT OF SYMMETRY BREAKING
 As the UHF orbitals break the molecular symmetry, new coupling terms emerge between the electronic states that
@@ -978,8 +981,8 @@ sacrificed convergence of the excited-state series so that the ground-state conv
 
 Since the UHF ground state already provides a good approximation to the exact energy, the ground-state sheet of
 the UMP energy is relatively flat and the corresponding EP in the Hubbard dimer always lies outside the unit cylinder.
-\titou{The slow convergence observed in \ce{H2}\cite{Gill_1988} can then be seen as this EP 
-moves closer to one at larger $U/t$ values.}
+\hugh{The slow convergence observed in stretched \ce{H2}\cite{Gill_1988} can then be seen as this EP 
+moves increasingly close to the unit cylinder at large $U/t$ and $\rc$ approaches one (from above).}
 Furthermore, the majority of the UMP expansion in this regime is concerned with removing spin-contamination from the wave 
 function rather than improving the energy.
 It is well-known that the spin-projection needed to remove spin-contamination can require non-linear combinations
@@ -1007,18 +1010,45 @@ very slowly as the perturbation order is increased.
 %==========================================%
 
 % CREMER AND HE
-Cremer and He analysed 29 atomic and molecular systems at the FCI level \cite{Cremer_1996} and grouped them in two classes: i) the \textit{class A} systems where one observes a monotonic convergence \titou{of the RMP series?} to the FCI energy, and ii) the \textit{class B} systems for which convergence is erratic after initial oscillations. 
-Their system set contains stretched molecules as well as molecules at their equilibrium geometry for various basis sets. 
-They highlighted that \cite{Cremer_1996}
-\textit{``Class A systems are characterised by electronic structures with well-separated electron pairs while class B systems are characterized by electronic structures with electron clustering in one or more regions.''}
-Moreover, they analysed the contribution of the triple (T) excitations to the MP4, MP5 and MP6 energies next to the single, double and quadruple (SDQ) excitations contribution.
-They showed that class A systems have very little contribution from the triple excitations and that most of the correlation energy is due to pair correlation. 
-On the other hand, class B systems have an important contribution from the triple excitations which alternates in sign resulting in an oscillation of the total correlation energy.
-This observation on the contribution to the MP$n$ energy corroborates the electronic structure discussed above.
-As one can only compute the first terms of the MP series, a smart way of getting more accurate results is to use extrapolation formula, \ie, estimating the limit of the series with only few terms. 
-Cremer and He proved that using specific extrapolation formulas of the MP series for class A and class B systems improves the precision of the results compared to the formula used without resorting to classes. \cite{Cremer_1996}
-The mean absolute deviation taking the FCI correlation energies as reference is $0.3$ millihartree with the class-specific formula whereas the deviation increases to 12 millihartree using the general formula.  
-Even if there were still shaded areas in their analysis and that their classification was incomplete, the work of Ref.~\onlinecite{Cremer_1996} clearly evidenced that understanding the origin of the different modes of convergence could potentially lead to a more rationalised use of MP perturbation theory and, hence, to more accurate correlation energy estimates.
+\hugh{As computational implementations of higher-order MP terms improved, the systematic investigation 
+of convergence behaviour in a broader class of molecules became possible.}
+Cremer and He \hugh{introduced an efficient MP6 approach and used it to analyse the RMP convergence of}
+29 atomic and molecular systems with respect to the FCI energy.\cite{Cremer_1996}
+They established two general classes: ``class A'' systems that exhibit monotonic convergence; 
+and ``class B'' systems for which convergence is erratic after initial oscillations. 
+%Their system set contains stretched molecules as well as molecules at their equilibrium geometry for various basis sets. 
+\hugh{By analysing the different cluster contributions to the MP energy terms, they proposed that
+class A systems generally include well-separated and weakly correlated electron pairs, while class B systems
+are characterised by dense electron clustering in one or more spatial regions.}\cite{Cremer_1996}
+%\textit{``Class A systems are characterised by electronic structures with well-separated electron pairs while class B systems are characterized by electronic structures with electron clustering in one or more regions.''}
+%Moreover, they analysed the contribution of the triple (T) excitations to the MP4, MP5 and MP6 energies next to the single, double and quadruple (SDQ) excitations contribution.
+In class A systems, they showed that the majority of the correlation energy arises from pair correlation, 
+with little contribution from triple excitations.
+On the other hand, triple excitations have an important contribution in class B systems, including providing
+orbital relaxation, and these contributions lead to oscillations of the total correlation energy.
+%This observation on the contribution to the MP$n$ energy corroborates the electronic structure discussed above.
+
+\hugh{%
+Using these classifications, Cremer and He then introduced simple extrapolation formulas for estimating the 
+exact correlation energy $\Delta E$ using terms up to MP6\cite{Cremer_1996}
+\begin{align}
+\Delta E_{\text{A}}
+    &= \Emp^{(2)} + \Emp^{(3)} + \Emp^{(4)}
+     + \frac{\Emp^{(5)}}{1 - (\Emp^{(6)} / \Emp^{(5)})}, 
+     \\[5pt]
+\Delta E_{\text{B}} 
+    &= \Emp^{(2)} + \Emp^{(3)} + \qty(\Emp^{(4)} + \Emp^{(5)}) \exp(\Emp^{(6)} / \Emp^{(5)}).
+\end{align}
+%As one can only compute the first terms of the MP series, a smart way of getting more accurate results is to use extrapolation formula, \ie, estimating the limit of the series with only few terms. 
+%Cremer and He proved that using specific extrapolation formulas of the MP series for class A and class B systems improves the precision of the results compared to the formula used without resorting to classes. \cite{Cremer_1996}
+These class-specific formulas reduced the mean absolute error from the FCI correlation energy by a
+factor of four compared to previous class-independent extrapolations,
+highlighting how one can leverage a deeper understanding of MP convergence to improve estimates of 
+the correlation energy at lower computational costs. 
+In Section~\ref{sec:Resummation}, we consider more advanced extrapolation routines that take account of EPs in the complex $\lambda$-plane.
+}
+%The mean absolute deviation taking the FCI correlation energies as reference is $0.3$ millihartree with the class-specific formula whereas the deviation increases to 12 millihartree using the general formula.  
+%Even if there were still shaded areas in their analysis and that their classification was incomplete, the work of Ref.~\onlinecite{Cremer_1996} clearly evidenced that understanding the origin of the different modes of convergence could potentially lead to a more rationalised use of MP perturbation theory and, hence, to more accurate correlation energy estimates.
 
 
 In the late 90's, Olsen \textit{et al.}~discovered an even more preoccupying behaviour of the MP series. \cite{Olsen_1996} 
@@ -1162,6 +1192,7 @@ We believe that $\alpha$ singularities are connected to states with non-negligib
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resummation Methods}
+\label{sec:Resummation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 As frequently claimed by Carl Bender, \textit{``the most stupid thing that one can do with a series is to sum it.''}
