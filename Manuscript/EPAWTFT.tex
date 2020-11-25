@@ -259,9 +259,9 @@ Analytically solvable models are essential in theoretical chemistry and physics 
 easily tested while retaining the key physical phenomena.
 
 Using the (localised) site basis, the Hilbert space of the Hubbard dimer comprises the four configurations
-\begin{align}
+\begin{align*}
 & \ket{\Lup \Ldown} &  & \ket{\Lup\Rdown} &  & \ket{\Rup\Ldown} &  & \ket{\Rup\Rdown}
-\end{align}
+\end{align*}
 where $\Lsi$ ($\Rsi$) denotes an electron with spin $\sigma$ on the left (right) site.
 The exact, or full configuration interaction (FCI), Hamiltonian is then 
 \begin{equation}
@@ -504,11 +504,13 @@ E_\text{HF}(\ta, \tb) = -t\, \qty( \sin \ta + \sin \tb ) + \frac{U}{2} \qty( 1 +
 \end{equation}
 where we have introduced bonding $\mathcal{B}^{\sigma}$ and anti-bonding $\mathcal{A}^{\sigma}$ molecular orbitals for 
 the spin-$\sigma$ electrons as
+\begin{subequations}
 \begin{align}
     \mathcal{B}^{\sigma} & = \hphantom{-} \cos(\frac{\theta_\sigma}{2}) \Lsi + \sin(\frac{\theta_\sigma}{2}) \Rsi,
 	\\
 	\mathcal{A}^{\sigma} & = - \sin(\frac{\theta_\sigma}{2}) \Lsi + \cos(\frac{\theta_\sigma}{2}) \Rsi
 \end{align}
+\end{subequations}
 In the weak correlation regime $0 \le U \le 2t$, the angles which minimise the HF energy, 
 \ie, $\pdv*{E_\text{HF}}{\theta_\sigma} = 0$, are 
 \begin{equation}
@@ -556,6 +558,7 @@ Note that the RHF wave function remains a genuine solution of the HF equations f
 of the HF energy rather than a minimum.
 This critical point is analogous to the infamous Coulson--Fischer point identified in the hydrogen dimer.\cite{Coulson_1949}
 For $U \ge 2t$, the optimal orbital rotation angles for the UHF orbitals become
+\begin{subequations}
 \begin{align}
     \ta^\text{UHF} & = \arctan (-\frac{2t}{\sqrt{U^2 - 4t^2}}),
     \label{eq:ta_uhf}
@@ -563,6 +566,7 @@ For $U \ge 2t$, the optimal orbital rotation angles for the UHF orbitals become
     \tb^\text{UHF} & = \arctan (+\frac{2t}{\sqrt{U^2 - 4t^2}}),
     \label{eq:tb_uhf}
 \end{align}
+\end{subequations}
 with the corresponding UHF ground-state energy (Fig.~\ref{fig:HF_real})
 \begin{equation}
 	E_\text{UHF} \equiv E_\text{HF}(\ta^\text{UHF}, \tb^\text{UHF}) = - \frac{2t^2}{U}.
@@ -981,8 +985,8 @@ sacrificed convergence of the excited-state series so that the ground-state conv
 
 Since the UHF ground state already provides a good approximation to the exact energy, the ground-state sheet of
 the UMP energy is relatively flat and the corresponding EP in the Hubbard dimer always lies outside the unit cylinder.
-\hugh{The slow convergence observed in stretched \ce{H2}\cite{Gill_1988} can then be seen as this EP 
-moves increasingly close to the unit cylinder at large $U/t$ and $\rc$ approaches one (from above).}
+The slow convergence observed in stretched \ce{H2}\cite{Gill_1988} can then be seen as this EP 
+moves increasingly close to the unit cylinder at large $U/t$ and $\rc$ approaches one (from above).
 Furthermore, the majority of the UMP expansion in this regime is concerned with removing spin-contamination from the wave 
 function rather than improving the energy.
 It is well-known that the spin-projection needed to remove spin-contamination can require non-linear combinations
@@ -1010,16 +1014,16 @@ very slowly as the perturbation order is increased.
 %==========================================%
 
 % CREMER AND HE
-\hugh{As computational implementations of higher-order MP terms improved, the systematic investigation 
-of convergence behaviour in a broader class of molecules became possible.}
-Cremer and He \hugh{introduced an efficient MP6 approach and used it to analyse the RMP convergence of}
+As computational implementations of higher-order MP terms improved, the systematic investigation 
+of convergence behaviour in a broader class of molecules became possible.
+Cremer and He introduced an efficient MP6 approach and used it to analyse the RMP convergence of
 29 atomic and molecular systems with respect to the FCI energy.\cite{Cremer_1996}
 They established two general classes: ``class A'' systems that exhibit monotonic convergence; 
 and ``class B'' systems for which convergence is erratic after initial oscillations. 
 %Their system set contains stretched molecules as well as molecules at their equilibrium geometry for various basis sets. 
-\hugh{By analysing the different cluster contributions to the MP energy terms, they proposed that
+By analysing the different cluster contributions to the MP energy terms, they proposed that
 class A systems generally include well-separated and weakly correlated electron pairs, while class B systems
-are characterised by dense electron clustering in one or more spatial regions.}\cite{Cremer_1996}
+are characterised by dense electron clustering in one or more spatial regions.\cite{Cremer_1996}
 %\textit{``Class A systems are characterised by electronic structures with well-separated electron pairs while class B systems are characterized by electronic structures with electron clustering in one or more regions.''}
 %Moreover, they analysed the contribution of the triple (T) excitations to the MP4, MP5 and MP6 energies next to the single, double and quadruple (SDQ) excitations contribution.
 In class A systems, they showed that the majority of the correlation energy arises from pair correlation, 
@@ -1028,9 +1032,9 @@ On the other hand, triple excitations have an important contribution in class B 
 orbital relaxation, and these contributions lead to oscillations of the total correlation energy.
 %This observation on the contribution to the MP$n$ energy corroborates the electronic structure discussed above.
 
-\hugh{%
 Using these classifications, Cremer and He then introduced simple extrapolation formulas for estimating the 
 exact correlation energy $\Delta E$ using terms up to MP6\cite{Cremer_1996}
+\begin{subequations}
 \begin{align}
 \Delta E_{\text{A}}
     &= \Emp^{(2)} + \Emp^{(3)} + \Emp^{(4)}
@@ -1039,6 +1043,7 @@ exact correlation energy $\Delta E$ using terms up to MP6\cite{Cremer_1996}
 \Delta E_{\text{B}} 
     &= \Emp^{(2)} + \Emp^{(3)} + \qty(\Emp^{(4)} + \Emp^{(5)}) \exp(\Emp^{(6)} / \Emp^{(5)}).
 \end{align}
+\end{subequations}
 %As one can only compute the first terms of the MP series, a smart way of getting more accurate results is to use extrapolation formula, \ie, estimating the limit of the series with only few terms. 
 %Cremer and He proved that using specific extrapolation formulas of the MP series for class A and class B systems improves the precision of the results compared to the formula used without resorting to classes. \cite{Cremer_1996}
 These class-specific formulas reduced the mean absolute error from the FCI correlation energy by a
@@ -1046,7 +1051,6 @@ factor of four compared to previous class-independent extrapolations,
 highlighting how one can leverage a deeper understanding of MP convergence to improve estimates of 
 the correlation energy at lower computational costs. 
 In Section~\ref{sec:Resummation}, we consider more advanced extrapolation routines that take account of EPs in the complex $\lambda$-plane.
-}
 %The mean absolute deviation taking the FCI correlation energies as reference is $0.3$ millihartree with the class-specific formula whereas the deviation increases to 12 millihartree using the general formula.  
 %Even if there were still shaded areas in their analysis and that their classification was incomplete, the work of Ref.~\onlinecite{Cremer_1996} clearly evidenced that understanding the origin of the different modes of convergence could potentially lead to a more rationalised use of MP perturbation theory and, hence, to more accurate correlation energy estimates.
 
@@ -1055,9 +1059,9 @@ They showed that the series could be divergent even in systems that were conside
 such as \ce{Ne} or the \ce{HF} molecule. \cite{Olsen_1996, Christiansen_1996} 
 Cremer and He had already studied these two systems and classified them as \textit{class B} systems.\cite{Cremer_1996} 
 However, Olsen and co-workers performed their analysis in larger basis sets containing diffuse functions,
-finding that the correspoding MP series becomes divergent at (very) high order.
-The discovery of this divergent behaviour is particularly worrying as large basis sets \trashHB{(as close to 
-the complete basis set as possible)} are required to get meaningful and accurate energies.\cite{Loos_2019d,Giner_2019}
+finding that the corresponding MP series becomes divergent at (very) high order.
+The discovery of this divergent behaviour is particularly worrying as large basis sets 
+are required to get meaningful and accurate energies.\cite{Loos_2019d,Giner_2019}
 Furthermore, diffuse functions are particularly important for anions and/or Rydberg excited states, where the wave function 
 is inherently more diffuse than the ground state.\cite{Loos_2018a,Loos_2020a}
 
@@ -1068,8 +1072,7 @@ Their analysis is based on Darboux's theorem: \cite{Goodson_2011}
 \begin{quote}
 	\textit{``In the limit of large order, the series coefficients become equivalent to the Taylor series coefficients of the singularity closest to the origin. ''}
 \end{quote}
-\trashHB{Following the result of this theorem, the convergence patterns of the MP series can be explained by looking at the dominant singularity.}
-\hugh{Following this theory,} a singularity in the unit circle is designated as an intruder state, 
+Following this theory, a singularity in the unit circle is designated as an intruder state, 
 with a front-door (or back-door) intruder state if the real part of the singularity is positive (or negative).
 
 Using their observations in Ref.~\onlinecite{Olsen_1996}, Olsen and collaborators proposed 
@@ -1084,7 +1087,7 @@ the dominant singularities as the EPs of the $2\times2$ matrix
     + \underbrace{\mqty( -\alpha_{\text{s}} & \delta \\ \delta & - \beta_{\text{s}})}_{\bV},
 \end{equation}
 where the diagonal matrix is the unperturbed Hamiltonian matrix $\bH^{(0)}$ with level shifts
-$\alpha_{\text{s}}$ and $\beta_{\text{s}}$, \hugh{and $\bV$ represents the perturbation.}
+$\alpha_{\text{s}}$ and $\beta_{\text{s}}$, and $\bV$ represents the perturbation.
 
 The authors first considered molecules with low-lying doubly-excited states with the same spatial
 and spin symmetry as the ground state. \cite{Olsen_2000}
@@ -1092,14 +1095,14 @@ In these systems, the exact wave function has a non-negligible contribution from
 and thus the low-lying excited states are likely to become intruder states. 
 For \ce{CH_2} in a diffuse, yet rather small basis set, the series is convergent at least up to the 50th order, and
 the dominant singularity lies close (but outside) the unit circle, causing slow convergence of the series.
-\hugh{These intruder-state effects are analogous to the EP that dictates the convergence behaviour of 
-the RMP series for the Hubbard dimer (Fig.~\ref{fig:RMP}).}
+These intruder-state effects are analogous to the EP that dictates the convergence behaviour of 
+the RMP series for the Hubbard dimer (Fig.~\ref{fig:RMP}).
 Furthermore, the authors demonstrated that the divergence for \ce{Ne} is due to a back-door intruder state
-that arise when the ground state undergos sharp avoided crossings with highly diffuse excited states.
+that arise when the ground state undergoes sharp avoided crossings with highly diffuse excited states.
 %They used their two-state model on this avoided crossings and the model was actually predicting the divergence of the series. 
 %They concluded that the divergence of the series was due to the interaction with a highly diffuse excited state. 
-\hugh{This divergence is related to a more fundamental critical point in the MP energy surface that we will
-discuss in Section~\ref{sec:MP_critical_point}.}
+This divergence is related to a more fundamental critical point in the MP energy surface that we will
+discuss in Section~\ref{sec:MP_critical_point}.
 
 Finally, Ref.~\onlinecite{Olsen_1996} proved that the extrapolation formulas of Cremer and He \cite{Cremer_1996}
 are not mathematically motivated when considering the complex singularities causing the divergence, and therefore
@@ -1130,14 +1133,14 @@ The three remaining Hermitian archetypes seem to be rarely observed in MP pertur
 In contrast, the non-Hermitian coupled cluster perturbation theory,%
 \cite{Pawlowski_2019a,Pawlowski_2019b,Pawlowski_2019c,Pawlowski_2019d,Pawlowski_2019e} exhibits a range of archetypes
 including the interspersed zigzag, triadic, ripple, geometric, and zigzag-geometric forms.
-\hugh{This analysis highlights the importance of the primary critical point in controlling the high-order convergergence, 
-regardless of whether this point is inside or outside the complex unit circle. \cite{Handy_1985,Olsen_2000}}
+This analysis highlights the importance of the primary critical point in controlling the high-order convergence, 
+regardless of whether this point is inside or outside the complex unit circle. \cite{Handy_1985,Olsen_2000}
 
 %=======================================
 \subsection{The singularity structure}
 \label{sec:MP_critical_point}
 %=======================================
-In the 2000's, Sergeev and Goodson \cite{Sergeev_2005, Sergeev_2006} analyzed this problem from a more mathematical point of view by looking at the whole singularity structure where Olsen and collaborators were trying to find the dominant singularity causing the divergence. \cite{Olsen_1996,Olsen_2000,Olsen_2019}
+In the 2000's, Sergeev and Goodson \cite{Sergeev_2005, Sergeev_2006} analysed this problem from a more mathematical point of view by looking at the whole singularity structure where Olsen and collaborators were trying to find the dominant singularity causing the divergence. \cite{Olsen_1996,Olsen_2000,Olsen_2019}
 They regrouped singularities in two classes: i) $\alpha$ singularities which have ``large'' imaginary parts, and ii) $\beta$ singularities which have very small imaginary parts. 
 Singularities of $\alpha$-type are related to large avoided crossing between the ground and low-lying excited states, whereas $\beta$ singularities come from a sharp avoided crossing between the ground state and a highly diffuse state. 
 They succeeded to explain the divergence of the series caused by $\beta$ singularities following previous work by Stillinger. \cite{Stillinger_2000}
