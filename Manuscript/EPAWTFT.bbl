@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{139}%
+\begin{thebibliography}{141}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -1311,6 +1311,21 @@
   {Loos}},\ }\href {\doibase 10.1063/1.4790613} {\bibfield  {journal} {\bibinfo
    {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {138}},\ \bibinfo
   {pages} {064108} (\bibinfo {year} {2013})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Pavlyukh}(2017)}]{Pavlyukh_2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {Pavlyukh}},\ }\href {\doibase 10.1038/s41598-017-00355-w} {\bibfield
+  {journal} {\bibinfo  {journal} {Sci. Rep.}\ }\textbf {\bibinfo {volume}
+  {7}},\ \bibinfo {pages} {504} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Tarantino}\ and\ \citenamefont
+  {Di~Sabatino}(2019)}]{Tarantino_2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Tarantino}}\ and\ \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Di~Sabatino}},\ }\href {\doibase 10.1103/PhysRevB.99.075149} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume}
+  {99}},\ \bibinfo {pages} {075149} (\bibinfo {year} {2019})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Gluzman}(2020)}]{Gluzman_2020}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
