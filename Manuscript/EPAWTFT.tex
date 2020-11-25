@@ -1161,27 +1161,31 @@ Those excited states have a non-negligible contribution to the exact FCI solutio
 We believe that $\alpha$ singularities are connected to states with non-negligible contribution in the CI expansion thus to the dynamical part of the correlation energy, while $\beta$ singularities are linked to symmetry breaking and phase transitions of the wave function, \ie, to the multi-reference nature of the wave function thus to the static part of the correlation energy.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Exploiting complex analysis}
+\section{Resummation techniques}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+As frequently claimed by Carl Bender, the most stupid thing that one can do with a series is to sum it.
+Nonetheless, quantum chemists are basically doing exactly this on a daily basis.
 
 The inability of Taylor series to model properly the energy function $E(\lambda$) can be simply understood by the fact that one aims at modelling a complicated function with potentially poles and singularities by a simple polynomial of finite order.
 
 %==========================================%
 \subsection{Pad\'e approximant}
 %==========================================%
-According to Wikipedia, \textit{``a Pad\'e approximant is the best approximation of a function by a rational function of given order''}.
-A $[d_A/d_B]$ Pad\'e approximant is defined as \cite{Pade}
+According to Wikipedia, \textit{``a Pad\'e approximant is the best approximation of a function by a rational function of given order''}. \cite{BakerBook}
+A $[d_A/d_B]$ Pad\'e approximant is defined as \cite{Pade_1892}
 \begin{equation}
 	\label{eq:PadeApp}
 	E_{[d_A/d_B]}(\lambda) = \frac{A(\lambda)}{B(\lambda)} = \frac{\sum_{k=0}^{d_A} a_k \lambda^k}{\sum_{k=0}^{d_B} b_k \lambda^k}
 \end{equation}
-(with $b_0 = 1$), where the coefficients of the polynomials are determined by collecting terms according to power of $\lambda$.
-Pad\'e approximants are nice and they can model poles (the poles of a $[d_A/d_B]$ Pad\'e approximant appears at the roots of the polynomial $B(\lambda)$), but they cannot model functions with square-root branch points, and that sucks because it is not consistent with the singularity structure of a typical perturbative treatment.
+(with $b_0 = 1$), where the coefficients of the polynomials $A(\lambda)$ and $B(\lambda)$ are determined by collecting terms according to power of $\lambda$.
+Pad\'e approximants are extremely useful in many areas of physics and chemistry \cite{Loos_2013,Gluzman_2020} as they can model poles [the poles of a Pad\'e approximant appears at the roots of the polynomial $B(\lambda)$]. 
+However, they are unable to model functions with square-root branch points, which are ubiquitous in the singularity structure of a typical perturbative treatment.
 
 %==========================================%
 \subsection{Quadratic approximant}
 %==========================================%
-In a nutshell, the idea behind quadratic approximant is to model the singularity structure of the energy function $E(\lambda)$ via a generalized version of the square-root singularity expression
+In a nutshell, the idea behind quadratic approximant is to model the singularity structure of the energy function $E(\lambda)$ via a generalized version of the square-root singularity expression \cite{Mayer_1985,Goodson_2011,Goodson_2019}
 \begin{equation}
 	\label{eq:QuadApp}
 	E(\lambda) = \frac{1}{2 Q(\lambda)} \qty[ P(\lambda) \pm \sqrt{P^2(\lambda) - 4 Q(\lambda) R(\lambda)} ]
@@ -1195,7 +1199,7 @@ where
 	&
 	R(\lambda) & = \sum_{k=0}^{d_R} r_k \lambda^k 
 \end{align}
-are polynomials, such that $d_P + d_Q + d_R = n - 1$ where $n$ is the highest-order series coefficient known from the Taylor expansion of $E(\lambda)$.
+are polynomials, such that $d_P + d_Q + d_R = n - 1$, where $n$ is the highest-order series coefficient known from the Taylor expansion of $E(\lambda)$.
 Recasting Eq.~\eqref{eq:QuadApp} as a second-order expression in $E(\lambda)$, \ie,
 \begin{equation}
 	Q(\lambda) E^2(\lambda) - P(\lambda) E(\lambda) + R(\lambda) \sim \order*{\lambda^{n+1}}
