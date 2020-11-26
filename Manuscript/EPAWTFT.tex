@@ -1238,7 +1238,7 @@ We refer the interested reader to more specialised reviews for additional inform
 \subsection{Pad\'e approximant}
 %==========================================%
 The inability of Taylor series to model properly the energy function $E(\lambda$) can be simply understood by the fact that one aims at modelling a complicated function with potentially poles and singularities by a simple polynomial of finite order.
-A Taylor series just does not have enough flexibility for this job.
+A truncated Taylor series just does not have enough flexibility to do the job properly.
 Nonetheless, the description of complex energy functions can be significantly improved thanks to Pad\'e approximant, \cite{Pade_1892} and related techniques. \cite{BakerBook,BenderBook}
 
 According to Wikipedia, \textit{``a Pad\'e approximant is the best approximation of a function by a rational function of given order''}. 
@@ -1248,12 +1248,16 @@ More specifically, a $[d_A/d_B]$ Pad\'e approximant is defined as
 	E_{[d_A/d_B]}(\lambda) = \frac{A(\lambda)}{B(\lambda)} = \frac{\sum_{k=0}^{d_A} a_k \lambda^k}{\sum_{k=0}^{d_B} b_k \lambda^k}
 \end{equation}
 (with $b_0 = 1$), where the coefficients of the polynomials $A(\lambda)$ and $B(\lambda)$ are determined by collecting terms according to power of $\lambda$.
-Pad\'e approximants are extremely useful in many areas of physics and chemistry \cite{Loos_2013,Pavlyukh_2017,Tarantino_2019,Gluzman_2020} as they can model poles, which appears at the roots of the polynomial $B(\lambda)$. 
-However, they are unable to model functions with square-root branch points, which are ubiquitous in the singularity structure of a typical perturbative treatment.
+Pad\'e approximants are extremely useful in many areas of physics and chemistry \cite{Loos_2013,Pavlyukh_2017,Tarantino_2019,Gluzman_2020} as they can model poles, which appears at the locations of the roots of $B(\lambda)$. 
+However, they are unable to model functions with square-root branch points (which are ubiquitous in the singularity structure of a typical perturbative treatment) and more complicated functional forms appearing at critical points (where the nature of the solution undergoes a sudden transition) for example.
+
 Figure \ref{fig:PadeRMP} illustrates the improvement brought by diagonal (\ie, $d_A = d_B$) Pad\'e approximants as compared to the usual Taylor expansion in cases where the RMP series of the Hubbard dimer converges ($U/t = 3.5$) and diverges ($U/t = 4.5$).
+More quantitatively, Table \ref{tab:PadeRMP} gathers estimates of the RMP ground-state energy at $\lambda = 1$ provided by various truncated Taylor series and Pad\'e approximants for these two values of the ratio $U/t$.
+While the truncated Taylor series converges laboriously to the exact energy at $U/t = 3.5$ when one increases the truncation degree, the Pad\'e approximants yield much more accurate results with, additionally, a rather good estimate of the radius of convergence of the RMP series.
+For $U/t = 4.5$, the struggles of the truncated Taylor expansions are magnified and the Pad\'e approximants still provide quite accurate energies even outside the radius of convergence of the RMP series.
 
 \begin{table}
-	\caption{RMP ground-state energy estimate at $\lambda = 1$ provided by various Taylor expansions and Pad\'e approximants at $U/t = 3.5$ and $4.5$.
+	\caption{RMP ground-state energy estimate at $\lambda = 1$ provided by various truncated Taylor series and Pad\'e approximants at $U/t = 3.5$ and $4.5$.
 	We also report the estimate of the radius of convergence $r_c$ provided by the diagonal Pad\'e approximants.
 	\label{tab:PadeRMP}}
 	\begin{ruledtabular}
@@ -1262,11 +1266,11 @@ Figure \ref{fig:PadeRMP} illustrates the improvement brought by diagonal (\ie, $
 																		\cline{3-4} \cline{5-6}
 			Method		&	degree	&	$U/t = 3.5$	&	$U/t = 4.5$	&	$U/t = 3.5$	&	$U/t = 4.5$	\\
 			\hline
-			Taylor		&	2		&		&		&	$-1.01563$	&	$-1.01563$	\\
-						&	3		&		&		&	$-1.01563$	&	$-1.01563$	\\
-						&	4		&		&		&	$-0.86908$	&	$-0.61517$	\\
-						&	5		&		&		&	$-0.86908$	&	$-0.61517$	\\
-						&	6		&		&		&	$-0.92518$	&	$-0.86858$	\\
+			Taylor		&	2		&			&			&	$-1.01563$	&	$-1.01563$	\\
+						&	3		&			&			&	$-1.01563$	&	$-1.01563$	\\
+						&	4		&			&			&	$-0.86908$	&	$-0.61517$	\\
+						&	5		&			&			&	$-0.86908$	&	$-0.61517$	\\
+						&	6		&			&			&	$-0.92518$	&	$-0.86858$	\\
 			Pad\'e		&	[1/1]	&	$2.29$	&	$1.78$	&	$-1.61111$	&	$-2.64286$	\\
 						&	[2/2]	&	$2.29$	&	$1.78$	&	$-0.82124$	&	$-0.48446$	\\
 						&	[3/3]	&	$1.73$	&	$1.34$	&	$-0.91995$	&	$-0.81929$	\\
@@ -1318,10 +1322,11 @@ As shown in Ref.~\onlinecite{Goodson_2000}, quadratic approximants provide conve
 For the RMP series of the Hubbard dimer, the $[0/0,0]$ and $[1/0,0]$ quadratic approximant are quite poor approximation, but its $[1/0,1]$ version already model perfectly the RMP energy function by predicting a single pair of EPs at $\lambda_\text{EP} = \pm i 4t/U$.
 This is expected knowing the form of the RMP energy [see Eq.~\eqref{eq:E0MP}] which perfectly suits the purpose of quadratic approximants.
 
-We can anticipate that the singularity structure of the UMP energy function is going to be much more challenging to model properly, and this is indeed the case as the UMP energy function contains three branches.
-However, by ramping up high enough the degree of the polynomials, one is able to get an accurate estimates of the radius of convergence of the UMP series as shown in Fig.~\ref{fig:QuadUMP} and Table \ref{tab:QuadUMP}.
-
-\titou{Here comes a discussion of Fig.~\ref{fig:QuadUMP} and Table \ref{tab:QuadUMP}.}
+We can anticipate that the singularity structure of the UMP energy function is going to be much more challenging to model properly, and this is indeed the case as the UMP energy function contains three branches (see Figs.~\ref{subfig:UMP_3} and \ref{subfig:UMP_7}).
+However, by ramping up high enough the degree of the polynomials, one is able to get both, as shown in Fig.~\ref{fig:QuadUMP} and Table \ref{tab:QuadUMP}, accurate estimates of the radius of convergence of the UMP series and of the ground-state energy at $\lambda = 1$, even in cases where the convergence of the UMP series is painfully slow (see Fig.~\ref{subfig:UMP_cvg}).
+Figure \ref{fig:QuadUMP} evidences that the Pad\'e approximants are trying to model the square root singularity by placing a pole on the real axis (for [3/3]) or just off the real axis (for [4/4]).
+Thanks to greater flexibility, the quadratic approximants are able to model nicely the avoided crossing and the location of the singularities. 
+Besides, they provide accurate estimates of the ground-state energy at $\lambda = 1$ (see Table \ref{tab:QuadUMP}).
 
 %%%%%%%%%%%%%%%%%
 \begin{figure}
@@ -1341,15 +1346,16 @@ However, by ramping up high enough the degree of the polynomials, one is able to
 																		\cline{5-6}\cline{7-8}
 			\mc{2}{c}{Method}		&	$n$		&	$n_\text{bp}$	&	$U/t = 3$	&	$U/t = 7$	&	$U/t = 3$	&	$U/t = 7$	\\
 			\hline
-			Pad\'e		&	[2/2]	&	4	&		&	0.974		&	1.000	\\
-						&	[3/3]	&	6	&		&	1.141		&	1.004	\\
-						&	[4/4]	&	8	&		&	1.068		&	1.003	\\
-			Quadratic	&	[2/1,2]	&	6	&	4	&	1.086		&	1.003	\\
-						&	[2/2,2]	&	7	&	4	&	1.082		&	1.003	\\
-						&	[3/2,2]	&	8	&	6	&	1.082		&	1.001	\\
-						&	[3/2,3]	&	9	&	6	&	1.071		&	1.002	\\
-						&	[3/3,3]	&	10	&	6	&	1.071		&	1.002	\\
-			Exact		&			&		&		&	1.069		&	1.002	\\
+			Pad\'e		&	[3/3]	&	6		&					&	$1.141$		&	$1.004$		&	$-1.10896$	&	$-1.49856$	\\
+						&	[4/4]	&	8		&					&	$1.068$		&	$1.003$		&	$-0.85396$	&	$-0.33596$	\\
+						&	[5/5]	&	10		&					&	$1.122$		&	$1.004$		&	$-0.97254$	&	$-0.35513$	\\
+			Quadratic	&	[2/1,2]	&	6		&	4				&	$1.086$		&	$1.003$		&	$-1.01009$	&	$-0.53472$	\\
+						&	[2/2,2]	&	7		&	4				&	$1.082$		&	$1.003$		&	$-1.00553$	&	$-0.53463$	\\
+						&	[3/2,2]	&	8		&	6				&	$1.082$		&	$1.001$		&	$-1.00568$	&	$-0.52473$	\\
+						&	[3/2,3]	&	9		&	6				&	$1.071$		&	$1.002$		&	$-0.99973$	&	$-0.53102$	\\
+						&	[3/3,3]	&	10		&	6				&	$1.071$		&	$1.002$		&	$-0.99966$	&	$-0.53103$	\\
+			\hline
+			Exact		&			&			&					&	$1.069$		&	$1.002$		&	$-1.00000$	&	$-0.53113$	\\
 		\end{tabular}
 	\end{ruledtabular}
 \end{table}
