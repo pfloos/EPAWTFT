@@ -227,8 +227,173 @@ does not appear to be caused by multiconfigurational effects, but may be amplifi
 
 Class B has more important orbital relaxation effects and three-electron correlation than Class A.
 
++==========================================================+
+| Moller-Plesset Critical Point                            |
++==========================================================+
+
+Stillinger, JCP (2000):
+-----------------------
+Convergence appears to fall into two categories:
+    1) Convergent (eg. BH, CH2)
+    2) Divergent with even-odd sign alternation (eg Ne, HF, H2O)
+This second type is characterisitic of a singularity on the negative real axis.
+
+Aim of this paper is to show that this singularity emerges from a multielectron 
+autoionization process.
+
+Introduce the idea of the positive SCF energy component for negative lambda.
+
+SCF is essentially a negative charge cloud that is spatially distributed by the extent of the orbitals.
+For sufficiently positive lambda, this field converts to diffuse attraction surrounding the nucleus and
+electron pairs become increasingly repulsive. On the negative axis, this field becomes repulsive but the 
+electron-electron interactions become positive. This allows the electrons to form a bound state away from 
+the nucleus, leading to autoionization. 
+
+This autoionization threshold is analogous to the Z^-1 expansion for the two-electron atom. (Baker 1990)
+They illustrate this process using the two-electron atom again, for which the find the ionization threshold
+at \lc = -1.33. This is outside the radius of convergence, so the MP series is predicted to be absolutely
+convergent. This singularity moves further from the origin for larger Z, but for H- the threshold is -0.08!!!
+
+Overall, this paper concludes that the MP convergence will be affected by a fundamental critical point on 
+the negative real axis. The form of this singularity is, at this stage, unclear.
+
+Goodson, JCP (2000a):
+---------------------
+Introduces some approximants... [to be read later].
+
+If dominant branch points are complex-conjugate pairs in the negative half plane, then they correspond to
+regios of alternating signs with a pattern broken periodically by consecutive terms of the same sign,
+If in the positive half plane, then there are regions of only one sign alternating with regions of only
+the opposite sign.
+
+Goodson, JCP (2000b):
+---------------------
+Class A: branch point connects the eigenstate with the next higher eigenstate of the same symmetry.
+Class B: branch point lies on the negative real axis.
+
+Goodson and Sergeev, AQC (2004):
+--------------------------------
+This review considers what is currently known about singular points in the complex-lambda plane and how
+this affects the convergence of the perturbation series. Aim to connect the singularity structure and the
+different convergence ``classes''.
+
+E(l) is a complicated function with a `rich structure' of singular points.
+
+Behaviour of Stillinger singularity is different to a branch point. E(z) will acquire an imaginary part as
+it passes through the singularity as the eigenstate becomes a state in the scattering continuum. Expect
+the derivative to be continuous through the critical point.
+
+Following Goodson previous work, they draw connections between Cremer and He's classes the singularity 
+structure:
+    Class B - corresponds to dominant singularity on the negative real axis (eg Stillinger critical point)
+    Class A - corresponds to dominant singularity on the positive real aixs.
+If the imaginary part of Class A singularities is sufficiently small, then oscillations can have such
+a long period that they may appear to converge monotonically to very high orders. This is what we observe
+in the UMP series of the Hubbard dimer.
+
+Period can be given by n0 = pi / arctan(|Im(z01) / Re(z01)|)
+
+Physical connection to Cremer and He arises because if valence orbitals are clustered in a relatively small
+region of space, then the autoionization will be favoured at small |z| and the this is likely to be the
+dominant singularity.
+
+The relationship between these singularities and the basis set also matches as Class A is relatively insensitive
+to basis, but class B gets worse with larger basis sets. It is also possible to get a branch point in the negative half plane, and this leads to the worst type of convergence (eg N2, C2, CN+).
+
+> Resummation:
+
+Can use either Pade or quadratic approximants. Pade can't describe branch points, so quadratic are more
+suitable. Quadratics fit more complicated branch points using clusters of square-root branch points.
+
+> Examples
+
+They use these approximants to identify the dominant singularities. As expected, they find the dominant
+singularity in the Class A systems lie on the positive half plane with relatively large imaginary component.
+
+BH is classic Class A, and F- is a classic Class B.
+
+For Class B, the quadratic approximants gain an imaginary part beyond the critical point. The rational 
+approximant maps the branch point using alternating zeros and poles along the real axis. The quadratic
+approximants cluster a number of branch points around the critical point, suggesting a fundamental difference
+to a branch point in the positive plane.
+
+From this analysis, all complex conjugate branch points are defined as `class \alpha', and the critical 
+point is defined as `class \beta'.
+
+Better to actually classify with respect to the dominant singularity in the negative/positive half planes
+to give eg alpha/alpha ....
+
+Sergeev, Goodson, Wheeler, and Allen, JCP (2005):
+-------------------------------------------------
+Olsen showed that the F- series is divergent with diffuse functions, but convergent with compact functions.
+This paper considers Stillinger's conjecture for the noble gases by analysing the singularity structure.
+
+Increasing Z increases barrier for the electrons to escape, but the well in the nuclear region narrows. 
+Eventually the electrons can escape by tunneling through the barrier. It is also possible to get a critical
+point in the positive real z-axis corresponding to one-electron ionization. THIS would correspond to the 
+two-electron critical point.
+
+In a finite basis set, the singular (branch points) must occur in complex conjugate pairs. They show that 
+increasing the basis set size leads to a cluster of very tight avoided crossings for negative z. These
+avoided crossings are modelling the continuum and the critical point. They add
+a ghost atom to allow the electrons to dissociate, and show that these lead to greater clustering of
+negative avoided crossings. This ghost atom can then be replaced by a real atom (eg Ne -> HF), and then 
+the valence electrons will jump to the hydrogen, leading to a critical point (as shown by a plot of the 
+dipole moment). These two systems therefore have similar convergence behaviour. Without this ghost atom, 
+one gets complete dissociation rather than an electron cluster formation.
+
+Indeed similar clustering is seen in the positive real z values, eg in Ar. The argument is that the valence
+electrons are farther from the nucleus than in Ne, so the mean-field potential is less able to counter
+the increased interelectron repulsion than in Ne.
+
+Analysis resolves a disagreement between Stillinger and Olsen. Olsen found Class B resulted in square-root 
+branch points, but this is only because the 2x2 matrix is insufficient. 
+
+A key result from this paper is that critical points can also occur on the positive real axis, and these
+correspond to one-electron ionisations. Origin is an avoided crossing with high-energy Rydberg state.
+
+Sergeev and Goodson, JCP (2006):
+--------------------------------
+Further explore the singularity structure of a set of systems to classify using the alpha/beta scheme.
+
+Systems with a low-lying excited state that mixes strongly with the ground state, such that a 
+single-reference HF determinant gives a poor descriptions of the wave function, will have a class \alpha
+singularity in the positive half plane slightly beyond the physical point z=1.
+
+Goodson and Sergeev, PLA (2006):
+--------------------------------
+This paper considers how to understand the singularity structure using only up to MP4. Argument is that E_FCI(z)
+must always have complex-conjugate branch points, so cannot accurately model the true critical point E(z). 
+Instead, it models these critical points with a cluster of square-root branch point pairs with small imaginary
+components. (See Sergeev et al. 2005)
+
+This paper introduces further approximants to model these singularities using only MP4 information. It can
+then consider larger systems. They also use some conformal mapping and other tricks to improve the representation
+of the singularities and improve convergence.
+
+Herman and Hagedorn, IJQC (2008):
+---------------------------------
+Consider convergence or divergence of MP is considered for two-electrons with variable nuclear charge.
+In particular, they look to extend Goodson analysis to see how the singularity changes for increasingly more
+exact Hamiltonians. 
+
+They use a `delta-function model' for He-like atoms, where the delta functions replace the Coulomb potentials.
+This is advantageous as the problem becomes one-dimensional. They introduce a second model for the e-e cluster.
+The Stillinger critical point is then a point where the two energies cross.
+
+[ALL GETS A BIT INVOLVED... SKIPPING TO CONCLUSIONS...]
+
+[[TO BE HONEST, NOT SURE WHAT ALL THIS SHOWS...]]
+
+
++==========================================================+
+| Miscellaneous (or category currently unclear)            |
++==========================================================+
 
 
 
 
+
+Fink, JCP (2016):
+-----------------
 

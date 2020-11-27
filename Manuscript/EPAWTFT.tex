@@ -144,7 +144,7 @@
 \begin{abstract}
 In this review, we explore the extension of quantum chemistry in the complex plane and its link with perturbation theory.
 We observe that the physics of a quantum system is intimately connected to the position of energy singularities in the complex plane, known as exceptionnal points.
-After a presentation of the fundamental notions of quantum chemistry in the complex plane, such as the mean-field Hartree-Fock approximation and Rayleigh-Schr\"odinger perturbation theory, and their illustration with the ubiquitous (symmetric) Hubbard dimer at half filling, we provide a historical overview of the various research activities that have been performed on the physics of singularities.
+After a presentation of the fundamental notions of quantum chemistry in the complex plane, such as the mean-field Hartree--Fock approximation and Rayleigh-Schr\"odinger perturbation theory, and their illustration with the ubiquitous (symmetric) Hubbard dimer at half filling, we provide a historical overview of the various research activities that have been performed on the physics of singularities.
 In particular, we highlight the seminal work of several research groups on the convergence behaviour of perturbative series obtained within M{\o}ller--Plesset perturbation theory and its apparent link with quantum phase transitions.
 \end{abstract}
 
@@ -418,12 +418,12 @@ Later we will demonstrate how the choice of reference Hamiltonian controls the p
 ultimately determines the convergence properties of the perturbation series.
 
 %===========================================%
-\subsection{Hartree-Fock Theory}
+\subsection{Hartree--Fock Theory}
 \label{sec:HF}
 %===========================================%
 
 % SUMMARY OF HF
-In the Hartree-Fock (HF) approximation, the many-electron wave function is approximated as a single Slater determinant $\Psi^{\text{HF}}(\vb{x}_1,\ldots,\vb{x}_N)$, where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates.
+In the Hartree--Fock (HF) approximation, the many-electron wave function is approximated as a single Slater determinant $\Psi^{\text{HF}}(\vb{x}_1,\ldots,\vb{x}_N)$, where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates.
 This Slater determinant is defined as an antisymmetric combination of $\Ne$ (real-valued) occupied one-electron spin-orbitals $\phi_p(\vb{x})$, which are, by definition, eigenfunctions of the one-electron Fock operator 
 \begin{equation}\label{eq:FockOp}
     \Hat{f}(\vb{x}) \phi_p(\vb{x}) = \qty[ \Hat{h}(\vb{x}) + \Hat{v}_\text{HF}(\vb{x}) ] \phi_p(\vb{x}) = \epsilon_p \phi_p(\vb{x}).
@@ -483,7 +483,7 @@ However, by allowing different orbitals for different spins, the UHF is no longe
 the total spin $\hat{\mathcal{S}}^2$ operator, leading to ``spin-contamination'' in the wave function.
 
 %================================================================%
-\subsection{Hartree-Fock in the Hubbard Dimer}
+\subsection{Hartree--Fock in the Hubbard Dimer}
 \label{sec:HF_hubbard}
 %================================================================%
 
@@ -628,7 +628,7 @@ via a stationary path of HF solutions.
 This novel approach to identifying excited-state wave functions demonstrates the fundamental 
 role of \textit{quasi}-EPs in determining the behaviour of the HF approximation.
 
-%\titou{In a recent paper, \cite{Burton_2019} using holomorphic Hartree-Fock (h-HF) \cite{Hiscock_2014,Burton_2018,Burton_2016} as an analytic continuation of conventional HF theory, we have demonstrated, on a simple model, that one can interconvert states of different symmetries and natures by following well-defined contours in the complex $\lambda$-plane, where $\lambda$ is the strength of the electron-electron interaction (see Fig.~\ref{fig:iAC}).
+%\titou{In a recent paper, \cite{Burton_2019} using holomorphic Hartree--Fock (h-HF) \cite{Hiscock_2014,Burton_2018,Burton_2016} as an analytic continuation of conventional HF theory, we have demonstrated, on a simple model, that one can interconvert states of different symmetries and natures by following well-defined contours in the complex $\lambda$-plane, where $\lambda$ is the strength of the electron-electron interaction (see Fig.~\ref{fig:iAC}).
 %In particular, by slowly varying $\lambda$ in a similar (yet different) manner to an adiabatic connection in density-functional theory, \cite{Langreth_1975,Gunnarsson_1976,Zhang_2004} one can ``morph'' a ground-state wave function into an excited-state wave function via a stationary path of HF solutions. \cite{Seidl_2018}
 %In such a way, we could obtain a doubly-excited state wave function starting from the ground state wave function, a process which is not as easy as one might think. \cite{Gilbert_2008,Thom_2008,Shea_2018}
 %One of the fundamental discovery we made was that Coulson-Fischer points (where multiple symmetry-broken solutions coalesce) play a central role and can be classified as \textit{quasi}-exceptional points, as the wave functions do not become self-orthogonal.
@@ -637,7 +637,7 @@ role of \textit{quasi}-EPs in determining the behaviour of the HF approximation.
 %Through the introduction of non-Hermiticity, we have provided a more general framework in which the complex and diverse characteristics of multiple solutions can be explored and understood.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{M{\o}ller--Plesset Perturbation Theory in the Complex Plane}
+\section{M{\o}ller--Plesset Theory in the Complex Plane}
 \label{sec:MP}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -714,7 +714,7 @@ their relative strengths and weaknesses for various situations, we will restrict
 to the convergence properties of the MP expansion.
 
 %=====================================================%
-\subsection{Early Investigations into M{\o}ller--Plesset Convergence} % in Molecular Systems}
+\subsection{Early Studies of M{\o}ller--Plesset Convergence} % in Molecular Systems}
 %=====================================================%
 
 % GENERAL DESIRE FOR WELL-BEHAVED CONVERGENCE AND LOW-ORDER TERMS
@@ -1010,7 +1010,7 @@ very slowly as the perturbation order is increased.
 
 
 %==========================================%
-\subsection{Classifying Types of Convergence Behaviour} % Further insights from a two-state model}
+\subsection{Classifying Types of Convergence} % Behaviour} % Further insights from a two-state model}
 %==========================================%
 
 % CREMER AND HE
@@ -1137,91 +1137,157 @@ This analysis highlights the importance of the primary critical point in control
 regardless of whether this point is inside or outside the complex unit circle. \cite{Handy_1985,Olsen_2000}
 
 %=======================================
-\subsection{The singularity structure}
+\subsection{The M{\o}ller--Plesset Critical Point}
 \label{sec:MP_critical_point}
 %=======================================
-In the 2000's, Sergeev and Goodson \cite{Sergeev_2005, Sergeev_2006} analysed this problem from a more mathematical point of view by looking at the whole singularity structure where Olsen and collaborators were trying to find the dominant singularity causing the divergence. \cite{Olsen_1996,Olsen_2000,Olsen_2019}
-They regrouped singularities in two classes: i) $\alpha$ singularities which have ``large'' imaginary parts, and ii) $\beta$ singularities which have very small imaginary parts. 
-Singularities of $\alpha$-type are related to large avoided crossing between the ground and low-lying excited states, whereas $\beta$ singularities come from a sharp avoided crossing between the ground state and a highly diffuse state. 
-They succeeded to explain the divergence of the series caused by $\beta$ singularities following previous work by Stillinger. \cite{Stillinger_2000}
 
-To understand the convergence properties of the perturbation series at $\lambda=1$, one must look at the whole complex plane, in particular, for negative (\ie, real) values of $\lambda$. 
-If $\lambda$ is negative, the Coulomb interaction becomes attractive but the mean field (which has been computed at $\lambda = 1$) remains repulsive as it is proportional to $(1-\lambda)$:
-
+% STILLINGER INTRODUCES THE CRITICAL POINT
+\hugh{%
+In the early 2000's, Stillinger reconsidered the mathematical origin behind the divergent series with odd-even
+sign alternation.\cite{Stillinger_2000} 
+This type of convergence behaviour corresponds to Cremer and He's class B systems with closely spaced
+electron pairs and includes \ce{Ne}, \ce{HF}, \ce{F-}, and \ce{H2O}.\cite{Cremer_1996}
+Stillinger proposed that the divergence of these series occurs arise from a dominant singularity
+on the negative real $\lambda$ axis, corresponding to a multielectron autoionisation threshold.\cite{Stillinger_2000}
+To understand Stillinger's argument, consider the paramterised MP Hamiltonian in the form
 \begin{multline}
 \label{eq:HamiltonianStillinger}
     \hH(\lambda) = 
-    \sum_{i}^{n} \Bigg[ 
+    \sum_{i}^{\Ne} \Bigg[ 
     \overbrace{-\frac{1}{2}\grad_i^2 
-    - \sum_{A}^{N} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}}}^{\text{independent of $\lambda$}}
+    - \sum_{A}^{\Nn} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}}}^{\text{independent of $\lambda$}}
     \\
     + \underbrace{(1-\lambda)v^{\text{HF}}(\vb{x}_i)}_{\text{repulsive for $\lambda < 1$}}
-    + \underbrace{\lambda\sum_{i<j}^{n}\frac{1}{|\vb{r}_i-\vb{r}_j|}}_{\text{attractive for $\lambda < 0$}}
+    + \underbrace{\lambda\sum_{i<j}^{\Ne}\frac{1}{|\vb{r}_i-\vb{r}_j|}}_{\text{attractive for $\lambda < 0$}}
     \Bigg].
 \end{multline}
+The mean-field potential $v^{\text{HF}}$ essentially represents a negatively charged field with the spatial extent
+controlled by the extent of the HF orbitals, usually located close to the nuclei.
+When $\lambda$ is negative, the mean-field potential becomes increasingly repulsive, while the explicit two-electron 
+Coulomb interaction becomes attractive.
+There is therefore a critical value $\lc < 0$ where it becomes energetically favourable for the electrons 
+to dissociate and form a bound cluster at an infinite separation from the nuclei.\cite{Stillinger_2000}
+This autoionisation effect is closely related to the critial point for electron binding in two-electron 
+atoms (see Ref.~\onlinecite{Baker_1971}).
+Furthermore, a similar set of critical points exists along the positive real axis, corresponding to single-electron ionisation
+processes.\cite{Sergeev_2005}
+}
 
-The major difference between these two terms is that the repulsive mean field is localised around the nuclei whereas the interelectronic interaction persist away from the nuclei. 
-If $\lambda$ becomes more and more negative the mean field becomes more and more repulsive so there exists a critical (negative) value $\lambda_\text{c}$, for which the Coulombic field created by the nuclei cannot bind the electrons anymore because of the $\lambda$-independent nature of the electron-nucleus attraction. 
-For $\lambda = \lambda_c$, the electrons dissociate from the nuclei and form a bound cluster which is infinitely separated from the nuclei. 
-According to Baker, \cite{Baker_1971} this value is a critical point of the system and, by analogy with thermodynamics, the energy $E(\lambda)$ exhibits a singularity at $\lambda_\text{c}$. 
-At this point the system undergo a phase transition and a symmetry breaking. 
-Beyond $\lambda_c$ there is a continuum of eigenstates thanks to which the electrons dissociated from the nuclei.
+% CLASSIFICATIONS BY GOODSOON AND SERGEEV
+\hugh{%
+To further develop the link between the critical point and types of MP convergence, Sergeev and Goodson investigated
+the relationship with the location of the dominant singularity that controls the radius of convergence.\cite{Goodson_2004}.
+They demonstrated that the dominant singularity in class A corresponds to a dominant EP with a positive real component, 
+with the magnitude of the imaginary component controlling the oscillations in the signs of the MP 
+term.\cite{Goodson_2000a,Goodson200b}
+In contrast, class B systems correspond to a dominant singularity on the negative real $\lambda$ axis representing
+the MP critical point.
+The divergence of class B systems, which contain closely spaced electrons (\eg, \ce{F-}), can then be understood as the 
+HF potential $v^{\text{HF}}$ is relatively localised and the autoionization is favoured at negative 
+$\lambda$ values closer to the origin.
+With these insights, they regrouped the systems into new classes: i) $\alpha$ singularities which have ``large'' imaginary parts, 
+and ii) $\beta$ singularities which have very small imaginary parts.\cite{Goodson_2004,Sergeev_2006} 
+}
 
-This reasoning is done on the exact Hamiltonian and energy, \ie, the Hamiltonian in the complete Hilbert space, this is the exact energy which exhibits this singularity on the negative real axis. 
-However, in a finite basis set which does not span the complete Hilbert space, one can prove that, for a Hermitian Hamiltonian, the singularities of $E(\lambda)$ occurs in complex conjugate pairs with non-zero imaginary parts. 
-Sergeev and Goodson proved, \cite{Sergeev_2005} as predicted by Stillinger, \cite{Stillinger_2000} that in a finite basis set the critical point on the real axis is modelled by a cluster of sharp avoided crossings with diffuse functions, equivalently by a cluster of $\beta$ singularities in the negative half plane. 
-This explains that Olsen \textit{et al.}, because they used a simple two-state model, only observed the first singularity of this cluster of singularities causing the divergence. \cite{Olsen_2000}
+% RELATIONSHIP TO BASIS SET SIZE
+\hugh{%
+The existence of the MP critical point can also explain why the divergence observed by Olsen \etal\ in the \ce{Ne} atom 
+and \ce{HF} molecule occured when diffuse basis functions were included.\cite{Olsen_1996}
+Clearly diffuse basis functions are required for the electrons to dissociate from the nuclei, and indeed using
+only compact basis functions causes the critical point to disappear.
+While a finite basis can only predict complex-conjugate branch point singularities, the critical point is modelled
+by a cluster of sharp avoided crossings between the ground state and high-lying excited states.\cite{Sergeev_2005}
+Alternatively, Sergeev \etal\ demonstrated that the inclusion of a ``ghost'' atom also
+allows the formation of the critical point as the electrons form a bound cluster occuping the ghost atom orbitals.\cite{Sergeev_2005}
+This effect explains the origin of the divergence in the \ce{HF} molecule as the \ce{F} valence electrons jump to \ce{H} 
+for a sufficiently negative $\lambda$.\cite{Sergeev_2005}
+Furthermore, the two-state model of Olsen \etal{}\cite{Olsen_2000} was simply too minimal to understand the complexity of 
+divergences caused by the MP critical point.
+}
 
-Finally, it was shown that $\beta$ singularities are very sensitive to changes in the basis set but not to the bond stretching. 
-On the contrary, $\alpha$ singularities are relatively insensitive to the basis sets but very sensitive to bond stretching. 
-According to Goodson, \cite{Goodson_2004} the singularity structure of stretched molecules is difficult because there is more than one significant singularity. 
-This is consistent with the observation of Olsen and coworkers \cite{Olsen_2000} on the \ce{HF} molecule at equilibrium and stretched geometries. 
-To the best of our knowledge, the effect of bond stretching on singularities, its link with spin contamination and symmetry breaking of the wave function has not been as well understood as the ionization phenomenon and its link with diffuse functions.  
+% BASIS SET DEPENDENCE (INCLUDE?)
+%Finally, it was shown that $\beta$ singularities are very sensitive to changes in the basis set but not to the bond stretching. 
+%On the contrary, $\alpha$ singularities are relatively insensitive to the basis sets but very sensitive to bond stretching. 
+%According to Goodson, \cite{Goodson_2004} the singularity structure of stretched molecules is difficult because there is more than one significant singularity. 
+%This is consistent with the observation of Olsen and coworkers \cite{Olsen_2000} on the \ce{HF} molecule at equilibrium and stretched geometries. 
+%To the best of our knowledge, the effect of bond stretching on singularities, its link with spin contamination and symmetry breaking of the wave function has not been as well understood as the ionization phenomenon and its link with diffuse functions.  
 
-%====================================================
-\subsection{The physics of quantum phase transitions}
-%====================================================
+%In the 2000's, Sergeev and Goodson \cite{Sergeev_2005, Sergeev_2006} analysed this problem from a more mathematical point of view by looking at the whole singularity structure where Olsen and collaborators were trying to find the dominant singularity causing the divergence. \cite{Olsen_1996,Olsen_2000,Olsen_2019}
+%Singularities of $\alpha$-type are related to large avoided crossing between the ground and low-lying excited states, whereas $\beta$ singularities come from a sharp avoided crossing between the ground state and a highly diffuse state. 
+%They succeeded to explain the divergence of the series caused by $\beta$ singularities following previous work by Stillinger. \cite{Stillinger_2000}
 
-In the previous section, we saw that a careful analysis of the structure of the Hamiltonian allows us to predict the existence of a critical point. 
-In a finite basis set, this critical point is model by a cluster of $\beta$ singularities. 
-It is now well known that this phenomenon is a special case of a more general phenomenon. 
-Indeed, theoretical physicists proved that EPs close to the real axis are connected to \textit{quantum phase transitions} (QPTs). \cite{Heiss_1988,Heiss_2002,Borisov_2015,Sindelka_2017,CarrBook,Vojta_2003,SachdevBook,GilmoreBook} 
-In quantum mechanics, the Hamiltonian is almost always dependent of, at least, one parameter. 
-In some cases the variation of a parameter can lead to abrupt changes at a critical point. 
-These QPTs exist both for ground and excited states as shown by Cejnar and coworkers. \cite{Cejnar_2005,Cejnar_2007,Caprio_2008,Cejnar_2009,Sachdev_2011,Cejnar_2015,Cejnar_2016, Macek_2019,Cejnar_2020} 
-A ground-state QPT is characterised by the derivatives of the ground-state energy with respect to a non-thermal control parameter. \cite{Cejnar_2009, Sachdev_2011} 
-The transition is called discontinuous and of first order if the first derivative is discontinuous at the critical parameter value. 
-Otherwise, it is called continuous and of $m$th order (with $m \ge 2$) if the $m$th derivative is discontinuous. 
-A QPT can also be identify by the discontinuity of an appropriate order parameter (or one of its derivatives). 
 
-The presence of an EP close to the real axis is characteristic of a sharp avoided crossing. 
-Yet, at such an avoided crossing, eigenstates change abruptly. 
-Although it is now well understood that EPs are closely related to QPTs, the link between the type of QPT (ground state or excited state, first or higher order) and EPs still need to be clarified. 
-One of the major obstacles that one faces in order to achieve this resides in the ability to compute the distribution of EPs. 
-The numerical assignment of an EP to two energies on the real axis is very difficult in large dimensions. 
-Hence, the design of specific methods are required to get information on the location of EPs. 
-Following this idea, Cejnar \textit{et al.}~developed a method based on a Coulomb analogy giving access to the density of EP close to the real axis. \cite{Cejnar_2005, Cejnar_2007} 
-More recently Stransky and coworkers proved that the distribution of EPs is characteristic of the QPT order. \cite{Stransky_2018} 
-In the thermodynamic limit, some of the EPs converge towards a critical point $\lambda_\text{c}$ on the real axis. 
-They showed that, within the interacting boson model, \cite{Lipkin_1965} EPs associated to first- and second-order QPT behave differently when the number of particles increases. 
-The position of these singularities converge towards the critical point on the real axis at different rates (exponentially and algebraically for the first and second orders, respectively) with respect to the number of particles.
+%This reasoning is done on the exact Hamiltonian and energy, \ie, the Hamiltonian in the complete Hilbert space, this is the exact energy which exhibits this singularity on the negative real axis. 
+%However, in a finite basis set which does not span the complete Hilbert space, one can prove that, for a Hermitian Hamiltonian, the singularities of $E(\lambda)$ occurs in complex conjugate pairs with non-zero imaginary parts. 
+%Sergeev and Goodson proved, \cite{Sergeev_2005} as predicted by Stillinger, \cite{Stillinger_2000} that in a finite basis set the critical point on the real axis is modelled by a cluster of sharp avoided crossings with diffuse functions, equivalently by a cluster of $\beta$ singularities in the negative half plane. 
+%This explains that Olsen \textit{et al.}, because they used a simple two-state model, only observed the first singularity of this cluster of singularities causing the divergence. \cite{Olsen_2000}
 
-Moreover, Cejnar \textit{et al.}~studied the so-called shape-phase transitions of the interaction boson model from a QPT point of view. \cite{Cejnar_2000, Cejnar_2003, Cejnar_2007a, Cejnar_2009}
-The phase of the ensemble of $s$ and $d$ bosons is characterised by a dynamical symmetry. 
-When a parameter is continuously modified the dynamical symmetry of the system can change at a critical value of this parameter, leading to a deformed phase. 
-They showed that at this critical value of the parameter, the system undergoes a QPT. 
-For example, without interaction the ground state is the spherical phase (a condensate of $s$ bosons) and when the interaction increases it leads to a deformed phase constituted of a mixture of $s$ and $d$ bosons states. 
-In particular, we see that the transition from the spherical phase to the axially symmetric one is analog to the symmetry breaking of the wave function of the hydrogen molecule when the bond is stretched. \cite{SzaboBook}
-It seems like our understanding of the physics of spatial and/or spin symmetry breaking in HF theory can be enlightened by QPT theory. 
-Indeed, the second derivative of the HF ground-state energy is discontinuous at the point of spin symmetry-breaking which means that the system undergo a second-order QPT. 
+% RELATIONSHIP TO QUANTUM PHASE TRANSITION
+\hugh{%
+When a Hamiltonian is parametrised by a variable such as $\lambda$, the existence of abrupt changes in the 
+eigenstates as a function of $\lambda$ indicate the presence of a zero-temperature quantum phase transition (QPT).%
+\cite{Heiss_1988,Heiss_2002,Borisov_2015,Sindelka_2017,CarrBook,Vojta_2003,SachdevBook,GilmoreBook} 
+As an avoided crossing becomes increasingly sharp, the corresponding EPs move increasingly close to the real axis.
+The existence of an EP \emph{on} the real axis is therefore diagnostic of a QPT.\cite{Cejnar_2005, Cejnar_2007a}
+Since the MP critical point corresponds to a singularity on the real $\lambda$ axis, it can immediately be
+recognised a QPT within the perturbation theory approximation.
+However, a conventional QPT can only occur in the thermodynamic limit, which here is analogous to the complete 
+basis set limit.\cite{Kais_2006}
+The MP critical point $\beta$ singularity in a finite basis must therefore be modelled by pairs of EPs
+that tend towards the real axis, exactly as described by Sergeev \etal.\cite{Sergeev_2005}
+In contrast, $\alpha$ singularities correspond to large avoided crossings that are indicative of low-lying excited
+states which share the symmetry of the ground state,\cite{Goodson_2004} and are thus not manifestations of a QPT.
+}
 
-Moreover, the $\beta$ singularities introduced by Sergeev and coworkers to describe the EPs modelling the formation of a bound cluster of electrons are actually a more general class of singularities. 
-The EPs close to the real axis (the so-called $\beta$ singularities) are connected to QPT because they result from a sharp avoided crossings at which the eigenstates change quickly. 
-However, the $\alpha$ singularities arise from large avoided crossings. 
-Thus, they cannot be connected to QPT. 
-The avoided crossings generating $\alpha$ singularities generally involve the ground state and low-lying doubly-excited states. 
-Those excited states have a non-negligible contribution to the exact FCI solution because they have (usually) the same spatial and spin symmetry as the ground state. 
-We believe that $\alpha$ singularities are connected to states with non-negligible contribution in the CI expansion thus to the dynamical part of the correlation energy, while $\beta$ singularities are linked to symmetry breaking and phase transitions of the wave function, \ie, to the multi-reference nature of the wave function thus to the static part of the correlation energy.
+%=======================================
+\subsection{Critical Point in the Hubbard Dimer}
+\label{sec:critical_point_hubbard}
+%=======================================
+
+%%====================================================
+%\subsection{The physics of quantum phase transitions}
+%%====================================================
+%
+%In the previous section, we saw that a careful analysis of the structure of the Hamiltonian allows us to predict the existence of a critical point. 
+%In a finite basis set, this critical point is model by a cluster of $\beta$ singularities. 
+%It is now well known that this phenomenon is a special case of a more general phenomenon. 
+%Indeed, theoretical physicists proved that EPs close to the real axis are connected to \textit{quantum phase transitions} (QPTs). \cite{Heiss_1988,Heiss_2002,Borisov_2015,Sindelka_2017,CarrBook,Vojta_2003,SachdevBook,GilmoreBook} 
+%In quantum mechanics, the Hamiltonian is almost always dependent of, at least, one parameter. 
+%In some cases the variation of a parameter can lead to abrupt changes at a critical point. 
+%These QPTs exist both for ground and excited states as shown by Cejnar and coworkers. \cite{Cejnar_2005,Cejnar_2007,Caprio_2008,Cejnar_2009,Sachdev_2011,Cejnar_2015,Cejnar_2016, Macek_2019,Cejnar_2020} 
+%A ground-state QPT is characterised by the derivatives of the ground-state energy with respect to a non-thermal control parameter. \cite{Cejnar_2009, Sachdev_2011} 
+%The transition is called discontinuous and of first order if the first derivative is discontinuous at the critical parameter value. 
+%Otherwise, it is called continuous and of $m$th order (with $m \ge 2$) if the $m$th derivative is discontinuous. 
+%A QPT can also be identify by the discontinuity of an appropriate order parameter (or one of its derivatives). 
+%
+%The presence of an EP close to the real axis is characteristic of a sharp avoided crossing. 
+%Yet, at such an avoided crossing, eigenstates change abruptly. 
+%Although it is now well understood that EPs are closely related to QPTs, the link between the type of QPT (ground state or excited state, first or higher order) and EPs still need to be clarified. 
+%One of the major obstacles that one faces in order to achieve this resides in the ability to compute the distribution of EPs. 
+%The numerical assignment of an EP to two energies on the real axis is very difficult in large dimensions. 
+%Hence, the design of specific methods are required to get information on the location of EPs. 
+%Following this idea, Cejnar \textit{et al.}~developed a method based on a Coulomb analogy giving access to the density of EP close to the real axis. \cite{Cejnar_2005, Cejnar_2007} 
+%More recently Stransky and coworkers proved that the distribution of EPs is characteristic of the QPT order. \cite{Stransky_2018} 
+%In the thermodynamic limit, some of the EPs converge towards a critical point $\lambda_\text{c}$ on the real axis. 
+%They showed that, within the interacting boson model, \cite{Lipkin_1965} EPs associated to first- and second-order QPT behave differently when the number of particles increases. 
+%The position of these singularities converge towards the critical point on the real axis at different rates (exponentially and algebraically for the first and second orders, respectively) with respect to the number of particles.
+%
+%Moreover, Cejnar \textit{et al.}~studied the so-called shape-phase transitions of the interaction boson model from a QPT point of view. \cite{Cejnar_2000, Cejnar_2003, Cejnar_2007a, Cejnar_2009}
+%The phase of the ensemble of $s$ and $d$ bosons is characterised by a dynamical symmetry. 
+%When a parameter is continuously modified the dynamical symmetry of the system can change at a critical value of this parameter, leading to a deformed phase. 
+%They showed that at this critical value of the parameter, the system undergoes a QPT. 
+%For example, without interaction the ground state is the spherical phase (a condensate of $s$ bosons) and when the interaction increases it leads to a deformed phase constituted of a mixture of $s$ and $d$ bosons states. 
+%In particular, we see that the transition from the spherical phase to the axially symmetric one is analog to the symmetry breaking of the wave function of the hydrogen molecule when the bond is stretched. \cite{SzaboBook}
+%It seems like our understanding of the physics of spatial and/or spin symmetry breaking in HF theory can be enlightened by QPT theory. 
+%Indeed, the second derivative of the HF ground-state energy is discontinuous at the point of spin symmetry-breaking which means that the system undergo a second-order QPT. 
+%
+%Moreover, the $\beta$ singularities introduced by Sergeev and coworkers to describe the EPs modelling the formation of a bound cluster of electrons are actually a more general class of singularities. 
+%The EPs close to the real axis (the so-called $\beta$ singularities) are connected to QPT because they result from a sharp avoided crossings at which the eigenstates change quickly. 
+%However, the $\alpha$ singularities arise from large avoided crossings. 
+%Thus, they cannot be connected to QPT. 
+%The avoided crossings generating $\alpha$ singularities generally involve the ground state and low-lying doubly-excited states. 
+%Those excited states have a non-negligible contribution to the exact FCI solution because they have (usually) the same spatial and spin symmetry as the ground state. 
+%We believe that $\alpha$ singularities are connected to states with non-negligible contribution in the CI expansion thus to the dynamical part of the correlation energy, while $\beta$ singularities are linked to symmetry breaking and phase transitions of the wave function, \ie, to the multi-reference nature of the wave function thus to the static part of the correlation energy.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resummation Methods}
