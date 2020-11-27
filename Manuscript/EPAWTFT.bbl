@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{131}%
+\begin{thebibliography}{132}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -1188,6 +1188,15 @@
   {journal} {\bibinfo  {journal} {J. Phys. A: Math. Theor.}\ }\textbf {\bibinfo
   {volume} {40}},\ \bibinfo {pages} {581} (\bibinfo {year} {2007})}\BibitemShut
   {NoStop}%
+\bibitem [{\citenamefont {Kais}\ \emph {et~al.}(2006)\citenamefont {Kais},
+  \citenamefont {Wenger},\ and\ \citenamefont {Wei}}]{Kais_2006}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Kais}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Wenger}}, \ and\
+  \bibinfo {author} {\bibfnamefont {Q.}~\bibnamefont {Wei}},\ }\href {\doibase
+  https://doi.org/10.1016/j.cplett.2006.03.035} {\bibfield  {journal} {\bibinfo
+   {journal} {Chem. Phys. Lett.}\ }\textbf {\bibinfo {volume} {423}},\ \bibinfo
+  {pages} {45 } (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Goodson}(2019)}]{Goodson_2019}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~Z.}\ \bibnamefont
