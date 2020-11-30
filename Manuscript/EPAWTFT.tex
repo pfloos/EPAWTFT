@@ -293,7 +293,7 @@ In the large-$U$ (or strong correlation) regime, the electron repulsion term bec
 and the electrons localise on opposite sites to minimise their Coulomb repulsion. 
 This phenomenon is often referred to as Wigner crystallisation. \cite{Wigner_1934}
 
-To illustrate the formation of an EP, we scale the off-diagonal coupling strength by introducing the complex parameter $\lambda$ through the transformation $t\rightarrow \lambda t$ to give the parameterised Hamiltonian $\hH(\lambda)$.
+To illustrate the formation of an EP, we scale the off-diagonal coupling strength by introducing the complex parameter $\lambda$ through the transformation $t \to \lambda t$ to give the parameterised Hamiltonian $\hH(\lambda)$.
 When $\lambda$ is real, the Hamiltonian~\eqref{eq:H_FCI} is Hermitian with the distinct (real-valued) (eigen)energies
 \begin{subequations}
 \begin{align}
@@ -599,7 +599,7 @@ The inherent non-linearity in the Fock eigenvalue problem arises from self-consi
 in the HF approximation, and is usually solved through an iterative approach.\cite{Roothaan_1951,Hall_1951}
 Alternatively, the non-linear terms arising from the Coulomb and exchange operators can 
 be considered as a perturbation from the core Hamiltonian \eqref{eq:Hcore} by introducing the
-transformation $U \rightarrow \lambda\, U$, giving the parametrised Fock operator 
+transformation $U \to \lambda\, U$, giving the parametrised Fock operator 
 \begin{equation}
     \Hat{f}(\vb{x} ; \lambda) = \Hat{h}(\vb{x}) + \lambda\, \Hat{v}_\text{HF}(\vb{x}).
 \end{equation}
@@ -972,7 +972,7 @@ These numerical values reveal that the UMP ground-state series has $\rc > 1$ for
 However, in the strong correlation limit (large $U$), this radius of convergence tends to unity, indicating that
 the corresponding UMP series becomes increasingly slow.
 Furthermore, the doubly-excited state using the ground-state UHF orbitals has $\rc < 1$ for almost any value 
-of $U/t$, reaching the limiting value of $1/2$ for $U/t \rightarrow \infty$, and thus the 
+of $U/t$, reaching the limiting value of $1/2$ for $U/t \to \infty$, and thus the 
 excited-state UMP series will always diverge.
  
 % DISCUSSION OF UMP RIEMANN SURFACES
@@ -1264,22 +1264,20 @@ states which share the symmetry of the ground state,\cite{Goodson_2004} and are 
 	\subcaption{\label{subfig:rmp_cp_surf}}
     \end{subfigure}
 	\caption{%
-    \hugh{Modelling the RMP critical point using the asymmetric Hubbard dimer.
-        (\subref{subfig:rmp_cp}) Exact critical points with $t=0$ occur on the negative real $\lambda$ axis (dashed).
-        (\subref{subfig:rmp_cp_surf}) Modelling a finite basis using $t=0.1$ yields complex-conjugate EPs close to the
-        real axis, giving a sharp avoided crossing on the real axis (solid).
-    }
+		Modelling the RMP critical point using the asymmetric Hubbard dimer.
+		(\subref{subfig:rmp_cp}) Exact critical points with $t=0$ occur on the negative real $\lambda$ axis (dashed).
+		(\subref{subfig:rmp_cp_surf}) Modelling a finite basis using $t=0.1$ yields complex-conjugate EPs close to the
+		real axis, giving a sharp avoided crossing on the real axis (solid).
 	\label{fig:RMP_cp}}
 \end{figure*}
 %------------------------------------------------------------------%
 
 % INTRODUCING THE MODEL
-\hugh{%
 The simplified site basis of the Hubbard dimer makes explicilty modelling the ionisation continuum impossible.
-Instead, we can use an asymmetric Hubbard dimer to consider one site as a ``ghost atom'' that acts as a 
+Instead, we can use an asymmetric Hubbard dimer \cite{Carrascal_2015,Carrascal_2018} to consider one site as a ``ghost atom'' that acts as a 
 destination for ionised electrons.
 In this asymmetric model, we introduce a one-electron potential $-\epsilon$ on the left site to 
-represent the attraction between the electrons and the model ``atomic'' nucleus, where we define $\epsilon > 0$.
+represent the attraction between the electrons and the model ``atomic'' nucleus [see Eq.~\eqref{eq:H_FCI}], where we define $\epsilon > 0$.
 %The exact Hamiltonian [Eq.~\eqref{eq:H_FCI}] then becomes
 %\begin{equation}
 %\label{eq:H_FCI_Asymm}
@@ -1292,10 +1290,7 @@ represent the attraction between the electrons and the model ``atomic'' nucleus,
 %\end{pmatrix}.
 %\end{equation}
 The reference Slater determinant for a doubly-occupied atom can be represented using the RHF
-orbitals [Eq.~\eqref{eq:RHF_orbs}] with 
-\begin{equation}
-    \theta_{\alpha}^{\text{RHF}} = \theta_{\beta}^{\text{RHF}} = 0.
-\end{equation}
+orbitals [see Eq.~\eqref{eq:RHF_orbs}] with $\theta_{\alpha}^{\text{RHF}} = \theta_{\beta}^{\text{RHF}} = 0$.
 %and energy
 %\begin{equation}
 %   E_\text{HF}(0, 0) = \frac{1}{2} (2 U - 4 \epsilon).
@@ -1313,18 +1308,17 @@ With this representation, the parametrised RMP Hamiltonian becomes
 \end{pmatrix}.
 \end{equation}
 \end{widetext}
-}
+\titou{Shall we change the symbol $\bH_\text{RMP}\qty(\lambda)$ to avoid confusion? Maybe $\Tilde{\bH}_\text{RMP}\qty(\lambda)$?}
 
 % DERIVING BEHAVIOUR OF THE CRITICAL SITE
-\hugh{%
 For the ghost site to perfectly represent ionised electrons, the hopping term between the two sites must vanish with $t=0$.
-This limit corresponds to the dissociative regime in the asymmetric Hubbard dimer (see Ref.~\ref{Carrascal_2018}), 
+This limit corresponds to the dissociative regime in the asymmetric Hubbard dimer as discussed in Ref.~\onlinecite{Carrascal_2018}, 
 and the RMP energies become
 \begin{subequations}
 \begin{align}
-    E_{-} &= 2U - 2 \epsilon - U \lambda
+    E_{-} &= 2U - 2 \epsilon - U \lambda,
     \\
-    E_{\text{S}} &= U - \epsilon - U \lambda
+    E_{\text{S}} &= U - \epsilon - U \lambda,
     \\ 
     E_{+} &= U \lambda,
 \end{align}
@@ -1344,22 +1338,19 @@ representing strong screening of the nuclear attraction by core and valence elec
 and again a less negative $\lambda$ is required for ionisation to occur.
 Both of these factors are common in atoms on the right-hand side of the periodic table, \eg\ \ce{F},
 \ce{O}, \ce{Ne}, and thus molecules containing these atoms are often class $\beta$ systems with
-a divergent RMP series due to the MP critical point.
-}
+a divergent RMP series due to the MP critical point. \cite{Goodson_2004,Sergeev_2006} 
 
 % EXACT VERSUS APPROXIMATE
-\hugh{%
-The critical point in the exact case $t=0$ lies on the real $\lambda$ axis, mirroring the behaviour of a quantum
-phase transition.\cite{Kais_2006}
+The critical point in the exact case $t=0$ lies on the \titou{negative} real $\lambda$ axis (Fig.~\ref{subfig:rmp_cp}: dashed lines), 
+mirroring the behaviour of a quantum phase transition.\cite{Kais_2006}
 However, in practical calculations performed with a finite basis set, the critical point is modelled as a cluster
 of branch points close to the real axis.
 The use of a finite basis can be modelled in the asymmetric dimer by making the second site a less
-idealised destination for the ionised electrons with a non-zero hopping term $t$.
-Taking the small value $t=0.1$ (Fig.~\ref{subfig:rmp_cp}: solid lines), the critical point becomes a
+idealised destination for the ionised electrons with a non-zero (yet small) hopping term $t$.
+Taking the value $t=0.1$ (Fig.~\ref{subfig:rmp_cp}: solid lines), the critical point becomes a
 sharp avoided crossing with a complex-conjugate pair of EPs close to the real axis (Fig.~\ref{subfig:rmp_cp_surf}).
-In the limit $t \rightarrow 0$, these EPs approach the real axis, mirroring Sergeev's discussion on finite basis
+In the limit $t \to 0$, these EPs approach the real axis, mirroring Sergeev's discussion on finite basis
 set representations of the MP critical point.\cite{Sergeev_2006}
-}
 
 %------------------------------------------------------------------%
 % Figure on the UMP critical point
@@ -1374,33 +1365,28 @@ set representations of the MP critical point.\cite{Sergeev_2006}
 \subcaption{\label{subfig:ump_ep_to_cp}}
 \end{subfigure}
 \caption{%
-\hugh{%
     The UMP ground-state EP becomes a critical point in the strong correlation limit (large $U/t$).
-    (\subref{subfig:ump_cp}) As the $U/t$ increases, the avoided crossing on the real $\lambda$ axis
+    (\subref{subfig:ump_cp}) As $U/t$ increases, the avoided crossing on the real $\lambda$ axis
     becomes increasingly sharp.
-    (\subref{subfig:ump_ep_to_cp}) The convergence of the EPs at $\lep$ onto the real axis for $U/t \rightarrow \infty$
-    mirrors the formation of the RMP critical point and other QPTs in the infinite basis set limit.
-}
+    (\subref{subfig:ump_ep_to_cp}) The convergence of the EPs at $\lep$ onto the real axis for $U/t \to \infty$
+    mirrors the formation of the RMP critical point and other QPTs in the complete basis set limit.
 \label{fig:UMP_cp}}
 
 \end{figure*}
 %------------------------------------------------------------------%
 
 % RELATIONSHIP BETWEEN QPT AND UMP
-\hugh{%
-In Section~\ref{sec:spin_cont} we showed that the slow convergence of the UMP series for the strongly correlated
-Hubbard dimer was due to a complex-conjguate pair of  EPs just outside the radius of convergence.
+In Sec.~\ref{sec:spin_cont} we showed that the slow convergence of the UMP series for the strongly correlated
+Hubbard dimer was due to a complex-conjugate pair of EPs just outside the radius of convergence.
 These EPs have positive real components and small imaginary components (Fig.~\ref{fig:UMP}), suggesting a potential 
-connection to MP critical points and QPTs.
+connection to MP critical points and QPTs (see Sec.~\ref{sec:MP_critical_point}).
 For $\lambda>1$, the HF potential becomes an attractive component in Stillinger's 
-Hamiltonian [Eq.~\eqref{eq:HamiltonianStillinger}], while the explicit electron-electron interaction
+Hamiltonian displayed in Eq.~\eqref{eq:HamiltonianStillinger}, while the explicit electron-electron interaction
 becomes increasingly repulsive.
 Critical points along the positive real $\lambda$ axis for closed-shell molecules then represent 
-points were the two-electron repulsion overcomes the attractive HF potential and an electron
+points where the two-electron repulsion overcomes the attractive HF potential and an electron
 are successively expelled from the molecule.\cite{Sergeev_2006}
-}
 
-\hugh{%
 Symmetry-breaking in the UMP reference creates different HF potentials for the spin-up and spin-down electrons.
 Consider the reference UHF solution where the spin-up and spin-down electrons are localised on the left and
 right sites respectively.  
@@ -1413,14 +1399,12 @@ for $\lambda \geq 1$ (Fig.~\ref{subfig:ump_cp}).
 Note that, although this appears to be an avoided crossing between the ground and first-excited state, 
 the earlier excited-state avoided crossing means that the first-excited state qualitatively 
 represents the double excitation for $\lambda > 0.5.$
-}
 
 % SHARPNESS AND QPT
-\hugh{%
 The ``sharpness'' of the avoided crossing is controlled by the correlation strength $U/t$.
 For small $U/t$, the HF potentials will be weak and the electrons will delocalise over the two sites,
 both in the UHF reference and as $\lambda$ increases.
-This delocalisataion dampens the electron swapping process and leads to a ``shallow'' avoided crossing
+This delocalisation dampens the electron swapping process and leads to a ``shallow'' avoided crossing
 that corresponds to EPs with non-zero imaginary components (solid lines in Fig.~\ref{subfig:ump_cp}).
 As $U/t$ becomes larger, the HF potentials become stronger and the on-site repulsion dominates the hopping
 term to make electron delocalisation less favourable.
@@ -1428,11 +1412,10 @@ These effects create a stronger driving force for the electrons to swap sites un
 occurs exactly at $\lambda = 1$.
 In this limit, the ground-state EPs approach the real axis (Fig.~\ref{subfig:ump_ep_to_cp}) and the avoided 
 crossing creates a gradient discontinuity in the ground-state energy (dashed lines in Fig.~\ref{subfig:ump_cp}).
-We therefore find that, in the strong correlation limit, the symmetry-broken ground-state EP becomes becomes
+We therefore find that, in the strong correlation limit, the symmetry-broken ground-state EP becomes
 a new type of MP critical and represents a QPT in the perturbation approximation. 
 Furthermore, this argument explains why the dominant UMP singularity lies so close, but always outside, the 
 radius of convergence (see Fig.~\ref{fig:RadConv}).
-}
 
 %%====================================================
 %\subsection{The physics of quantum phase transitions}
