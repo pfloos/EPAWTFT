@@ -1286,11 +1286,11 @@ orbitals [see Eq.~\eqref{eq:RHF_orbs}] with $\theta_{\alpha}^{\text{RHF}} = \the
 %\begin{equation}
 %   E_\text{HF}(0, 0) = \frac{1}{2} (2 U - 4 \epsilon).
 %\end{equation}
-With this representation, the parametrised RMP Hamiltonian becomes
+With this representation, the parametrised \hugh{atomic} RMP Hamiltonian becomes
 \begin{widetext}
 \begin{equation}
 \label{eq:H_RMP}
-\Tilde{\bH}_\text{RMP}\qty(\lambda) = 
+\hugh{\bH_\text{atom}\qty(\lambda)} = 
 \begin{pmatrix}
     2(U-\epsilon) - \lambda U &	-\lambda t				 &	-\lambda t	            &	0	        \\
     -\lambda t				  &	(U-\epsilon) - \lambda U &	0		                &	-\lambda t	\\
@@ -1327,7 +1327,8 @@ In contrast, smaller $\epsilon$ gives a weaker attraction to the atomic site,
 representing strong screening of the nuclear attraction by core and valence electrons, 
 and again a less negative $\lambda$ is required for ionisation to occur.
 Both of these factors are common in atoms on the right-hand side of the periodic table, \eg\ \ce{F},
-\ce{O}, \ce{Ne}, and thus molecules containing these atoms are often class $\beta$ systems with
+\ce{O}, \ce{Ne}.
+Molecules containing these atoms are therefore often class $\beta$ systems with
 a divergent RMP series due to the MP critical point. \cite{Goodson_2004,Sergeev_2006} 
 
 % EXACT VERSUS APPROXIMATE
@@ -1375,13 +1376,12 @@ For $\lambda>1$, the HF potential becomes an attractive component in Stillinger'
 Hamiltonian displayed in Eq.~\eqref{eq:HamiltonianStillinger}, while the explicit electron-electron interaction
 becomes increasingly repulsive.
 \titou{Critical points along the positive real $\lambda$ axis for closed-shell molecules then represent 
-points where the two-electron repulsion overcomes the attractive HF potential and an electron
-are successively expelled from the molecule.\cite{Sergeev_2006}}
+points where the two-electron repulsion overcomes the attractive HF potential 
+and a single electron dissociates from the molecule.\cite{Sergeev_2006}}
 \titou{T2: I'd like to discuss that with you.}
 
-Symmetry-breaking in the UMP reference creates different HF potentials for the spin-up and spin-down electrons.
-Consider one of the two reference UHF solutions where the spin-up and spin-down electrons are localised on the left and
-right sites respectively.  
+In contrast, symmetry-breaking in the UMP reference creates different HF potentials for the spin-up and spin-down electrons.
+Consider one of the two reference UHF solutions where the spin-up and spin-down electrons are localised on the left and right sites respectively. 
 The spin-up HF potential will then be a repulsive interaction from the spin-down electron 
 density that is centred around the right site (and vice-versa).
 As $\lambda$ becomes greater than 1 and the HF potentials become attractive, there will be a sudden
