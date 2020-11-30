@@ -1272,10 +1272,21 @@ has a negative diagonal term in the one-electron Hamiltonian, representing the n
 encoded in the Initialisation section such that the core Hamiltonian is
 To model the doubly-occupied atom, we can define our reference HF state as the configuration with $\theta = 0$ and energy
 \begin{equation}
-    \frac{1}{2} (2 U - 4 \epsilon)
+   E_\text{HF}(0, 0) = \frac{1}{2} (2 U - 4 \epsilon)
 \end{equation}
 The RMP Hamiltonian then becomes
-...
+\begin{widetext}
+\begin{equation}
+\label{eq:H_RMP}
+\bH_\text{RMP}\qty(\lambda) = 
+	\begin{pmatrix}
+		-2 \delta \epsilon + 2U(1 - \lambda/2)	&	-\lambda t					&	-\lambda t					&	0	\\
+		-\lambda t						&	- \delta \epsilon + (1-\lambda)U  	&	0		&	-\lambda t	\\
+		-\lambda t						&	0			&	- \delta \epsilon + (1-\lambda)U	&	-\lambda t	\\
+		0 				&	-\lambda t 	 					&	-\lambda t						&	\lambda U	\\
+	\end{pmatrix},
+\end{equation}
+\end{widetext}
 }
 
 \hughDraft{%
