@@ -519,6 +519,7 @@ the spin-$\sigma$ electrons as
 	\\
 	\mathcal{A}^{\sigma} & = - \sin(\frac{\theta_\sigma}{2}) \Lsi + \cos(\frac{\theta_\sigma}{2}) \Rsi
 \end{align}
+\label{eq:RHF_orbs}
 \end{subequations}
 In the weak correlation regime $0 \le U \le 2t$, the angles which minimise the HF energy, 
 \ie, $\pdv*{E_\text{HF}}{\theta_\sigma} = 0$, are 
@@ -1194,6 +1195,28 @@ $\lambda$ values closer to the origin.
 With these insights, they regrouped the systems into new classes: i) $\alpha$ singularities which have ``large'' imaginary parts, 
 and ii) $\beta$ singularities which have very small imaginary parts.\cite{Goodson_2004,Sergeev_2006} 
 
+%------------------------------------------------------------------%
+% Figure on the RMP critical point
+%------------------------------------------------------------------%
+\begin{figure*}[t]
+	\begin{subfigure}{0.49\textwidth}
+	\includegraphics[height=0.65\textwidth]{rmp_critical_point}
+	\subcaption{\label{subfig:rmp_cp}}
+    \end{subfigure}
+	\begin{subfigure}{0.49\textwidth}
+	\includegraphics[height=0.65\textwidth]{rmp_critical_point_surf}
+	\subcaption{\label{subfig:rmp_cp_surf}}
+    \end{subfigure}
+	\caption{%
+    \hugh{Modelling the RMP critical point using the asymmetric Hubbard dimer.
+        (\subref{subfig:rmp_cp}) Exact critical points with $t=0$ occur on the negative real $\lambda$ axis (dashed).
+        (\subref{subfig:rmp_cp_surf}) Modelling a finite basis using $t=0.1$ yields complex-conjugate EPs close to the
+        real axis, giving a sharp avoided crossing on the real axis (solid).
+    }
+	\label{fig:RMP_cp}}
+\end{figure*}
+%------------------------------------------------------------------%
+
 % RELATIONSHIP TO BASIS SET SIZE
 The existence of the MP critical point can also explain why the divergence observed by Olsen \etal\ in the \ce{Ne} atom 
 and \ce{HF} molecule occurred when diffuse basis functions were included.\cite{Olsen_1996}
@@ -1245,100 +1268,92 @@ states which share the symmetry of the ground state,\cite{Goodson_2004} and are 
 \label{sec:critical_point_hubbard}
 %=======================================
 
-%------------------------------------------------------------------%
-% Figure on the RMP critical point
-%------------------------------------------------------------------%
-\begin{figure*}[t]
-	\begin{subfigure}{0.49\textwidth}
-	\includegraphics[height=0.65\textwidth]{rmp_critical_point}
-	\subcaption{\label{subfig:rmp_cp}}
-    \end{subfigure}
-	\begin{subfigure}{0.49\textwidth}
-	\includegraphics[height=0.65\textwidth]{rmp_critical_point_surf}
-	\subcaption{\label{subfig:rmp_cp_surf}}
-    \end{subfigure}
-	\caption{%
-    \hugh{RMP critical point in the Hubbard dimer.}
-	\label{fig:RMP_cp}}
-\end{figure*}
-%------------------------------------------------------------------%
-
-\hughDraft{%
-The simplified site basis of the Hubbard dimer makes explicitly modelling the ionisation continuum 
-impossible.
-To model the auto-ionisation in the Hubbard dimer, we need to turn one of the sites into a ghost atom that will act as
-a destination for ionised electrons. We do this by considering an asymmetric Hubbard dimer where the "atomic" site
-has a negative diagonal term in the one-electron Hamiltonian, representing the nuclear attraction. This term is already
-encoded in the Initialisation section such that the core Hamiltonian is
-To model the doubly-occupied atom, we can define our reference HF state as the configuration with $\theta = 0$ and energy
+% INTRODUCING THE MODEL
+\hugh{%
+The simplified site basis of the Hubbard dimer makes explicilty modelling the ionisation continuum impossible.
+Instead, we can use an asymmetric Hubbard dimer to consider one site as a ``ghost atom'' that acts as a 
+destination for ionised electrons.
+In this asymmetric model, we introduce a one-electron potential $-\epsilon$ on the left site to 
+represent the attraction between the electrons and the model ``atomic'' nucleus, where we define $\epsilon > 0$.
+%The exact Hamiltonian [Eq.~\eqref{eq:H_FCI}] then becomes
+%\begin{equation}
+%\label{eq:H_FCI_Asymm}
+%\bH = 
+%\begin{pmatrix}
+%	U-2\epsilon & -t        & -t        &  0 \\
+%   -t           & -\epsilon &  0        & -t \\
+%   -t           &  0        & -\epsilon & -t \\
+%    0           & -t        & -t        &  U \\
+%\end{pmatrix}.
+%\end{equation}
+The reference Slater determinant for a doubly-occupied atom can be represented using the RHF
+orbitals [Eq.~\eqref{eq:RHF_orbs}] with 
 \begin{equation}
-   E_\text{HF}(0, 0) = \frac{1}{2} (2 U - 4 \epsilon)
+    \theta_{\alpha}^{\text{RHF}} = \theta_{\beta}^{\text{RHF}} = 0.
 \end{equation}
-The RMP Hamiltonian then becomes
+%and energy
+%\begin{equation}
+%   E_\text{HF}(0, 0) = \frac{1}{2} (2 U - 4 \epsilon).
+%\end{equation}
+With this representation, the parametrised RMP Hamiltonian becomes
 \begin{widetext}
 \begin{equation}
 \label{eq:H_RMP}
 \bH_\text{RMP}\qty(\lambda) = 
-	\begin{pmatrix}
-		-2 \delta \epsilon + 2U(1 - \lambda/2)	&	-\lambda t					&	-\lambda t					&	0	\\
-		-\lambda t						&	- \delta \epsilon + (1-\lambda)U  	&	0		&	-\lambda t	\\
-		-\lambda t						&	0			&	- \delta \epsilon + (1-\lambda)U	&	-\lambda t	\\
-		0 				&	-\lambda t 	 					&	-\lambda t						&	\lambda U	\\
-	\end{pmatrix},
+\begin{pmatrix}
+    2(U-\epsilon) - \lambda U &	-\lambda t				 &	-\lambda t	            &	0	        \\
+    -\lambda t				  &	(U-\epsilon) - \lambda U &	0		                &	-\lambda t	\\
+    -\lambda t				  &	0			             &	(U-\epsilon) -\lambda U	&	-\lambda t	\\
+    0 				          &	-\lambda t 	 			 &	-\lambda t              &	\lambda U	\\
+\end{pmatrix}.
 \end{equation}
 \end{widetext}
 }
 
-\hughDraft{%
-Now let's think about the physics of the problem...
-For the ghost site to truly represent ionised electrons, we need the hopping term to vanish (or become very small).
-$U$ controls the strength of the HF repulsive potential. A stronger repulsion will encourage the electrons to be forced
-away from the "atomic" site at a less negative value of $\lambda$.
-$\epsilon$ controls the strength of attraction to the atom. A stronger attraction to the nucleus will mean that the electrons
-are more tightly bound to the atom and a more negative $\lambda$ will be needed for auto-ionisation.
-We therefore expect that the position of the RMP critical point will be controlled by the ratio $\epsilon / U$, with smaller ratios
-making ionisation occur closer to $\lambda$ origin, and making the divergence in these cases more likely.
-}
-
-\hughDraft{%
-Taking the exact case with $t=0$, the RMP energies becomes
+% DERIVING BEHAVIOUR OF THE CRITICAL SITE
+\hugh{%
+For the ghost site to perfectly represent ionised electrons, the hopping term between the two sites must vanish with $t=0$.
+This limit corresponds to the dissociative regime in the asymmetric Hubbard dimer (see Ref.~\ref{Carrascal_2018}), 
+and the RMP energies become
 \begin{subequations}
 \begin{align}
     E_{-} &= 2U - 2 \epsilon - U \lambda
     \\
     E_{\text{S}} &= U - \epsilon - U \lambda
     \\ 
-    E_{+} &= U \lambda 
+    E_{+} &= U \lambda,
 \end{align}
 \end{subequations}
-By comparison with Fig.~\ref{fig:RMP_cp}, the critical point can be identified as by solving $E_{-} = E_{+}$,
-giving 
+as shown in Fig.~\ref{subfig:rmp_cp} (dashed lines).
+The RMP critical point then corresponds to the intersection $E_{-} = E_{+}$, giving the critical $\lambda$ value
 \begin{equation}
-\lc = 1 - \epsilon / U.
+    \lc = 1 - \frac{\epsilon}{U}. 
 \end{equation}
-Thus, as expected, the critical point lies on the real axis and moves closer to the origin for larger 
-$U / \epsilon$. 
+Clearly the radius of convergence $\rc = \abs{\lc}$ is controlled directly by the ratio $\epsilon / U$, 
+with a convergent RMP series occurring for $\epsilon > 2 U$.
+The on-site repulsion $U$ controls the strength of the HF potential localised around the ``atomic site'', with a
+stronger repulsion encouraging the electrons to be ionised at a less negative value of $\lambda$. 
+Large $U$ can be physically interpreted as strong electron repulsion effects in electron dense molecules. 
+In contrast, smaller $\epsilon$ gives a weaker attraction to the atomic site, 
+representing strong screening of the nuclear attraction by core and valence electrons, 
+and again a less negative $\lambda$ is required for ionisation to occur.
+Both of these factors are common in atoms on the right-hand side of the periodic table, \eg\ \ce{F},
+\ce{O}, \ce{Ne}, and thus molecules containing these atoms are often class $\beta$ systems with
+a divergent RMP series due to the MP critical point.
 }
 
-\hughDraft{%
-The position of the critical point is controlled by the ratio $\epsilon / U$.
-If the magnitude of the ratio becomes greater than one, then the series diverges.
-We can interpret large $U$ as strong electron repulsion effects in electron dense molecules, 
-such as \ce{F-}. A small $\epsilon$ is also likely to correspond to 
-strong nuclear screening by the core and valence electrons. Both of these factors are 
-common in atoms on the right-hand-side of periodic table, 
-\eg\ \ce{F}, \ce{O}, \ce{Ne}, etc, as well as negatively-charged species, and so we recover the
-class $\beta$ system classification.
-}
-
-\hughDraft{%
-In practical calculations, one considers the perturbation energy in a finite basis and the critical point is modelled
-as a cluster of branch points close to the real axis. While we cannot change the size of our basis, we can adjust
-the extent to which the second site behaves as a ghost by making the hopping term larger.
-When $t$ is (slightly) non-zero, our modelled critical point becomes an EP point close to the real axis with a sharp
-associated avoided crossing for real $\lambda$. If $t$ becomes larger, this avoided crossing becomes less sharp and the EPs
-move away from the real axis. This mirrors the discussion of EPs approaching the real axis in the exact basis.
-This effect is shown by the dashed lines in Fig.~\ref{fig:RMP_cp}.
+% EXACT VERSUS APPROXIMATE
+\hugh{%
+The critical point in the exact case $t=0$ lies on the real $\lambda$ axis, mirroring the behaviour of a quantum
+phase transition.\cite{Kais_2006}
+However, in practical calculations performed with a finite basis set, the critical point is modelled as a cluster
+of branch points close to the real axis.
+The use of a finite basis can be modelled in the asymmetric dimer by making the second site a less
+idealised destination for the ionised electrons with a non-zero hopping term $t$.
+Taking the small value $t=0.1$ (Fig.~\ref{subfig:rmp_cp}: solid lines), the critical point becomes a
+sharp avoided crossing with a complex-conjugate pair of EPs close to the real axis (Fig.~\ref{subfig:rmp_cp_surf}).
+In the limit $t \rightarrow 0$, these EPs approach the real axis, mirroring Sergeev's discussion on finite basis
+set representations of the MP critical point.\cite{Sergeev_2006}
 }
 
 %%====================================================
