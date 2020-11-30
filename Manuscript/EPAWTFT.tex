@@ -117,12 +117,14 @@
 \newcommand{\bbR}{\mathbb{R}}
 \newcommand{\bbC}{\mathbb{C}}
 
+% Making life easier
 \newcommand{\Lup}{\mathcal{L}^{\uparrow}}
 \newcommand{\Ldown}{\mathcal{L}^{\downarrow}}
 \newcommand{\Lsi}{\mathcal{L}^{\sigma}}
 \newcommand{\Rup}{\mathcal{R}^{\uparrow}}
 \newcommand{\Rdown}{\mathcal{R}^{\downarrow}}
 \newcommand{\Rsi}{\mathcal{R}^{\sigma}}
+\newcommand{\vhf}{v_{\text{HF}}}
 
 
 \newcommand{\LCPQ}{Laboratoire de Chimie et Physique Quantiques (UMR 5626), Universit\'e de Toulouse, CNRS, UPS, France.}
@@ -840,6 +842,7 @@ gradient discontinuities or spurious minima.
 
 %==========================================%
 \subsection{Spin-Contamination in the Hubbard Dimer}
+\label{sec:spin_cont}
 %==========================================%
 
 %%% FIG 2 %%%
@@ -1362,82 +1365,74 @@ set representations of the MP critical point.\cite{Sergeev_2006}
 % Figure on the UMP critical point
 %------------------------------------------------------------------%
 \begin{figure*}[t]
-	\begin{subfigure}{0.49\textwidth}
-	\includegraphics[height=0.65\textwidth]{ump_critical_point}
-	\subcaption{\label{subfig:ump_cp}}
-    \end{subfigure}
-	\begin{subfigure}{0.49\textwidth}
-	\includegraphics[height=0.65\textwidth]{ump_ep_to_cp}
-	\subcaption{\label{subfig:ump_ep_to_cp}}
-    \end{subfigure}
-	\caption{%
-    \hugh{Modelling the RMP critical point using the asymmetric Hubbard dimer.
-        (\subref{subfig:rmp_cp}) Exact critical points with $t=0$ occur on the negative real $\lambda$ axis (dashed).
-        (\subref{subfig:rmp_cp_surf}) Modelling a finite basis using $t=0.1$ yields complex-conjugate EPs close to the
-        real axis, giving a sharp avoided crossing on the real axis (solid).
-    }
-	\label{fig:RMP_cp}}
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[height=0.65\textwidth]{ump_critical_point}
+\subcaption{\label{subfig:ump_cp}}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[height=0.65\textwidth]{ump_ep_to_cp}
+\subcaption{\label{subfig:ump_ep_to_cp}}
+\end{subfigure}
+\caption{%
+\hugh{%
+    The UMP ground-state EP becomes a critical point in the strong correlation limit (large $U/t$).
+    (\subref{subfig:ump_cp}) As the $U/t$ increases, the avoided crossing on the real $\lambda$ axis
+    becomes increasingly sharp.
+    (\subref{subfig:ump_ep_to_cp}) The convergence of the EPs onto the real axis for $U/t \rightarrow \infty$
+    mirrors the formation of the RMP critical point and other QPTs in the infinite basis set limit.
+}
+\label{fig:UMP_cp}}
+
 \end{figure*}
 %------------------------------------------------------------------%
 
 % RELATIONSHIP BETWEEN QPT AND UMP
-\hughDraft{%
-The ground-state EP observed in the UMP series also has a small imaginary part and falls close to the real axis. 
-As the correlation strength increases, this EP moves closer to the real axis and closer to the radius of convergence at 
-$\lambda = 1$. So can we understand this using the arguments related to the critical point?
-Closed-shell case:
-The work by Stillinger builds an argument around the HF potential $v_{\text{HF}}$ which, by itself, 
-is repulsive and concentrated around the 
-occupied orbitals. As $\lambda$ becomes increasingly positive along the real axis, this HF potential 
-becomes attractive for $\lambda > 1$.
-However, the explicit two-electron becomes increasingly repulsive for larger positive $\lambda$, 
-until eventually single electrons are successively expelled from the molecule.
-Effect of symmetry-breaking:
-Things become more subtle for the symmetry-broken case because we must now consider the $\alpha$ and $\beta$ HF potentials.
-When UHF symmetry breaking occurs in the Hubbard dimer, with the $\alpha$ electron localising on the left site, 
-the $\alpha$ HF potential
-will then be a repulsive interaction localised around the $\beta$ electron, so on the right site. 
-The same is true for the $\beta$ HF potential.
-Therefore, as $\lambda$ becomes greater than 1 and the HF potentials become attractive, 
-there is a driving force for the $\alpha$ and $\beta$.
-electrons to swap sites. If both electrons swap at the same time, then we get a double excitation. Therefore, we expect an 
-avoided crossing as $\lambda$ is increased beyond 1. 
-The "sharpness" of this avoided crossing is controlled by the strength of the electron-electron repulsion... see below.
+\hugh{%
+In Section~\ref{sec:spin_cont} we showed that the slow convergence of the UMP series for the strongly correlated
+Hubbard dimer was due to a complex-conjguate pair of  EPs just outside the radius of convergence.
+These EPs have positive real components and small imaginary components (Fig.~\ref{fig:UMP}), suggesting a potential 
+connection to MP critical points and QPTs.
+For $\lambda>1$, the HF potential becomes an attractive component in Stillinger's 
+Hamiltonian [Eq.~\eqref{eq:HamiltonianStillinger}], while the explicit electron-electron interaction
+becomes increasingly repulsive.
+Critical points along the positive real $\lambda$ axis for closed-shell molecules then represent 
+points were the two-electron repulsion overcomes the attractive HF potential and an electron
+are successively expelled from the molecule.\cite{Sergeev_2006}
 }
 
-\hughDraft{%
-For small $U/t$, the HF potentials will be weak and the electrons will slowly delocalise over 
-both sites as $\lambda$ increases. The UHF reference itself already has some degree of delocalisation over 
-both sites as we are only just beyond the CFP. This leads to a
-"shallow" avoided crossing, and the corresponding EPs corresponding with have non-zero imaginary parts. 
-At larger $U/t$, the HF potentials will becomes increasingly repulsive and the "swapping" driving force will become stronger. 
-Furthermore, the strong on-site repulsion will make delocalisation over both sites increasingly unfavourable. 
-We therefore see that the electrons swap sites almost instantaneously as $\lambda$ passes through 1, as this is the threshold point 
-where the HF potential becomes attractive. This very rapid change in the nature of the state corresponds to a "sharp" avoided
-crossing, with EPs close to the real axis.
-Note that, although this appears to be an avoided crossing with the first-excited state, 
-by the time we have reached $\lambda \approx 1$,
-we are beyond the excited-state avoided crossing and thus the first-excited state qualitatively corresponds to a double
-excitation from the reference. This matches our expectation of both electrons swapping sites.
-Okay we can't actually do $U/t = \infty$, but we can make it very large. With such a strong attractive HF potential and such strong
-on-site repulsion, the electrons swapping process will occur exactly at $\lambda=1$. In this limit, the change is so sudden that it
-now corresponds to a QPT in the perturbation approximation, and again the EPs fall on the real axis.
+\hugh{%
+Symmetry-breaking in the UMP reference creates different HF potentials for the spin-up and spin-down electrons.
+Consider the reference UHF solution where the spin-up and spin-down electrons are localised on the left and
+right sites respectively.  
+The spin-up HF potential will then be a repulsive interaction from the spin-down electron 
+density that is centred around the right site (and vice-versa).
+As $\lambda$ becomes greater than 1 and the HF potentials become attractive, there will be a sudden
+driving force for the electrons to swap sites.
+This swapping process can also be represented as a double excitation, and thus an avoided crossing will occur
+for $\lambda \geq 1$ (Fig.~\ref{subfig:ump_cp}).
+Note that, although this appears to be an avoided crossing between the ground and first-excited state, 
+the earlier excited-state avoided crossing means that the first-excited state qualitatively 
+represents the double excitation for $\lambda > 0.5.$
 }
 
-\hughDraft{%
-By applying the separation of the Hamiltionian proposed by Stillinger, we have been able to rationalise why the UMP ground-state
-occurs so close to radius of convergence and increasingly close to the real axis for large $U/t$. The key feature here is the fact that the
-HF potential is different for the $\alpha$ and $\beta$ electrons, and by extension the potential felt by 
-an electron is not strictly localised around
-that electrons orbitals. This is completely different to the symmetric structure in the closed-shell case. Because of these different 
-potentials, there can be a large driving force for spatial rearrangement occurring as soon as the HF potential becomes positive 
-(at $\lambda=1$). 
-This sudden change in electron distribution is made more extreme if the HF potential and electron repulsion dominate over the 
-one-electron terms, which also corresponds to the regime of strong wave function symmetry breaking. 
-We have therefore provided a physical motivation behind why this EP can behave like a QPT for strong symmetry breaking. 
-This supports the conclusions in Antoine's report that the symmetry-broken EP behaves as a class $\beta$ singularity.
+% SHARPNESS AND QPT
+\hugh{%
+The ``sharpness'' of the avoided crossing is controlled by the correlation strength $U/t$.
+For small $U/t$, the HF potentials will be weak and the electrons will delocalise over the two sites,
+both in the UHF reference and as $\lambda$ increases.
+This delocalisataion dampens the electron swapping process and leads to a ``shallow'' avoided crossing
+that corresponds to EPs with non-zero imaginary components (solid lines in Fig.~\ref{subfig:ump_cp}).
+As $U/t$ becomes larger, the HF potentials become stronger and the on-site repulsion dominates the hopping
+term to make electron delocalisation less favourable.
+These effects create a stronger driving force for the electrons to swap sites until eventually this swapping
+occurs exactly at $\lambda = 1$.
+In this limit, the ground-state EPs approach the real axis (Fig.~\ref{subfig:ump_ep_to_cp}) and the avoided 
+crossing creates a gradient discontinuity in the ground-state energy (dashed lines in Fig.~\ref{subfig:ump_cp}).
+We therefore find that, in the strong correlation limit, the symmetry-broken ground-state EP becomes becomes
+a new type of MP critical and represents a QPT in the perturbation approximation. 
+Furthermore, this argument explains why the dominant UMP singularity lies so close, but always outside, the 
+radius of convergence (see Fig.~\ref{fig:RadConv}).
 }
-
 
 %%====================================================
 %\subsection{The physics of quantum phase transitions}
