@@ -388,8 +388,8 @@ setting $\lambda = 1$ then yields approximate solutions to Eq.~\eqref{eq:SchrEq}
 Mathematically, Eq.~\eqref{eq:E_expansion} corresponds to a Taylor series expansion of the exact energy
 around the reference system $\lambda = 0$.
 The energy of the target ``physical'' system is recovered at the point $\lambda = 1$.
-However, like all series expansions, the Eq.~\eqref{eq:E_expansion} has a radius of convergence $\rc$. 
-When $\rc \le 1$, the Rayleigh--Sch\"{r}odinger expansion will diverge
+However, like all series expansions, Eq.~\eqref{eq:E_expansion} has a radius of convergence $\rc$. 
+When $\rc < 1$, the Rayleigh--Schr\"{o}dinger expansion will diverge
 for the physical system.
 The value of $\rc$ can vary significantly between different systems and strongly depends on the particular decomposition
 of the reference and perturbation Hamiltonians in Eq.~\eqref{eq:SchrEq-PT}.\cite{Mihalka_2017b}
@@ -418,9 +418,9 @@ This divergence occurs because $f(x)$ has four singularities in the complex
 ($\e^{\i\pi/4}$, $\e^{-\i\pi/4}$, $\e^{\i3\pi/4}$, and $\e^{-\i3\pi/4}$) with a modulus equal to $1$, demonstrating
 that complex singularities are essential to fully understand the series convergence on the real axis.\cite{BenderBook}
 
-The radius of convergence for the perturbation series Eq.~\eqref{eq:E_expansion} is therefore dictated by the magnitude $\abs{\lambda_c}$ of the
+The radius of convergence for the perturbation series Eq.~\eqref{eq:E_expansion} is therefore dictated by the magnitude $r_c = \abs{\lambda_c}$ of the
 singularity in $E(\lambda)$ that is closest to the origin.
-Note that when $\lambda = \lambda_c$, one cannot \textit{a priori} predict if the series is convergent or not.
+Note that when $\abs{\lambda} = r_c$, one cannot \textit{a priori} predict if the series is convergent or not.
 For example, the series $\sum_{k=1}^\infty \lambda^k/k$ diverges at $\lambda = 1$ but converges at $\lambda = -1$.
 
 Like the exact system in Sec.~\ref{sec:example}, the perturbation energy $E(\lambda)$ represents
