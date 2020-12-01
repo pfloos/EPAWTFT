@@ -164,13 +164,14 @@ Finally, we discuss several resummation techniques (such as Pad\'e and quadratic
 %%%%%%%%%%%%%%%%%%%%%%%
 
 Due to the ubiquitous influence of processes involving electronic states in physics, chemistry, and biology, their faithful description from first principles has been one of the grand challenges faced by theoretical chemists since the dawn of computational chemistry. 
-Accurately predicting ground- and excited-state energies (hence excitation energies) is particularly valuable in this context, and it has concentrated most of the efforts within the community.
-An armada of theoretical and computational methods have been developed to this end, each of them being plagued by its own flaws. 
-The fact that none of these methods is successful in every chemical scenario has encouraged chemists to carry on the development of new methodologies, their main goal being to get the most accurate energies (and properties) at the lowest possible computational cost in the most general context.
+Accurately predicting ground- and excited-state energies (hence excitation energies) is particularly valuable in this context, and it has concentrated most of the efforts within the community. 
+An armada of theoretical and computational methods have been developed to this end, each of them being plagued by its own flaws. \cite{SzaboBook,JensenBook,CramerBook,HelgakerBook,ParrBook,FetterBook,ReiningBook}
+The fact that none of these methods is successful in every chemical scenario has encouraged chemists and physicists to carry on the development of new methodologies, their main goal being to get the most accurate energies (and properties) at the lowest possible computational cost in the most general context.
+In particular, the design of an affordable, black-box method performing well in both the weak and strong correlation regimes is still elusive.
 
 One common feature of all these methods is that they rely on the notion of quantised energy levels of Hermitian quantum mechanics, in which the different electronic states of a molecule or an atom are energetically ordered, the lowest being the ground state while the higher ones are excited states. 
 Within this quantised paradigm, electronic states look completely disconnected from one another.
-Many current methods study excited states using only ground-state information, creating a ground-state bias that leads to incorrect excitation energies.
+For example, many current methods study excited states using only ground-state information, creating a ground-state bias that leads to incorrect excitation energies.\cite{Piecuch_2002,Dreuw_2005,Krylov_2006,Sneskov_2012,Gonzales_2012,Laurent_2013,Adamo_2013,Ghosh_2018,Blase_2020,Loos_2020a}
 However, one can gain a different perspective on quantisation extending quantum chemistry into the complex domain.
 In a non-Hermitian complex picture, the energy levels are \textit{sheets} of a more complicated topological manifold called \textit{Riemann surface}, and they are smooth and continuous \textit{analytic continuation} of one another. 
 In other words, our view of the quantised nature of conventional Hermitian quantum mechanics arises only from our limited perception of the more complex and profound structure of its non-Hermitian variant. \cite{MoiseyevBook,BenderPTBook}
