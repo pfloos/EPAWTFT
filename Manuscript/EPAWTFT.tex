@@ -202,6 +202,8 @@ Critical points are singularities which lie on the real axis and where the natur
 However, these do not clearly belong to a given class of singularities and they cannot be rigorously classified as they have more complicated functional forms.
 }
 
+\titou{T2: I THINK THAT IN GENERAL THE AXE LABELS ARE TOO SMALL.}
+
 %%%%%%%%%%%%%%%%%%%%%%%
 \section{Exceptional Points in Electronic Structure}
 \label{sec:EPs}
@@ -219,8 +221,8 @@ $\Nn$ (clamped) nuclei is defined for a given nuclear framework as
     - \sum_{i}^{\Ne} \sum_{A}^{\Nn} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}} 
     + \sum_{i<j}^{\Ne}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}},
 \end{equation}
-where $\vb{r}_i$ defines the position of the $i$-th electron, $\vb{R}_{A}$ and $Z_{A}$ are the position
-and charge of the $A$-th nucleus respectively, and $\vb{R} = (\vb{R}_{1}, \dots, \vb{R}_{\Nn})$ is a
+where $\vb{r}_i$ defines the position of the $i$th electron, $\vb{R}_{A}$ and $Z_{A}$ are the position
+and charge of the $A$th nucleus respectively, and $\vb{R} = (\vb{R}_{1}, \dots, \vb{R}_{\Nn})$ is a
 collective vector for the nuclear positions.
 The first term represents the kinetic energy of the electrons, while 
 the two following terms account for the electron-nucleus attraction and the electron-electron repulsion.
@@ -239,7 +241,7 @@ However, exact solutions to Eq.~\eqref{eq:SchrEq} are only possible in the simpl
 the one-electron hydrogen atom and some specific two-electron systems with well-defined mathematical 
 properties.\cite{Taut_1993,Loos_2009b,Loos_2010e,Loos_2012}
 In practice, approximations to the exact Schr\"{o}dinger equation must be introduced, including
-the perturbation theories and Hartree--Fock approximation considered in this review
+perturbation theories and Hartree--Fock approximation considered in this review.
 In what follows, we will drop the parametric dependence on the nuclear geometry and, 
 unless otherwise stated, atomic units will be used throughout.
 
@@ -386,8 +388,8 @@ setting $\lambda = 1$ then yields approximate solutions to Eq.~\eqref{eq:SchrEq}
 Mathematically, Eq.~\eqref{eq:E_expansion} corresponds to a Taylor series expansion of the exact energy
 around the reference system $\lambda = 0$.
 The energy of the target ``physical'' system is recovered at the point $\lambda = 1$.
-However, like all series expansions, the Eq.~\eqref{eq:E_expansion} has a radius of convergence $\rc$. 
-When $\rc \le 1$, the Rayleigh--Sch\"{r}odinger expansion will diverge
+However, like all series expansions, Eq.~\eqref{eq:E_expansion} has a radius of convergence $\rc$. 
+When $\rc < 1$, the Rayleigh--Schr\"{o}dinger expansion will diverge
 for the physical system.
 The value of $\rc$ can vary significantly between different systems and strongly depends on the particular decomposition
 of the reference and perturbation Hamiltonians in Eq.~\eqref{eq:SchrEq-PT}.\cite{Mihalka_2017b}
@@ -416,9 +418,9 @@ This divergence occurs because $f(x)$ has four singularities in the complex
 ($\e^{\i\pi/4}$, $\e^{-\i\pi/4}$, $\e^{\i3\pi/4}$, and $\e^{-\i3\pi/4}$) with a modulus equal to $1$, demonstrating
 that complex singularities are essential to fully understand the series convergence on the real axis.\cite{BenderBook}
 
-The radius of convergence for the perturbation series Eq.~\eqref{eq:E_expansion} is therefore dictated by the magnitude $\abs{\lambda_c}$ of the
+The radius of convergence for the perturbation series Eq.~\eqref{eq:E_expansion} is therefore dictated by the magnitude $r_c = \abs{\lambda_c}$ of the
 singularity in $E(\lambda)$ that is closest to the origin.
-Note that when $\lambda = \lambda_c$, one cannot \textit{a priori} predict if the series is convergent or not.
+Note that when $\abs{\lambda} = r_c$, one cannot \textit{a priori} predict if the series is convergent or not.
 For example, the series $\sum_{k=1}^\infty \lambda^k/k$ diverges at $\lambda = 1$ but converges at $\lambda = -1$.
 
 Like the exact system in Sec.~\ref{sec:example}, the perturbation energy $E(\lambda)$ represents
@@ -469,16 +471,13 @@ with the corresponding matrix elements
 	h_i & = \mel{\phi_i}{\Hat{h}}{\phi_i},
     & 
     f_i & = \mel{\phi_i}{\Hat{f}}{\phi_i}.
-	%J_{ij} & = \mel{\phi_i}{\Hat{J}_j}{\phi_i},
-	%&
-	%K_{ij} & = \mel{\phi_i}{\Hat{K}_j}{\phi_i}.
 \end{align}
 The optimal HF wave function is identified by using the variational principle to minimise the HF energy.
 For any system with more than one electron, the resulting Slater determinant is not an eigenfunction of the exact Hamiltonian $\hH$. 
 However, it is by definition an eigenfunction of the approximate many-electron HF Hamiltonian constructed 
 from the one-electron Fock operators as
 \begin{equation}\label{eq:HFHamiltonian}
-	\hH_{\text{HF}} = \sum_{i} f(\vb{x}_i).
+	\hH_{\text{HF}} = \sum_{i}^{N} f(\vb{x}_i).
 \end{equation}
 From hereon, $i$ and $j$ denote occupied orbitals, $a$ and $b$ denote unoccupied (or virtual) orbitals, while $p$, $q$, $r$, and $s$ denote arbitrary orbitals.
 
@@ -486,12 +485,12 @@ From hereon, $i$ and $j$ denote occupied orbitals, $a$ and $b$ denote unoccupied
 In the most flexible variant of real HF theory (generalised HF) the one-electron orbitals can be complex-valued
 and contain a mixture of spin-up and spin-down components.\cite{Mayer_1993,Jimenez-Hoyos_2011}
 However, the application of HF with some level of constraint on the orbital structure is far more common.
-Forcing the spatial part of the orbitals to be the same for spin-up and spin-down electrons leads to restricted HF (RHF) theory, 
+Forcing the spatial part of the orbitals to be the same for spin-up and spin-down electrons leads to restricted HF (RHF) method, 
 while allowing different orbitals for different spins leads to the so-called unrestricted HF (UHF) approach.\cite{StuberPaldus}
 The advantage of the UHF approximation is its ability to correctly describe strongly correlated systems, 
-such as antiferromagnetic phases\cite{Slater_1951} or the dissociation of the hydrogen dimer,\cite{Coulson_1949}
+such as antiferromagnetic phases\cite{Slater_1951} or the dissociation of the hydrogen dimer.\cite{Coulson_1949}
 However, by allowing different orbitals for different spins, the UHF is no longer required to be an eigenfunction of 
-the total spin $\hat{\mathcal{S}}^2$ operator, leading to ``spin-contamination'' in the wave function.
+the total spin operator $\hat{\mathcal{S}}^2$, leading to ``spin-contamination'' in the wave function.
 
 %================================================================%
 \subsection{Hartree--Fock in the Hubbard Dimer}
@@ -504,12 +503,12 @@ the total spin $\hat{\mathcal{S}}^2$ operator, leading to ``spin-contamination''
 \begin{figure}
     \includegraphics[width=\linewidth]{HF_real.pdf}
     \caption{\label{fig:HF_real}
-    RHF and UHF energies as a function of the correlation strength $U/t$. 
+    RHF and UHF energies \titou{in the Hubbard dimer} as a function of the correlation strength $U/t$. 
     The symmetry-broken UHF solution emerges at the coalescence point $U=2t$ (black dot), often known as the Coulson-Fischer point.}
 \end{figure}
 %%%%%%%%%%%%%%%%%
 
-In the Hubbard dimer, the UHF energy can be parametrised using two rotation angles $\ta$ and $\tb$ as
+In the Hubbard dimer, the HF energy can be parametrised using two rotation angles $\ta$ and $\tb$ as
 \begin{equation}
 E_\text{HF}(\ta, \tb) = -t\, \qty( \sin \ta + \sin \tb ) + \frac{U}{2} \qty( 1 + \cos \ta \cos \tb ),
 \end{equation}
@@ -539,7 +538,7 @@ and the ground-state RHF energy (Fig.~\ref{fig:HF_real})
 	E_\text{RHF} \equiv E_\text{HF}(\ta^\text{RHF}, \tb^\text{RHF}) = -2t + \frac{U}{2}
 \end{equation}
 However, in the strongly correlated regime $U>2t$, the closed-shell orbital restriction prevents RHF from 
-modelling the correct physics with the two electrons on opposing sites.
+modelling the correct physics with the two electrons on opposite sites.
 
 %%% FIG 3 (?) %%%
 % Analytic Continuation of HF
@@ -554,7 +553,7 @@ modelling the correct physics with the two electrons on opposing sites.
 	\subcaption{\label{subfig:UHF_cplx_energy}}
     \end{subfigure}
 	\caption{%
-    (\subref{subfig:UHF_cplx_angle}) Real component of the UHF angle $\ta^{\text{UHF}}$ for $\lambda \in \bbC$.
+    (\subref{subfig:UHF_cplx_angle}) Real component of the UHF angle $\ta^{\text{UHF}}$ for $\lambda \in \bbC$ \titou{in the Hubbard dimer for $U/t = ??$}.
     Symmetry-broken solutions correspond to individual sheets and become equivalent at 
     the \textit{quasi}-EP $\lambda_{\text{c}}$ (black dot).
     The RHF solution is independent of $\lambda$, giving the constant plane at $\pi/2$.
@@ -630,7 +629,7 @@ In contrast, $U < 2t$ yields $\lambda_{\text{c}} > 1$ and corresponds to
 the regime where the HF ground state is correctly represented by symmetry-pure orbitals.
 
 % COMPLEX ADIABATIC CONNECTION
-We have recently shown that the complex scaled Fock operator Eq.~\eqref{eq:scaled_fock}
+We have recently shown that the complex scaled Fock operator \eqref{eq:scaled_fock}
 also allows states of different symmetries to be interconverted by following a well-defined
 contour in the complex $\lambda$-plane.\cite{Burton_2019}
 In particular, by slowly varying $\lambda$ in a similar (yet different) manner
@@ -640,19 +639,10 @@ via a stationary path of HF solutions.
 This novel approach to identifying excited-state wave functions demonstrates the fundamental 
 role of \textit{quasi}-EPs in determining the behaviour of the HF approximation.
 
-%\titou{In a recent paper, \cite{Burton_2019} using holomorphic Hartree--Fock (h-HF) \cite{Hiscock_2014,Burton_2018,Burton_2016} as an analytic continuation of conventional HF theory, we have demonstrated, on a simple model, that one can interconvert states of different symmetries and natures by following well-defined contours in the complex $\lambda$-plane, where $\lambda$ is the strength of the electron-electron interaction (see Fig.~\ref{fig:iAC}).
-%In particular, by slowly varying $\lambda$ in a similar (yet different) manner to an adiabatic connection in density-functional theory, \cite{Langreth_1975,Gunnarsson_1976,Zhang_2004} one can ``morph'' a ground-state wave function into an excited-state wave function via a stationary path of HF solutions. \cite{Seidl_2018}
-%In such a way, we could obtain a doubly-excited state wave function starting from the ground state wave function, a process which is not as easy as one might think. \cite{Gilbert_2008,Thom_2008,Shea_2018}
-%One of the fundamental discovery we made was that Coulson-Fischer points (where multiple symmetry-broken solutions coalesce) play a central role and can be classified as \textit{quasi}-exceptional points, as the wave functions do not become self-orthogonal.
-%The findings reported in Ref.~\onlinecite{Burton_2019} represent the very first study of non-Hermitian quantum mechanics for the exploration of multiple solutions at the HF level. 
-%It perfectly illustrates the deeper topology of electronic states revealed using a complex-scaled electron-electron interaction.
-%Through the introduction of non-Hermiticity, we have provided a more general framework in which the complex and diverse characteristics of multiple solutions can be explored and understood.}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{M{\o}ller--Plesset Theory in the Complex Plane}
+\section{M{\o}ller--Plesset Perturbation Theory in the Complex Plane}
 \label{sec:MP}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 %=====================================================%
 \subsection{Background Theory}
@@ -703,22 +693,9 @@ slowly convergent, or catastrophically divergent results.\cite{Gill_1986,Gill_19
 Furthermore, the convergence properties of the MP series can depend strongly on the choice of restricted or
 unrestricted reference orbitals.
 
-% HGAB: I don't think this parapgrah tells us anything we haven't discussed before
-%A convenient way to investigate the convergence properties of the MP series is to analytically continue the coupling parameter $\lambda$ into the complex variable. 
-%By doing so, the Hamiltonian and the energy become complex-valued functions of $\lambda$, 
-%and the energy becomes a multivalued function on $K$ Riemann sheets (where $K$ is the number of basis functions).
-%As mentioned above, by searching the singularities of the function $E(\lambda)$, one can get information on the convergence properties of the MP series. 
-%These singularities of the energy function are exactly the EPs connecting the electronic states as mentioned in Sec.~\ref{sec:intro}. 
-%The direct computation of the terms of the series is quite manageable up to fourth order in perturbation, while the fifth and sixth order in perturbation can still be obtained but at a rather high cost. \cite{JensenBook}
-%In order to better understand the behaviour of the MP series and how it is connected to the singularity structure, we have to access high-order terms. 
-%For small systems, one can access the whole terms of the series using full configuration interaction (FCI). 
-%If the Hamiltonian $H(\lambda)$ is diagonalized in the FCI space, one gets the exact energies (in this finite Hilbert space) and the Taylor expansion with respect to $\lambda$ allows to access the MP perturbation series at any order.
-
-
 Although practically convenient for electronic structure calculations, the MP partitioning is not 
-the only possibility and alternative partitionings have been considered including: %proposed in the literature:
+the only possibility and alternative partitionings have been considered including: 
 i) the Epstein-Nesbet (EN) partitioning which consists in taking the diagonal elements of $\hH$ as the zeroth-order Hamiltonian. \cite{Nesbet_1955,Epstein_1926} 
-%Hence, the off-diagonal elements of $\hH$ are the perturbation operator,
 ii) the weak correlation partitioning in which the one-electron part is consider as the unperturbed Hamiltonian $\hH^{(0)}$ and the two-electron part is the perturbation operator $\hV$, and 
 iii) the strong coupling partitioning where the two operators are inverted compared to the weak correlation partitioning. \cite{Seidl_2018}
 While an in-depth comparison of these different approaches can offer insight into 
@@ -730,7 +707,7 @@ to the convergence properties of the MP expansion.
 %=====================================================%
 
 % GENERAL DESIRE FOR WELL-BEHAVED CONVERGENCE AND LOW-ORDER TERMS
- Among the most desirable properties of any electronic structure technique is the existence of 
+Among the most desirable properties of any electronic structure technique is the existence of 
 a systematic route to increasingly accurate energies. 
 In the context of MP theory, one would like a monotonic convergence of the perturbation
 series towards the exact energy such that the accuracy increases as each term in the series is added.
@@ -756,10 +733,9 @@ diatomics, where low-order RMP and UMP expansions give qualitatively wrong bindi
 % SLOW UMP CONVERGENCE AND SPIN CONTAMINATION
 The divergence of RMP expansions for stretched bonds can be easily understood from two perspectives.\cite{Gill_1988a}
 Firstly, the exact wave function becomes increasingly multi-configurational as the bond is stretched, and the 
-HF wave function no longer provides a qualitatively correct reference for the perturbation expansion.
-Secondly, the energy gap between the bonding and anitbonding orbitals associated with the stretch becomes
-increasingly small at larger bond lengths, leading to a divergence in the Rayleigh--Schr\"odinger perturbation
-expansion Eq.~\eqref{eq:EMP2}.
+\titou{R}HF wave function no longer provides a qualitatively correct reference for the perturbation expansion.
+Secondly, the energy gap between the bonding and antibonding orbitals associated with the stretch becomes
+increasingly small at larger bond lengths, \titou{leading to a divergence, for example, in the second-order MP correction \eqref{eq:EMP2}.}
 In contrast, the origin of slow UMP convergence is less obvious as the reference UHF energy remains
 qualitatively correct at large bond lengths and the orbital degeneracy is avoided.
 Furthermore, this slow convergence can also be observed in molecules with a UHF ground state at the equilibrium
@@ -770,14 +746,14 @@ Using the UHF framework allows the singlet ground state wave function to mix wit
 leading to spin contamination where the wave function is no longer an eigenfunction of the $\Hat{\cS}^2$ operator.
 The link between slow UMP convergence and this spin-contamination was first systematically investigated
 by Gill \etal\ using the minimal basis \ce{H2} model.\cite{Gill_1988}
-In this work, the authors compared the UMP series with the exact RHF- and UHF-based FCI expansions
+In this work, the authors compared \titou{the UMP series with the exact RHF- and UHF-based FCI expansions (T2: I don't understand this)}
 and identified that the slow UMP convergence arises from its failure to correctly predict the amplitude of the
 low-lying double excitation.
 This erroneous description of the double excitation amplitude has the same origin as the spin-contamination in the reference
 UHF wave function, creating the first direct link between spin-contamination and slow UMP convergence.\cite{Gill_1988}
 
 % LEPETIT CHAT
-Lepetit \etal\ later analysed the difference between perturbation convergence using the unrestricted MP 
+Lepetit \etal\ later analysed the difference between perturbation convergence using the UMP 
 and EN partitionings. \cite{Lepetit_1988}
 They argued that the slow UMP convergence for stretched molecules arises from 
 (i) the fact that the MP denominator (see Eq.~\ref{eq:EMP2})
@@ -803,42 +779,6 @@ More recent formulations of spin-projected perturbations theories have considere
 Hamiltonian.\cite{Tsuchimochi_2014,Tsuchimochi_2019}
 These methods yield more accurate spin-pure energies without 
 gradient discontinuities or spurious minima.
-
-%When one relies on MP perturbation theory (and more generally on any perturbative partitioning), it would be reasonable to ask for a systematic improvement of the energy with respect to the perturbative order, \ie, one would expect that the more terms of the perturbative series one can compute, the closer the result from the exact energy.
-%In other words, one would like a monotonic convergence of the MP series. Assuming this, the only limiting process to get the exact correlation energy (in a finite basis set) would be our ability to compute the terms of this perturbation series.
-%Unfortunately this is not as easy as one might think because i) the terms of the perturbative series become rapidly computationally cumbersome, and ii) erratic behaviour of the perturbative coefficients are not uncommon. 
-%For example, in the late 80's, Gill and Radom reported deceptive and slow convergences in stretched systems \cite{Gill_1986,Gill_1988} (see also Refs.~\onlinecite{Handy_1985,Lepetit_1988}). 
-%In Ref.~\onlinecite{Gill_1986}, the authors showed that the RMP series is convergent, yet oscillatory which is far from being convenient if one is only able to compute the first few terms of the expansion.
-%For example, in the case of the barrier to homolytic fission of \ce{He2^2+} in a minimal basis set, RMP5 is worse than RMP4 (see Fig.~2 in Ref.~\onlinecite{Gill_1986}).
-%On the other hand, the UMP series is monotonically convergent after UMP5 but very slowly . 
-%Thus, one cannot practically use it for systems where only the first terms are computationally accessible.
-
-%When a bond is stretched, in most cases the exact wave function becomes more and more of multi-reference nature. 
-%Yet, the HF wave function is restricted to be a single Slater determinant.
-%It is then inappropriate to model (even qualitatively) stretched systems. 
-%Nevertheless, as explained in Sec.~\ref{sec:HF} and illustrated in Sec.~\ref{sec:HF_hubbard}, the HF wave function can undergo symmetry breaking to lower its energy by sacrificing one of the symmetry of the exact wave function in the process (see also the pedagogical example of \ce{H2} in Ref.~\onlinecite{SzaboBook}). 
-%One could then potentially claim that the RMP series exhibits deceptive convergence properties as the RHF Slater determinant is a poor approximation of the exact wave function for stretched system. 
-%However, as illustrated above, even in the unrestricted formalism which clearly represents a better description of a stretched system, the UMP series does not have the smooth and rapidly convergent behaviour that one would wish for. 
-%The reasons behind this ambiguous behaviour are further explained below.
-
-%In the unrestricted framework the singlet ground state wave function is allowed to mix with triplet wave functions, leading to the so-called spin contamination issue. Gill \textit{et al.}~highlighted the link between slow convergence of the UMP series and spin contamination for \ce{H2} in a minimal basis. \cite{Gill_1988}
-%Handy and coworkers reported the same behaviour of the UMP series (oscillatory and slowly monotonically convergent) in stretched \ce{H2O} and \ce{NH2}. \cite{Handy_1985} Lepetit \textit{et al.}~analysed the difference between the MP and EN partitioning for the UHF reference. \cite{Lepetit_1988} 
-%They concluded that the slow convergence of the UMP series is due to i) the fact that the MP denominator (see Eq.~\ref{eq:EMP2}) tends to a constant instead of vanishing, and ii) the lack of the singly-excited configurations (which only appears at fourth order) that strongly couple to the doubly-excited configurations.
-%We believe that this divergent behaviour might therefore be attributed to the need for the single excitations to focus on correcting the structure of the reference orbitals rather than capturing the correlation energy. 
-
-%Cremer and He analysed 29 atomic and molecular systems at the FCI level \cite{Cremer_1996} and grouped them in two classes: i) the \textit{class A} systems where one observes a monotonic convergence \titou{of the RMP series?} to the FCI energy, and ii) the \textit{class B} systems for which convergence is erratic after initial oscillations. 
-%Their system set contains stretched molecules as well as molecules at their equilibrium geometry for various basis sets. 
-%They highlighted that \cite{Cremer_1996}
-%\textit{``Class A systems are characterised by electronic structures with well-separated electron pairs while class B systems are characterized by electronic structures with electron clustering in one or more regions.''}
-%Moreover, they analysed the contribution of the triple (T) excitations to the MP4, MP5 and MP6 energies next to the single, double and quadruple (SDQ) excitations contribution.
-%They showed that class A systems have very little contribution from the triple excitations and that most of the correlation energy is due to pair correlation. 
-%On the other hand, class B systems have an important contribution from the triple excitations which alternates in sign resulting in an oscillation of the total correlation energy.
-%This observation on the contribution to the MP$n$ energy corroborates the electronic structure discussed above.
-%As one can only compute the first terms of the MP series, a smart way of getting more accurate results is to use extrapolation formula, \ie, estimating the limit of the series with only few terms. 
-%Cremer and He proved that using specific extrapolation formulas of the MP series for class A and class B systems improves the precision of the results compared to the formula used without resorting to classes. \cite{Cremer_1996}
-%The mean absolute deviation taking the FCI correlation energies as reference is $0.3$ millihartree with the class-specific formula whereas the deviation increases to 12 millihartree using the general formula.  
-%Even if there were still shaded areas in their analysis and that their classification was incomplete, the work of Ref.~\onlinecite{Cremer_1996} clearly evidenced that understanding the origin of the different modes of convergence could potentially lead to a more rationalised use of MP perturbation theory and, hence, to more accurate correlation energy estimates.
-
 
 %==========================================%
 \subsection{Spin-Contamination in the Hubbard Dimer}
@@ -869,7 +809,7 @@ gradient discontinuities or spurious minima.
 
 The behaviour of the RMP and UMP series observed in \ce{H2} can also be illustrated by considering
 the analytic Hubbard dimer with a complex-valued perturbation strength.
-In this system, the stretching of the \ce{H\bond{-}H} bond is directly mirrored by an increase in the electron correlation $U/t$.
+In this system, the stretching of the \ce{H\bond{-}H} bond is directly mirrored by an increase in the \trash{electron correlation} \titou{ratio} $U/t$.
 Using the ground-state RHF reference orbitals leads to the parametrised RMP Hamiltonian
 \begin{widetext}
 \begin{equation}
@@ -898,10 +838,6 @@ The Taylor expansion of the RMP energy can then be evaluated to obtain the $k$th
 \begin{equation}
 	E_\text{RMP}^{(k)} = U \delta_{0,k} - \frac{1}{2} \frac{U^k}{(4t)^{k-1}} \mqty( 1/2 \\ k/2).
 \end{equation}
-%with 
-%\begin{equation}
-%	E_{\text{MP}n}(\lambda) = \sum_{k=0}^n E_\text{MP}^{(k)} \lambda^k.
-%\end{equation}
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % RADIUS OF CONVERGENCE PLOTS
@@ -925,9 +861,6 @@ For the divergent case, the $\lep$ lies inside this cylinder of convergence, whi
 outside this cylinder.
 In both cases, the EP connects the ground state with the doubly-excited state, and thus the convergence behaviour
 for the two states using the ground-state RHF orbitals is identical.
-% HGAB: This cannot be relevant here as the single-excitations don't couple to either ground or excited state.
-%The convergent and divergent series start to differ at fourth order, corresponding to the lowest-order contribution
-%%from the single excitations.\cite{Lepetit_1988}
 
 %%% FIG 3 %%%
 \begin{figure*}
@@ -969,15 +902,15 @@ While a closed-form expression for the ground-state energy exists, it is cumbers
 Instead, the radius of convergence of the UMP series can be obtained numerically as a function of $U/t$, as shown
 in Fig.~\ref{fig:RadConv}.
 These numerical values reveal that the UMP ground-state series has $\rc > 1$ for all $U/t$ and always converges.
-However, in the strong correlation limit (large $U$), this radius of convergence tends to unity, indicating that
-the corresponding UMP series becomes increasingly slow.
+However, in the strong correlation limit (large $U/t$), this radius of convergence tends to unity, indicating that
+the convergence of the corresponding UMP series becomes increasingly slow.
 Furthermore, the doubly-excited state using the ground-state UHF orbitals has $\rc < 1$ for almost any value 
-of $U/t$, reaching the limiting value of $1/2$ for $U/t \to \infty$, and thus the 
+of $U/t$, reaching the limiting value of $1/2$ for $U/t \to \infty$. Hence, the 
 excited-state UMP series will always diverge.
  
 % DISCUSSION OF UMP RIEMANN SURFACES
 The convergence behaviour can be further elucidated by considering the full structure of the UMP energies 
-in the complex $\lambda$-plane.
+in the complex $\lambda$-plane (see Figs.~\ref{subfig:UMP_3} and \ref{subfig:UMP_7}).
 These Riemann surfaces are illustrated for $U = 3t$ and $7t$ alongside the perturbation terms at each order
 in Fig.~\ref{subfig:UMP_cvg}.
 At $U = 3t$, the RMP series is convergent, while RMP becomes divergent for $U=7t$.
@@ -985,7 +918,7 @@ The ground-state UMP expansion is convergent in both cases, although the rate of
 for larger $U/t$ as the radius of convergence becomes increasingly close to one (Fig.~\ref{fig:RadConv}).
 
 % EFFECT OF SYMMETRY BREAKING
-As the UHF orbitals break the molecular symmetry, new coupling terms emerge between the electronic states that
+As the UHF orbitals break the \trash{molecular} \titou{spin} symmetry, new coupling terms emerge between the electronic states that
 cause fundamental changes to the structure of EPs in the complex $\lambda$-plane.
 For example, while the RMP energy shows only one EP between the ground state and 
 the doubly-excited state (Fig.~\ref{fig:RMP}), the UMP energy has two EPs: one connecting the ground state with the
@@ -1008,22 +941,6 @@ It is well-known that the spin-projection needed to remove spin-contamination ca
 of highly-excited determinants,\cite{Lowdin_1955c} and thus it is not surprising that this process proceeds 
 very slowly as the perturbation order is increased.
 
-
-%The convergence of the UMP as a function of the ratio $U/t$ is shown in Fig.~\ref{subfig:UMP_cvg} for two specific values: the first ($U = 3t$) is well within the RMP convergence region, while the second ($U = 7t$) falls outside.
-%Note that in the case of UMP, there are now two pairs of EPs as the open-shell singlet now couples strongly with both the ground and doubly-excited states.
-%This has the clear tendency to move away from the origin the EP dictating the convergence of the ground-state energy, while deteriorating the convergence properties of the excited-state energy.
-%For $U = 3t$ (see Fig.~\ref{subfig:UMP_3}), the ground-state energy is remarkably flat since the UHF energy is already a pretty good estimate of the exact energy thanks to the symmetry-breaking process.
-%Most of the UMP expansion is actually correcting the spin-contamination in the wave function.
-%For $U = 7t$ (see Fig.~\ref{subfig:UMP_7}), we are well towards the strong correlation regime, where we see that the UMP series is slowly convergent while RMP diverges.
-%We see a single EP on the ground-state surface which falls just outside (maybe on?) the radius of convergence. 
-%An EP this close to the radius of convergence gives an increasingly slow convergence of the UMP series, but it will converge eventually as observed in Fig.~\ref{subfig:UMP_cvg}.
-%On the other hand, there is an EP on the excited energy surface that is well within the radius of convergence.
-%We can therefore say that the use of a symmetry-broken UHF wave function can retain a convergent ground-state perturbation series
-%at the expense of a divergent excited-state perturbation series. (Note: the orbitals are not optimised for excited-state here).
-%In contrast, the RMP expansion was always convergent for the open-shell excited state (which was a single CSF) while
-%the radius of convergence for the doubly-excited state was identical to the ground-state as this was the only exceptional point.
-
-
 %==========================================%
 \subsection{Classifying Types of Convergence} % Behaviour} % Further insights from a two-state model}
 %==========================================%
@@ -1035,17 +952,13 @@ Cremer and He introduced an efficient MP6 approach and used it to analyse the RM
 29 atomic and molecular systems with respect to the FCI energy.\cite{Cremer_1996}
 They established two general classes: ``class A'' systems that exhibit monotonic convergence; 
 and ``class B'' systems for which convergence is erratic after initial oscillations. 
-%Their system set contains stretched molecules as well as molecules at their equilibrium geometry for various basis sets. 
 By analysing the different cluster contributions to the MP energy terms, they proposed that
 class A systems generally include well-separated and weakly correlated electron pairs, while class B systems
 are characterised by dense electron clustering in one or more spatial regions.\cite{Cremer_1996}
-%\textit{``Class A systems are characterised by electronic structures with well-separated electron pairs while class B systems are characterized by electronic structures with electron clustering in one or more regions.''}
-%Moreover, they analysed the contribution of the triple (T) excitations to the MP4, MP5 and MP6 energies next to the single, double and quadruple (SDQ) excitations contribution.
 In class A systems, they showed that the majority of the correlation energy arises from pair correlation, 
 with little contribution from triple excitations.
 On the other hand, triple excitations have an important contribution in class B systems, including providing
 orbital relaxation, and these contributions lead to oscillations of the total correlation energy.
-%This observation on the contribution to the MP$n$ energy corroborates the electronic structure discussed above.
 
 Using these classifications, Cremer and He then introduced simple extrapolation formulas for estimating the 
 exact correlation energy $\Delta E$ using terms up to MP6\cite{Cremer_1996}
@@ -1238,7 +1151,7 @@ eigenstates as a function of $\lambda$ indicate the presence of a zero-temperatu
 Meanwhile, as an avoided crossing becomes increasingly sharp, the corresponding EPs move increasingly close to the real axis, eventually forming a critical point.
 The existence of an EP \emph{on} the real axis is therefore diagnostic of a QPT.\cite{Cejnar_2005, Cejnar_2007a}
 Since the MP critical point corresponds to a singularity on the real $\lambda$ axis, it can immediately be
-recognised as a QPT \hugh{with respect to varying the perturbation parameter $\lambda$}.
+recognised as a QPT with respect to varying the perturbation parameter $\lambda$.
 However, a conventional QPT can only occur in the thermodynamic limit, which here is analogous to the complete 
 basis set limit.\cite{Kais_2006}
 The MP critical point and corresponding $\beta$ singularities in a finite basis must therefore be modelled by pairs of EPs
@@ -1274,7 +1187,7 @@ states which share the symmetry of the ground state,\cite{Goodson_2004} and are 
 		(\subref{subfig:rmp_cp}) Exact critical points with $t=0$ occur on the negative real $\lambda$ axis (dashed).
 		(\subref{subfig:rmp_cp_surf}) Modelling a finite basis using $t=0.1$ yields complex-conjugate EPs close to the
 		real axis, giving a sharp avoided crossing on the real axis (solid).
-		(\subref{subfig:rmp_ep_to_cp}) Convergence of the ground-state EP onto the real axis in the exact limit $t \rightarrow 0$.
+		(\subref{subfig:rmp_ep_to_cp}) Convergence of the ground-state EP onto the real axis in the \trash{exact} limit $t \to 0$.
 	\label{fig:RMP_cp}}
 \end{figure*}
 %------------------------------------------------------------------%
@@ -1294,11 +1207,11 @@ which corresponds to strictly localising the two electrons on the left site.
 %\begin{equation}
 %   E_\text{HF}(0, 0) = \frac{1}{2} (2 U - 4 \epsilon).
 %\end{equation}
-With this representation, the parametrised \hugh{asymmetric} RMP Hamiltonian becomes
+With this representation, the parametrised asymmetric RMP Hamiltonian becomes
 \begin{widetext}
 \begin{equation}
-\label{eq:H_RMP}
-\hugh{\bH_\text{asym}\qty(\lambda)} = 
+\label{eq:H_asym}
+\bH_\text{asym}\qty(\lambda) = 
 \begin{pmatrix}
     2(U-\epsilon) - \lambda U &	-\lambda t				 &	-\lambda t	            &	0	        \\
     -\lambda t				  &	(U-\epsilon) - \lambda U &	0		                &	-\lambda t	\\
@@ -1372,7 +1285,7 @@ set representations of the MP critical point.\cite{Sergeev_2006}
     \end{subfigure}
 %    \includegraphics[height=0.65\textwidth,trim={0pt 5pt 0pt 15pt}, clip]{ump_critical_point}
 \caption{%
-    The UMP ground-state EP becomes a critical point in the strong correlation limit (large $U/t$).
+    The UMP ground-state EP \titou{in the symmetric Hubbard dimer} becomes a critical point in the strong correlation limit (\ie, large $U/t$).
     (\subref{subfig:ump_cp}) As $U/t$ increases, the avoided crossing on the real $\lambda$ axis
     becomes increasingly sharp.
     (\subref{subfig:ump_cp_surf}) Complex energy surfaces for $U = 5t$.
@@ -1406,7 +1319,7 @@ This swapping process can also be represented as a double excitation, and thus a
 for $\lambda \geq 1$ (Fig.~\ref{subfig:ump_cp}).
 While this appears to be an avoided crossing between the ground and first-excited state, 
 the presence of an earlier excited-state avoided crossing means that the first-excited state qualitatively 
-represents the reference double excitation for $\lambda > 0.5.$
+represents the reference double excitation for $\lambda > 1/2$ (see Fig.~\ref{subfig:ump_cp}).
 
 % SHARPNESS AND QPT
 The ``sharpness'' of the avoided crossing is controlled by the correlation strength $U/t$.
@@ -1422,7 +1335,7 @@ occurs exactly at $\lambda = 1$.
 In this limit, the ground-state EPs approach the real axis (Fig.~\ref{subfig:ump_ep_to_cp}) and the avoided 
 crossing creates a gradient discontinuity in the ground-state energy (dashed lines in Fig.~\ref{subfig:ump_cp}).
 We therefore find that, in the strong correlation limit, the symmetry-broken ground-state EP becomes
-a new type of MP critical point and \hugh{represents a QPT as the perturbation parameter $\lambda$ is varied.}
+a new type of MP critical point and represents a QPT as the perturbation parameter $\lambda$ is varied.
 Furthermore, this argument explains why the dominant UMP singularity lies so close, but always outside, the 
 radius of convergence (see Fig.~\ref{fig:RadConv}).
 
@@ -1608,6 +1521,10 @@ Besides, they provide accurate estimates of the ground-state energy at $\lambda 
 	\end{ruledtabular}
 \end{table}
 
+An interesting point raised in Ref.~\onlinecite{Goodson_2019} suggests that low-order quadratic approximants might struggle to model the correct singularity structure when the energy function has poles in both the positive and negative half-planes. 
+In such a scenario, the quadratic approximant will have the tendency to place its branch points in-between, potentially introducing singularities quite close to the origin.
+A simple potential cure for this consists in applying a judicious transformation (like a bilinear conformal mapping) which does not affect the points at $\lambda = 0$ and $\lambda = 1$. \cite{Feenberg_1956}
+
 %==========================================%
 \subsection{Analytic continuation}
 %==========================================%
@@ -1615,7 +1532,7 @@ Besides, they provide accurate estimates of the ground-state energy at $\lambda 
 Recently, Mih\'alka \textit{et al.} studied the partitioning effect on the convergence properties of Rayleigh-Schr\"odinger perturbation theory by considering the MP and the EN partitioning as well as an alternative partitioning \cite{Mihalka_2017a} (see also Ref.~\onlinecite{Surjan_2000}).
 Taking as an example (in particular) the water molecule at equilibrium and at stretched geometries, they could estimate the radius of convergence via a quadratic Pad\'e approximant and convert divergent perturbation expansions to convergent ones in some cases thanks to a judicious choice of the level shift parameter.
 In a subsequent study by the same group, \cite{Mihalka_2017b} they use analytic continuation techniques to resum divergent MP series \cite{Goodson_2011} taking again as an example the water molecule in a stretched geometry.
-In a nutshell, their idea consists in calculating the energy of the system for several values of $\lambda$ for which the MP series is rapidly convergent (\ie, for $\lambda < r_c$), and to extrapolate the final energy to the physical system at $\lambda = 1$ via a polynomial- or Pad\'e-based fit. 
+In a nutshell, their idea consists in calculating the energy of the system for several values of $\lambda$ for which the MP series is rapidly convergent (\ie, for $\abs{\lambda} < r_c$), and to extrapolate the final energy to the physical system at $\lambda = 1$ via a polynomial- or Pad\'e-based fit. 
 However, the choice of the functional form of the fit remains a subtle task.
 This technique was first generalised by using complex scaling parameters and applying analytic continuation by solving the Laplace equation, \cite{Surjan_2018} and then further improved thanks to Cauchy's integral formula \cite{Mihalka_2019}
 \begin{equation}
@@ -1626,8 +1543,6 @@ which states that the value of the energy can be computed at $\lambda=a$ inside 
 Their method consists in refining self-consistently the values of $E(\lambda)$ computed on a contour going through the physical point at $\lambda = 1$ and encloses points of the ``trusted'' region (where the MP series is convergent). The shape of this contour is arbitrary but no singularities are allowed inside the contour to ensure $E(\lambda)$ is analytic. 
 When the values of $E(\lambda)$ on the so-called contour are converged, Cauchy's integrals formula \eqref{eq:Cauchy} is invoked to compute the values at $E(\lambda=1)$ which corresponds to the final estimate of the FCI energy.
 The authors illustrate this protocol on the dissociation curve of \ce{LiH} and the stretched water molecule showing encouraging results. \cite{Mihalka_2019} 
-
-\titou{T2 will add a comment about Goodson's remark on the failure of low-order approximants when $\alpha$ and $\beta$ singularities are present.}
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
