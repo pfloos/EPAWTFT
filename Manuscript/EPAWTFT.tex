@@ -1285,7 +1285,8 @@ Instead, we can use an asymmetric version of the Hubbard dimer \cite{Carrascal_2
 where we consider one of the sites as a ``ghost atom'' that acts as a 
 destination for ionised electrons being originally localised on the other site.
 To mathematically model this scenario in this asymmetric Hubbard dimer, we introduce a one-electron potential $-\epsilon$ on the left site to 
-represent the attraction between the electrons and the model ``atomic'' nucleus [see Eq.~\eqref{eq:H_FCI}], where we define $\epsilon > 0$.
+represent the attraction between the electrons and the model ``atomic'' nucleus [see Eq.~\eqref{eq:H_FCI}], 
+where we define $\epsilon \geq 0$.
 The reference Slater determinant for a doubly-occupied atom can be represented using the RHF
 orbitals [see Eq.~\eqref{eq:RHF_orbs}] with $\theta_{\alpha}^{\text{RHF}} = \theta_{\beta}^{\text{RHF}} = 0$, 
 which corresponds to strictly localising the two electrons on the left site.
@@ -1321,7 +1322,7 @@ and the RMP energies become
 \end{align}
 \end{subequations}
 as shown in Fig.~\ref{subfig:rmp_cp} (dashed lines).
-The RMP critical point then corresponds to the intersection $E_{-} = E_{+}$, giving the critical $\lambda$ value
+The RMP critical point then occurs at the intersection $E_{-} = E_{+}$, giving the critical $\lambda$ value
 \begin{equation}
     \lc = 1 - \frac{\epsilon}{U}. 
 \end{equation}
@@ -1410,7 +1411,7 @@ represents the reference double excitation for $\lambda > 0.5.$
 % SHARPNESS AND QPT
 The ``sharpness'' of the avoided crossing is controlled by the correlation strength $U/t$.
 For small $U/t$, the HF potentials will be weak and the electrons will delocalise over the two sites,
-both in the UHF reference and as $\lambda$ increases.
+both in the UHF reference and as $\lambda$ increases towards the exact solution.
 This delocalisation dampens the electron swapping process and leads to a ``shallow'' avoided crossing
 that corresponds to EPs with non-zero imaginary components (solid lines in Fig.~\ref{subfig:ump_cp}).
 As $U/t$ becomes larger, the HF potentials become stronger and the on-site repulsion dominates the hopping
