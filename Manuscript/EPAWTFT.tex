@@ -221,8 +221,8 @@ $\Nn$ (clamped) nuclei is defined for a given nuclear framework as
     - \sum_{i}^{\Ne} \sum_{A}^{\Nn} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}} 
     + \sum_{i<j}^{\Ne}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}},
 \end{equation}
-where $\vb{r}_i$ defines the position of the $i$-th electron, $\vb{R}_{A}$ and $Z_{A}$ are the position
-and charge of the $A$-th nucleus respectively, and $\vb{R} = (\vb{R}_{1}, \dots, \vb{R}_{\Nn})$ is a
+where $\vb{r}_i$ defines the position of the $i$th electron, $\vb{R}_{A}$ and $Z_{A}$ are the position
+and charge of the $A$th nucleus respectively, and $\vb{R} = (\vb{R}_{1}, \dots, \vb{R}_{\Nn})$ is a
 collective vector for the nuclear positions.
 The first term represents the kinetic energy of the electrons, while 
 the two following terms account for the electron-nucleus attraction and the electron-electron repulsion.
@@ -845,7 +845,7 @@ gradient discontinuities or spurious minima.
 
 The behaviour of the RMP and UMP series observed in \ce{H2} can also be illustrated by considering
 the analytic Hubbard dimer with a complex-valued perturbation strength.
-In this system, the stretching of the \ce{H\bond{-}H} bond is directly mirrored by an increase in the electron correlation $U/t$.
+In this system, the stretching of the \ce{H\bond{-}H} bond is directly mirrored by an increase in the \trash{electron correlation} \titou{ratio} $U/t$.
 Using the ground-state RHF reference orbitals leads to the parametrised RMP Hamiltonian
 \begin{widetext}
 \begin{equation}
@@ -945,15 +945,15 @@ While a closed-form expression for the ground-state energy exists, it is cumbers
 Instead, the radius of convergence of the UMP series can be obtained numerically as a function of $U/t$, as shown
 in Fig.~\ref{fig:RadConv}.
 These numerical values reveal that the UMP ground-state series has $\rc > 1$ for all $U/t$ and always converges.
-However, in the strong correlation limit (large $U$), this radius of convergence tends to unity, indicating that
-the corresponding UMP series becomes increasingly slow.
+However, in the strong correlation limit (large $U/t$), this radius of convergence tends to unity, indicating that
+the convergence of the corresponding UMP series becomes increasingly slow.
 Furthermore, the doubly-excited state using the ground-state UHF orbitals has $\rc < 1$ for almost any value 
-of $U/t$, reaching the limiting value of $1/2$ for $U/t \to \infty$, and thus the 
+of $U/t$, reaching the limiting value of $1/2$ for $U/t \to \infty$. Hence, the 
 excited-state UMP series will always diverge.
  
 % DISCUSSION OF UMP RIEMANN SURFACES
 The convergence behaviour can be further elucidated by considering the full structure of the UMP energies 
-in the complex $\lambda$-plane.
+in the complex $\lambda$-plane (see Figs.~\ref{subfig:UMP_3} and \ref{subfig:UMP_7}).
 These Riemann surfaces are illustrated for $U = 3t$ and $7t$ alongside the perturbation terms at each order
 in Fig.~\ref{subfig:UMP_cvg}.
 At $U = 3t$, the RMP series is convergent, while RMP becomes divergent for $U=7t$.
@@ -961,7 +961,7 @@ The ground-state UMP expansion is convergent in both cases, although the rate of
 for larger $U/t$ as the radius of convergence becomes increasingly close to one (Fig.~\ref{fig:RadConv}).
 
 % EFFECT OF SYMMETRY BREAKING
-As the UHF orbitals break the molecular symmetry, new coupling terms emerge between the electronic states that
+As the UHF orbitals break the \trash{molecular} \titou{spin} symmetry, new coupling terms emerge between the electronic states that
 cause fundamental changes to the structure of EPs in the complex $\lambda$-plane.
 For example, while the RMP energy shows only one EP between the ground state and 
 the doubly-excited state (Fig.~\ref{fig:RMP}), the UMP energy has two EPs: one connecting the ground state with the
