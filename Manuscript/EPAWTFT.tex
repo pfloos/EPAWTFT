@@ -644,7 +644,6 @@ role of \textit{quasi}-EPs in determining the behaviour of the HF approximation.
 \label{sec:MP}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 %=====================================================%
 \subsection{Background Theory}
 %=====================================================%
@@ -708,7 +707,7 @@ to the convergence properties of the MP expansion.
 %=====================================================%
 
 % GENERAL DESIRE FOR WELL-BEHAVED CONVERGENCE AND LOW-ORDER TERMS
- Among the most desirable properties of any electronic structure technique is the existence of 
+Among the most desirable properties of any electronic structure technique is the existence of 
 a systematic route to increasingly accurate energies. 
 In the context of MP theory, one would like a monotonic convergence of the perturbation
 series towards the exact energy such that the accuracy increases as each term in the series is added.
@@ -734,10 +733,9 @@ diatomics, where low-order RMP and UMP expansions give qualitatively wrong bindi
 % SLOW UMP CONVERGENCE AND SPIN CONTAMINATION
 The divergence of RMP expansions for stretched bonds can be easily understood from two perspectives.\cite{Gill_1988a}
 Firstly, the exact wave function becomes increasingly multi-configurational as the bond is stretched, and the 
-HF wave function no longer provides a qualitatively correct reference for the perturbation expansion.
-Secondly, the energy gap between the bonding and anitbonding orbitals associated with the stretch becomes
-increasingly small at larger bond lengths, leading to a divergence in the Rayleigh--Schr\"odinger perturbation
-expansion Eq.~\eqref{eq:EMP2}.
+\titou{R}HF wave function no longer provides a qualitatively correct reference for the perturbation expansion.
+Secondly, the energy gap between the bonding and antibonding orbitals associated with the stretch becomes
+increasingly small at larger bond lengths, \titou{leading to a divergence, for example, in the second-order MP correction \eqref{eq:EMP2}.}
 In contrast, the origin of slow UMP convergence is less obvious as the reference UHF energy remains
 qualitatively correct at large bond lengths and the orbital degeneracy is avoided.
 Furthermore, this slow convergence can also be observed in molecules with a UHF ground state at the equilibrium
@@ -748,14 +746,14 @@ Using the UHF framework allows the singlet ground state wave function to mix wit
 leading to spin contamination where the wave function is no longer an eigenfunction of the $\Hat{\cS}^2$ operator.
 The link between slow UMP convergence and this spin-contamination was first systematically investigated
 by Gill \etal\ using the minimal basis \ce{H2} model.\cite{Gill_1988}
-In this work, the authors compared the UMP series with the exact RHF- and UHF-based FCI expansions
+In this work, the authors compared \titou{the UMP series with the exact RHF- and UHF-based FCI expansions (T2: I don't understand this)}
 and identified that the slow UMP convergence arises from its failure to correctly predict the amplitude of the
 low-lying double excitation.
 This erroneous description of the double excitation amplitude has the same origin as the spin-contamination in the reference
 UHF wave function, creating the first direct link between spin-contamination and slow UMP convergence.\cite{Gill_1988}
 
 % LEPETIT CHAT
-Lepetit \etal\ later analysed the difference between perturbation convergence using the unrestricted MP 
+Lepetit \etal\ later analysed the difference between perturbation convergence using the UMP 
 and EN partitionings. \cite{Lepetit_1988}
 They argued that the slow UMP convergence for stretched molecules arises from 
 (i) the fact that the MP denominator (see Eq.~\ref{eq:EMP2})
