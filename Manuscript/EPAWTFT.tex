@@ -972,15 +972,11 @@ exact correlation energy $\Delta E$ using terms up to MP6\cite{Cremer_1996}
     &= \Emp^{(2)} + \Emp^{(3)} + \qty(\Emp^{(4)} + \Emp^{(5)}) \exp(\Emp^{(6)} / \Emp^{(5)}).
 \end{align}
 \end{subequations}
-%As one can only compute the first terms of the MP series, a smart way of getting more accurate results is to use extrapolation formula, \ie, estimating the limit of the series with only few terms. 
-%Cremer and He proved that using specific extrapolation formulas of the MP series for class A and class B systems improves the precision of the results compared to the formula used without resorting to classes. \cite{Cremer_1996}
 These class-specific formulas reduced the mean absolute error from the FCI correlation energy by a
 factor of four compared to previous class-independent extrapolations,
 highlighting how one can leverage a deeper understanding of MP convergence to improve estimates of 
 the correlation energy at lower computational costs. 
-In Section~\ref{sec:Resummation}, we consider more advanced extrapolation routines that take account of EPs in the complex $\lambda$-plane.
-%The mean absolute deviation taking the FCI correlation energies as reference is $0.3$ millihartree with the class-specific formula whereas the deviation increases to 12 millihartree using the general formula.  
-%Even if there were still shaded areas in their analysis and that their classification was incomplete, the work of Ref.~\onlinecite{Cremer_1996} clearly evidenced that understanding the origin of the different modes of convergence could potentially lead to a more rationalised use of MP perturbation theory and, hence, to more accurate correlation energy estimates.
+In Sec.~\ref{sec:Resummation}, we consider more advanced extrapolation routines that take account of EPs in the complex $\lambda$-plane.
 
 In the late 90's, Olsen \etal\ discovered an even more concerning behaviour of the MP series. \cite{Olsen_1996} 
 They showed that the series could be divergent even in systems that were considered to be well understood, 
@@ -1007,7 +1003,7 @@ Using their observations in Ref.~\onlinecite{Olsen_1996}, Olsen and collaborator
 a simple method that performs a scan of the real axis to detect the avoided crossing responsible 
 for the dominant singularities in the complex plane. \cite{Olsen_2000} 
 By modelling this avoided crossing using a two-state Hamiltonian, one can obtain an approximation for
-the dominant singularities as the EPs of the $2\times2$ matrix
+the dominant singularities as the EPs of the two-state matrix
 \begin{equation}
 	\label{eq:Olsen_2x2}
     \underbrace{\mqty(\alpha & \delta \\ \delta & \beta )}_{\bH} 
@@ -1027,10 +1023,8 @@ These intruder-state effects are analogous to the EP that dictates the convergen
 the RMP series for the Hubbard dimer (Fig.~\ref{fig:RMP}).
 Furthermore, the authors demonstrated that the divergence for \ce{Ne} is due to a back-door intruder state
 that arise when the ground state undergoes sharp avoided crossings with highly diffuse excited states.
-%They used their two-state model on this avoided crossings and the model was actually predicting the divergence of the series. 
-%They concluded that the divergence of the series was due to the interaction with a highly diffuse excited state. 
 This divergence is related to a more fundamental critical point in the MP energy surface that we will
-discuss in Section~\ref{sec:MP_critical_point}.
+discuss in Sec.~\ref{sec:MP_critical_point}.
 
 Finally, Ref.~\onlinecite{Olsen_1996} proved that the extrapolation formulas of Cremer and He \cite{Cremer_1996}
 are not mathematically motivated when considering the complex singularities causing the divergence, and therefore
@@ -1053,7 +1047,6 @@ according to a so-called ``archetype'' that defines the overall ``shape'' of the
 For Hermitian Hamiltonians, these archetypes can be subdivided into five classes 
 (zigzag, interspersed zigzag, triadic, ripples, and geometric), 
 while two additional archetypes (zigzag-geometric and convex-geometric) are observed in non-Hermitian Hamiltonians.
-%Other features characterising the convergence behaviour of a perturbation method are its rate of convergence, its length of recurring period, and its sign pattern.
 
 The geometric archetype appears to be the most common for MP expansions,\cite{Olsen_2019} but the 
 ripples archetype corresponds to some of the early examples of MP convergence. \cite{Handy_1985,Lepetit_1988,Leininger_2000}
