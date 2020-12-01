@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{132}%
+\begin{thebibliography}{133}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -1261,6 +1261,13 @@
   {\bibinfo  {journal} {J. Phys. C.: Solid State Phys.}\ }\textbf {\bibinfo
   {volume} {18}},\ \bibinfo {pages} {3297} (\bibinfo {year}
   {1985})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Feenberg}(1956)}]{Feenberg_1956}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Feenberg}},\ }\href {\doibase 10.1103/PhysRev.103.1116} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume}
+  {103}},\ \bibinfo {pages} {1116} (\bibinfo {year} {1956})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Surj{\'a}n}\ and\ \citenamefont
   {Szabados}(2000)}]{Surjan_2000}%
   \BibitemOpen
