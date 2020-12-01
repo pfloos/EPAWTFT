@@ -471,16 +471,13 @@ with the corresponding matrix elements
 	h_i & = \mel{\phi_i}{\Hat{h}}{\phi_i},
     & 
     f_i & = \mel{\phi_i}{\Hat{f}}{\phi_i}.
-	%J_{ij} & = \mel{\phi_i}{\Hat{J}_j}{\phi_i},
-	%&
-	%K_{ij} & = \mel{\phi_i}{\Hat{K}_j}{\phi_i}.
 \end{align}
 The optimal HF wave function is identified by using the variational principle to minimise the HF energy.
 For any system with more than one electron, the resulting Slater determinant is not an eigenfunction of the exact Hamiltonian $\hH$. 
 However, it is by definition an eigenfunction of the approximate many-electron HF Hamiltonian constructed 
 from the one-electron Fock operators as
 \begin{equation}\label{eq:HFHamiltonian}
-	\hH_{\text{HF}} = \sum_{i} f(\vb{x}_i).
+	\hH_{\text{HF}} = \sum_{i}^{N} f(\vb{x}_i).
 \end{equation}
 From hereon, $i$ and $j$ denote occupied orbitals, $a$ and $b$ denote unoccupied (or virtual) orbitals, while $p$, $q$, $r$, and $s$ denote arbitrary orbitals.
 
@@ -488,12 +485,12 @@ From hereon, $i$ and $j$ denote occupied orbitals, $a$ and $b$ denote unoccupied
 In the most flexible variant of real HF theory (generalised HF) the one-electron orbitals can be complex-valued
 and contain a mixture of spin-up and spin-down components.\cite{Mayer_1993,Jimenez-Hoyos_2011}
 However, the application of HF with some level of constraint on the orbital structure is far more common.
-Forcing the spatial part of the orbitals to be the same for spin-up and spin-down electrons leads to restricted HF (RHF) theory, 
+Forcing the spatial part of the orbitals to be the same for spin-up and spin-down electrons leads to restricted HF (RHF) method, 
 while allowing different orbitals for different spins leads to the so-called unrestricted HF (UHF) approach.\cite{StuberPaldus}
 The advantage of the UHF approximation is its ability to correctly describe strongly correlated systems, 
-such as antiferromagnetic phases\cite{Slater_1951} or the dissociation of the hydrogen dimer,\cite{Coulson_1949}
+such as antiferromagnetic phases\cite{Slater_1951} or the dissociation of the hydrogen dimer.\cite{Coulson_1949}
 However, by allowing different orbitals for different spins, the UHF is no longer required to be an eigenfunction of 
-the total spin $\hat{\mathcal{S}}^2$ operator, leading to ``spin-contamination'' in the wave function.
+the total spin operator $\hat{\mathcal{S}}^2$, leading to ``spin-contamination'' in the wave function.
 
 %================================================================%
 \subsection{Hartree--Fock in the Hubbard Dimer}
