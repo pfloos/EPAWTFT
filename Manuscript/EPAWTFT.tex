@@ -1095,6 +1095,7 @@ atoms (see Ref.~\onlinecite{Baker_1971}).
 Furthermore, a similar set of critical points exists along the positive real axis, corresponding to single-electron ionisation
 processes.\cite{Sergeev_2005}
 
+
 % CLASSIFICATIONS BY GOODSOON AND SERGEEV
 To further develop the link between the critical point and types of MP convergence, Sergeev and Goodson investigated
 the relationship with the location of the dominant singularity that controls the radius of convergence.\cite{Goodson_2004}
@@ -1316,51 +1317,6 @@ We therefore find that, in the strong correlation limit, the symmetry-broken gro
 a new type of MP critical point and represents a QPT as the perturbation parameter $\lambda$ is varied.
 Furthermore, this argument explains why the dominant UMP singularity lies so close, but always outside, the 
 radius of convergence (see Fig.~\ref{fig:RadConv}).
-
-%%====================================================
-%\subsection{The physics of quantum phase transitions}
-%%====================================================
-%
-%In the previous section, we saw that a careful analysis of the structure of the Hamiltonian allows us to predict the existence of a critical point. 
-%In a finite basis set, this critical point is model by a cluster of $\beta$ singularities. 
-%It is now well known that this phenomenon is a special case of a more general phenomenon. 
-%Indeed, theoretical physicists proved that EPs close to the real axis are connected to \textit{quantum phase transitions} (QPTs). \cite{Heiss_1988,Heiss_2002,Borisov_2015,Sindelka_2017,CarrBook,Vojta_2003,SachdevBook,GilmoreBook} 
-%In quantum mechanics, the Hamiltonian is almost always dependent of, at least, one parameter. 
-%In some cases the variation of a parameter can lead to abrupt changes at a critical point. 
-%These QPTs exist both for ground and excited states as shown by Cejnar and coworkers. \cite{Cejnar_2005,Cejnar_2007,Caprio_2008,Cejnar_2009,Sachdev_2011,Cejnar_2015,Cejnar_2016, Macek_2019,Cejnar_2020} 
-%A ground-state QPT is characterised by the derivatives of the ground-state energy with respect to a non-thermal control parameter. \cite{Cejnar_2009, Sachdev_2011} 
-%The transition is called discontinuous and of first order if the first derivative is discontinuous at the critical parameter value. 
-%Otherwise, it is called continuous and of $m$th order (with $m \ge 2$) if the $m$th derivative is discontinuous. 
-%A QPT can also be identify by the discontinuity of an appropriate order parameter (or one of its derivatives). 
-%
-%The presence of an EP close to the real axis is characteristic of a sharp avoided crossing. 
-%Yet, at such an avoided crossing, eigenstates change abruptly. 
-%Although it is now well understood that EPs are closely related to QPTs, the link between the type of QPT (ground state or excited state, first or higher order) and EPs still need to be clarified. 
-%One of the major obstacles that one faces in order to achieve this resides in the ability to compute the distribution of EPs. 
-%The numerical assignment of an EP to two energies on the real axis is very difficult in large dimensions. 
-%Hence, the design of specific methods are required to get information on the location of EPs. 
-%Following this idea, Cejnar \textit{et al.}~developed a method based on a Coulomb analogy giving access to the density of EP close to the real axis. \cite{Cejnar_2005, Cejnar_2007} 
-%More recently Stransky and coworkers proved that the distribution of EPs is characteristic of the QPT order. \cite{Stransky_2018} 
-%In the thermodynamic limit, some of the EPs converge towards a critical point $\lambda_\text{c}$ on the real axis. 
-%They showed that, within the interacting boson model, \cite{Lipkin_1965} EPs associated to first- and second-order QPT behave differently when the number of particles increases. 
-%The position of these singularities converge towards the critical point on the real axis at different rates (exponentially and algebraically for the first and second orders, respectively) with respect to the number of particles.
-%
-%Moreover, Cejnar \textit{et al.}~studied the so-called shape-phase transitions of the interaction boson model from a QPT point of view. \cite{Cejnar_2000, Cejnar_2003, Cejnar_2007a, Cejnar_2009}
-%The phase of the ensemble of $s$ and $d$ bosons is characterised by a dynamical symmetry. 
-%When a parameter is continuously modified the dynamical symmetry of the system can change at a critical value of this parameter, leading to a deformed phase. 
-%They showed that at this critical value of the parameter, the system undergoes a QPT. 
-%For example, without interaction the ground state is the spherical phase (a condensate of $s$ bosons) and when the interaction increases it leads to a deformed phase constituted of a mixture of $s$ and $d$ bosons states. 
-%In particular, we see that the transition from the spherical phase to the axially symmetric one is analog to the symmetry breaking of the wave function of the hydrogen molecule when the bond is stretched. \cite{SzaboBook}
-%It seems like our understanding of the physics of spatial and/or spin symmetry breaking in HF theory can be enlightened by QPT theory. 
-%Indeed, the second derivative of the HF ground-state energy is discontinuous at the point of spin symmetry-breaking which means that the system undergo a second-order QPT. 
-%
-%Moreover, the $\beta$ singularities introduced by Sergeev and coworkers to describe the EPs modelling the formation of a bound cluster of electrons are actually a more general class of singularities. 
-%The EPs close to the real axis (the so-called $\beta$ singularities) are connected to QPT because they result from a sharp avoided crossings at which the eigenstates change quickly. 
-%However, the $\alpha$ singularities arise from large avoided crossings. 
-%Thus, they cannot be connected to QPT. 
-%The avoided crossings generating $\alpha$ singularities generally involve the ground state and low-lying doubly-excited states. 
-%Those excited states have a non-negligible contribution to the exact FCI solution because they have (usually) the same spatial and spin symmetry as the ground state. 
-%We believe that $\alpha$ singularities are connected to states with non-negligible contribution in the CI expansion thus to the dynamical part of the correlation energy, while $\beta$ singularities are linked to symmetry breaking and phase transitions of the wave function, \ie, to the multi-reference nature of the wave function thus to the static part of the correlation energy.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resummation Methods}
@@ -1592,25 +1548,26 @@ The authors illustrate this protocol on the dissociation curve of \ce{LiH} and t
 In order to model accurately chemical systems, one must choose, in an ever growing zoo of methods, which computational protocol is adapted to the system of interest.
 This choice can be, moreover, motivated by the type of properties that one is interested in.
 That means that one must understand the strengths and weaknesses of each method, \ie, why one method might fail in some cases and work beautifully in others. 
-We have seen that for methods relying on perturbation theory, their successes and failures are directly connected to the position of EPs in the complex plane. 
-Exhaustive studies have been performed on the causes of failure of MP perturbation theory. 
-First, it was understood that, for chemical systems for which the HF Slater determinant is a poor approximation to the exact wave function, MP perturbation theory fails too. 
-Such systems can be, for example, molecules where the exact ground-state wave function is dominated by more than one configuration, \ie, multi-reference systems. 
-More preoccupying cases were also reported. 
-For instance, it has been shown that systems considered as well understood (\eg, \ce{Ne}) can exhibit divergent behaviour when the basis set is augmented with diffuse functions. 
-Later, these erratic behaviours of the perturbation series were investigated and rationalised in terms of avoided crossings and singularities in the complex plane. 
-It was shown that the singularities can be classified in two families. 
-The first family includes $\alpha$ singularities resulting from a large avoided crossing between the ground state and a low-lying doubly-excited states. 
-The $\beta$ singularities, which constitutes the second family, are artefacts generated by the incompleteness of the Hilbert space, and they are directly connected to an ionisation phenomenon occurring in the complete Hilbert space. 
-These singularities are close to the real axis and connected with sharp avoided crossing between the ground state and a highly diffuse state. 
-We have found that the $\beta$ singularities modelling the ionisation phenomenon described by Sergeev and Goodson are actually part of a more general class of singularities. 
-Indeed, those singularities close to the real axis are connected to quantum phase transitions and symmetry breaking, and theoretical physics have demonstrated that the behaviour of the EPs depends of the type of transitions from which the EPs result (first or higher orders, ground state or excited state transitions).
-To conclude, this work shows that our understanding of the singularity structure of the energy is still incomplete but we hope that it opens new perspectives for the understanding of the physics of EPs in electronic structure theory.
+We have seen that for methods relying on perturbation theory, their successes and failures are directly connected to the position of singularities in the complex plane, known as exceptional points.
 
-\titou{The Hubbard dimer is clearly a very versatile model to understand perturbation theory and could be used for further developments around PT.
-Comment on approximants are requiring higher order MP which is expensive.
-Paragraph  on Paola's stuff.}
+After a short presentation of the fundamental notions of quantum chemistry in the complex plane, such as the mean-field Hartree--Fock approximation and Rayleigh--Schr\"odinger perturbation theory, we have provided an exhaustive historical overview of the various research activities that have been performed on the physics of singularities with a particular focus on M{\o}ller--Plesset perturbation theory. 
+Seminal contributions from various research groups around the world have evidenced highly oscillatory, slowly convergent, or catastrophically divergent behaviour of the restricted and/or unrestricted MP perturbation series.\cite{Laidig_1985,Knowles_1985,Handy_1985,Gill_1986,Laidig_1987,Nobes_1987,Gill_1988,Gill_1988a,Lepetit_1988} 
 
+Later, these erratic behaviours were investigated and rationalised in terms of avoided crossings and singularities in the complex plane. 
+In that regard, it is worth highlighting the key contribution of Cremer and He who proposed a classification of the types of convergence: \cite{Cremer_1996} ``class A'' systems that exhibit monotonic convergence, and ``class B'' systems for which convergence is erratic after initial oscillations. 
+Further insights were brought thanks to a series of papers by Olsen and coworkers \cite{Christiansen_1996,Olsen_1996,Olsen_2000,Olsen_2019} where they employ a two-state model to dissect the various convergence behaviours of Hermitian and non-Hermitian perturbation series.
+Building on the careful mathematical analysis of Stillinger who showed that the mathematical origin behind the divergent series with odd-even sign alternation is due to a dominant singularity on the negative real $\lambda$ axis, \cite{Stillinger_2000} Sergeev and Goodson proposed a more refined singularity classification: $\alpha$ singularities which have ``large'' imaginary parts, and $\beta$ singularities which have very small imaginary parts. \cite{Goodson_2000a,Goodson_2000b,Goodson_2004,Sergeev_2005,Sergeev_2006}
+We have further highlighted that these so-called $\beta$ singularities are connected to quantum phase transitions and symmetry breaking.
+
+Finally, we have discussed several resummation techniques, such as Pad\'e and quadratic approximants, that can be used to improve energy estimates for both convergent and divergent series.
+However, it is worth mentioning that the construction of these approximants requires high-order MP coefficients which are quite expensive to compute in practice.
+
+Most of the concepts reviewed in the present manuscript has been illustrated on the symmetric (or asymmetric in one occasion) Hubbard dimer at half-filling.
+Although extremely simple, this clearly illustrates the obvious versatility of the Hubbard model to understand perturbation theory as well as other concepts such as Kohn-Sham density-functional theory (DFT), \cite{Carrascal_2015} linear-response theory, \cite{Carrascal_2018} many-body perturbation theory, \cite{Romaniello_2009,Romaniello_2012,DiSabatino_2015,Tarantino_2017}, DFT for ensembles, \cite{Deur_2017,Deur_2018,Senjean_2018,Sagredo_2018,Fromager_2020} and many others.
+We believe that the Hubbard dimer could then be used for further developments around perturbation theory.
+
+As a concluding remark and from a broader point of view, the present work shows that our understanding of the singularity structure of the energy is still incomplete.
+Yet, we hope that the present contribution will open new perspectives for the understanding of the physics of exceptional points in electronic structure theory.
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{acknowledgements}

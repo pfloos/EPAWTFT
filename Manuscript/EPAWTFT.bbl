@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{148}%
+\begin{thebibliography}{157}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -1418,4 +1418,92 @@
   {journal} {\bibinfo  {journal} {Theor. Chem. Acc.}\ }\textbf {\bibinfo
   {volume} {137}},\ \bibinfo {pages} {149} (\bibinfo {year}
   {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Romaniello}\ \emph {et~al.}(2009)\citenamefont
+  {Romaniello}, \citenamefont {Guyot},\ and\ \citenamefont
+  {Reining}}]{Romaniello_2009}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Romaniello}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Guyot}}, \
+  and\ \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Reining}},\ }\href
+  {\doibase 10.1063/1.3249965} {\bibfield  {journal} {\bibinfo  {journal} {J.
+  Chem. Phys.}\ }\textbf {\bibinfo {volume} {131}},\ \bibinfo {pages} {154111}
+  (\bibinfo {year} {2009})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Romaniello}\ \emph {et~al.}(2012)\citenamefont
+  {Romaniello}, \citenamefont {Bechstedt},\ and\ \citenamefont
+  {Reining}}]{Romaniello_2012}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Romaniello}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Bechstedt}}, \ and\ \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Reining}},\ }\href {\doibase 10.1103/PhysRevB.85.155131} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume}
+  {85}},\ \bibinfo {pages} {155131} (\bibinfo {year} {2012})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Di~Sabatino}\ \emph {et~al.}(2015)\citenamefont
+  {Di~Sabatino}, \citenamefont {Berger}, \citenamefont {Reining},\ and\
+  \citenamefont {Romaniello}}]{DiSabatino_2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Di~Sabatino}}, \bibinfo {author} {\bibfnamefont {J.~A.}\ \bibnamefont
+  {Berger}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Reining}}, \
+  and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Romaniello}},\
+  }\href {\doibase 10.1063/1.4926327} {\bibfield  {journal} {\bibinfo
+  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {143}},\ \bibinfo
+  {pages} {024108} (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Tarantino}\ \emph {et~al.}(2017)\citenamefont
+  {Tarantino}, \citenamefont {Romaniello}, \citenamefont {Berger},\ and\
+  \citenamefont {Reining}}]{Tarantino_2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Tarantino}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Romaniello}}, \bibinfo {author} {\bibfnamefont {J.~A.}\ \bibnamefont
+  {Berger}}, \ and\ \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Reining}},\ }\href {\doibase 10.1103/PhysRevB.96.045124} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume}
+  {96}},\ \bibinfo {pages} {045124} (\bibinfo {year} {2017})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Deur}\ \emph {et~al.}(2017)\citenamefont {Deur},
+  \citenamefont {Mazouin},\ and\ \citenamefont {Fromager}}]{Deur_2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Deur}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Mazouin}}, \
+  and\ \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Fromager}},\ }\href
+  {\doibase 10.1103/PhysRevB.95.035120} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {95}} (\bibinfo {year}
+  {2017}),\ 10.1103/PhysRevB.95.035120}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Deur}\ \emph {et~al.}(2018)\citenamefont {Deur},
+  \citenamefont {Mazouin}, \citenamefont {Senjean},\ and\ \citenamefont
+  {Fromager}}]{Deur_2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Deur}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Mazouin}},
+  \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Senjean}}, \ and\
+  \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Fromager}},\ }\href
+  {\doibase 10.1140/epjb/e2018-90124-7} {\bibfield  {journal} {\bibinfo
+  {journal} {Eur. Phys. J. B}\ }\textbf {\bibinfo {volume} {91}} (\bibinfo
+  {year} {2018}),\ 10.1140/epjb/e2018-90124-7}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Senjean}\ and\ \citenamefont
+  {Fromager}(2018)}]{Senjean_2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.}~\bibnamefont
+  {Senjean}}\ and\ \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Fromager}},\ }\href {\doibase 10.1103/PhysRevA.98.022513} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume}
+  {98}} (\bibinfo {year} {2018}),\ 10.1103/PhysRevA.98.022513}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Sagredo}\ and\ \citenamefont
+  {Burke}(2018)}]{Sagredo_2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Sagredo}}\ and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Burke}},\ }\href {\doibase 10.1063/1.5043411} {\bibfield  {journal}
+  {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {149}},\
+  \bibinfo {pages} {134103} (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Fromager}(2020)}]{Fromager_2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Fromager}},\ }\href {\doibase 10.1103/PhysRevLett.124.243001} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo
+  {volume} {124}},\ \bibinfo {pages} {243001} (\bibinfo {year}
+  {2020})}\BibitemShut {NoStop}%
 \end{thebibliography}%
