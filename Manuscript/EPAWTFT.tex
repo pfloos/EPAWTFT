@@ -1393,7 +1393,7 @@ often define a convergent perturbation series in cases where the Taylor series e
 		\begin{tabular}{lccccc}
             &			&	\mc{2}{c}{$\abs{\lc}$}	&	\mc{2}{c}{$E_{-}(\lambda = 1)$} \\
 																		\cline{3-4} \cline{5-6}
-			Method		&	degree	&	$U/t = 3.5$	&	$U/t = 4.5$	&	$U/t = 3.5$	&	$U/t = 4.5$	\\
+			Method		&	Degree	&	$U/t = 3.5$	&	$U/t = 4.5$	&	$U/t = 3.5$	&	$U/t = 4.5$	\\
 			\hline
 			Taylor		&	2		&			&			&	$-1.01563$	&	$-1.01563$	\\
 						&	3		&			&			&	$-1.01563$	&	$-1.01563$	\\
@@ -1601,8 +1601,8 @@ provide a rapidly convergent series with essentially exact energies at low order
 
 
 \hugh{Finally, to emphasise the improvement that can be gained by using either Pad\'e, diagonal quadratic,
-or pole-free approximants, we consider the energy and error obtained using only the first 10 terms in the UMP
-in Table~\ref{tab:UMP_order10}.
+or pole-free quadratic approximants, we consider the energy and error obtained using only the first 10 terms of the UMP
+Taylor series in Table~\ref{tab:UMP_order10}.
 The accuracy of these approximants reinforces how our understanding of the MP
 energy surface in the complex plane can be leveraged to significantly improve estimates of the exact
 energy using low-order perturbation expansions.
@@ -1617,12 +1617,12 @@ energy using low-order perturbation expansions.
 	\label{tab:UMP_order10}}
 	\begin{ruledtabular}
 		\begin{tabular}{lccc}
-            \mc{2}{c}{Method}	 &	$E_{-}(\lambda = 1)$ & Abs.\ Error \\ 
+            \mc{2}{c}{Method}	 &	$E_{-}(\lambda = 1)$ & \% Abs.\ Error \\ 
 			\hline
-            Taylor		         &	 10	         &	$-0.33338$      &  $0.197290$ \\
-            Pad\'e               &   [5/5]       &  $-0.35513$      &  $0.176000$ \\
-            Quadratic (diagonal) &   [3/3,3]     &  $-0.53104$      &  $0.000103$ \\
-            Quadratic (pole-free)&   [3/0,6]     &  $-0.53113$      &  $0.000003$ \\
+            Taylor		         &	 10	         &	$-0.33338$      &  $37.150$ \\
+            Pad\'e               &   [5/5]       &  $-0.35513$      &  $33.140$ \\
+            Quadratic (diagonal) &   [3/3,3]     &  $-0.53103$      &  $\hphantom{0}0.019$ \\
+            Quadratic (pole-free)&   [3/0,6]     &  $-0.53113$      &  $\hphantom{0}0.005$ \\
 			\hline
             Exact		         &	        	 &	$-0.53113$	     &            \\
 		\end{tabular}
@@ -1642,18 +1642,72 @@ that can be used to extract further information about the exact result.
 The Shanks transformation presents one approach for extracting this information
 and accelerating the rate of convergence of a sequence.\cite{Shanks_1955}
 
-Consider the partial sums $S_N$ defined from the truncated summation of an infinite series
+\hugh{Consider the partial sums
+$S_N = \sum_{k=0}^{N} a_k$
+defined from the truncated summation of an infinite series 
+$    S = \sum_{k=0}^{\infty} a_k$.
+If the series converges, then the partial sums will tend to the exact result 
 \begin{equation}
-    S_N = \sum_{k=0}^{N} a_k.
+\lim_{N\rightarrow \infty} S_N = S. 
 \end{equation}
-If the series converges, then the partial sums will tend to the exact result in the limit $N\rightarrow \infty$.
-The Shanks transformation attempts to generate increasingly accurate estimates of the
-exact result by defining a new series as
+The Shanks transformation attempts to generate increasingly accurate estimates of this
+limt by defining a new series as
 \begin{equation}
     T(S_N) = \frac{S_{N+1} S_{N-1} - S_{N}^2}{S_{N+1} + S_{N-1} - 2 S_{N}}.
 \end{equation}
 This series can converge faster than the original partial sums and can thus provide greater
 accuracy using only the first few terms in the series.
+However, it is designed to accelerate exponentially converging partial sums with 
+the approximate form
+\begin{equation}
+    S_N \approx S + a\,b^N.
+\end{equation}
+Furthermore, while this transformation can accelerate the convergence of a series, 
+there is no guarantee that this acceleration will be fast enough to significantly
+improve the accuracy of low-order approximations.}
+
+\hugh{To the best of our knowledge, the Shanks transformation has never previously been applied
+to the acceleration of the MP series.
+We have therefore applied it to the convergent Taylor series, Pad\'e approximants, and quadratic
+approximants for RMP and UMP in the symmetric Hubbard dimer. 
+The UMP approximants converge too slowly for the Shanks transformation
+to provide any improvement, even in the case where the quadratic approximants are already 
+very accurate.
+In contrast, acceleration of the diagonal Pad\'e approximants for the RMP cases 
+can significantly improve the estimate of the energy using low-order perturbation terms, 
+as shown in Table~\ref{tab:RMP_shank}.
+Even though the RMP series diverges at $U/t = 4.5$, the combination
+of diagonal Pad\'e approximants with the Shanks transformation reduces the absolute error of 
+the best energy estimate to 0.002\,\%.}
+
+\begin{table}[th]
+	\caption{
+    \hugh{%
+    Acceleration of the diagonal Pad\'e approximant sequence for the RMP energy
+    using the Shanks transformation.
+    }
+	\label{tab:RMP_shank}}
+	\begin{ruledtabular}
+		\begin{tabular}{lcccc}
+            &			&	&	\mc{2}{c}{$E_{-}(\lambda = 1)$} \\
+												\cline{4-5} 
+            Method  &   Degree	&  Series Term &   $U/t = 3.5$ & $U/t = 4.5$ \\
+			\hline
+            Pad\'e	&	[1/1]	& $S_1$        &  $-1.61111$   &  $-2.64286$ \\
+                    &   [2/2]   & $S_2$        &  $-0.82124$   &  $-0.48446$ \\
+                    &   [3/3]   & $S_3$        &  $-0.91995$   &  $-0.81929$ \\
+                    &   [4/4]   & $S_4$        &  $-0.90579$   &  $-0.74866$ \\
+                    &   [5/5]   & $S_5$        &  $-0.90778$   &  $-0.76277$ \\
+            \hline
+            Shanks  &	        &  $T(S_2)$    &  $-0.90898$   &  $-0.77432$ \\
+                    &           &  $T(S_3)$    &  $-0.90757$   &  $-0.76096$ \\
+                    &           &  $T(S_4)$    &  $-0.90753$   &  $-0.76042$ \\
+			\hline
+            Exact	&	        & 	           &  $-0.90754$	&  $-0.76040$ \\
+		\end{tabular}
+	\end{ruledtabular}
+\end{table}
+
 
 
 %==========================================%
