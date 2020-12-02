@@ -1364,33 +1364,65 @@ radius of convergence (see Fig.~\ref{fig:RadConv}).
 \label{sec:Resummation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-As frequently claimed by Carl Bender, \textit{``the most stupid thing that one can do with a series is to sum it.''}
+%As frequently claimed by Carl Bender, 
+\hugh{It is frequently stated that}
+\textit{``the most stupid thing that one can do with a series is to sum it.''}
 Nonetheless, quantum chemists are basically doing exactly this on a daily basis.
-Here, we discuss tools that can be used to sum divergent series.
-Resummation techniques is a vast field of research and, below, we provide details for a non-exhaustive list of these techniques.
-We refer the interested reader to more specialised reviews for additional information. \cite{Goodson_2011,Goodson_2019}
+\hugh{As we have seen throughout this review, the MP series can often show erratic, 
+slow, or divergent behaviour.
+In these cases, estimating the correlation energy by simply summing successive
+low-order terms is almost guaranteed to fail.}
+Here, we discuss alternative tools that can be used to sum slowly convergent or divergent series.
+\hugh{These so-called ``resummation'' techniques} form a vast field of research and thus we will
+provide details for only the most relevant methods.
+We refer the interested reader to more specialised reviews for additional information.% 
+\cite{Goodson_2011,Goodson_2019}
+
 
 %==========================================%
-\subsection{Pad\'e approximant}
+\subsection{Pad\'e Approximant}
 %==========================================%
-The inability of Taylor series to model properly the energy function $E(\lambda$) can be simply understood by the fact that one aims at modelling a complicated function with potentially poles and singularities by a simple polynomial of finite order.
+\hugh{The failure of a Taylor series for correctly modelling the MP energy function $E(\lambda)$ 
+arises because one is trying to model a complicated function containing branch points and
+singularities} using a simple polynomial of finite order.
 A truncated Taylor series just does not have enough flexibility to do the job properly.
-Nonetheless, the description of complex energy functions can be significantly improved thanks to Pad\'e approximant, \cite{Pade_1892} and related techniques. \cite{BakerBook,BenderBook}
+Alternatively, the description of complex energy functions can be significantly improved
+by introducing Pad\'e approximants, \cite{Pade_1892} and related techniques. \cite{BakerBook,BenderBook}
 
-According to Wikipedia, \textit{``a Pad\'e approximant is the best approximation of a function by a rational function of given order''}. 
+\hugh{A Pad\'e approximant can be considered as the best approximation of a function by a 
+rational function of given order.}
 More specifically, a $[d_A/d_B]$ Pad\'e approximant is defined as 
 \begin{equation}
 	\label{eq:PadeApp}
-	E_{[d_A/d_B]}(\lambda) = \frac{A(\lambda)}{B(\lambda)} = \frac{\sum_{k=0}^{d_A} a_k \lambda^k}{\sum_{k=0}^{d_B} b_k \lambda^k}
+	E_{[d_A/d_B]}(\lambda) = \frac{A(\lambda)}{B(\lambda)} 
+    = \frac{\sum_{k=0}^{d_A} a_k\, \lambda^k}{1 + \sum_{k=1}^{d_B} b_k\, \lambda^k},
 \end{equation}
-(with $b_0 = 1$), where the coefficients of the polynomials $A(\lambda)$ and $B(\lambda)$ are determined by collecting terms according to power of $\lambda$.
+where the coefficients of the polynomials $A(\lambda)$ and $B(\lambda)$ are determined by collecting terms for each power of $\lambda$.
 Pad\'e approximants are extremely useful in many areas of physics and chemistry \cite{Loos_2013,Pavlyukh_2017,Tarantino_2019,Gluzman_2020} as they can model poles, which appears at the locations of the roots of $B(\lambda)$. 
-However, they are unable to model functions with square-root branch points (which are ubiquitous in the singularity structure of a typical perturbative treatment) and more complicated functional forms appearing at critical points (where the nature of the solution undergoes a sudden transition) for example.
+However, they are unable to model functions with square-root branch points (which are ubiquitous in the singularity structure of a typical perturbative treatment) and more complicated functional forms appearing at critical points (where the nature of the solution undergoes a sudden transition).
+\hugh{Despite this limitation, the successive diagonal Pad\'e approximants (\ie, $d_A = d_B $) 
+often define a convergent perturbation series in cases where the Taylor series expansion diverges.}
 
-Figure \ref{fig:PadeRMP} illustrates the improvement brought by diagonal (\ie, $d_A = d_B$) Pad\'e approximants as compared to the usual Taylor expansion in cases where the RMP series of the Hubbard dimer converges ($U/t = 3.5$) and diverges ($U/t = 4.5$).
+Figure \ref{fig:PadeRMP} illustrates the improvement provided by diagonal Pad\'e approximants compared to the usual Taylor expansion in cases where the RMP series of the Hubbard dimer converges ($U/t = 3.5$) and diverges ($U/t = 4.5$).
 More quantitatively, Table \ref{tab:PadeRMP} gathers estimates of the RMP ground-state energy at $\lambda = 1$ provided by various truncated Taylor series and Pad\'e approximants for these two values of the ratio $U/t$.
-While the truncated Taylor series converges laboriously to the exact energy at $U/t = 3.5$ when one increases the truncation degree, the Pad\'e approximants yield much more accurate results with, additionally, a rather good estimate of the radius of convergence of the RMP series.
-For $U/t = 4.5$, the struggles of the truncated Taylor expansions are magnified and the Pad\'e approximants still provide quite accurate energies even outside the radius of convergence of the RMP series.
+While the truncated Taylor series converges laboriously to the exact energy as the truncation degree increases at $U/t = 3.5$, the Pad\'e approximants yield much more accurate results.
+\hugh{Furthermore, the Pad\'e approximants provide a rather good estimate of the radius of convergence of the RMP series.}
+For $U/t = 4.5$, the Taylor series expansion performs worse (and eventually diverges),
+while the Pad\'e approximants still offer relaitively accurate energies even outside the radius of convergence of the RMP series.
+
+\hugh{%
+We can expect that the singularity structure of the UMP energy will be much more challenging to model properly as the UMP energy function contains three connected branches (see Figs.~\ref{subfig:UMP_3} and \ref{subfig:UMP_7}).
+Figure~\ref{fig:QuadUMP} and Table~\ref{tab:QuadUMP} indicate that this is indeed the case. 
+However, with sufficiently high degree polynomials, one obtains
+accurate estimates of both the radius of convergence and the ground-state energy at $\lambda = 1$,
+even in cases where the convergence of the UMP series is incredibly slow 
+(see Fig.~\ref{subfig:UMP_cvg}).
+In Figure \ref{fig:QuadUMP}, it becomes clear that the Pad\'e approximants are trying to model
+the square root branch point that lies close to $\lambda = 1$ by placing a pole on the real axis
+(for [3/3]) or with a very small imaginary component (for [4/4]).
+The proximity of these poles to the radius of convergence means that any error in the Pad\'e 
+functional form becomes magnified in the estimate of energy at $\lambda = 1$.
+}
 
 \begin{table}
 	\caption{RMP ground-state energy estimate at $\lambda = 1$ provided by various truncated Taylor series and Pad\'e approximants at $U/t = 3.5$ and $4.5$.
@@ -1428,14 +1460,14 @@ For $U/t = 4.5$, the struggles of the truncated Taylor expansions are magnified 
 %%%%%%%%%%%%%%%%%
 
 %==========================================%
-\subsection{Quadratic approximant}
+\subsection{Quadratic Approximant}
 %==========================================%
-In a nutshell, the idea behind quadratic approximant is to model the singularity structure of the energy function $E(\lambda)$ via a generalised version of the square-root singularity expression \cite{Mayer_1985,Goodson_2011,Goodson_2019}
+Quadratic approximants \hugh{are designed} to model the singularity structure of the energy function $E(\lambda)$ via a generalised version of the square-root singularity expression \cite{Mayer_1985,Goodson_2011,Goodson_2019}
 \begin{equation}
 	\label{eq:QuadApp}
 	E(\lambda) = \frac{1}{2 Q(\lambda)} \qty[ P(\lambda) \pm \sqrt{P^2(\lambda) - 4 Q(\lambda) R(\lambda)} ]
 \end{equation}
-where 
+with the polynomials 
 \begin{align}
 	\label{eq:PQR}
 	P(\lambda) & = \sum_{k=0}^{d_P} p_k \lambda^k,
@@ -1444,7 +1476,7 @@ where
 	&
 	R(\lambda) & = \sum_{k=0}^{d_R} r_k \lambda^k 
 \end{align}
-are polynomials, such that $d_P + d_Q + d_R = n - 1$, and $n$ is the truncation order of the Taylor series of $E(\lambda)$.
+defined such that $d_P + d_Q + d_R = n - 1$, and $n$ is the truncation order of the Taylor series of $E(\lambda)$.
 Recasting Eq.~\eqref{eq:QuadApp} as a second-order expression in $E(\lambda)$, \ie,
 \begin{equation}
 	Q(\lambda) E^2(\lambda) - P(\lambda) E(\lambda) + R(\lambda) \sim \order*{\lambda^{n+1}}
@@ -1452,17 +1484,11 @@ Recasting Eq.~\eqref{eq:QuadApp} as a second-order expression in $E(\lambda)$, \
 and substituting $E(\lambda$) by its $n$th-order expansion and the polynomials by their respective expressions \eqref{eq:PQR} yields $n+1$ linear equations for the coefficients $p_k$, $q_k$, and $r_k$ (where we are free to assume that $q_0 = 1$).
 A quadratic approximant, characterised by the label $[d_P/d_Q,d_R]$, generates, by construction, $n_\text{bp} = \max(2d_p,d_q+d_r)$ branch points at the roots of the polynomial $P^2(\lambda) - 4 Q(\lambda) R(\lambda)$.
 The diagonal sequence of quadratic approximant, \ie, $[0/0,0]$, $[1/0,0]$, $[1/0,1]$, $[1/1,1]$, $[2/1,1]$, is of particular interest.
-Note that, by construction, a quadratic approximant has only two branches which hampers the faithful description of more complicated singularity structures.
+However, by construction, a quadratic approximant has only two branches, which hampering the faithful description of more complicated singularity structures.
 As shown in Ref.~\onlinecite{Goodson_2000a}, quadratic approximants provide convergent results in the most divergent cases considered by Olsen and collaborators \cite{Christiansen_1996,Olsen_1996} and Leininger \etal \cite{Leininger_2000}
 
-For the RMP series of the Hubbard dimer, the $[0/0,0]$ and $[1/0,0]$ quadratic approximant are quite poor approximation, but its $[1/0,1]$ version already model perfectly the RMP energy function by predicting a single pair of EPs at $\lambda_\text{EP} = \pm i 4t/U$.
-This is expected knowing the form of the RMP energy [see Eq.~\eqref{eq:E0MP}] which perfectly suits the purpose of quadratic approximants.
-
-We can anticipate that the singularity structure of the UMP energy function is going to be much more challenging to model properly, and this is indeed the case as the UMP energy function contains three branches (see Figs.~\ref{subfig:UMP_3} and \ref{subfig:UMP_7}).
-However, by ramping up high enough the degree of the polynomials, one is able to get both, as shown in Fig.~\ref{fig:QuadUMP} and Table \ref{tab:QuadUMP}, accurate estimates of the radius of convergence of the UMP series and of the ground-state energy at $\lambda = 1$, even in cases where the convergence of the UMP series is painfully slow (see Fig.~\ref{subfig:UMP_cvg}).
-Figure \ref{fig:QuadUMP} evidences that the Pad\'e approximants are trying to model the square root singularity by placing a pole on the real axis (for [3/3]) or just off the real axis (for [4/4]).
-Thanks to greater flexibility, the quadratic approximants are able to model nicely the avoided crossing and the location of the singularities. 
-Besides, they provide accurate estimates of the ground-state energy at $\lambda = 1$ (see Table \ref{tab:QuadUMP}).
+For the RMP series of the Hubbard dimer, the $[0/0,0]$ and $[1/0,0]$ quadratic approximant are quite poor approximations, but the $[1/0,1]$ version perfectly models the RMP energy function by predicting a single pair of EPs at $\lambda_\text{EP} = \pm i 4t/U$.
+This is expected from the form of the RMP energy [see Eq.~\eqref{eq:E0MP}], which matches the ideal target for quadratic approximants.
 
 %%%%%%%%%%%%%%%%%
 \begin{figure}
@@ -1482,7 +1508,9 @@ Besides, they provide accurate estimates of the ground-state energy at $\lambda 
 																		\cline{5-6}\cline{7-8}
 			\mc{2}{c}{Method}		&	$n$		&	$n_\text{bp}$	&	$U/t = 3$	&	$U/t = 7$	&	$U/t = 3$	&	$U/t = 7$	\\
 			\hline
-			Pad\'e		&	[3/3]	&	6		&					&	$1.141$		&	$1.004$		&	$-1.10896$	&	$-1.49856$	\\
+			Pad\'e		&	[1/1]	&	2		&					&	$9.000$		&	$49.00$		&	$-0.75000$	&	$-0.29167$	\\
+                        &	[2/2]	&	4		&					&	$0.974$		&	$1.003$		&	$\hphantom{-}0.75000$	&	$-17.9375$	\\
+			         	&	[3/3]	&	6		&					&	$1.141$		&	$1.004$		&	$-1.10896$	&	$-1.49856$	\\
 						&	[4/4]	&	8		&					&	$1.068$		&	$1.003$		&	$-0.85396$	&	$-0.33596$	\\
 						&	[5/5]	&	10		&					&	$1.122$		&	$1.004$		&	$-0.97254$	&	$-0.35513$	\\
 			Quadratic	&	[2/1,2]	&	6		&	4				&	$1.086$		&	$1.003$		&	$-1.01009$	&	$-0.53472$	\\
@@ -1495,10 +1523,45 @@ Besides, they provide accurate estimates of the ground-state energy at $\lambda 
 		\end{tabular}
 	\end{ruledtabular}
 \end{table}
+\hugh{On the other hand, the greater flexibility of the quadratic approximants provides a significantly
+improved model of the UMP energy in comparison to the Pad\' approximants or Taylor series.
+In particular, the quadratic approximants provide an effect model for the avoided crossings 
+(Fig.~\ref{fig:QuadUMP}) and a far better estimate for the location of the branch point singularities.
+Furthermore, they provide remarkably accurate estimates of the ground-state energy at $\lambda = 1$, 
+as shown in Table~\ref{tab:QuadUMP}}
 
-An interesting point raised in Ref.~\onlinecite{Goodson_2019} suggests that low-order quadratic approximants might struggle to model the correct singularity structure when the energy function has poles in both the positive and negative half-planes. 
-In such a scenario, the quadratic approximant will have the tendency to place its branch points in-between, potentially introducing singularities quite close to the origin.
-A simple potential cure for this consists in applying a judicious transformation (like a bilinear conformal mapping) which does not affect the points at $\lambda = 0$ and $\lambda = 1$. \cite{Feenberg_1956}
+However, as a note of caution, Ref.~\onlinecite{Goodson_2019} suggests that low-order 
+quadratic approximants can struggle to correctly model the singularity structure when 
+the energy function has poles in both the positive and negative half-planes. 
+In such a scenario, the quadratic approximant will tend to place its branch points in-between, potentially introducing singularities quite close to the origin.
+The remedy for this problem involves applying a suitable transformation of the complex plane (such as a bilinear conformal mapping) which leaves the points at $\lambda = 0$ and $\lambda = 1$ unchanged. \cite{Feenberg_1956}
+
+
+%==========================================%
+\subsection{Shanks Transformation}
+%==========================================%
+
+While the Pad\'e and quadratic approximants can yield a convergent series representation
+in cases where the standard MP series diverges, there is no guarantee that the rate of convergence
+will be fast enough for low-order approximations to be useful.
+However, these low-order partial sums or approximants often contain a remarkable amount of information
+that can be used to extract further information about the exact result.
+The Shanks transformation presents one approach for extracting this information
+and accelerating the rate of convergence of a sequence.\cite{Shanks_1955}
+
+Consider the partial sums $S_N$ defined from the truncated summation of an infinite series
+\begin{equation}
+    S_N = \sum_{k=0}^{N} a_k.
+\end{equation}
+If the series converges, then the partial sums will tend to the exact result in the limit $N\rightarrow \infty$.
+The Shanks transformation attempts to generate increasingly accurate estimates of the
+exact result by defining a new series as
+\begin{equation}
+    T(S_N) = \frac{S_{N+1} S_{N-1} - S_{N}^2}{S_{N+1} + S_{N-1} - 2 S_{N}}.
+\end{equation}
+This series can converge faster than the original partial sums and can thus provide greater
+accuracy using only the first few terms in the series.
+
 
 %==========================================%
 \subsection{Analytic continuation}
