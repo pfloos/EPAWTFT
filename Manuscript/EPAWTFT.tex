@@ -1327,6 +1327,17 @@ radius of convergence (see Fig.~\ref{fig:RadConv}).
 \label{sec:Resummation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%
+\begin{figure*}
+    \includegraphics[height=0.23\textheight]{PadeRMP35}
+    \includegraphics[height=0.23\textheight]{PadeRMP45}
+    \caption{\label{fig:PadeRMP}
+    RMP ground-state energy as a function of $\lambda$ obtained using various resummation 
+    techniques at $U/t = 3.5$ (left) and $U/t = 4.5$ (right).}
+\end{figure*}
+%%%%%%%%%%%%%%%%%
+
+
 %As frequently claimed by Carl Bender, 
 \hugh{It is frequently stated that}
 \textit{``the most stupid thing that one can do with a series is to sum it.''}
@@ -1345,10 +1356,12 @@ We refer the interested reader to more specialised reviews for additional inform
 %==========================================%
 \subsection{Pad\'e Approximant}
 %==========================================%
+
 \hugh{The failure of a Taylor series for correctly modelling the MP energy function $E(\lambda)$ 
-arises because one is trying to model a complicated function containing branch points and
+arises because one is trying to model a complicated function containing multiple branches, branch points and
 singularities} using a simple polynomial of finite order.
-A truncated Taylor series just does not have enough flexibility to do the job properly.
+A truncated Taylor series \hugh{can only predict a single sheet and} does not have enough 
+flexibility to adequately describe the MP energy.
 Alternatively, the description of complex energy functions can be significantly improved
 by introducing Pad\'e approximants, \cite{Pade_1892} and related techniques. \cite{BakerBook,BenderBook}
 
@@ -1371,6 +1384,34 @@ where the nature of the solution undergoes a sudden transition).
 \hugh{Despite this limitation, the successive diagonal Pad\'e approximants (\ie, $d_A = d_B $) 
 often define a convergent perturbation series in cases where the Taylor series expansion diverges.}
 
+\begin{table}[b]
+	\caption{RMP ground-state energy estimate at $\lambda = 1$ provided by various truncated Taylor 
+    series and Pad\'e approximants at $U/t = 3.5$ and $4.5$.
+    We also report the \hugh{closest pole to the origin $\lc$} provided by the diagonal Pad\'e approximants.
+	\label{tab:PadeRMP}}
+	\begin{ruledtabular}
+		\begin{tabular}{lccccc}
+            &			&	\mc{2}{c}{$\abs{\lc}$}	&	\mc{2}{c}{$E_{-}(\lambda = 1)$} \\
+																		\cline{3-4} \cline{5-6}
+			Method		&	degree	&	$U/t = 3.5$	&	$U/t = 4.5$	&	$U/t = 3.5$	&	$U/t = 4.5$	\\
+			\hline
+			Taylor		&	2		&			&			&	$-1.01563$	&	$-1.01563$	\\
+						&	3		&			&			&	$-1.01563$	&	$-1.01563$	\\
+						&	4		&			&			&	$-0.86908$	&	$-0.61517$	\\
+						&	5		&			&			&	$-0.86908$	&	$-0.61517$	\\
+						&	6		&			&			&	$-0.92518$	&	$-0.86858$	\\
+            \hline
+			Pad\'e		&	[1/1]	&	$2.29$	&	$1.78$	&	$-1.61111$	&	$-2.64286$	\\
+						&	[2/2]	&	$2.29$	&	$1.78$	&	$-0.82124$	&	$-0.48446$	\\
+						&	[3/3]	&	$1.73$	&	$1.34$	&	$-0.91995$	&	$-0.81929$	\\
+						&	[4/4]	&	$1.47$	&	$1.14$	&	$-0.90579$	&	$-0.74866$	\\
+						&	[5/5]	&	$1.35$	&	$1.05$	&	$-0.90778$	&	$-0.76277$	\\
+			\hline
+			Exact		&			&	$1.14$	&	$0.89$	&	$-0.90754$	&	$-0.76040$	\\
+		\end{tabular}
+	\end{ruledtabular}
+\end{table}
+
 Fig.~\ref{fig:PadeRMP} illustrates the improvement provided by diagonal Pad\'e 
 approximants compared to the usual Taylor expansion in cases where the RMP series of 
 the Hubbard dimer converges ($U/t = 3.5$) and diverges ($U/t = 4.5$).
@@ -1379,15 +1420,24 @@ energy at $\lambda = 1$ provided by various truncated Taylor series and Pad\'e
 approximants for these two values of the ratio $U/t$.
 While the truncated Taylor series converges laboriously to the exact energy as the truncation 
 degree increases at $U/t = 3.5$, the Pad\'e approximants yield much more accurate results.
-\hugh{Furthermore, the position of the closest pole to origin $\lc$ in the Pad\'e approximants 
-indicate that they a relatively good approximation to the true branch point singularity in the RMP energy.
+\hugh{Furthermore, the distance of the closest pole to origin $\abs{\lc}$ in the Pad\'e approximants 
+indicate that they a relatively good approximation to the position of the 
+true branch point singularity in the RMP energy.
 For $U/t = 4.5$, the Taylor series expansion performs worse and eventually diverges,
 while the Pad\'e approximants still offer relaitively accurate energies and recovers
 a convergent series.}
 
+%%%%%%%%%%%%%%%%%
+\begin{figure}[t]
+    \includegraphics[width=\linewidth]{QuadUMP}
+    \caption{\label{fig:QuadUMP}
+    UMP energies as a function of $\lambda$ obtained using various resummation techniques at $U/t = 3$.}
+\end{figure}
+%%%%%%%%%%%%%%%%%
+
 \hugh{%
-We can expect that the singularity structure of the UMP energy will be much more challenging 
-to model properly as the UMP energy function contains three connected branches 
+We can expect the UMP energy function to be much more challenging 
+to model properly as it contains three connected branches 
 (see Figs.~\ref{subfig:UMP_3} and \ref{subfig:UMP_7}).
 Fig.~\ref{fig:QuadUMP} and Table~\ref{tab:QuadUMP} indicate that this is indeed the case. 
 In particular, Fig.~\ref{fig:QuadUMP} illustrates that the Pad\'e approximants are trying to model
@@ -1401,43 +1451,6 @@ accurate estimates for the position of the closest singularity and the ground-st
 even in cases where the convergence of the UMP series is incredibly slow 
 (see Fig.~\ref{subfig:UMP_cvg}).
 }
-
-\begin{table}
-	\caption{RMP ground-state energy estimate at $\lambda = 1$ provided by various truncated Taylor 
-    series and Pad\'e approximants at $U/t = 3.5$ and $4.5$.
-    We also report the \hugh{closest pole to the origin $\lc$} provided by the diagonal Pad\'e approximants.
-	\label{tab:PadeRMP}}
-	\begin{ruledtabular}
-		\begin{tabular}{lccccc}
-						&			&	\mc{2}{c}{$\lc$}	&	\mc{2}{c}{$E_{-}(\lambda = 1)$} \\
-																		\cline{3-4} \cline{5-6}
-			Method		&	degree	&	$U/t = 3.5$	&	$U/t = 4.5$	&	$U/t = 3.5$	&	$U/t = 4.5$	\\
-			\hline
-			Taylor		&	2		&			&			&	$-1.01563$	&	$-1.01563$	\\
-						&	3		&			&			&	$-1.01563$	&	$-1.01563$	\\
-						&	4		&			&			&	$-0.86908$	&	$-0.61517$	\\
-						&	5		&			&			&	$-0.86908$	&	$-0.61517$	\\
-						&	6		&			&			&	$-0.92518$	&	$-0.86858$	\\
-			Pad\'e		&	[1/1]	&	$2.29$	&	$1.78$	&	$-1.61111$	&	$-2.64286$	\\
-						&	[2/2]	&	$2.29$	&	$1.78$	&	$-0.82124$	&	$-0.48446$	\\
-						&	[3/3]	&	$1.73$	&	$1.34$	&	$-0.91995$	&	$-0.81929$	\\
-						&	[4/4]	&	$1.47$	&	$1.14$	&	$-0.90579$	&	$-0.74866$	\\
-						&	[5/5]	&	$1.35$	&	$1.05$	&	$-0.90778$	&	$-0.76277$	\\
-			\hline
-			Exact		&			&	$1.14$	&	$0.89$	&	$-0.90754$	&	$-0.76040$	\\
-		\end{tabular}
-	\end{ruledtabular}
-\end{table}
-
-%%%%%%%%%%%%%%%%%
-\begin{figure*}
-    \includegraphics[height=0.23\textheight]{PadeRMP35}
-    \includegraphics[height=0.23\textheight]{PadeRMP45}
-    \caption{\label{fig:PadeRMP}
-    RMP ground-state energy as a function of $\lambda$ obtained using various resummation 
-    techniques at $U/t = 3.5$ (left) and $U/t = 4.5$ (right).}
-\end{figure*}
-%%%%%%%%%%%%%%%%%
 
 %==========================================%
 \subsection{Quadratic Approximant}
@@ -1468,6 +1481,7 @@ their respective expressions \eqref{eq:PQR} yields $n+1$ linear equations for th
 $p_k$, $q_k$, and $r_k$ (where we are free to assume that $q_0 = 1$).
 A quadratic approximant, characterised by the label $[d_P/d_Q,d_R]$, generates, by construction, 
 $n_\text{bp} = \max(2d_p,d_q+d_r)$ branch points at the roots of the polynomial $P^2(\lambda) - 4 Q(\lambda) R(\lambda)$ \hugh{and $d_q$ poles at the roots of $Q(\lambda)$}.
+
 Generally, the diagonal sequence of quadratic approximant, 
 \ie, $[0/0,0]$, $[1/0,0]$, $[1/0,1]$, $[1/1,1]$, $[2/1,1]$, 
 is of particular interest \hugh{as the order of the corresponding Taylor series increases on each step.
@@ -1480,60 +1494,140 @@ provide convergent results in the most divergent cases considered by Olsen and
 collaborators\cite{Christiansen_1996,Olsen_1996} 
 and Leininger \etal \cite{Leininger_2000}
 
-For the RMP series of the Hubbard dimer, the $[0/0,0]$ and $[1/0,0]$ quadratic approximant 
-are quite poor approximations, but the $[1/0,1]$ version perfectly models the RMP energy
-function by predicting a single pair of EPs at $\lambda_\text{EP} = \pm i 4t/U$.
-This is expected from the form of the RMP energy [see Eq.~\eqref{eq:E0MP}], which matches 
-the ideal target for quadratic approximants.
+As a note of caution, Ref.~\onlinecite{Goodson_2019} suggests that low-order 
+quadratic approximants can struggle to correctly model the singularity structure when 
+the energy function has poles in both the positive and negative half-planes. 
+In such a scenario, the quadratic approximant will tend to place its branch points in-between, potentially introducing singularities quite close to the origin.
+The remedy for this problem involves applying a suitable transformation of the complex plane (such as a bilinear conformal mapping) which leaves the points at $\lambda = 0$ and $\lambda = 1$ unchanged. \cite{Feenberg_1956}
 
-%%%%%%%%%%%%%%%%%
-\begin{figure}
-    \includegraphics[width=\linewidth]{QuadUMP}
-    \caption{\label{fig:QuadUMP}
-    UMP energies as a function of $\lambda$ obtained using various resummation techniques at $U/t = 3$.}
-\end{figure}
-%%%%%%%%%%%%%%%%%
-
-\begin{table}
-	\caption{Estimate of the radius of convergence $r_c$ of the UMP energy function provided 
+\begin{table}[b]
+    \caption{Estimate \hugh{for the distance of the closest singularity (pole or branch point) to the origin $\abs{\lc}$}
+    in the UMP energy function provided 
     by various resummation techniques at $U/t = 3$ and $7$.
 	The truncation degree of the Taylor expansion $n$ of $E(\lambda)$ and the number of branch 
     points $n_\text{bp} = \max(2d_p,d_q+d_r)$ generated by the quadratic approximants are also reported.
 	\label{tab:QuadUMP}}
 	\begin{ruledtabular}
 		\begin{tabular}{lccccccc}
-						&			&			&					&	\mc{2}{c}{$\lp$}	&	\mc{2}{c}{$E_{-}(\lambda)$}			\\
+            &			&			&					&	\mc{2}{c}{$\abs{\lc}$}	&	\mc{2}{c}{$E_{-}(\lambda)$}			\\
 																		\cline{5-6}\cline{7-8}
 			\mc{2}{c}{Method}		&	$n$		&	$n_\text{bp}$	&	$U/t = 3$	&	$U/t = 7$	&	$U/t = 3$	&	$U/t = 7$	\\
+			\hline
+			Taylor		&	     	&	2		&					&	    		&	    		&	$-0.74074$	&	$-0.29155$	\\
+                        &	     	&	3		&					&	    		&	    		&	$-0.78189$	&	$-0.29690$	\\
+			         	&	     	&	4		&					&	    		&	    		&	$-0.82213$	&	$-0.30225$	\\
+						&	     	&	5		&					&	    		&	    		&	$-0.85769$	&	$-0.30758$	\\
+                        &	     	&   6		&					&	    		&	    		&	$-0.88882$	&	$-0.31289$	\\
 			\hline
 			Pad\'e		&	[1/1]	&	2		&					&	$9.000$		&	$49.00$		&	$-0.75000$	&	$-0.29167$	\\
                         &	[2/2]	&	4		&					&	$0.974$		&	$1.003$		&	$\hphantom{-}0.75000$	&	$-17.9375$	\\
 			         	&	[3/3]	&	6		&					&	$1.141$		&	$1.004$		&	$-1.10896$	&	$-1.49856$	\\
 						&	[4/4]	&	8		&					&	$1.068$		&	$1.003$		&	$-0.85396$	&	$-0.33596$	\\
-						&	[5/5]	&	10		&					&	$1.122$		&	$1.004$		&	$-0.97254$	&	$-0.35513$	\\
+                        &	[5/5]	&	10		&					&	$1.122$		&	$1.004$		&	$-0.97254$	&	$-0.35513$	\\
+            \hline
 			Quadratic	&	[2/1,2]	&	6		&	4				&	$1.086$		&	$1.003$		&	$-1.01009$	&	$-0.53472$	\\
 						&	[2/2,2]	&	7		&	4				&	$1.082$		&	$1.003$		&	$-1.00553$	&	$-0.53463$	\\
 						&	[3/2,2]	&	8		&	6				&	$1.082$		&	$1.001$		&	$-1.00568$	&	$-0.52473$	\\
 						&	[3/2,3]	&	9		&	6				&	$1.071$		&	$1.002$		&	$-0.99973$	&	$-0.53102$	\\
-						&	[3/3,3]	&	10		&	6				&	$1.071$		&	$1.002$		&	$-0.99966$	&	$-0.53103$	\\
+                        &	[3/3,3]	&	10		&	6				&	$1.071$		&	$1.002$		&	$-0.99966$	&	$-0.53103$	\\[0.5ex]
+            (pole-free)	&	[3/0,2]	&	6		&	6				&	$1.059$	    &	$1.003$ 	&	$-1.13712$	&	$-0.57199$	\\
+		                &	[3/0,3]	&	7		&	6				&	$1.073$		&	$1.002$		&	$-1.00335$	&	$-0.53113$	\\
+						&	[3/0,4]	&	8		&	6				&	$1.071$		&	$1.002$		&	$-1.00074$	&	$-0.53116$	\\
+						&	[3/0,5]	&	9		&	6				&	$1.070$		&	$1.002$		&	$-1.00042$	&	$-0.53114$	\\
+						&	[3/0,6]	&	10		&	6				&	$1.070$		&	$1.002$		&	$-1.00039$	&	$-0.53113$	\\
 			\hline
 			Exact		&			&			&					&	$1.069$		&	$1.002$		&	$-1.00000$	&	$-0.53113$	\\
 		\end{tabular}
 	\end{ruledtabular}
 \end{table}
 
-\hugh{On the other hand, the greater flexibility of the diagonal quadratic approximants provides a significantly
-improved model of the UMP energy in comparison to the Pad\'e approximants or Taylor series.
-In particular, these quadratic approximants provide an effect model for the avoided crossings 
-(Fig.~\ref{fig:QuadUMP}) and a far better estimate for the location of the branch point singularities.
-Furthermore, they provide remarkably accurate estimates of the ground-state energy at $\lambda = 1$, 
-as shown in Table~\ref{tab:QuadUMP}}
+\begin{figure*}
+    \begin{subfigure}{0.32\textwidth}
+	\includegraphics[height=0.85\textwidth]{ump_qa322}	
+    \subcaption{\label{subfig:ump_ep_to_cp} [3/2,2] Quadratic}
+    \end{subfigure}
+    %
+    \begin{subfigure}{0.32\textwidth}
+	\includegraphics[height=0.85\textwidth]{ump_exact}
+		\subcaption{\label{subfig:ump_cp_surf} Exact}
+    \end{subfigure}
+    %
+	\begin{subfigure}{0.32\textwidth}
+        \includegraphics[height=0.85\textwidth]{ump_qa304}	
+    \subcaption{\label{subfig:ump_cp} [3/0,4] Quadratic}
+    \end{subfigure}
+\caption{%
+\hugh{% 
+Comparison of the [3/2,2] and [3/0,4] quadratic approximants with the exact UMP energy surface in the complex $\lambda$ 
+plane with $U/t = 3$. 
+Both quadratic approximants correspond to the same truncation degree of the Taylor series and model the branch points 
+using a radicand polynomial of the same order.
+However, the [3/2,2] approximant introduces poles into the surface that limits it accuracy, while the [3/0,4] approximant
+is free of poles.}
+\label{fig:nopole_quad}}
+\end{figure*}
 
-However, as a note of caution, Ref.~\onlinecite{Goodson_2019} suggests that low-order 
-quadratic approximants can struggle to correctly model the singularity structure when 
-the energy function has poles in both the positive and negative half-planes. 
-In such a scenario, the quadratic approximant will tend to place its branch points in-between, potentially introducing singularities quite close to the origin.
-The remedy for this problem involves applying a suitable transformation of the complex plane (such as a bilinear conformal mapping) which leaves the points at $\lambda = 0$ and $\lambda = 1$ unchanged. \cite{Feenberg_1956}
+For the RMP series of the Hubbard dimer, the $[0/0,0]$ and $[1/0,0]$ quadratic approximant 
+are quite poor approximations, but the $[1/0,1]$ version perfectly models the RMP energy
+function by predicting a single pair of EPs at $\lambda_\text{EP} = \pm \i 4t/U$.
+This is expected from the form of the RMP energy [see Eq.~\eqref{eq:E0MP}], which matches 
+the ideal target for quadratic approximants.
+\hugh{%
+Furthermore, the greater flexibility of the diagonal quadratic approximants provides a significantly
+improved model of the UMP energy in comparison to the Pad\'e approximants or Taylor series.
+In particular, these quadratic approximants provide an effective model for the avoided crossings 
+(Fig.~\ref{fig:QuadUMP}) and an improved estimate for the distance of the 
+closest branch point  to the origin.
+Table~\ref{tab:QuadUMP} shows that they provide remarkably accurate 
+estimates of the ground-state energy at $\lambda = 1$.}
+
+\hugh{%
+While the diagonal quadratic approximants provide significanty improved estimates of the 
+ground-state energy, we can use our knowledge of the UMP singularity structure to develop
+even more accurate results.
+We have seen in previous sections that the UMP energy surface
+contains only square-root branch cuts that approach the real axis in the limit $U/t \rightarrow \infty$. 
+Since there are no true poles on this surface, we can obtain more accurate quadratic approximants by
+taking $d_q = 0$ and increasing $d_r$ to retain equivalent accuracy in the square-root term.
+Fig.~\ref{fig:nopole_quad} illustrates this improvement for the pole-free [3/0,4] quadratic
+approximant compared to the [3/2,2] approximant with the same truncation degree in the Taylor
+expansion.
+Clearly modelling the square-root branch point using $d_q = 2$ has the negative effect of
+introducing spurious poles in the energy, while focussing purely on the branch point with $d_q = 0$
+leads to a significantly improved model.
+Table~\ref{tab:QuadUMP} shows that these pole-free quadratic approximants
+provide a rapidly convergent series with essentially exact energies at low order.
+}
+
+
+\hugh{Finally, to emphasise the improvement that can be gained by using either Pad\'e, diagonal quadratic,
+or pole-free approximants, we consider the energy and error obtained using only the first 10 terms in the UMP
+in Table~\ref{tab:UMP_order10}.
+The accuracy of these approximants reinforces how our understanding of the MP
+energy surface in the complex plane can be leveraged to significantly improve estimates of the exact
+energy using low-order perturbation expansions.
+}
+
+\begin{table}[h]
+	\caption{
+    \hugh{%
+    Estimate and associated error of the exact UMP energy at $U/t = 7$ for 
+    various approximants using up to ten terms in the Taylor expansion.
+    }
+	\label{tab:UMP_order10}}
+	\begin{ruledtabular}
+		\begin{tabular}{lccc}
+            \mc{2}{c}{Method}	 &	$E_{-}(\lambda)$ & Abs.\ Error \\ 
+			\hline
+            Taylor		         &	 10	         &	$-0.33338$      &  $0.197290$ \\
+            Pad\'e               &   [5/5]       &  $-0.35513$      &  $0.176000$ \\
+            Quadratic (diagonal) &   [3/3,3]     &  $-0.53104$      &  $0.000103$ \\
+            Quadratic (pole-free)&   [3/0,6]     &  $-0.53113$      &  $0.000003$ \\
+			\hline
+            Exact		         &	        	 &	$-0.53113$	     &            \\
+		\end{tabular}
+	\end{ruledtabular}
+\end{table}
 
 
 %==========================================%
