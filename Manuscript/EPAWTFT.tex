@@ -1339,15 +1339,15 @@ radius of convergence (see Fig.~\ref{fig:RadConv}).
 
 
 %As frequently claimed by Carl Bender, 
-\hugh{It is frequently stated that}
+It is frequently stated that
 \textit{``the most stupid thing that one can do with a series is to sum it.''}
 Nonetheless, quantum chemists are basically doing exactly this on a daily basis.
-\hugh{As we have seen throughout this review, the MP series can often show erratic, 
+As we have seen throughout this review, the MP series can often show erratic, 
 slow, or divergent behaviour.
 In these cases, estimating the correlation energy by simply summing successive
-low-order terms is almost guaranteed to fail.}
+low-order terms is almost guaranteed to fail.
 Here, we discuss alternative tools that can be used to sum slowly convergent or divergent series.
-\hugh{These so-called ``resummation'' techniques} form a vast field of research and thus we will
+These so-called ``resummation'' techniques form a vast field of research and thus we will
 provide details for only the most relevant methods.
 We refer the interested reader to more specialised reviews for additional information.% 
 \cite{Goodson_2011,Goodson_2019}
@@ -1357,16 +1357,16 @@ We refer the interested reader to more specialised reviews for additional inform
 \subsection{Pad\'e Approximant}
 %==========================================%
 
-\hugh{The failure of a Taylor series for correctly modelling the MP energy function $E(\lambda)$ 
+The failure of a Taylor series for correctly modelling the MP energy function $E(\lambda)$ 
 arises because one is trying to model a complicated function containing multiple branches, branch points and
-singularities} using a simple polynomial of finite order.
-A truncated Taylor series \hugh{can only predict a single sheet and} does not have enough 
-flexibility to adequately describe the MP energy.
+singularities using a simple polynomial of finite order.
+A truncated Taylor series can only predict a single sheet and does not have enough 
+flexibility to adequately describe, for example, the MP energy.
 Alternatively, the description of complex energy functions can be significantly improved
 by introducing Pad\'e approximants, \cite{Pade_1892} and related techniques. \cite{BakerBook,BenderBook}
 
-\hugh{A Pad\'e approximant can be considered as the best approximation of a function by a 
-rational function of given order.}
+A Pad\'e approximant can be considered as the best approximation of a function by a 
+rational function of given order.
 More specifically, a $[d_A/d_B]$ Pad\'e approximant is defined as 
 \begin{equation}
 	\label{eq:PadeApp}
@@ -1379,15 +1379,15 @@ chemistry\cite{Loos_2013,Pavlyukh_2017,Tarantino_2019,Gluzman_2020} as they can 
 which appears at the locations of the roots of $B(\lambda)$. 
 However, they are unable to model functions with square-root branch points 
 (which are ubiquitous in the singularity structure of a typical perturbative treatment) 
-and more complicated functional forms appearing at critical points (
-where the nature of the solution undergoes a sudden transition).
-\hugh{Despite this limitation, the successive diagonal Pad\'e approximants (\ie, $d_A = d_B $) 
-often define a convergent perturbation series in cases where the Taylor series expansion diverges.}
+and more complicated functional forms appearing at critical points 
+(where the nature of the solution undergoes a sudden transition).
+Despite this limitation, the successive diagonal Pad\'e approximants (\ie, $d_A = d_B $) 
+often define a convergent perturbation series in cases where the Taylor series expansion diverges.
 
 \begin{table}[b]
 	\caption{RMP ground-state energy estimate at $\lambda = 1$ provided by various truncated Taylor 
     series and Pad\'e approximants at $U/t = 3.5$ and $4.5$.
-    We also report the \hugh{closest pole to the origin $\lc$} provided by the diagonal Pad\'e approximants.
+    We also report the distance of the closest pole to the origin $\abs{\lc}$ provided by the diagonal Pad\'e approximants.
 	\label{tab:PadeRMP}}
 	\begin{ruledtabular}
 		\begin{tabular}{lccccc}
@@ -1412,7 +1412,7 @@ often define a convergent perturbation series in cases where the Taylor series e
 	\end{ruledtabular}
 \end{table}
 
-Fig.~\ref{fig:PadeRMP} illustrates the improvement provided by diagonal Pad\'e 
+Figure~\ref{fig:PadeRMP} illustrates the improvement provided by diagonal Pad\'e 
 approximants compared to the usual Taylor expansion in cases where the RMP series of 
 the Hubbard dimer converges ($U/t = 3.5$) and diverges ($U/t = 4.5$).
 More quantitatively, Table \ref{tab:PadeRMP} gathers estimates of the RMP ground-state 
@@ -1420,12 +1420,12 @@ energy at $\lambda = 1$ provided by various truncated Taylor series and Pad\'e
 approximants for these two values of the ratio $U/t$.
 While the truncated Taylor series converges laboriously to the exact energy as the truncation 
 degree increases at $U/t = 3.5$, the Pad\'e approximants yield much more accurate results.
-\hugh{Furthermore, the distance of the closest pole to origin $\abs{\lc}$ in the Pad\'e approximants 
+Furthermore, the distance of the closest pole to the origin $\abs{\lc}$ in the Pad\'e approximants 
 indicate that they a relatively good approximation to the position of the 
 true branch point singularity in the RMP energy.
 For $U/t = 4.5$, the Taylor series expansion performs worse and eventually diverges,
-while the Pad\'e approximants still offer relaitively accurate energies and recovers
-a convergent series.}
+while the Pad\'e approximants still offer relatively accurate energies and recovers
+a convergent series.
 
 %%%%%%%%%%%%%%%%%
 \begin{figure}[t]
@@ -1435,22 +1435,20 @@ a convergent series.}
 \end{figure}
 %%%%%%%%%%%%%%%%%
 
-\hugh{%
 We can expect the UMP energy function to be much more challenging 
 to model properly as it contains three connected branches 
 (see Figs.~\ref{subfig:UMP_3} and \ref{subfig:UMP_7}).
-Fig.~\ref{fig:QuadUMP} and Table~\ref{tab:QuadUMP} indicate that this is indeed the case. 
+Figure~\ref{fig:QuadUMP} and Table~\ref{tab:QuadUMP} indicate that this is indeed the case. 
 In particular, Fig.~\ref{fig:QuadUMP} illustrates that the Pad\'e approximants are trying to model
 the square root branch point that lies close to $\lambda = 1$ by placing a pole on the real axis
 (\eg, [3/3]) or with a very small imaginary component (\eg, [4/4]).
 The proximity of these poles to the physical point $\lambda = 1$ means that any error in the Pad\'e 
-functional form becomes magnified in the estimate of exact energy, as seen for the low-order
+functional form becomes magnified in the estimate of the exact energy, as seen for the low-order
 approximants in Table~\ref{tab:QuadUMP}.
 However, with sufficiently high degree polynomials, one obtains
 accurate estimates for the position of the closest singularity and the ground-state energy at $\lambda = 1$,
 even in cases where the convergence of the UMP series is incredibly slow 
 (see Fig.~\ref{subfig:UMP_cvg}).
-}
 
 %==========================================%
 \subsection{Quadratic Approximant}

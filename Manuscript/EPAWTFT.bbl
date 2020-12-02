@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{157}%
+\begin{thebibliography}{158}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -1399,6 +1399,13 @@
   {journal} {\bibinfo  {journal} {Phys. Rev.}\ }\textbf {\bibinfo {volume}
   {103}},\ \bibinfo {pages} {1116} (\bibinfo {year} {1956})}\BibitemShut
   {NoStop}%
+\bibitem [{\citenamefont {Shanks}(1955)}]{Shanks_1955}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Shanks}},\ }\href {\doibase https://doi.org/10.1002/sapm19553411} {\bibfield
+   {journal} {\bibinfo  {journal} {Journal of Mathematics and Physics}\
+  }\textbf {\bibinfo {volume} {34}},\ \bibinfo {pages} {1} (\bibinfo {year}
+  {1955})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Surj{\'a}n}\ and\ \citenamefont
   {Szabados}(2000)}]{Surjan_2000}%
   \BibitemOpen
