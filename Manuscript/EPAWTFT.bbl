@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{158}%
+\begin{thebibliography}{160}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -1403,9 +1403,8 @@
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
   {Shanks}},\ }\href {\doibase https://doi.org/10.1002/sapm19553411} {\bibfield
-   {journal} {\bibinfo  {journal} {Journal of Mathematics and Physics}\
-  }\textbf {\bibinfo {volume} {34}},\ \bibinfo {pages} {1} (\bibinfo {year}
-  {1955})}\BibitemShut {NoStop}%
+   {journal} {\bibinfo  {journal} {J. Math. Phys.}\ }\textbf {\bibinfo {volume}
+  {34}},\ \bibinfo {pages} {1} (\bibinfo {year} {1955})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Surj{\'a}n}\ and\ \citenamefont
   {Szabados}(2000)}]{Surjan_2000}%
   \BibitemOpen
@@ -1513,4 +1512,26 @@
   {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo
   {volume} {124}},\ \bibinfo {pages} {243001} (\bibinfo {year}
   {2020})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Smith}\ \emph {et~al.}(2016)\citenamefont {Smith},
+  \citenamefont {{Pribram-Jones}},\ and\ \citenamefont {Burke}}]{Smith_2016}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~C.}\ \bibnamefont
+  {Smith}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {{Pribram-Jones}}}, \ and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Burke}},\ }\href {\doibase 10.1103/PhysRevB.93.245131} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {93}},\
+  \bibinfo {pages} {245131} (\bibinfo {year} {2016})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Smith}\ \emph {et~al.}()\citenamefont {Smith},
+  \citenamefont {Sagredo},\ and\ \citenamefont {Burke}}]{Smith_2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Smith}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Sagredo}}, \
+  and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Burke}},\ }in\ \href
+  {\doibase 10.1007/978-981-10-5651-2_11} {\emph {\bibinfo {booktitle}
+  {Frontiers of Quantum Chemistry}}},\ \bibinfo {editor} {edited by\ \bibinfo
+  {editor} {\bibfnamefont {M.}~\bibnamefont {W{\'o}jcik}}, \bibinfo {editor}
+  {\bibfnamefont {H.}~\bibnamefont {Nakatsuji}}, \bibinfo {editor}
+  {\bibfnamefont {B.}~\bibnamefont {Kirtman}}, \ and\ \bibinfo {editor}
+  {\bibfnamefont {Y.}~\bibnamefont {Ozaki}}}\ (\bibinfo  {publisher} {Springer,
+  Singapore})\BibitemShut {NoStop}%
 \end{thebibliography}%
