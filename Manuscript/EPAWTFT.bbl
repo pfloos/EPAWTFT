@@ -1495,7 +1495,7 @@
   {Senjean}}\ and\ \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
   {Fromager}},\ }\href {\doibase 10.1103/PhysRevA.98.022513} {\bibfield
   {journal} {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume}
-  {98}} (\bibinfo {year} {2018}),\ 10.1103/PhysRevA.98.022513}\BibitemShut
+  {98}},\ \bibinfo {pages} {98.022513} (\bibinfo {year} {2018})}\BibitemShut
   {NoStop}%
 \bibitem [{\citenamefont {Sagredo}\ and\ \citenamefont
   {Burke}(2018)}]{Sagredo_2018}%
