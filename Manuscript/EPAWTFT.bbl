@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{133}%
+\begin{thebibliography}{148}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -50,6 +50,154 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
+\bibitem [{\citenamefont {Szabo}\ and\ \citenamefont
+  {Ostlund}(1989)}]{SzaboBook}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Szabo}}\ and\ \bibinfo {author} {\bibfnamefont {N.~S.}\ \bibnamefont
+  {Ostlund}},\ }\href@noop {} {\emph {\bibinfo {title} {Modern quantum
+  chemistry: {Introduction} to advanced electronic structure}}}\ (\bibinfo
+  {publisher} {McGraw-Hill},\ \bibinfo {year} {1989})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Jensen}(2017)}]{JensenBook}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Jensen}},\ }\href@noop {} {\emph {\bibinfo {title} {Introduction to
+  Computational Chemistry}}},\ \bibinfo {edition} {3rd}\ ed.\ (\bibinfo
+  {publisher} {Wiley},\ \bibinfo {address} {New York},\ \bibinfo {year}
+  {2017})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cramer}(2004)}]{CramerBook}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~J.}\ \bibnamefont
+  {Cramer}},\ }\href@noop {} {\emph {\bibinfo {title} {Essentials of
+  Computational Chemistry: Theories and Models}}}\ (\bibinfo  {publisher}
+  {Wiley},\ \bibinfo {year} {2004})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Helgaker}\ \emph {et~al.}(2013)\citenamefont
+  {Helgaker}, \citenamefont {J{\o}rgensen},\ and\ \citenamefont
+  {Olsen}}]{HelgakerBook}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Helgaker}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {J{\o}rgensen}}, \ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Olsen}},\ }\href@noop {} {\emph {\bibinfo {title} {Molecular
+  Electronic-Structure Theory}}}\ (\bibinfo  {publisher} {John Wiley \& Sons,
+  Inc.},\ \bibinfo {year} {2013})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Parr}\ and\ \citenamefont {Yang}(1989)}]{ParrBook}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.~G.}\ \bibnamefont
+  {Parr}}\ and\ \bibinfo {author} {\bibfnamefont {W.}~\bibnamefont {Yang}},\
+  }\href@noop {} {\emph {\bibinfo {title} {Density-Functional Theory of Atoms
+  and Molecules}}}\ (\bibinfo  {publisher} {Oxford},\ \bibinfo {address}
+  {Clarendon Press},\ \bibinfo {year} {1989})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Fetter}\ and\ \citenamefont
+  {Waleck}(1971)}]{FetterBook}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~L.}\ \bibnamefont
+  {Fetter}}\ and\ \bibinfo {author} {\bibfnamefont {J.~D.}\ \bibnamefont
+  {Waleck}},\ }\href@noop {} {\emph {\bibinfo {title} {Quantum Theory of Many
+  Particle Systems}}}\ (\bibinfo  {publisher} {McGraw Hill, San Francisco},\
+  \bibinfo {year} {1971})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Martin}\ \emph {et~al.}(2016)\citenamefont {Martin},
+  \citenamefont {Reining},\ and\ \citenamefont {Ceperley}}]{ReiningBook}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Martin}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Reining}}, \
+  and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Ceperley}},\
+  }\href@noop {} {\emph {\bibinfo {title} {Interacting Electrons: Theory and
+  Computational Approaches}}}\ (\bibinfo  {publisher} {Cambridge University
+  Press},\ \bibinfo {year} {2016})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Piecuch}\ \emph {et~al.}(2002)\citenamefont
+  {Piecuch}, \citenamefont {Kowalski}, \citenamefont {Pimienta},\ and\
+  \citenamefont {Mcguire}}]{Piecuch_2002}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Piecuch}}, \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Kowalski}},
+  \bibinfo {author} {\bibfnamefont {I.~S.~O.}\ \bibnamefont {Pimienta}}, \ and\
+  \bibinfo {author} {\bibfnamefont {M.~J.}\ \bibnamefont {Mcguire}},\ }\href
+  {\doibase 10.1080/0144235021000053811} {\bibfield  {journal} {\bibinfo
+  {journal} {Int. Rev. Phys. Chem.}\ }\textbf {\bibinfo {volume} {21}},\
+  \bibinfo {pages} {527} (\bibinfo {year} {2002})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Dreuw}\ and\ \citenamefont
+  {Head-Gordon}(2005)}]{Dreuw_2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Dreuw}}\ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Head-Gordon}},\ }\href {\doibase 10.1021/cr0505627} {\bibfield  {journal}
+  {\bibinfo  {journal} {Chem. Rev.}\ }\textbf {\bibinfo {volume} {105}},\
+  \bibinfo {pages} {4009} (\bibinfo {year} {2005})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Krylov}(2006)}]{Krylov_2006}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~I.}\ \bibnamefont
+  {Krylov}},\ }\href {\doibase 10.1021/ar0402006} {\bibfield  {journal}
+  {\bibinfo  {journal} {Acc. Chem. Res.}\ }\textbf {\bibinfo {volume} {39}},\
+  \bibinfo {pages} {83} (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Sneskov}\ and\ \citenamefont
+  {Christiansen}(2012)}]{Sneskov_2012}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Sneskov}}\ and\ \bibinfo {author} {\bibfnamefont {O.}~\bibnamefont
+  {Christiansen}},\ }\href {\doibase https://doi.org/10.1002/wcms.99}
+  {\bibfield  {journal} {\bibinfo  {journal} {WIREs Comput. Mol. Sci.}\
+  }\textbf {\bibinfo {volume} {2}},\ \bibinfo {pages} {566} (\bibinfo {year}
+  {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gonz{\'a}lez}\ \emph {et~al.}(2012)\citenamefont
+  {Gonz{\'a}lez}, \citenamefont {Escudero},\ and\ \citenamefont
+  {Serrano-Andr\`es}}]{Gonzales_2012}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Gonz{\'a}lez}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Escudero}}, \ and\ \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Serrano-Andr\`es}},\ }\href {\doibase 10.1002/cphc.201100200} {\bibfield
+  {journal} {\bibinfo  {journal} {ChemPhysChem}\ }\textbf {\bibinfo {volume}
+  {13}},\ \bibinfo {pages} {28} (\bibinfo {year} {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Laurent}\ and\ \citenamefont
+  {Jacquemin}(2013)}]{Laurent_2013}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~D.}\ \bibnamefont
+  {Laurent}}\ and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Jacquemin}},\ }\href {\doibase 10.1002/qua.24438} {\bibfield  {journal}
+  {\bibinfo  {journal} {Int. J. Quantum Chem.}\ }\textbf {\bibinfo {volume}
+  {113}},\ \bibinfo {pages} {2019} (\bibinfo {year} {2013})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Adamo}\ and\ \citenamefont
+  {Jacquemin}(2013)}]{Adamo_2013}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Adamo}}\ and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Jacquemin}},\ }\href {\doibase 10.1039/C2CS35394F} {\bibfield  {journal}
+  {\bibinfo  {journal} {Chem. Soc. Rev.}\ }\textbf {\bibinfo {volume} {42}},\
+  \bibinfo {pages} {845} (\bibinfo {year} {2013})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ghosh}\ \emph {et~al.}(2018)\citenamefont {Ghosh},
+  \citenamefont {Verma}, \citenamefont {Cramer}, \citenamefont {Gagliardi},\
+  and\ \citenamefont {Truhlar}}]{Ghosh_2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Ghosh}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Verma}},
+  \bibinfo {author} {\bibfnamefont {C.~J.}\ \bibnamefont {Cramer}}, \bibinfo
+  {author} {\bibfnamefont {L.}~\bibnamefont {Gagliardi}}, \ and\ \bibinfo
+  {author} {\bibfnamefont {D.~G.}\ \bibnamefont {Truhlar}},\ }\href {\doibase
+  10.1021/acs.chemrev.8b00193} {\bibfield  {journal} {\bibinfo  {journal}
+  {Chem. Rev.}\ }\textbf {\bibinfo {volume} {118}},\ \bibinfo {pages} {7249}
+  (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Blase}\ \emph {et~al.}(2020)\citenamefont {Blase},
+  \citenamefont {Duchemin}, \citenamefont {Jacquemin},\ and\ \citenamefont
+  {Loos}}]{Blase_2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {X.}~\bibnamefont
+  {Blase}}, \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont {Duchemin}},
+  \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Jacquemin}}, \ and\
+  \bibinfo {author} {\bibfnamefont {P.~F.}\ \bibnamefont {Loos}},\ }\href
+  {\doibase 10.1021/acs.jpclett.0c01875} {\bibfield  {journal} {\bibinfo
+  {journal} {J. Phys. Chem. Lett.}\ }\textbf {\bibinfo {volume} {11}},\
+  \bibinfo {pages} {7371} (\bibinfo {year} {2020})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Loos}\ \emph {et~al.}(2020)\citenamefont {Loos},
+  \citenamefont {Scemama},\ and\ \citenamefont {Jacquemin}}]{Loos_2020a}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~F.}\ \bibnamefont
+  {Loos}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Scemama}}, \
+  and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Jacquemin}},\ }\href
+  {\doibase 10.1021/acs.jpclett.0c00014} {\bibfield  {journal} {\bibinfo
+  {journal} {J. Phys. Chem. Lett.}\ }\textbf {\bibinfo {volume} {11}},\
+  \bibinfo {pages} {2374} (\bibinfo {year} {2020})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Moiseyev}(2011)}]{MoiseyevBook}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
@@ -545,14 +693,6 @@
   {Goodson}},\ }\href {\doibase 10.1002/wcms.92} {\bibfield  {journal}
   {\bibinfo  {journal} {{WIREs} Comput. Mol. Sci.}\ }\textbf {\bibinfo {volume}
   {2}},\ \bibinfo {pages} {743} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Szabo}\ and\ \citenamefont
-  {Ostlund}(1989)}]{SzaboBook}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
-  {Szabo}}\ and\ \bibinfo {author} {\bibfnamefont {N.~S.}\ \bibnamefont
-  {Ostlund}},\ }\href@noop {} {\emph {\bibinfo {title} {Modern quantum
-  chemistry: {Introduction} to advanced electronic structure}}}\ (\bibinfo
-  {publisher} {McGraw-Hill},\ \bibinfo {year} {1989})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Mayer}\ and\ \citenamefont
   {L{\"o}wdin}(1993)}]{Mayer_1993}%
   \BibitemOpen
@@ -992,15 +1132,6 @@
   10.1021/acs.jctc.8b00406} {\bibfield  {journal} {\bibinfo  {journal} {J.
   Chem. Theory Comput.}\ }\textbf {\bibinfo {volume} {14}},\ \bibinfo {pages}
   {4360} (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Loos}\ \emph {et~al.}(2020)\citenamefont {Loos},
-  \citenamefont {Scemama},\ and\ \citenamefont {Jacquemin}}]{Loos_2020a}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~F.}\ \bibnamefont
-  {Loos}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Scemama}}, \
-  and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Jacquemin}},\ }\href
-  {\doibase 10.1021/acs.jpclett.0c00014} {\bibfield  {journal} {\bibinfo
-  {journal} {J. Phys. Chem. Lett.}\ }\textbf {\bibinfo {volume} {11}},\
-  \bibinfo {pages} {2374} (\bibinfo {year} {2020})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Paw{\l}owski}\ \emph
   {et~al.}(2019{\natexlab{a}})\citenamefont {Paw{\l}owski}, \citenamefont
   {Olsen},\ and\ \citenamefont {J{\o}rgensen}}]{Pawlowski_2019a}%
