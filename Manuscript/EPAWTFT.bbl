@@ -1476,8 +1476,8 @@
   {Deur}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Mazouin}}, \
   and\ \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Fromager}},\ }\href
   {\doibase 10.1103/PhysRevB.95.035120} {\bibfield  {journal} {\bibinfo
-  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {95}} (\bibinfo {year}
-  {2017}),\ 10.1103/PhysRevB.95.035120}\BibitemShut {NoStop}%
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {95}},\ \bibinfo
+  {pages} {95.035120} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Deur}\ \emph {et~al.}(2018)\citenamefont {Deur},
   \citenamefont {Mazouin}, \citenamefont {Senjean},\ and\ \citenamefont
   {Fromager}}]{Deur_2018}%
@@ -1487,8 +1487,8 @@
   \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Senjean}}, \ and\
   \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Fromager}},\ }\href
   {\doibase 10.1140/epjb/e2018-90124-7} {\bibfield  {journal} {\bibinfo
-  {journal} {Eur. Phys. J. B}\ }\textbf {\bibinfo {volume} {91}} (\bibinfo
-  {year} {2018}),\ 10.1140/epjb/e2018-90124-7}\BibitemShut {NoStop}%
+  {journal} {Eur. Phys. J. B}\ }\textbf {\bibinfo {volume} {91}},\ \bibinfo
+  {pages} {162} (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Senjean}\ and\ \citenamefont
   {Fromager}(2018)}]{Senjean_2018}%
   \BibitemOpen
