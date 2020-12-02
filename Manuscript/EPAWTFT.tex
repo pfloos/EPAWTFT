@@ -1581,7 +1581,7 @@ While the diagonal quadratic approximants provide significanty improved estimate
 ground-state energy, we can use our knowledge of the UMP singularity structure to develop
 even more accurate results.
 We have seen in previous sections that the UMP energy surface
-contains only \titou{square-root branch cuts} that approach the real axis in the limit $U/t \to \infty$. 
+contains only square-root branch cuts that approach the real axis in the limit $U/t \to \infty$. 
 Since there are no true poles on this surface, we can obtain more accurate quadratic approximants by
 taking $d_q = 0$ and increasing $d_r$ to retain equivalent accuracy in the square-root term [see Eq.\eqref{eq:QuadApp}].
 Figure~\ref{fig:nopole_quad} illustrates this improvement for the pole-free [3/0,4] quadratic
@@ -1633,7 +1633,8 @@ that can be used to extract further information about the exact result.
 The Shanks transformation presents one approach for extracting this information
 and accelerating the rate of convergence of a sequence.\cite{Shanks_1955,BenderBook}
 
-\hugh{Consider the partial sums
+\titou{T2: $N$ is defined as the number of electrons. Maybe we should use $n$ instead?}
+Consider the partial sums
 $S_N = \sum_{k=0}^{N} a_k$
 defined from the truncated summation of an infinite series 
 $    S = \sum_{k=0}^{\infty} a_k$.
@@ -1642,7 +1643,7 @@ If the series converges, then the partial sums will tend to the exact result
 \lim_{N\rightarrow \infty} S_N = S. 
 \end{equation}
 The Shanks transformation attempts to generate increasingly accurate estimates of this
-limt by defining a new series as
+limit by defining a new series as
 \begin{equation}
     T(S_N) = \frac{S_{N+1} S_{N-1} - S_{N}^2}{S_{N+1} + S_{N-1} - 2 S_{N}}.
 \end{equation}
@@ -1655,7 +1656,7 @@ the approximate form
 \end{equation}
 Furthermore, while this transformation can accelerate the convergence of a series, 
 there is no guarantee that this acceleration will be fast enough to significantly
-improve the accuracy of low-order approximations.}
+improve the accuracy of low-order approximations.
 
 \hugh{To the best of our knowledge, the Shanks transformation has never previously been applied
 to the acceleration of the MP series.
