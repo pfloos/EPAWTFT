@@ -108,6 +108,7 @@
 \newcommand{\e}{\mathrm{e}} % Euler number
 \newcommand{\rc}{r_{\text{c}}}
 \newcommand{\lc}{\lambda_{\text{c}}}
+\newcommand{\lp}{\lambda_{\text{p}}}
 \newcommand{\lep}{\lambda_{\text{EP}}}
 
 % Some energies
@@ -997,7 +998,8 @@ analysing the relation between the dominant singularity (\ie, the closest singul
 and the convergence behaviour of the series.\cite{Olsen_2000} 
 Their analysis is based on Darboux's theorem: \cite{Goodson_2011}
 \begin{quote}
-	\textit{``In the limit of large order, the series coefficients become equivalent to the Taylor series coefficients of the singularity closest to the origin. ''}
+\textit{``In the limit of large order, the series coefficients become equivalent to 
+    the Taylor series coefficients of the singularity closest to the origin. ''}
 \end{quote}
 Following this theory, a singularity in the unit circle is designated as an intruder state, 
 with a front-door (or back-door) intruder state if the real part of the singularity is positive (or negative).
@@ -1401,39 +1403,55 @@ More specifically, a $[d_A/d_B]$ Pad\'e approximant is defined as
     = \frac{\sum_{k=0}^{d_A} a_k\, \lambda^k}{1 + \sum_{k=1}^{d_B} b_k\, \lambda^k},
 \end{equation}
 where the coefficients of the polynomials $A(\lambda)$ and $B(\lambda)$ are determined by collecting terms for each power of $\lambda$.
-Pad\'e approximants are extremely useful in many areas of physics and chemistry \cite{Loos_2013,Pavlyukh_2017,Tarantino_2019,Gluzman_2020} as they can model poles, which appears at the locations of the roots of $B(\lambda)$. 
-However, they are unable to model functions with square-root branch points (which are ubiquitous in the singularity structure of a typical perturbative treatment) and more complicated functional forms appearing at critical points (where the nature of the solution undergoes a sudden transition).
+Pad\'e approximants are extremely useful in many areas of physics and 
+chemistry\cite{Loos_2013,Pavlyukh_2017,Tarantino_2019,Gluzman_2020} as they can model poles, 
+which appears at the locations of the roots of $B(\lambda)$. 
+However, they are unable to model functions with square-root branch points 
+(which are ubiquitous in the singularity structure of a typical perturbative treatment) 
+and more complicated functional forms appearing at critical points (
+where the nature of the solution undergoes a sudden transition).
 \hugh{Despite this limitation, the successive diagonal Pad\'e approximants (\ie, $d_A = d_B $) 
 often define a convergent perturbation series in cases where the Taylor series expansion diverges.}
 
-Figure \ref{fig:PadeRMP} illustrates the improvement provided by diagonal Pad\'e approximants compared to the usual Taylor expansion in cases where the RMP series of the Hubbard dimer converges ($U/t = 3.5$) and diverges ($U/t = 4.5$).
-More quantitatively, Table \ref{tab:PadeRMP} gathers estimates of the RMP ground-state energy at $\lambda = 1$ provided by various truncated Taylor series and Pad\'e approximants for these two values of the ratio $U/t$.
-While the truncated Taylor series converges laboriously to the exact energy as the truncation degree increases at $U/t = 3.5$, the Pad\'e approximants yield much more accurate results.
-\hugh{Furthermore, the Pad\'e approximants provide a rather good estimate of the radius of convergence of the RMP series.}
-For $U/t = 4.5$, the Taylor series expansion performs worse (and eventually diverges),
-while the Pad\'e approximants still offer relaitively accurate energies even outside the radius of convergence of the RMP series.
+Fig.~\ref{fig:PadeRMP} illustrates the improvement provided by diagonal Pad\'e 
+approximants compared to the usual Taylor expansion in cases where the RMP series of 
+the Hubbard dimer converges ($U/t = 3.5$) and diverges ($U/t = 4.5$).
+More quantitatively, Table \ref{tab:PadeRMP} gathers estimates of the RMP ground-state 
+energy at $\lambda = 1$ provided by various truncated Taylor series and Pad\'e 
+approximants for these two values of the ratio $U/t$.
+While the truncated Taylor series converges laboriously to the exact energy as the truncation 
+degree increases at $U/t = 3.5$, the Pad\'e approximants yield much more accurate results.
+\hugh{Furthermore, the position of the closest pole to origin $\lc$ in the Pad\'e approximants 
+indicate that they a relatively good approximation to the true branch point singularity in the RMP energy.
+For $U/t = 4.5$, the Taylor series expansion performs worse and eventually diverges,
+while the Pad\'e approximants still offer relaitively accurate energies and recovers
+a convergent series.}
 
 \hugh{%
-We can expect that the singularity structure of the UMP energy will be much more challenging to model properly as the UMP energy function contains three connected branches (see Figs.~\ref{subfig:UMP_3} and \ref{subfig:UMP_7}).
-Figure~\ref{fig:QuadUMP} and Table~\ref{tab:QuadUMP} indicate that this is indeed the case. 
+We can expect that the singularity structure of the UMP energy will be much more challenging 
+to model properly as the UMP energy function contains three connected branches 
+(see Figs.~\ref{subfig:UMP_3} and \ref{subfig:UMP_7}).
+Fig.~\ref{fig:QuadUMP} and Table~\ref{tab:QuadUMP} indicate that this is indeed the case. 
+In particular, Fig.~\ref{fig:QuadUMP} illustrates that the Pad\'e approximants are trying to model
+the square root branch point that lies close to $\lambda = 1$ by placing a pole on the real axis
+(\eg, [3/3]) or with a very small imaginary component (\eg, [4/4]).
+The proximity of these poles to the physical point $\lambda = 1$ means that any error in the Pad\'e 
+functional form becomes magnified in the estimate of exact energy, as seen for the low-order
+approximants in Table~\ref{tab:QuadUMP}.
 However, with sufficiently high degree polynomials, one obtains
-accurate estimates of both the radius of convergence and the ground-state energy at $\lambda = 1$,
+accurate estimates for the position of the closest singularity and the ground-state energy at $\lambda = 1$,
 even in cases where the convergence of the UMP series is incredibly slow 
 (see Fig.~\ref{subfig:UMP_cvg}).
-In Figure \ref{fig:QuadUMP}, it becomes clear that the Pad\'e approximants are trying to model
-the square root branch point that lies close to $\lambda = 1$ by placing a pole on the real axis
-(for [3/3]) or with a very small imaginary component (for [4/4]).
-The proximity of these poles to the radius of convergence means that any error in the Pad\'e 
-functional form becomes magnified in the estimate of energy at $\lambda = 1$.
 }
 
 \begin{table}
-	\caption{RMP ground-state energy estimate at $\lambda = 1$ provided by various truncated Taylor series and Pad\'e approximants at $U/t = 3.5$ and $4.5$.
-	We also report the estimate of the radius of convergence $r_c$ provided by the diagonal Pad\'e approximants.
+	\caption{RMP ground-state energy estimate at $\lambda = 1$ provided by various truncated Taylor 
+    series and Pad\'e approximants at $U/t = 3.5$ and $4.5$.
+    We also report the \hugh{closest pole to the origin $\lc$} provided by the diagonal Pad\'e approximants.
 	\label{tab:PadeRMP}}
 	\begin{ruledtabular}
 		\begin{tabular}{lccccc}
-						&			&	\mc{2}{c}{$r_c$}			&	\mc{2}{c}{$E_{-}(\lambda = 1)$}			\\
+						&			&	\mc{2}{c}{$\lc$}	&	\mc{2}{c}{$E_{-}(\lambda = 1)$} \\
 																		\cline{3-4} \cline{5-6}
 			Method		&	degree	&	$U/t = 3.5$	&	$U/t = 4.5$	&	$U/t = 3.5$	&	$U/t = 4.5$	\\
 			\hline
@@ -1458,14 +1476,17 @@ functional form becomes magnified in the estimate of energy at $\lambda = 1$.
     \includegraphics[height=0.23\textheight]{PadeRMP35}
     \includegraphics[height=0.23\textheight]{PadeRMP45}
     \caption{\label{fig:PadeRMP}
-    RMP ground-state energy as a function of $\lambda$ obtained using various resummation techniques at $U/t = 3.5$ (left) and $U/t = 4.5$ (right).}
+    RMP ground-state energy as a function of $\lambda$ obtained using various resummation 
+    techniques at $U/t = 3.5$ (left) and $U/t = 4.5$ (right).}
 \end{figure*}
 %%%%%%%%%%%%%%%%%
 
 %==========================================%
 \subsection{Quadratic Approximant}
 %==========================================%
-Quadratic approximants \hugh{are designed} to model the singularity structure of the energy function $E(\lambda)$ via a generalised version of the square-root singularity expression \cite{Mayer_1985,Goodson_2011,Goodson_2019}
+Quadratic approximants \hugh{are designed} to model the singularity structure of the energy 
+function $E(\lambda)$ via a generalised version of the square-root singularity 
+expression \cite{Mayer_1985,Goodson_2011,Goodson_2019}
 \begin{equation}
 	\label{eq:QuadApp}
 	E(\lambda) = \frac{1}{2 Q(\lambda)} \qty[ P(\lambda) \pm \sqrt{P^2(\lambda) - 4 Q(\lambda) R(\lambda)} ]
@@ -1484,14 +1505,28 @@ Recasting Eq.~\eqref{eq:QuadApp} as a second-order expression in $E(\lambda)$, \
 \begin{equation}
 	Q(\lambda) E^2(\lambda) - P(\lambda) E(\lambda) + R(\lambda) \sim \order*{\lambda^{n+1}}
 \end{equation}
-and substituting $E(\lambda$) by its $n$th-order expansion and the polynomials by their respective expressions \eqref{eq:PQR} yields $n+1$ linear equations for the coefficients $p_k$, $q_k$, and $r_k$ (where we are free to assume that $q_0 = 1$).
-A quadratic approximant, characterised by the label $[d_P/d_Q,d_R]$, generates, by construction, $n_\text{bp} = \max(2d_p,d_q+d_r)$ branch points at the roots of the polynomial $P^2(\lambda) - 4 Q(\lambda) R(\lambda)$.
-The diagonal sequence of quadratic approximant, \ie, $[0/0,0]$, $[1/0,0]$, $[1/0,1]$, $[1/1,1]$, $[2/1,1]$, is of particular interest.
-However, by construction, a quadratic approximant has only two branches, which hampering the faithful description of more complicated singularity structures.
-As shown in Ref.~\onlinecite{Goodson_2000a}, quadratic approximants provide convergent results in the most divergent cases considered by Olsen and collaborators \cite{Christiansen_1996,Olsen_1996} and Leininger \etal \cite{Leininger_2000}
+and substituting $E(\lambda$) by its $n$th-order expansion and the polynomials by 
+their respective expressions \eqref{eq:PQR} yields $n+1$ linear equations for the coefficients 
+$p_k$, $q_k$, and $r_k$ (where we are free to assume that $q_0 = 1$).
+A quadratic approximant, characterised by the label $[d_P/d_Q,d_R]$, generates, by construction, 
+$n_\text{bp} = \max(2d_p,d_q+d_r)$ branch points at the roots of the polynomial $P^2(\lambda) - 4 Q(\lambda) R(\lambda)$ \hugh{and $d_q$ poles at the roots of $Q(\lambda)$}.
+Generally, the diagonal sequence of quadratic approximant, 
+\ie, $[0/0,0]$, $[1/0,0]$, $[1/0,1]$, $[1/1,1]$, $[2/1,1]$, 
+is of particular interest \hugh{as the order of the corresponding Taylor series increases on each step.
+However, while a quadratic approximant can reproduce multiple branch points, it can only describe 
+a total of two branches.
+Since every branch point must therefore correspond to a degeneracy of the same two branches, this constraint
+can hamper the faithful description of more complicated singularity structures such as the MP energy surface.
+Despite this limitiation,} Ref.~\onlinecite{Goodson_2000a} demonstrates that quadratic approximants 
+provide convergent results in the most divergent cases considered by Olsen and 
+collaborators\cite{Christiansen_1996,Olsen_1996} 
+and Leininger \etal \cite{Leininger_2000}
 
-For the RMP series of the Hubbard dimer, the $[0/0,0]$ and $[1/0,0]$ quadratic approximant are quite poor approximations, but the $[1/0,1]$ version perfectly models the RMP energy function by predicting a single pair of EPs at $\lambda_\text{EP} = \pm i 4t/U$.
-This is expected from the form of the RMP energy [see Eq.~\eqref{eq:E0MP}], which matches the ideal target for quadratic approximants.
+For the RMP series of the Hubbard dimer, the $[0/0,0]$ and $[1/0,0]$ quadratic approximant 
+are quite poor approximations, but the $[1/0,1]$ version perfectly models the RMP energy
+function by predicting a single pair of EPs at $\lambda_\text{EP} = \pm i 4t/U$.
+This is expected from the form of the RMP energy [see Eq.~\eqref{eq:E0MP}], which matches 
+the ideal target for quadratic approximants.
 
 %%%%%%%%%%%%%%%%%
 \begin{figure}
@@ -1502,12 +1537,14 @@ This is expected from the form of the RMP energy [see Eq.~\eqref{eq:E0MP}], whic
 %%%%%%%%%%%%%%%%%
 
 \begin{table}
-	\caption{Estimate of the radius of convergence $r_c$ of the UMP energy function provided by various resummation techniques at $U/t = 3$ and $7$.
-	The truncation degree of the Taylor expansion $n$ of $E(\lambda)$ and the number of branch points $n_\text{bp} = \max(2d_p,d_q+d_r)$ generated by the quadratic approximants are also reported.
+	\caption{Estimate of the radius of convergence $r_c$ of the UMP energy function provided 
+    by various resummation techniques at $U/t = 3$ and $7$.
+	The truncation degree of the Taylor expansion $n$ of $E(\lambda)$ and the number of branch 
+    points $n_\text{bp} = \max(2d_p,d_q+d_r)$ generated by the quadratic approximants are also reported.
 	\label{tab:QuadUMP}}
 	\begin{ruledtabular}
 		\begin{tabular}{lccccccc}
-						&			&			&					&	\mc{2}{c}{$r_c$}	&	\mc{2}{c}{$E_{-}(\lambda)$}			\\
+						&			&			&					&	\mc{2}{c}{$\lp$}	&	\mc{2}{c}{$E_{-}(\lambda)$}			\\
 																		\cline{5-6}\cline{7-8}
 			\mc{2}{c}{Method}		&	$n$		&	$n_\text{bp}$	&	$U/t = 3$	&	$U/t = 7$	&	$U/t = 3$	&	$U/t = 7$	\\
 			\hline
@@ -1526,9 +1563,10 @@ This is expected from the form of the RMP energy [see Eq.~\eqref{eq:E0MP}], whic
 		\end{tabular}
 	\end{ruledtabular}
 \end{table}
-\hugh{On the other hand, the greater flexibility of the quadratic approximants provides a significantly
-improved model of the UMP energy in comparison to the Pad\' approximants or Taylor series.
-In particular, the quadratic approximants provide an effect model for the avoided crossings 
+
+\hugh{On the other hand, the greater flexibility of the diagonal quadratic approximants provides a significantly
+improved model of the UMP energy in comparison to the Pad\'e approximants or Taylor series.
+In particular, these quadratic approximants provide an effect model for the avoided crossings 
 (Fig.~\ref{fig:QuadUMP}) and a far better estimate for the location of the branch point singularities.
 Furthermore, they provide remarkably accurate estimates of the ground-state energy at $\lambda = 1$, 
 as shown in Table~\ref{tab:QuadUMP}}
