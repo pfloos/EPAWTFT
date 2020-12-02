@@ -1633,32 +1633,31 @@ that can be used to extract further information about the exact result.
 The Shanks transformation presents one approach for extracting this information
 and accelerating the rate of convergence of a sequence.\cite{Shanks_1955,BenderBook}
 
-\titou{T2: $N$ is defined as the number of electrons. Maybe we should use $n$ instead?}
 Consider the partial sums
-$S_N = \sum_{k=0}^{N} a_k$
+$S_n = \sum_{k=0}^{n} s_k$
 defined from the truncated summation of an infinite series 
-$    S = \sum_{k=0}^{\infty} a_k$.
+$S = \sum_{k=0}^{\infty} s_k$.
 If the series converges, then the partial sums will tend to the exact result 
 \begin{equation}
-\lim_{N\rightarrow \infty} S_N = S. 
+	\lim_{n \to \infty} S_n = S. 
 \end{equation}
 The Shanks transformation attempts to generate increasingly accurate estimates of this
 limit by defining a new series as
 \begin{equation}
-    T(S_N) = \frac{S_{N+1} S_{N-1} - S_{N}^2}{S_{N+1} + S_{N-1} - 2 S_{N}}.
+    T(S_n) = \frac{S_{n+1} S_{n-1} - S_{n}^2}{S_{n+1} + S_{n-1} - 2 S_{n}}.
 \end{equation}
 This series can converge faster than the original partial sums and can thus provide greater
 accuracy using only the first few terms in the series.
-However, it is designed to accelerate exponentially converging partial sums with 
+However, it is designed to accelerate \titou{exponentially?} converging partial sums with 
 the approximate form
 \begin{equation}
-    S_N \approx S + a\,b^N.
+    S_n \approx S + \alpha\,\beta^n.
 \end{equation}
 Furthermore, while this transformation can accelerate the convergence of a series, 
 there is no guarantee that this acceleration will be fast enough to significantly
 improve the accuracy of low-order approximations.
 
-\hugh{To the best of our knowledge, the Shanks transformation has never previously been applied
+To the best of our knowledge, the Shanks transformation has never previously been applied
 to the acceleration of the MP series.
 We have therefore applied it to the convergent Taylor series, Pad\'e approximants, and quadratic
 approximants for RMP and UMP in the symmetric Hubbard dimer. 
@@ -1670,14 +1669,12 @@ can significantly improve the estimate of the energy using low-order perturbatio
 as shown in Table~\ref{tab:RMP_shank}.
 Even though the RMP series diverges at $U/t = 4.5$, the combination
 of diagonal Pad\'e approximants with the Shanks transformation reduces the absolute error of 
-the best energy estimate to 0.002\,\%.}
+the best energy estimate to 0.002\,\%.
 
 \begin{table}[th]
 	\caption{
-    \hugh{%
     Acceleration of the diagonal Pad\'e approximant sequence for the RMP energy
     using the Shanks transformation.
-    }
 	\label{tab:RMP_shank}}
 	\begin{ruledtabular}
 		\begin{tabular}{lcccc}
