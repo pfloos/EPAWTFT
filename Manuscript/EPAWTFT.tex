@@ -235,7 +235,6 @@ the two following terms account for the electron-nucleus attraction and the elec
 
 % EXACT SCHRODINGER EQUATION
 The exact many-electron wave function at a given nuclear geometry $\Psi(\vb{R})$ corresponds 
-of using adjacent partial sums 
 to the solution of the (time-independent) Schr\"{o}dinger equation
 \begin{equation} 
     \hH(\vb{R})\, \Psi(\vb{R}) = E(\vb{R})\, \Psi(\vb{R}),
@@ -248,7 +247,7 @@ However, exact solutions to Eq.~\eqref{eq:SchrEq} are only possible in the simpl
 the one-electron hydrogen atom and some specific two-electron systems with well-defined mathematical 
 properties.\cite{Taut_1993,Loos_2009b,Loos_2010e,Loos_2012}
 In practice, approximations to the exact Schr\"{o}dinger equation must be introduced, including
-perturbation theories and Hartree--Fock approximation considered in this review.
+perturbation theories and the Hartree--Fock approximation considered in this review.
 In what follows, we will drop the parametric dependence on the nuclear geometry and, 
 unless otherwise stated, atomic units will be used throughout.
 
@@ -341,7 +340,7 @@ E_{\pm} \qty(\theta) \approx E_{\text{EP}} \pm \sqrt{32t^2 \lambda_{\text{EP}} R
 \end{equation}
 such that $E_{\pm}(2\pi)  = E_{\mp}(0)$ and $E_{\pm}(4\pi)  = E_{\pm}(0)$.
 As a result, completely encircling an EP leads to the interconversion of the two interacting states, while a second complete rotation returns the two states to their original energies.
-Additionally, the wave functions pick up a geometric phase in the process, and four complete loops are required to recover their starting forms.\cite{MoiseyevBook}
+Additionally, the wave functions  can pick up a geometric phase in the process, and four complete loops are required to recover their starting forms.\cite{MoiseyevBook}
 
 % LOCATING EPS
 To locate EPs in practice, one must simultaneously solve
@@ -356,7 +355,7 @@ To locate EPs in practice, one must simultaneously solve
 \end{subequations}
 where $\hI$ is the identity operator.\cite{Cejnar_2007}
 Equation \eqref{eq:PolChar} is the well-known secular equation providing the (eigen)energies of the system. 
-If the energy is also solution of Eq.~\eqref{eq:DPolChar}, then this energy value is at least two-fold degenerate. 
+If the energy is also a solution of Eq.~\eqref{eq:DPolChar}, then this energy value is at least two-fold degenerate. 
 These degeneracies can be conical intersections between two states with different symmetries 
 for real values of $\lambda$,\cite{Yarkony_1996} or EPs between two states with the 
 same symmetry for complex values of $\lambda$.
@@ -400,7 +399,7 @@ When $\rc < 1$, the Rayleigh--Schr\"{o}dinger expansion will diverge
 for the physical system.
 The value of $\rc$ can vary significantly between different systems and strongly depends on the particular decomposition
 of the reference and perturbation Hamiltonians in Eq.~\eqref{eq:SchrEq-PT}.\cite{Mihalka_2017b}
-
+%
 % LAMBDA IN THE COMPLEX PLANE
 From complex-analysis, \cite{BenderBook} the radius of convergence for the energy can be obtained by looking for the 
 singularities of $E(\lambda)$ in the complex $\lambda$ plane.
@@ -413,7 +412,12 @@ If the function has a singular point $z_s$ such that $\abs{z_s-z_0} < \abs{z_1-z
 then the series will diverge when evaluated at $z_1$.''
 \end{quote}
 As a result, the radius of convergence for a function is equal to the distance from the origin of the closest singularity
-in the complex plane.
+in the complex plane, \hugh{referred to as the ``dominant'' singularity.
+This singularity may represent a pole of the function, or a branch point (\eg, square-root or logarithmic)
+in a multi-valued function.
+Critical points are singularities that lie on the real axis, where the nature of a function experiences
+a discontinuity in either its value or one of its derivatives.}
+
 For example, the simple function
 \begin{equation} \label{eq:DivExample}
 	f(x)=\frac{1}{1+x^4}.
@@ -421,7 +425,7 @@ For example, the simple function
 is smooth and infinitely differentiable for $x \in \mathbb{R}$, and one might expect that its Taylor series expansion would 
 converge in this domain.
 However, this series diverges for $x \ge 1$.
-This divergence occurs because $f(x)$ has four singularities in the complex 
+This divergence occurs because $f(x)$ has four \hugh{poles} in the complex 
 ($\e^{\i\pi/4}$, $\e^{-\i\pi/4}$, $\e^{\i3\pi/4}$, and $\e^{-\i3\pi/4}$) with a modulus equal to $1$, demonstrating
 that complex singularities are essential to fully understand the series convergence on the real axis.\cite{BenderBook}
 
@@ -691,7 +695,7 @@ in the molecular spin-orbital basis\cite{Gill_1994}
 \end{equation}
 
 While most practical calculations generally consider only the MP2 or MP3 approximations, higher order terms can 
-easily be computed to understand the convergence of the MP$n$ series.\cite{Handy_1985}
+be computed to understand the convergence of the MP$n$ series.\cite{Handy_1985}
 \textit{A priori}, there is no guarantee that this series will provide the smooth convergence that is desirable for a
 systematically improvable theory.
 In fact, when the reference HF wave function is a poor approximation to the exact wave function, 
@@ -758,7 +762,7 @@ identified that the slow UMP convergence arises from its failure to correctly pr
 low-lying double excitation.
 This erroneous description of the double excitation amplitude has the same origin as the spin-contamination in the reference
 UHF wave function, creating the first direct link between spin-contamination and slow UMP convergence.\cite{Gill_1988}
-
+%
 % LEPETIT CHAT
 Lepetit \etal\ later analysed the difference between perturbation convergence using the UMP 
 and EN partitionings. \cite{Lepetit_1988}
@@ -1037,7 +1041,7 @@ discuss in Sec.~\ref{sec:MP_critical_point}.
 Finally, Ref.~\onlinecite{Olsen_1996} proved that the extrapolation formulas of Cremer and He \cite{Cremer_1996}
 are not mathematically motivated when considering the complex singularities causing the divergence, and therefore
 cannot be applied for all systems.
-For example, \ce{HF} contains both back-door intruder states and low-lying doubly-excited states that
+For example, the \ce{HF} molecule contains both back-door intruder states and low-lying doubly-excited states that
 result in alternating terms up to 10th order. 
 The series becomes monotonically convergent at higher orders since
 the two pairs of singularities are approximately the same distance from the origin.
@@ -1050,12 +1054,12 @@ This extension allows various choices of perturbation to be analysed, including 
 perturbation expansions \cite{Pawlowski_2019a,Pawlowski_2019b,Pawlowski_2019c,Pawlowski_2019d,Pawlowski_2019e} 
 and other non-Hermitian perturbation methods.
 Note that new forms of perturbation expansions only occur when the sign of $\delta_1$ and $\delta_2$ differ.
-Using these non-Hermitian two-state model, the convergence of a perturbation series can be characterised 
+Using this non-Hermitian two-state model, the convergence of a perturbation series can be characterised 
 according to a so-called ``archetype'' that defines the overall ``shape'' of the energy convergence.\cite{Olsen_2019} 
 For Hermitian Hamiltonians, these archetypes can be subdivided into five classes 
 (zigzag, interspersed zigzag, triadic, ripples, and geometric), 
 while two additional archetypes (zigzag-geometric and convex-geometric) are observed in non-Hermitian Hamiltonians.
-
+%
 The geometric archetype appears to be the most common for MP expansions,\cite{Olsen_2019} but the 
 ripples archetype corresponds to some of the early examples of MP convergence. \cite{Handy_1985,Lepetit_1988,Leininger_2000}
 The three remaining Hermitian archetypes seem to be rarely observed in MP perturbation theory.
@@ -1104,7 +1108,7 @@ processes.\cite{Sergeev_2005}
 % CLASSIFICATIONS BY GOODSOON AND SERGEEV
 To further develop the link between the critical point and types of MP convergence, Sergeev and Goodson investigated
 the relationship with the location of the dominant singularity that controls the radius of convergence.\cite{Goodson_2004}
-They demonstrated that the dominant singularity in class A systems corresponds to a dominant EP with a positive real component, 
+They demonstrated that the dominant singularity in class A systems corresponds to a EP with a positive real component, 
 where the magnitude of the imaginary component controls the oscillations in the signs of successive MP 
 terms.\cite{Goodson_2000a,Goodson_2000b}
 In contrast, class B systems correspond to a dominant singularity on the negative real $\lambda$ axis representing
@@ -1117,7 +1121,7 @@ and ii) $\beta$ singularities which have very small imaginary parts.\cite{Goodso
 
 % RELATIONSHIP TO BASIS SET SIZE
 The existence of the MP critical point can also explain why the divergence observed by Olsen \etal\ in the \ce{Ne} atom 
-and \ce{HF} molecule occurred when diffuse basis functions were included.\cite{Olsen_1996}
+and the \ce{HF} molecule occurred when diffuse basis functions were included.\cite{Olsen_1996}
 Clearly diffuse basis functions are required for the electrons to dissociate from the nuclei, and indeed using
 only compact basis functions causes the critical point to disappear.
 While a finite basis can only predict complex-conjugate branch point singularities, the critical point is modelled
@@ -1183,7 +1187,7 @@ Instead, we can use an asymmetric version of the Hubbard dimer \cite{Carrascal_2
 where we consider one of the sites as a ``ghost atom'' that acts as a 
 destination for ionised electrons being originally localised on the other site.
 To mathematically model this scenario in this asymmetric Hubbard dimer, we introduce a one-electron potential $-\epsilon$ on the left site to 
-represent the attraction between the electrons and the model ``atomic'' nucleus [see Eq.~\eqref{eq:H_FCI}], where we define $\epsilon > 0$.
+represent the attraction between the electrons and the model ``atomic'' nucleus, where we define $\epsilon > 0$.
 The reference Slater determinant for a doubly-occupied atom can be represented using RHF
 orbitals [see Eq.~\eqref{eq:RHF_orbs}] with $\theta_{\alpha}^{\text{RHF}} = \theta_{\beta}^{\text{RHF}} = 0$, 
 which corresponds to strictly localising the two electrons on the left site.
@@ -1303,12 +1307,12 @@ This swapping process can also be represented as a double excitation, and thus a
 for $\lambda \geq 1$ (Fig.~\ref{subfig:ump_cp}).
 While this appears to be an avoided crossing between the ground and first-excited state, 
 the presence of an earlier excited-state avoided crossing means that the first-excited state qualitatively 
-represents the reference double excitation for $\lambda > 1/2$ (see Fig.~\ref{subfig:ump_cp}).
+represents the reference double excitation for $\lambda > 1/2$.
 
 % SHARPNESS AND QPT
 The ``sharpness'' of the avoided crossing is controlled by the correlation strength $U/t$.
 For small $U/t$, the HF potentials will be weak and the electrons will delocalise over the two sites,
-both in the UHF reference and as $\lambda$ increases.
+both in the UHF reference and \hugh{the exact solution}.
 This delocalisation dampens the electron swapping process and leads to a ``shallow'' avoided crossing
 that corresponds to EPs with non-zero imaginary components (solid lines in Fig.~\ref{subfig:ump_cp}).
 As $U/t$ becomes larger, the HF potentials become stronger and the on-site repulsion dominates the hopping
@@ -1342,7 +1346,7 @@ radius of convergence (see Fig.~\ref{fig:RadConv}).
 %As frequently claimed by Carl Bender, 
 It is frequently stated that
 \textit{``the most stupid thing that one can do with a series is to sum it.''}
-Nonetheless, quantum chemists are basically doing exactly this on a daily basis.
+Nonetheless, quantum chemists are basically doing this on a daily basis.
 As we have seen throughout this review, the MP series can often show erratic, 
 slow, or divergent behaviour.
 In these cases, estimating the correlation energy by simply summing successive
@@ -1362,7 +1366,7 @@ The failure of a Taylor series for correctly modelling the MP energy function $E
 arises because one is trying to model a complicated function containing multiple branches, branch points and
 singularities using a simple polynomial of finite order.
 A truncated Taylor series can only predict a single sheet and does not have enough 
-flexibility to adequately describe, for example, the MP energy.
+flexibility to adequately describe functions such as the MP energy.
 Alternatively, the description of complex energy functions can be significantly improved
 by introducing Pad\'e approximants, \cite{Pade_1892} and related techniques. \cite{BakerBook,BenderBook}
 
@@ -1377,7 +1381,7 @@ More specifically, a $[d_A/d_B]$ Pad\'e approximant is defined as
 where the coefficients of the polynomials $A(\lambda)$ and $B(\lambda)$ are determined by collecting terms for each power of $\lambda$.
 Pad\'e approximants are extremely useful in many areas of physics and 
 chemistry\cite{Loos_2013,Pavlyukh_2017,Tarantino_2019,Gluzman_2020} as they can model poles, 
-which appears at the locations of the roots of $B(\lambda)$. 
+which appear at the roots of $B(\lambda)$. 
 However, they are unable to model functions with square-root branch points 
 (which are ubiquitous in the singularity structure of a typical perturbative treatment) 
 and more complicated functional forms appearing at critical points 
@@ -1422,7 +1426,7 @@ approximants for these two values of the ratio $U/t$.
 While the truncated Taylor series converges laboriously to the exact energy as the truncation 
 degree increases at $U/t = 3.5$, the Pad\'e approximants yield much more accurate results.
 Furthermore, the distance of the closest pole to the origin $\abs{\lc}$ in the Pad\'e approximants 
-indicate that they a relatively good approximation to the position of the 
+indicate that they provide a relatively good approximation to the position of the 
 true branch point singularity in the RMP energy.
 For $U/t = 4.5$, the Taylor series expansion performs worse and eventually diverges,
 while the Pad\'e approximants still offer relatively accurate energies and recovers
@@ -1487,7 +1491,8 @@ Generally, the diagonal sequence of quadratic approximant,
 is of particular interest as the order of the corresponding Taylor series increases on each step.
 However, while a quadratic approximant can reproduce multiple branch points, it can only describe 
 a total of two branches.
-\titou{Since every branch points must therefore correspond to a degeneracy of the same two branches,} this constraint
+%\titou{Since every branch points must therefore correspond to a degeneracy of the same two branches,} 
+This constraint
 can hamper the faithful description of more complicated singularity structures such as the MP energy surface.
 Despite this limitation, Ref.~\onlinecite{Goodson_2000a} demonstrates that quadratic approximants 
 provide convergent results in the most divergent cases considered by Olsen and 
@@ -1588,7 +1593,7 @@ taking $d_q = 0$ and increasing $d_r$ to retain equivalent accuracy in the squar
 Figure~\ref{fig:nopole_quad} illustrates this improvement for the pole-free [3/0,4] quadratic
 approximant compared to the [3/2,2] approximant with the same truncation degree in the Taylor
 expansion.
-Clearly modelling the square-root branch point using $d_q = 2$ has the negative effect of
+Clearly, modelling the square-root branch point using $d_q = 2$ has the negative effect of
 introducing spurious poles in the energy, while focussing purely on the branch point with $d_q = 0$
 leads to a significantly improved model.
 Table~\ref{tab:QuadUMP} shows that these pole-free quadratic approximants
@@ -1730,7 +1735,7 @@ In a later study by the same group, they used analytic continuation techniques
 to resum a divergent MP series such as a stretched water molecule.\cite{Mihalka_2017a}
 Any MP series truncated at a given order $n$ can be used to define the scaled function
 \begin{equation}
-   E_{\text{MP}n}(\lambda) = \sum_{k=0}^{n} \lambda^{k} \titou{E_\text{MP}^{(k)}}.
+   E_{\text{MP}n}(\lambda) = \sum_{k=0}^{n} \lambda^{k} E_\text{MP}^{(k)}.
 \end{equation}
 Reliable estimates of the energy can be obtained for values of $\lambda$ where the MP series is rapidly
 convergent (\ie, for $\abs{\lambda} < \rc$), as shown in Fig.~\ref{fig:rmp_anal_cont} for the RMP10 series 
@@ -1739,22 +1744,21 @@ These values can then be analytically continued using a polynomial- or Pad\'e-ba
 estimate of the exact energy at $\lambda = 1$.
 However, choosing the functional form for the best fit remains a difficult and subtle challenge.
 
-This technique was first generalised by using complex scaling parameters and constructing an analytic
+This technique was first generalised using complex scaling parameters to construct an analytic
 continuation by solving the Laplace equations.\cite{Surjan_2018}
 It was then further improved by introducing Cauchy's integral formula\cite{Mihalka_2019}
 \begin{equation}
 	\label{eq:Cauchy}
-    \frac{1}{2\pi \i} \oint_{\mathcal{C}} \frac{E(\lambda)}{\lambda - \lambda_1} = E(\lambda_1),
+    E(\lambda) = \frac{1}{2\pi \i} \oint_{\mathcal{C}} \frac{E(\lambda')}{\lambda' - \lambda},
 \end{equation}
 which states that the value of the energy can be computed at $\lambda_1$ inside the complex 
 contour $\mathcal{C}$ using only the values along the same contour.
 Starting from a set of points in a ``trusted'' region where the MP series is convergent, their approach 
-self-consistently refines estimates of the $E(\lambda)$ values on a contour \titou{around} the physical point 
+self-consistently refines estimates of the $E(\lambda')$ values on a contour that includes the physical point 
 $\lambda = 1$.
-\titou{T2: actually this is not true as the point $\lambda = 1$ is chosen to be on the contour.}
 The shape of this contour is arbitrary, but there must be no branch points or other singularities inside
 the contour.
-Once the contour values of $E(\lambda)$ are converged, Cauchy's integral formula Eq.~\eqref{eq:Cauchy} can 
+Once the contour values of $E(\lambda')$ are converged, Cauchy's integral formula Eq.~\eqref{eq:Cauchy} can 
 be invoked to compute the value at $E(\lambda=1)$ and obtain a final estimate of the exact energy.
 The authors illustrate this protocol for the dissociation curve of \ce{LiH} and the stretched water 
 molecule to obtain encouragingly accurate results.\cite{Mihalka_2019} 
