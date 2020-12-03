@@ -1648,7 +1648,7 @@ limit by defining a new series as
 \end{equation}
 This series can converge faster than the original partial sums and can thus provide greater
 accuracy using only the first few terms in the series.
-However, it is designed to accelerate \titou{exponentially?} converging partial sums with 
+However, it is only designed to accelerate converging partial sums with 
 the approximate form
 \begin{equation}
     S_n \approx S + \alpha\,\beta^n.
@@ -1658,7 +1658,7 @@ there is no guarantee that this acceleration will be fast enough to significantl
 improve the accuracy of low-order approximations.
 
 To the best of our knowledge, the Shanks transformation has never previously been applied
-to the acceleration of the MP series.
+to accelerate the convergence of the MP series.
 We have therefore applied it to the convergent Taylor series, Pad\'e approximants, and quadratic
 approximants for RMP and UMP in the symmetric Hubbard dimer. 
 The UMP approximants converge too slowly for the Shanks transformation
@@ -1668,8 +1668,8 @@ In contrast, acceleration of the diagonal Pad\'e approximants for the RMP cases
 can significantly improve the estimate of the energy using low-order perturbation terms, 
 as shown in Table~\ref{tab:RMP_shank}.
 Even though the RMP series diverges at $U/t = 4.5$, the combination
-of diagonal Pad\'e approximants with the Shanks transformation reduces the absolute error of 
-the best energy estimate to 0.002\,\% using only the lowest 10 terms in the Taylor series.
+of diagonal Pad\'e approximants with the Shanks transformation reduces the absolute error in
+the best energy estimate to 0.002\,\% using only the first 10 terms in the Taylor series.
 This remarkable result indicates just how much information is contained in the first few
 terms of a perturbation series, even if it diverges.
 
@@ -1703,20 +1703,59 @@ terms of a perturbation series, even if it diverges.
 \subsection{Analytic continuation}
 %==========================================%
 
-Recently, Mih\'alka \textit{et al.} studied the partitioning effect on the convergence properties of Rayleigh-Schr\"odinger perturbation theory by considering the MP and the EN partitioning as well as an alternative partitioning \cite{Mihalka_2017a} (see also Ref.~\onlinecite{Surjan_2000}).
-Taking as an example (in particular) the water molecule at equilibrium and at stretched geometries, they could estimate the radius of convergence via a quadratic Pad\'e approximant and convert divergent perturbation expansions to convergent ones in some cases thanks to a judicious choice of the level shift parameter.
-In a subsequent study by the same group, \cite{Mihalka_2017b} they use analytic continuation techniques to resum divergent MP series \cite{Goodson_2011} taking again as an example the water molecule in a stretched geometry.
-In a nutshell, their idea consists in calculating the energy of the system for several values of $\lambda$ for which the MP series is rapidly convergent (\ie, for $\abs{\lambda} < r_c$), and to extrapolate the final energy to the physical system at $\lambda = 1$ via a polynomial- or Pad\'e-based fit. 
-However, the choice of the functional form of the fit remains a subtle task.
-This technique was first generalised by using complex scaling parameters and applying analytic continuation by solving the Laplace equation, \cite{Surjan_2018} and then further improved thanks to Cauchy's integral formula \cite{Mihalka_2019}
+Recently, Mih\'alka \etal\ have studied the effect of different partitionings, such as MP or EN theory, on the position of 
+branch points and the convergence properties of Rayleigh--Schr\"odinger perturbation theory\cite{Mihalka_2017b} (see also
+Ref.~\onlinecite{Surjan_2000}).
+Taking the equilibrium and stretched water structures as an example, they estimated the radius of convergence using quadratic
+Pad\'e approximants.
+The EN partitioning provided worse convergence properties than the MP partitioning, which is believed to be
+because the EN denominators are generally smaller than the MP denominators.
+To remedy the situation, they showed that introducing a suitably chosen level shift parameter can turn a 
+divergent series into a convergent one by increasing the magnitude of these denominators.\cite{Mihalka_2017b}
+However, like the UMP series in stretched \ce{H2},\cite{Lepetit_1988} 
+the cost of larger denominators is an overall slower rate of convergence.
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{rmp_anal_cont}
+    \caption{%
+        Comparison of the scaled RMP10 Taylor expansion with the exact RMP energy as a function
+        of $\lambda$ for the symmetric Hubbard dimer at $U/t = 4$. 
+        The two functions correspond closely within the radius of convergence.
+    }
+    \label{fig:rmp_anal_cont}
+\end{figure}
+
+In a later study by the same group, they used analytic continuation techniques 
+to resum a divergent MP series such as a stretched water molecule.\cite{Mihalka_2017a}
+Any MP series truncated at a given order $n$ can be used to define the scaled function
+\begin{equation}
+   E_{\text{MP}n}(\lambda) = \sum_{k=0}^{n} \lambda^{k} E^{(k)}.
+\end{equation}
+Reliable estimates of the energy can be obtained for values of $\lambda$ where the MP series is rapidly
+convergent (\ie, for $\abs{\lambda} < \rc$), as shown in Fig.~\ref{fig:rmp_anal_cont} for the RMP10 series 
+of the symmetric Hubbard dimer with $U/t = 4.5$.
+These values can then be analytically continued using a polynomial- or Pad\'e-based fit to obtain an 
+estimate of the exact energy at $\lambda = 1$.
+However, choosing the functional form for the best fit remains a difficult and subtle challenge.
+
+This technique was first generalised by using complex scaling parameters and constructing an analytic
+continuation by solving the Laplace equations.\cite{Surjan_2018}
+It was then further improved by introducing Cauchy's integral formula\cite{Mihalka_2019}
 \begin{equation}
 	\label{eq:Cauchy}
-	\frac{1}{2\pi i} \oint_{\gamma} \frac{E(\lambda)}{\lambda - a} = E(a),
+    \frac{1}{2\pi \i} \oint_{\mathcal{C}} \frac{E(\lambda)}{\lambda - \lambda_1} = E(\lambda_1),
 \end{equation}
-which states that the value of the energy can be computed at $\lambda=a$ inside the complex contour $\gamma$ only by the knowledge of its values on the same contour.
-Their method consists in refining self-consistently the values of $E(\lambda)$ computed on a contour going through the physical point at $\lambda = 1$ and encloses points of the ``trusted'' region (where the MP series is convergent). The shape of this contour is arbitrary but no singularities are allowed inside the contour to ensure $E(\lambda)$ is analytic. 
-When the values of $E(\lambda)$ on the so-called contour are converged, Cauchy's integrals formula \eqref{eq:Cauchy} is invoked to compute the values at $E(\lambda=1)$ which corresponds to the final estimate of the FCI energy.
-The authors illustrate this protocol on the dissociation curve of \ce{LiH} and the stretched water molecule showing encouraging results. \cite{Mihalka_2019} 
+which states that the value of the energy can be computed at $\lambda_1$ inside the complex 
+contour $\mathcal{C}$ using only the values along the same contour.
+Starting from a set of points in a ``trusted'' region where the MP series is convergent, their approach 
+self-consistently refines estimates of the $E(\lambda)$ values on a contour around the physical point 
+$\lambda = 1$.
+The shape of this contour is arbitrary, but there must be no branch points or other singularities inside
+the contour.
+Once the contour values of $E(\lambda)$ are converged, Cauchy's integral formula Eq.~\eqref{eq:Cauchy} can 
+be invoked to compute the value at $E(\lambda=1)$ and obtain a final estimate of the exact energy.
+The authors illustrate this protocol for the dissociation curve of \ce{LiH} and the stretched water 
+molecule to obtain encouragingly accurate results.\cite{Mihalka_2019} 
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
