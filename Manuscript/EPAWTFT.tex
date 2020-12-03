@@ -1730,7 +1730,7 @@ In a later study by the same group, they used analytic continuation techniques
 to resum a divergent MP series such as a stretched water molecule.\cite{Mihalka_2017a}
 Any MP series truncated at a given order $n$ can be used to define the scaled function
 \begin{equation}
-   E_{\text{MP}n}(\lambda) = \sum_{k=0}^{n} \lambda^{k} E^{(k)}.
+   E_{\text{MP}n}(\lambda) = \sum_{k=0}^{n} \lambda^{k} \titou{E_\text{MP}^{(k)}}.
 \end{equation}
 Reliable estimates of the energy can be obtained for values of $\lambda$ where the MP series is rapidly
 convergent (\ie, for $\abs{\lambda} < \rc$), as shown in Fig.~\ref{fig:rmp_anal_cont} for the RMP10 series 
@@ -1749,8 +1749,9 @@ It was then further improved by introducing Cauchy's integral formula\cite{Mihal
 which states that the value of the energy can be computed at $\lambda_1$ inside the complex 
 contour $\mathcal{C}$ using only the values along the same contour.
 Starting from a set of points in a ``trusted'' region where the MP series is convergent, their approach 
-self-consistently refines estimates of the $E(\lambda)$ values on a contour around the physical point 
+self-consistently refines estimates of the $E(\lambda)$ values on a contour \titou{around} the physical point 
 $\lambda = 1$.
+\titou{T2: actually this is not true as the point $\lambda = 1$ is chosen to be on the contour.}
 The shape of this contour is arbitrary, but there must be no branch points or other singularities inside
 the contour.
 Once the contour values of $E(\lambda)$ are converged, Cauchy's integral formula Eq.~\eqref{eq:Cauchy} can 
