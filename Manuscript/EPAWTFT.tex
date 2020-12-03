@@ -235,6 +235,7 @@ the two following terms account for the electron-nucleus attraction and the elec
 
 % EXACT SCHRODINGER EQUATION
 The exact many-electron wave function at a given nuclear geometry $\Psi(\vb{R})$ corresponds 
+of using adjacent partial sums 
 to the solution of the (time-independent) Schr\"{o}dinger equation
 \begin{equation} 
     \hH(\vb{R})\, \Psi(\vb{R}) = E(\vb{R})\, \Psi(\vb{R}),
@@ -507,7 +508,7 @@ the total spin operator $\hat{\mathcal{S}}^2$, leading to ``spin-contamination''
 % HF energies as a function of U/t
 %%%%%%%%%%%%%%%%%
 \begin{figure}
-    \includegraphics[width=\linewidth]{HF_real.pdf}
+    \includegraphics[width=\linewidth]{fig2}
     \caption{\label{fig:HF_real}
     RHF and UHF energies \titou{in the Hubbard dimer} as a function of the correlation strength $U/t$. 
     The symmetry-broken UHF solution emerges at the coalescence point $U=2t$ (black dot), often known as the Coulson-Fischer point.}
@@ -551,15 +552,15 @@ modelling the correct physics with the two electrons on opposite sites.
 %%%%%%%%%%%%%%%%%
 \begin{figure*}[t]
 	\begin{subfigure}{0.49\textwidth}
-    \includegraphics[height=0.65\textwidth,trim={0pt 0pt 0pt -35pt},clip]{HF_cplx_angle}
+    \includegraphics[height=0.65\textwidth,trim={0pt 0pt 0pt -35pt},clip]{fig3a}
 	\subcaption{\label{subfig:UHF_cplx_angle}}
     \end{subfigure}
 	\begin{subfigure}{0.49\textwidth}
-	\includegraphics[height=0.65\textwidth]{HF_cplx_energy}
+	\includegraphics[height=0.65\textwidth]{fig3b}
 	\subcaption{\label{subfig:UHF_cplx_energy}}
     \end{subfigure}
 	\caption{%
-    (\subref{subfig:UHF_cplx_angle}) Real component of the UHF angle $\ta^{\text{UHF}}$ for $\lambda \in \bbC$ \titou{in the Hubbard dimer for $U/t = ??$}.
+    (\subref{subfig:UHF_cplx_angle}) Real component of the UHF angle $\ta^{\text{UHF}}$ for $\lambda \in \bbC$ in the Hubbard dimer for $U/t = 2$.
     Symmetry-broken solutions correspond to individual sheets and become equivalent at 
     the \textit{quasi}-EP $\lambda_{\text{c}}$ (black dot).
     The RHF solution is independent of $\lambda$, giving the constant plane at $\pi/2$.
@@ -794,17 +795,17 @@ gradient discontinuities or spurious minima.
 %%% FIG 2 %%%
 \begin{figure*}
 	\begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.75\textwidth]{fig2a}	
+	\includegraphics[height=0.75\textwidth]{fig4a}	
 		\subcaption{\label{subfig:RMP_3.5} $U/t = 3.5$}
     \end{subfigure}
     %
     \begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.75\textwidth]{fig2b}
+	\includegraphics[height=0.75\textwidth]{fig4b}
 		\subcaption{\label{subfig:RMP_cvg}}
     \end{subfigure}
     %
     \begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.75\textwidth]{fig2c}	
+	\includegraphics[height=0.75\textwidth]{fig4c}	
 		\subcaption{\label{subfig:RMP_4.5} $U/t = 4.5$}
     \end{subfigure}
 	\caption{
@@ -849,7 +850,7 @@ The Taylor expansion of the RMP energy can then be evaluated to obtain the $k$th
 % RADIUS OF CONVERGENCE PLOTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htb]
-	\includegraphics[width=\linewidth]{RadConv}
+	\includegraphics[width=\linewidth]{fig5}
 	\caption{
 	Radius of convergence $r_c$ for the RMP ground state (red), the UMP ground state (blue), and the UMP excited state (orange) 
     series as functions of the ratio $U/t$.
@@ -871,17 +872,17 @@ for the two states using the ground-state RHF orbitals is identical.
 %%% FIG 3 %%%
 \begin{figure*}
 	\begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.75\textwidth]{fig3a}	
+	\includegraphics[height=0.75\textwidth]{fig6a}	
 		\subcaption{\label{subfig:UMP_3} $U/t = 3$}
     \end{subfigure}
     %
     \begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.75\textwidth]{fig3b}
+	\includegraphics[height=0.75\textwidth]{fig6b}
 		\subcaption{\label{subfig:UMP_cvg}}
     \end{subfigure}
     %
     \begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.75\textwidth]{fig3c}	
+	\includegraphics[height=0.75\textwidth]{fig6c}	
 		\subcaption{\label{subfig:UMP_7} $U/t = 7$}
     \end{subfigure}	\caption{
 	Convergence of the UMP series as a function of the perturbation order $n$ for the Hubbard dimer at $U/t = 3$ and $7$.
@@ -1153,17 +1154,17 @@ states which share the symmetry of the ground state,\cite{Goodson_2004} and are 
 %------------------------------------------------------------------%
 \begin{figure*}[t]
 	\begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.75\textwidth]{rmp_cp}	
+	\includegraphics[height=0.75\textwidth]{fig7a}	
 		\subcaption{\label{subfig:rmp_cp}}
     \end{subfigure}
     %
     \begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.75\textwidth]{rmp_cp_surf}
+	\includegraphics[height=0.75\textwidth]{fig7b}
 		\subcaption{\label{subfig:rmp_cp_surf}}
     \end{subfigure}
     %
     \begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.75\textwidth]{rmp_ep_to_cp}	
+    \includegraphics[height=0.75\textwidth]{fig7c}
 		\subcaption{\label{subfig:rmp_ep_to_cp}}
     \end{subfigure}
 	\caption{%
@@ -1253,17 +1254,17 @@ set representations of the MP critical point.\cite{Sergeev_2006}
 %------------------------------------------------------------------%
 \begin{figure*}[t]
 	\begin{subfigure}{0.32\textwidth}
-        \includegraphics[height=0.75\textwidth,trim={0pt 5pt -10pt 15pt},clip]{ump_cp}	
+    \includegraphics[height=0.75\textwidth,trim={0pt 5pt -10pt 15pt},clip]{fig8a}
 		\subcaption{\label{subfig:ump_cp}}
     \end{subfigure}
     %
     \begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.75\textwidth]{ump_cp_surf}
+	\includegraphics[height=0.75\textwidth]{fig8b}
 		\subcaption{\label{subfig:ump_cp_surf}}
     \end{subfigure}
     %
     \begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.75\textwidth]{ump_ep_to_cp}	
+	\includegraphics[height=0.75\textwidth]{fig8c}	
 		\subcaption{\label{subfig:ump_ep_to_cp}}
     \end{subfigure}
 %    \includegraphics[height=0.65\textwidth,trim={0pt 5pt 0pt 15pt}, clip]{ump_critical_point}
@@ -1329,8 +1330,8 @@ radius of convergence (see Fig.~\ref{fig:RadConv}).
 
 %%%%%%%%%%%%%%%%%
 \begin{figure*}
-    \includegraphics[height=0.23\textheight]{PadeRMP35}
-    \includegraphics[height=0.23\textheight]{PadeRMP45}
+    \includegraphics[height=0.23\textheight]{fig9a}
+    \includegraphics[height=0.23\textheight]{fig9b}
     \caption{\label{fig:PadeRMP}
     RMP ground-state energy as a function of $\lambda$ obtained using various resummation 
     techniques at $U/t = 3.5$ (left) and $U/t = 4.5$ (right).}
@@ -1429,7 +1430,7 @@ a convergent series.
 
 %%%%%%%%%%%%%%%%%
 \begin{figure}[t]
-    \includegraphics[width=\linewidth]{QuadUMP}
+    \includegraphics[width=\linewidth]{fig10}
     \caption{\label{fig:QuadUMP}
     UMP energies as a function of $\lambda$ obtained using various resummation techniques at $U/t = 3$.}
 \end{figure}
@@ -1541,18 +1542,18 @@ The remedy for this problem involves applying a suitable transformation of the c
 
 \begin{figure*}
     \begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.85\textwidth]{ump_qa322}	
-    \subcaption{\label{subfig:ump_ep_to_cp} [3/2,2] Quadratic}
+	\includegraphics[height=0.85\textwidth]{fig11a}	
+    \subcaption{\label{subfig:322quad} [3/2,2] Quadratic}
     \end{subfigure}
     %
     \begin{subfigure}{0.32\textwidth}
-	\includegraphics[height=0.85\textwidth]{ump_exact}
-		\subcaption{\label{subfig:ump_cp_surf} Exact}
+	\includegraphics[height=0.85\textwidth]{fig11b}
+		\subcaption{\label{subfig:exact} Exact}
     \end{subfigure}
     %
 	\begin{subfigure}{0.32\textwidth}
-        \includegraphics[height=0.85\textwidth]{ump_qa304}	
-    \subcaption{\label{subfig:ump_cp} [3/0,4] Quadratic}
+        \includegraphics[height=0.85\textwidth]{fig11c}	
+    \subcaption{\label{subfig:304quad} [3/0,4] Quadratic}
     \end{subfigure}
 \caption{%
 Comparison of the [3/2,2] and [3/0,4] quadratic approximants with the exact UMP energy surface in the complex $\lambda$ 
@@ -1716,7 +1717,7 @@ However, like the UMP series in stretched \ce{H2},\cite{Lepetit_1988}
 the cost of larger denominators is an overall slower rate of convergence.
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{rmp_anal_cont}
+    \includegraphics[width=\linewidth]{fig12}
     \caption{%
         Comparison of the scaled RMP10 Taylor expansion with the exact RMP energy as a function
         of $\lambda$ for the symmetric Hubbard dimer at $U/t = 4$. 
