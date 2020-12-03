@@ -134,7 +134,7 @@
 \newcommand{\UOX}{Physical and Theoretical Chemical Laboratory, Department of Chemistry, University of Oxford, Oxford, OX1 3QZ, U.K.}
 \begin{document}	
 
-\title{Perturbation Theory in the Complex Plane: Exceptional Points and Where to Find Them}
+\title{M\o{}ller--Plesset Theory in the Complex Plane: Exceptional Points and Where to Find Them}
 
 \author{Antoine \surname{Marie}}
 \affiliation{\LCPQ}
@@ -165,50 +165,129 @@ Finally, we discuss several resummation techniques (such as Pad\'e and quadratic
 \label{sec:intro}
 %%%%%%%%%%%%%%%%%%%%%%%
 
-Due to the ubiquitous influence of processes involving electronic states in physics, chemistry, and biology, their faithful description from first principles has been one of the grand challenges faced by theoretical chemists since the dawn of computational chemistry. 
-Accurately predicting ground- and excited-state energies (hence excitation energies) is particularly valuable in this context, and it has concentrated most of the efforts within the community. 
-An armada of theoretical and computational methods have been developed to this end, each of them being plagued by its own flaws. \cite{SzaboBook,JensenBook,CramerBook,HelgakerBook,ParrBook,FetterBook,ReiningBook}
-The fact that none of these methods is successful in every chemical scenario has encouraged chemists and physicists to carry on the development of new methodologies, their main goal being to get the most accurate energies (and properties) at the lowest possible computational cost in the most general context.
-In particular, the design of an affordable, black-box method performing well in both the weak and strong correlation regimes is still elusive.
+% MP THEORY
+\hugh{%
+M\o{}ller--Plesset (MP) perturbation theory remains one of the most popular methods for computing the electron
+correlation energy.\cite{Moller_1934}
+In this approach, the exact electronic energy is estimated by constructing a perturbative correction on top
+of a mean-field Hartree--Fock (HF) approximation.\cite{SzaboBook}
+The popularity of MP theory stems from its black-box nature and relatively low computational scaling, 
+making it easily applied in a broad range of molecular research.
+However, it is now widely understood that the series of MP approximantions (defined for a given perturbation
+order $n$ as MP$n$) can show erratic, slow, or divergent behaviour that limit its systematic improvability.%
+\cite{Laidig_1985,Knowles_1985,Handy_1985,Gill_1986,Laidig_1987,Nobes_1987,Gill_1988,Gill_1988a,Lepetit_1988} 
+As a result, practical applications typically employ only the lowest-order MP2 approach, while 
+the successive MP3, MP4, and MP5 (and higher) terms are generally not considered to offer enough improvement
+to justify their increased cost.
+Turning the MP approximations into a convergent and systematically improvable series largely remains an open challenge.
+}
 
-One common feature of all these methods is that they rely on the notion of quantised energy levels of Hermitian quantum mechanics, in which the different electronic states of a molecule or an atom are energetically ordered, the lowest being the ground state while the higher ones are excited states. 
-Within this quantised paradigm, electronic states look completely disconnected from one another.
-For example, many current methods study excited states using only ground-state information, creating a ground-state bias that leads to incorrect excitation energies.\cite{Piecuch_2002,Dreuw_2005,Krylov_2006,Sneskov_2012,Gonzales_2012,Laurent_2013,Adamo_2013,Ghosh_2018,Blase_2020,Loos_2020a}
-However, one can gain a different perspective on quantisation extending quantum chemistry into the complex domain.
-In a non-Hermitian complex picture, the energy levels are \textit{sheets} of a more complicated topological manifold called \textit{Riemann surface}, and they are smooth and continuous \textit{analytic continuation} of one another. 
-In other words, our view of the quantised nature of conventional Hermitian quantum mechanics arises only from our limited perception of the more complex and profound structure of its non-Hermitian variant. \cite{MoiseyevBook,BenderPTBook}
-The realisation that ground and excited states both emerge from one single mathematical structure with equal importance suggests that excited-state energies can be computed from first principles in their own right. 
-One could then exploit the structure of these Riemann surfaces to develop methods that directly target excited-state energies without needing ground-state information. \cite{Burton_2019,Burton_2019a}
+% COMPLEX PLANE
+\hugh{%
+Our conventional view of electronic structure theory is centered around the Hermitian notion of quantised energy levels,
+where the different electronic states of a molecular are discrete and energetically ordered.
+The lowest energy state defines the ground electronic state, while higher energy states
+represent electronic excited states.
+However, an entirely different perspective on quantisation can be found by analytically continuining
+quantum mechanics into the complex domain.
+In this inherently non-Hermitian framework, the energy levels emerge as individual \textit{sheets} of a complex
+multi-valued function and can be connected as one continuous \textit{Riemann surface}.\cite{BenderPTBook}
+This connection is possible because orderability of real numbers is lost when energies are extended to the
+complex domain.
+As a result, our quantised view of conventional quantum mechanics only arises from
+restricting our domain to Hermitian approximations.
+}
 
-By analytically continuing the electronic energy $E(\lambda)$ in the complex domain (where $\lambda$ is a coupling parameter), the ground and excited states of a molecule can be smoothly connected.
-This connection is possible because by extending real numbers to the complex domain, the ordering property of real numbers is lost.
-Hence, electronic states can be interchanged away from the real axis since the concept of ground and excited states has been lost.
-Amazingly, this smooth and continuous transition from one state to another has recently been experimentally realised in physical settings such as electronics, microwaves, mechanics, acoustics, atomic systems and optics. \cite{Bittner_2012,Chong_2011,Chtchelkatchev_2012,Doppler_2016,Guo_2009,Hang_2013,Liertzer_2012,Longhi_2010,Peng_2014, Peng_2014a,Regensburger_2012,Ruter_2010,Schindler_2011,Szameit_2011,Zhao_2010,Zheng_2013,Choi_2018,El-Ganainy_2018}
+% NON-HERMITIAN HAMILTONIANS
+\hugh{%
+Non-Hermitian Hamiltonians already have a long history in quantum chemistry and have been extensively used to 
+describe metastable resonance phenomina.\cite{MoiseyevBook}
+Through the methods of complex-scaling\cite{Moiseyev_1998} and complex absorbing 
+potentials,\cite{Riss_1993,Ernzerhof_2006,Benda_2018} outgoing resonances can be stabilised as square-integrable
+wave functions with a complex energy that allows the resonance energy and lifetime to be computed.
+We refer the interested reader to the excellent book by Moiseyev for a general overview. \cite{MoiseyevBook}
+}
 
-Exceptional points (EPs) are branch point singularities where two (or more) states become exactly degenerate. \cite{MoiseyevBook,Heiss_1988,Heiss_1990,Heiss_1999,Berry_2011,Heiss_2012,Heiss_2016,Benda_2018}
-They are the non-Hermitian analogs of conical intersections, \cite{Yarkony_1996} which are ubiquitous in non-adiabatic processes and play a key role in photochemical mechanisms.
-In the case of auto-ionising resonances, EPs have a role in deactivation processes similar to conical intersections in the decay of bound excited states. \cite{Benda_2018}
-Although Hermitian and non-Hermitian Hamiltonians are closely related, the behaviour of their eigenvalues near degeneracies is starkly different.
-For example, encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy. \cite{MoiseyevBook,Heiss_2016,Benda_2018}
-Additionally, the wave function picks up a geometric phase (also known as Berry phase \cite{Berry_1984}) and four loops are required to recover the initial wave function.
-In contrast, encircling Hermitian degeneracies at conical intersections only introduces a geometric phase while leaving the states unchanged.
-More dramatically, whilst eigenvectors remain orthogonal at conical intersections, at non-Hermitian EPs the eigenvectors themselves become equivalent, resulting in a \textit{self-orthogonal} state. \cite{MoiseyevBook}
-More importantly here, although EPs usually lie off the real axis, these singular points are intimately related to the convergence properties of perturbative methods and avoided crossing on the real axis are indicative of singularities in the complex plane. \cite{BenderBook,Olsen_1996,Olsen_2000,Olsen_2019,Mihalka_2017a,Mihalka_2017b,Mihalka_2019}
+% EXCEPTIONAL POINTS
+\hugh{%
+The Riemann surface for the electronic energy $E(\lambda)$ with a coupling parameter $\lambda$ can be 
+constructed by analytically continuing the function into the complex $\lambda$ domain.
+In the process, the ground and excited states become smoothly connected and form a continuous complex-valued
+energy surface. 
+\textit{Exceptional points} (EPs) can exist on this energy surface, corresponding to branch point 
+singularities where two (or more) states become exactly degenerate.%
+\cite{MoiseyevBook,Heiss_1988,Heiss_1990,Heiss_1999,Berry_2011,Heiss_2012,Heiss_2016,Benda_2018}
+While EPs can be considered as the non-Hermitian analogues of conical intersections,\cite{Yarkony_1996} 
+the behaviour of their eigenvalues near a degeneracy couldn't be more different.
+Incredibly, following the eigenvalues around an EP leads to the interconversion of the degenerate states, 
+and multiple loops around the EP are required to recover the initial energy.\cite{MoiseyevBook,Heiss_2016,Benda_2018}
+In contrast, encircling a conical intersection leaves the states unchanged.
+Furthermore, while the eigenvectors remain orthogonal at a conical intersection, the eigenvectors at an EP
+become identical and result in a \textit{self-orthogonal} state. \cite{MoiseyevBook}
+An EP effectively creates a ``portal'' between ground and excited-states in the complex plane.%
+\cite{Burton_2019,Burton_2019a}
+This transition between states has been experimentally observed in electronics, 
+microwaves, mechanics, acoustics, atomic systems and optics.\cite{Bittner_2012,Chong_2011,Chtchelkatchev_2012,Doppler_2016,Guo_2009,Hang_2013,Liertzer_2012,Longhi_2010,Peng_2014, Peng_2014a,Regensburger_2012,Ruter_2010,Schindler_2011,Szameit_2011,Zhao_2010,Zheng_2013,Choi_2018,El-Ganainy_2018}
+}
 
-\titou{The use of non-Hermitian Hamiltonians in quantum chemistry has a long history; these Hamiltonians have been used extensively as a method for describing metastable resonance phenomena. \cite{MoiseyevBook}
-Through a complex-scaling of the electronic or atomic coordinates,\cite{Moiseyev_1998} or by introducing a complex absorbing potential,\cite{Riss_1993,Ernzerhof_2006,Benda_2018} outgoing resonance states are transformed into square-integrable wave functions that allow the energy and lifetime of the resonance to be computed.
-We refer the interested reader to the excellent book of Moiseyev for a general overview. \cite{MoiseyevBook}}
+% MP THEORY IN THE COMPLEX PLANE
+\hugh{%
+The MP energy correction can be considered as a function of the perturbation parameter $\lambda$.
+When the domain of $\lambda$ is extended to the complex plane, EPs can also occur in the MP energy.
+Although these EPs generally exist in the complex plane, their positions are intimately related to the 
+convergence of the perturbation expansion on the real axis.%
+\cite{BenderBook,Olsen_1996,Olsen_2000,Olsen_2019,Mihalka_2017a,Mihalka_2017b,Mihalka_2019}
+Furthermore, the existence of an avoided crossing on the real axis is indicative of a nearby EP
+in the complex plane.
+Our aim in this article is to provide a comprehensive review of the fundamental relationship between EPs
+and the convergence properties of the MP series.
+In doing so, we will demonstrate how understanding the MP energy in the complex plane can 
+be harnessed to significantly improve estimates of the exact energy using only the lowest-order terms
+in the MP series.
+}
 
-\titou{Discussion around the different types of singularities in complex analysis.
+%Due to the ubiquitous influence of processes involving electronic states in physics, chemistry, and biology, their faithful description from first principles has been one of the grand challenges faced by theoretical chemists since the dawn of computational chemistry. 
+%Accurately predicting ground- and excited-state energies (hence excitation energies) is particularly valuable in this context, and it has concentrated most of the efforts within the community. 
+%An armada of theoretical and computational methods have been developed to this end, each of them being plagued by its own flaws. \cite{SzaboBook,JensenBook,CramerBook,HelgakerBook,ParrBook,FetterBook,ReiningBook}
+%The fact that none of these methods is successful in every chemical scenario has encouraged chemists and physicists to carry on the development of new methodologies, their main goal being to get the most accurate energies (and properties) at the lowest possible computational cost in the most general context.
+%In particular, the design of an affordable, black-box method performing well in both the weak and strong correlation regimes is still elusive.
+
+%One common feature of all these methods is that they rely on the notion of quantised energy levels of Hermitian quantum mechanics, in which the different electronic states of a molecule or an atom are energetically ordered, the lowest being the ground state while the higher ones are excited states. 
+%Within this quantised paradigm, electronic states look completely disconnected from one another.
+%For example, many current methods study excited states using only ground-state information, creating a ground-state bias that leads to incorrect excitation energies.\cite{Piecuch_2002,Dreuw_2005,Krylov_2006,Sneskov_2012,Gonzales_2012,Laurent_2013,Adamo_2013,Ghosh_2018,Blase_2020,Loos_2020a}
+%However, one can gain a different perspective on quantisation extending quantum chemistry into the complex domain.
+%In a non-Hermitian complex picture, the energy levels are \textit{sheets} of a more complicated topological manifold called \textit{Riemann surface}, and they are smooth and continuous \textit{analytic continuation} of one another. 
+%In other words, our view of the quantised nature of conventional Hermitian quantum mechanics arises only from our limited perception of the more complex and profound structure of its non-Hermitian variant. \cite{MoiseyevBook,BenderPTBook}
+%The realisation that ground and excited states both emerge from one single mathematical structure with equal importance suggests that excited-state energies can be computed from first principles in their own right. 
+%One could then exploit the structure of these Riemann surfaces to develop methods that directly target excited-state energies without needing ground-state information. \cite{Burton_2019,Burton_2019a}
+
+%By analytically continuing the electronic energy $E(\lambda)$ in the complex domain (where $\lambda$ is a coupling parameter), the ground and excited states of a molecule can be smoothly connected.
+%This connection is possible because by extending real numbers to the complex domain, the ordering property of real numbers is lost.
+%Hence, electronic states can be interchanged away from the real axis since the concept of ground and excited states has been lost.
+%Amazingly, this smooth and continuous transition from one state to another has recently been experimentally realised in physical settings such as electronics, microwaves, mechanics, acoustics, atomic systems and optics. \cite{Bittner_2012,Chong_2011,Chtchelkatchev_2012,Doppler_2016,Guo_2009,Hang_2013,Liertzer_2012,Longhi_2010,Peng_2014, Peng_2014a,Regensburger_2012,Ruter_2010,Schindler_2011,Szameit_2011,Zhao_2010,Zheng_2013,Choi_2018,El-Ganainy_2018}
+
+%Exceptional points (EPs) are branch point singularities where two (or more) states become exactly degenerate. \cite{MoiseyevBook,Heiss_1988,Heiss_1990,Heiss_1999,Berry_2011,Heiss_2012,Heiss_2016,Benda_2018}
+%They are the non-Hermitian analogs of conical intersections, \cite{Yarkony_1996} which are ubiquitous in non-adiabatic processes and play a key role in photochemical mechanisms.
+%In the case of auto-ionising resonances, EPs have a role in deactivation processes similar to conical intersections in the decay of bound excited states. \cite{Benda_2018}
+%Although Hermitian and non-Hermitian Hamiltonians are closely related, the behaviour of their eigenvalues near degeneracies is starkly different.
+%For example, encircling non-Hermitian degeneracies at EPs leads to an interconversion of states, and two loops around the EP are necessary to recover the initial energy. \cite{MoiseyevBook,Heiss_2016,Benda_2018}
+%Additionally, the wave function picks up a geometric phase (also known as Berry phase \cite{Berry_1984}) and four loops are required to recover the initial wave function.
+%In contrast, encircling Hermitian degeneracies at conical intersections only introduces a geometric phase while leaving the states unchanged.
+%More dramatically, whilst eigenvectors remain orthogonal at conical intersections, at non-Hermitian EPs the eigenvectors themselves become equivalent, resulting in a \textit{self-orthogonal} state. \cite{MoiseyevBook}
+%More importantly here, although EPs usually lie off the real axis, these singular points are intimately related to the convergence properties of perturbative methods and avoided crossing on the real axis are indicative of singularities in the complex plane. \cite{BenderBook,Olsen_1996,Olsen_2000,Olsen_2019,Mihalka_2017a,Mihalka_2017b,Mihalka_2019}
+
+%The use of non-Hermitian Hamiltonians in quantum chemistry has a long history; these Hamiltonians have been used extensively as a method for describing metastable resonance phenomena. \cite{MoiseyevBook}
+%Through a complex-scaling of the electronic or atomic coordinates,\cite{Moiseyev_1998} or by introducing a complex absorbing potential,\cite{Riss_1993,Ernzerhof_2006,Benda_2018} outgoing resonance states are transformed into square-integrable wave functions that allow the energy and lifetime of the resonance to be computed.
+%We refer the interested reader to the excellent book of Moiseyev for a general overview. \cite{MoiseyevBook}
+
+\hugh{\bf (HGAB: Moved (and condensed) this to end of Section IIC)}.
+\trashHB{Discussion around the different types of singularities in complex analysis.
 At a singular point, a function and/or its derivatives becomes infinite or undefined (hence non analytic).
 One very common type of singularities (belonging to the family of isolated singularities) are poles where the function behaves $1/(\lambda - \lambda_c)^n$ where $n \in \mathbb{N}^*$ is the order of the pole.
 Another class of singularities are branch points resulting from a multi-valued function such as a square root or a logarithm function and usually implying the presence of so-called branch cuts which are lines or curves where the function ``jumps'' from one value to another.
 Critical points are singularities which lie on the real axis and where the nature of the function undergoes a sudden transition. 
 However, these do not clearly belong to a given class of singularities and they cannot be rigorously classified as they have more complicated functional forms.
 }
-\antoine{However, their complicated functional forms makes it difficult to know if they belong to a given class of singularities. Thus it is not clear if critical points can be sorted in one mathematical class of singularities or not. To the best of our knowledge, this question is still open.} 
-
-\titou{T2: I THINK THAT IN GENERAL THE AXE LABELS ARE TOO SMALL.}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 \section{Exceptional Points in Electronic Structure}
@@ -270,6 +349,7 @@ unless otherwise stated, atomic units will be used throughout.
 	Exact energies for the Hubbard dimer ($U=4t$) as functions of $\lambda$ on the real axis (\subref{subfig:FCI_real}) and in the complex plane (\subref{subfig:FCI_cplx}).
     Only the interacting closed-shell singlets are plotted in the complex plane, becoming degenerate at the EP (black dot).
     The contour followed around the EP in order to interchange states is also represented.
+    \hugh{HUGH TO ADD CONTOUR AGAIN....}
 	\label{fig:FCI}}
 \end{figure*}
 
@@ -415,8 +495,7 @@ As a result, the radius of convergence for a function is equal to the distance f
 in the complex plane, \hugh{referred to as the ``dominant'' singularity.
 This singularity may represent a pole of the function, or a branch point (\eg, square-root or logarithmic)
 in a multi-valued function.
-Critical points are singularities that lie on the real axis, where the nature of a function experiences
-a discontinuity in either its value or one of its derivatives.}
+}
 
 For example, the simple function
 \begin{equation} \label{eq:DivExample}
@@ -1097,13 +1176,14 @@ The mean-field potential $v^{\text{HF}}$ essentially represents a negatively cha
 controlled by the extent of the HF orbitals, usually located close to the nuclei.
 When $\lambda$ is negative, the mean-field potential becomes increasingly repulsive, while the explicit two-electron 
 Coulomb interaction becomes attractive.
-There is therefore a negative critical value $\lc$ where it becomes energetically favourable for the electrons 
+There is therefore a negative critical point $\lc$ where it becomes energetically favourable for the electrons 
 to dissociate and form a bound cluster at an infinite separation from the nuclei.\cite{Stillinger_2000}
 This autoionisation effect is closely related to the critial point for electron binding in two-electron 
 atoms (see Ref.~\onlinecite{Baker_1971}).
 Furthermore, a similar set of critical points exists along the positive real axis, corresponding to single-electron ionisation
 processes.\cite{Sergeev_2005}
-
+\hugh{While these critical points are singularities on the real axis, their exact mathematical form is difficult 
+to identify and remains an open question.}
 
 % CLASSIFICATIONS BY GOODSOON AND SERGEEV
 To further develop the link between the critical point and types of MP convergence, Sergeev and Goodson investigated
@@ -1773,7 +1853,8 @@ That means that one must understand the strengths and weaknesses of each method,
 We have seen that for methods relying on perturbation theory, their successes and failures are directly connected to the position of singularities in the complex plane, known as exceptional points.
 
 After a short presentation of the fundamental notions of quantum chemistry in the complex plane, such as the mean-field Hartree--Fock approximation and Rayleigh--Schr\"odinger perturbation theory, we have provided an exhaustive historical overview of the various research activities that have been performed on the physics of singularities with a particular focus on M{\o}ller--Plesset perturbation theory. 
-Seminal contributions from various research groups around the world have evidenced highly oscillatory, slowly convergent, or catastrophically divergent behaviour of the restricted and/or unrestricted MP perturbation series.\cite{Laidig_1985,Knowles_1985,Handy_1985,Gill_1986,Laidig_1987,Nobes_1987,Gill_1988,Gill_1988a,Lepetit_1988} 
+Seminal contributions from various research groups around the world have evidenced highly oscillatory, slowly convergent, or catastrophically divergent behaviour of the restricted and/or unrestricted MP perturbation series.%
+\cite{Laidig_1985,Knowles_1985,Handy_1985,Gill_1986,Laidig_1987,Nobes_1987,Gill_1988,Gill_1988a,Lepetit_1988} 
 
 Later, these erratic behaviours were investigated and rationalised in terms of avoided crossings and singularities in the complex plane. 
 In that regard, it is worth highlighting the key contribution of Cremer and He who proposed a classification of the types of convergence: \cite{Cremer_1996} ``class A'' systems that exhibit monotonic convergence, and ``class B'' systems for which convergence is erratic after initial oscillations. 
