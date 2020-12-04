@@ -1837,11 +1837,10 @@ molecule to obtain encouragingly accurate results.\cite{Mihalka_2019}
 %%%%%%%%%%%%%%%%%%%%
 
 % INTRO TO CONC.
-\hugh{To accurately model chemical systems, one must choose a computational protocol from an ever growing 
+To accurately model chemical systems, one must choose a computational protocol from an ever growing 
 collection of theoretical methods.
 Until the Sch\"odinger equation is solved exactly, this choice must make a compromise on the accuracy
 of certain properties depending on the system that is being studied.
-}
 It is therefore essential that we understand the strengths and weaknesses of different methods, 
 and why one might fail in cases where others work beautifully.
 In this review, we have seen that the success and failure of perturbation-based methods are 
@@ -1855,13 +1854,12 @@ around the physics of complex singularities in perturbation theory, with a parti
 Seminal contributions from various research groups around the world have revealed highly oscillatory,
 slowly convergent, or catastrophically divergent behaviour of the restricted and/or unrestricted MP perturbation series.%
 \cite{Laidig_1985,Knowles_1985,Handy_1985,Gill_1986,Laidig_1987,Nobes_1987,Gill_1988,Gill_1988a,Lepetit_1988} 
-\hugh{In particular, the spin-symmetry-broken unrestricted MP series is notorious
+In particular, the spin-symmetry-broken unrestricted MP series is notorious
 for giving incredibly slow convergence.\cite{Gill_1986,Nobes_1987,Gill_1988a,Gill_1988}
 All these behaviours can be rationalised and explained by the position of exceptional points
-and other singularities that arise when perturbation theory is extended across the complex plane.}
+and other singularities that arise when perturbation theory is extended across the complex plane.
 
 % CLASSIFICATIONS
-\hugh{%
 The classifications of different convergence types developed by Cremer and He,\cite{Cremer_1996} 
 Olsen \etal,\cite{Christiansen_1996,Olsen_1996,Olsen_2000,Olsen_2019} 
 or Sergeev and Goodson\cite{Goodson_2000a,Goodson_2000b,Goodson_2004,Sergeev_2005,Sergeev_2006} are particularly
@@ -1877,28 +1875,25 @@ singularity closest to the origin, giving $\alpha$ singularities which have larg
 and $\beta$ singularities which have a very small imaginary component.%
 \cite{Goodson_2000a,Goodson_2000b,Goodson_2004,Sergeev_2005,Sergeev_2006}
 Remarkably, the position of $\beta$ singularities close to the real axis can be justified as a critical 
-point where one (or more) electrons is ionised from the molecule, creating a quantum phase transition.\cite{Stillinger_2000}
+point where one (or more) electron is ionised from the molecule, creating a quantum phase transition.\cite{Stillinger_2000}
 We have shown that the slow convergence of symmetry-broken MP approximations can also be driven by a $\beta$ 
 singularity and is closely related to these quantum phase transitions.
-}
 
 % RESUMMATION
 We have also discussed several resummation techniques that can be used to improve energy estimates
 for both convergent and divergent series, including Pad\'e and quadratic approximants.
-\hugh{Furthermore, we have provided the first illustration of how the Shanks transformation can accelerate
-convergence of MP approximants to improve the accuracy of low-order approximations.}
+Furthermore, we have provided the first illustration of how the Shanks transformation can accelerate
+convergence of MP approximants to improve the accuracy of low-order approximations.
 Using these resummation and acceleration methods to turn low-order truncated MP series into convergent and
 systematically improvable series can dramatically improve the accuracy and applicability of these perturbative methods.
-\hugh{However, the application of these approaches requires the evaluation of higher-order MP coefficents 
+However, the application of these approaches requires the evaluation of higher-order MP coefficients 
 (\eg, MP3, MP4, MP5, etc) that are generally expensive to compute in practice.
 There is therefore a strong demand for computationally efficient approaches to evaluate general terms in the MP 
 series, and the development of stochastic,\cite{Thom_2007,Neuhauser_2012,Willow_2012,Takeshita_2017,Li_2019}
 or linear-scaling approximations\cite{Rauhut_1998,Schutz_1999}
 may prove fruitful avenues in this direction.
-}
 
 % ORBITAL OPTIMISATION EXCITED STATES
-\hugh{
 The present review has only considered the convergence of the MP series using the RHF or UHF 
 reference orbitals.
 However, numerous recent studies have shown that the use of orbitals optimised in the presence of the MP2 
@@ -1910,7 +1905,6 @@ and a detailed investigation of their MP energy function in the complex plane is
 fascinating insights.
 Furthermore, the convergence properties of the excited-state MP series using orbital-optimised higher energy 
 HF solutions\cite{Gilbert_2008} remains entirely unexplored.\cite{Lee_2019,CarterFenk_2020}
-}
 
 % HUBBARD
 Finally, the physical concepts and mathematical tools presented in this manuscript have been illustrated 
@@ -1921,20 +1915,20 @@ such as Kohn-Sham DFT, \cite{Carrascal_2015,Cohen_2016} linear-response theory,\
 many-body perturbation theory,\cite{Romaniello_2009,Romaniello_2012,DiSabatino_2015,Tarantino_2017,Olevano_2019} 
 ensemble DFT, \cite{Deur_2017,Deur_2018,Senjean_2018,Sagredo_2018,Fromager_2020} thermal DFT,\cite{Smith_2016,Smith_2018} 
 coupled cluster theory,\cite{Stein_2014,Henderson_2015,Shepherd_2016} and many more.
-\hugh{In particular, we have shown that the Hubbard dimer contains suifficient flexibility to describe 
+In particular, we have shown that the Hubbard dimer contains sufficient flexibility to describe 
 the effects of symmetry breaking, the MP critical point, and resummation techniques, in contrast to the more 
 minimalistic models considered previously.
 We therefore propose that the Hubbard dimer provides the ideal arena for further developing our fundamental understanding
-and applications of perturbation theory.}
+and applications of perturbation theory.
 
 % DIRECTIONS
-\hugh{Perturbation theory isn't usually considered in the complex plane. 
+Perturbation theory isn't usually considered in the complex plane. 
 But when it is, we have seen that a lot can be learnt about the performance of perturbation theory on the real axis.
 These insights can allow incredibly accurate results to be obtained using only the lowest-order terms in a perturbation series.
 Yet perturbation theory represents only one method for approximating the exact energy, and few other methods
 have been considered through similar complex non-Hermitian extensions.
 There is therefore much still to be discovered about the existence and consequences of exceptional points
-throughout electronic structure theory.}
+throughout electronic structure theory.
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{acknowledgements}
