@@ -166,7 +166,7 @@ Each of these points is further illustrated with the ubiquitous Hubbard dimer at
 %%%%%%%%%%%%%%%%%%%%%%%
 
 % SPIKE THE READER
-\hugh{Perturbation theory isn't usually considered in the complex plane.
+Perturbation theory isn't usually considered in the complex plane.
 Normally it is applied using real numbers as one of very few availabe tools for 
 describing realistic quantum systems where exact solutions of the Schr\"odinger equation are impossible.\cite{Dirac_1929}
 In particular, time-independent Rayleigh--Schr\"odinger perturbation theory\cite{RayleighBook,Schrodinger_1926} 
@@ -174,7 +174,6 @@ has emerged as an instrument of choice among the vast array of methods developed
 \cite{SzaboBook,JensenBook,CramerBook,HelgakerBook,ParrBook,FetterBook,ReiningBook}
 However, the properties of perturbation theory in the complex plane
 are essential for understanding the quality of perturbative approximations on the real axis.
-}
 
 % Good old Schroedinger
 %The electronic Schr\"odinger equation,
@@ -196,19 +195,19 @@ are essential for understanding the quality of perturbative approximations on th
 % Moller-Plesset
 %\hugh{Accurately predicting the electronic energy is the primary focus of electronic structure theory, in 
 %principle providing a fundamental understanding of chemical structure, bonding, and reactivity.
-\hugh{In electronic structure theory,} the workhorse of time-independent perturbation theory is M\o{}ller--Plesset (MP) %perturbation 
+In electronic structure theory, the workhorse of time-independent perturbation theory is M\o{}ller--Plesset (MP) %perturbation 
 theory,\cite{Moller_1934} which remains one of the most popular methods for computing the electron 
 correlation energy.\cite{Wigner_1934,Lowdin_1958}
 %\trashHB{an old yet important concept, first introduced by Wigner \cite{Wigner_1934} and later defined by L\"owdin. \cite{Lowdin_1958}}
 This approach estimates the exact electronic energy by constructing a perturbative correction on top
 of a mean-field Hartree--Fock (HF) approximation.\cite{SzaboBook}
-The popularity of MP theory stems from its black-box nature, \hugh{size-extensivity,} and relatively low computational scaling, 
+The popularity of MP theory stems from its black-box nature, size-extensivity, and relatively low computational scaling, 
 making it easily applied in a broad range of molecular research.\cite{HelgakerBook}
 However, it is now widely recognised that the series of MP approximations (defined for a given perturbation
 order $n$ as MP$n$) can show erratic, slow, or divergent behaviour that limit its systematic improvability.%
 \cite{Laidig_1985,Knowles_1985,Handy_1985,Gill_1986,Laidig_1987,Nobes_1987,Gill_1988,Gill_1988a,Lepetit_1988} 
 As a result, practical applications typically employ only the lowest-order MP2 approach, while 
-the successive MP3, MP4, and MP5 (and higher \hugh{order}) terms are generally not considered to offer enough improvement
+the successive MP3, MP4, and MP5 (and higher order) terms are generally not considered to offer enough improvement
 to justify their increased cost.
 Turning the MP approximations into a convergent and 
 systematically improvable series largely remains an open challenge.
@@ -269,16 +268,15 @@ In doing so, we will demonstrate how understanding the MP energy in the complex 
 be harnessed to significantly improve estimates of the exact energy using only the lowest-order terms
 in the MP series.
 
-\trashHB{The present review is organised as follows.}
-In Sec.~\ref{sec:EPs}, we introduce the key concepts such as Rayleigh-Schr\"odinger perturbation theory and the mean-field HF approximation, and discuss their \hugh{non-Hermitian} analytic continuation into the complex plane.
+In Sec.~\ref{sec:EPs}, we introduce the key concepts such as Rayleigh-Schr\"odinger perturbation theory and the mean-field HF approximation, and discuss their non-Hermitian analytic continuation into the complex plane.
 Section \ref{sec:MP} presents MP perturbation theory and we report a comprehensive historical overview of the research that
 has been performed on the physics of MP singularities.
 In Sec.~\ref{sec:Resummation}, we discuss several resummation techniques for improving the accuracy
 of low-order MP approximations, including Pad\'e and quadratic approximants.
-Finally, we draw our conclusions in Sec.~\ref{sec:ccl} \hugh{and highlight our perspective on directions for 
-future research}.
+Finally, we draw our conclusions in Sec.~\ref{sec:ccl} and highlight our perspective on directions for 
+future research.
 Throughout this review, we present illustrative and pedagogical examples based on the ubiquitous 
-Hubbard dimer, \hugh{reinforcing} the amazing versatility of this powerful simplistic model.
+Hubbard dimer, reinforcing the amazing versatility of this powerful simplistic model.
 
 %%%%%%%%%%%%%%%%%%%%%%%
 \section{Exceptional Points in Electronic Structure}
