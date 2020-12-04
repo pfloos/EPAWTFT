@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{174}%
+\begin{thebibliography}{175}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -1546,6 +1546,17 @@
   }\href {\doibase 10.1063/1.4926327} {\bibfield  {journal} {\bibinfo
   {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {143}},\ \bibinfo
   {pages} {024108} (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Hirata}\ \emph {et~al.}(2015)\citenamefont {Hirata},
+  \citenamefont {Hermes}, \citenamefont {Simons},\ and\ \citenamefont
+  {Ortiz}}]{Hirata_2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Hirata}}, \bibinfo {author} {\bibfnamefont {M.~R.}\ \bibnamefont {Hermes}},
+  \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Simons}}, \ and\ \bibinfo
+  {author} {\bibfnamefont {J.~V.}\ \bibnamefont {Ortiz}},\ }\href {\doibase
+  10.1021/acs.jctc.5b00005} {\bibfield  {journal} {\bibinfo  {journal} {J.
+  Chem. Theory Comput.}\ }\textbf {\bibinfo {volume} {11}},\ \bibinfo {pages}
+  {1595} (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Tarantino}\ \emph {et~al.}(2017)\citenamefont
   {Tarantino}, \citenamefont {Romaniello}, \citenamefont {Berger},\ and\
   \citenamefont {Reining}}]{Tarantino_2017}%
