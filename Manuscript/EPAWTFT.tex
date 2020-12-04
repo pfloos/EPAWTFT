@@ -920,15 +920,6 @@ The Taylor expansion of the RMP energy can then be evaluated to obtain the $k$th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % RADIUS OF CONVERGENCE PLOTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[htb]
-	\includegraphics[width=\linewidth]{fig5}
-	\caption{
-	Radius of convergence $r_c$ for the RMP ground state (red), the UMP ground state (blue), and the UMP excited state (orange) 
-    series as functions of the ratio $U/t$.
-	\label{fig:RadConv}}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 The RMP series is convergent for $U = 3.5\,t$ with $\rc > 1$, as illustrated for the individual terms at each order
 of perturbation in Fig.~\ref{subfig:RMP_cvg}.
 In contrast, for $U = 4.5t$ one finds $\rc < 1$, and the RMP series becomes divergent.
@@ -939,6 +930,19 @@ For the divergent case, the $\lep$ lies inside this cylinder of convergence, whi
 outside this cylinder.
 In both cases, the EP connects the ground state with the doubly-excited state, and thus the convergence behaviour
 for the two states using the ground-state RHF orbitals is identical.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RADIUS OF CONVERGENCE PLOTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htb]
+	\includegraphics[width=\linewidth]{fig5}
+	\caption{
+	Radius of convergence $r_c$ for the RMP ground state (red), the UMP ground state (blue), and the UMP excited state (orange) 
+    series as functions of the ratio $U/t$.
+	\label{fig:RadConv}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %%% FIG 3 %%%
 \begin{figure*}
@@ -1244,7 +1248,7 @@ states which share the symmetry of the ground state,\cite{Goodson_2004} and are 
 		(\subref{subfig:rmp_cp}) Exact critical points with $t=0$ occur on the negative real $\lambda$ axis (dashed).
 		(\subref{subfig:rmp_cp_surf}) Modelling a finite basis using $t=0.1$ yields complex-conjugate EPs close to the
 		real axis, giving a sharp avoided crossing on the real axis (solid).
-		(\subref{subfig:rmp_ep_to_cp}) Convergence of the ground-state EP onto the real axis in the \trash{exact} limit $t \to 0$.
+		(\subref{subfig:rmp_ep_to_cp}) Convergence of the ground-state EP onto the real axis in the limit $t \to 0$.
 	\label{fig:RMP_cp}}
 \end{figure*}
 %------------------------------------------------------------------%
