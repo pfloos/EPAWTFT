@@ -387,13 +387,55 @@ The Stillinger critical point is then a point where the two energies cross.
 
 
 +==========================================================+
-| Miscellaneous (or category currently unclear)            |
+| Interesting studies on improving MPn                     |
 +==========================================================+
 
+Lochan and Head-Gordon, JCP (2007):
+-----------------------------------
+Orbital-optimised opposite-spin scaled MP2.
+Show that orbital optimisation significantly improves description
+of open-shell molecules (where spin symmetry-breaking is common).
+
+Neese, Schwabe, Kossmann, Schirmer, Grimme, JCTC (2009):
+--------------------------------------------------------
+Implement OO-MP2 within the RI approximation. Provides improvement
+in spin-contaminated systems with open-shells or radicals etc.
+
+Bozkaya, JCP (2011):
+--------------------
+Development of orbital-optimised MP3 for symmetry breaking problems.
 
 
+Lee, Head-Gordon, JCTC (2018):
+------------------------------
+k-OOMP2
+
+Bertels, Lee, Head-Gordon, JPCL (2019):
+---------------------------------------
+k-OOMP2 orbitals for MP3
+
+Lee, Small, Head-Gordon, JCP (2019):
+------------------------------------
+Excited-state coupled cluster paper.
+
+Show that the use of orbital-optimized excited-state reference significantly
+improves the accuracy of MP2.
+
+Rettig, Hait, Bertel, Head-Gordon, JCTC (2020):
+-----------------------------------------------
+The argument here is that the poor performance of MP3 theory is due to the use of 
+reference HF orbitals. These HF orbitals have a ``propensity'' to artificially
+break spin-symmetry, leading to very slow MP convergence. HF overly localizes
+electrons due to lack of correlation. The use of orbital-optimised MP2, and regularized
+versions, can provide better orbitals that have been found to improve the performance
+of MP3. In this paper they consider the use of DFT orbitals for MP3 and show
+that it generally gives more accurate MP3 results.
 
 
-Fink, JCP (2016):
------------------
+Carter-Fek, Herbert, JCTC (2020):
+---------------------------------
+This is the STEP paper, but they also get relatively good excitation energies
+using orbital-optimised MP2 (Delta MP2)
+
+
 
