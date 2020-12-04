@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{154}%
+\begin{thebibliography}{159}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -1364,6 +1364,15 @@
   {journal} {\bibinfo  {journal} {Theor. Chem. Acc.}\ }\textbf {\bibinfo
   {volume} {137}},\ \bibinfo {pages} {149} (\bibinfo {year}
   {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cohen}\ and\ \citenamefont
+  {Mori-S\'anchez}(2016)}]{Cohen_2016}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~J.}\ \bibnamefont
+  {Cohen}}\ and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Mori-S\'anchez}},\ }\href {\doibase 10.1103/PhysRevA.93.042511} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume}
+  {93}},\ \bibinfo {pages} {042511} (\bibinfo {year} {2016})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Romaniello}\ \emph {et~al.}(2009)\citenamefont
   {Romaniello}, \citenamefont {Guyot},\ and\ \citenamefont
   {Reining}}]{Romaniello_2009}%
@@ -1408,6 +1417,16 @@
   {journal} {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume}
   {96}},\ \bibinfo {pages} {045124} (\bibinfo {year} {2017})}\BibitemShut
   {NoStop}%
+\bibitem [{\citenamefont {Olevano}\ \emph {et~al.}(2019)\citenamefont
+  {Olevano}, \citenamefont {Toulouse},\ and\ \citenamefont
+  {Schuck}}]{Olevano_2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
+  {Olevano}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Toulouse}}, \
+  and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Schuck}},\ }\href
+  {\doibase 10.1063/1.5080330} {\bibfield  {journal} {\bibinfo  {journal} {J.
+  Chem. Phys.}\ }\textbf {\bibinfo {volume} {150}},\ \bibinfo {pages} {084112}
+  (\bibinfo {year} {2019})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Deur}\ \emph {et~al.}(2017)\citenamefont {Deur},
   \citenamefont {Mazouin},\ and\ \citenamefont {Fromager}}]{Deur_2017}%
   \BibitemOpen
@@ -1474,4 +1493,33 @@
   {\bibfnamefont {B.}~\bibnamefont {Kirtman}}, \ and\ \bibinfo {editor}
   {\bibfnamefont {Y.}~\bibnamefont {Ozaki}}}\ (\bibinfo  {publisher} {Springer,
   Singapore})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Stein}\ \emph {et~al.}(2014)\citenamefont {Stein},
+  \citenamefont {Henderson},\ and\ \citenamefont {Scuseria}}]{Stein_2014}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Stein}}, \bibinfo {author} {\bibfnamefont {T.~M.}\ \bibnamefont
+  {Henderson}}, \ and\ \bibinfo {author} {\bibfnamefont {G.~E.}\ \bibnamefont
+  {Scuseria}},\ }\href {\doibase 10.1063/1.4880819} {\bibfield  {journal}
+  {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {140}},\
+  \bibinfo {pages} {214113} (\bibinfo {year} {2014})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Henderson}\ \emph {et~al.}(2015)\citenamefont
+  {Henderson}, \citenamefont {Bulik},\ and\ \citenamefont
+  {Scuseria}}]{Henderson_2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.~M.}\ \bibnamefont
+  {Henderson}}, \bibinfo {author} {\bibfnamefont {I.~W.}\ \bibnamefont
+  {Bulik}}, \ and\ \bibinfo {author} {\bibfnamefont {G.~E.}\ \bibnamefont
+  {Scuseria}},\ }\href {\doibase 10.1063/1.4921986} {\bibfield  {journal}
+  {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {142}},\
+  \bibinfo {pages} {214116} (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Shepherd}\ \emph {et~al.}(2016)\citenamefont
+  {Shepherd}, \citenamefont {Henderson},\ and\ \citenamefont
+  {Scuseria}}]{Shepherd_2016}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~J.}\ \bibnamefont
+  {Shepherd}}, \bibinfo {author} {\bibfnamefont {T.~M.}\ \bibnamefont
+  {Henderson}}, \ and\ \bibinfo {author} {\bibfnamefont {G.~E.}\ \bibnamefont
+  {Scuseria}},\ }\href {\doibase 10.1063/1.4942770} {\bibfield  {journal}
+  {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {144}},\
+  \bibinfo {pages} {094112} (\bibinfo {year} {2016})}\BibitemShut {NoStop}%
 \end{thebibliography}%
