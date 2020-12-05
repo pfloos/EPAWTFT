@@ -127,7 +127,7 @@
 \begin{abstract}
 We explore the non-Hermitian extension of quantum chemistry in the complex plane and its link with perturbation theory.
 We observe that the physics of a quantum system is intimately connected to the position of energy singularities in the complex plane, known as exceptional points.
-After presenting the fundamental concepts of non-Hermitian quantum chemistry in the complex plane, including the mean-field Hartree--Fock approximation and Rayleigh-Schr\"odinger perturbation theory, we provide a historical overview of the various research activities that have been performed on the physics of singularities.
+After presenting the fundamental concepts of non-Hermitian quantum chemistry in the complex plane, including the mean-field Hartree--Fock approximation and Rayleigh--Schr\"odinger perturbation theory, we provide a historical overview of the various research activities that have been performed on the physics of singularities.
 In particular, we highlight the seminal work of several research groups on the convergence behaviour of perturbative series obtained within M{\o}ller--Plesset perturbation theory, and its links with quantum phase transitions.
 We also discuss several resummation techniques (such as Pad\'e and quadratic approximants) that can improve the overall accuracy of the M{\o}ller--Plesset perturbative series in both convergent and divergent cases.
 Each of these points is pedagogically illustrated using the Hubbard dimer at half filling, which proves to be a versatile model for understanding the subtlety of analytically-continued perturbation theory in the complex plane.
@@ -226,7 +226,7 @@ In doing so, we will demonstrate how understanding the MP energy in the complex 
 be harnessed to significantly improve estimates of the exact energy using only the lowest-order terms
 in the MP series.
 
-In Sec.~\ref{sec:EPs}, we introduce the key concepts such as Rayleigh-Schr\"odinger perturbation theory and the mean-field HF approximation, and discuss their non-Hermitian analytic continuation into the complex plane.
+In Sec.~\ref{sec:EPs}, we introduce the key concepts such as Rayleigh--Schr\"odinger perturbation theory and the mean-field HF approximation, and discuss their non-Hermitian analytic continuation into the complex plane.
 Section \ref{sec:MP} presents MP perturbation theory and we report a comprehensive historical overview of the research that
 has been performed on the physics of MP singularities.
 In Sec.~\ref{sec:Resummation}, we discuss several resummation techniques for improving the accuracy
@@ -286,11 +286,11 @@ unless otherwise stated, atomic units will be used throughout.
 \begin{figure*}[t]
 	\begin{subfigure}{0.49\textwidth}
 	\includegraphics[height=0.65\textwidth]{fig1a}
-	\subcaption{\label{subfig:FCI_real}}
+	\subcaption{\titou{Real axis} \label{subfig:FCI_real}}
     \end{subfigure}
 	\begin{subfigure}{0.49\textwidth}
 	\includegraphics[height=0.65\textwidth]{fig1b}
-	\subcaption{\label{subfig:FCI_cplx}}
+	\subcaption{\titou{Complex plane} \label{subfig:FCI_cplx}}
     \end{subfigure}
 	\caption{%
 	Exact energies for the Hubbard dimer ($U=4t$) as functions of $\lambda$ on the real axis (\subref{subfig:FCI_real}) and in the complex plane (\subref{subfig:FCI_cplx}).
@@ -305,7 +305,7 @@ easily tested while retaining the key physical phenomena.
 
 Using the (localised) site basis, the Hilbert space of the Hubbard dimer comprises the four configurations
 \begin{align*}
-& \ket{\Lup \Ldown} &  & \ket{\Lup\Rdown} &  & \ket{\Rup\Ldown} &  & \ket{\Rup\Rdown}
+& \ket{\Lup \Ldown}, &  & \ket{\Lup\Rdown}, &  & \ket{\Rup\Ldown}, &  & \ket{\Rup\Rdown},
 \end{align*}
 where $\Lsi$ ($\Rsi$) denotes an electron with spin $\sigma$ on the left (right) site.
 The exact, or full configuration interaction (FCI), Hamiltonian is then 
@@ -373,10 +373,10 @@ To locate EPs in practice, one must simultaneously solve
 \begin{subequations}
 \begin{align}
 	\label{eq:PolChar}
-	\det[E\hI-\hH(\lambda)] & = 0,
+	\det[\hH(\lambda) - E \hI] & = 0,
 	\\ 
 	\label{eq:DPolChar}
-	\pdv{E}\det[E\hI-\hH(\lambda)] & = 0,
+	\pdv{E}\det[\hH(\lambda) - E \hI] & = 0,
 \end{align}
 \end{subequations}
 where $\hI$ is the identity operator.\cite{Cejnar_2007}
@@ -388,13 +388,13 @@ same symmetry for complex values of $\lambda$.
 
 
 %============================================================%
-\subsection{Rayleigh-Schr\"odinger Perturbation Theory}
+\subsection{Rayleigh--Schr\"odinger Perturbation Theory}
 %============================================================%
 
 One of the most common routes to approximately solving the Schr\"odinger equation
 is to introduce a perturbative expansion of the exact energy.
 % SUMMARY OF RS-PT
-Within Rayleigh-Schr\"odinger perturbation theory, the time-independent Schr\"odinger equation 
+Within Rayleigh--Schr\"odinger perturbation theory, the time-independent Schr\"odinger equation 
 is recast as 
 \begin{equation} 
 	\hH(\lambda) \Psi(\lambda) 
@@ -406,14 +406,14 @@ where $\hH^{(0)}$ is a zeroth-order Hamiltonian and $\hV = \hH - \hH^{(0)}$ repr
 Expanding the wave function and energy as power series in $\lambda$ as 
 \begin{subequations}
 \begin{align}
-    \Psi(\lambda) &= \sum_{k=0}^{\infty} \lambda^{k}\,\Psi^{(k)} 
+    \Psi(\lambda) &= \sum_{k=0}^{\infty} \lambda^{k}\,\Psi^{(k)},
     \label{eq:psi_expansion}
     \\
     E(\lambda) &= \sum_{k=0}^{\infty} \lambda^{k}\,E^{(k)},
     \label{eq:E_expansion}
 \end{align}
 \end{subequations}
-solving the corresponding perturbation equations up to a given order $k$, and
+solving the corresponding perturbation equations up to a given order \titou{$n$}, and
 setting $\lambda = 1$ then yields approximate solutions to Eq.~\eqref{eq:SchrEq}.
 
 % MATHEMATICAL REPRESENTATION
@@ -427,7 +427,7 @@ The value of $\rc$ can vary significantly between different systems and strongly
 of the reference and perturbation Hamiltonians in Eq.~\eqref{eq:SchrEq-PT}.\cite{Mihalka_2017b}
 %
 % LAMBDA IN THE COMPLEX PLANE
-From complex-analysis, \cite{BenderBook} the radius of convergence for the energy can be obtained by looking for the 
+From complex analysis, \cite{BenderBook} the radius of convergence for the energy can be obtained by looking for the 
 singularities of $E(\lambda)$ in the complex $\lambda$ plane.
 This property arises from the following theorem: \cite{Goodson_2011}
 \begin{quote}
@@ -471,7 +471,7 @@ ultimately determines the convergence properties of the perturbation series.
 %===========================================%
 
 % SUMMARY OF HF
-In the Hartree--Fock (HF) approximation, the many-electron wave function is approximated as a single Slater determinant $\Psi^{\text{HF}}(\vb{x}_1,\ldots,\vb{x}_N)$, where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates.
+In the \trash{Hartree--Fock (HF)} \titou{HF} approximation, the many-electron wave function is approximated as a single Slater determinant $\Psi^{\text{HF}}(\vb{x}_1,\ldots,\vb{x}_\Ne)$, where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates.
 This Slater determinant is defined as an antisymmetric combination of $\Ne$ (real-valued) occupied one-electron spin-orbitals $\phi_p(\vb{x})$, which are, by definition, eigenfunctions of the one-electron Fock operator 
 \begin{equation}\label{eq:FockOp}
     \Hat{f}(\vb{x}) \phi_p(\vb{x}) = \qty[ \Hat{h}(\vb{x}) + \Hat{v}_\text{HF}(\vb{x}) ] \phi_p(\vb{x}) = \epsilon_p \phi_p(\vb{x}).
@@ -479,11 +479,11 @@ This Slater determinant is defined as an antisymmetric combination of $\Ne$ (rea
 Here the (one-electron) core Hamiltonian is
 \begin{equation}
 \label{eq:Hcore}
-	\Hat{h}(\vb{x}) = -\frac{\grad^2}{2} + \sum_{A}^{M} \frac{Z_A}{\abs{\vb{r}-\vb{R}_A}}
+	\Hat{h}(\vb{x}) = -\frac{\grad^2}{2} + \sum_{A}^{\Nn} \frac{Z_A}{\abs{\vb{r}-\vb{R}_A}}
 \end{equation}
 and
 \begin{equation}
-    \Hat{v}_\text{HF}(\vb{x}) = \sum_i^{N} \qty[ \Hat{J}_i(\vb{x}) - \Hat{K}_i(\vb{x}) ]
+    \Hat{v}_\text{HF}(\vb{x}) = \sum_i^{\Ne} \qty[ \Hat{J}_i(\vb{x}) - \Hat{K}_i(\vb{x}) ]
 \end{equation}
 is the HF mean-field electron-electron potential with 
 \begin{subequations}
@@ -499,7 +499,7 @@ defining the Coulomb and exchange operators (respectively) in the spin-orbital b
 The HF energy is then defined as 
 \begin{equation}
     \label{eq:E_HF}
-    E_\text{HF} = \frac{1}{2} \sum_i^{N} \qty( h_i + f_i ),
+    E_\text{HF} = \frac{1}{2} \sum_i^{\Ne} \qty( h_i + f_i ),
 \end{equation}
 with the corresponding matrix elements
 \begin{align}
@@ -512,14 +512,14 @@ For any system with more than one electron, the resulting Slater determinant is 
 However, it is by definition an eigenfunction of the approximate many-electron HF Hamiltonian constructed 
 from the one-electron Fock operators as
 \begin{equation}\label{eq:HFHamiltonian}
-	\hH_{\text{HF}} = \sum_{i}^{N} f(\vb{x}_i).
+	\hH_{\text{HF}} = \sum_{i}^{\Ne} f(\vb{x}_i).
 \end{equation}
 From hereon, $i$ and $j$ denote occupied orbitals, $a$ and $b$ denote unoccupied (or virtual) orbitals, while $p$, $q$, $r$, and $s$ denote arbitrary orbitals.
 
 % BRIEF FLAVOURS OF HF
 In the most flexible variant of real HF theory (generalised HF) the one-electron orbitals can be complex-valued
 and contain a mixture of spin-up and spin-down components.\cite{Mayer_1993,Jimenez-Hoyos_2011}
-However, the application of HF with some level of constraint on the orbital structure is far more common.
+However, the application of HF \titou{theory} with some level of constraint on the orbital structure is far more common.
 Forcing the spatial part of the orbitals to be the same for spin-up and spin-down electrons leads to restricted HF (RHF) method, 
 while allowing different orbitals for different spins leads to the so-called unrestricted HF (UHF) approach.\cite{StuberPaldus}
 The advantage of the UHF approximation is its ability to correctly describe strongly correlated systems, 
@@ -539,7 +539,7 @@ the total spin operator $\hat{\mathcal{S}}^2$, leading to ``spin-contamination''
     \includegraphics[width=\linewidth]{fig2}
     \caption{\label{fig:HF_real}
     RHF and UHF energies in the Hubbard dimer as a function of the correlation strength $U/t$. 
-    The symmetry-broken UHF solution emerges at the coalescence point $U=2t$ (black dot), often known as the Coulson-Fischer point.}
+    The symmetry-broken UHF solution emerges at the coalescence point $U=2t$ (black dot), often known as the Coulson--Fischer point.}
 \end{figure}
 %%%%%%%%%%%%%%%%%
 
@@ -570,7 +570,7 @@ giving the symmetry-pure molecular orbitals
 \end{align}
 and the ground-state RHF energy (Fig.~\ref{fig:HF_real})
 \begin{equation}
-	E_\text{RHF} \equiv E_\text{HF}(\ta^\text{RHF}, \tb^\text{RHF}) = -2t + \frac{U}{2}
+	E_\text{RHF} \equiv E_\text{HF}(\ta^\text{RHF}, \tb^\text{RHF}) = -2t + \frac{U}{2}.
 \end{equation}
 However, in the strongly correlated regime $U>2t$, the closed-shell orbital restriction prevents RHF from 
 modelling the correct physics with the two electrons on opposite sites.
@@ -617,7 +617,7 @@ with the corresponding UHF ground-state energy (Fig.~\ref{fig:HF_real})
 \begin{equation}
 	E_\text{UHF} \equiv E_\text{HF}(\ta^\text{UHF}, \tb^\text{UHF}) = - \frac{2t^2}{U}.
 \end{equation}
-Time-reversal symmetry dictates that this UHF wave function must be degenerate with its spin-flipped pair, obtained 
+Time-reversal symmetry dictates that this UHF wave function must be degenerate with its spin-flipped \titou{pair?}, obtained 
 by swapping $\ta^{\text{UHF}}$ and $\tb^{\text{UHF}}$ in Eqs.~\eqref{eq:ta_uhf} and \eqref{eq:tb_uhf}.
 This type of symmetry breaking is also called a spin-density wave in the physics community as the system
 ``oscillates'' between the two symmetry-broken configurations. \cite{GiulianiBook}
