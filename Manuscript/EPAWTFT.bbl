@@ -1460,8 +1460,8 @@
   \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Kossmann}}, \bibinfo
   {author} {\bibfnamefont {B.}~\bibnamefont {Schirmer}}, \ and\ \bibinfo
   {author} {\bibfnamefont {S.}~\bibnamefont {Grimme}},\ }\href {\doibase
-  10.1021/ct9003299} {\bibfield  {journal} {\bibinfo  {journal} {J. Chem. Teory
-  Comput.}\ }\textbf {\bibinfo {volume} {5}},\ \bibinfo {pages} {3060}
+  10.1021/ct9003299} {\bibfield  {journal} {\bibinfo  {journal} {J. Chem.
+  Theory Comput.}\ }\textbf {\bibinfo {volume} {5}},\ \bibinfo {pages} {3060}
   (\bibinfo {year} {2009})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Lee}\ and\ \citenamefont
   {Head-Gordon}(2018)}]{Lee_2018}%
@@ -1490,7 +1490,7 @@
   \bibinfo {author} {\bibfnamefont {L.~W.}\ \bibnamefont {Bertels}}, \ and\
   \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Head-Gordon}},\ }\href
   {\doibase 10.1021/acs.jctc.0c00986} {\bibfield  {journal} {\bibinfo
-  {journal} {J. Chem. Teory Comput.}\ } (\bibinfo {year} {2020}),\
+  {journal} {J. Chem. Theory Comput.}\ } (\bibinfo {year} {2020}),\
   10.1021/acs.jctc.0c00986}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Gilbert}\ \emph {et~al.}(2008)\citenamefont
   {Gilbert}, \citenamefont {Besley},\ and\ \citenamefont
@@ -1550,7 +1550,7 @@
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
   {Carter-Fenk}}\ and\ \bibinfo {author} {\bibfnamefont {J.~M.}\ \bibnamefont
   {Herbert}},\ }\href {\doibase 10.1021/acs.jctc.0c00502} {\bibfield  {journal}
-  {\bibinfo  {journal} {J. Chem. Teory Comput.}\ }\textbf {\bibinfo {volume}
+  {\bibinfo  {journal} {J. Chem. Theory Comput.}\ }\textbf {\bibinfo {volume}
   {16}},\ \bibinfo {pages} {5067} (\bibinfo {year} {2020})}\BibitemShut
   {NoStop}%
 \bibitem [{\citenamefont {Cohen}\ and\ \citenamefont
