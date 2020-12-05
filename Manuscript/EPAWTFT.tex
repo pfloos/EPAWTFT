@@ -997,16 +997,18 @@ are characterised by dense electron clustering in one or more spatial regions.\c
 In class A systems, they showed that the majority of the correlation energy arises from pair correlation, 
 with little contribution from triple excitations.
 On the other hand, triple excitations have an important contribution in class B systems, including providing
-orbital relaxation, and these contributions lead to oscillations of the total correlation energy.
+orbital relaxation \titou{to doubly-excited states}, and these contributions lead to oscillations of the total correlation energy.
 
 Using these classifications, Cremer and He then introduced simple extrapolation formulas for estimating the 
 exact correlation energy $\Delta E$ using terms up to MP6\cite{Cremer_1996}
 \begin{subequations}
 \begin{align}
+	\label{eq:CrHeA}
 \Delta E_{\text{A}}
     &= \Emp^{(2)} + \Emp^{(3)} + \Emp^{(4)}
      + \frac{\Emp^{(5)}}{1 - (\Emp^{(6)} / \Emp^{(5)})}, 
-     \\[5pt]
+     \\
+	\label{eq:CrHeB}
 \Delta E_{\text{B}} 
     &= \Emp^{(2)} + \Emp^{(3)} + \qty(\Emp^{(4)} + \Emp^{(5)}) \exp(\Emp^{(6)} / \Emp^{(5)}).
 \end{align}
@@ -1066,9 +1068,9 @@ that arise when the ground state undergoes sharp avoided crossings with highly d
 This divergence is related to a more fundamental critical point in the MP energy surface that we will
 discuss in Sec.~\ref{sec:MP_critical_point}.
 
-Finally, Ref.~\onlinecite{Olsen_1996} proved that the extrapolation formulas of Cremer and He \cite{Cremer_1996}
-are not mathematically motivated when considering the complex singularities causing the divergence, and therefore
-cannot be applied for all systems.
+Finally, Ref.~\onlinecite{Olsen_1996} proved that the extrapolation formulas of Cremer and He \cite{Cremer_1996} 
+\titou{[see Eqs.~\eqref{eq:CrHeA} and \eqref{eq:CrHeB}]} are not mathematically motivated when considering the complex 
+singularities causing the divergence, and therefore cannot be applied for all systems.
 For example, the \ce{HF} molecule contains both back-door intruder states and low-lying doubly-excited states that
 result in alternating terms up to 10th order. 
 The series becomes monotonically convergent at higher orders since
