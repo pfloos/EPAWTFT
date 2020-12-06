@@ -12,7 +12,7 @@
 \newcommand{\hugh}[1]{\textcolor{hughgreen}{#1}}
 \newcommand{\hughDraft}[1]{\textcolor{orange}{#1}}
 \newcommand{\trash}[1]{\textcolor{red}{\sout{#1}}}
-\newcommand{\trashHB}[1]{\textcolor{orange}{\sout{#1}}}
+\newcommand{\trashHB}[1]{\textcolor{hughgreen}{\sout{#1}}}
 \newcommand{\antoine}[1]{\textcolor{cyan}{#1}}
 \newcommand{\trashantoine}[1]{\textcolor{cyan}{\sout{#1}}}
 
@@ -81,8 +81,9 @@
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 % HF rotation angles
-\newcommand{\ta}{\theta_{\alpha}}
-\newcommand{\tb}{\theta_{\beta}}
+\newcommand{\ta}{\theta^{\,\alpha}}
+\newcommand{\tb}{\theta^{\,\beta}}
+\newcommand{\ts}{\theta^{\sigma}}
 
 % Some constants
 \renewcommand{\i}{\mathrm{i}} % Imaginary unit
@@ -106,7 +107,8 @@
 \newcommand{\Rup}{\mathcal{R}^{\uparrow}}
 \newcommand{\Rdown}{\mathcal{R}^{\downarrow}}
 \newcommand{\Rsi}{\mathcal{R}^{\sigma}}
-\newcommand{\vhf}{v_{\text{HF}}}
+\newcommand{\vhf}{\Hat{v}_{\text{HF}}}
+\newcommand{\whf}{\Psi_{\text{HF}}}
 
 
 \newcommand{\LCPQ}{Laboratoire de Chimie et Physique Quantiques (UMR 5626), Universit\'e de Toulouse, CNRS, UPS, France.}
@@ -127,11 +129,12 @@
 
 \begin{abstract}
 We explore the non-Hermitian extension of quantum chemistry in the complex plane and its link with perturbation theory.
-We observe that the physics of a quantum system is intimately connected to the position of energy singularities in the complex plane, known as exceptional points.
+We observe that the physics of a quantum system is intimately connected to the position of \hugh{complex-valued} energy singularities
+\trashHB{in the complex plane}, known as exceptional points.
 After presenting the fundamental concepts of non-Hermitian quantum chemistry in the complex plane, including the mean-field Hartree--Fock approximation and Rayleigh--Schr\"odinger perturbation theory, we provide a historical overview of the various research activities that have been performed on the physics of singularities.
-In particular, we highlight the seminal work of several research groups on the convergence behaviour of perturbative series obtained within M{\o}ller--Plesset perturbation theory, and its links with quantum phase transitions.
+In particular, we highlight the seminal work \trashHB{of several research groups} on the convergence behaviour of perturbative series obtained within M{\o}ller--Plesset perturbation theory, and its links with quantum phase transitions.
 We also discuss several resummation techniques (such as Pad\'e and quadratic approximants) that can improve the overall accuracy of the M{\o}ller--Plesset perturbative series in both convergent and divergent cases.
-Each of these points is pedagogically illustrated using the Hubbard dimer at half filling, which proves to be a versatile model for understanding the subtlety of analytically-continued perturbation theory in the complex plane.
+Each of these points is \trashHB{pedagogically} illustrated using the Hubbard dimer at half filling, which proves to be a versatile model for understanding the subtlety of analytically-continued perturbation theory in the complex plane.
 \end{abstract}
 
 \keywords{perturbation theory, complex plane, exceptional point, divergent series, resummation}
@@ -148,7 +151,7 @@ Each of these points is pedagogically illustrated using the Hubbard dimer at hal
 % SPIKE THE READER
 Perturbation theory isn't usually considered in the complex plane.
 Normally it is applied using real numbers as one of very few available tools for 
-describing realistic quantum systems where exact solutions of the Schr\"odinger equation are impossible \titou{to find?}.\cite{Dirac_1929}
+describing realistic quantum systems \trashHB{where exact solutions of the Schr\"odinger equation are impossible \titou{to find?}}.\cite{Dirac_1929}
 In particular, time-independent Rayleigh--Schr\"odinger perturbation theory\cite{RayleighBook,Schrodinger_1926} 
 has emerged as an instrument of choice among the vast array of methods developed for this purpose.%
 \cite{SzaboBook,JensenBook,CramerBook,HelgakerBook,ParrBook,FetterBook,ReiningBook}
@@ -174,7 +177,7 @@ systematically improvable series largely remains an open challenge.
 
 % COMPLEX PLANE
 Our conventional view of electronic structure theory is centred around the Hermitian notion of quantised energy levels,
-where the different electronic states of a molecular \antoine{molecule or molecular system?} are discrete and energetically ordered.
+where the different electronic states of a \hugh{molecule} are discrete and energetically ordered.
 The lowest energy state defines the ground electronic state, while higher energy states
 represent electronic excited states.
 However, an entirely different perspective on quantisation can be found by analytically continuing
@@ -217,7 +220,8 @@ microwaves, mechanics, acoustics, atomic systems and optics.\cite{Bittner_2012,C
 % MP THEORY IN THE COMPLEX PLANE
 The MP energy correction can be considered as a function of the perturbation parameter $\lambda$.
 When the domain of $\lambda$ is extended to the complex plane, EPs can also occur in the MP energy.
-Although these EPs generally exist in the complex plane, their positions are intimately related to the 
+Although these EPs \hugh{are generally complex-valued} \trashHB{exist in the complex plane}, 
+their positions are intimately related to the 
 convergence of the perturbation expansion on the real axis.%
 \cite{BenderBook,Olsen_1996,Olsen_2000,Olsen_2019,Mihalka_2017a,Mihalka_2017b,Mihalka_2019}
 Furthermore, the existence of an avoided crossing on the real axis is indicative of a nearby EP
@@ -330,7 +334,7 @@ and the electrons localise on opposite sites to minimise their Coulomb repulsion
 This phenomenon is often referred to as Wigner crystallisation. \cite{Wigner_1934}
 
 To illustrate the formation of an EP, we scale the off-diagonal coupling strength by introducing the complex parameter $\lambda$ through the transformation $t \to \lambda t$ to give the parameterised Hamiltonian $\hH(\lambda)$.
-When $\lambda$ is real, the Hamiltonian~\eqref{eq:H_FCI} is Hermitian with the distinct (real-valued) (eigen)energies
+When $\lambda$ is real, the Hamiltonian \trashHB{\eqref{eq:H_FCI}} is Hermitian with the distinct (real-valued) (eigen)energies
 \begin{subequations}
 \begin{align}
 E_{\mp} &= \frac{1}{2} \qty(U \mp \sqrt{ (4 \lambda t)^2 + U^2 } ),
@@ -430,7 +434,7 @@ of the reference and perturbation Hamiltonians in Eq.~\eqref{eq:SchrEq-PT}.\cite
 %
 % LAMBDA IN THE COMPLEX PLANE
 From complex analysis, \cite{BenderBook} the radius of convergence for the energy can be obtained by looking for the 
-singularities of $E(\lambda)$ in the complex $\lambda$ plane.
+\hugh{non-analytic} singularities of $E(\lambda)$ in the complex $\lambda$ plane.
 This property arises from the following theorem: \cite{Goodson_2011}
 \begin{quote}
 \it
@@ -464,7 +468,7 @@ Like the exact system in Sec.~\ref{sec:example}, the perturbation energy $E(\lam
 a ``one-to-many'' function with the output elements representing an approximation to both the ground and excited states.
 The most common singularities on $E(\lambda)$ therefore correspond to non-analytic EPs in the complex 
 $\lambda$ plane where two states become degenerate.
-Later we will demonstrate how the choice of reference Hamiltonian controls the position of these EPs, and 
+Later we will demonstrate how the choice of reference \hugh{wave function} \trashHB{Hamiltonian} controls the position of these EPs, and 
 ultimately determines the convergence properties of the perturbation series.
 
 %===========================================%
@@ -473,10 +477,10 @@ ultimately determines the convergence properties of the perturbation series.
 %===========================================%
 
 % SUMMARY OF HF
-In the \trash{Hartree--Fock (HF)} \titou{HF} approximation, the many-electron wave function is approximated as a single Slater determinant $\Psi^{\text{HF}}(\vb{x}_1,\ldots,\vb{x}_\Ne)$, where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates.
+In the \trash{Hartree--Fock (HF)} \titou{HF} approximation, the many-electron wave function is approximated as a single Slater determinant $\whf(\vb{x}_1,\ldots,\vb{x}_\Ne)$, where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates.
 This Slater determinant is defined as an antisymmetric combination of $\Ne$ (real-valued) occupied one-electron spin-orbitals $\phi_p(\vb{x})$, which are, by definition, eigenfunctions of the one-electron Fock operator 
 \begin{equation}\label{eq:FockOp}
-    \Hat{f}(\vb{x}) \phi_p(\vb{x}) = \qty[ \Hat{h}(\vb{x}) + \Hat{v}^{\antoine{\text{HF}}}(\vb{x}) ] \phi_p(\vb{x}) = \epsilon_p \phi_p(\vb{x}).
+    \Hat{f}(\vb{x}) \phi_p(\vb{x}) = \qty[ \Hat{h}(\vb{x}) + \vhf(\vb{x}) ] \phi_p(\vb{x}) = \epsilon_p \phi_p(\vb{x}).
 \end{equation}
 Here the (one-electron) core Hamiltonian is
 \begin{equation}
@@ -485,7 +489,7 @@ Here the (one-electron) core Hamiltonian is
 \end{equation}
 and
 \begin{equation}
-    \Hat{v}_\text{HF}(\vb{x}) = \sum_i^{\Ne} \qty[ \Hat{J}_i(\vb{x}) - \Hat{K}_i(\vb{x}) ]
+    \vhf(\vb{x}) = \sum_i^{\Ne} \qty[ \Hat{J}_i(\vb{x}) - \Hat{K}_i(\vb{x}) ]
 \end{equation}
 is the HF mean-field electron-electron potential with 
 \begin{subequations}
@@ -526,8 +530,8 @@ Forcing the spatial part of the orbitals to be the same for spin-up and spin-dow
 while allowing different orbitals for different spins leads to the so-called unrestricted HF (UHF) approach.\cite{StuberPaldus}
 The advantage of the UHF approximation is its ability to correctly describe strongly correlated systems, 
 such as antiferromagnetic phases\cite{Slater_1951} or the dissociation of the hydrogen dimer.\cite{Coulson_1949}
-However, by allowing different orbitals for different spins, the UHF is no longer required to be an eigenfunction of 
-the total spin operator $\hat{\mathcal{S}}^2$, leading to ``spin-contamination'' in the wave function.
+However, by allowing different orbitals for different spins, the UHF \hugh{wave function} is no longer required to be an eigenfunction of 
+the total spin operator $\hat{\mathcal{S}}^2$, leading to ``spin-contamination''.
 
 %================================================================%
 \subsection{Hartree--Fock in the Hubbard Dimer}
@@ -553,16 +557,16 @@ where we have introduced bonding $\mathcal{B}^{\sigma}$ and anti-bonding $\mathc
 the spin-$\sigma$ electrons as
 \begin{subequations}
 \begin{align}
-    \mathcal{B}^{\sigma} & = \hphantom{-} \cos(\frac{\theta_\sigma}{2}) \Lsi + \sin(\frac{\theta_\sigma}{2}) \Rsi,
+    \mathcal{B}^{\sigma} & = \hphantom{-} \cos(\frac{\ts}{2}) \Lsi + \sin(\frac{\ts}{2}) \Rsi,
 	\\
-	\mathcal{A}^{\sigma} & = - \sin(\frac{\theta_\sigma}{2}) \Lsi + \cos(\frac{\theta_\sigma}{2}) \Rsi
+	\mathcal{A}^{\sigma} & = - \sin(\frac{\ts}{2}) \Lsi + \cos(\frac{\ts}{2}) \Rsi
 \end{align}
 \label{eq:RHF_orbs}
 \end{subequations}
 In the weak correlation regime $0 \le U \le 2t$, the angles which minimise the HF energy, 
-\ie, $\pdv*{E_\text{HF}}{\theta_\sigma} = 0$, are 
+\ie, $\pdv*{E_\text{HF}}{\ts} = 0$, are 
 \begin{equation}
-	\ta^\text{RHF} = \tb^\text{RHF} = \pi/2,
+	\ta_\text{RHF} = \tb_\text{RHF} = \pi/2,
 \end{equation}
 giving the symmetry-pure molecular orbitals
 \begin{align}
@@ -572,7 +576,7 @@ giving the symmetry-pure molecular orbitals
 \end{align}
 and the ground-state RHF energy (Fig.~\ref{fig:HF_real})
 \begin{equation}
-	E_\text{RHF} \equiv E_\text{HF}(\ta^\text{RHF}, \tb^\text{RHF}) = -2t + \frac{U}{2}.
+	E_\text{RHF} \equiv E_\text{HF}(\ta_\text{RHF}, \tb_\text{RHF}) = -2t + \frac{U}{2}.
 \end{equation}
 However, in the strongly correlated regime $U>2t$, the closed-shell orbital restriction prevents RHF from 
 modelling the correct physics with the two electrons on opposite sites.
@@ -590,7 +594,7 @@ modelling the correct physics with the two electrons on opposite sites.
 	\subcaption{\label{subfig:UHF_cplx_energy}}
     \end{subfigure}
 	\caption{%
-    (\subref{subfig:UHF_cplx_angle}) Real component of the UHF angle $\ta^{\text{UHF}}$ for $\lambda \in \bbC$ in the Hubbard dimer for $U/t = 2$.
+    (\subref{subfig:UHF_cplx_angle}) Real component of the UHF angle $\ta_{\text{UHF}}$ for $\lambda \in \bbC$ in the Hubbard dimer for $U/t = 2$.
     Symmetry-broken solutions correspond to individual sheets and become equivalent at 
     the \textit{quasi}-EP $\lambda_{\text{c}}$ (black dot).
     The RHF solution is independent of $\lambda$, giving the constant plane at $\pi/2$.
@@ -608,19 +612,19 @@ This critical point is analogous to the infamous Coulson--Fischer point identifi
 For $U \ge 2t$, the optimal orbital rotation angles for the UHF orbitals become
 \begin{subequations}
 \begin{align}
-    \ta^\text{UHF} & = \arctan (-\frac{2t}{\sqrt{U^2 - 4t^2}}),
+    \ta_\text{UHF} & = \arctan (-\frac{2t}{\sqrt{U^2 - 4t^2}}),
     \label{eq:ta_uhf}
 	\\
-    \tb^\text{UHF} & = \arctan (+\frac{2t}{\sqrt{U^2 - 4t^2}}),
+    \tb_\text{UHF} & = \arctan (+\frac{2t}{\sqrt{U^2 - 4t^2}}),
     \label{eq:tb_uhf}
 \end{align}
 \end{subequations}
 with the corresponding UHF ground-state energy (Fig.~\ref{fig:HF_real})
 \begin{equation}
-	E_\text{UHF} \equiv E_\text{HF}(\ta^\text{UHF}, \tb^\text{UHF}) = - \frac{2t^2}{U}.
+    E_\text{UHF} \equiv E_\text{HF}(\ta_\text{UHF}, \tb_\text{UHF}) = - \frac{2t^2}{U}.
 \end{equation}
 Time-reversal symmetry dictates that this UHF wave function must be degenerate with its spin-flipped \titou{pair?}, obtained 
-by swapping $\ta^{\text{UHF}}$ and $\tb^{\text{UHF}}$ in Eqs.~\eqref{eq:ta_uhf} and \eqref{eq:tb_uhf}.
+by swapping $\ta_{\text{UHF}}$ and $\tb_{\text{UHF}}$ in Eqs.~\eqref{eq:ta_uhf} and \eqref{eq:tb_uhf}.
 This type of symmetry breaking is also called a spin-density wave in the physics community as the system
 ``oscillates'' between the two symmetry-broken configurations. \cite{GiulianiBook}
 Symmetry breaking can also occur in RHF theory when a charge-density wave is formed from an oscillation 
@@ -637,7 +641,7 @@ Alternatively, the non-linear terms arising from the Coulomb and exchange operat
 be considered as a perturbation from the core Hamiltonian \eqref{eq:Hcore} by introducing the
 transformation $U \to \lambda\, U$, giving the parametrised Fock operator 
 \begin{equation}
-    \Hat{f}(\vb{x} ; \lambda) = \Hat{h}(\vb{x}) + \lambda\, \Hat{v}^{\antoine{\text{HF}}}(\vb{x}).
+    \Hat{f}(\vb{x} ; \lambda) = \Hat{h}(\vb{x}) + \lambda\, \vhf(\vb{x}).
 \end{equation}
 The orbitals in the reference problem $\lambda=0$ correspond to the symmetry-pure eigenfunctions of the one-electron core
 Hamiltonian, while self-consistent solutions at $\lambda = 1$ represent the orbitals of the true HF solution.
@@ -651,7 +655,7 @@ with coalesence points at
     \label{eq:scaled_fock}
 \end{equation}
 In contrast, when $\lambda$ becomes complex, the HF equations become non-Hermitian and 
-each HF solutions can be analytically continued for all $\lambda$ values using
+each HF solution can be analytically continued for all $\lambda$ values using
 the holomorphic HF approach.\cite{Hiscock_2014,Burton_2016,Burton_2018}
 Remarkably, the coalescence point in this analytic continuation emerges as a 
 \textit{quasi}-EP on the real $\lambda$ axis (Fig.~\ref{fig:HF_cplx}), where
@@ -675,6 +679,9 @@ a ground-state wave function can be ``morphed'' into an excited-state wave funct
 via a stationary path of HF solutions.
 This novel approach to identifying excited-state wave functions demonstrates the fundamental 
 role of \textit{quasi}-EPs in determining the behaviour of the HF approximation.
+\hugh{Furthermore, the complex-scaled Fock operator can be used routinely construct analytic
+continuations of HF solutions beyond the points where real HF solutions
+coalesce and vanish.\cite{Burton_2019b}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{M{\o}ller--Plesset Perturbation Theory in the Complex Plane}
@@ -694,7 +701,7 @@ With the MP partitioning, the parametrised perturbation Hamiltonian becomes
     \hH(\lambda) =   
      \sum_{i}^{N} \qty[ - \frac{\grad_i^2}{2} - \sum_{A}^{M} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}} ]
     \\
-    + (1-\lambda) \sum_{i}^{N} v^{\text{HF}}(\vb{x}_i)
+    + (1-\lambda) \sum_{i}^{N} \vhf(\vb{x}_i)
     + \lambda\sum_{i<j}^{N}\frac{1}{\abs{\vb{r}_i-\vb{r}_j}}.
 \end{multline}
 Any set of orbitals can be used to define the HF Hamiltonian, although either the RHF or UHF orbitals are usually chosen to 
@@ -707,9 +714,9 @@ where $E_{\text{MP}}^{(k)}$ is the $k$th-order MP correction and
 \begin{equation}
 E_{\text{MP1}} =  E_{\text{MP}}^{(0)} + E_{\text{MP}}^{(1)} = E_\text{HF}.
 \end{equation}
-The second-order MP2 energy is given by
+The second-order MP2 energy correction is given by
 \begin{equation}\label{eq:EMP2}
-	E_{\text{MP2}} = \frac{1}{4} \sum_{ij} \sum_{ab} \frac{\abs{\mel{ij}{}{ab}}^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b},
+    \hugh{E_{\text{MP}}^{(2)}} = \frac{1}{4} \sum_{ij} \sum_{ab} \frac{\abs{\mel{ij}{}{ab}}^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b},
 \end{equation}
 where $\mel{pq}{}{rs} = \braket{pq}{rs} - \braket{pq}{sr}$ are the anti-symmetrised two-electron integrals
 in the molecular spin-orbital basis\cite{Gill_1994}
@@ -840,7 +847,7 @@ gradient discontinuities or spurious minima.
     \end{subfigure}
 	\caption{
 	Convergence of the RMP series as a function of the perturbation order $n$ for the Hubbard dimer at $U/t = 3.5$ (where $r_c > 1$) and $4.5$ (where $r_c < 1$).
-	The Riemann surfaces associated with the exact energies of the RMP Hamiltonian \eqref{eq:H_RMP} are also represented for these two values of $U/t$ as functions of $\lambda$. 
+	The Riemann surfaces associated with the exact energies of the RMP Hamiltonian \eqref{eq:H_RMP} are also represented for these two values of $U/t$ as functions of complex $\lambda$. 
 	\label{fig:RMP}}
 \end{figure*}
 
@@ -879,8 +886,8 @@ The Taylor expansion of the RMP energy can then be evaluated to obtain the $k$th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % RADIUS OF CONVERGENCE PLOTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The RMP series is convergent for $U = 3.5\,t$ with $\rc > 1$, as illustrated for the individual terms at each order
-of perturbation in Fig.~\ref{subfig:RMP_cvg}.
+The RMP series is convergent for $U = 3.5\,t$ with $\rc > 1$, as illustrated for the individual terms at each 
+\hugh{perturbation} order in Fig.~\ref{subfig:RMP_cvg}.
 In contrast, for $U = 4.5t$ one finds $\rc < 1$, and the RMP series becomes divergent.
 The corresponding Riemann surfaces for $U = 3.5\,t$ and $4.5\,t$ are shown in Figs.~\ref{subfig:RMP_3.5} and 
 \ref{subfig:RMP_4.5}, respectively, with the single EP at $\lep$ (black dot) and the radius of convergence indicated
@@ -961,8 +968,8 @@ for larger $U/t$ as the radius of convergence becomes increasingly close to one 
 % EFFECT OF SYMMETRY BREAKING
 As the UHF orbitals break the spin symmetry, new coupling terms emerge between the electronic states that
 cause fundamental changes to the structure of EPs in the complex $\lambda$-plane.
-For example, while the RMP energy shows only one EP between the ground state and 
-the doubly-excited state (Fig.~\ref{fig:RMP}), the UMP energy has two (\antoine{pairs of}) EPs: one connecting the ground state with the
+For example, while the RMP energy shows only one EP between the ground \trashHB{state} and 
+\trashHB{the} doubly-excited states (Fig.~\ref{fig:RMP}), the UMP energy has two (\antoine{pairs of}) EPs: one connecting the ground state with the
 singly-excited open-shell singlet, and the other connecting this single excitation to the 
 doubly-excited second excitation (Fig.~\ref{fig:UMP}).
 This new ground-state EP always appears outside the unit cylinder and guarantees convergence of the ground-state energy.
@@ -990,7 +997,7 @@ very slowly as the perturbation order is increased.
 As computational implementations of higher-order MP terms improved, the systematic investigation 
 of convergence behaviour in a broader class of molecules became possible.
 Cremer and He introduced an efficient MP6 approach and used it to analyse the RMP convergence of
-29 atomic and molecular systems with respect to the FCI energy.\cite{Cremer_1996}
+29 atomic and molecular systems \trashHB{with respect to the FCI energy}.\cite{Cremer_1996}
 They established two general classes: ``class A'' systems that exhibit monotonic convergence; 
 and ``class B'' systems for which convergence is erratic after initial oscillations. 
 By analysing the different cluster contributions to the MP energy terms, they proposed that
@@ -1121,11 +1128,11 @@ To understand Stillinger's argument, consider the parametrised MP Hamiltonian in
     \overbrace{-\frac{1}{2}\grad_i^2 
     - \sum_{A}^{\Nn} \frac{Z_A}{\abs{\vb{r}_i-\vb{R}_A}}}^{\text{independent of $\lambda$}}
     \\
-    + \underbrace{(1-\lambda)v^{\text{HF}}(\vb{x}_i)}_{\text{repulsive for $\lambda < 1$}}
+    + \underbrace{(1-\lambda)\vhf(\vb{x}_i)}_{\text{repulsive for $\lambda < 1$}}
     + \underbrace{\lambda\sum_{i<j}^{\Ne}\frac{1}{|\vb{r}_i-\vb{r}_j|}}_{\text{attractive for $\lambda < 0$}}
     \Bigg].
 \end{multline}
-The mean-field potential $v^{\text{HF}}$ essentially represents a negatively charged field with the spatial extent
+The mean-field potential $\vhf$ essentially represents a negatively charged field with the spatial extent
 controlled by the extent of the HF orbitals, usually located close to the nuclei.
 When $\lambda$ is negative, the mean-field potential becomes increasingly repulsive, while the explicit two-electron 
 Coulomb interaction becomes attractive.
@@ -1147,7 +1154,7 @@ terms.\cite{Goodson_2000a,Goodson_2000b}
 In contrast, class B systems correspond to a dominant singularity on the negative real $\lambda$ axis representing
 the MP critical point.
 The divergence of class B systems, which contain closely spaced electrons (\eg, \ce{F-}), can then be understood as the 
-HF potential $v^{\text{HF}}$ is relatively localised and the autoionization is favoured at negative 
+HF potential $\vhf$ is relatively localised and the autoionization is favoured at negative 
 $\lambda$ values closer to the origin.
 With these insights, they regrouped the systems into new classes: i) $\alpha$ singularities which have ``large'' imaginary parts, 
 and ii) $\beta$ singularities which have very small imaginary parts.\cite{Goodson_2004,Sergeev_2006} 
@@ -1222,7 +1229,7 @@ destination for ionised electrons being originally localised on the other site.
 To mathematically model this scenario in this asymmetric Hubbard dimer, we introduce a one-electron potential $-\epsilon$ on the left site to 
 represent the attraction between the electrons and the model ``atomic'' nucleus, where we define $\epsilon > 0$.
 The reference Slater determinant for a doubly-occupied atom can be represented using RHF
-orbitals [see Eq.~\eqref{eq:RHF_orbs}] with $\theta_{\alpha}^{\text{RHF}} = \theta_{\beta}^{\text{RHF}} = 0$, 
+orbitals [see Eq.~\eqref{eq:RHF_orbs}] with $\ta_{\text{RHF}} = \tb_{\text{RHF}} = 0$, 
 which corresponds to strictly localising the two electrons on the left site.
 %and energy
 %\begin{equation}
@@ -1378,7 +1385,7 @@ radius of convergence (see Fig.~\ref{fig:RadConv}).
 
 %As frequently claimed by Carl Bender, 
 It is frequently stated that
-\textit{``the most stupid thing that one can do with a series is to sum it.''}
+\textit{``the most stupid thing \hugh{to} \trashHB{that one can} do with a series is to sum it.''}
 Nonetheless, quantum chemists are basically doing this on a daily basis.
 As we have seen throughout this review, the MP series can often show erratic, 
 slow, or divergent behaviour.
@@ -1396,7 +1403,7 @@ We refer the interested reader to more specialised reviews for additional inform
 %==========================================%
 
 The failure of a Taylor series for correctly modelling the MP energy function $E(\lambda)$ 
-arises because one is trying to model a complicated function containing multiple branches, branch points and
+arises because one is trying to model a complicated function containing multiple branches, branch points, and
 singularities using a simple polynomial of finite order.
 A truncated Taylor series can only predict a single sheet and does not have enough 
 flexibility to adequately describe functions such as the MP energy.
@@ -1416,7 +1423,7 @@ Pad\'e approximants are extremely useful in many areas of physics and
 chemistry\cite{Loos_2013,Pavlyukh_2017,Tarantino_2019,Gluzman_2020} as they can model poles, 
 which appear at the roots of $B(\lambda)$. 
 However, they are unable to model functions with square-root branch points 
-(which are ubiquitous in the singularity structure of a typical perturbative treatment) 
+(which are ubiquitous in the singularity structure of \trashHB{a typical} perturbative \hugh{methods} \trashHB{treatment}) 
 and more complicated functional forms appearing at critical points 
 (where the nature of the solution undergoes a sudden transition).
 Despite this limitation, the successive diagonal Pad\'e approximants (\ie, $d_A = d_B $) 
@@ -1603,7 +1610,7 @@ is free of poles.}
 \label{fig:nopole_quad}
 \end{figure*}
 
-For the RMP series of the Hubbard dimer, the $[0/0,0]$ and $[1/0,0]$ quadratic approximant 
+For the RMP series of the Hubbard dimer, the $[0/0,0]$ and $[1/0,0]$ quadratic approximants 
 are quite poor approximations, but the $[1/0,1]$ version perfectly models the RMP energy
 function by predicting a single pair of EPs at $\lambda_\text{EP} = \pm \i 4t/U$.
 This is expected from the form of the RMP energy [see Eq.~\eqref{eq:E0MP}], which matches 
@@ -1634,7 +1641,7 @@ provide a rapidly convergent series with essentially exact energies at low order
 
 
 Finally, to emphasise the improvement that can be gained by using either Pad\'e, diagonal quadratic,
-or pole-free quadratic approximants, we consider the energy and error obtained using only the first 10 terms of the UMP
+or pole-free quadratic approximants, we collect the energy and error obtained using only the first 10 terms of the UMP
 Taylor series in Table~\ref{tab:UMP_order10}.
 The accuracy of these approximants reinforces how our understanding of the MP
 energy surface in the complex plane can be leveraged to significantly improve estimates of the exact
@@ -1736,7 +1743,7 @@ terms of a perturbation series, even if it diverges.
 \end{table}
 
 %==========================================%
-\subsection{Analytic continuation}
+\subsection{Analytic Continuation}
 %==========================================%
 
 Recently, Mih\'alka \etal\ have studied the effect of different partitionings, such as MP or EN theory, on the position of 
@@ -1782,7 +1789,7 @@ It was then further improved by introducing Cauchy's integral formula\cite{Mihal
 	\label{eq:Cauchy}
     E(\lambda) = \frac{1}{2\pi \i} \oint_{\mathcal{C}} \frac{E(\lambda')}{\lambda' - \lambda},
 \end{equation}
-which states that the value of the energy can be computed at $\lambda_1$ inside the complex 
+which states that the value of the energy can be computed at $\lambda$ inside the complex 
 contour $\mathcal{C}$ using only the values along the same contour.
 Starting from a set of points in a ``trusted'' region where the MP series is convergent, their approach 
 self-consistently refines estimates of the $E(\lambda')$ values on a contour that includes the physical point 
@@ -1814,7 +1821,7 @@ We began by presenting the fundamental concepts behind non-Hermitian extensions 
 including the Hartree--Fock approximation and Rayleigh--Schr\"odinger perturbation theory.
 We then provided a comprehensive review of the various research that has been performed 
 around the physics of complex singularities in perturbation theory, with a particular focus on M{\o}ller--Plesset theory. 
-Seminal contributions from various research groups around the world have revealed highly oscillatory,
+Seminal contributions from various research groups \trashHB{around the world} have revealed highly oscillatory,
 slowly convergent, or catastrophically divergent behaviour of the restricted and/or unrestricted MP perturbation series.%
 \cite{Laidig_1985,Knowles_1985,Handy_1985,Gill_1986,Laidig_1987,Nobes_1987,Gill_1988,Gill_1988a,Lepetit_1988} 
 In particular, the spin-symmetry-broken unrestricted MP series is notorious

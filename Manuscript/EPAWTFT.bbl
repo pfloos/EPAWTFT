@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{179}%
+\begin{thebibliography}{180}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -857,6 +857,15 @@
   }\href {\doibase 10.1103/PhysRevA.69.052510} {\bibfield  {journal} {\bibinfo
   {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume} {69}},\ \bibinfo
   {pages} {052510} (\bibinfo {year} {2004})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Burton}\ and\ \citenamefont
+  {Thom}(2019)}]{Burton_2019b}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.~G.~A.}\
+  \bibnamefont {Burton}}\ and\ \bibinfo {author} {\bibfnamefont {A.~J.~W.}\
+  \bibnamefont {Thom}},\ }\href {\doibase 10.1021/acs.jctc.9b00441} {\bibfield
+  {journal} {\bibinfo  {journal} {J. Chem. Theory Comput.}\ }\textbf {\bibinfo
+  {volume} {15}},\ \bibinfo {pages} {4851} (\bibinfo {year}
+  {2019})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {L\"owdin}(1955{\natexlab{a}})}]{Lowdin_1955a}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.-O.}\ \bibnamefont
