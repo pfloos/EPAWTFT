@@ -129,19 +129,16 @@
 
 \begin{abstract}
 We explore the non-Hermitian extension of quantum chemistry in the complex plane and its link with perturbation theory.
-We observe that the physics of a quantum system is intimately connected to the position of \hugh{complex-valued} energy singularities
-\trashHB{in the complex plane}, known as exceptional points.
+We observe that the physics of a quantum system is intimately connected to the position of complex-valued energy singularities, known as exceptional points.
 After presenting the fundamental concepts of non-Hermitian quantum chemistry in the complex plane, including the mean-field Hartree--Fock approximation and Rayleigh--Schr\"odinger perturbation theory, we provide a historical overview of the various research activities that have been performed on the physics of singularities.
 In particular, we highlight the seminal work \trashHB{of several research groups} on the convergence behaviour of perturbative series obtained within M{\o}ller--Plesset perturbation theory, and its links with quantum phase transitions.
 We also discuss several resummation techniques (such as Pad\'e and quadratic approximants) that can improve the overall accuracy of the M{\o}ller--Plesset perturbative series in both convergent and divergent cases.
-Each of these points is \trashHB{pedagogically} illustrated using the Hubbard dimer at half filling, which proves to be a versatile model for understanding the subtlety of analytically-continued perturbation theory in the complex plane.
+Each of these points is illustrated using the Hubbard dimer at half filling, which proves to be a versatile model for understanding the subtlety of analytically-continued perturbation theory in the complex plane.
 \end{abstract}
 
 \keywords{perturbation theory, complex plane, exceptional point, divergent series, resummation}
 
 \maketitle
-%\raggedbottom
-%\tableofcontents
 
 %%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
@@ -177,7 +174,7 @@ systematically improvable series largely remains an open challenge.
 
 % COMPLEX PLANE
 Our conventional view of electronic structure theory is centred around the Hermitian notion of quantised energy levels,
-where the different electronic states of a \hugh{molecule} are discrete and energetically ordered.
+where the different electronic states of a molecule are discrete and energetically ordered.
 The lowest energy state defines the ground electronic state, while higher energy states
 represent electronic excited states.
 However, an entirely different perspective on quantisation can be found by analytically continuing
@@ -220,7 +217,7 @@ microwaves, mechanics, acoustics, atomic systems and optics.\cite{Bittner_2012,C
 % MP THEORY IN THE COMPLEX PLANE
 The MP energy correction can be considered as a function of the perturbation parameter $\lambda$.
 When the domain of $\lambda$ is extended to the complex plane, EPs can also occur in the MP energy.
-Although these EPs \hugh{are generally complex-valued} \trashHB{exist in the complex plane}, 
+Although these EPs are generally complex-valued, 
 their positions are intimately related to the 
 convergence of the perturbation expansion on the real axis.%
 \cite{BenderBook,Olsen_1996,Olsen_2000,Olsen_2019,Mihalka_2017a,Mihalka_2017b,Mihalka_2019}
@@ -292,11 +289,11 @@ unless otherwise stated, atomic units will be used throughout.
 \begin{figure*}[t]
 	\begin{subfigure}{0.49\textwidth}
 	\includegraphics[height=0.65\textwidth]{fig1a}
-	\subcaption{\titou{Real axis} \label{subfig:FCI_real}}
+	\subcaption{Real axis \label{subfig:FCI_real}}
     \end{subfigure}
 	\begin{subfigure}{0.49\textwidth}
 	\includegraphics[height=0.65\textwidth]{fig1b}
-	\subcaption{\titou{Complex plane} \label{subfig:FCI_cplx}}
+	\subcaption{Complex plane \label{subfig:FCI_cplx}}
     \end{subfigure}
 	\caption{%
 	Exact energies for the Hubbard dimer ($U=4t$) as functions of $\lambda$ on the real axis (\subref{subfig:FCI_real}) and in the complex plane (\subref{subfig:FCI_cplx}).
@@ -334,7 +331,7 @@ and the electrons localise on opposite sites to minimise their Coulomb repulsion
 This phenomenon is often referred to as Wigner crystallisation. \cite{Wigner_1934}
 
 To illustrate the formation of an EP, we scale the off-diagonal coupling strength by introducing the complex parameter $\lambda$ through the transformation $t \to \lambda t$ to give the parameterised Hamiltonian $\hH(\lambda)$.
-When $\lambda$ is real, the Hamiltonian \trashHB{\eqref{eq:H_FCI}} is Hermitian with the distinct (real-valued) (eigen)energies
+When $\lambda$ is real, the Hamiltonian is Hermitian with the distinct (real-valued) (eigen)energies
 \begin{subequations}
 \begin{align}
 E_{\mp} &= \frac{1}{2} \qty(U \mp \sqrt{ (4 \lambda t)^2 + U^2 } ),
@@ -434,7 +431,7 @@ of the reference and perturbation Hamiltonians in Eq.~\eqref{eq:SchrEq-PT}.\cite
 %
 % LAMBDA IN THE COMPLEX PLANE
 From complex analysis, \cite{BenderBook} the radius of convergence for the energy can be obtained by looking for the 
-\hugh{non-analytic} singularities of $E(\lambda)$ in the complex $\lambda$ plane.
+non-analytic singularities of $E(\lambda)$ in the complex $\lambda$ plane.
 This property arises from the following theorem: \cite{Goodson_2011}
 \begin{quote}
 \it
@@ -477,7 +474,7 @@ ultimately determines the convergence properties of the perturbation series.
 %===========================================%
 
 % SUMMARY OF HF
-In the \trash{Hartree--Fock (HF)} \titou{HF} approximation, the many-electron wave function is approximated as a single Slater determinant $\whf(\vb{x}_1,\ldots,\vb{x}_\Ne)$, where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates.
+In the HF approximation, the many-electron wave function is approximated as a single Slater determinant $\whf(\vb{x}_1,\ldots,\vb{x}_\Ne)$, where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates.
 This Slater determinant is defined as an antisymmetric combination of $\Ne$ (real-valued) occupied one-electron spin-orbitals $\phi_p(\vb{x})$, which are, by definition, eigenfunctions of the one-electron Fock operator 
 \begin{equation}\label{eq:FockOp}
     \Hat{f}(\vb{x}) \phi_p(\vb{x}) = \qty[ \Hat{h}(\vb{x}) + \vhf(\vb{x}) ] \phi_p(\vb{x}) = \epsilon_p \phi_p(\vb{x}).
@@ -525,12 +522,12 @@ From hereon, $i$ and $j$ denote occupied orbitals, $a$ and $b$ denote unoccupied
 % BRIEF FLAVOURS OF HF
 In the most flexible variant of real HF theory (generalised HF) the one-electron orbitals can be complex-valued
 and contain a mixture of spin-up and spin-down components.\cite{Mayer_1993,Jimenez-Hoyos_2011}
-However, the application of HF \titou{theory} with some level of constraint on the orbital structure is far more common.
+However, the application of HF theory with some level of constraint on the orbital structure is far more common.
 Forcing the spatial part of the orbitals to be the same for spin-up and spin-down electrons leads to restricted HF (RHF) method, 
 while allowing different orbitals for different spins leads to the so-called unrestricted HF (UHF) approach.\cite{StuberPaldus}
 The advantage of the UHF approximation is its ability to correctly describe strongly correlated systems, 
 such as antiferromagnetic phases\cite{Slater_1951} or the dissociation of the hydrogen dimer.\cite{Coulson_1949}
-However, by allowing different orbitals for different spins, the UHF \hugh{wave function} is no longer required to be an eigenfunction of 
+However, by allowing different orbitals for different spins, the UHF wave function is no longer required to be an eigenfunction of 
 the total spin operator $\hat{\mathcal{S}}^2$, leading to ``spin-contamination''.
 
 %================================================================%
@@ -679,9 +676,9 @@ a ground-state wave function can be ``morphed'' into an excited-state wave funct
 via a stationary path of HF solutions.
 This novel approach to identifying excited-state wave functions demonstrates the fundamental 
 role of \textit{quasi}-EPs in determining the behaviour of the HF approximation.
-\hugh{Furthermore, the complex-scaled Fock operator can be used routinely construct analytic
+Furthermore, the complex-scaled Fock operator can be used routinely \titou{to} construct analytic
 continuations of HF solutions beyond the points where real HF solutions
-coalesce and vanish.\cite{Burton_2019b}}
+coalesce and vanish.\cite{Burton_2019b}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{M{\o}ller--Plesset Perturbation Theory in the Complex Plane}
@@ -716,7 +713,7 @@ E_{\text{MP1}} =  E_{\text{MP}}^{(0)} + E_{\text{MP}}^{(1)} = E_\text{HF}.
 \end{equation}
 The second-order MP2 energy correction is given by
 \begin{equation}\label{eq:EMP2}
-    \hugh{E_{\text{MP}}^{(2)}} = \frac{1}{4} \sum_{ij} \sum_{ab} \frac{\abs{\mel{ij}{}{ab}}^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b},
+    E_{\text{MP}}^{(2)} = \frac{1}{4} \sum_{ij} \sum_{ab} \frac{\abs{\mel{ij}{}{ab}}^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b},
 \end{equation}
 where $\mel{pq}{}{rs} = \braket{pq}{rs} - \braket{pq}{sr}$ are the anti-symmetrised two-electron integrals
 in the molecular spin-orbital basis\cite{Gill_1994}
@@ -779,7 +776,7 @@ The divergence of RMP expansions for stretched bonds can be easily understood fr
 Firstly, the exact wave function becomes increasingly multi-configurational as the bond is stretched, and the 
 RHF wave function no longer provides a qualitatively correct reference for the perturbation expansion.
 Secondly, the energy gap between the bonding and antibonding orbitals associated with the stretch becomes
-increasingly small at larger bond lengths, leading to a divergence, for example, in the \trash{second-order MP} \titou{MP2} correction \eqref{eq:EMP2}.
+increasingly small at larger bond lengths, leading to a divergence, for example, in the MP2 correction \eqref{eq:EMP2}.
 In contrast, the origin of slow UMP convergence is less obvious as the reference UHF energy remains
 qualitatively correct at large bond lengths and the orbital degeneracy is avoided.
 Furthermore, this slow convergence can also be observed in molecules with a UHF ground state at the equilibrium
@@ -790,7 +787,7 @@ Using the UHF framework allows the singlet ground state wave function to mix wit
 leading to spin contamination where the wave function is no longer an eigenfunction of the $\Hat{\cS}^2$ operator.
 The link between slow UMP convergence and this spin-contamination was first systematically investigated
 by Gill \etal\ using the minimal basis \ce{H2} model.\cite{Gill_1988}
-In this work, the authors %compared titou{the UMP series with the exact RHF- and UHF-based FCI expansions (T2: I don't understand this)} and
+In this work, the authors 
 identified that the slow UMP convergence arises from its failure to correctly predict the amplitude of the
 low-lying double excitation.
 This erroneous description of the double excitation amplitude has the same origin as the spin-contamination in the reference
@@ -887,7 +884,7 @@ The Taylor expansion of the RMP energy can then be evaluated to obtain the $k$th
 % RADIUS OF CONVERGENCE PLOTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The RMP series is convergent for $U = 3.5\,t$ with $\rc > 1$, as illustrated for the individual terms at each 
-\hugh{perturbation} order in Fig.~\ref{subfig:RMP_cvg}.
+perturbation order in Fig.~\ref{subfig:RMP_cvg}.
 In contrast, for $U = 4.5t$ one finds $\rc < 1$, and the RMP series becomes divergent.
 The corresponding Riemann surfaces for $U = 3.5\,t$ and $4.5\,t$ are shown in Figs.~\ref{subfig:RMP_3.5} and 
 \ref{subfig:RMP_4.5}, respectively, with the single EP at $\lep$ (black dot) and the radius of convergence indicated
@@ -968,8 +965,8 @@ for larger $U/t$ as the radius of convergence becomes increasingly close to one 
 % EFFECT OF SYMMETRY BREAKING
 As the UHF orbitals break the spin symmetry, new coupling terms emerge between the electronic states that
 cause fundamental changes to the structure of EPs in the complex $\lambda$-plane.
-For example, while the RMP energy shows only one EP between the ground \trashHB{state} and 
-\trashHB{the} doubly-excited states (Fig.~\ref{fig:RMP}), the UMP energy has two (\antoine{pairs of}) EPs: one connecting the ground state with the
+For example, while the RMP energy shows only one EP between the ground and 
+doubly-excited states (Fig.~\ref{fig:RMP}), the UMP energy has two (\antoine{pairs of}) EPs: one connecting the ground state with the
 singly-excited open-shell singlet, and the other connecting this single excitation to the 
 doubly-excited second excitation (Fig.~\ref{fig:UMP}).
 This new ground-state EP always appears outside the unit cylinder and guarantees convergence of the ground-state energy.
@@ -997,7 +994,7 @@ very slowly as the perturbation order is increased.
 As computational implementations of higher-order MP terms improved, the systematic investigation 
 of convergence behaviour in a broader class of molecules became possible.
 Cremer and He introduced an efficient MP6 approach and used it to analyse the RMP convergence of
-29 atomic and molecular systems \trashHB{with respect to the FCI energy}.\cite{Cremer_1996}
+29 atomic and molecular systems.\cite{Cremer_1996}
 They established two general classes: ``class A'' systems that exhibit monotonic convergence; 
 and ``class B'' systems for which convergence is erratic after initial oscillations. 
 By analysing the different cluster contributions to the MP energy terms, they proposed that
@@ -1078,7 +1075,7 @@ This divergence is related to a more fundamental critical point in the MP energy
 discuss in Sec.~\ref{sec:MP_critical_point}.
 
 Finally, Ref.~\onlinecite{Olsen_1996} proved that the extrapolation formulas of Cremer and He \cite{Cremer_1996} 
-\titou{[see Eqs.~\eqref{eq:CrHeA} and \eqref{eq:CrHeB}]} are not mathematically motivated when considering the complex 
+[see Eqs.~\eqref{eq:CrHeA} and \eqref{eq:CrHeB}] are not mathematically motivated when considering the complex 
 singularities causing the divergence, and therefore cannot be applied for all systems.
 For example, the \ce{HF} molecule contains both back-door intruder states and low-lying doubly-excited states that
 result in alternating terms up to 10th order. 
@@ -1385,7 +1382,7 @@ radius of convergence (see Fig.~\ref{fig:RadConv}).
 
 %As frequently claimed by Carl Bender, 
 It is frequently stated that
-\textit{``the most stupid thing \hugh{to} \trashHB{that one can} do with a series is to sum it.''}
+\textit{``the most stupid thing to do with a series is to sum it.''}
 Nonetheless, quantum chemists are basically doing this on a daily basis.
 As we have seen throughout this review, the MP series can often show erratic, 
 slow, or divergent behaviour.
@@ -1423,7 +1420,7 @@ Pad\'e approximants are extremely useful in many areas of physics and
 chemistry\cite{Loos_2013,Pavlyukh_2017,Tarantino_2019,Gluzman_2020} as they can model poles, 
 which appear at the roots of $B(\lambda)$. 
 However, they are unable to model functions with square-root branch points 
-(which are ubiquitous in the singularity structure of \trashHB{a typical} perturbative \hugh{methods} \trashHB{treatment}) 
+(which are ubiquitous in the singularity structure of perturbative methods) 
 and more complicated functional forms appearing at critical points 
 (where the nature of the solution undergoes a sudden transition).
 Despite this limitation, the successive diagonal Pad\'e approximants (\ie, $d_A = d_B $) 
@@ -1531,9 +1528,7 @@ Generally, the diagonal sequence of quadratic approximant,
 is of particular interest as the order of the corresponding Taylor series increases on each step.
 However, while a quadratic approximant can reproduce multiple branch points, it can only describe 
 a total of two branches.
-%\titou{Since every branch points must therefore correspond to a degeneracy of the same two branches,} 
-This constraint
-can hamper the faithful description of more complicated singularity structures such as the MP energy surface.
+This constraint can hamper the faithful description of more complicated singularity structures such as the MP energy surface.
 Despite this limitation, Ref.~\onlinecite{Goodson_2000a} demonstrates that quadratic approximants 
 provide convergent results in the most divergent cases considered by Olsen and 
 collaborators\cite{Christiansen_1996,Olsen_1996} 
@@ -1821,7 +1816,7 @@ We began by presenting the fundamental concepts behind non-Hermitian extensions 
 including the Hartree--Fock approximation and Rayleigh--Schr\"odinger perturbation theory.
 We then provided a comprehensive review of the various research that has been performed 
 around the physics of complex singularities in perturbation theory, with a particular focus on M{\o}ller--Plesset theory. 
-Seminal contributions from various research groups \trashHB{around the world} have revealed highly oscillatory,
+Seminal contributions from various research groups have revealed highly oscillatory,
 slowly convergent, or catastrophically divergent behaviour of the restricted and/or unrestricted MP perturbation series.%
 \cite{Laidig_1985,Knowles_1985,Handy_1985,Gill_1986,Laidig_1987,Nobes_1987,Gill_1988,Gill_1988a,Lepetit_1988} 
 In particular, the spin-symmetry-broken unrestricted MP series is notorious
@@ -1884,7 +1879,7 @@ for understanding the subtle features of perturbation theory in the complex plan
 such as Kohn-Sham DFT, \cite{Carrascal_2015,Cohen_2016} linear-response theory,\cite{Carrascal_2018} 
 many-body perturbation theory,\cite{Romaniello_2009,Romaniello_2012,DiSabatino_2015,Hirata_2015,Tarantino_2017,Olevano_2019} 
 ensemble DFT, \cite{Deur_2017,Deur_2018,Senjean_2018,Sagredo_2018,Fromager_2020} thermal DFT,\cite{Smith_2016,Smith_2018} 
-\titou{wave function methods},\cite{Stein_2014,Henderson_2015,Shepherd_2016} and many more.
+wave function methods,\cite{Stein_2014,Henderson_2015,Shepherd_2016} and many more.
 In particular, we have shown that the Hubbard dimer contains sufficient flexibility to describe 
 the effects of symmetry breaking, the MP critical point, and resummation techniques, in contrast to the more 
 minimalistic models considered previously.
