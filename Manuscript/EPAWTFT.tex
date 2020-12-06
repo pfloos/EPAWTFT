@@ -14,6 +14,7 @@
 \newcommand{\trash}[1]{\textcolor{red}{\sout{#1}}}
 \newcommand{\trashHB}[1]{\textcolor{orange}{\sout{#1}}}
 \newcommand{\antoine}[1]{\textcolor{cyan}{#1}}
+\newcommand{\trashantoine}[1]{\textcolor{cyan}{\sout{#1}}}
 
 \usepackage[
 	colorlinks=true,
@@ -146,7 +147,7 @@ Each of these points is pedagogically illustrated using the Hubbard dimer at hal
 
 % SPIKE THE READER
 Perturbation theory isn't usually considered in the complex plane.
-Normally it is applied using real numbers as one of very few availabe tools for 
+Normally it is applied using real numbers as one of very few available tools for 
 describing realistic quantum systems where exact solutions of the Schr\"odinger equation are impossible \titou{to find?}.\cite{Dirac_1929}
 In particular, time-independent Rayleigh--Schr\"odinger perturbation theory\cite{RayleighBook,Schrodinger_1926} 
 has emerged as an instrument of choice among the vast array of methods developed for this purpose.%
@@ -173,7 +174,7 @@ systematically improvable series largely remains an open challenge.
 
 % COMPLEX PLANE
 Our conventional view of electronic structure theory is centred around the Hermitian notion of quantised energy levels,
-where the different electronic states of a molecular are discrete and energetically ordered.
+where the different electronic states of a molecular \antoine{molecule or molecular system?} are discrete and energetically ordered.
 The lowest energy state defines the ground electronic state, while higher energy states
 represent electronic excited states.
 However, an entirely different perspective on quantisation can be found by analytically continuing
@@ -475,7 +476,7 @@ ultimately determines the convergence properties of the perturbation series.
 In the \trash{Hartree--Fock (HF)} \titou{HF} approximation, the many-electron wave function is approximated as a single Slater determinant $\Psi^{\text{HF}}(\vb{x}_1,\ldots,\vb{x}_\Ne)$, where $\vb{x} = (\sigma,\vb{r})$ is a composite vector gathering spin and spatial coordinates.
 This Slater determinant is defined as an antisymmetric combination of $\Ne$ (real-valued) occupied one-electron spin-orbitals $\phi_p(\vb{x})$, which are, by definition, eigenfunctions of the one-electron Fock operator 
 \begin{equation}\label{eq:FockOp}
-    \Hat{f}(\vb{x}) \phi_p(\vb{x}) = \qty[ \Hat{h}(\vb{x}) + \Hat{v}_\text{HF}(\vb{x}) ] \phi_p(\vb{x}) = \epsilon_p \phi_p(\vb{x}).
+    \Hat{f}(\vb{x}) \phi_p(\vb{x}) = \qty[ \Hat{h}(\vb{x}) + \Hat{v}^{\antoine{\text{HF}}}(\vb{x}) ] \phi_p(\vb{x}) = \epsilon_p \phi_p(\vb{x}).
 \end{equation}
 Here the (one-electron) core Hamiltonian is
 \begin{equation}
@@ -636,7 +637,7 @@ Alternatively, the non-linear terms arising from the Coulomb and exchange operat
 be considered as a perturbation from the core Hamiltonian \eqref{eq:Hcore} by introducing the
 transformation $U \to \lambda\, U$, giving the parametrised Fock operator 
 \begin{equation}
-    \Hat{f}(\vb{x} ; \lambda) = \Hat{h}(\vb{x}) + \lambda\, \Hat{v}_\text{HF}(\vb{x}).
+    \Hat{f}(\vb{x} ; \lambda) = \Hat{h}(\vb{x}) + \lambda\, \Hat{v}^{\antoine{\text{HF}}}(\vb{x}).
 \end{equation}
 The orbitals in the reference problem $\lambda=0$ correspond to the symmetry-pure eigenfunctions of the one-electron core
 Hamiltonian, while self-consistent solutions at $\lambda = 1$ represent the orbitals of the true HF solution.
@@ -884,7 +885,7 @@ In contrast, for $U = 4.5t$ one finds $\rc < 1$, and the RMP series becomes dive
 The corresponding Riemann surfaces for $U = 3.5\,t$ and $4.5\,t$ are shown in Figs.~\ref{subfig:RMP_3.5} and 
 \ref{subfig:RMP_4.5}, respectively, with the single EP at $\lep$ (black dot) and the radius of convergence indicated
 by the vertical cylinder of unit radius.
-For the divergent case, the $\lep$ lies inside this cylinder of convergence, while in the convergent case $\lep$ lies
+For the divergent case, the $\lep$ \antoine{(\sout{the} $\lep$)} lies inside this cylinder of convergence, while in the convergent case $\lep$ lies
 outside this cylinder.
 In both cases, the EP connects the ground state with the doubly-excited state, and thus the convergence behaviour
 for the two states using the ground-state RHF orbitals is identical.
@@ -961,7 +962,7 @@ for larger $U/t$ as the radius of convergence becomes increasingly close to one 
 As the UHF orbitals break the spin symmetry, new coupling terms emerge between the electronic states that
 cause fundamental changes to the structure of EPs in the complex $\lambda$-plane.
 For example, while the RMP energy shows only one EP between the ground state and 
-the doubly-excited state (Fig.~\ref{fig:RMP}), the UMP energy has two EPs: one connecting the ground state with the
+the doubly-excited state (Fig.~\ref{fig:RMP}), the UMP energy has two (\antoine{pairs of}) EPs: one connecting the ground state with the
 singly-excited open-shell singlet, and the other connecting this single excitation to the 
 doubly-excited second excitation (Fig.~\ref{fig:UMP}).
 This new ground-state EP always appears outside the unit cylinder and guarantees convergence of the ground-state energy.
