@@ -297,8 +297,9 @@ unless otherwise stated, atomic units will be used throughout.
     \end{subfigure}
 	\caption{%
 	Exact energies for the Hubbard dimer ($U=4t$) as functions of $\lambda$ on the real axis (\subref{subfig:FCI_real}) and in the complex plane (\subref{subfig:FCI_cplx}).
-    Only the interacting closed-shell singlets are plotted in the complex plane, becoming degenerate at the EP (black dot).
-    The contour followed around the EP in order to interchange states is also represented.
+    Only the interacting closed-shell singlets are shown in the complex plane, becoming degenerate at the EP (black dot).
+    Following a contour around the EP (black solid) interchanges the states, while a second rotation (black dashed)
+    returns the states to their original energies.
 	\label{fig:FCI}}
 \end{figure*}
 
@@ -357,6 +358,8 @@ These $\lambda$ values correspond to so-called EPs and connect the ground and ex
 Crucially, the energy surface becomes non-analytic at $\lambda_{\text{EP}}$ and a square-root singularity forms with two branch cuts running along the imaginary axis from $\lambda_{\text{EP}}$  to $\pm \i \infty$ (see Fig.~\ref{subfig:FCI_cplx}).
 On the real $\lambda$ axis, these EPs lead to the singlet avoided crossing at $\lambda = \Re(\lambda_{\text{EP}})$.
 The ``shape'' of this avoided crossing is related to the magnitude of $\Im(\lambda_{\text{EP}})$, with smaller values giving a ``sharper'' interaction.
+\hugh{In the limit $U/t \to 0$, the two EPs converge at $\lep \to 0$ to create a conical intersection with 
+a gradient discontinuity on the real axis.}
 
 Remarkably, the existence of these square-root singularities means that following a complex contour around an EP in the complex $\lambda$ plane will interconvert the closed-shell ground and excited states (see Fig.~\ref{subfig:FCI_cplx}).
 This behaviour can be seen by expanding the radicand in Eq.~\eqref{eq:singletE} as a Taylor series around $\lambda_{\text{EP}}$ to give
@@ -1174,16 +1177,21 @@ divergences caused by the MP critical point.
 When a Hamiltonian is parametrised by a variable such as $\lambda$, the existence of abrupt changes in the 
 eigenstates as a function of $\lambda$ indicate the presence of a zero-temperature quantum phase transition (QPT).%
 \cite{Heiss_1988,Heiss_2002,Borisov_2015,Sindelka_2017,CarrBook,Vojta_2003,SachdevBook,GilmoreBook} 
-Meanwhile, as an avoided crossing becomes increasingly sharp, the corresponding EPs move increasingly close to the real axis, eventually forming a critical point.
-\hugh{The existence of an EP \emph{on} the real axis is therefore diagnostic of a QPT.\cite{Cejnar_2005, Cejnar_2007a}}
+Meanwhile, as an avoided crossing becomes increasingly sharp, the corresponding EPs move increasingly close to the real axis.
+\hugh{When these points converge on the real axis, they effectively ``annihilate'' each other and no longer behave as EPs.
+Instead, they form a ``critical point'' singularity that resembles a conical intersection, and 
+the convergence of a pair of complex-conjugate EPs on the real axis is therefore diagnostic of a QPT.\cite{Cejnar_2005, Cejnar_2007a}}
+
 Since the MP critical point corresponds to a singularity on the real $\lambda$ axis, it can immediately be
 recognised as a QPT with respect to varying the perturbation parameter $\lambda$.
 However, a conventional QPT can only occur in the thermodynamic limit, which here is analogous to the complete 
 basis set limit.\cite{Kais_2006}
-The MP critical point and corresponding $\beta$ singularities in a finite basis must therefore be modelled by pairs of EPs
-that tend towards the real axis, exactly as described by Sergeev \etal\cite{Sergeev_2005}
+The MP critical point and corresponding $\beta$ singularities in a finite basis must therefore be modelled by pairs of
+complex-conjugate EPs that tend towards the real axis, exactly as described by Sergeev \etal\cite{Sergeev_2005}
 In contrast, $\alpha$ singularities correspond to large avoided crossings that are indicative of low-lying excited
 states which share the symmetry of the ground state,\cite{Goodson_2004} and are thus not manifestations of a QPT.
+\hugh{Notably, since the exact MP critical point corresponds to the interaction between a bound state
+and the continuum, its functional form is more complicated than a conical intersection and remains an open question.}
 
 %=======================================
 \subsection{Critical Points in the Hubbard Dimer}
