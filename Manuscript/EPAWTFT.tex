@@ -120,10 +120,10 @@
 \author{Antoine \surname{Marie}}
 \affiliation{\LCPQ}
 \author{Hugh G.~A.~\surname{Burton}}
-\email{hugh.burton@chem.ox.ac.uk}
+\email[Corresponding author: ]{hugh.burton@chem.ox.ac.uk}
 \affiliation{\UOX}
 \author{Pierre-Fran\c{c}ois \surname{Loos}}
-\email{loos@irsamc.ups-tlse.fr}
+\email[Corresponding author: ]{loos@irsamc.ups-tlse.fr}
 \affiliation{\LCPQ}
 
 
@@ -156,7 +156,7 @@ However, the properties of perturbation theory in the complex plane
 are essential for understanding the quality of perturbative approximations on the real axis.
 
 % Moller-Plesset
-In electronic structure theory, the workhorse of time-independent perturbation theory is M\o{}ller--Plesset (MP) %perturbation 
+In electronic structure theory, the workhorse of time-independent perturbation theory is M\o{}ller--Plesset (MP) 
 theory,\cite{Moller_1934} which remains one of the most popular methods for computing the electron 
 correlation energy.\cite{Wigner_1934,Lowdin_1958}
 This approach estimates the exact electronic energy by constructing a perturbative correction on top
@@ -358,8 +358,8 @@ These $\lambda$ values correspond to so-called EPs and connect the ground and ex
 Crucially, the energy surface becomes non-analytic at $\lambda_{\text{EP}}$ and a square-root singularity forms with two branch cuts running along the imaginary axis from $\lambda_{\text{EP}}$  to $\pm \i \infty$ (see Fig.~\ref{subfig:FCI_cplx}).
 On the real $\lambda$ axis, these EPs lead to the singlet avoided crossing at $\lambda = \Re(\lambda_{\text{EP}})$.
 The ``shape'' of this avoided crossing is related to the magnitude of $\Im(\lambda_{\text{EP}})$, with smaller values giving a ``sharper'' interaction.
-\hugh{In the limit $U/t \to 0$, the two EPs converge at $\lep \to 0$ to create a conical intersection with 
-a gradient discontinuity on the real axis.}
+In the limit $U/t \to 0$, the two EPs converge at $\lep = 0$ to create a conical intersection with 
+a gradient discontinuity on the real axis.
 
 Remarkably, the existence of these square-root singularities means that following a complex contour around an EP in the complex $\lambda$ plane will interconvert the closed-shell ground and excited states (see Fig.~\ref{subfig:FCI_cplx}).
 This behaviour can be seen by expanding the radicand in Eq.~\eqref{eq:singletE} as a Taylor series around $\lambda_{\text{EP}}$ to give
@@ -553,7 +553,7 @@ In the Hubbard dimer, the HF energy can be parametrised using two rotation angle
 \begin{equation}
 E_\text{HF}(\ta, \tb) = -t\, \qty( \sin \ta + \sin \tb ) + \frac{U}{2} \qty( 1 + \cos \ta \cos \tb ),
 \end{equation}
-where we have introduced bonding $\mathcal{B}^{\sigma}$ and anti-bonding $\mathcal{A}^{\sigma}$ molecular orbitals for 
+where we have introduced bonding $\mathcal{B}^{\sigma}$ and antibonding $\mathcal{A}^{\sigma}$ molecular orbitals for 
 the spin-$\sigma$ electrons as
 \begin{subequations}
 \begin{align}
@@ -630,9 +630,9 @@ This type of symmetry breaking is also called a spin-density wave in the physics
 Symmetry breaking can also occur in RHF theory when a charge-density wave is formed from an oscillation 
 between the two closed-shell configurations with both electrons localised on one site or the other.\cite{StuberPaldus,Fukutome_1981}
 
-%============================================================%
-\subsection{Self-Consistency as a Perturbation} %OR {Complex adiabatic connection}
-%============================================================%
+%===============================================%
+\subsection{Self-Consistency as a Perturbation} 
+%===============================================%
 
 % INTRODUCE PARAMETRISED FOCK HAMILTONIAN
 The inherent non-linearity in the Fock eigenvalue problem arises from self-consistency 
@@ -778,7 +778,7 @@ diatomics, where low-order RMP and UMP expansions give qualitatively wrong bindi
 The divergence of RMP expansions for stretched bonds can be easily understood from two perspectives.\cite{Gill_1988a}
 Firstly, the exact wave function becomes increasingly multi-configurational as the bond is stretched, and the 
 RHF wave function no longer provides a qualitatively correct reference for the perturbation expansion.
-Secondly, the energy gap between the bonding and antibonding orbitals associated with the stretch becomes
+Secondly, the energy gap between the bonding and anti-bonding orbitals associated with the stretch becomes
 increasingly small at larger bond lengths, leading to a divergence, for example, in the MP2 correction \eqref{eq:EMP2}.
 In contrast, the origin of slow UMP convergence is less obvious as the reference UHF energy remains
 qualitatively correct at large bond lengths and the orbital degeneracy is avoided.
@@ -990,7 +990,7 @@ of highly-excited determinants,\cite{Lowdin_1955c} and thus it is not surprising
 very slowly as the perturbation order is increased.
 
 %==========================================%
-\subsection{Classifying Types of Convergence} % Behaviour} % Further insights from a two-state model}
+\subsection{Classifying Types of Convergence} 
 %==========================================%
 
 % CREMER AND HE
@@ -1138,7 +1138,7 @@ When $\lambda$ is negative, the mean-field potential becomes increasingly repuls
 Coulomb interaction becomes attractive.
 There is therefore a negative critical point $\lc$ where it becomes energetically favourable for the electrons 
 to dissociate and form a bound cluster at an infinite separation from the nuclei.\cite{Stillinger_2000}
-This autoionisation effect is closely related to the critial point for electron binding in two-electron 
+This autoionisation effect is closely related to the critical point for electron binding in two-electron 
 atoms (see Ref.~\onlinecite{Baker_1971}).
 Furthermore, a similar set of critical points exists along the positive real axis, corresponding to single-electron ionisation
 processes.\cite{Sergeev_2005}
@@ -1178,9 +1178,9 @@ When a Hamiltonian is parametrised by a variable such as $\lambda$, the existenc
 eigenstates as a function of $\lambda$ indicate the presence of a zero-temperature quantum phase transition (QPT).%
 \cite{Heiss_1988,Heiss_2002,Borisov_2015,Sindelka_2017,CarrBook,Vojta_2003,SachdevBook,GilmoreBook} 
 Meanwhile, as an avoided crossing becomes increasingly sharp, the corresponding EPs move increasingly close to the real axis.
-\hugh{When these points converge on the real axis, they effectively ``annihilate'' each other and no longer behave as EPs.
+When these points converge on the real axis, they effectively ``annihilate'' each other and no longer behave as EPs.
 Instead, they form a ``critical point'' singularity that resembles a conical intersection, and 
-the convergence of a pair of complex-conjugate EPs on the real axis is therefore diagnostic of a QPT.\cite{Cejnar_2005, Cejnar_2007a}}
+the convergence of a pair of complex-conjugate EPs on the real axis is therefore diagnostic of a QPT.\cite{Cejnar_2005, Cejnar_2007a}
 
 Since the MP critical point corresponds to a singularity on the real $\lambda$ axis, it can immediately be
 recognised as a QPT with respect to varying the perturbation parameter $\lambda$.
@@ -1190,8 +1190,8 @@ The MP critical point and corresponding $\beta$ singularities in a finite basis 
 complex-conjugate EPs that tend towards the real axis, exactly as described by Sergeev \etal\cite{Sergeev_2005}
 In contrast, $\alpha$ singularities correspond to large avoided crossings that are indicative of low-lying excited
 states which share the symmetry of the ground state,\cite{Goodson_2004} and are thus not manifestations of a QPT.
-\hugh{Notably, since the exact MP critical point corresponds to the interaction between a bound state
-and the continuum, its functional form is more complicated than a conical intersection and remains an open question.}
+Notably, since the exact MP critical point corresponds to the interaction between a bound state
+and the continuum, its functional form is more complicated than a conical intersection and remains an open question.
 
 %=======================================
 \subsection{Critical Points in the Hubbard Dimer}
@@ -1227,7 +1227,7 @@ and the continuum, its functional form is more complicated than a conical inters
 %------------------------------------------------------------------%
 
 % INTRODUCING THE MODEL
-The simplified site basis of the Hubbard dimer makes explicilty modelling the ionisation continuum impossible.
+The simplified site basis of the Hubbard dimer makes explicitly modelling the ionisation continuum impossible.
 Instead, we can use an asymmetric version of the Hubbard dimer \cite{Carrascal_2015,Carrascal_2018} 
 where we consider one of the sites as a ``ghost atom'' that acts as a 
 destination for ionised electrons being originally localised on the other site.
@@ -1626,7 +1626,7 @@ closest branch point  to the origin.
 Table~\ref{tab:QuadUMP} shows that they provide remarkably accurate 
 estimates of the ground-state energy at $\lambda = 1$.
 
-While the diagonal quadratic approximants provide significanty improved estimates of the 
+While the diagonal quadratic approximants provide significantly improved estimates of the 
 ground-state energy, we can use our knowledge of the UMP singularity structure to develop
 even more accurate results.
 We have seen in previous sections that the UMP energy surface
@@ -1811,7 +1811,7 @@ molecule and obtained encouragingly accurate results.\cite{Mihalka_2019}
 % INTRO TO CONC.
 To accurately model chemical systems, one must choose a computational protocol from an ever growing 
 collection of theoretical methods.
-Until the Sch\"odinger equation is solved exactly, this choice must make a compromise on the accuracy
+Until the Schr\"odinger equation is solved exactly, this choice must make a compromise on the accuracy
 of certain properties depending on the system that is being studied.
 It is therefore essential that we understand the strengths and weaknesses of different methods, 
 and why one might fail in cases where others work beautifully.
