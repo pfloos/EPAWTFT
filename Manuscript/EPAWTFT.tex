@@ -131,7 +131,7 @@
 We explore the non-Hermitian extension of quantum chemistry in the complex plane and its link with perturbation theory.
 We observe that the physics of a quantum system is intimately connected to the position of complex-valued energy singularities, known as exceptional points.
 After presenting the fundamental concepts of non-Hermitian quantum chemistry in the complex plane, including the mean-field Hartree--Fock approximation and Rayleigh--Schr\"odinger perturbation theory, we provide a historical overview of the various research activities that have been performed on the physics of singularities.
-In particular, we highlight the seminal work \trashHB{of several research groups} on the convergence behaviour of perturbative series obtained within M{\o}ller--Plesset perturbation theory, and its links with quantum phase transitions.
+In particular, we highlight seminal work on the convergence behaviour of perturbative series obtained within M{\o}ller--Plesset perturbation theory, and its links with quantum phase transitions.
 We also discuss several resummation techniques (such as Pad\'e and quadratic approximants) that can improve the overall accuracy of the M{\o}ller--Plesset perturbative series in both convergent and divergent cases.
 Each of these points is illustrated using the Hubbard dimer at half filling, which proves to be a versatile model for understanding the subtlety of analytically-continued perturbation theory in the complex plane.
 \end{abstract}
@@ -148,7 +148,7 @@ Each of these points is illustrated using the Hubbard dimer at half filling, whi
 % SPIKE THE READER
 Perturbation theory isn't usually considered in the complex plane.
 Normally it is applied using real numbers as one of very few available tools for 
-describing realistic quantum systems \trashHB{where exact solutions of the Schr\"odinger equation are impossible \titou{to find?}}.\cite{Dirac_1929}
+describing realistic quantum systems.
 In particular, time-independent Rayleigh--Schr\"odinger perturbation theory\cite{RayleighBook,Schrodinger_1926} 
 has emerged as an instrument of choice among the vast array of methods developed for this purpose.%
 \cite{SzaboBook,JensenBook,CramerBook,HelgakerBook,ParrBook,FetterBook,ReiningBook}
@@ -416,7 +416,7 @@ Expanding the wave function and energy as power series in $\lambda$ as
     \label{eq:E_expansion}
 \end{align}
 \end{subequations}
-solving the corresponding perturbation equations up to a given order \titou{$n$}, and
+solving the corresponding perturbation equations up to a given order $n$, and
 setting $\lambda = 1$ then yields approximate solutions to Eq.~\eqref{eq:SchrEq}.
 
 % MATHEMATICAL REPRESENTATION
@@ -465,7 +465,7 @@ Like the exact system in Sec.~\ref{sec:example}, the perturbation energy $E(\lam
 a ``one-to-many'' function with the output elements representing an approximation to both the ground and excited states.
 The most common singularities on $E(\lambda)$ therefore correspond to non-analytic EPs in the complex 
 $\lambda$ plane where two states become degenerate.
-Later we will demonstrate how the choice of reference \hugh{wave function} \trashHB{Hamiltonian} controls the position of these EPs, and 
+Later we will demonstrate how the choice of reference Hamiltonian controls the position of these EPs, and 
 ultimately determines the convergence properties of the perturbation series.
 
 %===========================================%
@@ -620,7 +620,7 @@ with the corresponding UHF ground-state energy (Fig.~\ref{fig:HF_real})
 \begin{equation}
     E_\text{UHF} \equiv E_\text{HF}(\ta_\text{UHF}, \tb_\text{UHF}) = - \frac{2t^2}{U}.
 \end{equation}
-Time-reversal symmetry dictates that this UHF wave function must be degenerate with its spin-flipped \titou{pair?}, obtained 
+Time-reversal symmetry dictates that this UHF wave function must be degenerate with its spin-flipped counterpart, obtained 
 by swapping $\ta_{\text{UHF}}$ and $\tb_{\text{UHF}}$ in Eqs.~\eqref{eq:ta_uhf} and \eqref{eq:tb_uhf}.
 This type of symmetry breaking is also called a spin-density wave in the physics community as the system
 ``oscillates'' between the two symmetry-broken configurations. \cite{GiulianiBook}
@@ -676,7 +676,7 @@ a ground-state wave function can be ``morphed'' into an excited-state wave funct
 via a stationary path of HF solutions.
 This novel approach to identifying excited-state wave functions demonstrates the fundamental 
 role of \textit{quasi}-EPs in determining the behaviour of the HF approximation.
-Furthermore, the complex-scaled Fock operator can be used routinely \titou{to} construct analytic
+Furthermore, the complex-scaled Fock operator can be used routinely to construct analytic
 continuations of HF solutions beyond the points where real HF solutions
 coalesce and vanish.\cite{Burton_2019b}
 
@@ -889,7 +889,7 @@ In contrast, for $U = 4.5t$ one finds $\rc < 1$, and the RMP series becomes dive
 The corresponding Riemann surfaces for $U = 3.5\,t$ and $4.5\,t$ are shown in Figs.~\ref{subfig:RMP_3.5} and 
 \ref{subfig:RMP_4.5}, respectively, with the single EP at $\lep$ (black dot) and the radius of convergence indicated
 by the vertical cylinder of unit radius.
-For the divergent case, the $\lep$ \antoine{(\sout{the} $\lep$)} lies inside this cylinder of convergence, while in the convergent case $\lep$ lies
+For the divergent case, $\lep$ lies inside this cylinder of convergence, while in the convergent case $\lep$ lies
 outside this cylinder.
 In both cases, the EP connects the ground state with the doubly-excited state, and thus the convergence behaviour
 for the two states using the ground-state RHF orbitals is identical.
@@ -901,7 +901,7 @@ for the two states using the ground-state RHF orbitals is identical.
 	\includegraphics[width=\linewidth]{fig5}
 	\caption{
 	Radius of convergence $r_c$ for the RMP ground state (red), the UMP ground state (blue), and the UMP excited state (orange) 
-    series \titou{of the Hubbard dimer} as functions of the ratio $U/t$.
+    series of the Hubbard dimer as functions of the ratio $U/t$.
 	\label{fig:RadConv}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -966,7 +966,7 @@ for larger $U/t$ as the radius of convergence becomes increasingly close to one 
 As the UHF orbitals break the spin symmetry, new coupling terms emerge between the electronic states that
 cause fundamental changes to the structure of EPs in the complex $\lambda$-plane.
 For example, while the RMP energy shows only one EP between the ground and 
-doubly-excited states (Fig.~\ref{fig:RMP}), the UMP energy has two (\antoine{pairs of}) EPs: one connecting the ground state with the
+doubly-excited states (Fig.~\ref{fig:RMP}), the UMP energy has two pairs of complex-conjugate EPs: one connecting the ground state with the
 singly-excited open-shell singlet, and the other connecting this single excitation to the 
 doubly-excited second excitation (Fig.~\ref{fig:UMP}).
 This new ground-state EP always appears outside the unit cylinder and guarantees convergence of the ground-state energy.
@@ -1002,8 +1002,8 @@ class A systems generally include well-separated and weakly correlated electron 
 are characterised by dense electron clustering in one or more spatial regions.\cite{Cremer_1996}
 In class A systems, they showed that the majority of the correlation energy arises from pair correlation, 
 with little contribution from triple excitations.
-On the other hand, triple excitations have an important contribution in class B systems, including providing
-orbital relaxation \titou{to doubly-excited states}, and these contributions lead to oscillations of the total correlation energy.
+On the other hand, triple excitations have an important contribution in class B systems, including
+orbital relaxation to doubly-excited configurations, and these contributions lead to oscillations of the total correlation energy.
 
 Using these classifications, Cremer and He then introduced simple extrapolation formulas for estimating the 
 exact correlation energy $\Delta E$ using terms up to MP6\cite{Cremer_1996}
@@ -1102,7 +1102,7 @@ The three remaining Hermitian archetypes seem to be rarely observed in MP pertur
 In contrast, the non-Hermitian coupled cluster perturbation theory,%
 \cite{Pawlowski_2019a,Pawlowski_2019b,Pawlowski_2019c,Pawlowski_2019d,Pawlowski_2019e} exhibits a range of archetypes
 including the interspersed zigzag, triadic, ripple, geometric, and zigzag-geometric forms.
-This analysis highlights the importance of the primary critical point in controlling the high-order convergence, 
+This analysis highlights the importance of the primary singularity in controlling the high-order convergence, 
 regardless of whether this point is inside or outside the complex unit circle. \cite{Handy_1985,Olsen_2000}
 
 %=======================================
@@ -1165,7 +1165,7 @@ While a finite basis can only predict complex-conjugate branch point singulariti
 by a cluster of sharp avoided crossings between the ground state and high-lying excited states.\cite{Sergeev_2005}
 Alternatively, Sergeev \etal\ demonstrated that the inclusion of a ``ghost'' atom also
 allows the formation of the critical point as the electrons form a bound cluster occupying the ghost atom orbitals.\cite{Sergeev_2005}
-This effect explains the origin of the divergence in the \ce{HF} molecule as the fluorine valence electrons jump to \titou{the} hydrogen at
+This effect explains the origin of the divergence in the \ce{HF} molecule as the fluorine valence electrons jump to the hydrogen at
  a sufficiently negative $\lambda$ value.\cite{Sergeev_2005}
 Furthermore, the two-state model of Olsen and collaborators \cite{Olsen_2000} was simply too minimal to understand the complexity of 
 divergences caused by the MP critical point.
@@ -1175,7 +1175,7 @@ When a Hamiltonian is parametrised by a variable such as $\lambda$, the existenc
 eigenstates as a function of $\lambda$ indicate the presence of a zero-temperature quantum phase transition (QPT).%
 \cite{Heiss_1988,Heiss_2002,Borisov_2015,Sindelka_2017,CarrBook,Vojta_2003,SachdevBook,GilmoreBook} 
 Meanwhile, as an avoided crossing becomes increasingly sharp, the corresponding EPs move increasingly close to the real axis, eventually forming a critical point.
-The existence of an EP \emph{on} the real axis is therefore diagnostic of a QPT.\cite{Cejnar_2005, Cejnar_2007a}
+\hugh{The existence of an EP \emph{on} the real axis is therefore diagnostic of a QPT.\cite{Cejnar_2005, Cejnar_2007a}}
 Since the MP critical point corresponds to a singularity on the real $\lambda$ axis, it can immediately be
 recognised as a QPT with respect to varying the perturbation parameter $\lambda$.
 However, a conventional QPT can only occur in the thermodynamic limit, which here is analogous to the complete 
@@ -1374,7 +1374,7 @@ radius of convergence (see Fig.~\ref{fig:RadConv}).
     \includegraphics[height=0.23\textheight]{fig9a}
     \includegraphics[height=0.23\textheight]{fig9b}
     \caption{\label{fig:PadeRMP}
-    RMP ground-state energy as a function of $\lambda$ \titou{in the Hubbard dimer} obtained using various \titou{truncated Taylor series and approximants} 
+    RMP ground-state energy as a function of $\lambda$ in the Hubbard dimer obtained using various truncated Taylor series and approximants
     at $U/t = 3.5$ (left) and $U/t = 4.5$ (right).}
 \end{figure*}
 %%%%%%%%%%%%%%%%%
@@ -1427,7 +1427,7 @@ Despite this limitation, the successive diagonal Pad\'e approximants (\ie, $d_A 
 often define a convergent perturbation series in cases where the Taylor series expansion diverges.
 
 \begin{table}[b]
-	\caption{RMP ground-state energy estimate at $\lambda = 1$ \titou{of the Hubbard dimer} provided by various truncated Taylor 
+	\caption{RMP ground-state energy estimate at $\lambda = 1$ of the Hubbard dimer provided by various truncated Taylor 
     series and Pad\'e approximants at $U/t = 3.5$ and $4.5$.
     We also report the distance of the closest pole to the origin $\abs{\lc}$ provided by the diagonal Pad\'e approximants.
 	\label{tab:PadeRMP}}
@@ -1473,7 +1473,7 @@ a convergent series.
 \begin{figure}[t]
     \includegraphics[width=\linewidth]{fig10}
     \caption{\label{fig:QuadUMP}
-    UMP energies \titou{in the Hubbard dimer} as a function of $\lambda$ obtained using various \titou{approximants} at $U/t = 3$.}
+    UMP energies in the Hubbard dimer as a function of $\lambda$ obtained using various approximants at $U/t = 3$.}
 \end{figure}
 %%%%%%%%%%%%%%%%%
 
@@ -1500,7 +1500,7 @@ function $E(\lambda)$ via a generalised version of the square-root singularity
 expression \cite{Mayer_1985,Goodson_2011,Goodson_2019}
 \begin{equation}
 	\label{eq:QuadApp}
-	\titou{E_{[d_P/d_Q,d_R]}}(\lambda) = \frac{1}{2 Q(\lambda)} \qty[ P(\lambda) \pm \sqrt{P^2(\lambda) - 4 Q(\lambda) R(\lambda)} ],
+	E_{[d_P/d_Q,d_R]}(\lambda) = \frac{1}{2 Q(\lambda)} \qty[ P(\lambda) \pm \sqrt{P^2(\lambda) - 4 Q(\lambda) R(\lambda)} ],
 \end{equation}
 with the polynomials 
 \begin{align}
@@ -1542,7 +1542,7 @@ The remedy for this problem involves applying a suitable transformation of the c
 
 \begin{table}[b]
     \caption{Estimate for the distance of the closest singularity (pole or branch point) to the origin $\abs{\lc}$
-    in the UMP energy function \titou{of the Hubbard dimer} provided by various \titou{truncated Taylor series and approximants} at $U/t = 3$ and $7$.
+    in the UMP energy function of the Hubbard dimer provided by various truncated Taylor series and approximants at $U/t = 3$ and $7$.
 	The truncation degree of the Taylor expansion $n$ of $E(\lambda)$ and the number of branch 
     points $n_\text{bp} = \max(2d_p,d_q+d_r)$ generated by the quadratic approximants are also reported.
 	\label{tab:QuadUMP}}
@@ -1597,7 +1597,7 @@ The remedy for this problem involves applying a suitable transformation of the c
     \end{subfigure}
 \caption{%
 Comparison of the [3/2,2] and [3/0,4] quadratic approximants with the exact UMP energy surface in the complex $\lambda$ 
-plane \titou{in the Hubbard dimer} with $U/t = 3$. 
+plane in the Hubbard dimer with $U/t = 3$. 
 Both quadratic approximants correspond to the same truncation degree of the Taylor series and model the branch points 
 using a radicand polynomial of the same order.
 However, the [3/2,2] approximant introduces poles into the surface that limits it accuracy, while the [3/0,4] approximant
@@ -1644,7 +1644,7 @@ energy using low-order perturbation expansions.
 
 \begin{table}[h]
 	\caption{
-    Estimate and associated error of the exact UMP energy \titou{of the Hubbard dimer} at $U/t = 7$ for 
+    Estimate and associated error of the exact UMP energy of the Hubbard dimer at $U/t = 7$ for 
     various approximants using up to ten terms in the Taylor expansion.
 	\label{tab:UMP_order10}}
 	\begin{ruledtabular}
@@ -1714,7 +1714,7 @@ terms of a perturbation series, even if it diverges.
 \begin{table}[th]
 	\caption{
     Acceleration of the diagonal Pad\'e approximant sequence for the RMP energy
-    \titou{of the Hubbard dimer at $U/t = 3.5$ and $4.5$} using the Shanks transformation.
+    of the Hubbard dimer at $U/t = 3.5$ and $4.5$ using the Shanks transformation.
 	\label{tab:RMP_shank}}
 	\begin{ruledtabular}
 		\begin{tabular}{lcccc}
@@ -1757,9 +1757,8 @@ the cost of larger denominators is an overall slower rate of convergence.
     \includegraphics[width=\linewidth]{fig12}
     \caption{%
         Comparison of the scaled RMP10 Taylor expansion with the exact RMP energy as a function
-        of $\lambda$ for the \trash{symmetric} Hubbard dimer at $U/t = 4.5$. 
+        of $\lambda$ for the Hubbard dimer at $U/t = 4.5$. 
         The two functions correspond closely within the radius of convergence.
-        \titou{T2: are we keeping this?}
     }
     \label{fig:rmp_anal_cont}
 \end{figure}
@@ -1794,7 +1793,7 @@ the contour.
 Once the contour values of $E(\lambda')$ are converged, Cauchy's integral formula Eq.~\eqref{eq:Cauchy} can 
 be invoked to compute the value at $E(\lambda=1)$ and obtain a final estimate of the exact energy.
 The authors illustrate this protocol for the dissociation curve of \ce{LiH} and the stretched water 
-molecule \trash{to obtain} \titou{and obtained?} encouragingly accurate results.\cite{Mihalka_2019} 
+molecule and obtained encouragingly accurate results.\cite{Mihalka_2019} 
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Concluding Remarks}
