@@ -1,0 +1,70 @@
+%ANU etterhead Yves
+%version 1.0	12/06/08
+%need to be improved
+
+
+\RequirePackage{graphicx}
+
+%%%%%%%%%%%%%%%%%%%%% DEFINE USER-SPECIFIC MACROS BELOW %%%%%%%%%%%%%%%%%%%%%
+\def\Who     {Pierre-Fran\c{c}ois Loos}
+\def\What    {Dr}
+\def\Where   {Universit\'e Paul Sabatier}
+\def\Address {Laboratoire de Chimie et Physique Quantiques}
+\def\CityZip {Toulouse, France}
+\def\Email   {loos@irsamc.ups-tlse.fr}
+\def\TEL     {+33 5 61 55 73 39}
+\def\URL     {} % NOTE: use $\sim$ for tilde
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MARGINS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textwidth       6in
+\textheight      9.25in
+\oddsidemargin   0.25in
+\evensidemargin  0.25in
+\topmargin       -1.50in
+\longindentation 0.50\textwidth
+\parindent       5ex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% ADDRESS MACRO BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\address{
+    \includegraphics[height=0.7in]{CNRS_logo.pdf}     \hspace*{\fill}\includegraphics[height=0.7in]{UPS_logo.pdf}
+	\\
+	\hrulefill
+	\\
+	{\small \What~\Who\hspace*{\fill} Telephone:\ \TEL
+	\\
+	\Where\hspace*{\fill}  Email:\ \Email
+	\\
+	\Address\hspace*{\fill}
+	\\
+	\CityZip\hspace*{\fill} \URL}
+	 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% OTHER MACROS BELOW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\signature{\What~\Who}
+
+\def\opening#1{\ifx\@empty\fromaddress
+ \thispagestyle{firstpage}
+ \hspace*{\longindendation}\today\par
+ \else \thispagestyle{empty}
+ {\centering\fromaddress \vspace{5\parskip} \\
+\today\hspace*{\fill}\par}
+ \fi
+ \vspace{3\parskip}
+ {\raggedright \toname \\ \toaddress \par}\vspace{3\parskip}
+ \noindent #1\par\raggedright\parindent 5ex\par
+ }
+
+%I do not know what does the macro below
+
+%\long\def\closing#1{\par\nobreak\vspace{\parskip}
+ %\stopbreaks
+ %\noindent
+ %\ifx\@empty\fromaddress\else
+ %\hspace*{\longindentation}\fi
+ %\parbox{\indentedwidth}{\raggedright
+ %\ignorespaces #1\vskip .65in
+ %\ifx\@empty\fromsig
+ %\else \fromsig \fi\strut}
+ %\vspace*{\fill}
+% \par}
