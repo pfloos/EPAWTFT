@@ -165,7 +165,7 @@ The popularity of MP theory stems from its black-box nature, size-extensivity, a
 making it easily applied in a broad range of molecular research.\cite{HelgakerBook}
 However, it is now widely recognised that the series of MP approximations (defined for a given perturbation
 order $n$ as MP$n$) can show erratic, slow, or divergent behaviour that limit its systematic improvability.%
-\cite{Laidig_1985,Knowles_1985,Handy_1985,Gill_1986,Laidig_1987,Nobes_1987,Gill_1988,Gill_1988a,Lepetit_1988} 
+\cite{Laidig_1985,Knowles_1985,Handy_1985,Gill_1986,Laidig_1987,Nobes_1987,Gill_1988,Gill_1988a,Lepetit_1988,Malrieu_2003} 
 As a result, practical applications typically employ only the lowest-order MP2 approach, while 
 the successive MP3, MP4, and MP5 (and higher order) terms are generally not considered to offer enough improvement
 to justify their increased cost.
@@ -447,6 +447,7 @@ As a result, the radius of convergence for a function is equal to the distance f
 in the complex plane, referred to as the ``dominant'' singularity.
 This singularity may represent a pole of the function, or a branch point (\eg, square-root or logarithmic)
 in a multi-valued function.
+\titou{T2: define here critical point.}
 
 For example, the simple function
 \begin{equation} \label{eq:DivExample}
@@ -551,18 +552,22 @@ the total spin operator $\hat{\mathcal{S}}^2$, leading to ``spin-contamination''
 
 In the Hubbard dimer, the HF energy can be parametrised using two rotation angles $\ta$ and $\tb$ as
 \begin{equation}
+\label{eq:EHF}
 E_\text{HF}(\ta, \tb) = -t\, \qty( \sin \ta + \sin \tb ) + \frac{U}{2} \qty( 1 + \cos \ta \cos \tb ),
 \end{equation}
-where we have introduced bonding $\mathcal{B}^{\sigma}$ and antibonding $\mathcal{A}^{\sigma}$ molecular orbitals for 
+where we have introduced \titou{occupied $\psi_1^{\sigma}$} and \titou{unoccupied $\psi_2^{\sigma}$} molecular orbitals for 
 the spin-$\sigma$ electrons as
 \begin{subequations}
 \begin{align}
-    \mathcal{B}^{\sigma} & = \hphantom{-} \cos(\frac{\ts}{2}) \Lsi + \sin(\frac{\ts}{2}) \Rsi,
+	\label{eq:psi1}
+    \titou{\psi_1^{\sigma}} & = \hphantom{-} \cos(\frac{\ts}{2}) \Lsi + \sin(\frac{\ts}{2}) \Rsi,
 	\\
-	\mathcal{A}^{\sigma} & = - \sin(\frac{\ts}{2}) \Lsi + \cos(\frac{\ts}{2}) \Rsi
+	\label{eq:psi2}
+	\titou{\psi_2^{\sigma}} & = - \sin(\frac{\ts}{2}) \Lsi + \cos(\frac{\ts}{2}) \Rsi
 \end{align}
 \label{eq:RHF_orbs}
 \end{subequations}
+\titou{Equations \eqref{eq:EHF}, \eqref{eq:psi1}, and \eqref{eq:psi2} are valid for both RHF and UHF.}
 In the weak correlation regime $0 \le U \le 2t$, the angles which minimise the HF energy, 
 \ie, $\pdv*{E_\text{HF}}{\ts} = 0$, are 
 \begin{equation}
@@ -570,9 +575,9 @@ In the weak correlation regime $0 \le U \le 2t$, the angles which minimise the H
 \end{equation}
 giving the symmetry-pure molecular orbitals
 \begin{align}
-	\mathcal{B}_\text{RHF}^{\sigma} & = \frac{\Lsi + \Rsi}{\sqrt{2}},
+	\titou{\psi_{1,\text{RHF}}^{\sigma}} & = \frac{\Lsi + \Rsi}{\sqrt{2}},
 	&
-	\mathcal{A}_\text{RHF}^{\sigma} & = \frac{\Lsi - \Rsi}{\sqrt{2}},
+	\titou{\psi_{2,\text{RHF}}^{\sigma}} & = \frac{\Lsi - \Rsi}{\sqrt{2}},
 \end{align}
 and the ground-state RHF energy (Fig.~\ref{fig:HF_real})
 \begin{equation}
@@ -733,12 +738,12 @@ be computed to understand the convergence of the MP$n$ series.\cite{Handy_1985}
 systematically improvable theory.
 In fact, when the reference HF wave function is a poor approximation to the exact wave function, 
 for example in multi-configurational systems, MP theory can yield highly oscillatory, 
-slowly convergent, or catastrophically divergent results.\cite{Gill_1986,Gill_1988,Handy_1985,Lepetit_1988,Leininger_2000}
+slowly convergent, or catastrophically divergent results.\cite{Gill_1986,Gill_1988,Handy_1985,Lepetit_1988,Leininger_2000,Malrieu_2003}
 Furthermore, the convergence properties of the MP series can depend strongly on the choice of restricted or
 unrestricted reference orbitals.
 
 Although practically convenient for electronic structure calculations, the MP partitioning is not 
-the only possibility and alternative partitionings have been considered including: 
+the only possibility and alternative partitionings have been considered \cite{Surjan_2004} including: 
 i) the Epstein-Nesbet (EN) partitioning which consists in taking the diagonal elements of $\hH$ as the zeroth-order Hamiltonian, \cite{Nesbet_1955,Epstein_1926} 
 ii) the weak correlation partitioning in which the one-electron part is consider as the unperturbed Hamiltonian $\hH^{(0)}$ and the two-electron part is the perturbation operator $\hV$, and 
 iii) the strong coupling partitioning where the two operators are inverted compared to the weak correlation partitioning. \cite{Seidl_2018,Daas_2020}
@@ -1047,8 +1052,8 @@ Their analysis is based on Darboux's theorem: \cite{Goodson_2011}
 \textit{``In the limit of large order, the series coefficients become equivalent to 
     the Taylor series coefficients of the singularity closest to the origin. ''}
 \end{quote}
-Following this theory, a singularity in the unit circle is designated as an intruder state, 
-with a front-door (or back-door) intruder state if the real part of the singularity is positive (or negative).
+\titou{Following this theory, a singularity in the unit circle is designated as an intruder state, 
+with a front-door (or back-door) intruder state if the real part of the singularity is positive (or negative).}
 
 Using their observations in Ref.~\onlinecite{Olsen_1996}, Olsen and collaborators proposed 
 a simple method that performs a scan of the real axis to detect the avoided crossing responsible 
@@ -1100,7 +1105,7 @@ For Hermitian Hamiltonians, these archetypes can be subdivided into five classes
 while two additional archetypes (zigzag-geometric and convex-geometric) are observed in non-Hermitian Hamiltonians.
 %
 The geometric archetype appears to be the most common for MP expansions,\cite{Olsen_2019} but the 
-ripples archetype corresponds to some of the early examples of MP convergence. \cite{Handy_1985,Lepetit_1988,Leininger_2000}
+ripples archetype corresponds to some of the early examples of MP convergence. \cite{Handy_1985,Lepetit_1988,Leininger_2000,Malrieu_2003}
 The three remaining Hermitian archetypes seem to be rarely observed in MP perturbation theory.
 In contrast, the non-Hermitian coupled cluster perturbation theory,%
 \cite{Pawlowski_2019a,Pawlowski_2019b,Pawlowski_2019c,Pawlowski_2019d,Pawlowski_2019e} exhibits a range of archetypes
@@ -1751,7 +1756,7 @@ terms of a perturbation series, even if it diverges.
 
 Recently, Mih\'alka \etal\ have studied the effect of different partitionings, such as MP or EN theory, on the position of 
 branch points and the convergence properties of Rayleigh--Schr\"odinger perturbation theory\cite{Mihalka_2017b} (see also
-Ref.~\onlinecite{Surjan_2000}).
+Refs.~\onlinecite{Szabados_1999,Surjan_2000,Szabados_2003}).
 Taking the equilibrium and stretched water structures as an example, they estimated the radius of convergence using quadratic
 Pad\'e approximants.
 The EN partitioning provided worse convergence properties than the MP partitioning, which is believed to be
@@ -1825,7 +1830,7 @@ We then provided a comprehensive review of the various research that has been pe
 around the physics of complex singularities in perturbation theory, with a particular focus on M{\o}ller--Plesset theory. 
 Seminal contributions from various research groups have revealed highly oscillatory,
 slowly convergent, or catastrophically divergent behaviour of the restricted and/or unrestricted MP perturbation series.%
-\cite{Laidig_1985,Knowles_1985,Handy_1985,Gill_1986,Laidig_1987,Nobes_1987,Gill_1988,Gill_1988a,Lepetit_1988} 
+\cite{Laidig_1985,Knowles_1985,Handy_1985,Gill_1986,Laidig_1987,Nobes_1987,Gill_1988,Gill_1988a,Lepetit_1988,Malrieu_2003} 
 In particular, the spin-symmetry-broken unrestricted MP series is notorious
 for giving incredibly slow convergence.\cite{Gill_1986,Nobes_1987,Gill_1988a,Gill_1988}
 All these behaviours can be rationalised and explained by the position of exceptional points

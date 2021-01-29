@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{179}%
+\begin{thebibliography}{183}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -233,6 +233,15 @@
   \bibnamefont {Malrieu}},\ }\href {\doibase 10.1063/1.455170} {\bibfield
   {journal} {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume}
   {89}},\ \bibinfo {pages} {998} (\bibinfo {year} {1988})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Malrieu}\ and\ \citenamefont
+  {Angeli}(2013)}]{Malrieu_2003}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.-P.}\ \bibnamefont
+  {Malrieu}}\ and\ \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Angeli}},\ }\href {\doibase 10.1080/00268976.2013.788745} {\bibfield
+  {journal} {\bibinfo  {journal} {Mol. Phys.}\ }\textbf {\bibinfo {volume}
+  {111}},\ \bibinfo {pages} {1092} (\bibinfo {year} {2013})}\BibitemShut
   {NoStop}%
 \bibitem [{\citenamefont {Bender}(2019)}]{BenderPTBook}%
   \BibitemOpen
@@ -896,6 +905,20 @@
   }\href {\doibase 10.1063/1.481764} {\bibfield  {journal} {\bibinfo  {journal}
   {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {112}},\ \bibinfo {pages}
   {9213} (\bibinfo {year} {2000})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Surj{\'a}n}\ and\ \citenamefont
+  {Szabados}(2004)}]{Surjan_2004}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~R.}\ \bibnamefont
+  {Surj{\'a}n}}\ and\ \bibinfo {author} {\bibfnamefont {{\'A}.}~\bibnamefont
+  {Szabados}},\ }\enquote {\bibinfo {title} {Appendix to ``studies in
+  perturbation theory'': The problem of partitioning},}\ in\ \href {\doibase
+  10.1007/978-94-017-0448-9_8} {\emph {\bibinfo {booktitle} {Fundamental World
+  of Quantum Chemistry: A Tribute to the Memory of Per-Olov L{\"o}wdin Volume
+  III}}},\ \bibinfo {editor} {edited by\ \bibinfo {editor} {\bibfnamefont
+  {E.~J.}\ \bibnamefont {Br{\"a}ndas}}\ and\ \bibinfo {editor} {\bibfnamefont
+  {E.~S.}\ \bibnamefont {Kryachko}}}\ (\bibinfo  {publisher} {Springer
+  Netherlands},\ \bibinfo {address} {Dordrecht},\ \bibinfo {year} {2004})\ pp.\
+  \bibinfo {pages} {129--185}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Nesbet}\ and\ \citenamefont
   {Hartree}(1955)}]{Nesbet_1955}%
   \BibitemOpen
@@ -1361,6 +1384,15 @@
   {Shanks}},\ }\href {\doibase https://doi.org/10.1002/sapm19553411} {\bibfield
    {journal} {\bibinfo  {journal} {J. Math. Phys.}\ }\textbf {\bibinfo {volume}
   {34}},\ \bibinfo {pages} {1} (\bibinfo {year} {1955})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Szabados}\ and\ \citenamefont
+  {Surjan}(1999)}]{Szabados_1999}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Szabados}}\ and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Surjan}},\ }\href {\doibase https://doi.org/10.1016/S0009-2614(99)00647-8}
+  {\bibfield  {journal} {\bibinfo  {journal} {Chem. Phys. Lett.}\ }\textbf
+  {\bibinfo {volume} {308}},\ \bibinfo {pages} {303 } (\bibinfo {year}
+  {1999})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Surj{\'a}n}\ and\ \citenamefont
   {Szabados}(2000)}]{Surjan_2000}%
   \BibitemOpen
@@ -1369,6 +1401,15 @@
   {Szabados}},\ }\href {\doibase 10.1063/1.481006} {\bibfield  {journal}
   {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {112}},\
   \bibinfo {pages} {4438} (\bibinfo {year} {2000})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Szabados}\ and\ \citenamefont
+  {Surj{\'a}n}(2003)}]{Szabados_2003}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {{\'A}.}~\bibnamefont
+  {Szabados}}\ and\ \bibinfo {author} {\bibfnamefont {P.~R.}\ \bibnamefont
+  {Surj{\'a}n}},\ }\href {\doibase https://doi.org/10.1002/qua.10502}
+  {\bibfield  {journal} {\bibinfo  {journal} {Int. J. Quantum Chem.}\ }\textbf
+  {\bibinfo {volume} {92}},\ \bibinfo {pages} {160} (\bibinfo {year}
+  {2003})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Surj{\'a}n}\ \emph {et~al.}(2018)\citenamefont
   {Surj{\'a}n}, \citenamefont {Mih{\'a}lka},\ and\ \citenamefont
   {Szabados}}]{Surjan_2018}%
