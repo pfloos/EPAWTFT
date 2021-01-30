@@ -392,6 +392,7 @@ These degeneracies can be conical intersections between two states with differen
 for real values of $\lambda$,\cite{Yarkony_1996} or EPs between two states with the 
 same symmetry for complex values of $\lambda$.
 
+\titou{Although the complex component of the energy is linked to lifetime in non-Hermitian quantum mechanics, \cite{MoiseyevBook} its meaning is unclear to us in the present context.}
 
 %============================================================%
 \subsection{Rayleigh--Schr\"odinger Perturbation Theory}
@@ -783,7 +784,7 @@ diatomics, where low-order RMP and UMP expansions give qualitatively wrong bindi
 The divergence of RMP expansions for stretched bonds can be easily understood from two perspectives.\cite{Gill_1988a}
 Firstly, the exact wave function becomes increasingly multi-configurational as the bond is stretched, and the 
 RHF wave function no longer provides a qualitatively correct reference for the perturbation expansion.
-Secondly, the energy gap between the bonding and anti-bonding orbitals associated with the stretch becomes
+Secondly, the energy gap between the \titou{occupied and unoccupied} orbitals associated with the stretch becomes
 increasingly small at larger bond lengths, leading to a divergence, for example, in the MP2 correction \eqref{eq:EMP2}.
 In contrast, the origin of slow UMP convergence is less obvious as the reference UHF energy remains
 qualitatively correct at large bond lengths and the orbital degeneracy is avoided.
@@ -891,12 +892,12 @@ The Taylor expansion of the RMP energy can then be evaluated to obtain the $k$th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % RADIUS OF CONVERGENCE PLOTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The RMP series is convergent for $U = 3.5\,t$ with $\rc > 1$, as illustrated for the individual terms at each 
+The RMP series is convergent \titou{at $\lambda = 1$} for $U = 3.5\,t$ with $\rc > 1$, as illustrated for the individual terms at each 
 perturbation order in Fig.~\ref{subfig:RMP_cvg}.
-In contrast, for $U = 4.5t$ one finds $\rc < 1$, and the RMP series becomes divergent.
+In contrast, for $U = 4.5t$ one finds $\rc < 1$, and the RMP series becomes divergent \titou{at $\lambda = 1$}.
 The corresponding Riemann surfaces for $U = 3.5\,t$ and $4.5\,t$ are shown in Figs.~\ref{subfig:RMP_3.5} and 
-\ref{subfig:RMP_4.5}, respectively, with the single EP at $\lep$ (black dot) and the radius of convergence indicated
-by the vertical cylinder of unit radius.
+\ref{subfig:RMP_4.5}, respectively, with the single EP at $\lep$ (black dot) and \titou{the radius of convergence indicated
+by the vertical cylinder of unit radius (TODO)}.
 For the divergent case, $\lep$ lies inside this cylinder of convergence, while in the convergent case $\lep$ lies
 outside this cylinder.
 In both cases, the EP connects the ground state with the doubly-excited state, and thus the convergence behaviour
@@ -966,7 +967,7 @@ The convergence behaviour can be further elucidated by considering the full stru
 in the complex $\lambda$-plane (see Figs.~\ref{subfig:UMP_3} and \ref{subfig:UMP_7}).
 These Riemann surfaces are illustrated for $U = 3t$ and $7t$ alongside the perturbation terms at each order
 in Fig.~\ref{subfig:UMP_cvg}.
-At $U = 3t$, the RMP series is convergent, while RMP becomes divergent for $U=7t$.
+At $U = 3t$, the RMP series is convergent \titou{at $\lambda = 1$}, while RMP becomes divergent \titou{at $\lambda = 1$} for $U=7t$.
 The ground-state UMP expansion is convergent in both cases, although the rate of convergence is significantly slower 
 for larger $U/t$ as the radius of convergence becomes increasingly close to one (Fig.~\ref{fig:RadConv}).
 
@@ -1073,7 +1074,7 @@ The authors first considered molecules with low-lying doubly-excited states with
 and spin symmetry as the ground state. \cite{Olsen_2000}
 In these systems, the exact wave function has a non-negligible contribution from the doubly-excited states, 
 and thus the low-lying excited states are likely to become intruder states. 
-For \ce{CH_2} in a diffuse, yet rather small basis set, the series is convergent at least up to the 50th order, and
+For \ce{CH_2} in a diffuse, yet rather small basis set, the series is convergent \titou{at $\lambda = 1$} at least up to the 50th order, and
 the dominant singularity lies close (but outside) the unit circle, causing slow convergence of the series.
 These intruder-state effects are analogous to the EP that dictates the convergence behaviour of 
 the RMP series for the Hubbard dimer (Fig.~\ref{fig:RMP}).
@@ -1278,7 +1279,7 @@ The RMP critical point then corresponds to the intersection $E_{-} = E_{+}$, giv
     \lc = 1 - \frac{\epsilon}{U}. 
 \end{equation}
 Clearly the radius of convergence $\rc = \abs{\lc}$ is controlled directly by the ratio $\epsilon / U$, 
-with a convergent RMP series occurring for $\epsilon > 2 U$.
+with a convergent RMP series \titou{at $\lambda = 1$} occurring for $\epsilon > 2 U$.
 The on-site repulsion $U$ controls the strength of the HF potential localised around the ``atomic site'', with a
 stronger repulsion encouraging the electrons to be ionised at a less negative value of $\lambda$. 
 Large $U$ can be physically interpreted as strong electron repulsion effects in electron dense molecules. 
