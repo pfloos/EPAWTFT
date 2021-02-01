@@ -710,6 +710,61 @@
   10.1140/epjb/e2018-90114-9} {\bibfield  {journal} {\bibinfo  {journal} {Eur.
   Phys. J. B}\ }\textbf {\bibinfo {volume} {91}},\ \bibinfo {pages} {142}
   (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Heiss}\ and\ \citenamefont
+  {M{\"u}ller}(2002)}]{Heiss_2002}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.~D.}\ \bibnamefont
+  {Heiss}}\ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {M{\"u}ller}},\ }\href {\doibase 10.1103/PhysRevE.66.016217} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. E}\ }\textbf {\bibinfo {volume}
+  {66}},\ \bibinfo {pages} {016217} (\bibinfo {year} {2002})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Borisov}\ \emph {et~al.}(2015)\citenamefont
+  {Borisov}, \citenamefont {Ru{\v z}i{\v c}ka},\ and\ \citenamefont
+  {Znojil}}]{Borisov_2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~I.}\ \bibnamefont
+  {Borisov}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Ru{\v z}i{\v
+  c}ka}}, \ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Znojil}},\
+  }\href {\doibase 10.1007/s10773-014-2493-y} {\bibfield  {journal} {\bibinfo
+  {journal} {Int. J. Theor. Phys.}\ }\textbf {\bibinfo {volume} {54}},\
+  \bibinfo {pages} {4293} (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{\v S}indelka}\ \emph {et~al.}(2017)\citenamefont
+  {{\v S}indelka}, \citenamefont {Santos},\ and\ \citenamefont
+  {Moiseyev}}]{Sindelka_2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {{\v
+  S}indelka}}, \bibinfo {author} {\bibfnamefont {L.~F.}\ \bibnamefont
+  {Santos}}, \ and\ \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Moiseyev}},\ }\href {\doibase 10.1103/PhysRevA.95.010103} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume}
+  {95}},\ \bibinfo {pages} {010103} (\bibinfo {year} {2017})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Carr}(2010)}]{CarrBook}%
+  \BibitemOpen
+  \bibinfo {editor} {\bibfnamefont {L.}~\bibnamefont {Carr}},\ ed.,\ \href
+  {\doibase 10.1201/b10273} {\emph {\bibinfo {title} {Understanding Quantum
+  Phase Transitions}}}\ (\bibinfo  {publisher} {Boca Raton: CRC Press},\
+  \bibinfo {year} {2010})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Vojta}(2003)}]{Vojta_2003}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Vojta}},\ }\href {\doibase 10.1088/0034-4885/66/12/r01} {\bibfield
+  {journal} {\bibinfo  {journal} {Rep. Prog. Phys.}\ }\textbf {\bibinfo
+  {volume} {66}},\ \bibinfo {pages} {2069} (\bibinfo {year}
+  {2003})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Sachdev}(1999)}]{SachdevBook}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Sachdev}},\ }\href@noop {} {\emph {\bibinfo {title} {Quantum Phase
+  Transitions}}}\ (\bibinfo  {publisher} {Cambridge University Press},\
+  \bibinfo {year} {1999})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gilmore}(1981)}]{GilmoreBook}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Gilmore}},\ }\href@noop {} {\emph {\bibinfo {title} {Catastrophe Theory for
+  Scientists and Engineers}}}\ (\bibinfo  {publisher} {New York, Wiley},\
+  \bibinfo {year} {1981})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Cejnar}\ \emph {et~al.}(2007)\citenamefont {Cejnar},
   \citenamefont {Heinze},\ and\ \citenamefont {Macek}}]{Cejnar_2007}%
   \BibitemOpen
@@ -1225,61 +1280,6 @@
   {Goodson}},\ }\href {\doibase 10.1063/1.2173989} {\bibfield  {journal}
   {\bibinfo  {journal} {J. Chem. Phys.}\ }\textbf {\bibinfo {volume} {124}},\
   \bibinfo {pages} {094111} (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Heiss}\ and\ \citenamefont
-  {M{\"u}ller}(2002)}]{Heiss_2002}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.~D.}\ \bibnamefont
-  {Heiss}}\ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
-  {M{\"u}ller}},\ }\href {\doibase 10.1103/PhysRevE.66.016217} {\bibfield
-  {journal} {\bibinfo  {journal} {Phys. Rev. E}\ }\textbf {\bibinfo {volume}
-  {66}},\ \bibinfo {pages} {016217} (\bibinfo {year} {2002})}\BibitemShut
-  {NoStop}%
-\bibitem [{\citenamefont {Borisov}\ \emph {et~al.}(2015)\citenamefont
-  {Borisov}, \citenamefont {Ru{\v z}i{\v c}ka},\ and\ \citenamefont
-  {Znojil}}]{Borisov_2015}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~I.}\ \bibnamefont
-  {Borisov}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Ru{\v z}i{\v
-  c}ka}}, \ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Znojil}},\
-  }\href {\doibase 10.1007/s10773-014-2493-y} {\bibfield  {journal} {\bibinfo
-  {journal} {Int. J. Theor. Phys.}\ }\textbf {\bibinfo {volume} {54}},\
-  \bibinfo {pages} {4293} (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {{\v S}indelka}\ \emph {et~al.}(2017)\citenamefont
-  {{\v S}indelka}, \citenamefont {Santos},\ and\ \citenamefont
-  {Moiseyev}}]{Sindelka_2017}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {{\v
-  S}indelka}}, \bibinfo {author} {\bibfnamefont {L.~F.}\ \bibnamefont
-  {Santos}}, \ and\ \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
-  {Moiseyev}},\ }\href {\doibase 10.1103/PhysRevA.95.010103} {\bibfield
-  {journal} {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume}
-  {95}},\ \bibinfo {pages} {010103} (\bibinfo {year} {2017})}\BibitemShut
-  {NoStop}%
-\bibitem [{\citenamefont {Carr}(2010)}]{CarrBook}%
-  \BibitemOpen
-  \bibinfo {editor} {\bibfnamefont {L.}~\bibnamefont {Carr}},\ ed.,\ \href
-  {\doibase 10.1201/b10273} {\emph {\bibinfo {title} {Understanding Quantum
-  Phase Transitions}}}\ (\bibinfo  {publisher} {Boca Raton: CRC Press},\
-  \bibinfo {year} {2010})\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Vojta}(2003)}]{Vojta_2003}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
-  {Vojta}},\ }\href {\doibase 10.1088/0034-4885/66/12/r01} {\bibfield
-  {journal} {\bibinfo  {journal} {Rep. Prog. Phys.}\ }\textbf {\bibinfo
-  {volume} {66}},\ \bibinfo {pages} {2069} (\bibinfo {year}
-  {2003})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Sachdev}(1999)}]{SachdevBook}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
-  {Sachdev}},\ }\href@noop {} {\emph {\bibinfo {title} {Quantum Phase
-  Transitions}}}\ (\bibinfo  {publisher} {Cambridge University Press},\
-  \bibinfo {year} {1999})\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Gilmore}(1981)}]{GilmoreBook}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
-  {Gilmore}},\ }\href@noop {} {\emph {\bibinfo {title} {Catastrophe Theory for
-  Scientists and Engineers}}}\ (\bibinfo  {publisher} {New York, Wiley},\
-  \bibinfo {year} {1981})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Cejnar}\ \emph {et~al.}(2005)\citenamefont {Cejnar},
   \citenamefont {Heinze},\ and\ \citenamefont {Dobe{\v s}}}]{Cejnar_2005}%
   \BibitemOpen

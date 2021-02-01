@@ -4,6 +4,37 @@
 \definecolor{darkgreen}{HTML}{009900}
 
 
+
+\usepackage[strict]{changepage}
+% for formal definitions
+\usepackage{framed}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+\renewenvironment{quote}
+{\begin{quotation}\noindent\it``\ignorespaces}
+{\ignorespaces''\end{quotation}}
+
+\newcommand{\sic}{[\textit{sic}]}
+% environment derived from framed.sty: see leftbar environment definition
+\definecolor{formalshade}{rgb}{0.95,0.95,1}
+
+\newenvironment{formal}{%
+  \def\FrameCommand{%
+    \hspace{1pt}%
+    {\color{darkblue}\vrule width 2pt}%
+    {\color{formalshade}\vrule width 4pt}%
+    \colorbox{formalshade}%
+  }%
+  \MakeFramed{\advance\hsize-\width\FrameRestore}%
+  \noindent\hspace{-4.55pt}% disable indenting first paragraph
+  \begin{adjustwidth}{}{7pt}%
+  \vspace{2pt}\vspace{2pt}%
+}
+{%
+  \vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
+
+
 \begin{document}
 
 \begin{letter}%
@@ -25,152 +56,162 @@ We look forward to hearing from you.
 \closing{Sincerely, the authors.}
 
 %%% REVIEWER 1 %%%
+\newpage
 \noindent \textbf{\large Authors' answer to Reviewer \#1}
 
-\begin{itemize}
+\begin{formal}
+In this manuscript, the authors provide a comprehensive and thorough discussion of the role of exceptional point singularities in determining the performance of perturbation methods of electronic structure theory. 
+The main subject considered is the well-known Moller-Plesset (MP) theory to calculate the electronic correlation energy, and various resummation techniques aimed to improve the convergence of the MP series. 
+The system used to illustrate the application of MP theory is the Hubbard dimer. 
+The authors suggest how the combination of resummation methods and acceleration techniques, such as the Shanks transformation, can significantly improve the accuracy of perturbative approaches. 
+The manuscript is well written and has the format of a very useful and informative review of the progress done in the field. 
+For that reason, I was worried that it could not fit the audience of the Journal of Physics Condensed Matter journal, and it might be better placed in a different journal, focusing on reviews. 
+Besides that point, I found some merit in the application of the Shanks transformation to different approximants for both the restricted and unrestricted versions of the theory, which focus on the corresponding set of orbitals. 
+Thus, I am glad to recommend publication.
+\end{formal}
 
-	\item 
-	{In this manuscript, the authors provide a comprehensive and thorough discussion of the role of exceptional point singularities in determining the performance of perturbation methods of electronic structure theory. 
-	The main subject considered is the well-known Moller-Plesset (MP) theory to calculate the electronic correlation energy, and various resummation techniques aimed to improve the convergence of the MP series. 
-	The system used to illustrate the application of MP theory is the Hubbard dimer. 
-	The authors suggest how the combination of resummation methods and acceleration techniques, such as the Shanks transformation, can significantly improve the accuracy of perturbative approaches. 
-	The manuscript is well written and has the format of a very useful and informative review of the progress done in the field. 
-	For that reason, I was worried that it could not fit the audience of the Journal of Physics Condensed Matter journal, and it might be better placed in a different journal, focusing on reviews. 
-	Besides that point, I found some merit in the application of the Shanks transformation to different approximants for both the restricted and unrestricted versions of the theory, which focus on the corresponding set of orbitals. 
-	Thus, I am glad to recommend publication.}
-	\\
-	\alert{We thank Reviewer \#1 for recommending publication of the present review.}
-	
-\end{itemize}
+\noindent{We thank Reviewer \#1 for their  support of our manuscript and for recommending publication.}
 
 %%% REVIEWER 2 %%%
 \noindent \textbf{\large Authors' answer to Reviewer \#2}
 
-\begin{itemize}
+\begin{formal}
+The topical review "Perturbation theory in the complex plane: Exceptional points and where to find them" reviews the origin and meaning of exceptional points in quantum chemistry. 
+The Hubbard dimer is used throughout as an illustrative example for the restricted and unrestricted cases, exact solution (FCI), Hartree-Fock, and Rayleigh-Schrodinger perturbation theory. 
+The authors review the ways that MP series in common quantum chemical applications can behave, using the classification schemes developed in the literature. 
+Finally, they discuss alternative methods to approximate the Taylor series of RS theory by other functions which may have better, faster, or otherwise more robust convergence properties, including their own calculations based on the Shanks transformation.
 
-	\item 
-	{The topical review "Perturbation theory in the complex plane: Exceptional points and where to find them" reviews the origin and meaning of exceptional points in quantum chemistry. 
-	The Hubbard dimer is used throughout as an illustrative example for the restricted and unrestricted cases, exact solution (FCI), Hartree-Fock, and Rayleigh-Schrodinger perturbation theory. 
-	The authors review the ways that MP series in common quantum chemical applications can behave, using the classification schemes developed in the literature. 
-	Finally, they discuss alternative methods to approximate the Taylor series of RS theory by other functions which may have better, faster, or otherwise more robust convergence properties, including their own calculations based on the Shanks transformation.
+\noindent This topical review is very well done and I recommend it for publication as is. 
+I list my comments below for the authors to address if they choose. 
+Because this manuscript is meant as a review and to have instructional value, my comments are a bit more pedagogical or curiosity driven than may be expected for a normal review. 
+I am not an expert in this exact area, so my questions are meant to represent those a typical reader might have. 
+My questions do not need to all be addressed before the manuscript is published.
+\end{formal}
 
-	This topical review is very well done and I recommend it for publication as is. 
-	I list my comments below for the authors to address if they choose. 
-	Because this manuscript is meant as a review and to have instructional value, my comments are a bit more pedagogical or curiosity driven than may be expected for a normal review. 
-	I am not an expert in this exact area, so my questions are meant to represent those a typical reader might have. 
-	My questions do not need to all be addressed before the manuscript is published.}
-	\\
-	\alert{Again, we thank Reviewer \#2 for recommending publication and for his/her constructive comments.
-	Below, we address these comments.}
+\noindent {Again, we thank Reviewer \#2 for recommending publication and for their constructive comments.
+Below, we address these comments:}
 
-\item 
-	{I.\\
-	How am I to actually interpret the electronic energy $E$ of such a non-Hermitian Hamiltonian? 
+\begin{formal}
+How am I to actually interpret the electronic energy $E$ of such a non-Hermitian Hamiltonian? 
 	Is the energy associated with just the real part of the Riemann surface $E(\lambda)$ at every point, is it computable from some combination of Re and Im parts, or is the ordinary meaning of the energy lost completely? 
 	Is there a lifetime interpretation for the imaginary part of this non-Hermitian Hamiltonian in the wave function problem as in Green's function theory? 
 	Maybe something can be said about this because I suspect the imaginary part is somehow related to losses. 
-	This is hinted at in the introduction but was the first question that entered my mind.}
-	\\
-	\alert{In most figures, we indeed plot the real component of the energy.
-	By going complex, the energies lost their meaning as there is no relation of order for complex numbers.
-	In non-Hermitian processes like resonances or scattering, the imaginary part of the energy is indeed linked to lifetimes [see the book of Moiseyev].
-	This is mention in the introduction section.
-	However, the meaning  of the imaginary part of the energy in the present context is unclear and we prefer not to speculate on this.
-	We have added a comment on this point in the revised version of the manuscript.}
+	This is hinted at in the introduction but was the first question that entered my mind.
+\end{formal}
 
-\item 
-	{IIe.\\
-	Could the authors make it very clear what is meant here by ``symmetry broken"? 
-	This term is seen and used very frequently but can be kind of ambiguous and rarely explained completely. 
-	What is the symmetry that is broken? 
-	Also, what exactly is meant by ``symmetry-pure" when referring to the molecular orbitals? This refers to equal composition of left and right sites, but maybe this can be said explicitly. 
-	A useful counterexample would be a mixing angle of zero, in which case the orbitals are either definitely left or definitely right.
-	I personally can get confused because both spatial and spin symmetries are in play (or so I think). 
-	At high $U/t$, left and right sites are both open shell with one electron each. 
-	Am I to think of this as a broken spatial symmetry, broken spin symmetry, or both?}
-	\\
-	\alert{bla bla bla}
+\noindent{In most figures, we indeed plot the real component of the energy, as shown on the relevant
+figure axes.
+By going complex, the energies lose their meaning as there is no ordering relationship for complex numbers.
+In non-Hermitian processes that consider resonances or scattering, the imaginary part of the energy is indeed linked to lifetimes [see the book of Moiseyev].
+We mention this in the Introduction section.
+However, the meaning  of the imaginary part of the energy in the present context is unclear and we prefer not to speculate on this.
+We have added a comment on this point in Section II.B of the revised manuscript.}
 
-\item 
-	{It could be emphasized that Eqs. 20, 21a, and 21b are valid for both the RHF and UHF cases, which is why these equations lack an RHF or UHF subscript. 
-	Also, in the general case (either RHF or UHF), the bonding orbitals for the two sigma values are occupied and the two antibonding orbitals are unoccupied. 
-	Bonding and antibonding notation is not so common in the condensed matter literature and it may be missed that these correspond to occupied and empty single-particle states.}
-	\\
-	\alert{We now mention that Eqs. 20, 21a, and 21b are valid for both RHF and UHF.
-	We have also changed the notations for the occupied and empty single-particle states.}
+\begin{formal}
+Could the authors make it very clear what is meant here by ``symmetry broken"? 
+This term is seen and used very frequently but can be kind of ambiguous and rarely explained completely. 
+What is the symmetry that is broken? 
+Also, what exactly is meant by ``symmetry-pure" when referring to the molecular orbitals? This refers to equal composition of left and right sites, but maybe this can be said explicitly. 
+A useful counterexample would be a mixing angle of zero, in which case the orbitals are either definitely left or definitely right.
+I personally can get confused because both spatial and spin symmetries are in play (or so I think). 
+At high $U/t$, left and right sites are both open shell with one electron each. 
+Am I to think of this as a broken spatial symmetry, broken spin symmetry, or both?
+\end{formal}
 
-\item 
-	{IIf.\\
-	What am I to think of values of $\lambda$ where $|\lambda|>1$? 
-	I guess this is mathematically well defined and useful for understanding $r_c$, but the physical system always corresponds to $|\lambda|=1$, even in the complex case. 
-	I suppose one needs to understand the singularities at other values of $\lambda$ in order to know the convergence of the series at the value we want, $\lambda = 1$.
-	Some discussion could already be made that these values are not necessarily physical but determine the behavior of the physical series. 
-	Certain values away from $\lambda=1$ can also have physical meaning, like the autoionization process discussed later.}
-	\\
-	\alert{Only the $\lambda = 0$ (non-interacting system in some cases) and $\lambda = 1$ (fully interacting system) are physical systems  as mentioned in the manuscript.
-	However, it can be useful to study the systems at different $\lambda$ values as we do in Sec.~II.F.}
+\noindent{The Reviewer is correct that both spatial and spin symmetries are being broken.
+We consider spatial symmetry breaking to occur when the orbitals do not transform as an 
+irreducible transformation of the relevant point group ($D_{\infty\text{h}}$ in the case of 
+the symmetric Hubbard dimer). 
+Similarly, we consider spin symmetry breaking to occur when the wave function is not an 
+eigenfunction of the $\mathcal{S}^2$ operator. 
+We have clarified these definitions in the discussion of the symmetry-broken UHF wave functions.}
 
-\item 
-	{IIIc.\\
-	To be extra careful, should it be said that the RMP series is either convergent or divergent at the physical coupling value $|\lambda|=1$? 
-	I guess for either value of $U$, the series is convergent if you are close enough to the origin.
-	The language describing the cylinder with unit radius could be improved from: "the radius of convergence indicated by the vertical cylinder of unit radius".
-	I first thought the cylinder was marking the radius of convergence. It is meant to show the position of the EPs and indicate if the radius of convergence is $>1$ or $<1$. 
-	The language could be improved.}
-	\\
-	\alert{The language has been improved and we have mentioned in several places that we are talking about a convergent/divergent MP series at $\lambda = 1$.}
+\begin{formal}
+It could be emphasized that Eqs. 20, 21a, and 21b are valid for both the RHF and UHF cases, which is why these equations lack an RHF or UHF subscript. 
+Also, in the general case (either RHF or UHF), the bonding orbitals for the two sigma values are occupied and the two antibonding orbitals are unoccupied. 
+Bonding and antibonding notation is not so common in the condensed matter literature and it may be missed that these correspond to occupied and empty single-particle states.
+\end{formal}
 
-\item 
-	{IIId.\\
-	The classification of front-door and back-door intruder states is not totally clear. 
-	I raise this point because the journal is JPCM, and these terms are not common in condensed matter literature. 
-	Are intruder states equivalent to states creating exceptional points that ruin the series convergence?}
-	\\
-	\alert{We believe that the classification of front-door and back-door intruder states has been clearly defined in the original manuscript: 
-	"Following this theory, a singularity in the unit circle is designated as an intruder state, with a front-door (or back-door) intruder state if the real part of the singularity is positive (or negative)."}
+\noindent{We now mention that Eqs. 20, 21a, and 21b are valid for both RHF and UHF.	We have also changed the notations for the occupied and empty single-particle states.}
 
-\item 
-	{IIIe.\\
-	Has "critical point" been defined yet?}
-	\\
-	\alert{Thank you for spotting this. 
-	"Critical point" is now defined in due place.}
+\begin{formal}
+What am I to think of values of $\lambda$ where $|\lambda|>1$? 
+I guess this is mathematically well defined and useful for understanding $r_c$, but the physical system always corresponds to $|\lambda|=1$, even in the complex case. 
+I suppose one needs to understand the singularities at other values of $\lambda$ in order to know the convergence of the series at the value we want, $\lambda = 1$.
+Some discussion could already be made that these values are not necessarily physical but determine the behavior of the physical series. 
+Certain values away from $\lambda=1$ can also have physical meaning, like the autoionization process discussed later.
+\end{formal}
 
-\item 
-	{IIIf
-	The explanation of the critical point as the occurrence of the autoionization process is great and makes sense to me. 
-	I must say, though, I have trouble visualizing this in Figs. 7 and 8. 
-	I can trace any one curve continuously along the $\lambda$ axis, and even their ordering does not change. 
-	How does the critical point appear in these figures? 
-	Presumably, it is because the curves exactly intersect at the CP, but this does not on the surface appear so different than the avoided crossings related to the EPs discussed in earlier sections.
-	So what exactly in these figures indicates the sudden and abrupt change in the eigenstates that makes it a CP? 
-	Is it the derivative discontinuity in the energy on the real $\lambda$ axis, whereas the derivative on the real axis for an avoided crossing due to an exceptional point is continuous? 
-	Can this gradient discontinuity be used to define the CP? 
-	How do I see something like the autoionization in this figure? 
-	If this is correct, it could be emphasized a bit more by a comment referring specifically to that figure.
-	Is it possible to circle the CP as one does for an EP? 
-	Is there any meaning to this?}
-	\\
-	\alert{bla bla bla}
+\noindent{Only the $\lambda = 0$ (non-interacting system in some cases) and $\lambda = 1$ (fully interacting system) are physical systems, as mentioned in the manuscript.
+However, it can be useful to study the systems at different $\lambda$ values, as we do in Sec.~II.F.}
 
-\item 
-	{IV.
+\begin{formal}
+To be extra careful, should it be said that the RMP series is either convergent or divergent at the physical coupling value $|\lambda|=1$? 
+I guess for either value of $U$, the series is convergent if you are close enough to the origin.
+The language describing the cylinder with unit radius could be improved from: "the radius of convergence indicated by the vertical cylinder of unit radius".
+I first thought the cylinder was marking the radius of convergence. It is meant to show the position of the EPs and indicate if the radius of convergence is $>1$ or $<1$. 
+The language could be improved.
+\end{formal}
+
+\noindent{The language has been improved and we have mentioned in several places that we are talking about a convergent/divergent MP series at $\lambda = 1$.}
+
+\begin{formal}
+The classification of front-door and back-door intruder states is not totally clear. 
+I raise this point because the journal is JPCM, and these terms are not common in condensed matter literature. 
+Are intruder states equivalent to states creating exceptional points that ruin the series convergence?
+\end{formal}
+
+\noindent{We believe that the classification of front-door and back-door intruder states has been clearly defined in the original manuscript: 
+	\textit{``Following this theory, a singularity in the unit circle is designated as an intruder state, with a front-door (or back-door) intruder state if the real part of the singularity is positive (or negative).''}}
+\
+\begin{formal}%
+Has "critical point" been defined yet?
+\end{formal}
+\noindent{Thank you for spotting this. We have now defined ``critical point'' in the relevant locations.}
+
+\begin{formal}
+The explanation of the critical point as the occurrence of the autoionization process is great and makes sense to me. 
+I must say, though, I have trouble visualizing this in Figs. 7 and 8. 
+I can trace any one curve continuously along the $\lambda$ axis, and even their ordering does not change. 
+How does the critical point appear in these figures? 
+Presumably, it is because the curves exactly intersect at the CP, but this does not on the surface appear so different than the avoided crossings related to the EPs discussed in earlier sections.
+So what exactly in these figures indicates the sudden and abrupt change in the eigenstates that makes it a CP? 
+Is it the derivative discontinuity in the energy on the real $\lambda$ axis, whereas the derivative on the real axis for an avoided crossing due to an exceptional point is continuous? 
+Can this gradient discontinuity be used to define the CP? 
+How do I see something like the autoionization in this figure? 
+If this is correct, it could be emphasized a bit more by a comment referring specifically to that figure.
+Is it possible to circle the CP as one does for an EP? 
+Is there any meaning to this?
+\end{formal}
+
+\noindent
+We thank the Reviewer for this useful piece of feedback, and attempt to answer some of their questions here.
+It is correct to say that the exact critical points correspond to points where the ground-state
+energy has a gradient discontinuity. 
+These points correspond to the intersection of two surfaces rather than an avoided crossing,
+leading to the sudden change in the eigenstates.
+It is possible to encircle the CP in the complex plane, but unlike an EP, this will leave the eigenstates unchanged.
+We have included a new plot of the ``atomic'' site  electron density as a function of $\lambda$ to illustrate
+the sudden autoionisation process at the critical point.
+We have also improved our discussion regarding these features using more explicit references to Figs.~7 and 8.
+Finally, we have endeavoured to illustrate the UMP critical point by considering the difference in electron densities on the left and right sites, as shown in an additional figure. 
+
+\begin{formal}
 	Can something more be said about how these methods are fitted (briefly, and in a general way)? 
 	For example, how does one fit the Pad\'e coefficients? 
 	Presumably, the exact function is known to some order and/or inside of some radius of convergence. 
-	The approximant is fitted in this region to match the exact function and then only the approximant is used beyond the original radius of convergence or at higher order.}
-	\\
-	\alert{As mentioned in the manuscript, the Pad\'e coefficients are determined by solving a set of linear equations involving the coefficients of the Taylor series.
-	This is the  only knowledge required to compute these.}
+	The approximant is fitted in this region to match the exact function and then only the approximant is used beyond the original radius of convergence or at higher order.
+\end{formal} 
+\noindent	{As mentioned in the manuscript, the Pad\'e coefficients are determined by solving a set of linear equations that relate these coefficients with the low-order terms in the Taylor series.
+	This is the only knowledge required to compute these.}
 
-\item 
-	{Throughout the manuscript, the figures are excellent and really help the understanding. 
-	The authors have clearly taken time to prepare the manuscript and it can be published immediately.}
-	\\
-	\alert{Thank you for these kind comments.}
-	
-\end{itemize}
- 
+\begin{formal}
+Throughout the manuscript, the figures are excellent and really help the understanding. 
+The authors have clearly taken time to prepare the manuscript and it can be published immediately.
+\end{formal}
+
+\noindent{Thank you for these kind comments.}
+
 \end{letter}
 \end{document}
 
