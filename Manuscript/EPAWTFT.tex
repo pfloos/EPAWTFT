@@ -147,7 +147,7 @@ Each of these points is illustrated using the Hubbard dimer at half filling, whi
 
 % SPIKE THE READER
 Perturbation theory isn't usually considered in the complex plane.
-Normally it is applied using real numbers as one of very few available tools for 
+Normally, it is applied using real numbers as one of very few available tools for 
 describing realistic quantum systems.
 In particular, time-independent Rayleigh--Schr\"odinger perturbation theory\cite{RayleighBook,Schrodinger_1926} 
 has emerged as an instrument of choice among the vast array of methods developed for this purpose.%
@@ -439,7 +439,7 @@ setting $\lambda = 1$ then yields approximate solutions to Eq.~\eqref{eq:SchrEq}
 
 % MATHEMATICAL REPRESENTATION
 Mathematically, Eq.~\eqref{eq:E_expansion} corresponds to a Taylor series expansion of the exact energy
-around the reference system $\lambda = 0$.
+around the reference system $\lambda~=~0$.
 The energy of the target ``physical'' system is recovered at the point $\lambda = 1$.
 However, like all series expansions, Eq.~\eqref{eq:E_expansion} has a radius of convergence $\rc$. 
 When $\rc < 1$, the Rayleigh--Schr\"{o}dinger expansion will diverge
@@ -576,15 +576,15 @@ In the Hubbard dimer, the HF energy can be parametrised using two rotation angle
 \label{eq:EHF}
 E_\text{HF}(\ta, \tb) = -t\, \qty( \sin \ta + \sin \tb ) + \frac{U}{2} \qty( 1 + \cos \ta \cos \tb ),
 \end{equation}
-where we have introduced \titou{occupied $\psi_1^{\sigma}$} and \titou{unoccupied $\psi_2^{\sigma}$} molecular orbitals for 
+where we have introduced \titou{occupied $\phi_1^{\sigma}$} and \titou{unoccupied $\phi_2^{\sigma}$} molecular orbitals for 
 the spin-$\sigma$ electrons as
 \begin{subequations}
 \begin{align}
 	\label{eq:psi1}
-    \titou{\psi_1^{\sigma}} & = \hphantom{-} \cos(\frac{\ts}{2}) \Lsi + \sin(\frac{\ts}{2}) \Rsi,
+    \titou{\phi_1^{\sigma}} & = \hphantom{-} \cos(\frac{\ts}{2}) \Lsi + \sin(\frac{\ts}{2}) \Rsi,
 	\\
 	\label{eq:psi2}
-	\titou{\psi_2^{\sigma}} & = - \sin(\frac{\ts}{2}) \Lsi + \cos(\frac{\ts}{2}) \Rsi
+	\titou{\phi_2^{\sigma}} & = - \sin(\frac{\ts}{2}) \Lsi + \cos(\frac{\ts}{2}) \Rsi
 \end{align}
 \label{eq:RHF_orbs}
 \end{subequations}
@@ -596,9 +596,9 @@ In the weak correlation regime $0 \le U \le 2t$, the angles which minimise the H
 \end{equation}
 giving the molecular orbitals
 \begin{align}
-	\titou{\psi_{1,\text{RHF}}^{\sigma}} & = \frac{\Lsi + \Rsi}{\sqrt{2}},
+	\titou{\phi_{1,\text{RHF}}^{\sigma}} & = \frac{\Lsi + \Rsi}{\sqrt{2}},
 	&
-	\titou{\psi_{2,\text{RHF}}^{\sigma}} & = \frac{\Lsi - \Rsi}{\sqrt{2}},
+	\titou{\phi_{2,\text{RHF}}^{\sigma}} & = \frac{\Lsi - \Rsi}{\sqrt{2}},
 \end{align}
 and the ground-state RHF energy (Fig.~\ref{fig:HF_real})
 \begin{equation}
@@ -1351,7 +1351,7 @@ idealised destination for the ionised electrons with a non-zero (yet small) hopp
 Taking the value $t=0.1$ (Fig.~\ref{subfig:rmp_cp}: dashed lines), the critical point becomes  
 an avoided crossing with a complex-conjugate pair of EPs close to the real axis (Fig.~\ref{subfig:rmp_cp_surf}).
 \titou{In contrast to the exact critical point with $t=0$, the ground-state energy remains
-smooth through this avoided crossing.}
+smooth through this avoided crossing, with a more gradual drop in the atomic site density.}
 In the limit $t \to 0$, these EPs approach the real axis (Fig.~\ref{subfig:rmp_ep_to_cp}) \titou{and the 
 avoided crossing becomes a gradient discontinuity},
 mirroring Sergeev's discussion on finite basis
@@ -1438,8 +1438,8 @@ electron density on the left and right sites, defined for each spin as
 where $\rho_{\mathcal{L}}^{\sigma}$ ($\rho_{\mathcal{R}}^{\sigma}$) is the spin-$\sigma$ electron density
 on the left (right) site. 
 This density difference is shown for the UMP ground-state at $U = 5 t$ in Fig.~\ref{fig:ump_dens} (solid lines).
-Here, the transfer of the high-spin electron from the right site to the left site can be seen as $\lambda$ passes through 1
-(and similarly for the low-spin electron).}
+Here, the transfer of the spin-up electron from the right site to the left site can be seen as $\lambda$ passes through 1
+(and similarly for the spin-down electron).}
 
 % SHARPNESS AND QPT
 The ``sharpness'' of the avoided crossing is controlled by the correlation strength $U/t$.
